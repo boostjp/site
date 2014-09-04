@@ -1,0 +1,18 @@
+#Export Key
+<h1 style='font-family:Arial,Verdana,Bitstream Vera Sans,Helvetica,sans-serif;font-weight:bold;letter-spacing:-0.018em;font-size:19px;margin-top:0.15em;margin-right:1em;margin-bottom:0.5em'><span style='font-family:Verdana,Arial,Bitstream Vera Sans,Helvetica,sans-serif;font-size:13px'>仮想基底クラスのポインタを経由して派生クラスをシリアライズするとき、問題が2つ発生します。</h1>
+- 派生クラスのコードは、明示的に参照されないかもしれません。そのようなコードは、インスタンス化できません。この問題には、クラスTを定義(実装)するファイルで、BOOST_CLASS_EXPORT_IMPLEMENT(T)を実行することで対処します。これにより、派生クラスTのためのコードが明示的にインスタンス化されることが確実になります。
+- オブジェクトがロードされるとき実行されるコードを選択するのに用いることができるある種の識別子である必要が あります。標準C++は、クラスのためのユニークな文字列を返すtypeid()を実装します。これは、以下の理由により、目的を完全に満たすとはいえません。<li>文字列がプラットフォームをまたいで同じであるという保証がありません。これでは、ポータブルなアーカイブをサポートできません。
+- いろんなソースコードから、(当該クラスの定義された)コードモジュールを利用する際に、クラスはそれぞれ異なる名前空間で包まないといけないかもしれません。
+- 同じ名前を持っているが内容は異なるクラスが、利用する側のコードでローカルに定義されているかもしれません。
+- シリアライズのためにライブラリが同じと考えるべき、異なる名前があるかもしれません。</li>
+- よってserializationライブラリでは、そのクラスが宣言されるヘッダファイルでBOOST_CLASS_EXPORT_KEY2(my_class, "my_class_external_identifier")を記述することで対処します。多くのアプリケーションで、BOOST_CLASS_EXPORT_KEY(my_class)として定義されるショートカットが利用できます。これは、クラス名を外部識別し文字列として使うのに最適です。
+1つだけのモジュールからなるプログラム、すなわちDLLを利用しないプログラムは、BOOST_CLASS_EXPORT(my_class)または、BOOST_CLASS_EXPORT_GUID(my_class, "my_class_external_identifier")を宣言ヘッダまたは定義で指定できます。
+
+上記2つのマクロは、実装に展開されます。(GUIDはグローバルユニーク識別子のことを示します）
+
+(このマニュアルの別の場所([ExportingClassSerialization](https://sites.google.com/site/boostjp/document/boostserialization/reference/special-considerations/exporting-class-serialization))で、派生クラスのシリアライズについて詳細に説明します。)
+
+ライブラリは以下の場合に例外を投げます。
+
+- exportされていない明示的に参照されないタイプの場合
+- 複数のモジュールまたはDLLでシリアライズのための同じタイプがインスタンス化された場合</span>
