@@ -1,163 +1,188 @@
 #Boost逆引きリファレンス
 逆引きリファレンスは、やりたいことから方法を調べるためのリファレンスです。
 
-[テンプレートページ](https://sites.google.com/site/boostjp/tips/template_page)
+[テンプレートページ](/tips/template_page)
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>データ構造](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>並行データ構造](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>入出力](#TOC--2)</li><li class='goog-toc'>[<strong>4 </strong>数値操作](#TOC--3)</li><li class='goog-toc'>[<strong>5 </strong>文字列操作](#TOC--4)</li><li class='goog-toc'>[<strong>6 </strong>関数](#TOC--5)</li><li class='goog-toc'>[<strong>7 </strong>クラス](#TOC--6)</li><li class='goog-toc'>[<strong>8 </strong>イディオム](#TOC--7)</li><li class='goog-toc'>[<strong>9 </strong>メモリ](#TOC--8)</li><li class='goog-toc'>[<strong>10 </strong>検証](#TOC--9)</li><li class='goog-toc'>[<strong>11 </strong>プロセス](#TOC--10)</li><li class='goog-toc'>[<strong>12 </strong>数学](#TOC--11)</li><li class='goog-toc'>[<strong>13 </strong>コンパイル時処理](#TOC--12)</li><li class='goog-toc'>[<strong>14 </strong>並行処理](#TOC--13)</li><li class='goog-toc'>[<strong>15 </strong>ネットワーク](#TOC--14)</li><li class='goog-toc'>[<strong>16 </strong>日付・時間](#TOC--15)</li><li class='goog-toc'>[<strong>17 </strong>言語バインディング](#TOC--16)</li><li class='goog-toc'>[<strong>18 </strong>コンピュータビジョン](#TOC--17)</li><li class='goog-toc'>[<strong>19 </strong>開発環境](#TOC--18)</li></ol>
+**目次**
+- [データ構造](#data_structure)
+- [並行データ構造](#concurrent_data_structure)
+- [入出力](#io)
+- [数値演算](#numeric)
+- [文字列操作](#string)
+- [関数](#function)
+- [クラス](#class)
+- [イディオム](#idiom)
+- [メモリ](#memory)
+- [検証](#validation)
+- [プロセス](#process)
+- [数学](#math)
+- [コンパイル時処理](#compile_time)
+- [並行処理](#concurrency)
+- [ネットワーク](#network)
+- [日付・時間](#datetime)
+- [言語バインディング](#lang_binding)
 
 
+## <a name="data_structure" href="data_structure">データ構造</a>
+
+- [配列](/tips/array.md)
+- [多次元配列](/tips/multi_array.md)
+- [タプル](/tips/tuple.md)
+- [ハッシュ表](/tips/hashmap.md)
+- [グラフ](/tips/graph.md)
+- [コンテナに複数の並び順を持たせる](/tips/multi_index.md)
+- [for each文](/tips/foreach.md)
+- [リスト処理の遅延評価](/tips/list.md)
+- [動的型](/tips/dynamic_type.md)
+- [サイズを動的に変更できるビット集合](/tips/dynamic_bitset.md)
+- [循環バッファ](/tips/circular_buffer.md)
+- [優先順位を付けて並べ替える](/tips/priority_sort.md)
 
 
-##<b>データ構造</b>
+## <a name="concurrent_data_structure" href="concurrent_data_structure">並行データ構造</a>
 
-- [配列](https://sites.google.com/site/boostjp/tips/array)
-- [多次元配列](https://sites.google.com/site/boostjp/tips/multi_array)
-- [タプル](https://sites.google.com/site/boostjp/tips/tuple)
-- [ハッシュ表](https://sites.google.com/site/boostjp/tips/hashmap)
-- [グラフ](https://sites.google.com/site/boostjp/tips/graph)
-- [コンテナに複数の並び順を持たせる](https://sites.google.com/site/boostjp/tips/multi_index)
-- [for each文](https://sites.google.com/site/boostjp/tips/foreach)
-- [リスト処理の遅延評価](https://sites.google.com/site/boostjp/tips/list)
-- [動的型](https://sites.google.com/site/boostjp/tips/dynamic_type)
-- [サイズを動的に変更できるビット集合](https://sites.google.com/site/boostjp/tips/dynamic_bitset)
-- [循環バッファ](https://sites.google.com/site/boostjp/tips/circular_buffer)
-- [優先順位を付けて並べ替える](https://sites.google.com/site/boostjp/tips/priority_sort)
-
-##<b>並行データ構造</b>
-
-- [ロックフリーキュー](https://sites.google.com/site/boostjp/tips/lockfree-queue)
-- [ロックフリースタック](https://sites.google.com/site/boostjp/tips/lockfree-stack)
-
-##<b>入出力</b>
-
-- [ファイル／ディレクトリ操作](https://sites.google.com/site/boostjp/tips/filesystem)
-- [シリアライズ](https://sites.google.com/site/boostjp/tips/serialize)
-- [XMLの読み込み／書き込み](https://sites.google.com/site/boostjp/tips/xml)
-- [JSONの読み込み／書き込み](https://sites.google.com/site/boostjp/tips/json)
-- [iniファイルの読み込み／書き込み](https://sites.google.com/site/boostjp/tips/ini)
-- [メモリマップドファイル](https://sites.google.com/site/boostjp/tips/memory_mapped_file)
-- [ストリームの状態を戻す](https://sites.google.com/site/boostjp/tips/io_state)
-- [ロギング](https://sites.google.com/site/boostjp/tips/logging)
-
-##<b>数値操作</b>
-<ul/>
+- [ロックフリーキュー](/tips/lockfree-queue.md)
+- [ロックフリースタック](/tips/lockfree-stack.md)
 
 
-- [多倍長整数](https://sites.google.com/site/boostjp/tips/multiprec-int)
-- [多倍長浮動小数点数](https://sites.google.com/site/boostjp/tips/multiprec-float)
+## <a name="io" href="io">入出力</a>
 
-##<b>文字列操作</b>
+- [ファイル／ディレクトリ操作](/tips/filesystem.md)
+- [シリアライズ](/tips/serialize.md)
+- [XMLの読み込み／書き込み](/tips/xml.md)
+- [JSONの読み込み／書き込み](/tips/json.md)
+- [iniファイルの読み込み／書き込み](/tips/ini.md)
+- [メモリマップドファイル](/tips/memory_mapped_file.md)
+- [ストリームの状態を戻す](/tips/io_state.md)
+- [ロギング](/tips/logging.md)
 
-- [文字列操作](https://sites.google.com/site/boostjp/tips/string_algo)
-- [文字列フォーマット](https://sites.google.com/site/boostjp/tips/format)
-- [構文解析](https://sites.google.com/site/boostjp/tips/parser)
-- [静的な正規表現](https://sites.google.com/site/boostjp/tips/static_regex)
-- [動的な正規表現](https://sites.google.com/site/boostjp/tips/dynamic_regex)
 
-##<b>関数</b>
+## <a name="numeric" href="numeric">数値演算</a>
 
-- [関数ポインタと関数オブジェクトを統一的に扱う](https://sites.google.com/site/boostjp/tips/function)
-- [カリー化／部分適用](https://sites.google.com/site/boostjp/tips/partial_eval)
-- [無名関数](https://sites.google.com/site/boostjp/tips/lambda)
-- [名前付き引数](https://sites.google.com/site/boostjp/tips/named_parameter)
+- [多倍長整数](/tips/multiprec-int.md)
+- [多倍長浮動小数点数](/tips/multiprec-float.md)
 
-##<b>クラス</b>
 
-- [クラスをコピー不可にする](https://sites.google.com/site/boostjp/tips/noncopyable)
-- [コピー不可なオブジェクトを持ちまわる](https://sites.google.com/site/boostjp/tips/noncopyable_container)
-- [ムーブ可能なクラスを定義する](https://sites.google.com/site/boostjp/tips/move)
-- [組み込み型を必ず初期化する](https://sites.google.com/site/boostjp/tips/initialize)
-- [無効値の統一的な表現](https://sites.google.com/site/boostjp/tips/optional)
-- [ユーザー定義型を扱える型安全な共用体](https://sites.google.com/site/boostjp/tips/variant)
-- [オブジェクトにユニークなIDを付ける](https://sites.google.com/site/boostjp/tips/uuid)
-- [演算子自動定義する](https://sites.google.com/site/boostjp/tips/operators)
-- [イテレータを作る](https://sites.google.com/site/boostjp/tips/iterator)
+## <a name="string" href="string">文字列操作</a>
 
-##<b>イディオム</b>
+- [文字列操作](/tips/string_algo.md)
+- [文字列フォーマット](/tips/format.md)
+- [構文解析](/tips/parser.md)
+- [静的な正規表現](/tips/static_regex.md)
+- [動的な正規表現](/tips/dynamic_regex.md)
 
-- [有限状態マシン](https://sites.google.com/site/boostjp/tips/finite_state_machine)
-- [スコープを抜ける際に実行されるブロック](https://sites.google.com/site/boostjp/tips/scope_guard)
-- [シグナル／スロット](https://sites.google.com/site/boostjp/tips/signals)
+
+## <a name="function" href="function">関数</a>
+
+- [関数ポインタと関数オブジェクトを統一的に扱う](/tips/function.md)
+- [カリー化／部分適用](/tips/partial_eval.md)
+- [無名関数](/tips/lambda.md)
+- [名前付き引数](/tips/named_parameter.md)
+
+
+## <a name="class" href="class">クラス</a>
+
+- [クラスをコピー不可にする](/tips/noncopyable.md)
+- [コピー不可なオブジェクトを持ちまわる](/tips/noncopyable_container.md)
+- [ムーブ可能なクラスを定義する](/tips/move.md)
+- [組み込み型を必ず初期化する](/tips/initialize.md)
+- [無効値の統一的な表現](/tips/optional.md)
+- [ユーザー定義型を扱える型安全な共用体](/tips/variant.md)
+- [オブジェクトにユニークなIDを付ける](/tips/uuid.md)
+- [演算子自動定義する](/tips/operators.md)
+- [イテレータを作る](/tips/iterator.md)
+
+
+## <a name="idiom" href="idiom">イディオム</a>
+
+- [有限状態マシン](/tips/finite_state_machine.md)
+- [スコープを抜ける際に実行されるブロック](/tips/scope_guard.md)
+- [シグナル／スロット](/tips/signals.md)
 - コルーチン
 
-##<b>メモリ</b>
 
-- [リソースを自動的に解放する](https://sites.google.com/site/boostjp/tips/smart_ptr)
+## <a name="memory" href="memory">メモリ</a>
+
+- [リソースを自動的に解放する](/tips/smart_ptr.md)
 - プロセス間共有メモリ
 - 値の共有／Flyweightパターン
 - メモリプール
 
-##<b>検証</b>
+
+## <a name="validation" href="validation">検証</a>
+
+- [単体テスト](/tips/unit_test.md)
+- [実行時アサート](/tips/dynamic_assert.md)
+- [コンパイル時アサート](/tips/static_assert.md)
 
 
-- [単体テスト](https://sites.google.com/site/boostjp/tips/unit_test)
-- [実行時アサート](https://sites.google.com/site/boostjp/tips/dynamic_assert)
-- [コンパイル時アサート](https://sites.google.com/site/boostjp/tips/static_assert)
+## <a name="process" href="process">プロセス</a>
 
-##<b>プロセス</b>
+- [コマンドラインオプションの定義／取得](/tips/program_options.md)
 
 
-- [コマンドラインオプションの定義／取得](https://sites.google.com/site/boostjp/tips/program_options)
+## <a name="math" href="math">数学</a>
 
-##<b>数学</b>
-
-- [乱数](https://sites.google.com/site/boostjp/tips/random)
-- [線形代数](https://sites.google.com/site/boostjp/tips/linear-algebra)
-- [数学](https://sites.google.com/site/boostjp/tips/math)
+- [乱数](/tips/random.md)
+- [線形代数](/tips/linear-algebra.md)
+- [数学](/tips/math.md)
 - 単位演算
-- [区間演算](https://sites.google.com/site/boostjp/tips/interval_arithmetic)
-- [統計処理](https://sites.google.com/site/boostjp/tips/statistics)
-- [計算幾何](https://sites.google.com/site/boostjp/tips/geometry)
+- [区間演算](/tips/interval_arithmetic.md)
+- [統計処理](/tips/statistics.md)
+- [計算幾何](/tips/geometry.md)
 - 常微分方程式
 
-##<b>コンパイル時処理</b>
+
+## <a name="compile_time" href="compile_time"コンパイル時処理</a>
 
 - EDSLの作成
-- [型特性](https://sites.google.com/site/boostjp/tips/type_traits)
+- [型特性](/tips/type_traits.md)
 - 型リスト操作
-- [コンパイル時アサート](https://sites.google.com/site/boostjp/tips/static_assert)
-- [コンパイル時条件によるオーバーロード](https://sites.google.com/site/boostjp/tips/constcond_overload)
-
-##<b>並行処理</b>
+- [コンパイル時アサート](/tips/static_assert.md)
+- [コンパイル時条件によるオーバーロード](/tips/constcond_overload.md)
 
 
-- [スレッド](https://sites.google.com/site/boostjp/tips/thread)
-- [MPI並列計算](https://sites.google.com/site/boostjp/tips/mpi)
+## <a name="concurrency" href="concurrency">並行処理</a>
 
-##<b>[ネットワーク](https://sites.google.com/site/boostjp/tips/network)</b>
+- [スレッド](/tips/thread.md)
+- [MPI並列計算](/tips/mpi.md)
 
-- [TCP](https://sites.google.com/site/boostjp/tips/network/tcp)
+
+## <a name="network" href="network">ネットワーク</a>
+
+- [TCP](/tips/network/tcp.md)
 - UDP
 - SSL
 - シリアルポート
 
-##<b>日付・時間</b>
+
+## <a name="datetime" href="datetime">日付・時間</a>
+
+- [日付の計算](/tips/date_time.md)
+- [処理時間の計測](/tips/timer.md)
 
 
-- [日付の計算](https://sites.google.com/site/boostjp/tips/date_time)
-- [処理時間の計測](https://sites.google.com/site/boostjp/tips/timer)
-
-##<b>言語バインディング</b>
-
+## <a name="lang_binding" href="lang_binding">言語バインディング</a>
 
 - Pythonバインディング
 
-##<b>コンピュータビジョン</b>
 
+## <a name="computer_vision" href="computer_vision">コンピュータビジョン</a>
 
 - 画像処理
 
-##<b>開発環境</b>
 
-- [Boostのバージョンを調べる](https://sites.google.com/site/boostjp/tips/version)
-- [コンパイラ間の差を吸収する](https://sites.google.com/site/boostjp/tips/config)
-- コンパイラが、あるC++0xの機能をサポートしているかどうかでコードを変更する
-- コンパイラによって、テンプレート中の hoge<T>::type x; や fuga.f(); がコンパイルエラーになったりならなかったりする問題を回避する
-- メンバ関数テンプレートの呼び出しでコンパイルエラーになる問題を回避する
-- [ビルドツール](https://sites.google.com/site/boostjp/tips/build)
+## <a name="env" href="env">開発環境</a>
+
+- [Boostのバージョンを調べる](/tips/version.md)
+- [コンパイラ間の差を吸収する](/tips/config.md)
+	- コンパイラが、あるC++11の機能をサポートしているかどうかでコードを変更する
+	- コンパイラによって、テンプレート中の `hoge<T>::type x;` や `fuga.f();` がコンパイルエラーになったりならなかったりする問題を回避する
+	- メンバ関数テンプレートの呼び出しでコンパイルエラーになる問題を回避する
+- [ビルドツール](/tips/build.md)
 - ビルドしたバイナリを実行する
 - ディレクトリ構造を保存した状態でインストールを行う
-- [ヘッダオンリー or ビルドが必要なライブラリ](https://sites.google.com/site/boostjp/tips/build_link)
-- [C++11にもBoostにも存在するライブラリ](https://sites.google.com/site/boostjp/tips/cxx11-boost-mapping)
+- [ヘッダオンリー or ビルドが必要なライブラリ](/tips/build_link.md)
+- [C++11にもBoostにも存在するライブラリ](/tips/cxx11-boost-mapping.md)
+
