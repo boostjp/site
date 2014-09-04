@@ -1,6 +1,7 @@
 #運営メンバ
 
 | | |
+|--|--|
 | ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/faithandbrave.png) | 高橋 晶(Akira Takahashi)<br/>Boost.勉強会 東京 主催者<br/>株式会社ロングゲート 取締役<br/>Boost.Geometryコントリビュータ<br/>Site : [https://sites.google.com/site/faithandbrave/about](https://sites.google.com/site/faithandbrave/about)<br/>Mail : faithandbrave@gmail.com<br/>My Favorite Boost : Fusion, MultiIndex, Spirit.Qi, Geometry |
 | [![](https://raw.githubusercontent.com/boostjp/image/master/the-team/hotwatermorning.png) |湯朝剛介(hotwatermorning)<br/>Boost.勉強会 札幌 主催者<br/>Blog : [http://d.hatena.ne.jp/heisseswasser/](http://d.hatena.ne.jp/heisseswasser/)<br/>Mail : hotwatermorning@gmail.com<br/>My Favorite Boost : Thread, Spirit.Qi, Lambda |
 | ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/bleis.png) | 平野雅寛(bleis-tift)<br/>Boost.勉強会 名古屋 主催者<br/>Blog : [http://d.hatena.ne.jp/bleis-tift/](http://d.hatena.ne.jp/bleis-tift/)<br/>Mail : bleis-tift@hotmail.co.jp<br/>My Favorite Boost : Variant, Optional, Function, Lambda |
