@@ -41,7 +41,7 @@ Lingr で発言する為にはアカウントを取得する必要がありま�
 
 ##リクエスト
 
-- **[読みたいC++資料リクエスト](https://sites.google.com/site/boostjp/archive/cpp_online_reading/request)**
+- **[読みたいC++資料リクエスト](./cpp_online_reading/request.md)**
 
 今後読んでみたい C++ の資料があれば上記のページに追加して下さい。
 
