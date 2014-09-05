@@ -1,28 +1,21 @@
 #第9回 C++オンライン読書会
-
-###日時
-
+##日時
 2013/01/05 20:00-
 
 
-
-###資料
-
-<h1 style='margin:0px 0px 8px;font-family:inherit;font-size:18px;padding:0px;border:0px'><b style='font-size:medium;line-height:24px'>[C++で例外安全なコーディング](https://sites.google.com/site/boostjp/cppnow/2012#exception-safe-coding)</b></h1>
+##資料
+[C++で例外安全なコーディング](/cppnow/2012.md#exception-safe-coding)
 
 
-###参加者リスト
-
+##参加者リスト
 3名。
 
-- jyample
-- manga_osyo
-- Toshiaki Ohkuma
+1. jyample
+2. manga_osyo
+3. Toshiaki Ohkuma
 
-###ログ
 
-<ul/>
-
+##ログ
 [http://lingr.com/room/cppjp/archives/2013/01/05#message-13452775](http://lingr.com/room/cppjp/archives/2013/01/05#message-13452775)
 
 
