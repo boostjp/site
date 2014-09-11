@@ -4,7 +4,7 @@
 
 
 ##資料
-[C++11: 高次のThreading](/cppnow/2012.md#high-level-threading)
+[C++11: 高次のスレッディング](/cppnow/2012.md#high-level-threading)
 
 
 ###参加者リスト

@@ -4,7 +4,7 @@
 
 
 ##資料
-[C++で例外安全なコーディング](/cppnow/2012.md#exception-safe-coding)
+[C++で例外安全なコーディング](/cppnow/2012.md#exception-safety)
 
 
 ##参加者リスト

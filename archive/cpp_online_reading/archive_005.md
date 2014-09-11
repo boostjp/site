@@ -4,7 +4,7 @@
 
 
 ##資料
-[ラムダ関数](/cppnow/2012.md#lambda)
+[ラムダ関数](/cppnow/2012.md#lambda-functions)
 
 
 ##参加者リスト
