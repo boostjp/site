@@ -1,34 +1,39 @@
 #Exporting Class Serialization
-<span style='font-family:Verdana,Arial,Bitstream Vera Sans,Helvetica,sans-serif;line-height:normal'>
-このマニュアルの他の箇所([ExportKey](https://sites.google.com/site/boostjp/document/boostserialization/reference/serializableconcept/class-serialization-traits/export-key))で、BOOST_CLASS_EXPORTを解説しています。Exportは2つのことを意味します。
+このマニュアルの他の箇所([ExportKey](../serializableconcept/class-serialization-traits/export-key.md))で、`BOOST_CLASS_EXPORT`を解説しています。Exportは2つのことを意味します。
 
 - 他で参照されないコードをインスタンス化します。
 - シリアライズのために、external識別子とクラスを対応づけます。クラスが明示的に参照されないという事実は、この必要条件を示します。
+
 C++では、明示的に参照されないコードは、仮想関数によって実装されます。よって、派生クラスを基底クラスのポインタまたは参照経由で操作するような用法の場合、exoprtが必要であることを意味します。
 
-任意のアーカイブクラスのヘッダをインクスードするのと同じソースモジュールにあるBOOST_CLASS_EXPORTは、それらアーカイブクラスにポリモーフィックなポインタのシリアライズを要求するコードをインスタンス化します。
+任意のアーカイブクラスのヘッダをインクスードするのと同じソースモジュールにある`BOOST_CLASS_EXPORT`は、それらアーカイブクラスにポリモーフィックなポインタのシリアライズを要求するコードをインスタンス化します。
 
-アーカイブクラスのヘッダが(BOOST_CLASS_EXPORTしているソースに)含まれないならば、どんなコードもインスタンス化されません。
+アーカイブクラスのヘッダが(`BOOST_CLASS_EXPORT`しているソースに)含まれないならば、どんなコードもインスタンス化されません。
 
-BOOST_CLASS_EXPORTは、アーカイブクラスのインクルードよりもあとに配置する必要があります。
+`BOOST_CLASS_EXPORT`は、アーカイブクラスのインクルードよりもあとに配置する必要があります。
 
-BOOST_CLASS_EXPORTを使うコードは、以下のようになります
+`BOOST_CLASS_EXPORT`を使うコードは、以下のようになります
+
 ```cpp
-`#include <boost/archive/text_oarchive.hpp>`
-<pre style='margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px'><span><code>#include <boost/archive/text_oarchive.hpp>
-</code></span>`...` <span><code>// other archives
-</code></span><span><code>
-#include "a.hpp" </code></span><span><code>// header declaration for class a
-</code></span>`BOOST_CLASS_EXPORT``(``a``)`
-`...` `// other class headers and exports`</pre>
-これは、スタンドアロンな実行ファイルや、スタティックライブラリ、ダイナミックまたはsharedライブラリであるかどうかに関係しません。
-"a.hpp"でBOOST_CLASS_EXPORTをインクルードすることは、アーカイブヘッダをBOOST_CLASS_EXPORTよりも前にインクルードするという上記のルールに従うことを、困難にするまたは不可能にします。
+#include <boost/archive/text_oarchive.hpp>
 
-このようなことが行いたい場合、ヘッダファイルの宣言にてBOOST_CLASS_EXPORT_KEYを用い、クラス定義を行うファイルでBOOST_CLASS_EXPORT_IMPLEMENTを用いることでうまく解決できます。
+#include <boost/archive/text_oarchive.hpp>
+... // other archives
+
+#include "a.hpp" // header declaration for class a
+BOOST_CLASS_EXPORT(a)
+... // other class headers and exports
+```
+
+これは、スタンドアロンな実行ファイルや、スタティックライブラリ、ダイナミックまたはsharedライブラリであるかどうかに関係しません。
+
+`"a.hpp"`で`BOOST_CLASS_EXPORT`をインクルードすることは、アーカイブヘッダを`BOOST_CLASS_EXPORT`よりも前にインクルードするという上記のルールに従うことを、困難にするまたは不可能にします。
+
+このようなことが行いたい場合、ヘッダファイルの宣言にて`BOOST_CLASS_EXPORT_KEY`を用い、クラス定義を行うファイルで`BOOST_CLASS_EXPORT_IMPLEMENT`を用いることでうまく解決できます。
 
 この仕組みは、コードをスタティックまたはsharedライブラリに置くことを考慮しています。
 
-アーカイブクラスのヘッダも合わせてインクルードしない限り、ライブラリコードにBOOST_CLASS_EXPORTを配置しても効果はありません。
+アーカイブクラスのヘッダも合わせてインクルードしない限り、ライブラリコードに`BOOST_CLASS_EXPORT`を配置しても効果はありません。
 
 そんなわけで、ライブラリを作る際は、利用者が期待するすべてのアーカイブクラスのためのヘッダをインクルードしなければなりません。
 
@@ -41,4 +46,4 @@ BOOST_CLASS_EXPORTを使うコードは、以下のようになります
 現実には、ポインタ経由でシリアライズする1つまたはそれ以上の仮想関数を持つクラスをすべて登録またはexportします。
 
 この機能の実現が、C++のベンダー拡張に依存することに注意してください。しかし、boostでテスとされるすべてのC++コンパイラは、要求された拡張を提供します。ライブラリは、それぞれのコンパイラで必要となる追加の宣言を含みます。将来C++コンパイラがこれらの拡張か、それと等価な何かをサポートするという予想は合理的と言えます。
-</span>
+
