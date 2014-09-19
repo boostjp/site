@@ -1,16 +1,19 @@
 #実行時アサート
 実行時アサートには、`BOOST_ASSERT`マクロ、もしくは`BOOST_ASSERT_MSG`マクロを使用する。これらのマクロは、[`<boost/assert.hpp>`](http://www.boost.org/doc/libs/release/libs/utility/assert.html)ヘッダで定義される。
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>式を検証する](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>メッセージ付きで式を検証する](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>検証失敗時の動作をカスタマイズする](#TOC--2)</li></ol>
+
+##インデックス
+- [式を検証する](#assertion-expression)
+- [メッセージ付きで式を検証する](#assertion-with-message)
+- [検証失敗時の動作をカスタマイズする](#customize-fail-behavior)
 
 
+## <a name="assertion-expression" href="assertion-expression">式を検証する</a>
 
-
-###式を検証する
 式を検証するには、`BOOST_ASSERT`マクロを使用する。このマクロは引数として条件式をとる。条件式が`true`に評価される場合は検証成功となり、`false`の場合は検証失敗と見なされる。
 
 検証失敗時は、プログラムが異常終了する。
+
 デフォルトでは、`NDEBUG`が`#define`されていない場合(デバッグモード)のみ検証が行われる。
 
 ```cpp
@@ -26,11 +29,11 @@ int main()
 }
 ```
 * BOOST_ASSERT[color ff0000]
-* BOOST_ASSERT[color ff0000]
+
 
 出力例：
 
-```cpp
+```
 This application has requested the Runtime to terminate it in an unusual way.
 Please contact the application's support team for more information.
 Assertion failed!
@@ -40,10 +43,10 @@ File: main.cpp, Line 9
 
 Expression: 1 != 1
 
-
 ```
 
-###メッセージ付きで式を検証する
+## <a name="assertion-with-message" href="assertion-with-message">メッセージ付きで式を検証する</a>
+
 検証失敗時にコンパイルエラーにエラーメッセージを出力するには、`BOOST_ASSERT_MSG`マクロを使用する。基本的な使い方は`BOOST_ASSERT`と同様で、第2引数にメッセージの文字列を取る。
 
 ```cpp
@@ -73,20 +76,23 @@ int main(int argc, char* argv[])
 ```
 * BOOST_ASSERT[color ff0000]
 
-これは`NDEBUG`が`#define`されているビルド（リリースビルド）では暗黙のうちに通過してしまいバグの原因となるので、
-あくまで簡易的なデバッグ用途に留めるべきである。
+これは`NDEBUG`が`#define`されているビルド（リリースビルド）では暗黙のうちに通過してしまいバグの原因となるので、あくまで簡易的なデバッグ用途に留めるべきである。
 
-###検証失敗時の動作をカスタマイズする
+
+## <a name="customize-fail-behavior" href="customize-fail-behavior">検証失敗時の動作をカスタマイズする</a>
+
 `BOOST_ASSERT`での検証失敗時の動作をカスタマイズしたい場合は、以下の方法をとる：
-<ol>
+
 - `<boost/assert.hpp>`ヘッダをインクルードする前に、`BOOST_ENABLE_ASSERT_HANDLER`を`#define`する
-- `boost`名前空間に`assertion_failed()`関数を定義する</ol>
+- `boost`名前空間に`assertion_failed()`関数を定義する
+
 この方法をとることによって、検証失敗時に、自分で定義した`assertion_failed()`関数が呼ばれるようになる。この関数には、以下のパラメータが渡される：
-<ol>
-- 式
+
+- 文字列化された式
 - 関数名(形式は環境依存)
 - ファイル名(`__FILE__`)
-- 行番号(`__LINE__`)</ol>
+- 行番号(`__LINE__`)
+
 ```cpp
 #define BOOST_ENABLE_ASSERT_HANDLER
 #include <boost/assert.hpp>
@@ -114,16 +120,18 @@ int main()
 * BOOST_ENABLE_ASSERT_HANDLER[color ff0000]
 * assertion_failed[color ff0000]
 
+
 出力例：
 
-```cpp
+```
 This application has requested the Runtime to terminate it in an unusual way.
 Please contact the application's support team for more information.
 
-
+```
 
 log.txt：
-```cpp
+
+```
 Expression : 1 == 2
 Function : int main()
 File : C:\language\cpp\main.cpp
@@ -131,16 +139,18 @@ Line : 21
 ```
 
 `BOOST_ASSERT_MSG`の場合は、以下のようにする：
-<ol>
+
 - `<boost/assert.hpp>`ヘッダをインクルードする前に、`BOOST_ENABLE_ASSERT_HANDLER`を`#define`する
-- `boost`名前空間に`assertion_failed_msg()`関数を定義する</ol>
+- `boost`名前空間に`assertion_failed_msg()`関数を定義する
+
 これによって、`BOOST_ASSERT_MSG`での検証失敗時に、自分で定義した`assertion_failed_msg()`関数が呼ばれるようになる。この関数には、以下のパラメータが渡される：
-<ol>
-- 式
+
+- 文字列化された式
 - メッセージ
 - 関数名(形式は環境依存)
 - ファイル名(`__FILE__`)
 - 行番号(`__LINE__`)</ol>
+
 ```cpp
 #define BOOST_ENABLE_ASSERT_HANDLER
 #include <boost/assert.hpp>
@@ -172,14 +182,15 @@ int main()
 
 出力例：
 
-```cpp
+```
 This application has requested the Runtime to terminate it in an unusual way.
 Please contact the application's support team for more information.
 
-
+```
 
 log.txt：
-```cpp
+
+```
 Expression : 1 == 2
 Message : 1 is not 2
 Function : int main()
