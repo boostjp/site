@@ -1,13 +1,18 @@
 #動的型
 
+##インデックス
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>あらゆる型の値を代入する](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>値を取り出す](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>あらゆる型の値をコンテナに入れる](#TOC--2)</li></ol>
+- [あらゆる型の値を代入する](#assign)
+- [値を取り出す](#extract-value)
+- [あらゆる型の値をコンテナに入れる](#store-to-container)
 
 
+## <a name="assign" href="assign">あらゆる型の値を代入する</a>
 
-<h4>あらゆる型の値を代入する</h4>`boost::any`型には、あらゆる型の値を格納することができる。
-格納されている型のチェックには、`boost::any::type()`メンバ関数を使用し、[`std::typeinfo`](/reference/typeinfo/type_info.md)型で判定することができる。
+`boost::any`型には、あらゆる型の値を格納することができる。
+
+格納されている型のチェックには、`boost::any::type()`メンバ関数を使用し、[`std::type_info`](https://sites.google.com/site/cpprefjp/reference/typeinfo/type_info)型で判定することができる。
+
 格納されている値を元の型に変換するには、`boost::any_cast()`関数を使用する。
 
 ```cpp
@@ -32,41 +37,62 @@ int main()
 ```
 
 実行結果：
-```cpp
+
+```
 Hello
 ```
 
-<h4>値を取り出す</h4>`boost::any`に代入した値を取り出すには、`boost::any_cast()`関数を使用する。
+## <a name="extract-value" href="extract-value">値を取り出す</a>
+
+`boost::any`に代入した値を取り出すには、`boost::any_cast()`関数を使用する。
+
 この関数の使用方法は、コピーして取り出す、値を参照する、値へのポインタを取得する、の3つがある。
 
-<b>方法1. 値をコピーして取り出す。</b>
+
+**方法1. 値をコピーして取り出す。**
+
 ```cpp
 boost::any a;
-...
+…
 T x = boost::any_cast<T>(a);
+```
 
-のように、テンプレート引数に取り出す型Tを指定し、引数としてboost::anyオブジェクトへの参照を渡すことで、boost::any型に格納されている型Tのオブジェクトを、コピーで取り出すことができる。
-型Tのオブジェクトが格納されていない場合には、boost::bad_any_cast例外が投げられる。
+この例のように、テンプレート引数に取り出す型`T`を指定し、引数として`boost::any`オブジェクトへの参照を渡すことで、`boost::any`型に格納されている型Tのオブジェクトを、コピーで取り出すことができる。
 
-<b>方法2. 値を参照する。</b>
+型`T`のオブジェクトが格納されていない場合には、`boost::bad_any_cast`例外が投げられる。
+
+
+**方法2. 値を参照する。**
+
 ```cpp
 boost::any a;
-...
+…
 T& x = boost::any_cast<T&>(a);
+```
 
-のように、テンプレート引数にT&を指定した場合、boost::any型に格納されている型Tのオブジェクトを参照することができる。
-型Tのオブジェクトが格納されていない場合には、boost::bad_any_cast例外が投げられる。
+この例のように、テンプレート引数に`T&`を指定した場合、`boost::any`型に格納されている型Tのオブジェクトを参照することができる。
 
-<b>方法3. 値へのポインタを取得する。</b>
+型`T`のオブジェクトが格納されていない場合には、`boost::bad_any_cast`例外が投げられる。
+
+
+**方法3. 値へのポインタを取得する。**
+
 ```cpp
 boost::any a;
 T* x = boost::any_cast<T>(&a);
 ```
 
-のように、テンプレート引数に型`T`を指定し、引数として`boost::any`オブジェクトへのポインタを渡すことで、`boost::any`型に格納されている型Tのオブジェクトへのポインタを取得できる。
+この例のように、テンプレート引数に型`T`を指定し、引数として`boost::any`オブジェクトへのポインタを渡すことで、`boost::any`型に格納されている型Tのオブジェクトへのポインタを取得できる。
+
 型`T`のオブジェクトが格納されていない場合には、ヌルポインタが返される。
-<h4>あらゆる型の値をコンテナに入れる</h4>`std::vector<boost::any>`のようにすれば、あらゆる型の値をコンテナに入れることができる。
+
+
+## <a name="store-to-container" href="store-to-container">あらゆる型の値をコンテナに入れる</a>
+
+`std::vector<boost::any>`のようにすれば、あらゆる型の値をコンテナに入れることができる。
+
 このようなコンテナは、ヘテロなコンテナ(heterogeneous containers)と呼ばれる。
+
 
 ```cpp
 #include <iostream>
@@ -99,9 +125,11 @@ int main()
 }
 
 実行結果：
-```cpp
+
+```
 int : 1
 string : Hello
 double : 3.14
-
 ```
+
+
