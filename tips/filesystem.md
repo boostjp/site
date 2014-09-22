@@ -2,39 +2,62 @@
 ファイル／ディレクトリ操作には、[Boost Filesystem Library](http://www.boost.org/libs/filesystem/doc/index.htm)を使用する。Boost Filesystem Libraryは、多くのプラットフォーム、コンパイラで動作する汎用的なファイル／ディレクトリ操作のライブラリである。このライブラリはビルドを必要する。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>エラーハンドリング](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>ファイルのコピー](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>ファイルの削除](#TOC--2)</li><li class='goog-toc'>[<strong>4 </strong>ファイルの移動 or ファイル名の変更](#TOC-or-)</li><li class='goog-toc'>[<strong>5 </strong>ファイルの存在チェック](#TOC--3)</li><li class='goog-toc'>[<strong>6 </strong>ファイルサイズの取得](#TOC--4)</li><li class='goog-toc'>[<strong>7 </strong>ファイルの最終更新日時を取得](#TOC--5)</li><li class='goog-toc'>[<strong>8 </strong>ディレクトリの作成](#TOC--6)</li><li class='goog-toc'>[<strong>9 </strong>ディレクトリ内のファイルを列挙](#TOC--7)</li><li class='goog-toc'>[<strong>10 </strong>ディレクトリ内の全てのファイルを再帰的に列挙](#TOC--8)</li></ol>
+##インデックス
+- [エラーハンドリング](#error-handling)
+- [ファイルをコピーする](#copy-file)
+- [ファイルの削除](#remove-file)
+- [ファイルを移動する／ファイル名を変更する](#rename)
+- [ファイルが存在するかを調べる](#exists)
+- [ファイルサイズを取得する](#file-size)
+- [ファイルの最終更新日時を取得する](#last-write-time)
+- [ディレクトリを作成する](#create-directory)
+- [ディレクトリ内のファイルを列挙する](#enumerate-file)
+- [ディレクトリ内の全てのファイルを再帰的に列挙](#recursive-enumerate-file)
 
 
 
-<h4>エラーハンドリング</h4>Boost Filesystem Libraryのエラーハンドリングは、例外を投げるバージョン、エラーを参照で返すバージョンの2種類が存在する。
+## <a name="error-handling" href="error-handling">エラーハンドリング</a>
 
-<b>例外バージョン</b>
+Boost Filesystem Libraryのエラーハンドリングは、例外を投げるバージョン、エラーを参照で返すバージョンの2種類が存在する。
 
-何も指定しなければ、Boost Filesystem Libraryの関数でエラーが出た場合にはboost::filesystem::filesystem_error例外が投げられる。
+**例外バージョン**
 
-<code style='color:rgb(0,96,0)'>namespace fs = boost::filesystem;</code>
-<code style='color:rgb(0,96,0)'>try {</code>
-<code style='color:rgb(0,96,0)'>    fs::foo();</code>
-<code style='color:rgb(0,96,0)'>}</code>
-<code style='color:rgb(0,96,0)'>catch (fs::filesystem_error& ex) {</code>
-<code style='color:rgb(0,96,0)'>    std::cout << "エラー発生！ : " << ex.what() << std::endl;</code><code style='color:rgb(0,96,0)'>}</code>
+何も指定しなければ、Boost Filesystem Libraryの関数でエラーが出た場合には`boost::filesystem::filesystem_error`例外が投げられる。
 
-<b>エラーを参照で返すバージョン</b>
+```cpp
+namespace fs = boost::filesystem;
+try {
+    fs::foo();
+}
+catch (fs::filesystem_error& ex) {
+    std::cout << "エラー発生！ : " << ex.what() << std::endl;
+}
+```
 
-Boost Filesystem Libraryの最後の引数として、boost::system::error_codeの変数を渡せば、例外ではなく渡したエラー用変数にエラー情報が格納される。
 
-<code style='color:rgb(0,96,0)'>namespace fs = boost::filesystem;</code>
+**エラーを参照で返すバージョン**
 
-<code style='color:rgb(0,96,0)'>boost::system::error_code error;</code>
-<code style='color:rgb(0,96,0)'>fs::foo(error);</code>
+Boost Filesystem Libraryの最後の引数として、`boost::system::error_code`の変数を渡せば、例外ではなく渡したエラー用変数にエラー情報が格納される。
 
-<code style='color:rgb(0,96,0)'>if (error) {</code>
-<code style='color:rgb(0,96,0)'>    std::cout << "エラー発生！ : " << error.message() << std::endl;</code>
-<code style='color:rgb(0,96,0)'>}</code>
+```cpp
+namespace fs = boost::filesystem;
 
-<h4>ファイルのコピー</h4>ファイルをコピーするには、boost::filesystem::copy_file()を使用する。
-第1引数はコピー元のパス、第2引数はコピー先のパスである。
+boost::system::error_code error;
+fs::foo(error);
+
+if (error) {
+    std::cout << "エラー発生！ : " << error.message() << std::endl;
+}
+```
+
+
+## <a name="copy-file" href="copy-file">ファイルをコピーする</a>
+
+ファイルをコピーするには、`boost::filesystem::copy_file()`関数を使用する。
+
+- 第1引数はコピー元のパス
+- 第2引数はコピー先のパス
+
 コピーに失敗した場合は例外が投げられる。
 
 ```cpp
@@ -58,7 +81,7 @@ int main()
 }
 ```
 
-上書きコピーをする場合は、copy_file()関数に、copy_option::overwrite_if_existsオプションを指定する。
+上書きコピーをする場合は、`copy_file()`関数に、`boost::filesystem::copy_option::overwrite_if_exists`オプションを指定する。
 
 ```cpp
 #include <iostream>
@@ -81,7 +104,10 @@ int main()
 }
 ```
 
-<h4>ファイルの削除</h4>ファイルを削除するには、boost::filesystem::remove()を使用する。
+
+## <a name="remove-file" href="remove-file">ファイルを削除する</a>
+
+ファイルを削除するには、`boost::filesystem::remove()`を使用する。
 
 ```cpp
 #include <iostream>
@@ -103,9 +129,13 @@ int main()
 }
 ```
 
-<h4>ファイルの移動 or ファイル名の変更</h4>ファイルの移動、ファイル名の変更には、boost::filesystem::rename()を使用する。
-第1引数は、元となるファイルのパス。
-第2引数は、移動先のファイルパス、もしくは新たなファイル名。
+
+## <a name="rename" href="rename">ファイルを移動する／ファイル名を変更する</a>
+
+ファイルの移動、ファイル名の変更には、`boost::filesystem::rename()`を使用する。
+
+- 第1引数は、元となるファイルのパス。
+- 第2引数は、移動先のファイルパス、もしくは新たなファイル名。
 
 ```cpp
 #include <iostream>
@@ -128,8 +158,12 @@ int main()
 }
 ```
 
-<h4>ファイルの存在チェック</h4>ファイルが存在するか調べるには、boost::filesystem::exists()を使用する。
-ファイルが存在する場合はtrueを返し、存在しない場合はfalseを返す。
+## <a name="exists" href="exists">ファイルが存在するかを調べる</a>
+
+ファイルが存在するか調べるには、`boost::filesystem::exists()`関数を使用する。
+
+この関数は、ファイルが存在する場合は`true`を返し、存在しない場合は`false`を返す。
+
 ファイルのステータス取得に失敗した場合はエラーを返す。
 
 ```cpp
@@ -153,7 +187,10 @@ int main()
 }
 ```
 
-<h4>ファイルサイズの取得</h4>ファイルサイズを取得するには、boost::filesystem::file_size()を使用する。
+
+## <a name="file-size" href="file-size">ファイルサイズを取得する</a>
+
+ファイルサイズを取得するには、`boost::filesystem::file_size()`関数を使用する。
 
 ```cpp
 #include <iostream>
@@ -178,12 +215,17 @@ int main()
 ```
 
 実行結果の例:
-```cpp
+
+```
 ファイルサイズ: 5107200
 ```
 
-<h4>ファイルの最終更新日時を取得</h4>ファイルの最終更新日時を取得するには、boost::filesystem::last_write_time()を使用する。
-これは戻り値として、std::time_t型を返す。
+
+## <a name="last-write-time" href="last-write-time">ファイルの最終更新日時を取得する</a>
+
+ファイルの最終更新日時を取得するには、`boost::filesystem::last_write_time()`関数を使用する。
+
+この関数は戻り値として、`std::time_t`型として日時を返す。
 
 ```cpp
 #include <iostream>
@@ -208,13 +250,19 @@ int main()
 ```
 
 実行結果の例：
-```cpp
+
+```
 2011-Mar-30 05:56:11
 ```
 
-<h4>ディレクトリの作成</h4>ディレクトリを作成するには、boost::filesystem::create_directory()を使用する。
-引数として、ディレクトリのパスを指定する。
-ネストしたディレクトリを一気に作ろうとした場合はエラーとなる。
+
+## <a name="create-directory" href="create-directory">ディレクトリを作成する</a>
+
+ディレクトリを作成するには、`boost::filesystem::create_directory()`関数を使用する。
+
+第1引数として、ディレクトリのパスを指定する。
+
+ネストしたディレクトリを一度に作ろうとした場合はエラーとなる。
 
 ```cpp
 #include <iostream>
@@ -234,7 +282,7 @@ int main()
 }
 ```
 
-ネストしたディレクトリを含めて一気に作成するには、boost::filesystem::create_directories()を使用する。
+ネストしたディレクトリを含めて一度に作成するには、`boost::filesystem::create_directories()`関数を使用する。
 
 ```cpp
 #include <iostream>
@@ -254,7 +302,10 @@ int main()
 }
 ```
 
-<h4>ディレクトリ内のファイルを列挙</h4>ディレクトリ内のファイルを列挙するには、boost::filesystem::directory_iteratorを使用する。
+
+## <a name="enumerate-file" href="enumerate-file">ディレクトリ内のファイルを列挙する</a>
+
+ディレクトリ内のファイルを列挙するには、`boost::filesystem::directory_iterator`クラスを使用する。
 
 ```cpp
 #include <iostream>
@@ -277,12 +328,15 @@ int main()
 
 実行結果の例
 
-```cpp
+```
 "a.txt"
 "b.png"
+```
 
 
-<h4>ディレクトリ内の全てのファイルを再帰的に列挙</h4>ディレクトリ内の全てのファイルを再帰的に列挙するには、boost::filesystem::recursive_directory_iteratorを使用する。
+## <a name="recursive-enumerate-file" href="recursive-enumerate-file">ディレクトリ内の全てのファイルを再帰的に列挙する</a>
+
+ディレクトリ内の全てのファイルを再帰的に列挙するには、`boost::filesystem::recursive_directory_iterator`クラスを使用する。
 
 ```cpp
 #include <iostream>
@@ -305,7 +359,7 @@ int main()
 
 実行結果の例
 
-```cpp
+```
 "D:/boost_1_49_0/boost/filesystem\config.hpp"
 "D:/boost_1_49_0/boost/filesystem\convenience.hpp"
 "D:/boost_1_49_0/boost/filesystem\detail\utf8_codecvt_facet.hpp"
@@ -327,7 +381,6 @@ int main()
 "D:/boost_1_49_0/boost/filesystem\v3\path.hpp"
 "D:/boost_1_49_0/boost/filesystem\v3\path_traits.hpp"
 ```
-
 
 
 
