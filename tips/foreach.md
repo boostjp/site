@@ -9,6 +9,7 @@ Boost Foreach Libraryは、C++においてシーケンスをループするた�
 - [`std::map`に対して使用する](#apply-map)
 - [逆順にループする](#reverse-iteration)
 - [配列に対して使用する](#apply-multi-array)
+- [C++11 範囲`for`文との違い](#difference-cpp11-range-for)
 
 
 ## <a name="boost-foreach-macro" href="boost-foreach-macro">BOOST_FOREACHマクロ</a>
@@ -311,4 +312,70 @@ int main()
 2 20
 ```
 
+
+## <a name="difference-cpp11-range-for" href="difference-cpp11-range-for">C++11 範囲for文との違い</a>
+
+C++11から、`BOOST_FOREACH`マクロ相当の言語機能である「範囲`for`文(range-based for statement)」が導入された。この2つには、大きく以下の差異がある：
+
+1. `BOOST_FOREACH`マクロは、イテレータの組(`std::pair<begin-iter, end-iter>`)をサポートしている。
+2. 範囲`for`文は、要素の変数を、範囲`for`文で定義しなければならない。
+
+以下に、その詳細を記載する。
+
+
+**1. イテレータの組**
+
+`BOOST_FOREACH`マクロは、イテレータの組をループ対象にできる。
+
+C++11 範囲`for`文は、ループ対象の型が`begin()`/`end()`メンバ関数、もしくは`begin()`/end()非メンバ関数を持っている必要がある。
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <boost/foreach.hpp>
+
+int main()
+{
+    const std::vector<int> v = {3, 1, 4};
+
+    // pairのfirstを先頭イテレータ、secondを終端イテレータと見なす
+    const auto range = std::make_pair(v.cbegin(), v.cend());
+
+    BOOST_FOREACH (int x, range) {
+        std::cout << x << std::endl;
+    }
+}
+```
+
+実行結果：
+
+```
+3
+1
+4
+```
+
+
+**2. 範囲`for`文は、要素の変数を、範囲`for`文で定義しなければならない。**
+
+範囲`for`文の構文規則は、以下のようになっている：
+
+```
+for ( for-range-declaration : expression ) statement
+```
+
+`for-range-declaration`の部分が、要素の変数宣言を要求している。そのため、以下のようなコードは書けない：
+
+```cpp
+std::vector<int> v;
+
+int x;
+for (x : v) {} // コンパイルエラー：変数xは範囲for文で定義しなければならない
+
+// 正しいコード：
+for (int x : v) {}
+```
+
+`BOOST_FOREACH`マクロには、このような制限はないため、定義済みの変数を要素として使用できる。
 
