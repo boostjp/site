@@ -935,9 +935,9 @@ int main()
 ((3, 3), (6, 6), (4, 9), (7, 7))
 ```
 
-![](https://raw.githubusercontent.com/boostjp/image/master/tips/geometry/simplify.jpg)
+![](https://raw.githubusercontent.com/boostjp/image/master/tips/geometry/simplify.svg)
 
-緑が元となった図形。青が`simplify()`によって単純化された図形。
+緑の実線が元となった図形。オレンジの点線が`simplify()`によって単純化された図形。
 
 
 ## <a name="unique" href="unique">図形から重複した点を削除する</a>
