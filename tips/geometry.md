@@ -935,7 +935,7 @@ int main()
 ((3, 3), (6, 6), (4, 9), (7, 7))
 ```
 
-![](https://raw.githubusercontent.com/boostjp/image/master/tips/geometry/simplify.svg)
+![](https://raw.githubusercontent.com/boostjp/image/master/tips/geometry/simplify.png)
 
 緑の実線が元となった図形。オレンジの点線が`simplify()`によって単純化された図形。
 
