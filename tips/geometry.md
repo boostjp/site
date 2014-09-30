@@ -1119,6 +1119,6 @@ int main()
 
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/geometry/rotate.png)
 
-緑が回転前、オレンジが回転後の図形。
+緑の実線が回転前、オレンジの点線が回転後の図形。
 
 
