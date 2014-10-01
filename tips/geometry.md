@@ -1051,7 +1051,13 @@ int main()
         ;
 
     // 3倍に拡大する
-    trans::scale_transformer<point, point> translate(3.0);
+    // テンプレート引数：
+    //   1 : 点の要素を表す値型
+    //   2 : 変換元の次元数
+    //   3 : 変換先の次元数
+    // コンストラクタの引数
+    //   1 : 倍率
+    trans::scale_transformer<double, 2, 2> translate(3.0);
 
     polygon result;
     bg::transform(poly, result, translate);
