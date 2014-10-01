@@ -691,7 +691,6 @@ typedef bg::model::box<point> box;
 
 int main()
 {
-
     polygon poly;
     bg::exterior_ring(poly) = boost::assign::list_of<point>
         (2.0, 1.3)
@@ -708,7 +707,7 @@ int main()
 
     box bx;
     bg::envelope(poly, bx);
-      
+
     std::cout
         << "poly: " << bg::dsv(poly) << std::endl
         << "bx: "   << bg::dsv(bx) << std::endl;
