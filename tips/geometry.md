@@ -1005,7 +1005,15 @@ int main()
         ;
 
     // (1.5, 1.5)移動する
-    trans::translate_transformer<point, point> translate(1.5, 1.5);
+    // テンプレート引数：
+    //   1 : 点の要素を表す値型
+    //   2 : 変換元の次元数(最大3)
+    //   3 : 変換先の次元数(最大3)
+    // コンストラクタの引数
+    //   1 : xの移動量
+    //   2 : yの移動量
+    //   3 : zの移動量(省略可)
+    trans::translate_transformer<double, 2, 2> translate(1.5, 1.5);
 
     polygon result;
     bg::transform(poly, result, translate);
