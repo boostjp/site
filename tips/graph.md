@@ -818,7 +818,7 @@ Boost.Graphには、最小全域木を作るためのアルゴリズムとして
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/minimum_spanning_tree_1.png)
 
 
-以下のような最小全域木(<font color="red">赤線部分</font>)が手に入る。
+以下のような最小全域木(赤の太線部分)が手に入る。
 
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/minimum_spanning_tree_2.png)
 
