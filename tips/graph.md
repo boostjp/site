@@ -348,7 +348,7 @@ Tokyo-Nagoya : 325.5km
 
 経路図：
 
-[![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/dijkstra_shortest_paths.png)
+![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/dijkstra_shortest_paths.png)
 
 
 ```cpp
