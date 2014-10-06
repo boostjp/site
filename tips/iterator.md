@@ -151,7 +151,7 @@ int main()
 Forward Traversal Iterators（`forward_traversal_tag`で表されるイテレータ）はSingle Pass Iterators（`single_pass_traversal_tag`で表されるイテレータ）の要求に加えて、イテレータについてデフォルトコンストラクタが要求される。
 
 
-## <a name="iterator_adaptor" href="iterator_adaptor">より楽にイテレータを作成するためのiterator_adaptor</a>
+## <a name="iterator_adaptor" href="iterator_adaptor">より楽にイテレータを作成する（iterator_adaptor）</a>
 `boost::iterator_facade`では、要求される関数を自分で定義しなければならない。`boost::iterator_facade`は柔軟ではあるが、決まったパターンを書くのは面倒である。例えば、既存のイテレータやポインタを用いてイテレータを作成する場合はイテレータやポインタを変数と要求される関数をいちいち書かなければならないことがそれに当たるだろう。そこで、`boost::iterator_adaptor`を使えば、あらかじめ既存のイテレータやポインタを変数に持っており要求される関数が定義されているイテレータのクラスを作ることができる。
 
 端的に言えば、`boost::iterator_adaptor`は`boost::iterator_facade`を継承しており、イテレートするための変数と要求する関数が定義されているクラスである。
