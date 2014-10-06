@@ -1,17 +1,21 @@
 #ハッシュ表
-ハッシュ表には、Boost Unordered Libraryを使用する。
-std::mapのハッシュ表バージョンがboost::unordered_map。
-std::setのハッシュ表バージョンがboost::unordered_set。
+ハッシュ表には、[Boost Unordered Library](http://www.boost.org/doc/libs/release/doc/html/unordered.html)を使用する。
+
+`std::map`のハッシュ表バージョンが`boost::unordered_map`。`std::set`のハッシュ表バージョンが`boost::unordered_set`。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>基本的な使い方](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>ユーザー定義型をキーにする(オーバーロード)](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>ユーザー定義型をキーにする(ポリシー)](#TOC--2)</li></ol>
+##インデックス
+- [基本的な使い方](#basic-usage)
+- [ユーザー定義型をキーにする(オーバーロード)](#user-defined-type-as-key-using-overload)
+- [ユーザー定義型をキーにする(ポリシー)](#user-defined-type-as-key-using-policy)
 
 
+## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+基本操作は、`std::set`や`std::map`と同様である。
 
-<h4>基本的な使い方</h4>基本操作は、std::setやstd::mapと同様である。
 ポリシーを設定しない場合、要求されるテンプレートパラメータは、キーと値の型である。
-以下の場合、std::stringをキー、intを値とするハッシュ表を作成している。
+
+以下の場合、`std::string`型をキー、`int`型を値とするハッシュ表を作成している。
 
 ```cpp
 #include <iostream>
@@ -40,11 +44,14 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 1
+```
 
+## <a name="user-defined-type-as-key-using-overload" href="user-defined-type-as-key-using-overload">ユーザー定義型をキーにする(オーバーロード)</a>
 
-<h4>ユーザー定義型をキーにする(オーバーロード)</h4>ユーザー定義型をキーにするには、その型の等値比較を行う関数と、ハッシュを計算する関数を定義する必要がある。
+ユーザー定義型をキーにするには、その型の等値比較を行う関数と、ハッシュを計算する関数を定義する必要がある。
+
 以下がその簡単な例である。
 
 ```cpp
@@ -94,12 +101,16 @@ int main()
 ```
 
 実行結果：
-```cpp
-6
 
 ```
+6
+```
 
-<h4>ユーザー定義型をキーにする(ポリシー)</h4>ユーザー定義型をキーにする方法として、等値比較の演算子やハッシュを計算する関数がすでに定義されている場合がある。
+
+## <a name="user-defined-type-as-key-using-policy" href="user-defined-type-as-key-using-policy">ユーザー定義型をキーにする(ポリシー)</a>
+
+ユーザー定義型をキーにする方法として、等値比較の演算子やハッシュを計算する関数がすでに定義されている場合がある。
+
 そういった場合に、別名の等値比較関数、ハッシュ計算関数をテンプレートパラメータで指定することができる。
 
 ```cpp
@@ -152,10 +163,12 @@ int main()
         std::cout << "not found" << std::endl;
     }
 }
-
+```
 
 実行結果：
-```cpp
-6
 
 ```
+6
+```
+
+
