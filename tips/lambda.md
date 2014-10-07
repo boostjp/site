@@ -2,12 +2,14 @@
 無名関数は、[Boost Lambda Library](http://www.boost.org/doc/libs/release/doc/html/lambda.html) または、 [Boost Phoenix Library](http://www.boost.org/doc/libs/release/libs/phoenix/doc/html/index.html) を使用することによって表現できる。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>基本的な使い方](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>メンバ変数を扱う](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>2つ以上の式を書く](#TOC-2-)</li></ol>
+##インデックス
+- [基本的な使い方](#basic-usage)
+- [メンバ変数を扱う](#member-variable)
+- [2つ以上の式を書く](#multiple-expressions)
 
 
-
-<h4>基本的な使い方</h4>Boost.Lambdaによって無名関数を表現するには、boost::lambda名前空間の_1, _2というプレースホルダーと呼ばれる値を使用する。以下は、コンテナから特定の条件に一致した値を見つけ出す例である。
+## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+Boost.Lambdaによって無名関数を表現するには、`boost::lambda`名前空間の`_1`, `_2`というプレースホルダーと呼ばれる値を使用する。以下は、コンテナから特定の条件に一致した値を見つけ出す例である。
 
 ```cpp
 #include <iostream>
@@ -32,7 +34,7 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 3
 ```
 
@@ -59,18 +61,22 @@ int main()
         std::cout << "Not Found" << std::endl;
 }
 ```
+* _1 == 3[color ff0000]
 
 実行結果：
-```cpp
+```
 3
 ```
 
-_1という値は、「無名関数の第1引数」を意味し、この場合、コンテナの各要素が渡されることになる。
-Boost.Lambdaでは、_1, _2のようなプレースホルダーに対して各種演算処理を適用するというスタイルで、無名関数を表現する。
+`_1`という値は、「無名関数の第1引数」を意味し、この場合、コンテナの各要素が渡されることになる。
 
-<h4>メンバ変数を扱う</h4>Boost.Lambdaでメンバ変数を扱うには、operator->*()を使用する。左辺はポインタである必要があるため、&_1のように表記し、右辺にはメンバ変数ポインタを指定する。
+Boost.Lambdaでは、`_1`, `_2`のようなプレースホルダーに対して各種演算処理を適用するというスタイルで、無名関数を表現する。
 
-以下は、Personクラスを要素とするコンテナから、nameメンバ変数をキーにして該当する要素を検索する処理である：
+
+## <a name="member-variable" href="member-variable">メンバ変数を扱う</a>
+Boost.Lambdaでメンバ変数を扱うには、`operator->*()`を使用する。左辺はポインタである必要があるため、`&_1`のように表記し、右辺にはメンバ変数ポインタを指定する。
+
+以下は、`Person`クラスを要素とするコンテナから、`name`メンバ変数をキーにして該当する要素を検索する処理である：
 
 ```cpp
 #include <iostream>
@@ -100,34 +106,34 @@ int main()
     else
         std::cout << "Not Found" << std::endl;
 }
+```
 
 実行結果：
-```cpp
+```
 1
 ```
 
-<h4>2つ以上の式を書く</h4>Boost.Phoenix のカンマ演算子を使用して、複数の式を書くことが出来る。
 
-<span style='background-color:rgb(239,239,239)'>
+## <a name="multiple-expressions" href="multiple-expressions">2つ以上の式を書く</a>
+Boost.Phoenix のカンマ演算子を使用して、複数の式を書くことができる。
+
 ```cpp
 #include <boost/phoenix.hpp>
 #include <boost/range/irange.hpp>
 #include <boost/range/algorithm/for_each.hpp>
 #include <iostream>
 
-void
-disp(int n){
+void disp(int n){
     std::cout << n << std::endl;
 }
 
-int
-main(){
+int main(){
     namespace phx = boost::phoenix;
     using phx::arg_names::arg1;
     // カンマ演算子で複数の式を書く
     (
         phx::bind(&disp, arg1),        // disp(10)
-        phx::bind(&disp, arg1 + arg1)<span>  // disp(10 + 10)</span>
+        phx::bind(&disp, arg1 + arg1)  // disp(10 + 10)
     )(10);
     
     int sum = 0;
@@ -142,22 +148,13 @@ main(){
     return 0;
 }
 ```
-* ,        [color ff0000]
-* )[color ff0000]
-* ([color ff0000]
-* ,[color ff0000]
-* )[color ff0000]
-
-</span>
 
 実行結果：
-<span style='line-height:13px;background-color:rgb(239,239,239)'>```cpp
+```
 10
 20
 0,1,2,3,4,5,6,7,8,9,
 45
 ```
-
-</span>
 
  
