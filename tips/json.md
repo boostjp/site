@@ -1,20 +1,24 @@
 #JSONの読み込み／書き込み
-JSONの読み込み、書き込みには、Boost Property Tree Libraryを使用する。Boost.PropertyTreeは、ツリー構造の汎用プロパティ管理のためのライブラリで、XML, JSON, INIファイルなどへの統一的なアクセス方法を提供する。
+JSONの読み込み、書き込みには、[Boost Property Tree Library](http://www.boost.org/doc/libs/release/doc/html/property_tree.html)を使用する。Boost.PropertyTreeは、ツリー構造の汎用プロパティ管理のためのライブラリで、XML, JSON, INIファイルなどへの統一的なアクセス方法を提供する。
 
 ここでは、Boost.PropertyTreeを使用したJSONファイルの読み込みと書き込みを紹介する。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>JSONの読み込み](#TOC-JSON-)</li><li class='goog-toc'>[<strong>2 </strong>JSONの書き込み](#TOC-JSON-1)</li><li class='goog-toc'>[<strong>3 </strong>応用編：キーにドット（.）が含まれる場合の子ノードの挿入](#TOC-.-)</li></ol>
+#インデックス
+- [JSONの読み込み](#read)
+- [JSONの書き込み](#write)
+- [応用編：キーにドット（.）が含まれる場合の子ノードの挿入](#key-includes-dot)
 
 
-<h4>JSONの読み込み</h4>JSONの読み込みには、boost::property_tree::read_json()関数を使用する。
-この関数を使用するには、<boost/property_tree/json_parser.hpp>をインクルードする。
+## <a name="read" href="read">JSONの読み込み</a>
+JSONの読み込みには、Pboost::property_tree::read_json()`関数を使用する。
+
+この関数を使用するには、`<boost/property_tree/json_parser.hpp>`をインクルードする。
 
 以下のJSONファイルを読み込んでみよう。
 
 data.json
-```cpp
+```
 {
    "Data": 
    {
@@ -82,10 +86,10 @@ int main()
         }
     }
 }
-
+```
 
 実行結果：
-```cpp
+```
 value : 3
 str : Hello
 id : 1
@@ -94,29 +98,30 @@ id : 2
 name : Millia
 ```
 
-まず、data.value要素を取得するには、JSONが読み込まれたboost::property_tree:ptreeに対して以下のように指定する：
-
+まず、「Data.value」要素を取得するには、JSONが読み込まれた`boost::property_tree:ptree`に対して以下のように指定する：
 
 ```cpp
-boost::optional<int> value = pt.get_optional<int>("Data.value")
-
+boost::optional<int> value = pt.get_optional<int>("Data.value");
+```
 
 要素アクセスのパス指定には、ドットによるアクセスを行う。
-get_optional関数によって、指定された型に変換された要素が返される。要素の取得に失敗した場合は、boost::optionalの無効値が返される。
+
+`ptree`クラスの`get_optional()`メンバ関数によって、指定された型に変換された要素が返される。要素の取得に失敗した場合は、`boost::optional`型の無効値が返される。
 
 
-次に、Data.infoの要素を列挙するには、boost::property_tree::ptreeに対して、get_child()関数でパス指定し、子ツリーを取得する。取得した子ツリーをBOOST_FOREACHでループし、各要素を取得する。
-
-
+次に、「Data.info」の要素を列挙するには、`boost::property_tree::ptree`オブジェクトに対して、`get_child()`メンバ関数でパス指定し、子ツリーを取得する。取得した子ツリーを`BOOST_FOREACH`でループし、各要素を取得する。
 
 ```cpp
-BOOST_FOREACH (const ptree::value_type& child, pt.get_child("Data.info"))
-
-
-
-<h4>JSONの書き込み</h4>JSONを書き込むには、要素を設定するためにboost::property_tree::ptreeのput()メンバ関数を使用し、add_childで子ツリーに登録する。
-保存には、boost::property_tree::write_jsonにファイル名とptreeを指定する。
+BOOST_FOREACH (const ptree::value_type& child, pt.get_child("Data.info")) {
+    …
+}
 ```
+
+
+## <a name="write" href="write">JSONの書き込み</a>
+JSONを書き込むには、要素を設定するために`boost::property_tree::ptree`クラスの`put()`メンバ関数を使用し、`add_child()`メンバで子ツリーに登録する。
+
+保存には、`boost::property_tree::write_json()`関数に、ファイル名と`ptree`オブジェクトを指定する。
 
 
 ```cpp
@@ -153,11 +158,10 @@ int main()
 
     write_json("data_out.json", pt);
 }
-
+```
 
 出力されたdata_out.json：
-
-```cpp
+```
 {
     "Data":
     {
@@ -178,32 +182,56 @@ int main()
 }
 ```
 
-<h4>応用編：キーにドット（.）が含まれる場合の子ノードの挿入</h4>通常、`ptree` に子要素を追加する場合は `put_child()` または `add_child()` メンバ関数を利用するが、これら高レベル関数ではドットがセパレータとして扱われるので、キーにドットが含まれる場合は挿入がうまく行かない。
+
+## <a name="key-includes-dot" href="key-includes-dot">応用編：キーにドット（.）が含まれる場合の子ノードの挿入</a>
+通常、`ptree`オブジェクト に子要素を追加する場合は `put_child()`メンバ関数 または `add_child()` メンバ関数を利用するが、これら高レベル関数ではドットが区切り文字として扱われるので、キーにドットが含まれる場合は挿入がうまく行かない。
 
 ```cpp
-【擬似コードによる処理の流れ】ptree::put_child(key_str, node) {　　key_strをパーズしてセパレータを認識する；　　this->push_back(パーズした子階層, node)；}
+【擬似コードによる処理の流れ】
+R ptree::put_child(key_str, node) {
+    key_strをパーズしてセパレータを認識する；
+    this->push_back(パーズした子階層, node);
+}
 ```
 
-そこで、セパレータを無効にしたいキーがある場合は、そのキーに対して明示的にboost::property_tree::pathを初期化するステップを踏む。
+そこで、区切り文字を無効にしたいキーがある場合は、そのキーに対して明示的に`boost::property_tree::path`クラスを初期化するステップを踏む。
 
 ```cpp
-pt.put_child(    property_tree::path("result for \"test.dat\"", '\0') // セパレータを無効化    , {"success"});
+pt.put_child(
+      property_tree::path("result for \"test.dat\"", '\0') // セパレータを無効化
+    , {"success"}
+);
 ```
 
 出力例：
+```
+{
+    "result for \"test.dat\"": "success"
+}
+```
+
+この方法は結構万能である。さらなる子階層への追加は `operator /` を利用し以下のようにする。
+
 ```cpp
-{  "result for \"test.dat\"": "success"}
-
-
-
-この方法は結構万能である。さらなる子階層への追加は operator / を利用し以下のようにする。
-
-```cpp
-property_tree::ptree result_data_pt;result_data_pt.push_back({"", 1234});result_data_pt.push_back({"", 5678});pt.put_child(    property_tree::path("result for \"test.dat\"", '\0') // セパレータを無効化        / "result_data",    result_data_pt);
+property_tree::ptree result_data_pt;
+result_data_pt.push_back({"", 1234});
+result_data_pt.push_back({"", 5678});
+pt.put_child(
+    property_tree::path("result for \"test.dat\"", '\0') // セパレータを無効化
+        / "result_data",
+    result_data_pt);
 ```
 
 
- 出力例：
-```cpp
-{    "result for \"test.dat\"": {        "result_data": [            1234,            5678        ]    }}
+出力例：
 ```
+{
+    "result for \"test.dat\"": {
+        "result_data": [
+            1234,
+            5678
+        ]
+    }
+}
+```
+
