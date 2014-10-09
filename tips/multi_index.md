@@ -1,19 +1,26 @@
 #コンテナに複数の並び順を持たせる
-std::vectorやstd::mapといったコンテナを使用していると、希に「mapとして使いたいけど挿入順も覚えておきたい」といったことや、「mapに、値からキーを検索する機能がほしい」といった要求が出てくることがある。そういった要求を叶えてくれるのが、[Boost Multi-Index Library](http://www.boost.org/libs/multi_index/doc/index.html)である。
+`std::vector`や`std::map`といったコンテナを使用していると、希に「`map`として使いたいけど挿入順も覚えておきたい」といったことや、「`map`に、値からキーを検索する機能がほしい」といった要求が出てくることがある。そういった要求を叶えてくれるのが、[Boost Multi-Index Library](http://www.boost.org/libs/multi_index/doc/index.html)である。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>boost::multi_index_containerの基本的な使い方 - 挿入順を知っているstd::set](#TOC-boost::multi_index_container---std::set)</li><li class='goog-toc'>[<strong>2 </strong>インデックスの表現を変数に持つ](#TOC--)</li><li class='goog-toc'>[<strong>3 </strong>インデックスに名前を付ける](#TOC--1)</li><li class='goog-toc'>[<strong>4 </strong>インデックスと標準コンテナの対応表](#TOC--2)</li><li class='goog-toc'>[<strong>5 </strong>複数のキーを持つmap](#TOC-map)</li><li class='goog-toc'>[<strong>6 </strong>双方向map](#TOC-map1)</li><li class='goog-toc'>[<strong>7 </strong>要素書き換え](#TOC--3)</li><li class='goog-toc'>[<strong>8 </strong>動的な並び順](#TOC--4)</li></ol>
+##インデックス
+- [`boost::multi_index_container`の基本的な使い方 - 挿入順を知っている`std::set`](#basic-usage)
+- [インデックスの表現を変数に持つ](#store-index)
+- [インデックスに名前を付ける](#give-a-name-to-index)
+- [インデックスと標準コンテナの対応表](#index-container-table)
+- [複数のキーを持つ`map`を定義する](#multiple-key-map)
+- [双方向`map`を定義する](#bidirectional-map)
+- [要素を書き換える](#modify-element)
+- [並び順を動的に変更する](#rearrange)
 
 
-
-<h4>boost::multi_index_containerの基本的な使い方 - 挿入順を知っているstd::set</h4>Boost.MultiIndexでは、boost::multi_index_containerというコンテナ型を使用する。
+## <a name="basic-usage" href="basic-usage">boost::multi_index_containerの基本的な使い方 - 挿入順を知っているstd::set</a>
+Boost.Multi-Indexでは、`boost::multi_index_container`というコンテナ型を使用する。
 
 ```cpp
-namespace boost{
-namespace multi_index{
+namespace boost {
+namespace multi_index {
 
-template<typename Value,typename IndexSpecifierList,typename Allocator>
+template <typename Value, typename IndexSpecifierList, typename Allocator>
 class multi_index_container;
 
 } // namespace multi_index
@@ -23,10 +30,17 @@ using multi_index::multi_index_container;
 } // namespace boost
 ```
 
-multi_index_containerの第1テンプレートパラメータValueは要素型、第2テンプレートパラメータIndexSpecifierListがインデックス(並び順)のリスト、第3テンプレートパラメータAllocatorがアロケータの型である。
-第2、第3テンプレートパラメータは省略でき、省略した場合のIndexSpecifierListはordered_unique(すなわちstd::set)となる。
+`multi_index_container`のテンプレートパラメータ：
 
-boost::multi_index_container型を使用して、挿入順を知っているstd::setを表現するには、以下のようにする：
+| 引数番号 | パラメータ名         | 説明   |
+|----------|----------------------|--------|
+| 1        | `Value`              | 要素型 |
+| 2        | `IndexSpecifierList` | インデックス(並び順)のリスト |
+| 3        | `Allocator`          | メモリアロケータ |
+
+第2、第3テンプレートパラメータは省略でき、省略した場合の`IndexSpecifierList`は`ordered_unique`(すなわち`std::set`)となる。
+
+`boost::multi_index_container`型を使用して、挿入順を知っている`std::set`を表現するには、以下のようにする：
 
 ```cpp
 #include <iostream>
@@ -57,7 +71,6 @@ int main()
     c.insert(5);
     c.insert(4);
 
-    
     boost::for_each(c, disp);
     std::cout << std::endl;
 
@@ -65,49 +78,51 @@ int main()
     boost::for_each(c.get<1>(), disp);
 }
 ```
+* ordered_unique[color ff0000]
+* sequenced[color ff0000]
 
 実行結果：
-
-```cpp
+```
 1 2 3 4 5 
 1 3 2 5 4 
+```
 
-
-
-ここではインデックスに、重複なしの辞書順を表すordered_uniqueと、挿入順を表すsequencedの2つを指定しており、これを指定したmulti_index_containerはこの2つの並び順を同時に表現できるようになっている。0番目のインデックス(デフォルト)がordered_uniqueのため、要素の追加にはinsertを使用しているが、逆の場合にはpush_backを使用する。
+ここではインデックスに、重複なしの辞書順を表す`ordered_unique`と、挿入順を表す`sequenced`の2つを指定しており、これらを指定した`multi_index_container`はこの2つの並び順を同時に表現できるようになっている。0番目のインデックス(デフォルト)が`ordered_unique`のため、要素の追加には`insert()`を使用しているが、逆の場合には`push_back()`を使用する。
 
 コンテナを使用する際に、何も使用しなければ、そのコンテナは0番目のインデックスとして振る舞うことになる。
-そのため、この例において、BOOST_FOREACHやboost::for_eachといったアルゴリズムに、インデックスを指定せずにコンテナを渡した場合には、辞書順に処理されることになる。
+
+そのため、この例において、`BOOST_FOREACH`や`boost::for_each`といったアルゴリズムに、インデックスを指定せずにコンテナを渡した場合には、辞書順に処理されることになる。
 
 ```cpp
 // 辞書順に表示
 boost::for_each(c, disp);
 ```
 
-
-<span style='line-height:13px'>```cpp
+```
 1 2 3 4 5 
-</span>
+```
+
+インデックスを指定する場合には、`boost::multi_index_container::get<N>()`メンバ関数テンプレートを使用する。
+
+インデックスの番号をテンプレート引数として指定して、その並び順の表現を取得する。
+
+ここでは、`c.get<1>()`とすることで、`sequenced`のインデックスが取得でき、挿入順に処理することができる。
 
 
-インデックスを指定する場合には、boost::multi_index_container::get<N>()を使用する。
-インデックスの番号を指定して、その並び順の表現を取得する。
-ここでは、c.get<1>()とすることで、sequencedのインデックスが取得でき、挿入順に処理することができる。
-
-
-<span style='line-height:13px'><span style='font-family:Arial,sans-serif'>```cpp
+```cpp
 // 挿入順に表示
 boost::for_each(c.get<1>(), disp);
+```
+* get<1>[color ff0000]
 
-</span></span>
-
-<span style='line-height:13px'>```cpp
+```
 1 3 2 5 4 
-</span>
+```
 
-<h4>インデックスの表現を変数に持つ</h4>インデックスの表現を変数に保持したい場合は、boost::multi_index_container::nth_index<N>メタ関数でインデックスの型を取得することができるので、その型にget<N>()したコンテナを参照で格納する。
+## <a name="store-index" href="store-index">インデックスの表現を変数に持つ</a>
+インデックスの表現を変数に保持したい場合は、`boost::multi_index_container::nth_index<N>`メタ関数でインデックスの型を取得できるので、その型に`get<N>()`メンバ関数テンプレートで取得したコンテナを参照で格納する。
 
-
+```cpp
 #include <iostream>
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/sequenced_index.hpp>
@@ -150,21 +165,19 @@ int main()
     boost::for_each(ls, disp);
 }
 ```
-
+* nth_index[color ff0000]
 
 実行結果：
-<span style='font-family:Arial,sans-serif;line-height:19px'>
-<code style='color:rgb(0,96,0)'>1 2 3 4 5 </code>
-<code style='color:rgb(0,96,0)'>1 3 2 5 4 </code>
+```
+1 2 3 4 5 
+1 3 2 5 4 
+```
 
 
-</span>
+## <a name="give-a-name-to-index" href="give-a-name-to-index">インデックスに名前を付ける</a>
+0番目のインデックス、1番目のインデックス、といった指定は、プログラムが小さいうちはいいかもしれないが、直値の指定は一般に管理しにくい。そこで、「タグ」と呼ばれる空の型を作り、それをインデックスを示す名前として使用することができる。
 
-
-
-<h4 style='font-family:Trebuchet MS,arial,sans-serif;font-size:1.2em;background-color:rgb(238,238,238);border-top-style:dotted;border-right-style:dotted;border-bottom-style:dotted;border-left-style:dotted;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-color:rgb(199,199,199);border-right-color:rgb(199,199,199);border-bottom-color:rgb(199,199,199);border-left-color:rgb(199,199,199);color:rgb(26,66,146);padding-top:3px;padding-right:5px;padding-bottom:3px;padding-left:5px;line-height:19px'>インデックスに名前を付ける</h4>0番目のインデックス、1番目のインデックス、といった指定は、プログラムが小さいうちはいいかもしれないが、直値の指定は一般に管理しにくい。そこで、<b>タグ</b>と呼ばれる空の型を作り、それをインデックスを示す名前として使用することができる。
-
-これまでインデックス番号を指定していたget<N>()にはタグ名を指定し、インデックスの型を取得するnth_indexメタ関数の代わりにboost::multi_index_container::index<Tag>メタ関数を使用する。
+これまでインデックス番号を指定していた`get<N>()`にはタグ名を指定し、インデックスの型を取得する`nth_index`メタ関数の代わりに`boost::multi_index_container::index<Tag>`メタ関数を使用する。
 
 ```cpp
 #include <iostream>
@@ -212,38 +225,51 @@ int main()
     boost::for_each(ls, disp);
 }
 ```
-
+* Container::index[color ff0000]
 
 実行結果：
-<span style='font-family:Arial,sans-serif;line-height:19px'>
-<code style='color:rgb(0,96,0)'>1 2 3 4 5 </code>
-<code style='color:rgb(0,96,0)'>1 3 2 5 4 </code>
+```
+1 2 3 4 5 
+1 3 2 5 4 
+```
 
 
-</span>
+## <a name="index-container-table" href="index-container-table">インデックスと標準コンテナの対応表</h4>
+Boost.Multi-Indexのインデックスは、以下のテーブルのように標準コンテナに対応している。
+
+| インデックス         | 対応する標準コンテナ     | 説明 |
+|----------------------|--------------------------|------------|
+| `ordered_unique`     | std::set                 | 辞書順(重複なし) |
+| `ordered_non_unique` | std::multiset            | 辞書順(重複あり) |
+| `hashed_unique`      | std::unordered_set       | ハッシュ表(重複なし) |
+| `hashed_non_unique`  | std::unordered_multiset  | ハッシュ表(重複あり) |
+| `sequenced`          | std::list                | 挿入順 |
+| `random_access`      | std::vector              | ランダムアクセス |
+
+なお、`std::map`は`ordered_(non_)unique`で表現でき、`std::unordered_map`は`hashed_(non_)unique`で表現できる。`map`を表現するには`boost::multi_index::member`を使用する。`map`の例は、「[複数のキーを持つ`map`](#multiple-key-map)」を参照。
 
 
+## <a name="multiple-key-map" href="multiple-key-map">複数のキーを持つmapを定義する</a>
+`boost::multi_index::member`を使用すると、`ordered_(non_)unique`を`std::map`、`hashed_(non_)unique`を`std::unordered_map`のように扱うことができる。
 
+`member`のテンプレートパラメータは、以下のようになっている：
 
+```cpp
+namespace boost { namespace multi_index {
 
-<h4>インデックスと標準コンテナの対応表</h4>Boost.MultiIndexのインデックスは、下記のように標準コンテナに対応している。
-なお、std::mapはordered_(non_)uniqueで表現でき、std::unordered_mapはhashed_(non_)uniqueで表現できる。mapを表現するにはboost::multi_index::memberを使用する。
+template <class Class, typename Type, Type Class::*PtrToMember>
+struct member;
 
+}} // namespace boost::multi_index
+```
 
-| | | |
-|-------------------|------------------------|------------|
-|インデックス |標準コンテナ | 説明 |
-| ordered_unique | std::set | 辞書順(重複なし) |
-| ordered_non_unique | std::multiset | 辞書順(重複あり) |
-| hashed_unique | std::unordered_set | ハッシュ表(重複なし) |
-| hashed_non_unique | std::unordered_multiset | ハッシュ表(重複あり) |
-| sequenced | std::list | 挿入順 |
-| random_access | std::vector | ランダムアクセス |
+| 引数番号 | パラメータ名  | 説明 |
+|----------|---------------|----------------------------------------|
+| 1        | `Class`       | `multi_index_container`の要素型`Value` |
+| 2        | `Type`        | キーにしたいメンバ変数の型             |
+| 3        | `PtrToMember` | キーにしたいメンバ変数へのポインタ     |
 
-<h4>複数のキーを持つmap</h4>boost::multi_index::memberを使用すると、ordered_(non_)unique, hashed_(non_)uniqueをstd::map, std::unordered_mapのように扱うことができる。
-
-memberの第1テンプレートパラメータはユーザー定義型の型、第2テンプレートパラメータはキーにするメンバ変数の型、第3テンプレートパラメータはキーにするメンバ変数へのポインタである。
-memberを使用すると、IDをキーにして要素を検索するmap、名前をキーにして要素を検索するmapを同時に存在させることができる。
+`member`を使用すると、IDをキーにして要素を検索する`map`、名前をキーにして要素を検索する`map`を同時に存在させることができる。
 
 ```cpp
 #include <iostream>
@@ -325,13 +351,15 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 1,Millia,20
 3,Akira,30
 4,Johnny,10
 ```
 
-<h4>双方向map</h4>「[複数のキーをもつmap](https://sites.google.com/site/boostjp/tips/multi_index#TOC-map)」と同じ方法で、IDから名前を調べる、名前からIDを調べる、というような双方向mapを、Boost.MultiIndexで書くことができる。
+
+## <a name="bidirectional-map" href="bidirectional-map">双方向mapを定義する</a>
+「[複数のキーをもつ`map`を定義する](#multiple-key-map)」と同じ方法で、IDから名前を調べる、名前からIDを調べる、というような双方向`map`を、Boost.Multi-Indexで定義できる。
 
 
 ```cpp
@@ -392,20 +420,24 @@ int main()
         }
     }
 }
-
+```
 
 実行結果：
-```cpp
+```
 coffee
 7777
 ```
 
-<h4>要素書き換え</h4>boost::multi_index_containerの要素書き換えには、replace()メンバ関数を使用する方法と、modify()メンバ関数を使用する方法の2種類がある。これは、前者が安全優先の関数であり、後者が速度優先の関数である。
 
-<b>replace()メンバ関数による要素書き換え</b>
+## <a name="modify-element" href="modify-element">要素を書き換える</a>
+`boost::multi_index_container`の要素書き換えには、`replace()`メンバ関数を使用する方法と、`modify()`メンバ関数を使用する方法の2種類がある。これは、前者が安全優先の関数であり、後者が速度優先の関数である。
 
-replace()は、安全優先の要素書換え関数である。
-指定したイテレータの位置の要素を第2引数の値で置き換え、全てのインデックスに適用される。
+
+**`replace()`メンバ関数による要素書き換え**
+
+`replace()`メンバ関数は、安全優先の要素書換え関数である。
+
+指定したイテレータの位置の要素を第2引数の値で置き換え、その変更が全てのインデックスに適用される。
 
 ```cpp
 #include <boost/multi_index_container.hpp>
@@ -434,27 +466,27 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 2 3 4 
-
-
-replaceは以下の方法でこの置き換えを行う。
-
-- 変更された要素がすべてのインデックスリストに関してオリジナルのオーダーを保持する場合、計算量は定数時間で、そうでなければ対数時間
-- イテレータと参照の有効性は保たれる
-- 操作は強い例外安全、つまり、(システムまたはユーザーのデータ型によって引き起こされる)何らかの例外が投げられた場合、multi_index_containerは変化しない
-
-replaceは、標準のSTLコンテナで提供されなかった強力な操作と、強い例外安全が必要であるときに特に便利だ。
-
-replaceの便利さにはコストが伴う。
-更新(と内部のreplaceを検索)のために2回全体の要素をコピーしなければならない。
-要素をコピーすることが高コストな場合、これはまさしくオブジェクトの小さな部分変更のためのかなりの計算コストであるかもしれない。
 ```
 
-<b>modify()関数による要素書き換え</b>
+`replace()`は以下の方法でこの置き換えを行う。
 
-replace()が安全優先な実装なのに対し、modify()関数は速度優先の要素書き換えを行う。
-replace()は、書き換える要素へのイテレータと、要素書き換えのための関数オブジェクトをとる。
+- 変更された要素がすべてのインデックスリストに関してオリジナルの並び順を保持する場合、計算量は定数時間で、そうでなければ対数時間
+- イテレータと参照の有効性は保たれる
+- 操作は強い例外安全、つまり、(システムまたはユーザーのデータ型によって引き起こされる)何らかの例外が投げられた場合、`multi_index_container`オブジェクトは変化しない
+
+`replace()`は、標準のコンテナで提供されなかった強力な操作と、強い例外安全が必要であるときに特に便利だ。
+
+
+`replace()`の便利さにはコストが伴うので注意。更新(と内部のreplaceを検索)のために2回全体の要素をコピーしなければならない。要素をコピーすることが高コストな場合、これはまさしくオブジェクトの小さな部分変更のためのかなりの計算コストであるかもしれない。
+
+
+**`modify()`関数による要素書き換え**
+
+`replace()`が安全優先な実装なのに対し、`modify()`関数は速度優先の要素書き換えを行う。
+
+`replace()`は、書き換える要素へのイテレータと、要素書き換えのための関数オブジェクトをとる。
 
 ```cpp
 #include <boost/multi_index_container.hpp>
@@ -495,13 +527,13 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 2 3 4 
 ```
 
-modify()はreplace()と速度を優先するために、衝突により書き換え失敗が起こった場合に、壊れたデータになってしまうことを防ぐために、要素を削除する。
+`modify()`は速度を優先するために、衝突により書き換え失敗が起こった場合に、壊れたデータになってしまうことを防ぐために、要素を削除する。
 
-さらに、一貫性のためにmodify()は、衝突により書き換え失敗が起こった場合にロールバックするための関数オブジェクトを任意に指定するバージョンも提供している。
+さらに、一貫性のために`modify()`は、衝突により書き換え失敗が起こった場合にロールバックするための関数オブジェクトを任意に指定するバージョンも提供している。
 
 ```cpp
 #include <boost/multi_index_container.hpp>
@@ -552,16 +584,21 @@ int main()
     boost::for_each(c, disp);
 }
 ```
+* rollback_value[color ff0000]
 
-プログラマは、最良の更新メカニズムを決定するためにreplace()、modify()およびロールバックをもつmodify()の振る舞いの差をケースバイケースで考慮しなければなりません。
+プログラマは、最良の更新メカニズムを決定するために`replace()`、`modify()`およびロールバックをもつ`modify()`の振る舞いの差をケースバイケースで考慮しなければならない。
 
-更新関数と衝突時の動作
+更新関数と衝突時の動作をまとめると、以下のようになる：
 
-- replace(it, x)：置換は行われない
-- modify(it, mod)：要素は消去される
-- modify(it, mod, back)：backは復旧するのに使用される(backが例外を投げた場合、要素は消去される)
+| 操作                    | 衝突時の動作 |
+|-------------------------|------------------|
+| `replace(it, x)`        | 置換は行われない |
+| `modify(it, mod)`       | 要素は消去される |
+| `modify(it, mod, back)` | `back`は復旧するのに使用される(`back`が例外を投げた場合、要素は消去される) |
 
-<h4>動的な並び順</h4>Boost.MultiIndexのordered indices, random access indices, sequenced indicesなどのインデックスは不変であるため、通常の手段では並び順をあとから変えることはできない。
+
+## <a name="rearrange" href="rearrange">並び順を動的に変更する</a>
+Boost.Multi-Indexのordered indices, random access indices, sequenced indicesなどのインデックスは不変であるため、通常の手段では並び順をあとから変えることはできない。
 
 ```cpp
 typedef multi_index_container<
@@ -571,8 +608,10 @@ typedef multi_index_container<
 
 container c;
 boost::random_shuffle(c); // エラー！書き換えできない
+```
 
-こういった動的な並び順をインデックスとして持たせるために、rearrangeというメンバ関数が用意されている。
+こういった動的な並び順をインデックスとして持たせるために、`multi_index_container`クラスには`rearrange()`というメンバ関数が用意されている。
+
 以下がその使用例である。2つめのrandom access indicesを、動的な並び順として扱えるようにしている。
 
 ```cpp
@@ -612,16 +651,18 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 12345
 52431
 ```
 
-1つめのrandom access indicesの並び順はそのままに、2つめのrandom access indicesの方だけが、random_shuffleを適用した動的な並び順になっていることがわかる。
-rearrangeを使用するには、multi_index_containerの要素を一旦、reference wrapperのコンテナに持たせてそのコンテナに対して並び順の操作を行う必要がある。
+1つめのrandom access indicesの並び順はそのままに、2つめのrandom access indicesの方だけが、`random_shuffle()`を適用した動的な並び順になっていることがわかる。
 
-Boost.MultiIndexのドキュメントでは、トランプをシャッフルする例が紹介されている。
-[http://www.boost.org/doc/libs/1_46_1/libs/multi_index/example/rearrange.cpp](http://www.boost.org/doc/libs/1_46_1/libs/multi_index/example/rearrange.cpp)
+`rearrange()`を使用するには、`multi_index_container`の要素を一旦、reference wrapperのコンテナに持たせてそのコンテナに対して並び順の操作を行う必要がある。
+
+Boost.Multi-Indexのドキュメントでは、トランプをシャッフルする例が紹介されている。
+
+- [http://www.boost.org/doc/libs/release/libs/multi_index/example/rearrange.cpp](http://www.boost.org/doc/libs/release/libs/multi_index/example/rearrange.cpp)
 
 
 
