@@ -211,6 +211,14 @@ class file_descriptor
 
 Boost.Containerなど、ムーブセマンティクスに対応したコンテナを使用すると、コピー不可／ムーブ可能なクラスをコンテナに入れて扱える。
 
+Boostにおける、ムーブ対応しているコンテナは以下：
+
+- Boost.Containerの全てのコンテナ
+- Boost.CircularBuffer (1.55.0から)
+- Boost.Multi-Index (1.55.0から)
+    - Boost.Multi-Indexで実装されているBoost.Bimapも、自動的に対応
+- Boost.Unordered (1.49.0から)
+
 
 ```cpp
 #include <boost/container/vector.hpp>
