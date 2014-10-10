@@ -1,7 +1,7 @@
 #ネットワーク
-通信処理には、Boost Asio Libraryを使用する。
+通信処理には、[Boost Asio Library](http://www.boost.org/doc/libs/release/doc/html/boost_asio.html)を使用する。
 
-[TCP](https://sites.google.com/site/boostjp/tips/network/tcp)
-UDP
-SSL
-シリアルポート
+- [TCP](./network/tcp.md)
+- UDP
+- SSL
+- シリアルポート
