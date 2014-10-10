@@ -136,7 +136,7 @@ GMP多倍長浮動小数点数の特徴：
 
 動的メモリ確保を行う多倍長浮動小数点数：
 
-- MPFRバックエンドの多倍長浮動小数点数[link http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/floats/mpfr_float.html]
+- [MPFRバックエンドの多倍長浮動小数点数](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/floats/mpfr_float.html)
 
 | 型 | 説明 |
 |-------------------|---------------------------------------|
@@ -204,7 +204,7 @@ int main()
 ```
 
 
-**`assign()`メンバ関数で文字列から変換
+**`assign()`メンバ関数で文字列から変換**
 
 ```cpp
 #include <iostream>
