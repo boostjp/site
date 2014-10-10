@@ -1,11 +1,14 @@
 #名前付き引数
-Boost Parameter Libraryは、C++において名前付き引数を表現するためのライブラリである。
-
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>基本的な使い方](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>ラベルを名前空間で定義する](#TOC--1)</li></ol>
+C++において名前付き引数を表現するには、[Boost Parameter Library](http://www.boost.org/doc/libs/release/libs/parameter/doc/html/index.html)を使用する。
 
 
-<h4>基本的な使い方</h4>以下が、Boost.Parameterを使用した名前付き引数の例である。
+##インデックス
+- [基本的な使い方](#basic-usage)
+- [ラベルを名前空間で定義する](#define-label-in-namespace)
+
+
+## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+以下が、Boost.Parameterを使用した名前付き引数の例である。
 
 ```cpp
 #include <iostream>
@@ -47,23 +50,26 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 position: 10,20
 color: 255,0,0
 text: Hello
 ```
 
 名前付き引数を利用するには、まずラベルを定義する必要がある。
-<span style='font-family:monospace;line-height:13px'>```cpp
+
+```cpp
 BOOST_PARAMETER_NAME(label)
-</span>
-とすると、_labelという名前のラベルが作成され、名前付き引数の「名前」として使用可能になる。
+```
+
+このようにすると、`_label`という名前のラベルが作成され、名前付き引数の「名前」として使用可能になる。
 
 
 名前付き引数の指定は、以下のように「ラベル = 値」の形式で記述する。複数の名前付き引数が必要な場合は、全体をカッコで囲む必要がある。
-<span style='font-family:monospace;line-height:13px'>```cpp
+
+```cpp
 f((_label = x, label2 = y));
-</span>
+```
 
 
 名前付き引数を指定された関数は、まずパラメータをテンプレートで「パラメータパック」という一つの変数として受け取る。
@@ -71,13 +77,17 @@ f((_label = x, label2 = y));
 template <class ArgPack>
 void f(const ArgPack& args);
 
-各ラベルの値を取り出すには、パラメータパックにoperator[]()でラベルを指定する。
+各ラベルの値を取り出すには、パラメータパックに`operator[]()`でラベルを指定する。
+
 ```cpp
 const X& x = args[_label];
 ```
 
-<h4>ラベルを名前空間で定義する</h4>Boost.Parameterでは、ラベルをユーザーの名前空間に定義することができる。
-以下は、前項で定義したラベルをui名前空間に移した例である：
+
+## <a name="define-label-in-namespace" href="define-label-in-namespace">ラベルを名前空間で定義する</a>
+Boost.Parameterでは、ラベルをユーザーの名前空間に定義することができる。
+
+以下は、前項で定義したラベルを`ui`名前空間に移した例である：
 
 ```cpp
 #include <iostream>
@@ -121,10 +131,12 @@ int main()
     draw((ui::_text = "Hello", ui::_color = Color(255, 0, 0), ui::_pos = Point(10, 20)));
 }
 ```
+* namespace ui[color ff0000]
 
 実行結果：
-```cpp
+```
 position: 10,20
 color: 255,0,0
 text: Hello
 ```
+
