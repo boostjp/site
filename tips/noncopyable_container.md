@@ -32,7 +32,7 @@ int main()
         std::cout << button.caption() << std::endl;
     }
 }
-
+```
 
 実行結果：
 
