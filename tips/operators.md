@@ -405,7 +405,7 @@ int main()
 
 
 ### <a name="andable" href="andable">AND演算子を自動定義する</a>
-AND演算子、operator&=(), operator&()は、boost::andableをprivate継承することにより、operator&=()を定義するだけで、operator&()が自動定義される。
+AND演算子、`operator&=()`、`operator&()`は、`boost::andable`を`private`継承することにより、`operator&=()`を定義するだけで、`operator&()`が自動定義される。
 
 ```cpp
 #include <cassert>
