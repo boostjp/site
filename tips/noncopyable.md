@@ -1,5 +1,5 @@
 #クラスをコピー不可にする
-クラスをコピー不可にするには、boost::noncopyableクラスをprivate継承する。boost::noncopyableを使用するには、<boost/noncopyable.hpp>をインクルードする。
+クラスをコピー不可にするには、`boost::noncopyable`クラスを`private`継承する。`boost::noncopyable`を使用するには、`<boost/noncopyable.hpp>`をインクルードする。
 
 
 ```cpp
@@ -13,6 +13,5 @@ int main()
     X a;
 //  X b = a; // エラー！
 }
-
-
 ```
+
