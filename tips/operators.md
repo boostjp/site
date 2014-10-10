@@ -1,16 +1,31 @@
 #演算子を自動定義する
-C++は演算子のオーバーロードによって、ユーザー定義型に演算子を持たせることができる。各演算子には関連性があり、ひとつ定義すれば他の演算子も同じように書ける。たとえば、operator<()さえ定義すれば、operator>()、operator<=(), operator>=()が定義できる。Boost Operators Libraryは、このような関連演算子を自動的に定義する機構を提供する。
+C++は演算子のオーバーロードによって、ユーザー定義型に演算子を持たせることができる。各演算子には関連性があり、ひとつ定義すれば他の演算子も同じように書ける。たとえば、`operator<()`さえ定義すれば、`operator>()`、`operator<=()`, `operator>=()`は`operator<()`から定義できる。[Boost Operators Library](http://www.boost.org/doc/libs/release/libs/utility/operators.htm)は、このような関連演算子を自動的に定義する機構を提供する。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>基本的な使い方 - 整数型を定義する](#TOC---)</li><li class='goog-toc'>[<strong>2 </strong>算術演算子](#TOC--)<ol class='goog-toc'><li class='goog-toc'>[<strong>2.1 </strong>大小比較の演算子を自動定義する](#TOC--1)</li><li class='goog-toc'>[<strong>2.2 </strong>等値比較の演算子を自動定義する](#TOC--2)</li><li class='goog-toc'>[<strong>2.3 </strong>加算演算子の自動定義](#TOC--3)</li><li class='goog-toc'>[<strong>2.4 </strong>減算演算子の自動定義](#TOC--4)</li><li class='goog-toc'>[<strong>2.5 </strong>乗算演算子の自動定義](#TOC--5)</li><li class='goog-toc'>[<strong>2.6 </strong>除算演算子の自動定義](#TOC--6)</li><li class='goog-toc'>[<strong>2.7 </strong>剰余演算子の自動定義](#TOC--7)</li><li class='goog-toc'>[<strong>2.8 </strong>OR演算子の自動定義](#TOC-OR-)</li><li class='goog-toc'>[<strong>2.9 </strong>AND演算子の自動定義](#TOC-AND-)</li><li class='goog-toc'>[<strong>2.10 </strong>XOR演算子の自動定義](#TOC-XOR-)</li><li class='goog-toc'>[<strong>2.11 </strong>インクリメント演算子の自動定義](#TOC--8)</li><li class='goog-toc'>[<strong>2.12 </strong>デクリメント演算子の自動定義](#TOC--9)</li><li class='goog-toc'>[<strong>2.13 </strong>左シフト演算子の自動定義](#TOC--10)</li><li class='goog-toc'>[<strong>2.14 </strong>右シフト演算子の自動定義](#TOC--11)</li><li class='goog-toc'>[<strong>2.15 </strong>小なり演算子から、等値比較演算子を自動定義する](#TOC--12)</li></ol></li></ol>
+##インデックス
+- [基本的な使い方 - 整数型を定義する](#basic-usage)
+- [算術演算子](#arithmetic-operators)
+    - [大小比較の演算子を自動定義する](#less-than-comparable)
+    - [等値比較の演算子を自動定義する](#equality-comparable)
+    - [加算演算子を自動定義する](#addable)
+    - [減算演算子を自動定義する](#subtractable)
+    - [乗算演算子を自動定義する](#multipliable)
+    - [除算演算子を自動定義する](#dividable)
+    - [剰余演算子を自動定義する](#modable)
+    - [OR演算子を自動定義する](#orable)
+    - [AND演算子を自動定義する](#andable)
+    - [XOR演算子を自動定義する](#xorable)
+    - [インクリメント演算子を自動定義する](#incrementable)
+    - [デクリメント演算子を自動定義する](#decrementable)
+    - [左シフト演算子を自動定義する](#left_shiftable)
+    - [右シフト演算子を自動定義する](#right_shiftable)
+    - [小なり演算子から、等値比較演算子を自動定義する](#equivalent)
 
 
-
-
-###基本的な使い方 - 整数型を定義する
+## <a name="basic-usage" href="basic-usage">基本的な使い方 - 整数型を定義する</a>
 整数型をラップした型を作るためには、多くの演算子を定義する必要がある。
-Boost Operatorsによって関連演算子を自動定義することによって、これだけで整数型を定義することができる。
+
+Boost.Operatorsによって関連演算子を自動定義することによって、これだけで整数型を定義することができる。
 
 ```cpp
 #include <cassert>
@@ -62,19 +77,22 @@ int main()
     }
     // 以下略...
 }
-
-
-boost::operators型をprivate継承したクラスでは、
-
-- operator<()を定義することによって、operator>()、operator<=()、operator>=()が自動的に定義され、
-- operator==()を定義することによって、operator!=()が定義され、
-- operator+=によってoperator+()が定義され、他の関連演算子も同様に自動的に定義される。
 ```
 
-###算術演算子
-<h4>大小比較の演算子を自動定義する</h4>大小比較の演算子、すなわち、operator<(), operator>(), operator<=(), operator>=()は、boost::less_than_comparableをprivate継承することにより、operator<()だけを定義すれば、それ以外の関連演算子が自動的に定義される。
+`boost::operators`型を`private`継承したクラスでは、
 
-<b>メンバ関数として定義する場合</b>
+- `operator<()`を定義することによって、`operator>()`、`operator<=()`、`operator>=()`が自動的に定義され、
+- `operator==()`を定義することによって、`operator!=()`が定義され、
+- `operator+=`によって`operator+()`が定義され、他の関連演算子も同様に自動的に定義される。
+
+
+## <a name="arithmetic-operators" href-"arithmetic-operators">算術演算子</a>
+
+### <a name="less-than-comparable" href="less-than-comparable">大小比較の演算子を自動定義する</a>
+大小比較の演算子、すなわち、`operator<()`、`operator>()`、`operator<=()`、`operator>=()`は、`boost::less_than_comparable`を`private`継承することにより、`operator<()`だけを定義すれば、それ以外の関連演算子が自動的に定義される。
+
+
+**メンバ関数として定義する場合**
 
 ```cpp
 #include <cassert>
@@ -99,10 +117,9 @@ int main()
         assert(x >= MyInt(3));
     }
 }
-
 ```
 
-<b>フリー関数として定義する場合</b>
+**非メンバ関数として定義する場合**
 
 ```cpp
 #include <cassert>
@@ -128,12 +145,14 @@ int main()
         assert(x >= MyInt(3));
     }
 }
+```
 
 
-<h4>等値比較の演算子を自動定義する</h4>等値比較の演算子、すなわち、operator==(), operator!=()は、boost::equality_comprableをprivate継承することにより、operator==()だけを定義すれば、関連するoperator!=()が自動的に定義される。
+### <a name="equality-comparable" href="equality-comparable">等値比較の演算子を自動定義する</a>
+等値比較の演算子、すなわち、`operator==()`、`operator!=()`は、`boost::equality_comprable`を`private`継承することにより、`operator==()`だけを定義すれば、関連する`operator!=()`が自動的に定義される。
 
-<b>メンバ関数として定義する場合</b>
 
+**メンバ関数として定義する場合**
 
 ```cpp
 #include <cassert>
@@ -157,11 +176,10 @@ int main()
         assert(x != MyInt(2));
     }
 }
+```
 
 
-
-<b>フリー関数として定義する場合</b>
-
+**非メンバ関数として定義する場合**
 
 ```cpp
 #include <cassert>
@@ -185,11 +203,11 @@ int main()
         assert(x != MyInt(2));
     }
 }
+```
 
 
-
-<h4>加算演算子の自動定義</h4>加算演算子、operator+=()、operator+()は、boost::addableをprivate継承することにより、operator+=()を定義するだけでoperator+()が自動的に定義される。
-
+### <a name="addable" href="addable">加算演算子を自動定義する</a>
+加算演算子である`operator+=()`、`operator+()`は、`boost::addable`を`private`継承することにより、`operator+=()`を定義するだけで`operator+()`が自動的に定義される。
 
 ```cpp
 #include <cassert>
@@ -218,11 +236,11 @@ int main()
     const MyInt y = x + MyInt(4);
     assert(y.v == 9);
 }
+```
 
 
-
-<h4>減算演算子の自動定義</h4>減算演算子、operator-=()、operator-()は、boost::subtractableをprivate継承することにより、operator-=()を定義するだけでoperator-()が自動的に定義される。
-
+### <a name="subtractable" href="subtractable">減算演算子を自動定義する</a>
+減算演算子である`operator-=()`、`operator-()`は、`boost::subtractable`を`private`継承することにより、`operator-=()`を定義するだけで`operator-()`が自動的に定義される。
 
 ```cpp
 #include <cassert>
@@ -251,11 +269,11 @@ int main()
     const MyInt y = x - MyInt(1);
     assert(y.v == 2);
 }
-
-
 ```
 
-<h4>乗算演算子の自動定義</h4>乗算演算子、operator*=(), operator*()は、boost::multipliableをprivate継承することにより、operator*=()定義するだけで、自動的にoperator*()が定義される。
+
+### <a name="multipliable" href="multipliable">乗算演算子を自動定義する</a>
+乗算演算子である`operator*=()`, `operator*()`は、`boost::multipliable`を`private`継承することにより、`operator*=()`定義するだけで、自動的に`operator*()`が定義される。
 
 ```cpp
 #include <cassert>
@@ -286,8 +304,9 @@ int main()
 }
 ```
 
-<h4>除算演算子の自動定義</h4>除算演算子、operator/=(), operator/()は、boost::dividableをprivate継承することにより、operator/=()を定義するだけで、operator/()が自動定義される。
 
+### <a name="dividable" href="dividable">除算演算子を自動定義する</a>
+除算演算子である`operator/=()`、`operator/()`は、`boost::dividable`を`private`継承することにより、`operator/=()`を定義するだけで、`operator/()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -316,10 +335,11 @@ int main()
     const MyInt y = x / MyInt(2);
     assert(y.v == 5);
 }
+```
 
 
-
-<h4>剰余演算子の自動定義</h4>剰余演算子、operator%=(), operator%()は、boost::modableをprivate継承することにより、operator%=()を定義するだけで、operator%()が自動定義される。
+### <a name="modable" href="modable">剰余演算子を自動定義する</a>
+剰余演算子である`operator%=()`、`operator%()`は、`boost::modable`を`private`継承することにより、`operator%=()`を定義するだけで、`operator%()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -350,7 +370,9 @@ int main()
 }
 ```
 
-<h4>OR演算子の自動定義</h4>OR演算子、operator|=(), operator|()は、boost::orableをprivate継承することにより、operator|=()を定義するだけで、operator|()が自動定義される。
+
+## <a name="orable" href="orable">OR演算子の自動定義</a>
+OR演算子である`operator|=()`、`operator|()`は、`boost::orable`を`private`継承することにより、`operator|=()`を定義するだけで、`operator|()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -381,7 +403,9 @@ int main()
 }
 ```
 
-<h4>AND演算子の自動定義</h4>AND演算子、operator&=(), operator&()は、boost::andableをprivate継承することにより、operator&=()を定義するだけで、operator&()が自動定義される。
+
+### <a name="andable" href="andable">AND演算子を自動定義する</a>
+AND演算子、operator&=(), operator&()は、boost::andableをprivate継承することにより、operator&=()を定義するだけで、operator&()が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -410,9 +434,11 @@ int main()
     const MyInt y = MyInt(0x55) & MyInt(0x0F);
     assert(y.v == 0x05);
 }
+```
 
 
-<h4>XOR演算子の自動定義</h4>XOR演算子、operator^=(), operator^()は、boost::xorableをprivate継承することにより、operator^=()を定義するだけで、operator^()が自動定義される。
+### <a name="xorable" href="xorable">XOR演算子の自動定義</a>
+XOR演算子である`operator^=()`、`operator^()`は、`boost::xorable`を`private`継承することにより、`operator^=()`を定義するだけで、`operator^()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -443,7 +469,9 @@ int main()
 }
 ```
 
-<h4>インクリメント演算子の自動定義</h4>インクリメント演算子、前置++(), 後置++()は、boost::incrementableをprivate継承することにより、前置++()を定義するだけで、後置++()が自動定義される。
+
+### <a name="incrementable" href="incrementable">インクリメント演算子を自動定義する</a>
+インクリメント演算子である前置`++()`, 後置`++()`は、`boost::incrementable`を`private`継承することにより、前置`++()`を定義するだけで、後置`++()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -474,7 +502,9 @@ int main()
 }
 ```
 
-<h4>デクリメント演算子の自動定義</h4>デクリメント演算子、前置--(), 後置--()は、boost::decrementableをprivate継承することにより、前置--()を定義するだけで、後置--()が自動定義される。
+
+### <a name="decrementable" href="decrementable">デクリメント演算子を自動定義する</a>
+デクリメント演算子である前置`--()`、後置`--()`は、`boost::decrementable`を`private@継承することにより、前置`--()`を定義するだけで、後置`--()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -505,7 +535,9 @@ int main()
 }
 ```
 
-<h4>左シフト演算子の自動定義</h4>左シフト演算子、operator<<=(), operator<<()は、boost::left_shiftableをprivate継承することにより、operator<<=()を定義するだけで、operator<<()が自動定義される。
+
+### <a name="left_shiftable" href="left_shiftable">左シフト演算子を自動定義する</a>
+左シフト演算子である`operator<<=()`、`operator<<()`は、`boost::left_shiftable`を`private`継承することにより、`operator<<=()`を定義するだけで、`operator<<()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -537,7 +569,9 @@ int main()
 }
 ```
 
-<h4>右シフト演算子の自動定義</h4>右シフト演算子、operator>>=(), operator>>()は、boost::right_shiftableをprivate継承することにより、operator>>=()を定義するだけで、operator>>()が自動定義される。
+
+### <a name="right_shiftable" href="right_shiftable">右シフト演算子を自動定義する</a>
+右シフト演算子である`operator>>=()`、`operator>>()`は、`boost::right_shiftable`を`private`継承することにより、`operator>>=()`を定義するだけで、`operator>>()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -567,10 +601,13 @@ int main()
     y = y >> MyInt(1);
     assert(y.v == 50);
 }
+```
 
 
-<h4>小なり演算子から、等値比較演算子を自動定義する</h4>等値比較演算子operator==()は、小なり演算子operator<()で定義することができる。
-boost::equivalentをprivate継承することにより、operator<()を定義するだけで、operator==()が自動定義される。
+### <a name="equivalent" href="equivalent">小なり演算子から、等値比較演算子を自動定義する</a>
+等値比較演算子である`operator==()`は、小なり演算子`operator<()`で定義することができる。
+
+`boost::equivalent`を`private`継承することにより、`operator<()`を定義するだけで、`operator==()`が自動定義される。
 
 ```cpp
 #include <cassert>
@@ -595,3 +632,4 @@ int main()
     assert(MyInt(2) == MyInt(2));
 }
 ```
+
