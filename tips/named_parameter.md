@@ -76,6 +76,7 @@ f((_label = x, label2 = y));
 ```cpp
 template <class ArgPack>
 void f(const ArgPack& args);
+```
 
 各ラベルの値を取り出すには、パラメータパックに`operator[]()`でラベルを指定する。
 
