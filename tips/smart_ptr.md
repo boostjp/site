@@ -1,17 +1,27 @@
 #リソースを自動的に解放する
-リソースを自動的に解放するには、「スマートポインタ」と呼ばれるクラスを使用する。スマートポインタとは、newのように動的に確保したオブジェクトへのポインタを保持して、自動的に解放するものである。また、通常のポインタのように利用することが可能である。
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>共有しないオブジェクトのスマートポインタ](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>参照カウント方式のスマートポインタ](#TOC--1)<ol class='goog-toc'><li class='goog-toc'>[<strong>2.1 </strong>shared_ptrで避けること](#TOC-shared_ptr-)</li><li class='goog-toc'>[<strong>2.2 </strong>解放の方法を自分で決める](#TOC--2)</li><li class='goog-toc'>[<strong>2.3 </strong>弱い参照](#TOC--3)</li></ol></li><li class='goog-toc'>[<strong>3 </strong>侵入型参照カウント方式のスマートポインタ](#TOC--4)</li></ol>
+リソースを自動的に解放するには、「スマートポインタ」と呼ばれるクラスを使用する。スマートポインタとは、`new`のように動的に確保したオブジェクトへのポインタを保持して、自動的に解放するものである。また、通常のポインタのように利用することが可能である。
 
 
+##インデックス
+- [共有しないオブジェクトのスマートポインタ](#no-share-smart-pointer)
+- [参照カウント方式のスマートポインタ](#share-smart-pointer)
+    - [`shared_ptr`で避けること](#avoid-usage-shared-ptr)
+    - [解放の方法を自分で決める](#customize-release-behavior-shared-ptr)
+    - [弱い参照](#weak-reference)
+- [侵入型参照カウント方式のスマートポインタ](#intrusive-pointer)
 
-###共有しないオブジェクトのスマートポインタ
-共有する必要がないnewで確保したオブジェクト、例えばローカルスコープでnewとdeleteを使うような状況では、scoped_ptr、scoped_arrayを使うことができる。scoped_ptrについて、以下の点に注意する。
-- scoped_ptr同士のコピーは不可
-- STLのコンテナで保持できない
-- new []で確保した配列を保持することはできない
-- 不完全型やvoidをテンプレート引数に与えることはできない
-- 解放の方法を自分で決めることはできない共有する必要がないnew []で確保したオブジェクトを保持する場合はscoped_arrayを使う。デリーターがどうしても必要な場合はBoost.Interprocessのscoped_ptr/scoeped_arrayを使用すると良い。<b>scoped_ptrサンプル</b>```cpp
+
+## <a name="no-share-smart-pointer" href="no-share-smart-pointer">共有しないオブジェクトのスマートポインタ</a>
+共有する必要がない`new`で確保したオブジェクト、例えばローカルスコープで`new`と`delete@を使うような状況では、`scoped_ptr`、`scoped_array`を使うことができる。`scoped_ptr`について、以下の点に注意する。
+
+- `scoped_ptr`同士のコピーは不可
+- 標準コンテナで保持できない
+- `new []`で確保した配列を保持することはできない
+- 不完全型や`void`をテンプレート引数に与えることはできない
+- 解放の方法を自分で決めることはできない共有する必要がない`new []`で確保したオブジェクトを保持する場合は`scoped_array`を使う。デリーターがどうしても必要な場合はBoost.Interprocessの`scoped_ptr`/`scoeped_array`を使用すると良い。
+
+`scoped_ptr`のサンプル：
+```cpp
 #include <iostream>
 #include <boost/scoped_ptr.hpp>
 
@@ -37,13 +47,17 @@ int main()
     std::cout << p->num << std::endl; 
 
 } // ここでpが自動的にdeleteされる
+```
+* boost::scoped_ptr[color ff0000]
+* // ここでpが自動的にdeleteされる[color ff0000]
 
 実行結果：
-```cpp
+```
 3
 destroy
+```
 
-<b>scoped_arrayサンプル</b>
+`scoped_array`サンプル：
 ```cpp
 #include <iostream>
 #include <boost/scoped_array.hpp>
@@ -64,24 +78,24 @@ int main()
     
 } // ここでpが自動的にdelete []される
 ```
-* boost::scoped_ptr[color ff0000]
-* // ここでpが自動的にdeleteされる[color ff0000]
 * boost::scoped_array[color ff0000]
 * // ここでpが自動的にdelete []される[color ff0000]
 
 実行結果：
-```cpp
+```
 0 1 2 3 4
 ```
 
-###参照カウント方式のスマートポインタ
-shared_ptrは主に動的に割り当てられてたオブジェクトへのポインタを保持して、shared_ptr内部の参照カウントによって管理するものである。確保したオブジェクトを指す最後のshared_ptrが破棄またはリセットされるときに解放される。shared_ptrは以下のことが可能である。
-- STLのコンテナで保持すること
-- テンプレート引数に不完全型やvoidを与えること
+## <a name="share-smart-pointer" href="share-smart-pointer">参照カウント方式のスマートポインタ</a>
+`shared_ptr`は主に動的に割り当てられてたオブジェクトへのポインタを保持して、`shared_ptr`内部の参照カウントによって管理するものである。確保したオブジェクトを指す最後の`shared_ptr`が破棄またはリセットされるときに解放される。`shared_ptr`は以下のことが可能である。
+
+- 標準コンテナで保持すること
+- テンプレート引数に不完全型や`void`を与えること
 - 自分で解放の方法を決めること
-- T *からU *に暗黙の型変換が可能なとき、shared_ptr<T>からshared_ptr<U>の暗黙の変換
-- shared_ptr<T>からshared_ptr<void>の暗黙の変換
-- shared_ptr<T>からshared_ptr<T const>の暗黙の変換new []によって確保されたオブジェクトはshared_arrayを使う。
+- `T*`から`U*`に暗黙の型変換が可能なとき、`shared_ptr<T>`から`shared_ptr<U>`の暗黙の変換
+- `shared_ptr<T>`から`shared_ptr<void>`の暗黙の変換
+- `shared_ptr<T>`から`shared_ptr<T const>`の暗黙の変換`new []`によって確保されたオブジェクトは`shared_array`を使う。
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -119,15 +133,19 @@ int main()
     std::cout << vec.front()->num << std::endl;
     
 } // ここでp0もp1もvecも破棄されてp0で確保したオブジェクトがdeleteされる
+```
 
 実行結果：
-```cpp
+```
 5
 3
 3
 destroy
+```
 
-<h4>shared_ptrで避けること</h4>名前のない一時的なshared_ptrを使わないほうがよい。次の例を考える。
+### <a name="avoid-usage-shared-ptr" href="avoid-usage-shared-ptr">shared_ptrで避けること</a>
+名前のない一時的な`shared_ptr`オブジェクトは使わないほうがよい。次の例を考える。
+
 ```cpp
 void f(boost::shared_ptr<int>, int);
 void g(); // 例外を送出する可能性がある関数
@@ -144,11 +162,14 @@ void bad()
 }
 ```
 * boost::shared_ptr[color ff0000]
-* boost::shared_ptr[color ff0000]
-* boost::shared_ptr[color ff0000]
 * // ここでp0もp1もvecも破棄されてp0で確保したオブジェクトがdeleteされる[color ff0000]
 
-bad関数では関数の引数が評価される順序が不定である。new int( 2 )、g()の順に評価されたとき、g()が例外を送出するとshared_ptrのコンストラクタが呼ばれなくなり、確保したオブジェクトが解放されなくなってしまう。したがって、ok関数のように名前のあるスマートポインタに格納するとよい。<h4>解放の方法を自分で決める</h4>shared_ptr、shared_arrayは解放の方法を指定することが出来る。これによってdelete以外の解放するための関数の使用やそもそも解放しないことも可能である。
+`bad()`関数では関数の引数が評価される順序が不定である。`new int( 2 )`、`g()`の順に評価されたとき、`g()`が例外を送出すると`shared_ptr`のコンストラクタが呼ばれなくなり、確保したオブジェクトが解放されなくなってしまう。したがって、`ok()`関数のように名前のあるスマートポインタに格納するとよい。
+
+
+### <a name="customize-release-behavior-shared-ptr" href="customize-release-behavior-shared-ptr">解放の方法を自分で決める</a>
+`shared_ptr`、`shared_array`は解放の方法を指定することが出来る。これによって`delete`以外の解放するための関数の使用やそもそも解放しないことも可能である。
+
 ```cpp
 #include <iostream>
 #include <cstdlib>
@@ -171,16 +192,18 @@ int main()
     std::cout << *p << std::endl;
 
 } // ここでdeleteの代わりにfree_deleterのoperator()が呼び出される
-
-実行結果：
-```cpp
-5
-call deleter
 ```
 * free_deleter[color ff0000]
 * // ここでdeleteの代わりにfree_deleterのoperator()が呼び出される[color ff0000]
 
-<h4>弱い参照</h4>weak_ptrはshared_ptrに対する弱い参照で、shared_ptrの参照カウントを上げ下げせずにオブジェクトを指すものである。weak_ptr単独で用いられることはない。オブジェクトへのアクセスはweak_ptrのlock関数、shared_ptrのコンストラクタによって対応するshared_ptrを得ることで可能である。shared_ptrが破棄されていた場合における動作は、lock関数の場合は空のshared_ptrを返し、shared_ptrのコンストラクタの場合はbad_weak_ptrを送出する。
+実行結果：
+```
+5
+call deleter
+```
+
+### <a name="weak-reference" href="weak-reference">弱い参照</a>
+`weak_ptr`はs`hared_ptr`に対する弱い参照で、`shared_ptr`の参照カウントを上げ下げせずにオブジェクトを指すものである。`weak_ptr`単独で用いられることはない。オブジェクトへのアクセスは`weak_ptr`の`lock()`メンバ関数、`shared_ptr`のコンストラクタによって対応する`shared_ptr`を得ることで可能である。`shared_ptr`が破棄されていた場合における動作は、`lock()`メンバ関数の場合は空の`shared_ptr`を返し、`shared_ptr`のコンストラクタの場合は`bad_weak_ptr`例外を送出する。
 
 ```cpp
 #include <iostream>
@@ -211,19 +234,19 @@ int main()
         std::cout << "deleted" << std::endl; 
     }
 }
-
+* weak_ptr[color ff0000]
+* lock[color ff0000]
 
 実験結果：
-```cpp
+```
 5
 deleted
 ```
-* weak_ptr[color ff0000]
-* lock[color ff0000]
-* lock[color ff0000]
 
-###侵入型参照カウント方式のスマートポインタ
-intrusive_ptrはユーザがオブジェクトの参照カウンタを上げ下げしなければならないようなときに適用できる。オブジェクトに対応するintrusive_ptr_add_ref関数、intrusive_ptr_release関数を定義することによって、intrusive_ptrが自動的に参照カウンタの上げ下げを行う。
+
+### <a name="intrusive-smart-pointer" href="intrusive-smart-pointer">侵入型参照カウント方式のスマートポインタ</a>
+`intrusive_ptr`はユーザがオブジェクトの参照カウンタを上げ下げしなければならないようなときに適用できる。オブジェクトに対応する`intrusive_ptr_add_ref()`関数、`intrusive_ptr_release()`関数を定義することによって、`intrusive_ptr`が自動的に参照カウンタの上げ下げを行う。
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -297,12 +320,11 @@ int main()
 * intrusive_ptr_add_ref[color ff0000]
 * intrusive_ptr_release[color ff0000]
 * boost::intrusive_ptr[color ff0000]
-* boost::intrusive_pt[color ff0000]
 * // ここでvecとptrが破棄され、それぞれobjectのreleaseが呼ばれてdeleteされる[color ff0000]
 
 実行結果：
-```cpp
+```
 exist
 destroy
-
 ```
+
