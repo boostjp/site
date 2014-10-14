@@ -64,7 +64,7 @@ text, b.txt
 
 このプログラムでは、`File`クラスの`operator<()`演算子において「ファイル種別でどちらが小さいかを比較し、同じであればファイル名がどちらが小さいかを比較する」という優先順位付き比較を行なっている。
 
-[`boost::fusion::vector_tie()`](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/fusion/container/generation/functions/vector_tie.html)関数は、引数として受け取った変数への参照から、参照のタプル型を構築する。ここでは、`[boost::fusion::vector](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/fusion/container/vector.html)<const std::string&, const std::string&>`という型のタプルオブジェクトを構築する。
+[`boost::fusion::vector_tie()`](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/fusion/container/generation/functions/vector_tie.html)関数は、引数として受け取った変数への参照から、参照のタプル型を構築する。ここでは、[`boost::fusion::vector`](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/fusion/container/vector.html)`<const std::string&, const std::string&>`という型のタプルオブジェクトを構築する。
 
 Boost.Fusionが提供するタプル型に対する比較演算子は、[`<boost/fusion/include/comparison.hpp>`](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/fusion/sequence/operator/comparison.html)ヘッダで定義されている。
 
