@@ -4,11 +4,13 @@
 Boost C++ Librariesでは、関数を抜ける際に実行される式、またはブロックを定義する方法をいくつか提供している。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>Boost Scope Exit Library](#TOC-Boost-Scope-Exit-Library)</li></ol>
+##インデックス
+- [Boost Scope Exit Libraryを使用する](#scope-exit)
 
 
-<h4>Boost Scope Exit Library</h4>Boost.ScopeExitは、関数のスコープを抜ける際に実行されるブロックを定義するためのBOOST_SCOPE_EXITマクロを提供する。
+## <a name="scope-exit" href="scope-exit">Boost Scope Exit Libraryを使用する</a>
+Boost.ScopeExitは、関数のスコープを抜ける際に実行されるブロックを定義するための`BOOST_SCOPE_EXIT`マクロを提供する。
+
 以下がその基本的な使い方である：
 
 ```cpp
@@ -40,23 +42,27 @@ int main()
 ```
 
 実行結果：
-```cpp
+```
 2
 ```
 
-関数X::foo()の中では、関数の先頭でvalueに0を代入し、関数を抜ける直前でvalueに1を代入している。
-そして、BOOST_SCOPE_EXITマクロで定義されたブロックの中でvalueに2が代入されているが、このブロックがX::foo()を抜けるタイミングで呼び出されることで、最終的にvalueの値が2になっている。
+関数`X::foo()`の中では、関数の先頭で`value`に`0`を代入し、関数を抜ける直前で`value`に`1`を代入している。
 
-Boost.ScopeExitは<b>変数のキャプチャ</b>という機能を持っており、
+そして、`BOOST_SCOPE_EXIT`マクロで定義されたブロックの中で`value`に`2`が代入されているが、このブロックが`X::foo()`を抜けるタイミングで呼び出されることで、最終的に`value`の値が`2`になっている。
+
+Boost.ScopeExitは **変数のキャプチャ** という機能を持っており、
+
 ```cpp
 &value
+```
 
-という表記によって、変数valueの参照をScope Exitの構文の中で使用できるようにしている。
+という表記によって、変数`value`への参照をScope Exit構文の中で使用できるようにしている。
 
 ```cpp
 value
+```
 
-と書いた場合には、変数valueのコピーをScope Exitの構文の中で使用できるようになる。
+と書いた場合には、変数`value`のコピーをScope Exit構文の中で使用できるようになる。
 
 また、以下のように、変数をカッコで囲んで連続で記述することにより、複数の変数をキャプチャすることができる。
 ```cpp
@@ -66,24 +72,28 @@ BOOST_SCOPE_EXIT((&x)(&y)) {
 } BOOST_SCOPE_EXIT_END
 ```
 
-なお、Boost-1.50以降ではラムダ式を用いたC++11版の[BOOST_SCOPE_EXIT_ALL](http://www.boost.org/doc/libs/1_50_0/libs/scope_exit/doc/html/BOOST_SCOPE_EXIT_ALL.html)が追加され、次のように簡潔なコードも可能になった。
+なお、Boost-1.50以降ではラムダ式を用いたC++11版の[`BOOST_SCOPE_EXIT_ALL`](http://www.boost.org/doc/libs/1_50_0/libs/scope_exit/doc/html/BOOST_SCOPE_EXIT_ALL.html)マクロが追加され、次のように簡潔なコードも可能になった。
 
 ```cpp
 BOOST_SCOPE_EXIT_ALL(&x, &y) {
     x = x + 1;
     y = y + 1;
 };
-
 ```
 
-BOOST_SCOPE_EXIT_ALLでは引数をカンマで区切り、それぞれに=または&により値キャプチャーと参照キャプチャーを定義でき、BOOST_SCOPE_EXIT_ENDに相当する終端マクロは不要になった。但し、スコープ定義の終わりにはステートメント終端のセミコロンが必要になっている点に注意されたい。
+`BOOST_SCOPE_EXIT_ALL`では引数をカンマで区切り、それぞれに`=`または`&`により値キャプチャーと参照キャプチャーを定義でき、`BOOST_SCOPE_EXIT_END`に相当する終端マクロは不要になった。ただし、スコープ定義の終わりにはステートメント終端のセミコロンが必要になっている点に注意されたい。
 
-BOOST_SCOPE_EXITとBOOST_SCOPE_EXIT_TPLの内部実装をBOOST_SCOPE_EXIT_ALLと同様にラムダ式を使うバージョンに切り替えるための[BOOST_SCOPE_EXIT_CONFIG_USE_LAMBDAS](http://www.boost.org/doc/libs/1_50_0/libs/scope_exit/doc/html/BOOST_SCOPE_EXIT_CONFIG_USE_LAMBDAS.html)マクロも用意されている。
+`BOOST_SCOPE_EXIT`と`BOOST_SCOPE_EXIT_TPL`の内部実装を`BOOST_SCOPE_EXIT_ALL`と同様にラムダ式を使うバージョンに切り替えるための[`BOOST_SCOPE_EXIT_CONFIG_USE_LAMBDAS`](http://www.boost.org/doc/libs/1_50_0/libs/scope_exit/doc/html/BOOST_SCOPE_EXIT_CONFIG_USE_LAMBDAS.html)マクロも用意されている。
 
-<b>Boost.ScopeExitの使いどころ</b>Boost ScopeExitは主にメンバ変数に対する関数内でのコミット／ロールバックを目的に使用されることが多い。
+
+**Boost.ScopeExitの使いどころ**
+
+Boost ScopeExitは主にメンバ変数に対する関数内でのコミット／ロールバックを目的に使用されることが多い。
+
 たとえば、ボタンクラスを作成することを考える。
 
 ボタンは、「押した」「離した」という状態をボタン自身に伝える機能を持ち、内部で通常状態と押下状態の画像を切り替えることができる。
+
 ```cpp
 class Button {
 public:
@@ -96,6 +106,7 @@ public:
 ```
 
 そして、ボタンをメンバ変数として持つ画面クラスが、画面のある位置をクリックした場合に呼ばれるハンドラを持っているとしよう。
+
 以下のように書くことでボタンの画像切り替えロジックが書ける。
 
 ```cpp
@@ -126,8 +137,9 @@ public:
 };
 ```
 
-ここでは、on_click_upの中で「押されていたら離して処理する」ということをしている。
-このプログラムが問題になるのは、ボタンが増えたときや、途中でreturnする必要が出てきた場合である。押されている状態からでなければ離すことはできないので、関数の始めに離すことはできず、途中でreturnされることを考えると関数の最後で離すこともできない。
+ここでは、`on_click_up()`の中で「押されていたら離して処理する」ということをしている。
+
+このプログラムが問題になるのは、ボタンが増えたときや、途中で`return`する必要が出てきた場合である。押されている状態からでなければ離すことはできないので、関数の始めに離すことはできず、途中で`return`されることを考えると関数の最後で離すこともできない。
 
 そういったときに、Boost.ScopeExitを使用することで、関数のスコープを抜けた際に、全てのボタンを確実に離すことができる。
 ```cpp
@@ -178,3 +190,4 @@ public:
     }
 };
 ```
+
