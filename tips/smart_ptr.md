@@ -234,6 +234,7 @@ int main()
         std::cout << "deleted" << std::endl; 
     }
 }
+```
 * weak_ptr[color ff0000]
 * lock[color ff0000]
 
