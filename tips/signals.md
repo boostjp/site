@@ -1,13 +1,17 @@
 #シグナル／スロット
-イベント処理などで使われるシグナル／スロットには、Boost.Signals2ライブラリを使用する。
+イベント処理などで使われるシグナル／スロットには、[Boost Signals2 Library](http://www.boost.org/doc/libs/release/doc/html/signals2.html)を使用する。
 
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>複数の関数を登録する](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>スロットを切断する](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>戻り値について](#TOC--2)</li><li class='goog-toc'>[<strong>4 </strong>戻り値のカスタム](#TOC--3)</li></ol>
+##インデックス
+- [複数の関数を登録する](#connect-multiple-functions)
+- [スロットを切断する](#disconnect)
+- [シグナル呼び出しの戻り値](#return-value)
+- [シグナル呼び出しの戻り値をカスタマイズする](#customize-return-value)
 
 
+## <a name="connect-multiple-functions" href="connect-multiple-functions">複数の関数を登録する</a>
+Boost.Signals2のシグナルには、`connect()`関数によって、複数の関数を接続することができる。
 
-<h4>複数の関数を登録する</h4>Boost.Signals2のシグナルには、connect()関数によって、複数の関数を接続することができる。
 シグナルの関数呼び出し演算子によって、接続した関数全てを呼び出すことができる。
 
 ```cpp
@@ -60,15 +64,17 @@ int main()
     // クリックした
     button.click();
 }
-
+```
 
 実行結果：
-```cpp
+```
 MainView : clicked
 SubView : clicked
+```
 
 
-<h4>スロットを切断する</h4>スロットを切断するには、connect()関数の戻り値であるコネクションを保持しておき、コネクションのdisconnect()メンバ関数を呼び出すことで、切断する。
+## <a name="disconnect" href="disconnect">スロットを切断する</a>
+スロットを切断するには、`connect()`関数の戻り値であるコネクションを保持しておき、コネクションの`disconnect()`メンバ関数を呼び出すことで、切断する。
 
 ```cpp
 #include <iostream>
@@ -125,15 +131,19 @@ int main()
     // クリックした
     button.click();
 }
-
+```
 
 実行結果：
-```cpp
+```
 MainView : clicked
+```
 
 
-<h4>戻り値について</h4>
-特に指定しなければ、シグナルを呼び出した時の戻り値は接続する関数の戻り値のoptionalとなり、最後に登録した関数の戻り値が戻される。また、関数が接続されていなければ無効値を戻す。optional_last_value参照
+## <a name="return-value" href="return-value">シグナル呼び出しの戻り値</a>
+特に指定しなければ、シグナルを呼び出した時の戻り値は接続する関数の戻り値の`optional`となり、最後に登録した関数の戻り値が戻される。また、関数が接続されていなければ無効値を戻す。
+
+[`optional_last_value()`](http://www.boost.org/doc/html/boost/signals2/optional_last_value.html)を参照。
+
 ```cpp
 #include <iostream>
 #include <boost/signals2/signal.hpp>
@@ -177,15 +187,18 @@ int main()
         std::cout << "invalid value" << std::endl;
     }
 }
+```
 
 実行結果：
-```cpp
+```
 5
 invalid value
 ```
-* optional_last_value[link http://www.boost.org/doc/html/boost/signals2/optional_last_value.html]
 
-<h4>戻り値のカスタム</h4>boost::signals2::signalの2番目のテンプレート引数Combinerを変えることで戻り値のカスタムが可能である。
+
+## <a name="customize-return-value" href="customize-return-value">シグナル呼び出しの戻り値をカスタマイズする</a>
+`boost::signals2::signal`クラスの2番目のテンプレート引数`Combiner`を変更することで、戻り値のカスタムが可能である。
+
 ```cpp
 #include <iostream>
 #include <numeric>
@@ -240,9 +253,9 @@ int main()
 }
 ```
 * custom_result_value[color ff0000]
-* custom_result_value[color ff0000]
 
 実行結果：
-```cpp
+```
 45
 ```
+
