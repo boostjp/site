@@ -1,6 +1,14 @@
 #コンパイル時アサート
-定数式の条件によるアサートには、BOOST_STATIC_ASSERTマクロを使用することができる。
-BOOST_STATIC_ASSERTマクロを使用するには、<boost/static_assert.hpp>をインクルードする。
+定数式の条件によるアサートには、`BOOST_STATIC_ASSERT`マクロを使用することができる。
+
+`BOOST_STATIC_ASSERT`マクロを使用するには、`<boost/static_assert.hpp>`をインクルードする。
+
+##インデックス
+- [関数にコンパイル時アサートを付ける](#function)
+- [クラスにコンパイル時アサートを付ける](#class)
+
+
+## <a name="function" href="function">関数にコンパイル時アサートを付ける</a>
 
 ```cpp
 #include <iostream>
@@ -24,6 +32,9 @@ int main()
 }
 ```
 
+
+## <a name="class" href="class">クラスにコンパイル時アサートを付ける</a>
+
 ```cpp
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_integral.hpp>
@@ -41,3 +52,4 @@ int main()
     X<double> c; // エラー！
 }
 ```
+
