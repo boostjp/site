@@ -1,17 +1,20 @@
 #コマンドラインオプションの定義／取得
-Boost.ProgramOptionsを用いるとプログラムの実行時に付けられる引数文字列について、一般的なオプションの仕組みの定義とその取得を容易に行える。
+[Boost Program Options Library](http://www.boost.org/doc/libs/release/doc/html/program_options.html)を用いるとプログラムの実行時に付けられる引数文字列について、一般的なオプションの仕組みの定義とその取得を容易に行える。
+
 なお、Boost.ProgramOptionsを用いる場合はコンパイルの際に`g++ -lboost_program_options source.cxx`の様にしてバイナリーのライブラリーをリンクする必要がある点に注意。
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>オプションの定義](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>オプションの取得](#TOC--1)</li></ol>
+
+##インデックス
+- [オプションを定義する](#define-option)
+- [オプションを取得する](#get-option)
 
 
-
-<h4>オプションの定義</h4><boost/program_options.hpp>に定義される名前空間boost::program_optionsに含まれるoptions_description型により先ずはプログラムオプションを定義する。
+## <a name="define-option" href="define-option">オプションの定義</a>
+`<boost/program_options.hpp>`に定義される`boost::program_options`名前空間に含まれる`options_description`型により、プログラムオプションを定義する。
 
 ```cpp
 #include <boost/program_options.hpp>
-...
+
 int main(const int ac, const char* const * const av)
 {
   using namespace boost::program_options;
@@ -24,32 +27,34 @@ int main(const int ac, const char* const * const av)
     ("help,H", "へるぷ")
     ("version,v", "ばーじょん情報")
     ;
-<span style='background-color:transparent;font-size:10pt;line-height:1.5'>}</span>
+}
 ```
 
 以上の例では、`app -hoge 123 -fuga 1 2 4 8 16 32`であるとか、`app -h -10 -f 123 456 789`であるとか`app -H`などの様な利用法を想定したプログラムオプションを定義している。
 
-また、hogeにはデフォルト値として -100 、fugaは複数要素のオプションとしてmultitoken()を定義している。
+また、`hoge`にはデフォルト値として `-100` 、`fuga`は複数要素のオプションとして`multitoken()`を定義している。
 
-※定義しただけでは意味がありませんので、実際には「オプションの取得」と組み合わせて使います。
+※定義しただけでは意味がありませんので、実際には「[オプションの取得](#get-option)」と組み合わせて使います。
 
-<h4>オプションの取得</h4>parse_command_lineでoptions_descriptionの定義に基づいてコマンドライン引数を解析し、その結果を<span style='background-color:transparent;line-height:1.5;font-size:10pt'>variables_mapオブジェクトに対して格納する事を定義し、notiryにより実際にvariables_mapオブジェクトに解析されたプログラムオプションの結果が格納される。</span>
+
+## <a name="get-option" href="get-option">オプションの取得</a>
+`parse_command_line()`関数を使用して、`options_description`の定義に基づいてコマンドライン引数を解析し、その結果を`variables_map`オブジェクトに対して格納する事を定義する。`notiry()`関数を使用することで、実際に`variables_map`オブジェクトに解析されたプログラムオプションの結果が格納される。
 
 ```cpp
 #include <boost/program_options.hpp>
-...
+
 int main(const int ac, const char* const * const av)
 {
   using namespace boost::program_options;
   
   // オプションの定義
   options_description description("おぷしょん");
-  // <span style='background-color:transparent;line-height:1.5;font-size:10pt'>（省略：「オプションの定義」を参照のこと）</span>
-<span style='background-color:transparent;line-height:1.5;font-size:10pt'>  </span>
-<span style='background-color:transparent;line-height:1.5;font-size:10pt'>  // オプションの取得</span>
-<span style='background-color:transparent;line-height:1.5;font-size:10pt'>  variables_map vm;</span>
-<span style='background-color:transparent;line-height:1.5;font-size:10pt'>  store(parse_command_line(ac, av, description), vm);</span>
-<span style='background-color:transparent;line-height:1.5;font-size:10pt'>  notify(vm);</span>
+  // （省略：「オプションの定義」を参照のこと）
+  
+  // オプションの取得
+  variables_map vm;
+  store(parse_command_line(ac, av, description), vm);
+  notify(vm);
 
   // (a.) オプション help が存在すれば description をコマンドのヘルプとして出力する。
   if( vm.count("help") )
@@ -60,12 +65,14 @@ int main(const int ac, const char* const * const av)
 
   // (c.) オプション fuga の取得 （ std::vector<unsigned> 型）
   auto fuga = vm["fuga"].as<std::vector<unsigned>>();
-<span style='background-color:transparent;font-size:10pt;line-height:1.5'>}</span>
+}
 ```
+* variable_map[color ff0000]
+* parse_command_line[color ff0000]
+* notify[color ff0000]
 
-この例では、(a.)により実際に実行時に`app -H`とコマンドラインでオプションを定義すれば、 description を元にした一般的なプログラムオプションの表示が行われる。
+この例では、(a.)により実際に実行時に`app -H`とコマンドラインでオプションを定義すれば、 `description` を元にした一般的なプログラムオプションの表示が行われる。
 
-(b.)と(c.)ではそれぞれ`app -hoge -10`や`app -fuga 123 456 789`の様に定義されたプログラムオプションをそれぞれint型、std::vector<unsigned>型取得している。
-<span style='background-color:transparent;line-height:1.5;font-size:10pt'></span>
-<span style='background-color:transparent;line-height:1.5;font-size:10pt'>※定義しただけでは意味がありませんので、実際には「オプションの定義」と組み合わせて使います。</span>
+(b.)と(c.)ではそれぞれ`app -hoge -10`や`app -fuga 123 456 789`の様に定義されたプログラムオプションをそれぞれ`int`型、`std::vector<unsigned>`型取得している。
+
 
