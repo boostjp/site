@@ -1,16 +1,29 @@
 #統計処理
 統計処理には、[Boost Accumulators Library](http://www.boost.org/doc/libs/release/doc/html/accumulators.html)を使用する。
 
-Contents
-<ol class='goog-toc'><li class='goog-toc'>[<strong>1 </strong>基本的な使い方](#TOC--)</li><li class='goog-toc'>[<strong>2 </strong>既存のコンテナにあるデータから統計をとる](#TOC--1)</li><li class='goog-toc'>[<strong>3 </strong>統計関数](#TOC--2)<ol class='goog-toc'><li class='goog-toc'>[<strong>3.1 </strong>要素数を求める - count](#TOC---count)</li><li class='goog-toc'>[<strong>3.2 </strong>共分散を求める - covariance](#TOC---covariance)</li><li class='goog-toc'>[<strong>3.3 </strong>密度を求める - density](#TOC---density)</li><li class='goog-toc'>[<strong>3.4 </strong>拡張カイ二乗を求める - extended q square](#TOC---extended-q-square)</li><li class='goog-toc'>[<strong>3.5 </strong>尖度を求める - kurtosis](#TOC---kurtosis)</li><li class='goog-toc'>[<strong>3.6 </strong>最小値を求める - min](#TOC---min)</li><li class='goog-toc'>[<strong>3.7 </strong>最大値を求める - max](#TOC---max)</li><li class='goog-toc'>[<strong>3.8 </strong>平均値を求める - mean](#TOC---mean)</li><li class='goog-toc'>[<strong>3.9 </strong>中央値を求める - median](#TOC---median)</li><li class='goog-toc'>[<strong>3.10 </strong>閾値法 POT:Peak Over Threshold](#TOC-POT:Peak-Over-Threshold)</li><li class='goog-toc'>[<strong>3.11 </strong>歪度を求める - skewness](#TOC---skewness)</li><li class='goog-toc'>[<strong>3.12 </strong>合計値を求める - sum](#TOC---sum)</li><li class='goog-toc'>[<strong>3.13 </strong>重み付きサンプルやヒストグラムの統計量を求める - weighted_*](#TOC---weighted_-)</li></ol></li></ol>
+
+##インデックス
+- [基本的な使い方](#basic-usage)
+- [既存のコンテナにあるデータから統計をとる](#container-stats)
+- [要素数を求める - `count`](#count)
+- [共分散を求める - `covariance`](#covariance)
+- [密度を求める - `density`](#density)
+- [拡張カイ二乗を求める - `extended_q_square`](#extended_q_square)
+- [尖度を求める - `kurtosis`](#kurtosis)
+- [最小値を求める - `min`](#min)
+- [最大値を求める - `max`](#max)
+- [平均値を求める - `mean`](#mean)
+- [中央値を求める - `median`](#median)
+- [閾値法 POT:Peak Over Threshold](#pot_quantile)
+- [歪度を求める - `skewness`](#skewness)
+- [合計値を求める - `sum`](#sum)
+- [重み付きサンプルやヒストグラムの統計量を求める - `weighted_*`](#weighted-stats)
 
 
+## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+Boost.Accumulatorsを使用した統計処理には、`boost::accumulators::accumulator_set`というコンテナを使用し、そのテンプレートパラメータとして、統計したい処理を指定することで、内部でそれらの統計処理の組み合わせを効率よく処理してくれる。
 
-
-###基本的な使い方
-Boost Accumulators Libraryを使用した統計処理には、boost::accumulators::accumulator_setというコンテナを使用し、そのテンプレートパラメータとして、統計したい処理を指定することで、内部でそれらの統計処理の組み合わせを効率よく処理してくれる。
 以下は、最小値(min)、平均値(mean)、合計値(sum)を求める例である。
-
 
 ```cpp
 #include <iostream>
@@ -33,20 +46,20 @@ int main()
     std::cout << extract::mean(acc) << std::endl; // 平均値
     std::cout << extract::sum(acc) << std::endl;  // 合計値
 }
-
+```
 
 実行結果：
-```cpp
+```
 1
 3
 15
-
 ```
 
-###既存のコンテナにあるデータから統計をとる
-std::vectorや配列のようなコンテナに、統計したいデータが入っていることがある。
-そういったデータをBoost.Accumulatorsで統計をとるには、for_eachを使用してaccumulator_setにデータを入れる。
 
+## <a name="container-stats" href="container-stats">既存のコンテナにあるデータから統計をとる</a>
+`std::vector`や配列のようなコンテナに、統計したいデータが入っていることがある。
+
+そういったデータをBoost.Accumulatorsで統計をとるには、`for_each()`アルゴリズムを使用して`accumulator_set`にデータを入れる。
 
 ```cpp
 #include <iostream>
@@ -85,21 +98,18 @@ int main()
     std::cout << extract::mean(acc) << std::endl; // 中間値
     std::cout << extract::sum(acc) << std::endl;  // 合計値
 }
-
+```
 
 実行結果の例：
-
-```cpp
+```
 5
 544.24
 54424
-
-
 ```
 
-###統計関数
-<h4>要素数を求める - count</h4>要素数を求めるには、countを使用する。
 
+## <a name="count" href="count">要素数を求める - count</a>
+要素数を求めるには、`count`を使用する。
 
 ```cpp
 #include <iostream>
@@ -118,15 +128,16 @@ int main()
 
     std::cout << extract::count(acc) << std::endl;
 }
-
+```
 
 実行結果：
-```cpp
+```
 3
+```
 
 
-<h4>共分散を求める - covariance</h4>共分散を求めるには、covarianceを使用する。
-
+## <a name="covariance" href="covariance">共分散を求める - covariance</a>
+共分散を求めるには、`covariance`を使用する。
 
 ```cpp
 #include <iostream>
@@ -146,16 +157,18 @@ int main()
 
     std::cout << extract::covariance(acc) << std::endl;
 }
-
+```
 
 実行結果：
-```cpp
+```
 -1.75
+```
 
 
-<h4>密度を求める - density</h4>密度を求めるには、densityを使用する。
-densityは、サンプル分布のヒストグラムを返す。
+## <a name="density" href="density">密度を求める - density</a>
+密度を求めるには、`density`を使用する。
 
+`density`は、サンプル分布のヒストグラムを返す。
 
 ```cpp
 #include <iostream>
@@ -200,11 +213,10 @@ int main() {
     }
     
 }
-
+```
 
 実行結果：
-
-```cpp
+```
 First: -0.14 Second: 0
 First: 0     Second: 0.142857
 First: 0.14  Second: 0
@@ -212,14 +224,13 @@ First: 0.28  Second: 0.0952381
 First: 0.42  Second: 0.238095
 First: 0.56  Second: 0.333333
 First: 0.7   Second: 0.190476
-
-
-ソースの参考元： http://www.dreamincode.net/forums/topic/151359-boost-accumulator-help/
 ```
-* http://www.dreamincode.net/forums/topic/151359-boost-accumulator-help/[link http://www.dreamincode.net/forums/topic/151359-boost-accumulator-help/]
 
-<h4>拡張カイ二乗を求める - extended q square</h4>拡張カイ二乗を求めるには、extended_q_squareを使用する。
+ソースの参考元： <http://www.dreamincode.net/forums/topic/151359-boost-accumulator-help/>
 
+
+## <a name="extended_q_square" href="extended_q_square">拡張カイ二乗を求める - extended_q_square</a>
+拡張カイ二乗を求めるには、`extended_q_square`を使用する。
 
 ```cpp
 #include <iostream>
@@ -257,11 +268,10 @@ int main()
         std::cout << extract::extended_p_square(acc)[i] << std::endl;
     }
 }
-
+```
 
 実行結果：
-
-```cpp
+```
 0.00120014
 0.00940417
 0.0965609
@@ -271,10 +281,12 @@ int main()
 0.899161
 0.990776
 0.999397
+```
 
 
+## <a name="kurtosis" href="kurtosis">尖度を求める - kurtosis</a>
+尖度を求めるには、`kurtosis`を使用する。
 
-<h4>尖度を求める - kurtosis</h4>尖度を求めるには、kurtosisを使用する。
 ```cpp
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
@@ -298,18 +310,19 @@ int main()
     std::cout << extract::moment<4>(acc) << std::endl;
     std::cout << extract::kurtosis(acc) << std::endl;
 }
+```
 
 実行結果：
-```cpp
+```
 5
 31.8
 234.2
 1863
 -1.39965
+```
 
-<h4>最小値を求める - min</h4>
-最小値を求めるには、minを使用する。
-
+## <a name="min" href="min">最小値を求める - min</a>
+最小値を求めるには、`min`を使用する。
 
 ```cpp
 #include <iostream>
@@ -328,15 +341,15 @@ int main()
 
     std::cout << extract::min(acc) << std::endl;
 }
-
+```
 
 実行結果：
-```cpp
+```
 1
+```
 
-
-<h4>最大値を求める - max</h4>最大値を求めるには、maxを使用する。
-
+## <a name="max" href="max">最大値を求める - max</a>
+最大値を求めるには、`max`を使用する。
 
 ```cpp
 #include <iostream>
@@ -355,14 +368,15 @@ int main()
 
     std::cout << extract::max(acc) << std::endl;
 }
-
+```
 
 実行結果：
-```cpp
+```
 3
+```
 
-<h4>平均値を求める - mean</h4>平均値を求めるには、meanを使用する。
-
+## <a name="mean" href="mean">平均値を求める - mean</a>
+平均値を求めるには、`mean`を使用する。
 
 ```cpp
 #include <iostream>
@@ -382,15 +396,15 @@ int main()
 
     std::cout << extract::mean(acc) << std::endl;
 }
-
+```
 
 実行結果：
-```cpp
+```
 2.5
 ```
 
-<h4>中央値を求める - median</h4>中央値を求めるには、medianを使用する。
-
+## <a name="median" href="median">中央値を求める - median</a>
+中央値を求めるには、`median`を使用する。
 
 ```cpp
 #include <iostream>
@@ -413,15 +427,18 @@ int main()
 
 
 実行結果：
-```cpp
+```
 3
+```
 
 
-注意：本処理で返される値は推定値であり、厳密な中央値ではない場合がある<span style='background-color:transparent;line-height:1.5;font-size:10pt'>。</span>参照： 
-http://www.boost.org/doc/libs/release/doc/html/accumulators/user_s_guide.html#accumulators.user_s_guide.the_statistical_accumulators_library.median
+注意：本処理で返される値は推定値であり、厳密な中央値ではない場合がある。参照： 
 
-<h4>閾値法 POT:Peak Over Threshold</h4>閾値法を使用するには、pot_quantileを使用する。
+- [median and variants - Boost Accumulators Library Documentation](http://www.boost.org/doc/libs/release/doc/html/accumulators/user_s_guide.html#accumulators.user_s_guide.the_statistical_accumulators_library.median)
 
+
+## <a name="pot_quantile" href="pot_quantile">閾値法 POT:Peak Over Threshold</a>
+閾値法を使用するには、`pot_quantile`を使用する。
 
 ```cpp
 #include <iostream>
@@ -487,22 +504,21 @@ int main()
     std::cout << extract::quantile(acc5, quantile_probability = 0.999) << std::endl;
     std::cout << extract::quantile(acc6, quantile_probability = 0.999) << std::endl;
 }
-
+```
 
 実行結果：
-
-```cpp
+```
 3.10319
 3.09056
 -3.09408
 -3.08917
 6.93361
 6.8952
+```
 
 
-
-<h4>歪度を求める - skewness</h4>歪度を求めるには、skewnessを使用する。
-
+## <a name="skewness" href="skewness">歪度を求める - skewness</a>
+歪度を求めるには、`skewness`を使用する。
 
 ```cpp
 #include <iostream>
@@ -526,20 +542,19 @@ int main()
     std::cout << extract::moment<3>(acc) << std::endl;
     std::cout << extract::skewness(acc) << std::endl;
 }
-
+```
 
 実行結果：
-
-```cpp
+```
 5
 31.8
 234.2
 0.40604
+```
 
 
-
-<h4>合計値を求める - sum</h4>合計値を求めるには、sumを使用する。
-
+## <a name="sum" href="sum">合計値を求める - sum</a>
+合計値を求めるには、`sum`を使用する。
 
 ```cpp
 #include <iostream>
@@ -558,14 +573,16 @@ int main()
 
     std::cout << extract::sum(acc) << std::endl;
 }
-
-
-
-実行結果：```cpp
-8
-<h4>重み付きサンプルやヒストグラムの統計量を求める - weighted_*</h4>重み付きサンプルやヒストグラムの統計量を求めるには、各種weighted_*を使用する。
 ```
-* http://www.boost.org/doc/libs/release/doc/html/accumulators/user_s_guide.html#accumulators.user_s_guide.the_statistical_accumulators_library.median[link http://www.boost.org/doc/libs/release/doc/html/accumulators/user_s_guide.html#accumulators.user_s_guide.the_statistical_accumulators_library.median]
+
+実行結果：
+```
+8
+```
+
+
+## <a name="weighted-stats" href="weighted-stats">重み付きサンプルやヒストグラムの統計量を求める - `weighted_*`</a>
+重み付きサンプルやヒストグラムの統計量を求めるには、各種`weighted_*`を使用する。
 
 ```cpp
 #include <iostream>
@@ -576,29 +593,32 @@ using namespace boost::accumulators;
 
 int main()
 {
-    accumulator_set<double,    <span>    <span>    // サンプルの型</span></span>
-    <span>    </span>stats<tag::weighted_sum,    <span>   // 重み付き和</span>
-              tag::weighted_mean,  <span>    // 重み付き平均</span>              tag::weighted_variance,  // 重み付き分散
+    accumulator_set<double,            // サンプルの型
+        stats<tag::weighted_sum,       // 重み付き和
+              tag::weighted_mean,      // 重み付き平均
+              tag::weighted_variance,  // 重み付き分散
               tag::weighted_skewness,  // 重み付き歪度
               tag::weighted_kurtosis   // 重み付き尖度
         >,
-        double    <span>    <span>    <span>    <span>    <span>     // 重みの型</span></span></span></span></span>
+        double                         // 重みの型
     > acc;
 
-      // 重みは weight で指定    acc(1.0, weight = 2.0);
+      // 重みは weight で指定
+    acc(1.0, weight = 2.0);
     acc(2.0, weight = 3.0);
     acc(3.0, weight = 4.0);
-    std::cout << extract::sum_of_weights(acc) << std::endl;<span>    // 重みの総和</span>
+
+    std::cout << extract::sum_of_weights(acc) << std::endl;    // 重みの総和
     std::cout << extract::sum(acc) << std::endl;
     std::cout << extract::mean(acc) << std::endl;
-    std::cout << extract::variance(acc) << std::endl;
-    std::cout << extract::skewness(acc) << std::endl;
-    std::cout << extract::kurtosis(acc) << std::endl;}
-
+    std::cout << extract::variance(acc) << std::endl; 
+    std::cout << extract::skewness(acc) << std::endl; 
+    std::cout << extract::kurtosis(acc) << std::endl;
+}
+```
 
 実行結果：
-
-```cpp
+```
 9
 20
 2.22222
@@ -606,3 +626,4 @@ int main()
 -0.41295
 -1.2696
 ```
+
