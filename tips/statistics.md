@@ -424,7 +424,7 @@ int main()
 
     std::cout << extract::median(acc) << std::endl;
 }
-
+```
 
 実行結果：
 ```
