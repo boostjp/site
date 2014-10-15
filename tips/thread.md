@@ -30,8 +30,8 @@ boost::thread(Callable func);
 コンストラクタに渡された実引数は、`thread`オブジェクト内部にコピーされて保持される。このコピーを避ける場合は`boost::ref()`関数を利用する。
 
 ```cpp
+callable x;
 void f1() {
-    callable x;
     boost::thread(boost::ref(x));
 }
 ```
