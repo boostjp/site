@@ -14,13 +14,19 @@ Boost C++ Librariesに関する最新情報、日本語ドキュメント、Boos
 [C++リファレンスサイト cpprefjp](https://sites.google.com/site/cpprefjp/)
 
 
+##運営者
+boostjpは、以下のコアメンバが運営を行っています：
+
+* [Akira Takahashi](https://github.com/faithandbrave/)
+* [Usagi Ito](https://github.com/usagi)
+* [melpon](https://github.com/melpon)
+* [Kohsuke Yuasa](https://github.com/hotwatermorning)
+* [Akiko Yamanouchi](https://github.com/h-sao)
+
+
 ##ライセンスについて
-本サイトの情報は、[クリエイティブ・コモンズ 表示 3.0 非移植 ライセンス(CC BY)](http://creativecommons.org/licenses/by/3.0/)の下に提供されています。
+本サイトの情報は、[クリエイティブ・コモンズ 表示 3.0 非移植 ライセンス(CC BY)](http://creativecommons.org/licenses/by/3.0/)の下に提供しています。
 
 ![](http://i.creativecommons.org/l/by/3.0/88x31.png)
-
-
-- 管理者：高橋 晶
-- 連絡先：faithandbrave@gmail.com
 
 
