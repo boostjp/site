@@ -42,7 +42,8 @@
 - [https://docs0.google.com/drawings/d/1DEytUKK86x7UtqeYkUuBegc4RGxaix-tuOMjG-ojFow/edit?hl=ja](https://docs0.google.com/drawings/d/1DEytUKK86x7UtqeYkUuBegc4RGxaix-tuOMjG-ojFow/edit?hl=ja)
 
 
-##春のLock-Free祭り
+##発表内容
+###春のLock-Free祭り
 - 発表者 : kumagi
 - ブログ : [http://d.hatena.ne.jp/kumagi/](http://d.hatena.ne.jp/kumagi/)
 - Twitter : [http://twitter.com/#!/kumagi](http://twitter.com/#%21/kumagi)
@@ -50,7 +51,7 @@
 - 発表資料 : [春のLock-Free祭り.pptx (Google Docs)](https://docs.google.com/leaf?id=0B72X9w6tG5q0M2VkMjdkMDItYTViOC00MTM2LTgxODYtNmIxZTI1ZGFlYWI5&hl=en)
 
 
-##Boostで線形代数(再)入門
+###Boostで線形代数(再)入門
 - 発表者 : モリグチ
 - ブログ : [http://d.hatena.ne.jp/wof_moriguchi/](http://d.hatena.ne.jp/wof_moriguchi/)
 - Twitter : [http://twitter.com/#!/wof_moriguchi](http://twitter.com/#%21/wof_moriguchi)
@@ -58,7 +59,7 @@
 - 発表資料 : [boost_wof.pdf](http://dl.dropbox.com/u/994859/boost_wof.pdf)
 
 
-##Frama-Cによる証明
+###Frama-Cによる証明
 - 発表者 : mzp
 - ブログ : [http://d.hatena.ne.jp/mzp/](http://d.hatena.ne.jp/mzp/)
 - Twitter : [http://twitter.com/#!/mzp](http://twitter.com/#%21/mzp)
@@ -66,7 +67,7 @@
 - 発表資料 : [20110514-boost3(Slide Share)](http://www.slideshare.net/mzpi/20110514-boost3)
 
 
-##左再帰を許すPEG
+###左再帰を許すPEG
 - 発表者 : eldesh
 - ブログ : [http://d.hatena.ne.jp/eldesh/](http://d.hatena.ne.jp/eldesh/)
 - Twitter : [http://twitter.com/#!/eldesh](http://twitter.com/#%21/eldesh)
@@ -76,7 +77,7 @@
 - アフターケア : [Boost.勉強会＃5 名古屋で発表しました！](http://d.hatena.ne.jp/eldesh/20110515/1305433454)
 
 
-##Boost.Pythonの有能性
+###Boost.Pythonの有能性
 - 発表者 : fate_fox
 - ブログ : [http://fatefox.wordpress.com/](http://fatefox.wordpress.com/)
 - Twitter : [http://twitter.com/#!/fate_fox](http://twitter.com/#%21/fate_fox)
@@ -85,7 +86,7 @@
 - アフターケア : [Boost.勉強会 #5名古屋](http://fatefox.wordpress.com/2011/05/14/boost-%E5%8B%89%E5%BC%B7%E4%BC%9A-5%E5%90%8D%E5%8F%A4%E5%B1%8B%e3%80%80/)
 
 
-##Boost.statechart / Boost.MSM
+###Boost.statechart / Boost.MSM
 - 発表者 : PG_kura
 - ブログ : [http://d.hatena.ne.jp/kura-replace/](http://d.hatena.ne.jp/kura-replace/)
 - Twitter : [http://twitter.com/#!/PG_kura](http://twitter.com/#%21/PG_kura)
@@ -96,7 +97,7 @@
 - アフターケア : [Boost. 勉強会 #5 に参加してきた。 - 偏見プログラマの語り！](http://d.hatena.ne.jp/kura-replace/20110514/1305385110)
 
 
-##OpenCVを使った画像処理
+###OpenCVを使った画像処理
 - 発表者 : miyabiarts
 - Webサイト : [http://miyabiarts.net/nagoyacv/](http://miyabiarts.net/nagoyacv/)
 - ブログ : [http://miyabiarts.net/](http://miyabiarts.net/)
@@ -109,7 +110,7 @@
 	- [Boost.勉強会 #5 名古屋で発表してきました - Miyabiarts.net](http://miyabiarts.net/?p=794)
 
 
-##C++0x総復習
+###C++0x総復習
 - 発表者 : 道化師
 - ブログ : [http://d.hatena.ne.jp/wraith13/](http://d.hatena.ne.jp/wraith13/)
 - Twitter : [http://twitter.com/#!/wraith13](http://twitter.com/#%21/wraith13)
@@ -117,7 +118,7 @@
 - 発表資料 : revise.cpp0x [[pptx](http://twd.ac/lYWYgZ)] [[pdf](http://twd.ac/jB9Ges)]
 
 
-##非実用的Boost Spirit Qi入門
+###非実用的Boost Spirit Qi入門
 - 発表者 : Yak!
 - Webサイト : [http://yak3.myhome.cx:8080/junks/](http://yak3.myhome.cx:8080/junks/)
 - ブログ : [http://slashdot.jp/~Yak!/journal/](http://slashdot.jp/%7EYak%21/journal/)
@@ -127,7 +128,7 @@
 - アフターケア : [Boost.勉強会 #5 名古屋で発表してきました - Yak! の日記](http://slashdot.jp/%7EYak%21/journal/531264)
 
 
-##boost::progress_display++ at 懇親会
+###boost::progress_display++ at 懇親会
 - 発表者 : 郵便はみがき
 - ブログ : [http://d.hatena.ne.jp/y-hamigaki/](http://d.hatena.ne.jp/y-hamigaki/)
 - Twitter : [http://twitter.com/#!/yhamigaki](http://twitter.com/#%21/yhamigaki)
@@ -139,7 +140,7 @@
 	- アフターケア: [boost::progress_display++ - かそくそうち](http://d.hatena.ne.jp/y-hamigaki/20110514#1306066988)
 
 
-##五重塔改め、五重ジェネリクス at 懇親会
+###五重塔改め、五重ジェネリクス at 懇親会
 - 発表者 : うなー
 - ブログ : [http://d.hatena.ne.jp/unarist/](http://d.hatena.ne.jp/unarist/)
 - Twitter : [http://twitter.com/#!/unarist](http://twitter.com/#%21/unarist)
@@ -150,7 +151,7 @@
 	- しまぱんコンソール [github](https://github.com/unarist/ShimapanConsole)
 
 
-##Boost.破壊的関数呼び出し at 懇親会
+###Boost.破壊的関数呼び出し at 懇親会
 - 発表者 : Cryolite
 - ブログ : [http://d.hatena.ne.jp/Cryolite/](http://d.hatena.ne.jp/Cryolite/)
 - Twitter : [http://twitter.com/#!/Cryolite](http://twitter.com/#%21/Cryolite)
