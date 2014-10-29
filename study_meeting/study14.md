@@ -112,22 +112,22 @@
 ##写真
 ※写真に写って困る方がいらっしゃいましたら、主催者かスタッフまでご連絡ください。削除対応いたします。
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0324.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0324.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0325.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0325.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0337.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0337.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0340.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0340.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0344.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0344.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0348.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0348.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0349.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0349.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0350.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0350.JPG' height='300' border='0'/>
 
-<img width='320' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0352.JPG' height='212' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/image/master/study_meeting/study14/DSC_0352.JPG' height='300' border='0'/>
 
 
