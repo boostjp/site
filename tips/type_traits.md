@@ -1340,7 +1340,7 @@ union boost::detail::lower_alignment<1>
 ```
 
 
-### <a name="aligned-storage" href="aligned-storage">適切にアライメントされた型を作成する
+### <a name="aligned-storage" href="aligned-storage">適切にアライメントされた型を作成する</a>
 `boost::aligned_storage<Len, Align>`メタ関数を使用する。
 
 `Align`アライメント、`Len`サイズのPOD型を返す。

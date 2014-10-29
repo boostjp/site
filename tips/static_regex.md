@@ -328,7 +328,7 @@ int main()
 その引数として渡している `_` は「プレースホルダー」と呼ばれる特殊な値で、マッチした値で置き換えられる。
 
 
-## <a name="conditional-match" href="conditional-match">マッチ条件を指定する
+## <a name="conditional-match" href="conditional-match">マッチ条件を指定する</a>
 
 整数や文字といったパターンにマッチした後、より詳細な値チェックが通ったらマッチ成功と見なす方法として、セマンティックアクションでの`check()`関数が提供されている。
 

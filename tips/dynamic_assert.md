@@ -149,7 +149,7 @@ Line : 21
 - メッセージ
 - 関数名(形式は環境依存)
 - ファイル名(`__FILE__`)
-- 行番号(`__LINE__`)</ol>
+- 行番号(`__LINE__`)
 
 ```cpp
 #define BOOST_ENABLE_ASSERT_HANDLER

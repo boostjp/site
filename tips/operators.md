@@ -86,7 +86,7 @@ int main()
 - `operator+=`によって`operator+()`が定義され、他の関連演算子も同様に自動的に定義される。
 
 
-## <a name="arithmetic-operators" href-"arithmetic-operators">算術演算子</a>
+## <a name="arithmetic-operators" href="arithmetic-operators">算術演算子</a>
 
 ### <a name="less-than-comparable" href="less-than-comparable">大小比較の演算子を自動定義する</a>
 大小比較の演算子、すなわち、`operator<()`、`operator>()`、`operator<=()`、`operator>=()`は、`boost::less_than_comparable`を`private`継承することにより、`operator<()`だけを定義すれば、それ以外の関連演算子が自動的に定義される。

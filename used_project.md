@@ -36,7 +36,7 @@ Web アプリケーションフレームワーク。Boost.Any, Boost.Array, Boos
 
 - [Adobe Source Libraries](http://stlab.adobe.com/group__asl__home.html)
 クロスプラットフォームのGUI構築とそれに付随するユーティリティライブラリ群。
-GUI構築にAdam,Eveという2つの独自言語を採用しており、</span>ウィジェット間依存関係、GUIレイアウトとロジックの記述をそれぞれと完全に分離できる。
+GUI構築にAdam,Eveという2つの独自言語を採用しており、ウィジェット間依存関係、GUIレイアウトとロジックの記述をそれぞれと完全に分離できる。
 少なくとも Boost.Utility,Function,Signals,Range,Bind,TypeTraits,ConceptCheck,MPL,FunctionTypes,Noncopyable,Fusion,Operators,Iterator,Array,Any,Tuple,SharedPtr,Integer,StaticAssert を使用している。
 
 
