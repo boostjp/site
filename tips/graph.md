@@ -18,7 +18,7 @@
 - [Graphviz形式(.dot)のデータを読み込む](#read-graphviz)
 
 
-## <a name="define-graph" href-"define-graph">グラフ型を定義する</a>
+## <a name="define-graph" href="define-graph">グラフ型を定義する</a>
 Boost.Graphで標準的に使用する、グラフ構造のためのクラス[`boost::adjacency_list`](http://www.boost.org/doc/libs/release/libs/graph/doc/using_adjacency_list.html)は、様々な目的に利用できるようカスタマイズが可能になっている。
 
 

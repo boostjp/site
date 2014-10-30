@@ -81,7 +81,7 @@ int main()
 ```
 
 
-## <a name="transform-type" href="transform-type">型変換 - transformed</h4>
+## <a name="transform-type" href="transform-type">型変換 - transformed</a>
 リストの全ての要素に関数を適用する`boost::adaptors::transformed`は、型変換にも使用することができる。
 
 以下は、リストの全ての要素を`int`から`std::string`に変換する処理である。

@@ -234,7 +234,7 @@ int main()
 ```
 
 
-## <a name="index-container-table" href="index-container-table">インデックスと標準コンテナの対応表</h4>
+## <a name="index-container-table" href="index-container-table">インデックスと標準コンテナの対応表</a>
 Boost.Multi-Indexのインデックスは、以下のテーブルのように標準コンテナに対応している。
 
 | インデックス         | 対応する標準コンテナ     | 説明 |
