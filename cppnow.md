@@ -3,12 +3,12 @@
 
 BoostConは以下のページを参照してください：
 
-- [BoostCon - boostjp](https://sites.google.com/site/boostjp/boostcon)
+- [BoostCon - boostjp](/boostcon.md)
 
 
 ##各年のセッション概要翻訳
 
-- [C++Now! 2012](https://sites.google.com/site/boostjp/cppnow/2012)
-- [C++Now! 2013](https://sites.google.com/site/boostjp/cppnow/2013)
-- [C++Now! 2014](https://sites.google.com/site/boostjp/cppnow/2014)
+- [C++Now! 2012](/cppnow/2012.md)
+- [C++Now! 2013](/cppnow/2013.md)
+- [C++Now! 2014](/cppnow/2014.md)
 
