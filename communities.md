@@ -15,7 +15,7 @@
 
 
 ##オフライン
-- [Boost.勉強会](https://sites.google.com/site/boostjp/study_meeting)
+- [Boost.勉強会](/study_meeting.md)
 	- 東京
 	- 名古屋
 	- 札幌
