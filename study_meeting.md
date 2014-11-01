@@ -20,7 +20,7 @@ Boost.勉強会の英語表記は「Boost.StudyMeeting」です。英語圏で�
 ##その他、Boost.勉強会情報
 - [ネタ帳](/study_meeting/idea.md)
 
-<span "color:red;">↑みんな書いてね！</span>
+<span style="color:red;">↑みんな書いてね！</span>
 
 - [ライブラリ逆引き](/study_meeting/reversed_index.md) (どの回でどのライブラリが誰によって発表されたかの表）
 
