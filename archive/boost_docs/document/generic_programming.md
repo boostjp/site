@@ -1,19 +1,19 @@
-#Generic Programming Techniques
+#ジェネリックプログラミング手法
 これは boost ライブラリで使われている、 ジェネリックプログラミング技術の不完全な概観である。
 
 
 ##Table of Contents
 
-- [Introduction](#introduction)
-- [The Anatomy of a Concept](#the-anatomy-of-a-concept)
-- [Traits](#traits)
-- [Tag Dispatching](#tag-dispatching)
-- [Adaptors](#adaptors)
-- [Type Generators](#type-generators)
-- [Object Generators](#object-generators)
-- [Policy Classes](#policy-classes)
+- [はじめに(Introduction)](#introduction)
+- [コンセプトの分析(The Anatomy of a Concept)](#the-anatomy-of-a-concept)
+- [特性クラス(Traits)](#traits)
+- [タグ分岐(Tag Dispatching)](#tag-dispatching)
+- [アダプタ(Adaptors)](#adaptors)
+- [型生成器(Type Generators)](#type-generators)
+- [オブジェクト生成器(Object Generators)](#object-generators)
+- [ポリシークラス(Policy Classes)](#policy-classes)
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="introduction">はじめに(Introduction)</a>
 ジェネリックプログラミングはソフトウェアコンポーネントに汎用化に関するものであり、 これによりコンポーネントを多様な状況で容易に再利用することが出来る。 C++ ではクラステンプレートと関数テンプレートがジェネリックプログラミング技術に対して特に効果的である。 なぜなら、これらは効率を犠牲にすることなく汎用化を可能にするからである。
 
 ジェネリックプログラミングの簡単な例として、C 標準ライブラリの `memcpy()` 関数をどのように汎用化するか見てみよう。 `memcpy()` の実装は次のようになっている。
@@ -70,7 +70,7 @@ int main()
 }
 ```
 
-## <a name="the-anatomy-of-a-concept" href="the-anatomy-of-a-concept">The Anatomy of a Concept</a>
+## <a name="the-anatomy-of-a-concept" href="the-anatomy-of-a-concept">コンセプトの分析(The Anatomy of a Concept)</a>
 **コンセプト** は要求の集合であり、要求は有効な式、関連型、不変量、 そして計算量の保証から出来ている。要求の集合を満たす型は、コンセプトの モデル と言われる。 コンセプトは他のコンセプトの要求を拡張することが可能であり、これは **発展型(refinement)** と呼ばれる。
 
 - **有効な式** とは、 コンセプトの *モデル* とみなされる式に関わるオブジェクトに対して、 コンパイルが成功しなければならない C++ の式である。
@@ -81,8 +81,7 @@ int main()
 C++ 標準ライブラリで使われているコンセプトは [SGI STL site](http://www.sgi.com/tech/stl/table_of_contents.html) で文書化されている。
 
 
-## <a name="traits" href="traits">Traits</a>
-
+## <a name="traits" href="traits">特性クラス(Traits)</a>
 特性クラスは、情報から、コンパイル時の構成要素 (型、汎整数定数、アドレス) を連想する方法を提供する。 例えば、クラステンプレート`std::iterator_traits<T>` は次のようになっている:
 
 ```cpp
@@ -103,7 +102,7 @@ struct iterator_traits {
 `std::iterator_traits` についての詳細な記述は、 SGI が提供している [このページ](http://www.sgi.com/tech/stl/iterator_traits.html) を見よ。 標準ライブラリでの、大きく異なる別の特性の式は `std::numeric_limits<T>` である。これは、 数値型の範囲と能力を記述する定数を提供している。
 
 
-## <a name="tag-dispatching" href="tag-dispatching">Tag Dispatching</a>
+## <a name="tag-dispatching" href="tag-dispatching">タグ分岐(Tag Dispatching)</a>
 特性クラスと同時に使われることが多い技術に、タグ分岐がある。 これは、型の性質に基づいて分岐するために、関数オーバーロードを使う方法である。 これについてのよい例は、C++ 標準ライブラリの [`std::advance()`](http://www.sgi.com/tech/stl/advance.html) 関数である。 これは、イテレータを `n` 回インクリメントする。 イテレータの種類によって、実装の中では適用される、異なる最適化がある。 もしイテレータが [random access](http://www.sgi.com/tech/stl/RandomAccessIterator.html) (前方、後方に任意の距離、ジャンプすることが可能である) なら、 `advance()` 関数は単に `i += n` で実装され、これは非常に効率的、つまり定数時間である。 他のイテレータでは、 ステップ数が **上昇** し、演算は `n` に対する線形時間になる。 もしイテレータが、 [双方向](http://www.sgi.com/tech/stl/BidirectionalIterator.html) なら、 `n` が負であっても良いので、 イテレータをインクリメントするかデクリメントするか選ばなければならない。
 
 タグ分岐と特性クラスの関係は、分岐に使われる性質(この場合では `iterator_category`) が特性クラスによってアクセスされることが多い、ということである。 主たる `advance()` 関数は `iterator_category` を得るために [`iterator_traits`](http://www.sgi.com/tech/stl/iterator_traits.html) クラスを使う。 それから、オーバーロードされた `advance_dispatch()` 関数を呼び出すのである。 `iterator_category` をどんな型に解決するかに基づいて、 コンパイラにより、 [`input_iterator_tag`](http://www.sgi.com/tech/stl/input_iterator_tag.html) か [`bidirectional_iterator_tag`](http://www.sgi.com/tech/stl/bidirectional_iterator_tag.html) か [`random_access_iterator_tag`](http://www.sgi.com/tech/stl/random_access_iterator_tag.html) の中から適した `advance_dispatch()` が選ばれるのである。 **タグ** はタグ分岐や、似たような技術で使うための性質を伝える、 という目的だけを持つ単純なクラスである。 イテレータタグのより詳細な記述については、[このページ](http://www.sgi.com/tech/stl/iterator_tags.html) を参照すること。
@@ -145,14 +144,14 @@ namespace std {
 ```
 
 
-## <a name="adaptors" href="adaptors">Adaptors</a>
+## <a name="adaptors" href="adaptors">アダプタ(Adaptors)</a>
 *アダプタ* は別の型や、新しいインタフェース、ビヘイビアの変種を提供する型を構築する、 クラステンプレートである。 標準のアダプタの例は、 [`std::reverse_iterator`](http://www.sgi.com/tech/stl/ReverseIterator.html) にある。これは、インクリメント、デクリメントに対しその動きの逆転させる、イテレータ型に対するアダプタである。 [`std::stack`](http://www.sgi.com/tech/stl/stack.html) は単純なスタックインタフェースを提供するコンテナに対するアダプタである。
 
 標準でのアダプタについての、より解りやすいレビューは [ここ](http://www.cs.rpi.edu/~wiseb/xrds/ovp2-3b.html#SECTION00015000000000000000) にある。
 
 
-## <a name="type-generators" href="type-generators">Type Generators</a>
-*type generator* はテンプレート引数 [^1] に基づいて新しい型を合成することだけが目的のテンプレートである。 生成された型は通常、ネストされた `typedef` で名前付けされ、いかにもふさわしく type として表現される。 型生成は通常、複雑な型表現をひとつの型に制止するために使われる。例えば、 `boost::filter_iterator_generator` では、次のようになっている:
+## <a name="type-generators" href="type-generators">型生成器(Type Generators)</a>
+*型生成器* はテンプレート引数 [^1] に基づいて新しい型を合成することだけが目的のテンプレートである。 生成された型は通常、ネストされた `typedef` で名前付けされ、いかにもふさわしく型として表現される。 型生成は通常、複雑な型表現をひとつの型に制止するために使われる。例えば、 `boost::filter_iterator_generator` では、次のようになっている:
 
 ```cpp
 template <class Predicate, class Iterator, 
@@ -176,8 +175,8 @@ boost::filter_iterator_generator<my_predicate,my_base_iterator>::type
 ```
 
 
-## <a name="object-generators" href="object-generators">Object Generators</a>
-*object generator* は関数テンプレートであり、唯一の目的は、 引数から新しいオブジェクトを構築することである。 汎用コンストラクタの一種として考えることが出来るだろう。 オブジェクト生成器は、生成される実際の型を表現するのが難しかったり、出来なかったりするときに、 単なるコンストラクタよりも役立つだろう。 そして生成器の結果は変数に格納するのではなく、直接関数に渡すことも出来る。 多くの Boost オブジェクト生成器は接頭辞 "`make_`" がつけられている。 これは、`std::make_pair(const T&, constU&)` に倣ってのことである。
+## <a name="object-generators" href="object-generators">オブジェクト生成器(Object Generators)</a>
+*オブジェクト生成器* は関数テンプレートであり、唯一の目的は、 引数から新しいオブジェクトを構築することである。 汎用コンストラクタの一種として考えることが出来るだろう。 オブジェクト生成器は、生成される実際の型を表現するのが難しかったり、出来なかったりするときに、 単なるコンストラクタよりも役立つだろう。 そして生成器の結果は変数に格納するのではなく、直接関数に渡すことも出来る。 多くの Boost オブジェクト生成器は接頭辞 "`make_`" がつけられている。 これは、`std::make_pair(const T&, constU&)` に倣ってのことである。
 
 たとえば、次のようなものを考えてみる:
 
@@ -212,7 +211,7 @@ void tweak_all_widgets2(int arg)
 表現がより複雑になるにつれて、型指定の冗長性を減らす必要性はどうしても大きくなるのである。
 
 
-## <a name="policy-classes" href="policy-classes">Policy Classes</a>
+## <a name="policy-classes" href="policy-classes">ポリシークラス(Policy Classes)</a>
 ポリシークラスはビヘイビアを伝達するために使われるテンプレート引数である。 標準ライブラリからの例は `std::allocator` である。これは、メモリ管理のビヘイビアを標準の containers に伝える。
 
 ポリシークラスは Andrei Alexandrescu によって、 [この文書](http://www.cs.ualberta.ca/~hoover/cmput401/XP-Notes/xp-conf/Papers/7_3_Alexandrescu.pdf) の中で詳しく探求されている。彼は次のように書いている:
