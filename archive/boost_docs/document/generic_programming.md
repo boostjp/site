@@ -2,7 +2,7 @@
 これは boost ライブラリで使われている、 ジェネリックプログラミング技術の不完全な概観である。
 
 
-##Table of Contents
+##目次
 
 - [はじめに(Introduction)](#introduction)
 - [コンセプトの分析(The Anatomy of a Concept)](#the-anatomy-of-a-concept)
@@ -12,6 +12,7 @@
 - [型生成器(Type Generators)](#type-generators)
 - [オブジェクト生成器(Object Generators)](#object-generators)
 - [ポリシークラス(Policy Classes)](#policy-classes)
+
 
 ## <a name="introduction" href="introduction">はじめに(Introduction)</a>
 ジェネリックプログラミングはソフトウェアコンポーネントに汎用化に関するものであり、 これによりコンポーネントを多様な状況で容易に再利用することが出来る。 C++ ではクラステンプレートと関数テンプレートがジェネリックプログラミング技術に対して特に効果的である。 なぜなら、これらは効率を犠牲にすることなく汎用化を可能にするからである。
