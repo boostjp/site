@@ -1,6 +1,8 @@
 #ジェネリックプログラミング手法
 これは boost ライブラリで使われている、 ジェネリックプログラミング技術の不完全な概観である。
 
+- 翻訳元：<http://www.boost.org/community/generic_programming.html>
+
 
 ##目次
 
