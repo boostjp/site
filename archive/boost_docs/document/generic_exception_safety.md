@@ -3,6 +3,7 @@ Lessons Learned from Specifying Exception-Safety for the C++ Standard Library
 
 - David Abrahams
 - david.abrahams@rcn.com
+- 翻訳元：<http://www.boost.org/community/exception_safety.html>
 
 **概要**
 
