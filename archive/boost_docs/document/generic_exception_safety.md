@@ -1,5 +1,5 @@
-#Exception-Safety in Generic Components
-Lessons Learned from Specifying Exception-Safety for the C++ Standard Library
+#ジェネリックコンポーネントにおける例外安全性
+C++標準ライブラリのために規定した例外安全性の経験から学んだこと
 
 - David Abrahams
 - david.abrahams@rcn.com
