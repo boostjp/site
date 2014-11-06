@@ -108,7 +108,7 @@ Matthew H. Austern は彼の本、 *Generic Programming and the STL* の中で�
 以下のコードは「このままの形(as is)」で提供され、明示的あるいは暗黙的な保証はない。
 
 - [**array.hpp**](./array.hpp.md), `array<>` の実装ファイル
-- [**array1.cpp**(./array1.cpp.md), `array<>`を使った簡単な例
+- [**array1.cpp**](./array1.cpp.md), `array<>`を使った簡単な例
 - [**array2.cpp**](./array2.cpp.md), `array<>`を使った別の例
 - [**array3.cpp**](./array3.cpp.md), `array<>`を使った三つ目の例
 - [**array4.cpp**](./array4.cpp.md), `array<>` の `array<>` を使った例
