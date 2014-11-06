@@ -8,5 +8,5 @@
 ##ドキュメント
 - [ジェネリックプログラミング手法](./boost_docs/document/generic_programming.md)
 - [ジェネリックコンポーネントにおける例外安全性](./boost_docs/document/generic_exception_safety.md)
-
+- [エラーと例外のハンドリング](./boost_docs/document/error_handling.md)
 
