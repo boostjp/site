@@ -23,7 +23,7 @@
 	- [どうして bind は非標準の関数を自動的に認識しない？](#why-doesnt-bind-automatically-recognize-nonstd-functions)
 - [トラブルシューティング](#troubleshooting)
 	- [引数の数が不正](#incorrect-number-of-arguments)
-	- [関数オブジェクトは指定された引数とともに呼び出すことはできない)(#function-object-cannot-be-called-with-the-specified-arguments)
+	- [関数オブジェクトは指定された引数とともに呼び出すことはできない](#function-object-cannot-be-called-with-the-specified-arguments)
 	- [存在しない引数へのアクセス](#access-arg-does-not-exist)
 	- [`bind(f, ...)` の不適切な使用](#inappropriate-use-of-bind)
 	- [`bind<R>(f, ...)` の不適切な使用](#inappropriate-use-of-bind-r)
