@@ -6,5 +6,6 @@
 
 | ライブラリ | 説明 |
 |---------------------------|------|
-| [Array](./array/index.md) | STL に準拠した定数サイズの配列のラッパコンテナ。Nicolai Josuttis 作 |
+| [array](./array/index.md) | STL に準拠した定数サイズの配列のラッパコンテナ。Nicolai Josuttis 作 |
+| [bind](./bind/bind.md) and [mem_fn](./bind/mem_fn.md) | 関数、オブジェクト、ポインタ、メンバ関数のための汎用的なバインダ。 Peter Dimov 作 |
 
