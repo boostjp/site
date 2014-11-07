@@ -148,7 +148,7 @@ namespace std {
 
 
 ## <a name="adaptors" href="adaptors">アダプタ(Adaptors)</a>
-*アダプタ* は別の型や、新しいインタフェース、振る舞いの変種を提供する型を構築する、 クラステンプレートである。 標準のアダプタの例は、 [`std::reverse_iterator`](http://www.sgi.com/tech/stl/ReverseIterator.html) にある。これは、インクリメント、デクリメントに対しその動きの逆転させる、イテレータ型に対するアダプタである。 [`std::stack`](http://www.sgi.com/tech/stl/stack.html) は単純なスタックインタフェースを提供するコンテナに対するアダプタである。
+*アダプタ* は別の型や、新しいインタフェース、振る舞いの変種を提供する型を構築する、 クラステンプレートである。 標準のアダプタの例は、 [`std::reverse_iterator`](http://www.sgi.com/tech/stl/ReverseIterator.html) にある。これは、インクリメント、デクリメントに対しその動きを逆転させる、イテレータ型に対するアダプタである。 [`std::stack`](http://www.sgi.com/tech/stl/stack.html) は単純なスタックインタフェースを提供するコンテナに対するアダプタである。
 
 標準でのアダプタについての、より解りやすいレビューは [ここ](http://www.cs.rpi.edu/~wiseb/xrds/ovp2-3b.html#SECTION00015000000000000000) にある。
 
