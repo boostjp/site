@@ -228,7 +228,7 @@ std::for_each(v.begin(), v.end(), bind(apply<void>(), _1, 5));
 `protect` 関数は `boost/bind/protect.hpp` ヘッダに含まれている。 `bind` 関数オブジェクトを評価されないように保護するには、`protect(bind(f, ...))` と書けばよい。
 
 
-## <a name="examples" href="examples">コード例
+## <a name="examples" href="examples">コード例</a>
 ### <a name="using-bind-with-standard-algorithms" href="using-bind-with-standard-algorithms">標準アルゴリズムと`bind`を組み合わせて使用する</a>
 ```cpp
 class image;
