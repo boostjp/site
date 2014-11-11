@@ -26,7 +26,7 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 2. [Motivating Example](#motivating-example)
 3. [History](#history)
 4. [Publications](#publications)
-5. Acknowledgements
+5. [Acknowledgements](#acknowledgements)
 6. Using Concept Checks
 7. Creating Concept Checking Classes
 8. Concept Covering and Archetypes
