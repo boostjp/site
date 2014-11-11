@@ -29,7 +29,7 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 4. [Publications](#publications)
 5. [Acknowledgements](#acknowledgements)
 6. [Using Concept Checks](./using_concept_check.md)
-7. Creating Concept Checking Classes
+7. [Creating Concept Checking Classes](./creating_concepts.md)
 8. Concept Covering and Archetypes
 9. Programming With Concepts
 10. Implementation
