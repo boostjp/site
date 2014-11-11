@@ -139,3 +139,11 @@ template<class T> class unwrap_reference<T const>
 `ref` と `cref` は元々は Jaakko Järvi 氏作の Boost.Tuple というライブラリの一部であった。それが、一般的に有用であるという理由で Peter Dimov 氏の手によって「`boost::` に昇格」した。Douglas Gregor 氏と Dave Abrahams 氏が `is_reference_wrapper` と `unwrap_reference` を提供した。
 
 
+***
+Copyright © 2001 by Peter Dimov and Multi Media Ltd. Permission to copy, use, modify, sell and distribute this document is granted provided this copyright notice appears in all copies. This document is provided "as is" without express or implied warranty, and with no claim as to its suitability for any purpose.
+
+***
+Japanese Translation Copyright © 2003 [Fujio Kojima](f_kojima@fukuicompu.co.jp)
+
+オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。また、いかなる目的に対しても、その利用が適していることを関知しない。
+
