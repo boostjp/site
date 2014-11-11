@@ -28,7 +28,7 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 3. [History](#history)
 4. [Publications](#publications)
 5. [Acknowledgements](#acknowledgements)
-6. Using Concept Checks
+6. [Using Concept Checks](./using_concept_check.md)
 7. Creating Concept Checking Classes
 8. Concept Covering and Archetypes
 9. Programming With Concepts
@@ -132,7 +132,7 @@ boost/concept_check.hpp:209: no match for `_List_iterator<int,int &,int *> &
 インスタンス化を引き起こすために関数ポインタを使用するアイディアは、Alexander Stepanov に拠る。 テンプレートの事前チェックに式を使用するアイディアに関して、その起源を確認できなかった。しかし、それは D&E[[2](./bibliography.md#design-and-evolution)] に記載されている。 STL コンセプトに関する優れた文書化と構造化を行った Matt Austern に感謝をささげる。このコンセプト・チェックは彼の仕事を基礎にしている。 有益なコメントとレビューを賜った Boost のメンバにも感謝を。
 
 
-次へ： [Using Concept Checks](./using_concept_check.md)
+- [次へ： Using Concept Checks](./using_concept_check.md)
 
 ***
 Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<jsiek@osl.iu.edu>) Andrew Lumsdaine(<lums@osl.iu.edu>)
