@@ -1,5 +1,8 @@
 #非推奨： Compose library
 
+- 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/compatibility/>
+
+
 <span style="color:red;">このライブラリは、BindやLambdaといったライブラリからの支持によって廃止され、将来のBoostのリリースからは削除されるだろう。</span>
 
 compose.hpp ヘッダは合成関数オブジェクト・アダプタを拡張するものであり、標準C++ライブラリの一部であるStandard Template Library(STL)と共に利用できる。あなたがSTLを使っていないなら本ライブラリが提供する合成関数アダプタに興味を示さないだろうが、STLを使いこなしているのならこれらアダプタの有効性が理解できるだろう。
