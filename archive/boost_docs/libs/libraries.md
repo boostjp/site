@@ -11,5 +11,5 @@
 | [compatibility](./compatibility/index.md) | 標準に準拠しないプラットフォームでのライブラリの利用に役立つ。Ralf Grosse-Kunstleve and Jens Maurer 作 |
 | [compose](./compose/index.md) | STL の為の関数合成アダプタ Nicolai Josuttis 作 |
 | [concept check](./concept_check/concept_check.md) | ジェネリックプログラミングのためのツール群。 Jeremy Siek 作 |
-
+| [conversion](./conversion/index.md) | 数学的、多相的、辞書的キャスト Dave Abrahams and Kevlin Henney 作 |
 
