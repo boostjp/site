@@ -23,22 +23,22 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 
 この文書を、以下の通り構成する。
 
-1. [Introduction](#introduction)
-2. [Motivating Example](#motivating-example)
-3. [History](#history)
-4. [Publications](#publications)
-5. [Acknowledgements](#acknowledgements)
-6. [Using Concept Checks](./using_concept_check.md)
-7. [Creating Concept Checking Classes](./creating_concepts.md)
-8. [Concept Covering and Archetypes](./concept_covering.md)
-9. [Programming With Concepts](./prog_with_concepts.md)
-10. [Implementation](./implementation.md)
-11. [Reference](./reference.md)
+1. [はじめに](#introduction)
+2. [動機の例](#motivating-example)
+3. [歴史](#history)
+4. [公開資料](#publications)
+5. [謝辞](#acknowledgements)
+6. [コンセプト・チェックの利用](./using_concept_check.md)
+7. [コンセプト・チェック用クラスの作成](./creating_concepts.md)
+8. [コンセプトの充当化と原型](./concept_covering.md)
+9. [コンセプトを用いたプログラミング](./prog_with_concepts.md)
+10. [コンセプト・チェックの実装](./implementation.md)
+11. [リファレンス](./reference.md)
 
 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm) はこのライブラリを寄稿した。 [Beman Dawes](http://www.boost.org/doc/libs/1_31_0/people/beman_dawes.html) が公式レビューを管理した。
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="introduction">はじめに</a>
 コンセプト "concept" とは、ジェネリック・アルゴリズムに対する引数として与えられる型が、アルゴリズム内部で正しく使用されるために満足しなければならない要求事項(有効な式、関連型、セマンティクス不変、計算量保証など)の組み合わせである。 C++ では、コンセプトは関数テンプレート(ジェネリック・アルゴリズム)のテンプレート・パラメータとして表現される。 しかしながら、C++ にはコンセプトを表現するための明示的なメカニズムがない。テンプレート・パラメータはただのプレースホルダでしかないのだ。 慣例として、こういったパラメータには、必要とされるコンセプトに対応する名前を与える。しかし、テンプレート・パラメータを実際の型で確定するときに、C++ コンパイラはコンセプトへの遵守を強要しない。
 
 当然ながら、ジェネリック・アルゴリズムを、そのコンセプトの内、構文に関わる要求事項を満足していない型で呼び出した場合、コンパイル・エラーが生じる。 しかし、このエラーは、該当する型がコンセプトの要求事項すべてに適合していない事実を本質的に 反映したものではない。 それどころか、エラーはインスタンス化階層の深部で発生し、該当する型に対して式が有効でないか、想定された関連型が利用可能でないといったことが原因として挙げられることになるだろう。 こうして生じたエラーメッセージは、大抵において情報に乏しく、基本的に不可解である。
@@ -48,7 +48,7 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 注意すべき点は、この技術がコンセプトの要求事項のうち構文に関わる部分(有効な式および関連型)のみを扱うことである。 我々は、コンセプトの要求事項の一部であるセマンティクス不変あるいは計算量保証を扱わない。
 
 
-## <a name="motivating-example" href="motivating-example">Motivating Example</a>
+## <a name="motivating-example" href="motivating-example">動機の例</a>
 テンプレート・ライブラリの不正な使用法と、その結果生じるエラーメッセージを例証するために単純なサンプルを示す。 下記のコードでは、標準テンプレート・ライブラリー (STL) のジェネリックな `std::stable_sort()` アルゴリズム [[3](./bibiography.md#generic-programming-and-the-stl)、[4](./bibliography.md#stl-tutorial-and-reference-guide)、[5](./bibliography.md#the-standard-template-library)] をリンクリストに適用している。
 
 bad_error_eg.cpp:
@@ -119,20 +119,20 @@ boost/concept_check.hpp:209: no match for `_List_iterator<int,int &,int *> &
 - エラーメッセージの中に concept_check.hpp および `constraints()` が示されることで、ライブラリ実装の中にではなくユーザーのコードにエラーがあるという事実をユーザーに警告している。
 
 
-## <a name="history" href="history">History</a>
+## <a name="history" href="history">歴史</a>
 このコンセプト・チェック・システムの初期バージョンは、著者が SGI において、C++ コンパイラおよびライブラリ・グループの一員として勤務している間に開発された。 初期バージョンは今も SGI STL ディストリビューションの一部である。 Boost コンセプト・チェック・ライブラリは、エラーメッセージにおけるそれほど有用でない表現能力を犠牲にして、コンセプト・チェック用クラス定義を非常に単純化しており、その点で SGI STLのコンセプト・チェックとは異なっている。
 
 
-## <a name="publications" href="publications">Publications</a>
+## <a name="publications" href="publications">公開資料</a>
 
 - [C++ テンプレート・ワークショップ2000](http://www.oonumerics.org/tmpw00/)、コンセプト・チェック。
 
 
-## <a name="acknowledgements" href="acknowledgements">Acknowledgements</a>
+## <a name="acknowledgements" href="acknowledgements">謝辞</a>
 インスタンス化を引き起こすために関数ポインタを使用するアイディアは、Alexander Stepanov に拠る。 テンプレートの事前チェックに式を使用するアイディアに関して、その起源を確認できなかった。しかし、それは D&E[[2](./bibliography.md#design-and-evolution)] に記載されている。 STL コンセプトに関する優れた文書化と構造化を行った Matt Austern に感謝をささげる。このコンセプト・チェックは彼の仕事を基礎にしている。 有益なコメントとレビューを賜った Boost のメンバにも感謝を。
 
 
-- [次へ： Using Concept Checks](./using_concept_check.md)
+- [次へ：「コンセプト・チェックの利用」](./using_concept_check.md)
 
 ***
 Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<jsiek@osl.iu.edu>) Andrew Lumsdaine(<lums@osl.iu.edu>)

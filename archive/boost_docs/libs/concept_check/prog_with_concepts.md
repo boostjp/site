@@ -14,8 +14,8 @@
 
 コンセプトにおける極小性は、表現されている問題領域の基礎的なセマンティックスに関連したプロパティである。 基本コンテナの問題領域では、単一方向へのトラバースを必要とすることは、両方向へ必要とするより小さな要求事項である (つまりは [`ForwardIterator`](http://www.sgi.com/tech/stl/ForwardIterator.html) と [`BidirectionalIterator`](http://www.sgi.com/tech/stl/BidirectionalIterator.html) の相違である) 。 セマンティクスの違いは、前方イテレータを有する具象データ型の集合と、双方向イテレータを持つ集合との間にある差異から、容易に見い出すことができる。 例えば、単方向リンク・リストは、双方向イテレータではなく前方イテレータを有するデータ構造の集合に含まれるだろう。 さらに、前方イテレータだけを使用して実装することができるアルゴリズムの集合は、双方向イテレータ無しにはインプリメントできないアルゴリズム集合とは全く重なることがない。 このために、要求事項の一群をある程度きめ細かくコンセプト別に分類することが重要である。 例えば、イテレータに対する要求事項は、STL における６つのイテレータ・コンセプト(自明、出力、入力、前方、双方向、ランダムアクセス)に分類される。
 
-- [次へ： Implementation](./implementation.md)
-- [前へ： Concept Covering and Archetypes](./concept_covering.md)
+- [次へ：「コンセプト・チェックの実装」](./implementation.md)
+- [前へ：「コンセプトの充当化と原型」](./concept_covering.md)
 
 ***
 <a name="translate-note" href="translate-note">訳注1</a>

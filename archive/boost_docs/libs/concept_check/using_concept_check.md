@@ -1,5 +1,5 @@
-#Using Concept Checks
-各コンセプトに対して、与えられた型 (あるいは型の集合) がコンセプトをモデル化していることを確かめるために使用することができる、何らかのコンセプト・チェック用クラスが存在する。 Boost コンセプト・チェック・ライブラリ (BCCL) は、C++ 標準ライブラリの中で使用される全てのコンセプト＋αを対象とした、コンセプト・チェック用クラスを含んでいる。 [Reference](./reference.md) セクションに、このコンセプト・チェック用クラスをリストしてある。 さらに、他の Boost ライブラリも、ライブラリ独自の特別なコンセプトに対応するコンセプト・チェック用クラスを付随している。 例えば、[graph concept](../graph/graph_concepts.md) および [property map concept](../property_map/property_map.md) がある。 さらに、クラス・テンプレートや関数テンプレートを記述する者は、既存のコンセプトでカバーされていない要求事項を表現する必要のある場合は常に、新しいコンセプト・チェック用クラスを作成すべきである。 その方法は [Creating Concept Checking Classes](./creating_concepts.md) セクションで説明する。
+#コンセプト・チェックの利用
+各コンセプトに対して、与えられた型 (あるいは型の集合) がコンセプトをモデル化していることを確かめるために使用することができる、何らかのコンセプト・チェック用クラスが存在する。 Boost コンセプト・チェック・ライブラリ (BCCL) は、C++ 標準ライブラリの中で使用される全てのコンセプト＋αを対象とした、コンセプト・チェック用クラスを含んでいる。 [リファレンス](./reference.md) セクションに、このコンセプト・チェック用クラスをリストしてある。 さらに、他の Boost ライブラリも、ライブラリ独自の特別なコンセプトに対応するコンセプト・チェック用クラスを付随している。 例えば、[graph concept](../graph/graph_concepts.md) および [property map concept](../property_map/property_map.md) がある。 さらに、クラス・テンプレートや関数テンプレートを記述する者は、既存のコンセプトでカバーされていない要求事項を表現する必要のある場合は常に、新しいコンセプト・チェック用クラスを作成すべきである。 その方法は [コンセプト・チェック用クラスの作成](./creating_concepts.md) セクションで説明する。
 
 BCCL のコンセプト・チェック用クラスの例として、`EqualityComparableConcept` クラスを挙げる。 このクラスは、C++ 標準 20.1.1 に記述されている `EqualityComparable` (等値比較可能) 要求事項および、SGI STL で文書化されている [`EqualityComparable`](http://www.sgi.com/tech/stl/EqualityComparable.html) (等値比較可能) コンセプトに相当する。
 
@@ -62,8 +62,8 @@ int main() {
 }
 ```
 
-##Example
-以前の [Motivating Example](./concept_check.md#motivating_example) に対してコンセプト・チェックを応用する場合、良いやり方として、テンプレート・パラメータ型が [`RandomAccessIterator`](http://www.sgi.com/tech/stl/RandomAccessIterator.html) をモデル化していることを確認するために `std::stable_sort()` の一番上に `function_requires()` を挿入することが一つ挙げられる。 さらに、`std::stable_sort()` は、イレテータの `value_type` が[`LessThanComparable` (未満比較可能)](http://www.sgi.com/tech/stl/LessThanComparable.html) を満足することが必要であるから、これをチェックするために、重ねて `function_requires()` を使用する。
+##例
+以前の [動機の例](./concept_check.md#motivating_example) に対してコンセプト・チェックを応用する場合、良いやり方として、テンプレート・パラメータ型が [`RandomAccessIterator`](http://www.sgi.com/tech/stl/RandomAccessIterator.html) をモデル化していることを確認するために `std::stable_sort()` の一番上に `function_requires()` を挿入することが一つ挙げられる。 さらに、`std::stable_sort()` は、イレテータの `value_type` が[`LessThanComparable` (未満比較可能)](http://www.sgi.com/tech/stl/LessThanComparable.html) を満足することが必要であるから、これをチェックするために、重ねて `function_requires()` を使用する。
 
 ```cpp
 template <class RandomAccessIter>
@@ -96,8 +96,8 @@ void breadth_first_search(IncidenceGraph& g,
 コンセプト・チェックは、ジェネリック・ライブラリの実装者が使用するために設計されているが、エンドユーザーにおいても有用である。 往々にして、ある型が特定のコンセプトをモデル化しているかどうか、不明確な場合がある。 こういうケースでは、問題の型とコンセプトを対象として `function_requires()` を使用する、小さなプログラムを作成することで容易にチェックできる。 ファイル [stl_concept_checks.cpp](./stl_concept_check.cpp.md) は、STL コンテナにコンセプト・チェックを適応する実例となっている。
 
 
-- [次へ： Creating Concept Checking Classes](./creating_concepts.md)
-- [前へ： Concept Checking Introduction](./concept_check.md)
+- [次へ：「コンセプト・チェック用クラスの作成」](./creating_concepts.md)
+- [前へ：「はじめに」](./concept_check.md)
 
 ***
 Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<jsiek@osl.iu.edu>) Andrew Lumsdaine(<lums@osl.iu.edu>)

@@ -1,4 +1,4 @@
-#Reference
+#リファレンス
 
 1. [関数](#functions)
 2. [マクロ](#macros)
@@ -303,8 +303,8 @@ class binary_predicate_archetype;
 構築中
 
 
-- [Introduction へ戻る](./concept_check.md)
-- [前へ： Implementation](./implementation.md)
+- [「はじめに」へ戻る](./concept_check.md)
+- [前へ：「コンセプト・チェックの実装」](./implementation.md)
 
 ***
 Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<jsiek@osl.iu.edu>) Andrew Lumsdaine(<lums@osl.iu.edu>)
