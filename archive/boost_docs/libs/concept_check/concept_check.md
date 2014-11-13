@@ -32,7 +32,7 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 7. [Creating Concept Checking Classes](./creating_concepts.md)
 8. [Concept Covering and Archetypes](./concept_covering.md)
 9. [Programming With Concepts](./prog_with_concepts.md)
-10. Implementation
+10. [Implementation](./implementation.md)
 11. Reference
 
 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm) はこのライブラリを寄稿した。 [Beman Dawes](http://www.boost.org/doc/libs/1_31_0/people/beman_dawes.html) が公式レビューを管理した。
