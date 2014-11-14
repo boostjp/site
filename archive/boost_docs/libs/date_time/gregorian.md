@@ -42,7 +42,7 @@ gregorian system の全ての型は `boost::gregorian` 名前空間で見つか�
 
 | コード例 | 説明 |
 |----------|------|
-| [Days Alive Days Till New Year](./days_till_new_year.cpp.md) | 簡単な日数計算。現在の日付を時計から取得 |
+| [Days Alive](./days_alive.cpp.md)<br/> [Days Till New Year](./days_till_new_year.cpp.md) | 簡単な日数計算。現在の日付を時計から取得 |
 | [Dates as strings](./dates_as_strings.cpp.md) | 日付と文字列の相互変換、簡単な解析と書式化 |
 | [Date Period Calculations](./period_calc.cpp.md) | 日付が、期間(periods)の集合に含まれるか調べる (例: 休日・週末の判定) |
 | [Print a month](./print_month.cpp.md) | コマンドラインで与えた月の日付を全て出力する小さなユーティリティプログラム。 1999年1月1日が金曜だったか土曜だったか知る必要がある? このプログラムはその方法を示す |
