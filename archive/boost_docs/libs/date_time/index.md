@@ -28,7 +28,7 @@ Version 1.00
 - Class date_duration
 - Class date_period
 - Date Iterators
-- Date Generators / Algorithms
+- [Date Generators / Algorithms](./date_algorithms.md)
 - Class gregorian_calendar
 - Class day_clock
 
