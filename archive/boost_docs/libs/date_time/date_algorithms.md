@@ -35,11 +35,11 @@ date labor_day = ldgen.get_date(2002); // 2002年の労働者の日を計算
 
 | Class              | Construction Parameters    | get_date Parameter | Description | Example |
 |--------------------|----------------------------|--------------------|-------------|---------|
-| `first_kday_after`  | `greg_day_of_week day_of_week`<br/> `date start_day` | 2002年1月1日以降の最初の日曜日のといったものを計算する | `first_kday_after fkaf(Monday);`<br/>`date d = fkaf.get_date(date(2002,Jan,1));//2002-Jan-07` |
-| `first_kday_before` | `greg_day_of_week day_of_week`<br/> `date start_day` | 2002年2月1日以前の最初の月曜日といったものを計算する | `first_kday_before fkbf(Monday);`<br/> `date d = fkbf.get_date(date(2002,Feb,1));//2002-Jan-28` |
-| `last_kday_of_month` | `greg_day_of_week day_of_week`<br/>`greg_month month`<br/> `greg_year year` | 1月最後の月曜日といったものを計算する | `last_kday_of_month lkm(Monday,Jan);`<br/>`date d = lkm.get_date(2002);//2002-Jan-28` |
-| `first_kday_of_month` | `greg_day_of_week day_of_week`<br/> `greg_month month`<br/> `greg_year year` | 1月最初の月曜日といったものを計算する | `first_kday_of_month fkm(Monday,Jan);`<br/>`date d = fkm.get_date(2002);//2002-Jan-07` |
-| `partial_date` `greg_month month`<br/>`greg_day day_of_month`<br/> `greg_year year`<br/> | 月および日を与えられた日付に、年を適用することにより日付を生成する | `partial_date pd(Jan,1);`<br/> `date d = pd.get_date(2002);//2002-Jan-01` |
+| `first_kday_after`  | `greg_day_of_week day_of_week` | `date start_day` | 2002年1月1日以降の最初の日曜日のといったものを計算する | `first_kday_after fkaf(Monday);`<br/>`date d = fkaf.get_date(date(2002,Jan,1));//2002-Jan-07` |
+| `first_kday_before` | `greg_day_of_week day_of_week` | `date start_day` | 2002年2月1日以前の最初の月曜日といったものを計算する | `first_kday_before fkbf(Monday);`<br/> `date d = fkbf.get_date(date(2002,Feb,1));//2002-Jan-28` |
+| `last_kday_of_month` | `greg_day_of_week day_of_week`<br/> `greg_month month` | `greg_year year` | 1月最後の月曜日といったものを計算する | `last_kday_of_month lkm(Monday,Jan);`<br/>`date d = lkm.get_date(2002);//2002-Jan-28` |
+| `first_kday_of_month` | `greg_day_of_week day_of_week`<br/> `greg_month month` | `greg_year year` | 1月最初の月曜日といったものを計算する | `first_kday_of_month fkm(Monday,Jan);`<br/>`date d = fkm.get_date(2002);//2002-Jan-07` |
+| `partial_date` | `greg_month month`<br/>`greg_day day_of_month` | `greg_year year` | 月および日を与えられた日付に、年を適用することにより日付を生成する | `partial_date pd(Jan,1);`<br/> `date d = pd.get_date(2002);//2002-Jan-01` |
 
 
 ***
