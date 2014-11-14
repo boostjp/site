@@ -22,7 +22,7 @@ Version 1.00
 
 **日付プログラミング**
 
-Gregorian Date System
+[Gregorian Date System](./gregorian.md)
 
 - Class date
 - Class date_duration
@@ -156,5 +156,5 @@ Many people have contributed to the development of this library. In particular H
 ***
 Last modified: Thu Sep 5 07:22:00 MST 2002 by Jeff Garland © 2000-2002 
 
-Japanese Translation Copyright (C) 2003 Shoji Shinohara.
+Japanese Translation Copyright (C) 2003 [Shoji Shinohara](sshino@cppll.jp).
 
