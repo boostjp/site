@@ -48,6 +48,7 @@
 ## <a name="operators" href="operators">Operators</a>
 
 | Syntax | Description | Example |
+|--------|-------------|---------|
 | `operator==, operator!=,`<br/> `operator>, operator<`<br/>`operator>=, operator<=` | サポートする比較演算子 | `dd1 == dd2`, etc |
 | `date_duration operator+(date_duration) const` | 日数を加算する | `date_duration dd1(3);`<br/> `date_duration dd2(5);`<br/> `date_duration dd3 = dd1 + dd2;` |
 | `date_duration operator-(date_duration) const` | 日数の差を取る | `date_duration dd1(3);`<br/> `date_duration dd2(5);`<br/> `date_duration dd3 = dd1 - dd2;` |
