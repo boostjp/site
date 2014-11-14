@@ -10,7 +10,7 @@
 
 **Temporal Types**
 
-- Class date
+- [Class date](./class_date.md)
 - Class date_duration
 - Class date_period
 
