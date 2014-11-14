@@ -25,7 +25,7 @@ Version 1.00
 [Gregorian Date System](./gregorian.md)
 
 - [Class date](./class_date.md)
-- Class date_duration
+- [Class date_duration](./class_date_duration.md)
 - Class date_period
 - Date Iterators
 - [Date Generators / Algorithms](./date_algorithms.md)
