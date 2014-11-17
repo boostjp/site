@@ -1,4 +1,4 @@
-##旧Boost日本語化プロジェクト
+#旧Boost日本語化プロジェクト
 ここには、cppllコミュニティで行われていたBoost翻訳プロジェクトのドキュメントを、移植して残しておく。移植元のドキュメントは、[boostjp/old_boostjp_site](https://github.com/boostjp/old_boostjp_site)リポジトリに、HTMLファイルとして保存してある。
 
 これらのドキュメントはBoost 1.31.0当時のものであり、現在でも有効とは限らないことに注意してほしい。
