@@ -12,5 +12,5 @@
 
 
 ##ライブラリ
-- [各ライブラリの翻訳ドキュメント](./boost_docs/libs/libraries.md)
+- [各ライブラリの翻訳ドキュメント](./boost_docs/libs.md)
 
