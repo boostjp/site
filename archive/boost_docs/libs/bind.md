@@ -109,14 +109,14 @@ int i = 5;
 bind(f, i, _1);
 ```
 
-`i` の値のコピーが関数オブジェクトに格納される。 コピーではなく参照を関数オブジェクトに格納したい場合には、[`boost::ref`](./ref.md) および [`boost::cref`](./ref.md) を使う必要がある。
+`i` の値のコピーが関数オブジェクトに格納される。 コピーではなく参照を関数オブジェクトに格納したい場合には、[`boost::ref`](./bind/ref.md) および [`boost::cref`](./bind/ref.md) を使う必要がある。
 
 ```cpp
 int i = 5;
 bind(f, ref(i), _1);
 ```
 
-【訳注：詳しくは、[`ref` のドキュメント](./ref.md)を参照。】
+【訳注：詳しくは、[`ref` のドキュメント](./bind/ref.md)を参照。】
 
 
 ### <a name="using-bind-with-function-object" href="using-bind-with-function-object">関数オブジェクトに対して`bind`を使用する</a>
@@ -199,7 +199,7 @@ bind(f, bind(g, _1))(x);               // f(g(x))
 
 `bind` によって生成された関数オブジェクトを呼び出す時には、外側の `bind` 式が呼ばれる前に内側の `bind` 式が、複数ある場合は順不同で評価される。 次に、その結果は外側の `bind` が評価される際の引数として渡される。 上の例で、関数オブジェクトが引数リスト `(x)` とともに呼び出される場合、`bind(g, _1)(x)` がまず評価されて `g(x)` となり、次に `bind(f, g(x))(x)` が評価され、最終的な結果は `f(g(x))` となる。
 
-`bind` のこの機能は、関数を合成するために使用することができる。 詳しくは、[`bind_as_compose.cpp`](./bind_as_compose.cpp.md) に `bind` を使って [Boost.Compose](../compose/index.md) と同様の効果を得るサンプルがあるので、それを参照のこと。
+`bind` のこの機能は、関数を合成するために使用することができる。 詳しくは、[`bind_as_compose.cpp`](./bind/bind_as_compose.cpp.md) に `bind` を使って [Boost.Compose](../compose/index.md) と同様の効果を得るサンプルがあるので、それを参照のこと。
 
 ただし、（`bind` 関数の）最初の引数、つまり束縛される関数オブジェクトは、評価されないので注意すること。 特に、関数オブジェクトが `bind` で生成されたものや、プレースホルダ引数の場合でも評価されないので、次の例は期待通りには動かない。
 
