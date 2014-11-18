@@ -12,7 +12,7 @@
 
 - [Class date](./class_date.md)
 - [Class date_duration](./class_date_duration.md)
-- Class date_period
+- [Class date_period](./class_date_period.md)
 
 **Other Topics**
 
