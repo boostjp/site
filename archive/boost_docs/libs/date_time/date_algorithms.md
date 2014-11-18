@@ -1,6 +1,6 @@
 #Date Generators / Algorithms
 
-- [全体のインデックスへ](./index.md)
+- [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](./gregorian.md)
 - [posix_timeのインデックスへ](./posix_time.md)
 

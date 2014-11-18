@@ -1,6 +1,6 @@
 #Gregorian Date System Documentation
 
-[全体のインデックスへ](./index.md)
+[全体のインデックスへ](../date_time.md)
 
 
 ##目次

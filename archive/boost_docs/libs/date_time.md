@@ -22,13 +22,13 @@ Version 1.00
 
 **日付プログラミング**
 
-[Gregorian Date System](./gregorian.md)
+[Gregorian Date System](./date_time/gregorian.md)
 
-- [Class date](./class_date.md)
-- [Class date_duration](./class_date_duration.md)
+- [Class date](./date_time/class_date.md)
+- [Class date_duration](./date_time/class_date_duration.md)
 - Class date_period
 - Date Iterators
-- [Date Generators / Algorithms](./date_algorithms.md)
+- [Date Generators / Algorithms](./date_time/date_algorithms.md)
 - Class gregorian_calendar
 - Class day_clock
 
@@ -55,7 +55,7 @@ Posix Time System
 
 
 ## <a name="usage-examples" href="usage-examples">Usage Examples</a>
-次に，グレゴリオ暦システムの使用例を示す。 詳細は「[日付プログラミング](./gregorian.md)」で解説する。
+次に，グレゴリオ暦システムの使用例を示す。 詳細は「[日付プログラミング](./date_time/gregorian.md)」で解説する。
 
 ```cpp
 using namespace boost::gregorian; 
@@ -76,7 +76,7 @@ for (; itr <= weekend; ++itr) {
 }
 ```
 
-そして `posix_time` システムの使用例である。 詳細は「[時間プログラミング](./posix_time.md)」で解説する。
+そして `posix_time` システムの使用例である。 詳細は「[時間プログラミング](./date_time/posix_time.md)」で解説する。
 
 ```cpp
 using namespace boost::posix_time; 
@@ -113,14 +113,14 @@ for (; titr < tommorrow_start; ++titr) {
 
 **クロックデバイス** は時法系に関して現在の日付あるいは時刻を供給する(あるハードウェアに結び付けられた)ソフトウェアコンポーネントである。
 
-ライブラリは日付と時間の計算をサポートする。しかしながら、時間の計算は整数の計算と全く同じというわけにはいかない。 もし、時間計算の正確度(accuracy)が重要ならば、[Stability, Predictability, and Approximations(安定性、予測性と近似)](./Tradeoffs.md)を読む必要がある。
+ライブラリは日付と時間の計算をサポートする。しかしながら、時間の計算は整数の計算と全く同じというわけにはいかない。 もし、時間計算の正確度(accuracy)が重要ならば、[Stability, Predictability, and Approximations(安定性、予測性と近似)](./date_time/Tradeoffs.md)を読む必要がある。
 
 追加資料を以下に示す
 
-- [Basic Terminology](./BasicTerms.md)
-- [Calculations](./Caluculations.md)
-- [安定性、予測性と近似](./Tradeoffs.md)
-- [References](./References.md)
+- [Basic Terminology](./date_time/BasicTerms.md)
+- [Calculations](./date_time/Caluculations.md)
+- [安定性、予測性と近似](./date_time/Tradeoffs.md)
+- [References](./date_time/References.md)
 
 
 ## <a name="tests" href="tests">Tests</a>
@@ -139,7 +139,7 @@ for (; titr < tommorrow_start; ++titr) {
 
 高分解能の時間表現やそれ以外の仮定からの要求を、時間ライブラリの実装が満たすことが出来ないために、結果的に不完全なライブラリを使わざるをえない、というのは、よくあることである。 この種のライブラリの開発は、まったく些細なことではないので、こういう結果は非常に残念なことである。
 
-（このライブラリの）設計は完璧というには程遠いが、それでも現在の設計は、著者の知るどんな時間ライブラリよりもはるかに柔軟である。 将来のバージョンでは、拡張性のさまざまな面について、さらに文書化されることが期待される。 ライブラリの設計目標についての情報は[ここ](./DesignGoals.md)に要約されている。
+（このライブラリの）設計は完璧というには程遠いが、それでも現在の設計は、著者の知るどんな時間ライブラリよりもはるかに柔軟である。 将来のバージョンでは、拡張性のさまざまな面について、さらに文書化されることが期待される。 ライブラリの設計目標についての情報は[ここ](./date_time/DesignGoals.md)に要約されている。
 
 
 ## <a name="acknowledgements" href="acknowledgements">Acknowledgements</a>
