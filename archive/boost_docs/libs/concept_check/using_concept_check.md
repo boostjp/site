@@ -97,7 +97,7 @@ void breadth_first_search(IncidenceGraph& g,
 
 
 - [次へ：「コンセプト・チェック用クラスの作成」](./creating_concepts.md)
-- [前へ：「はじめに」](./concept_check.md)
+- [前へ：「はじめに」](../concept_check.md)
 
 ***
 Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<jsiek@osl.iu.edu>) Andrew Lumsdaine(<lums@osl.iu.edu>)

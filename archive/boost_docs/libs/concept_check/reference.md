@@ -303,7 +303,7 @@ class binary_predicate_archetype;
 構築中
 
 
-- [「はじめに」へ戻る](./concept_check.md)
+- [「はじめに」へ戻る](../concept_check.md)
 - [前へ：「コンセプト・チェックの実装」](./implementation.md)
 
 ***
