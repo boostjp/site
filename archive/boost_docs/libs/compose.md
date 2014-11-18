@@ -7,10 +7,10 @@
 
 compose.hpp ヘッダは合成関数オブジェクト・アダプタを拡張するものであり、標準C++ライブラリの一部であるStandard Template Library(STL)と共に利用できる。あなたがSTLを使っていないなら本ライブラリが提供する合成関数アダプタに興味を示さないだろうが、STLを使いこなしているのならこれらアダプタの有効性が理解できるだろう。
 
-- [ドキュメント](./compose.md)
-- ヘッダ [compose.hpp](./compose.hpp.md)
-- サンプルへのリンクは [ドキュメント](./compose.md) を参照のこと
-- サンプルで利用されているヘッダ [print.hpp](./print.hpp.md)
+- [ドキュメント](./compose/compose.md)
+- ヘッダ [compose.hpp](./compose/compose.hpp.md)
+- サンプルへのリンクは [ドキュメント](./compose/compose.md) を参照のこと
+- サンプルで利用されているヘッダ [print.hpp](./compose/print.hpp.md)
 - 本ライブラリは [Nicolai Josuttis](http://www.boost.org/doc/libs/1_31_0/people/people.htm) により提出された
 
 
