@@ -34,6 +34,7 @@
 ## <a name="functions" href="functions">Functions</a>
 
 | Syntax | Description | Example |
+|--------|-------------|---------|
 | `static short day_of_week(ymd_type)` | 曜日を返す (0==Sunday, 1==Monday, etc) | 参照: `gregorian::date day_of_week` |
 | `static date_int_type day_number(ymd_type)` | `ymd_type` を日付番号に変換する。日付番号は、エポック(Epoch)からの通算日数の絶対値である | |
 | `static short end_of_month_day(year_type, month_type)` | 与えられた年と月から、その月の最終日を決定する | |
