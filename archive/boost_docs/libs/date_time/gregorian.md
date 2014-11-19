@@ -18,7 +18,7 @@
 
 - [Date Iterators](./date_iterators.md)
 - [Date Generators / Algorithms](./date_algorithms.md)
-- Class gregorian_calendar
+- [Class gregorian_calendar](./class_gregorian_calendar.md)
 - Class day_clock
 
 
