@@ -37,7 +37,7 @@ Version 1.00
 
 [Posix Time System](./date_time/posix_time.md)
 
-- Class ptime
+- [Class ptime](./date_time/class_ptime.md)
 - Class time_duration
 - Class time_period
 - Time Iterators
