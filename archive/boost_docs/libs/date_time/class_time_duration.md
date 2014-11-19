@@ -5,6 +5,7 @@
 - [Posix Timeのインデックスへ](./posix_time.md)
 
 **Time Duration Documentation**
+
 - [Introduction](#introduction)
 - [Header](#header)
 - [Construction](#construction)
