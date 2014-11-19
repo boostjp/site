@@ -19,7 +19,7 @@
 - [Date Iterators](./date_iterators.md)
 - [Date Generators / Algorithms](./date_algorithms.md)
 - [Class gregorian_calendar](./class_gregorian_calendar.md)
-- Class day_clock
+- [Class day_clock](./class_date.md#construct-from-clock)
 
 
 ## <a name="introduction" href="introduction">Introduction</a>
