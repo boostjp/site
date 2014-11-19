@@ -78,6 +78,7 @@
 ## <a name="operators" href="operators">Operators</a>
 
 | Syntax | Description | Example |
+|--------|-------------|---------|
 | `operator==, operator!=,`<br/> `operator>, operator<` <br/> `operator>=, operator<=` | サポートする比較演算子 | `t1 == t2`, etc |
 | `ptime operator+(date_duration) const` | オフセット日数(`date_duration`)を加えた `ptime` を返す | `date d(2002,Jan,1);`<br/> `ptime t(d,minutes(5));`<br/> `date_duration dd(1);`<br/> `ptime t2 = t + dd;` |
 | `ptime operator-(date_duration) const` | オフセット日数(`date_duration`)を差し引いた `ptime` を返す | `date d(2002,Jan,1);`<br/> `ptime t(d,minutes(5));`<br/> `date_duration dd(1);`<br/> `ptime t2 = t - dd;` |
