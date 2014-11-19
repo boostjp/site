@@ -35,7 +35,7 @@ Version 1.00
 
 **時間プログラミング**
 
-Posix Time System
+[Posix Time System](./date_time/posix_time.md)
 
 - Class ptime
 - Class time_duration
