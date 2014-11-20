@@ -40,7 +40,7 @@ Version 1.00
 - [Class ptime](./date_time/class_ptime.md)
 - [Class time_duration](./date_time/class_time_duration.md)
 - [Class time_period](./date_time/class_time_period.md)
-- Time Iterators
+- [Time Iterators](./date_time/time_iterators.md)
 - UTC / Local Time Adjustments
 
 
