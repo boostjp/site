@@ -2,7 +2,7 @@
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](./gregorian.md)
-- [posix_timeのインデックスへ](./posix_time.md)
+- [Posix Timeのインデックスへ](./posix_time.md)
 
 **Date Documentation**
 
