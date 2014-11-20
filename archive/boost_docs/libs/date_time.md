@@ -41,7 +41,7 @@ Version 1.00
 - [Class time_duration](./date_time/class_time_duration.md)
 - [Class time_period](./date_time/class_time_period.md)
 - [Time Iterators](./date_time/time_iterators.md)
-- UTC / Local Time Adjustments
+- [UTC / Local Time Adjustments](./date_time/local_time_adjust.md)
 
 
 ## <a name="introduction" href="introduction">Introduction</a>
