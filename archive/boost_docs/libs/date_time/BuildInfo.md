@@ -57,7 +57,7 @@ ComeauやMetroworksといった他のコンパイラでは、ライブラリの�
 | /libs/date_time/test                | ジェネリックコードに関するテスト一式 |
 | /libs/date_time/test/gregorian      | グレゴリオ暦に関するテスト一式 |
 | /libs/date_time/examples/gregorian  | グレゴリオ暦に関する良いコード例 |
-| /libs/date_time/src/gregorian       | libboost_date_time用のcppファイル
+| /libs/date_time/src/gregorian       | libboost_date_time用のcppファイル |
 | /libs/date_time/test/posix_time     | Posix Time系に関するテスト一式 |
 | /libs/date_time/examples/posix_time | 時間に関する良いコード例 |
 | /libs/date_time/src/posix_time      | 空 (ファイルが一つあるが、ソースコードではない) |
