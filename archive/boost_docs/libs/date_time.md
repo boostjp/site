@@ -17,7 +17,7 @@ Version 1.00
 - [Acknowledgements](#acknowledgements)
 - [More Info](#more-info)
 
-[Build-Compiler Information](#build-compiler-information)
+[Build-Compiler Information](./BuildInfo.md)
 
 
 **日付プログラミング**
