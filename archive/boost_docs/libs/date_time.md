@@ -17,7 +17,7 @@ Version 1.00
 - [Acknowledgements](#acknowledgements)
 - [More Info](#more-info)
 
-[Build-Compiler Information](./date_time/BuildInfo.md)
+[Build-Compiler Information](./date_time/build_info.md)
 
 
 **日付プログラミング**
@@ -113,14 +113,14 @@ for (; titr < tommorrow_start; ++titr) {
 
 **クロックデバイス** は時法系に関して現在の日付あるいは時刻を供給する(あるハードウェアに結び付けられた)ソフトウェアコンポーネントである。
 
-ライブラリは日付と時間の計算をサポートする。しかしながら、時間の計算は整数の計算と全く同じというわけにはいかない。 もし、時間計算の正確度(accuracy)が重要ならば、[Stability, Predictability, and Approximations(安定性、予測性と近似)](./date_time/Tradeoffs.md)を読む必要がある。
+ライブラリは日付と時間の計算をサポートする。しかしながら、時間の計算は整数の計算と全く同じというわけにはいかない。 もし、時間計算の正確度(accuracy)が重要ならば、[Stability, Predictability, and Approximations(安定性、予測性と近似)](./date_time/tradeoffs.md)を読む必要がある。
 
 追加資料を以下に示す
 
-- [Basic Terminology](./date_time/BasicTerms.md)
-- [Calculations](./date_time/Caluculations.md)
-- [安定性、予測性と近似](./date_time/Tradeoffs.md)
-- [References](./date_time/References.md)
+- [Basic Terminology](./date_time/basic_terms.md)
+- [Calculations](./date_time/caluculations.md)
+- [安定性、予測性と近似](./date_time/tradeoffs.md)
+- [References](./date_time/references.md)
 
 
 ## <a name="tests" href="tests">Tests</a>
