@@ -12,5 +12,5 @@
 | [compose](./libs/compose.md) | STL の為の関数合成アダプタ Nicolai Josuttis 作 |
 | [concept_check](./libs/concept_check.md) | ジェネリックプログラミングのためのツール群。 Jeremy Siek 作 |
 | [conversion](./libs/conversion.md) | 数学的、多相的、辞書的キャスト Dave Abrahams and Kevlin Henney 作 |
-| [date_time](./libs/date_time/index.md) | 日付/時間ライブラリ Jeff Garland 作 |
+| [date_time](./libs/date_time.md) | 日付/時間ライブラリ Jeff Garland 作 |
 
