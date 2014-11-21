@@ -1,4 +1,4 @@
-#Date-Time Terminology
+#Date-Timeの専門用語
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](./gregorian.md)
