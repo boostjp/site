@@ -6,7 +6,7 @@
 disjoint_sets<Rank, Parent, FindCompress>
 ```
 
-このクラスは、互いに素な集合（素集合）の演算に 順位による和集合 および パス圧縮 を提供する。disjoint-sets のデータ構造は、素集合の S = {S<sub>1</sub>, S<sub>2</sub>, ..., S<sub>k</sub>} というコレクションを維持する。 各集合は、集合のいくつかの要素である 代表値 によって識別される。 集合は、Parent プロパティマップの中の符号化された有向木によって表わされる。 2つの発見的手法: 「順位による和集合」 および 「パス圧縮」 は、 演算を高速化するのに使われる  [[1](./disjoint_sets/bibliography.md#tarjan83), [2](.disjoint_sets/bibliography.md#clr90)]。
+このクラスは、互いに素な集合（素集合）の演算に 順位による和集合 および パス圧縮 を提供する。disjoint-sets のデータ構造は、素集合の S = {S<sub>1</sub>, S<sub>2</sub>, ..., S<sub>k</sub>} というコレクションを維持する。 各集合は、集合のいくつかの要素である 代表値 によって識別される。 集合は、Parent プロパティマップの中の符号化された有向木によって表わされる。 2つの発見的手法: 「順位による和集合」 および 「パス圧縮」 は、 演算を高速化するのに使われる  [[1](./disjoint_sets/bibliography.md#tarjan83), [2](./disjoint_sets/bibliography.md#clr90)]。
 
 
 ##Where Defined
