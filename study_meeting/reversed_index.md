@@ -2,7 +2,7 @@
 
 | | | | | | | | | | |
 |----------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-|  |[#1](https://sites.google.com/site/boostjp/study_meeting/study1) |[#2](https://sites.google.com/site/boostjp/study_meeting/study2) |[#3 関西](https://sites.google.com/site/boostjp/study_meeting/study3) |[#4](https://sites.google.com/site/boostjp/study_meeting/study4) |[#5 名古屋](https://sites.google.com/site/boostjp/study_meeting/study5) |[#6 札幌](https://sites.google.com/site/boostjp/study_meeting/study6) |[#7 東京](https://sites.google.com/site/boostjp/study_meeting/study7) |[#8 大阪](https://sites.google.com/site/boostjp/study_meeting/study8) | [#9 つくば](https://sites.google.com/site/boostjp/study_meeting/study9) |
+|  |[#1](study1.md) |[#2](study2.md) |[#3 関西](study3.md) |[#4](study4.md) |[#5 名古屋](study5.md) |[#6 札幌](study6.md) |[#7 東京](study7.md) |[#8 大阪](study8.md) | [#9 つくば](study9.md) |
 | Accumulators           |  |  |  |  |  |  |  |  |  |
 | Any                    |  |  |  |  |  |  |  |  |  |
 | Array                  |  |  |  |  |  |  |  |  |  |
