@@ -118,7 +118,7 @@ for (; titr < tommorrow_start; ++titr) {
 追加資料を以下に示す
 
 - [Basic Terminology](./date_time/basic_terms.md)
-- [Calculations](./date_time/caluculations.md)
+- [Calculations](./date_time/calculations.md)
 - [安定性、予測性と近似](./date_time/tradeoffs.md)
 - [参考文献](./date_time/references.md)
 
