@@ -11,7 +11,7 @@ Boost C++ Librariesに関する最新情報、日本語ドキュメント、Boos
 - [boostjp/image : Webサイトで使用する画像リソース](https://github.com/boostjp/image)
 
 ##関連サイト
-[C++リファレンスサイト cpprefjp](https://sites.google.com/site/cpprefjp/)
+[C++リファレンスサイト cpprefjp](http://cpprefjp.github.io/)
 
 
 ##運営者
