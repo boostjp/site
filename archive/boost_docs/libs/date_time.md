@@ -120,7 +120,7 @@ for (; titr < tommorrow_start; ++titr) {
 - [Basic Terminology](./date_time/basic_terms.md)
 - [Calculations](./date_time/caluculations.md)
 - [安定性、予測性と近似](./date_time/tradeoffs.md)
-- [References](./date_time/references.md)
+- [参考文献](./date_time/references.md)
 
 
 ## <a name="tests" href="tests">Tests</a>
