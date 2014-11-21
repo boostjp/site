@@ -49,25 +49,25 @@ void f(T ...x) {
 | `BOOST_NO_CXX11_ALIGNAS`     | C++11の`alignas`キーワード |
 | `BOOST_NO_CXX11_ALLOCATOR`   | C++11バージョンの`std::allocator` |
 | `BOOST_NO_CXX11_ATOMIC_SP`   | C++11のスマートポインタがアトミック操作をサポートしているか |
-| `BOOST_NO_CXX11_HDR_ARRAY`   | C++11の標準ライブラリ[`<array>`](https://sites.google.com/site/cpprefjp/reference/array)ヘッダ |
-| `BOOST_NO_CXX11_HDR_CHRONO`  | C++11の標準ライブラリ[`<chrono>`](https://sites.google.com/site/cpprefjp/reference/chrono)ヘッダ |
-| `BOOST_NO_CXX11_HDR_CODECVT` | C++11の標準ライブラリ[`<codecvt>`](https://sites.google.com/site/cpprefjp/reference/codecvt)ヘッダ |
-| `BOOST_NO_CXX11_HDR_CONDITION_VARIABLE` | C++11の標準ライブラリ[`<condition_variable>`](https://sites.google.com/site/cpprefjp/reference/condition_variable)ヘッダ |
-| `BOOST_NO_CXX11_HDR_FORWARD_LIST` | C++11の標準ライブラリ[`<forward_list>`](https://sites.google.com/site/cpprefjp/reference/forward_list)ヘッダ |
-| `BOOST_NO_CXX11_HDR_FUNCTIONAL` | C++11バージョンと互換のある[`<functional>`](https://sites.google.com/site/cpprefjp/reference/functional)ヘッダ |
-| `BOOST_NO_CXX11_HDR_FUTURE` | C++11の標準ライブラリ[`<future>`](https://sites.google.com/site/cpprefjp/reference/future)ヘッダ |
-| `BOOST_NO_CXX11_HDR_INITIALIZER_LIST` | C++11の標準ライブラリ[`<initializer_list>`](https://sites.google.com/site/cpprefjp/reference/initializer_list)ヘッダ。 変数の初期化を `{1, 2, 3}` のような記述で行う |
-| `BOOST_NO_CXX11_HDR_MUTEX` | C++11の標準ライブラリ[`<mutex>`](https://sites.google.com/site/cpprefjp/reference/mutex)ヘッダ |
-| `BOOST_NO_CXX11_HDR_RANDOM` | C++11の標準ライブラリ[`<random>`](https://sites.google.com/site/cpprefjp/reference/random)ヘッダ |
-| `BOOST_NO_CXX11_HDR_RATIO` | C++11の標準ライブラリ[`<ratio>`](https://sites.google.com/site/cpprefjp/reference/ratio)ヘッダ |
-| `BOOST_NO_CXX11_HDR_REGEX` | C++11の標準ライブラリ[`<regex>`](https://sites.google.com/site/cpprefjp/reference/regex)ヘッダ |
-| `BOOST_NO_CXX11_HDR_SYSTEM_ERROR` | C++11の標準ライブラリ[`<system_error>`](https://sites.google.com/site/cpprefjp/reference/system_error)ヘッダ |
-| `BOOST_NO_CXX11_HDR_THREAD` | C++11の標準ライブラリ[`<thread>`](https://sites.google.com/site/cpprefjp/reference/thread)ヘッダ |
-| `BOOST_NO_CXX11_HDR_TUPLE` | C++11の標準ライブラリ[`<tuple>`](https://sites.google.com/site/cpprefjp/reference/tuple)ヘッダ |
-| `BOOST_NO_CXX11_HDR_TYPEINDEX` | C++11の標準ライブラリ[`<typeindex>`](https://sites.google.com/site/cpprefjp/reference/typeindex)ヘッダ |
-| `BOOST_NO_CXX11_HDR_TYPE_TRAITS` | C++11の標準ライブラリ[`<type_traits>`](https://sites.google.com/site/cpprefjp/reference/type_traits)ヘッダ |
-| `BOOST_NO_CXX11_HDR_UNORDERED_MAP` | C++11の標準ライブラリ[`<unordered_map>`](https://sites.google.com/site/cpprefjp/reference/unordered_map)ヘッダ |
-| `BOOST_NO_CXX11_HDR_UNORDERED_SET` | C++11の標準ライブラリ[`<unordered_set>`](https://sites.google.com/site/cpprefjp/reference/unordered_set)ヘッダ |
+| `BOOST_NO_CXX11_HDR_ARRAY`   | C++11の標準ライブラリ[`<array>`](http://cpprefjp.github.io/reference/array.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_CHRONO`  | C++11の標準ライブラリ[`<chrono>`](http://cpprefjp.github.io/reference/chrono.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_CODECVT` | C++11の標準ライブラリ[`<codecvt>`](http://cpprefjp.github.io/reference/codecvt.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_CONDITION_VARIABLE` | C++11の標準ライブラリ[`<condition_variable>`](http://cpprefjp.github.io/reference/condition_variable.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_FORWARD_LIST` | C++11の標準ライブラリ[`<forward_list>`](http://cpprefjp.github.io/reference/forward_list.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_FUNCTIONAL` | C++11バージョンと互換のある[`<functional>`](http://cpprefjp.github.io/reference/functional.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_FUTURE` | C++11の標準ライブラリ[`<future>`](http://cpprefjp.github.io/reference/future.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_INITIALIZER_LIST` | C++11の標準ライブラリ[`<initializer_list>`](http://cpprefjp.github.io/reference/initializer_list.html)ヘッダ。 変数の初期化を `{1, 2, 3}` のような記述で行う |
+| `BOOST_NO_CXX11_HDR_MUTEX` | C++11の標準ライブラリ[`<mutex>`](http://cpprefjp.github.io/reference/mutex.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_RANDOM` | C++11の標準ライブラリ[`<random>`](http://cpprefjp.github.io/reference/random.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_RATIO` | C++11の標準ライブラリ[`<ratio>`](http://cpprefjp.github.io/reference/ratio.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_REGEX` | C++11の標準ライブラリ[`<regex>`](http://cpprefjp.github.io/reference/regex.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_SYSTEM_ERROR` | C++11の標準ライブラリ[`<system_error>`](http://cpprefjp.github.io/reference/system_error.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_THREAD` | C++11の標準ライブラリ[`<thread>`](http://cpprefjp.github.io/reference/thread.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_TUPLE` | C++11の標準ライブラリ[`<tuple>`](http://cpprefjp.github.io/reference/tuple.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_TYPEINDEX` | C++11の標準ライブラリ[`<typeindex>`](http://cpprefjp.github.io/reference/typeindex.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_TYPE_TRAITS` | C++11の標準ライブラリ[`<type_traits>`](http://cpprefjp.github.io/reference/type_traits.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_UNORDERED_MAP` | C++11の標準ライブラリ[`<unordered_map>`](http://cpprefjp.github.io/reference/unordered_map.html)ヘッダ |
+| `BOOST_NO_CXX11_HDR_UNORDERED_SET` | C++11の標準ライブラリ[`<unordered_set>`](http://cpprefjp.github.io/reference/unordered_set.html)ヘッダ |
 | `BOOST_NO_CXX11_INLINE_NAMESPACES` | `inline namespace` |
 | `BOOST_NO_CXX11_SMART_PTR` | C++11のスマートポインタ、`shared_ptr`と`unique_ptr`を提供しているか |
 | `BOOST_NO_CXX11_AUTO_DECLARATIONS` | `auto` による変数の型の自動決定<br/> `// x の型は初期化式 expr から自動的に決定する`<br/> `auto x = expr;` |

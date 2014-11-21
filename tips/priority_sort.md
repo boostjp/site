@@ -71,5 +71,5 @@ Boost.Fusionが提供するタプル型に対する比較演算子は、[`<boost
 
 **参照：**
 
-- [`std::lexicographical_compare()` - cpprefjp](https://sites.google.com/site/cpprefjp/reference/algorithm/lexicographical_compare)
+- [`std::lexicographical_compare()` - cpprefjp](http://cpprefjp.github.io/reference/algorithm/lexicographical_compare.html)
 

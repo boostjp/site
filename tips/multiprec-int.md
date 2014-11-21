@@ -172,7 +172,7 @@ Boost.Multiprecisionの多倍長整数は、組み込みの整数型と同じ演
 ## <a name="from-string" href="from-string">文字列からの変換</a>
 文字列から多倍長整数に変換するには、`explicit`な変換コンストラクタ、もしくは`assign()`メンバ関数を使用する。
 
-文字列は、`char`配列および[`std::string`](https://sites.google.com/site/cpprefjp/reference/string/basic_string)を受け取ることができる。
+文字列は、`char`配列および[`std::string`](http://cpprefjp.github.io/reference/string/basic_string.html)を受け取ることができる。
 
 
 **コンストラクタで文字列から変換**
@@ -223,7 +223,7 @@ int main()
 123
 ```
 
-変換できない文字列が渡された場合は、[`std::runtime_error`](https://sites.google.com/site/cpprefjp/reference/stdexcept)例外が送出される。
+変換できない文字列が渡された場合は、[`std::runtime_error`](http://cpprefjp.github.io/reference/stdexcept.html)例外が送出される。
 
 
 ## <a name="to-string" href="to-string">文字列への変換</a>
@@ -319,7 +319,7 @@ int main()
 
 
 ## <a name="min" href="min">最小値を取得する</a>
-多倍長整数の最小値を取得するには、[`std::numeric_limits`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits)クラスの[`min()`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits/min)静的メンバ関数を使用する。
+多倍長整数の最小値を取得するには、[`std::numeric_limits`](http://cpprefjp.github.io/reference/limits/numeric_limits.html)クラスの[`min()`](http://cpprefjp.github.io/reference/limits/numeric_limits/min.html)静的メンバ関数を使用する。
 
 任意精度整数である`cpp_int`は無限の桁数を持つため、最小値は取得できなかったものとして、0を返す。
 
@@ -348,7 +348,7 @@ int main()
 
 
 ## <a name="max" href="max">最大値を取得する</a>
-多倍長整数の最大値を取得するには、[`std::numeric_limits`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits)クラスの[`max()`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits/max)静的メンバ関数を使用する。
+多倍長整数の最大値を取得するには、[`std::numeric_limits`](http://cpprefjp.github.io/reference/limits/numeric_limits.html)クラスの[`max()`](http://cpprefjp.github.io/reference/limits/numeric_limits/max.html)静的メンバ関数を使用する。
 
 任意精度整数である`cpp_int`は無限の桁数を持つため、最大値は取得できなかったものとして、0を返す。
 
@@ -377,13 +377,13 @@ int main()
 
 
 ## <a name="is-bounded" href="is-bounded">有限かどうかを判定する</a>
-多倍長整数型の表す値が有限かどうかを判定するには、[`std::numeric_limits`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits)クラスの[`is_bounded`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits/is_bounded)定数を取得する。
+多倍長整数型の表す値が有限かどうかを判定するには、[`std::numeric_limits`](http://cpprefjp.github.io/reference/limits/numeric_limits.html)クラスの[`is_bounded`](http://cpprefjp.github.io/reference/limits/numeric_limits/is_bounded.html)定数を取得する。
 
-[`is_bounded`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits/is_bounded)は`bool`型で定義され、有限であれば`true`、無限であれば`false`が設定される。
+[`is_bounded`](http://cpprefjp.github.io/reference/limits/numeric_limits/is_bounded.html)は`bool`型で定義され、有限であれば`true`、無限であれば`false`が設定される。
 
-任意精度整数である`cpp_int`は無限の桁数を持つため、[`is_bounded`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits/is_bounded)は`false`となる。
+任意精度整数である`cpp_int`は無限の桁数を持つため、[`is_bounded`](http://cpprefjp.github.io/reference/limits/numeric_limits/is_bounded.html)は`false`となる。
 
-固定精度整数の`int128_t`、`int256_t`といった型の場合、[`is_bounded`](https://sites.google.com/site/cpprefjp/reference/limits/numeric_limits/is_bounded)は`true`となる。
+固定精度整数の`int128_t`、`int256_t`といった型の場合、[`is_bounded`](http://cpprefjp.github.io/reference/limits/numeric_limits/is_bounded.html)は`true`となる。
 
 ```cpp
 #include <iostream>

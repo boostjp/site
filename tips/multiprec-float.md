@@ -175,7 +175,7 @@ MPFR多倍長浮動小数点数の特徴：
 
 ## <a name="from-string" href="from-string">文字列からの変換</a>
 文字列から多倍長浮動小数点数に変換するには、`explicit`な変換コンストラクタ、もしくは`assign()`メンバ関数を使用する。
-文字列は、`char`配列および[`std::string`](https://sites.google.com/site/cpprefjp/reference/string/basic_string)を受け取ることができる。
+文字列は、`char`配列および[`std::string`](http://cpprefjp.github.io/reference/string/basic_string.html)を受け取ることができる。
 
 
 **コンストラクタで文字列から変換**
@@ -226,7 +226,7 @@ int main()
 3.14
 ```
 
-変換できない文字列が渡された場合は、[`std::runtime_error`](https://sites.google.com/site/cpprefjp/reference/stdexcept)例外が送出される。
+変換できない文字列が渡された場合は、[`std::runtime_error`](http://cpprefjp.github.io/reference/stdexcept.html)例外が送出される。
 
 
 ## <a name="to-string" href="to-string">文字列への変換</a>
