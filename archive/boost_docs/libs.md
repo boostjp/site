@@ -14,4 +14,5 @@
 | [conversion](./libs/conversion.md) | 数学的、多相的、辞書的キャスト Dave Abrahams and Kevlin Henney 作 |
 | [date_time](./libs/date_time.md) | 日付/時間ライブラリ Jeff Garland 作 |
 | [disjoint_sets](./libs/disjoint_sets.md) | 互いに素な集合 |
+| [format](./libs/format.md) | 型安全な printf 風の書式化操作。Samuel Krempp 作 |
 
