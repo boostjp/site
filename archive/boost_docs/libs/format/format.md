@@ -9,6 +9,7 @@
 - [Synopsis](#synopsis)
 - [How it works](#hot-it-works)
 - [Examples](#examples)
+- [Sample Files](#sample-files)
 - Syntax
 	- printf format-specification syntax
 	- Incompatibilities with printf
@@ -158,4 +159,15 @@ for(unsigned int i=0; i < names.size(); ++i)
 Marc-Françis Michel, Durand,           +33 (0) 123 456 789
 Jean, de Lattre de Tassigny,           +33 (0) 987 654 321
 ```
+
+
+## <a name="sample-files" href="sample-files">Sample Files</a>
+[sample_formats.cpp](./example/sample_formats.cpp.md) は `format` の簡単な使い方をデモする。
+
+[sample_new_features.cpp](./example/sample_new_features.cpp.md) は、単純な位置指定命令、中寄せ、そして「桁送り」など、 `printf` の構文に追加された書式化機能のいくつかを説明する。
+
+[sample_advanced.cpp](./example/sample_advanced.cpp.md) は、 `format` オブジェクトの 再利用や修飾といった、さらに進んだ機能の使い方をデモする。
+
+そして [sample_userType.cpp](./example/sample_userType.cpp.md) はユーザ定義型に対する `format` の振る舞いを示す。
+
 
