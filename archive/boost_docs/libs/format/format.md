@@ -200,7 +200,7 @@ C/C++ の世界におけるレガシーな構文は `printf` で使われてい�
 ### <a name="printf-format-specifications" href="printf-format-specifications">printf format-specifications</a>
 Boost.Format でサポートされる `printf` の書式指定子は、引数の位置指定をサポートしない標準 C の `printf` よりも、むしろ Unix98 [Open-group printf](http://www.opengroup.org/onlinepubs/7908799/xsh/fprintf.html) の構文に従っている。 (両者の間では共通のフラグは同じ意味を持つので、誰も頭痛に悩まされることはない) 
 
-なお、一つの書式文字列に位置指定付きの書式指定子(例． %3$+d)と位置指定なしのもの(例． %+d)を混ぜて使用するのはエラーである。 
+なお、一つの書式文字列に位置指定付きの書式指定子(例．`%3$+d`)と位置指定なしのもの(例．`%+d`)を混ぜて使用するのはエラーである。 
 Open-group の仕様では同じ引数を複数回参照すること(例．`"%1$d %1$d"`)は未定義動作であるが、 Boost.Format では各引数を何度でも参照できる。ただ一つの制約は、書式文字列に現れる最大の引数の数が P であるとき、必ず P 個の引数を期待することである。(例．`"%1$d %10$d"` ならば P == 10) 
 
 引数の数が多すぎても少なすぎても例外が起こる。 (そうでないようにセットされていなければ。 [exceptions](#exceptions) を参照)
