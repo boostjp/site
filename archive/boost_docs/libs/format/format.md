@@ -16,8 +16,8 @@
 	- [Differences of behaviour vs printf](#differences-of-behavior-vs-printf)
 - [User-defined types Output](#user-defined-types-output)
 - [Manipulators and the internal stream state](#manipulators-and-the-internal-stream-state)
+- [Alternatives](#alternatives)
 - [Exceptions](#exceptions)
-- Alternatives
 
 
 ## <a name="synopsis" href="synopsis">Synopsis</a>
@@ -321,4 +321,27 @@ cerr << format("% 08d \n")  % ratio;  // -> "000 16/9"
 ```
 
 <a name="manipulators-and-the-internal-stream-state" href="manipulators-and-the-internal-stream-state">Manipulators, and internal stream state</a>
+`format` の内部ストリームの状態は、引数を出力する直前に保存され、直後に復帰される。そのため、修飾子の影響は後まで引きづられずに、適用される引数にだけ作用する。 
+
+ストリームのデフォルト状態は標準で述べられているように : 精度 6 、幅 0 、右寄せ、そして１０進数基数である。
+
+`format` ストリームの内部ストリームの状態は引数と一緒に渡されるマニピュレータによって変えることができる； `group` 関数を経由して以下のようにできる :
+
+```cpp
+cout << format("%1% %2% %1%\n") % group(hex, showbase, 40) % 50; // "0x28 50 0x28\n" と表示
+```
+
+`group` の内側にある N 個の項目を渡すとき、 Boost.Format はマニピュレータに通常の引数とは異なる処理をする必要がある。そのため、 `group` の使用には以下の制限がある :
+
+1. 表示されるオブジェクトは `group` の最後の項目として渡されなければならない
+2. 先頭の N-1 個の項目はマニピュレータとして扱われるので、出力を生成しても破棄される
+
+マニピュレータは、それが現れるごとに、後に続く引数の直前にストリームに渡される。 書式文字列で指定された書式化オプションは、この方法で渡されたストリーム状態修飾子によって上書きされる点に注意して欲しい。 例えば以下のコードで、 `hex` マニピュレータは、書式文字列の中で１０進数出力を設定している型指定子 d よりも高い優先度を持つ :
+
+```cpp
+cout << format("%1$d %2% %1%\n") % group(hex, showbase, 40) % 50; 
+// "0x28 50 0x28\n" と表示
+```
+
+## <a name="alternatives" href="alternatives">Alternatives</a>
 
