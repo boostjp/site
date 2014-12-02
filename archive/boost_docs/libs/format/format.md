@@ -320,7 +320,7 @@ cerr << format("%+08d \n")  % ratio;  // -> "+00016/9"
 cerr << format("% 08d \n")  % ratio;  // -> "000 16/9"
 ```
 
-<a name="manipulators-and-the-internal-stream-state" href="manipulators-and-the-internal-stream-state">Manipulators, and internal stream state</a>
+## <a name="manipulators-and-the-internal-stream-state" href="manipulators-and-the-internal-stream-state">Manipulators, and internal stream state</a>
 `format` の内部ストリームの状態は、引数を出力する直前に保存され、直後に復帰される。そのため、修飾子の影響は後まで引きづられずに、適用される引数にだけ作用する。 
 
 ストリームのデフォルト状態は標準で述べられているように : 精度 6 、幅 0 、右寄せ、そして１０進数基数である。
