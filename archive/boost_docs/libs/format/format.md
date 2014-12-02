@@ -15,7 +15,7 @@
 	- [new format-specifications](#new-format-specifications)
 	- [Differences of behaviour vs printf](#differences-of-behavior-vs-printf)
 - [User-defined types Output](#user-defined-types-output)
-- Manipulators and the internal stream state
+- [Manipulators and the internal stream state](#manipulators-and-the-internal-stream-state)
 - [Exceptions](#exceptions)
 - Alternatives
 
@@ -297,4 +297,28 @@ unsigned int n = formatter.str().size();
 ```
 
 ## <a name="user-defined-types-output" href="user-defined-types-output">User-defined types output</a>
+ストリーム状態の修飾に翻訳されたすべてのフラグは、ユーザ定義型にも再帰的に作用する。 ( フラグはアクティブなまま残るので、 ユーザ定義クラスによって呼ばれる各々の `<<` 演算に対しても、期待するオプションが渡される) 
+
+例．妥当なクラス `Rational` なら次のようになる :
+
+```cpp
+Rational ratio(16,9);
+cerr << format("%#x \n")  % ratio;  // -> "0x10/0x9 \n"
+```
+
+その他の書式化オプションでは話は異なる。例えば、幅の設定はオブジェクトによって生成される最終出力に適用され、内部の各々の出力には適用されない。これは都合のいい話である :
+
+```cpp
+cerr << format("%-8d")  % ratio;  // -> "16/9    " であって、 "16      /9       " ではない
+cerr << format("%=8d")  % ratio;  // -> "  16/9  " であって、 "   16   /    9   " ではない
+```
+
+しかし、 `0` や `' '` オプションにも同様に働くため、不自然なことになってしまう。(意地の悪いことに、 `'+'` が `showpos` によってストリームの状態へと直接翻訳できるのに対して、 `printf` のゼロやスペースに当たるオプションはストリームには存在しない) :
+
+```cpp
+cerr << format("%+08d \n")  % ratio;  // -> "+00016/9"
+cerr << format("% 08d \n")  % ratio;  // -> "000 16/9"
+```
+
+<a name="manipulators-and-the-internal-stream-state" href="manipulators-and-the-internal-stream-state">Manipulators, and internal stream state</a>
 
