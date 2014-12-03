@@ -7,7 +7,7 @@
 
 ##目次
 - [概要](#synopsis)
-- [どのように作用するか](#hot-it-works)
+- [どのように作用するか](#how-it-works)
 - [コード例](#examples)
 - [サンプルファイル](#sample-files)
 - [構文](#syntax)
@@ -34,7 +34,7 @@ cout << boost::format("writing %1%,  x=%2% : %3%-th try") % "toto" % 40.23 % 50;
 ```
 
 
-## <a name="hot-it-works" href="hot-it-works">どのように作用するか</a>
+## <a name="how-it-works" href="how-it-works">どのように作用するか</a>
 
 1.書式文字列 `s` を伴って `format(s)` を呼び出すと、あるオブジェクトが構築される。このオブジェクトは、書式文字列を構文解析してすべての命令を探し、次のステップのために内部構造を準備する。
 2.そして、すぐに
