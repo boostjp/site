@@ -18,6 +18,9 @@
 - [Manipulators and the internal stream state](#manipulators-and-the-internal-stream-state)
 - [Alternatives](#alternatives)
 - [Exceptions](#exceptions)
+- [Extract](#extract)
+- [Rationale](#rationale)
+- [Credits](#credits)
 
 
 ## <a name="synopsis" href="synopsis">Synopsis</a>
@@ -344,4 +347,128 @@ cout << format("%1$d %2% %1%\n") % group(hex, showbase, 40) % 50;
 ```
 
 ## <a name="alternatives" href="alternatives">Alternatives</a>
+- *printf* は古典的な代替手段である。型安全でなく、ユーザ定義型に対して拡張可能ではない。
+- [ofrstream.cc](http://www.ece.ucdavis.edu/~kenelson/ofrstream.cc) Karl Nelson によるデザインはこの `format` クラスへのインスピレーションの大きな源となった。
+- [format.hpp](http://groups.yahoo.com/group/boost/files/format/) Rüiger Loo による。 `boost:format` クラスの以前の提案だった。 デザインの簡易さにおいてこのクラスの起源である。最小主義的な `"%1 %2"` という構文はこのクラスでも借用している。
+- [James Kanze's library](http://www.gabi-soft.de/code/gabi-lib.tgz) は非常に洗練された `format` クラス (`srcode/Extended/format`) を持っている。 そのデザインは、実際の変換に内部ストリームを用いる点や引数渡しに演算子を用いる点で、このクラスと共通している。 (しかし彼のクラス `ofrstream` は `operator%` ではなく `operator<<` を用いている)
+- [Karl Nelson's library](http://groups.yahoo.com/group/boost/files/format3/) は、 Boost.Format のデザインのための boost メーリングリストの討論において、別の解決法を示すために用意された。
 
+
+## <a name="exceptions" href="Exceptions">Exceptions</a>
+Boost.Format は `format` オブジェクトの使い方にいくつかのルールを強要する。書式文字列は前述の構文に従わなくてはならず、ユーザは最終的な出力までに正しい個数の引数を供給しなければならない。また `modify_item` や `bind_arg` を用いるなら、項目や引数のインデックスが範囲外を指してはならない。
+
+ミスが見過ごされたり放置されたりしないように、 `format` はいずれかのルールが満たされていないことを検出すると対応する例外を発生する。
+
+しかしユーザはこの振る舞いを必要に応じて変えることができる。また、どのエラーの型が発生するかを次の関数を用いて選択できる :
+
+```cpp
+unsigned char exceptions(unsigned char newexcept); // クエリおよび設定
+unsigned char exceptions() const;                  // クエリのみ
+```
+
+ユーザは、以下のアトムを２進演算で結合することで引数 `newexcept` を算出できる :
+
+- `boost::io::bad_format_string_bit` 書式文字列が適切でなければ例外を発生する。
+- `boost::io::too_few_args_bit` すべての引数が渡される前に結果の文字列を尋ねられたとき、例外を発生する。
+- `boost::io::too_many_args_bit` 渡された引数の数が多すぎれば例外を発生する。
+- `boost::io::out_of_range_bit` `modify_item` や項目インデックスを取る他の関数の呼び出し(および引数のインデックス）の際に、ユーザの与えたインデックスが範囲外であれば例外を発生する。
+- `boost::io::all_error_bits` すべてのエラーで例外を発生する。
+- `boost::io::no_error_bits` いずれのエラーでも例外を発生しない。
+
+例えば、 Boost.Format が引数の個数をチェックしないようにしたければ、適切な例外設定を施した `format` オブジェクトを作る特殊なラッパ関数を定義する :
+
+```cpp
+boost::format my_fmt(const std::string & f_string) {
+    using namespace boost::io;
+    format fmter(f_string);
+    fmter.exceptions( all_error_bits ^ ( too_many_args_bit | too_few_args_bit )  );
+    return fmter;
+}
+```
+
+すると、必要とされるよりも多くの引数を与えても許される(単に無視される) :
+
+```cpp
+cout << my_fmt(" %1% %2% \n") % 1 % 2 % 3 % 4 % 5;
+```
+
+また、すべての引数が与えられる前に結果を問い合わせると、結果の対応する部分は単に空になる
+
+```cpp
+cout << my_fmt(" _%2%_ _%1%_ \n") % 1 ;
+// prints      " __ _1_ \n"
+```
+
+## <a name="extract" href="extract">Extract</a>
+
+```cpp
+namespace boost {
+
+template<class charT, class Traits=std::char_traits<charT> > 
+class basic_format 
+{
+public:
+  typedef std::basic_string<charT, Traits> string_t,
+  basic_format(const charT* str);
+  basic_format(const charT* str, const std::locale & loc);
+  basic_format(const string_t& s);
+  basic_format(const string_t& s, const std::locale & loc);
+
+  string_t str() const;
+
+  // pass arguments through those operators :
+  template<class T>  basic_format&   operator%(T& x);  
+  template<class T>  basic_format&   operator%(const T& x);
+
+  // dump buffers to ostream :
+  friend std::basic_ostream<charT, Traits>& 
+  operator<< <> ( std::basic_ostream<charT, Traits>& , basic_format& ); 
+
+// ............  これはただの抜粋である .......
+}; // basic_format
+
+typedef basic_format<char >          format;
+typedef basic_format<wchar_t >      wformat;
+
+
+namespace io {
+// free function for ease of use :
+template<class charT, class Traits> 
+std::basic_string<charT,Traits>  str(const basic_format<charT,Traits>& f) {
+      return f.str();
+}
+} //namespace io
+
+
+} // namespace boost
+```
+
+## <a name="rationale" href="rationale">Rationale</a>
+このクラスのゴールは、より良い、 C++ 用の、型安全かつ型拡張性のある `printf` の等価物が、 ストリームとともに用いられるようにすることである。
+
+正確には、 `format` は以下の機能を実現するようデザインされた :
+
+- 引数の位置指定のサポート(国際化に必要)
+- 個数無制限の引数を許す。
+- 書式化命令の見た目を自然にする。
+- 書式文字列の構文に加えて、引数の出力を修飾するためのマニピュレータをサポー ト。
+- あらゆる型の変数を受け付ける。文字列への実際の変換はストリームに任せる。 これは特にユーザ定義型について、書式化オプションの作用が直観的に自然なものとなるよう考慮したものである。
+- `printf` 互換性の提供、型安全で型拡張性のある文脈においてもできるだけ意味をなすようにする。
+
+デザインの過程で多くの問題に直面し、いくつかの選択をすることになったが、 中には直観的には正しくないものもあった。しかしいずれのケースにも [何らかの意味がある](./choice.md)。
+
+
+## <a name="credits" href="credits">Credits</a>
+Boost format の著者は Samuel Krempp である。   彼は Rüiger Loos と Karl Nelson の両者の `format` クラスのアイディアを利用した。
+
+
+***
+February 19, 2002
+
+© Copyright Samuel Krempp 2002. Permission to copy, use, modify, sell and distribute this document is granted provided this copyright notice appears in all copies. This document is provided "as is" without express or implied warranty, and with no claim as to its suitability for any purpose.
+
+Japanese Translation Copyright © 2003 [Kent.N](kn@mm.neweb.ne.jp)
+
+オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。また、いかなる目的に対しても、その利用が適していることを関知しない。
+
+ 
