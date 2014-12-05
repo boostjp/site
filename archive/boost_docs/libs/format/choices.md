@@ -96,8 +96,8 @@ format(fstr).with( x1 ).with( x2 ).with( x3 );
 	振る舞いの違いの最も明白な例は、
 
 	```cpp
-	cout << format("%s %s ") << x;
-	cout << y ;  // うわぁ、 format は本当はストリームマニピュレータじゃないよ
+cout << format("%s %s ") << x;
+cout << y ;  // うわぁ、 format は本当はストリームマニピュレータじゃないよ
 	```
 
 - `%` の優先順位は `<<` よりも高い。 これは問題のように見える。なぜなら `+` や `-` は括弧の内側にグループ化しなければならないからだ。一方で `<<` にはそんな必要は無い。 しかしもしユーザがこのことを忘れても、誤りはコンパイルの際に捕らえられて、きっと彼は二度と忘れないだろう。
@@ -105,13 +105,13 @@ format(fstr).with( x1 ).with( x2 ).with( x3 );
 	その一方で、より高い優先順位は `format` の振る舞いをとても直観的にしてくれる。
 
 	```cpp
-	cout << format("%s %s ") % x % y << endl;
+cout << format("%s %s ") % x % y << endl;
 	```
 
 	は正確には次のように扱われる :
 
 	```cpp
-	cout << ( format("%s %s ") % x % y ) << endl;
+cout << ( format("%s %s ") % x % y ) << endl;
 	```
 
 	だから `%` を用いることで、 `format` オブジェクトの寿命が周囲のストリームの文脈を妨げることはない。 これはあり得る振る舞いの中で最も単純なものだ。そのためユーザは `format` オブジェクトの後でストリームを使いつづけることができる。 
@@ -119,13 +119,13 @@ format(fstr).with( x1 ).with( x2 ).with( x3 );
 	`<<` 演算子では、この状況では物事はより一層厄介だ。この行 :
 
 	```cpp
-	cout << format("%s %s ") <<  x  <<  y << endl;
+cout << format("%s %s ") <<  x  <<  y << endl;
 	```
 
 	は次のように解釈される :
 
 	```cpp
-	( ( ( cout << format("%s %s ") ) << x ) <<  y ) << endl;
+( ( ( cout << format("%s %s ") ) << x ) <<  y ) << endl;
 	```
 
 	代替となる実装の中には << 演算子を選択しているものもあるが、これが働くようにする方法は一つしかない :
@@ -133,7 +133,7 @@ format(fstr).with( x1 ).with( x2 ).with( x3 );
 	最初の
 
 	```cpp
-	operator<<( ostream&, format const&)
+operator<<( ostream&, format const&)
 	```
 
 	呼び出しは プロクシを返す。プロクシは最終的な出力先 (`cout`) と書式文字列の情報をカプセル化している。 
@@ -148,14 +148,14 @@ format(fstr).with( x1 ).with( x2 ).with( x3 );
 	- `format` の引数を特殊なマニピュレータ `'endf'` で以下のように閉じるよう、ユーザに要求する。 :
 
 		```cpp
-		cout << format("%s %s ") <<  x  <<  y << endf << endl;
+cout << format("%s %s ") <<  x  <<  y << endf << endl;
 		```
 
 		`endf` はプロキシの内部に保持されていた最終的な出力先を返す関数として定義できる。 それで万事解決だ。 `endf` の後は、ユーザは再び `cout` に向けて `<<` を呼んでいる。
 	- 中間的な解決方法もある。最も頻繁な使い方は、単にもう一つ多くのマニピュレータ (`std::flush` や `endl`, ..) を `cout` へ出力したい場合だろう。
 
 		```cpp
-		cout << format("%s %s \n") <<  x  <<  y << flush ;
+cout << format("%s %s \n") <<  x  <<  y << flush ;
 		```
 
 		だからその解決方法は `operator<<` をマニピュレータに対してオーバーロードすることだ。 この方法では `endf` は不要だが、マニピュレータ以外のものを `format` の引数の後に出力する事はできない。
@@ -164,13 +164,13 @@ format(fstr).with( x1 ).with( x2 ).with( x3 );
 - 美しさの問題 : `'%'` は書式文字列の内部で使われているものと同じ文字だ。それぞれの引数を渡すのに同じ文字を使うというのはなかなか良い考えだろう。 `'<<'` は２文字、 `'%'` は１文字。 `'%'` はサイズの面でもより小さい。 見た目の面でも全般的に改善している (何がどうなっているのかが分かる) :
 
 	```cpp
-	cout << format("%s %s %s") %x %y %z << "And  avg is" << format("%s\n") %avg;
+cout << format("%s %s %s") %x %y %z << "And  avg is" << format("%s\n") %avg;
 	```
 
 	これと次を比較すると :
 
 	```cpp
-	cout << format("%s %s %s") << x << y << z << endf <<"And avg is" << format("%s\n") << avg;
+cout << format("%s %s %s") << x << y << z << endf <<"And avg is" << format("%s\n") << avg;
 	```
 
 	`"<<"` は、ストリームに渡されているオブジェクトと同じレベルで引数を与えているから、間違いを起こしやすい。
