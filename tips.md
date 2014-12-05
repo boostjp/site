@@ -5,6 +5,7 @@
 
 
 **目次**
+
 - [データ構造](#data_structure)
 - [並行データ構造](#concurrent_data_structure)
 - [入出力](#io)
