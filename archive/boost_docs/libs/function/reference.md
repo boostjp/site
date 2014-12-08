@@ -310,7 +310,7 @@ void swap(function<Signature, Policy, Mixin, Allocator>& f,
 - 作用: `f.swap(g);`
 
 
-##脚注
+## <a name="note" href="note">脚注</a>
 - [1] : コンパイラが `void` 型の `return` をサポートしていない場合、 `ReturnType` に `void` を指定すると、 Boost.Function オブジェクトの `result_type` は実装依存になる。
 
 
