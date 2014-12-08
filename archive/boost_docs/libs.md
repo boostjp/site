@@ -15,4 +15,5 @@
 | [date_time](./libs/date_time.md) | 日付/時間ライブラリ Jeff Garland 作 |
 | [disjoint_sets](./libs/disjoint_sets.md) | 互いに素な集合 |
 | [format](./libs/format.md) | 型安全な printf 風の書式化操作。Samuel Krempp 作 |
+| [function](./libs/function.md) | 遅延呼び出し及びコールバックのための関数オブジェクトラッパ。 Doug Gregor 作 |
 
