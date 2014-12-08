@@ -16,7 +16,7 @@
 - [Portability](#portability)
 - [Design rationale](#design-rationale)
 - [Acknowledgements](#acknowledgements)
-- Frequently Asked Questions
+- [FAQ](./function/faq.md)
 
 
 ## <a name="compatibility-note" href="compatibility-note">Compatibility Note</a>
