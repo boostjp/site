@@ -9,7 +9,7 @@
 
 ##目次
 - [Compatibility Note](#compatibility-note)
-- Tutorial
+- [Tutorial](./function/tutorial.md)
 - Reference manual
 - [Boost.Function vs. Function Pointers](#function-vs-function-pointers)
 - [Performance](#performance)
