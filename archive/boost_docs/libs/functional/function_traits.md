@@ -3,6 +3,7 @@
 functional.hpp ヘッダは関数と関数オブジェクトのための、二つの特性クラステンプレートを提供します:
 
 | Type | Contents | Description |
+|------|----------|-------------|
 | `template <typename T>`<br/> `struct unary_traits` | `function_type` | 関数や関数オブジェクト自身の型 (例えば `T`)。 |
 | | `param_type`    | 関数や関数オブジェクトをパラメータとして渡すために使われるべき型。 |
 | | `result_type`   | 関数や関数オブジェクトの返り値の型。 |
