@@ -49,7 +49,7 @@ std::for_each(c.begin(), c.end(),
 
 `bind2nd` 呼び出しは `binder2nd` を作り、それは標準が以下のように定義している:
 
-``cpp
+```cpp
 template <class Operation>
 class binder2nd
     : public unary_function<typename Operation::first_argument_type,
