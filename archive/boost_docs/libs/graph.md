@@ -70,7 +70,7 @@
 	1. [`adjacency_iterator`](./graph/adjacency_iterator.md)
 18. 特性クラス
 	1. `graph_traits`
-	2. `adjacency_list_traits`
+	2. [`adjacency_list_traits`](./graph/adjacency_list_traits.md)
 	3. `property_map`
 19. アルゴリズム
 	1. `bgl_named_params`
