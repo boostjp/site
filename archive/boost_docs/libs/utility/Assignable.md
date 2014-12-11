@@ -25,7 +25,7 @@
 
 
 ##関連項目
-[DefaultConstructible](http://www.sgi.com/tech/stl/DefaultConstructible.html) and [CopyConstructible](./CopyConstructible.md)
+[DefaultConstructible](http://www.sgi.com/tech/stl/DefaultConstructible.html) and [CopyConstructible](./copy_constructible.md)
 
 
 ***
