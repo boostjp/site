@@ -1,4 +1,7 @@
-#adjacency_list_traits<EdgeList, VertexList, Directed>
+#adjacency_list_traits
+```cpp
+adjacency_list_traits<EdgeList, VertexList, Directed>
+```
 
 このクラスは `adjacency_list` クラスに結びついた型のいくつかをアクセスする代替方法を提供する。このクラスの主な理由は値が頂点記述子または辺記述子であるグラフ・プロパティを時々作成したいと思うからである。もしこのために `graph_traits` を使おうと試みるならば、相互に再帰的な型の問題にぶつかるだろう。この問題を避けるために `adjacency_list_traits` クラスが提供され、それはユーザにグラフのためのプロパティ型を提供する 要求をすることなしにユーザが頂点記述子型または辺記述型にアクセスできるようにする。
 
