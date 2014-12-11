@@ -9,6 +9,7 @@ adjacency_list<EdgeList, VertexList, Directed,
 
 
 ![](http://www.boost.org/doc/libs/1_31_0/libs/graph/doc/figs/adj-matrix-graph2.gif)
+
 Figure 1:有向グラフの隣接リスト表現
 
 `adjacency_list` クラスの `VertexList` テンプレート・パラメータは外部の二次元コンテナを表すためにどんな種類のコンテナが使われるかを制御する。 `EdgeList` テンプレート・パラメータは辺リストを表すためにどんな種類の コンテナが使われるかを制御する。`EdgeList` と `VertexList` の 選択はグラフ構造の空間計算量を決定するだろう、そして様々なグラフ操作の時間計算量を決定するだろう。可能な選択とトレード・オフは章 [Choosing the Edgelist and VertexList](./using_adjacency_list.md#choosing-graph-type) 中で論じられる。
@@ -17,6 +18,7 @@ Figure 1:有向グラフの隣接リスト表現
 
 
 ![](http://www.boost.org/doc/libs/1_31_0/libs/graph/doc/figs/undir-adj-matrix-graph2.gif)
+
 Figure 2:無向グラフの隣接リスト表現
 
 `adjacency_list` クラスの使い方のチュートリアルは章 [Using `adjacency_list`](./using_adjacency_list.md) にある。
@@ -32,7 +34,7 @@ Figure 2:無向グラフの隣接リスト表現
 |------------|------|------------|
 | `EdgeList`         | 各々の頂点の辺リストを表わすために使われるコンテナのための選択子。 | `vecS` |
 | `VertexList`       | グラフの頂点リストを表すために使われるコンテナのための選択子。 | `vecS` |
-| `Directed	グラフが有向か、無向か、または双方向の辺アクセス (出辺と入辺の両方にアクセス する) の有向かを選ぶ選択子。選択肢は `directedS`、`undirectedS`、 そして `bidirectionalS` である。 | `directedS` |
+| `Directed`         | グラフが有向か、無向か、または双方向の辺アクセス (出辺と入辺の両方にアクセス する) の有向かを選ぶ選択子。選択肢は `directedS`、`undirectedS`、 そして `bidirectionalS` である。 | `directedS` |
 | `VertexProperties` | 内部のプロパティの記憶領域を指定する。 | `no_property` |
 | `EdgeProperties`   | 内部のプロパティの記憶領域を指定する。 | `no_property` |
 | `GraphProperties`  | グラフ・オブジェクトのためのプロパティの記憶領域を指定する。 | `no_property` |
