@@ -55,7 +55,7 @@
 	3. `time_stamper`
 	4. `property_writer`
 15. グラフ・クラス
-	1. `adjacency_list`
+	1. [`adjacency_list`](./graph/adjacency_list.md)
 	2. `adjacency_matrix`
 16. グラフ・アダプタ
 	1. `subgraph`
