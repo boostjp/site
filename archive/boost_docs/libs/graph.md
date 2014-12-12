@@ -56,7 +56,7 @@
 	4. `property_writer`
 15. グラフ・クラス
 	1. [`adjacency_list`](./graph/adjacency_list.md)
-	2. `adjacency_matrix`
+	2. [`adjacency_matrix`](./graph/adjacency_matrix.md)
 16. グラフ・アダプタ
 	1. `subgraph`
 	2. `edge_list`
