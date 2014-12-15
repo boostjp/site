@@ -7,9 +7,9 @@ bool bellman_ford_shortest_paths(EdgeListGraph& g, Size N,
 
 // 名前無しパラメータバージョン
 template <class EdgeListGraph, class Size, class WeightMap,
-	  class PredecessorMap, class DistanceMap,
-	  class BinaryFunction, class BinaryPredicate,
-	  class BellmanFordVisitor>
+      class PredecessorMap, class DistanceMap,
+      class BinaryFunction, class BinaryPredicate,
+      class BellmanFordVisitor>
 bool bellman_ford_shortest_paths(EdgeListGraph& g, Size N, 
   WeightMap weight, PredecessorMap pred, DistanceMap distance, 
   BinaryFunction combine, BinaryPredicate compare, BellmanFordVisitor v)
@@ -61,36 +61,36 @@ BELLMAN-FORD(G)
 
 ##パラメータ
 - IN: `EdgeListGraph& g`
-	- 型が [Edge List Graph](./EdgeListGraph.md) のモデルの有向グラフまたは無向グラフでなければならない。
+    - 型が [Edge List Graph](./EdgeListGraph.md) のモデルの有向グラフまたは無向グラフでなければならない。
 
 - IN: `Size N`
-	- グラフ中の頂点の数。型 `Size` は汎整数型でなければならない。
+    - グラフ中の頂点の数。型 `Size` は汎整数型でなければならない。
 
 
 ##名前付きパラメータ
 - IN: `weight_map(WeightMap w)`
-	- グラフ中の各辺の重み　(そして「長さ」もしくは「コスト」として知られる)。 `WeightMap` の型は [Readable Property Map](./ReadablePropertyMap.md) のモデルでなければならない。このプロパティ・マップのキー型はグラフの辺記述子でなければならない。重みマップの値型は距離マップの値型を伴った Addable でなければならない。
-	- デフォルト: `get(edge_weight, g)`
+    - グラフ中の各辺の重み　(そして「長さ」もしくは「コスト」として知られる)。 `WeightMap` の型は [Readable Property Map](./ReadablePropertyMap.md) のモデルでなければならない。このプロパティ・マップのキー型はグラフの辺記述子でなければならない。重みマップの値型は距離マップの値型を伴った Addable でなければならない。
+    - デフォルト: `get(edge_weight, g)`
 
 - OUT: `predecessor_map(PredecessorMap p_map)`
-	- 先行点マップ (predecessor map) は最小全域木中に辺を記録する。 アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](./ReadWritePropertyMap.md) でなければならない。
-	- デフォルト: `dummy_property_map`
+    - 先行点マップ (predecessor map) は最小全域木中に辺を記録する。 アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](./ReadWritePropertyMap.md) でなければならない。
+    - デフォルト: `dummy_property_map`
 
 - IN/OUT: `distance_map(DistanceMap d)`
-	- グラフ `g` 中の始点から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。`DistanceMap` の型は [Read/Write Property Map](./ReadWritePropertyMap.md) のモデルでなければならない。プロパティ・マップのキー型は グラフの頂点記述子型でなければならず、距離マップの値型は [Less Than Comparable](http://www.sgi.com/tech/stl/LessThanComparable.html) でなければならない。
-	- デフォルト: `get(vertex_distance, g)`
+    - グラフ `g` 中の始点から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。`DistanceMap` の型は [Read/Write Property Map](./ReadWritePropertyMap.md) のモデルでなければならない。プロパティ・マップのキー型は グラフの頂点記述子型でなければならず、距離マップの値型は [Less Than Comparable](http://www.sgi.com/tech/stl/LessThanComparable.html) でなければならない。
+    - デフォルト: `get(vertex_distance, g)`
 
 - IN: `visitor(BellmanFordVisitor v)`
-	- ビジタ・オブジェクトで、その型は [Bellman-Ford Visitor](./BellmanFordVisitor.md) のモデルでなければならない。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
-	- デフォルト: `bellman_visitor<null_visitor>`
+    - ビジタ・オブジェクトで、その型は [Bellman-Ford Visitor](./BellmanFordVisitor.md) のモデルでなければならない。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
+    - デフォルト: `bellman_visitor<null_visitor>`
 
 - IN: `distance_combine(BinaryFunction combine)`
-	- この関数オブジェクトはリラックス (減少) 段階中で、加算の役割を置き換える。 第一引数の型は距離マップの値型に一致していなければならず、第二引数の型は重みマップの値型に一致していなければならない。 結果型は距離マップの値型と同じでなければならない。
-	- デフォルト:`std::plus<D>` ここで `D=typename property_traits<DistanceMap>::value_type` とする。
+    - この関数オブジェクトはリラックス (減少) 段階中で、加算の役割を置き換える。 第一引数の型は距離マップの値型に一致していなければならず、第二引数の型は重みマップの値型に一致していなければならない。 結果型は距離マップの値型と同じでなければならない。
+    - デフォルト:`std::plus<D>` ここで `D=typename property_traits<DistanceMap>::value_type` とする。
 
 - IN: `distance_compare(BinaryPredicate compare)`
-	- この関数オブジェクトはリラックス (減少) 段階中で、距離を比較する less-than (`<`) 演算子の役割を置き換える。引数の型は距離マップの値型に一致していなければならない。 
-	- デフォルト: `std::less<D>` ここで `D=typename property_traits<DistanceMap>::value_type` とする。
+    - この関数オブジェクトはリラックス (減少) 段階中で、距離を比較する less-than (`<`) 演算子の役割を置き換える。引数の型は距離マップの値型に一致していなければならない。 
+    - デフォルト: `std::less<D>` ここで `D=typename property_traits<DistanceMap>::value_type` とする。
 
 
 ##計算量
