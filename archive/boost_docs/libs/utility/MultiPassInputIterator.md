@@ -1,5 +1,7 @@
 #MultiPassInputIterator
 
+- 翻訳元ドキュメント : <http://www.boost.org/doc/libs/1_31_0/libs/utility/MultiPassInputIterator.html>
+
 このコンセプトは[Input Iterator](http://www.sgi.com/tech/stl/InputIterator.html)を精製し、範囲を複数のパスで通るようイテレータを使用してもよいという要件を追加しており、`it1 == it2`かつ`++it1 == ++it2`のとき、`it1`は間接参照可能である。このMulti-Pass Input Iteratorは、[Forward Iterator](http://www.sgi.com/tech/stl/ForwardIterator.hmtl)によく似ている。唯一の違いは、[Forward Iterator](http://www.sgi.com/tech/stl/ForwardIterator.hmtl)の`reference`型が`value_type&`であることを要求するのに対し、MultiPassInputIteratorは[Input Iterator](http://www.sgi.com/tech/stl/InputIterator.html)のように`reference`が`value_type`に変換できるということである。
 
 
