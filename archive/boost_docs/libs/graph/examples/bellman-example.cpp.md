@@ -1,4 +1,4 @@
-#bellman-example.cpp
+#libs/graph/example/bellman-example.cpp
 
 ```cpp
 //=======================================================================
