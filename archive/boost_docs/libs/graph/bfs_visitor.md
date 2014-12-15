@@ -3,7 +3,7 @@
 
 
 ##コード例
-以下は [examples/bfs.cpp](.examples/bfs.cpp.md) からの抜粋である。ここでは 3 つのイベントビジタを結合して BFS ビジタを作っている。関数 `boost::record_distances` 、 `boost::record_predecessors` 、 `copy_graph` は全て、イベントビジタを作る関数だ。
+以下は [examples/bfs.cpp](./examples/bfs.cpp.md) からの抜粋である。ここでは 3 つのイベントビジタを結合して BFS ビジタを作っている。関数 `boost::record_distances` 、 `boost::record_predecessors` 、 `copy_graph` は全て、イベントビジタを作る関数だ。
 
 ```cpp
 // Construct graph G and obtain the source vertex s ...
