@@ -24,7 +24,7 @@ AdjacencyGraph コンセプトは、グラフ中の頂点への隣接頂点の�
 
 - `boost::graph_traits<G>::adjacency_iterator`
 
-頂点 `v` のための隣接イテレータは `v` に隣接した頂点へのアクセスを提供する。そのため隣接イテレータの値型はそのグラフの頂点記述子型である。 隣接イテレータは [MultiPassInputIterator](./MultiPassInputIterator.md) の要求を満たしていなければならない。
+頂点 `v` のための隣接イテレータは `v` に隣接した頂点へのアクセスを提供する。そのため隣接イテレータの値型はそのグラフの頂点記述子型である。 隣接イテレータは [MultiPassInputIterator](../utility/MultiPassInputIterator.md) の要求を満たしていなければならない。
 
 
 ##妥当な式

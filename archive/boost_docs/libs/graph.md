@@ -29,7 +29,7 @@
 	1. Graph
 	2. Incidence Graph
 	3. Bidirectional Graph
-	4. [Adjacency Graph](./AdjacencyGraph.md)
+	4. [Adjacency Graph](./graph/AdjacencyGraph.md)
 	5. Vertex List Graph
 	6. Edge List Graph
 	7. Vertex and Edge List Graph
