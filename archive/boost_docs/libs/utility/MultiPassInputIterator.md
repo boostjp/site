@@ -7,17 +7,21 @@
 
 Valentin Bonnardからのコメント：
 
-> 私は、Multi-Pass Input Iteratorの導入は、正しい解決ではないと考える。これと同様に、Multi-Pass Bidirectional IteratorやMulti-Pass Random Access Iteratorを定義したいと思うだろうか？私は思わない、確実に。これは問題を混乱させるだけだ。この問題は、既存のイテレータ階層に含まれている移動性(movavility)と変更性(modifiability)と左辺値らしさを混ぜ合わせたものであり、これらは明確に独立している。
+```
+私は、Multi-Pass Input Iteratorの導入は、正しい解決ではないと考える。これと同様に、Multi-Pass Bidirectional IteratorやMulti-Pass Random Access Iteratorを定義したいと思うだろうか？私は思わない、確実に。これは問題を混乱させるだけだ。この問題は、既存のイテレータ階層に含まれている移動性(movavility)と変更性(modifiability)と左辺値らしさを混ぜ合わせたものであり、これらは明確に独立している。
 
-> Forward、Bidirectional、Random Accessは移動性に関しての用語であり、それ以外の意味に使用すべきではない。イテレータが不変(immutable)か変更可能(mutable)かは、完全に直交する。左辺値のイテレータもまた、不変性(immutability)は直交する。これらのクリーンなコンセプトでは、Multi-Pass Input Iteratorは素直のForward Iteratorと呼べる。
+Forward、Bidirectional、Random Accessは移動性に関しての用語であり、それ以外の意味に使用すべきではない。イテレータが不変(immutable)か変更可能(mutable)かは、完全に直交する。左辺値のイテレータもまた、不変性(immutability)は直交する。これらのクリーンなコンセプトでは、Multi-Pass Input Iteratorは素直のForward Iteratorと呼べる。
 
-> 他の変換は以下のようになる：
-> std::Forward Iterator -> ForwardIterator & Lvalue Iterator
-> std::Bidirectionnal Iterator -> Bidirectionnal Iterator & Lvalue Iterator
-> std::Random Access Iterator -> Random Access Iterator & Lvalue Iterator
+他の変換は以下のようになる：
 
-> 私のForward Iteratorで許可しておらず、std::Forward Iteratorでは許可されている唯一の操作は`&*it`である。私は、`&*`はジェネリックコードではほとんど必要ないと考える。
+std::Forward Iterator -> ForwardIterator & Lvalue Iterator
 
+std::Bidirectionnal Iterator -> Bidirectionnal Iterator & Lvalue Iterator
+
+std::Random Access Iterator -> Random Access Iterator & Lvalue Iterator
+
+私のForward Iteratorで許可しておらず、std::Forward Iteratorでは許可されている唯一の操作は「&*it」である。私は、「&*」はジェネリックコードではほとんど必要ないと考える。
+```
 
 Jeremy Siekからの返信：
 
