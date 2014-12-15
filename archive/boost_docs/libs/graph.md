@@ -48,7 +48,7 @@
 	2. `bfs_visitor`
 	3. `dfs_visitor`
 	4. `dijkstra_visitor`
-	5. `bellman_visitor`
+	5. [`bellman_visitor`](./graph/bellman_visitor.md)
 14. イベント・ビジタ
 	1. `predecessor_recorder`
 	2. `distance_recorder`
