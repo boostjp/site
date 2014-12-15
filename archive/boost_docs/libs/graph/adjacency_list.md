@@ -41,7 +41,7 @@ Figure 2:無向グラフの隣接リスト表現
 
 
 ##Model of
-[VertexAndEdgeListGraph](./VertexAndEdgeListGraph.md), [MutablePropertyGraph](./MutablePropertyGraph.md), [CopyConstructible](../utility/copy_constructible.md), and [Assignable](../utility/assignable.md).
+[VertexAndEdgeListGraph](./VertexAndEdgeListGraph.md), [MutablePropertyGraph](./MutablePropertyGraph.md), [CopyConstructible](../utility/CopyConstructible.md), and [Assignable](../utility/Assignable.md).
 
 
 ##Where Defined
