@@ -38,7 +38,7 @@
 	10. Mutable Property Graph
 11. The Property Map Library （専門的にはグラフ・ライブラリの部分ではないが、ここで使用される頻度が高い）
 12. ビジタ・コンセプト
-	1. BFS （幅優先探査） Visitor
+	1. [BFS （幅優先探査） Visitor](./graph/BFSVisitor.md)
 	2. DFS （深度優先探査） Visitor
 	3. Dijkstra Visitor
 	4. [Bellman Ford Visitor](./graph/BellmanFordVisitor.md)
