@@ -41,7 +41,7 @@
 	1. BFS （幅優先探査） Visitor
 	2. DFS （深度優先探査） Visitor
 	3. Dijkstra Visitor
-	4. Bellman Ford Visitor
+	4. [Bellman Ford Visitor](./graph/BellmanFordVisitor.md)
 	5. Event Visitor
 13. EventVisitorList アダプタ
 	1. Event Visitor List
