@@ -12,7 +12,7 @@ Valentin Bonnardからのコメント：
 ```
 私は、Multi-Pass Input Iteratorの導入は、正しい解決ではないと考える。これと同様に、Multi-Pass Bidirectional IteratorやMulti-Pass Random Access Iteratorを定義したいと思うだろうか？私は思わない、確実に。これは問題を混乱させるだけだ。この問題は、既存のイテレータ階層に含まれている移動性(movavility)と変更性(modifiability)と左辺値らしさを混ぜ合わせたものであり、これらは明確に独立している。
 
-Forward、Bidirectional、Random Accessは移動性に関しての用語であり、それ以外の意味に使用すべきではない。イテレータが不変(immutable)か変更可能(mutable)かは、完全に直交する。左辺値のイテレータもまた、不変性(immutability)は直交する。これらのクリーンなコンセプトでは、Multi-Pass Input Iteratorは素直のForward Iteratorと呼べる。
+Forward、Bidirectional、Random Accessは移動性に関しての用語であり、それ以外の意味に使用すべきではない。イテレータが不変(immutable)か変更可能(mutable)かは、完全に直交する。左辺値のイテレータもまた、不変性(immutability)は直交する。これらのクリーンなコンセプトでは、Multi-Pass Input Iteratorは素直にForward Iteratorと呼べる。
 
 他の変換は以下のようになる：
 
