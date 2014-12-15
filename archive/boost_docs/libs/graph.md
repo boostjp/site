@@ -45,7 +45,7 @@
 	5. Event Visitor
 13. EventVisitorList アダプタ
 	1. Event Visitor List
-	2. `bfs_visitor`
+	2. [`bfs_visitor`](./graph/bfs_visitor.md)
 	3. `dfs_visitor`
 	4. `dijkstra_visitor`
 	5. [`bellman_visitor`](./graph/bellman_visitor.md)
