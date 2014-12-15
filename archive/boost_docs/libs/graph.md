@@ -119,7 +119,7 @@
 	5. `incident`
 	6. `opposite`
 	7. [`bandwidth`](./graph/bandwidth.md)
-	8. `ith_bandwidth`
+	8. [`ith_bandwidth`](./graph/bandwidth.md)
 	9. Tools for random graphs
 		10. `random_vertex`
 		11. `random_edge`
