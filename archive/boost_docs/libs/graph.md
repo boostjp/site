@@ -115,7 +115,7 @@
 	1. `property`
 	2. ColorValue
 	3. Buffer
-	4. BasicMatrix
+	4. [BasicMatrix](./graph/BasicMatrix.md)
 	5. `incident`
 	6. `opposite`
 	7. [`bandwidth`](./graph/bandwidth.md)
