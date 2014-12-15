@@ -118,7 +118,7 @@
 	4. BasicMatrix
 	5. `incident`
 	6. `opposite`
-	7. `bandwidth`
+	7. [`bandwidth`](./graph/bandwidth.md)
 	8. `ith_bandwidth`
 	9. Tools for random graphs
 		10. `random_vertex`
