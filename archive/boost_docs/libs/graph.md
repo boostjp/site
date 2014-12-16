@@ -114,7 +114,7 @@
 21. 補助コンセプト、補助クラス、補助関数
 	1. `property`
 	2. ColorValue
-	3. Buffer
+	3. [Buffer](./graph/Buffer.md)
 	4. [BasicMatrix](./graph/BasicMatrix.md)
 	5. `incident`
 	6. `opposite`
