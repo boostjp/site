@@ -75,7 +75,7 @@
 19. アルゴリズム
 	1. [`bgl_named_params`](./graph/bgl_named_params.md)
 	2. 核となるアルゴリズム・パターン
-		1. `breadth_first_search`
+		1. [`breadth_first_search`](./graph/breadth_first_search.md)
 		2. `breadth_first_visit`
 		3. `depth_first_search`
 		4. `depth_first_visit`
