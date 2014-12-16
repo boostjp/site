@@ -94,7 +94,7 @@ boost/graph/breadth_first_search.hpp
 - `vis.examine_vertex(u, g)` は、各頂点においてそれがキューから削除される時に呼び出される。
 - `vis.examine_edge(e, g)` は、各頂点のあらゆる出辺において、頂点が キューから削除された後で直ちに呼び出される。
 - `vis.tree_edge(e, g)` は、 `examine_edge()` に加えて 辺が木の辺の場合に呼び出される。辺 `e` の終点はこの時に発見される。
-- `vis.discover_vertex(u, g)` は、アルゴリズムが初めて頂点 `u` に出会った時に呼び出される。始点に近い全ての頂点が発見されており、始点から遠方に離れた頂点はまだ発見されていない。
+- `vis.discover_vertex(u, g)` は、アルゴリズムが初めて頂点 `u` を通った時に呼び出される。始点に近い全ての頂点が発見されており、始点から遠方に離れた頂点はまだ発見されていない。
 - `vis.non_tree_edge(e, g)` は、 `examine_edge()` に加えて辺が tree edge でない場合に呼び出される。
 - `vis.gray_target(e, g)` は、 `non_tree_edge()` に加えて調査時点で終点が灰色に色づけされている場合に呼び出される。灰色は頂点が現在 キュー中にある印である。
 - `vis.black_target(e, g)` は、 `non_tree_edge()` に加えて調査時点で終点が黒色に色づけされている場合に呼び出される。黒色は頂点がもはやキュー中にはない印である。
