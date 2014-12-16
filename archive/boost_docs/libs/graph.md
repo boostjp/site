@@ -28,7 +28,7 @@
 10. Boost Graph インタフェイス
 	1. Graph
 	2. Incidence Graph
-	3. Bidirectional Graph
+	3. [Bidirectional Graph](./graph/BidirectionalGraph.md)
 	4. [Adjacency Graph](./graph/AdjacencyGraph.md)
 	5. Vertex List Graph
 	6. Edge List Graph
