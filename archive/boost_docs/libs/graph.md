@@ -73,7 +73,7 @@
 	2. [`adjacency_list_traits`](./graph/adjacency_list_traits.md)
 	3. `property_map`
 19. アルゴリズム
-	1. `bgl_named_params`
+	1. [`bgl_named_params`](./graph/bgl_named_params.md)
 	2. 核となるアルゴリズム・パターン
 		1. `breadth_first_search`
 		2. `breadth_first_visit`
