@@ -23,7 +23,7 @@
 	3. Graph Coloring
 	4. Sparse Matrix Ordering
 9. BGL 拡張
-	1. Constructing graph algorithms with BGL
+	1. [BGLでグラフアルゴリズムを構築する](./graph/constructing_algorithms.md)
 	2. Converting Existing Graphs to BGL
 10. Boost Graph インタフェイス
 	1. Graph
