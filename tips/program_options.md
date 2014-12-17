@@ -21,7 +21,7 @@ int main(const int ac, const char* const * const av)
   
   // オプションの定義
   options_description description("おぷしょん");
-  description.add_oiptions()
+  description.add_options()
     ("hoge,h", value<int>()->default_value(-100), "ほげほげおぷしょんの説明だよ")
     ("fuga,f", value<std::vector<unsigned>>()->multitoken(), "ふがふがおぷしょんの説明だよ")
     ("help,H", "へるぷ")
