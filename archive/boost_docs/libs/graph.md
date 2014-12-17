@@ -105,7 +105,7 @@
 		9. [`copy_graph`](./graph/copy_graph.md)
 		10. `transpose_graph`
 		11. `isomorphism`
-		12. `cuthill_mckee_ordering`
+		12. [`cuthill_mckee_ordering`](./graph/cuthill_mckee_ordering.md)
 		13. `sequential_vertex_coloring`(アンドキュメント)
 		14. `minimum_degree_ordering`
 20. AT&T Graphviz フォーマット入出力ユーティリティ
