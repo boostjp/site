@@ -102,7 +102,7 @@
 			2. `push_relabel_max_flow`
 		7. `topological_sort`
 		8. `transitive_closure`
-		9. `copy_graph`
+		9. [`copy_graph`](./graph/copy_graph.md)
 		10. `transpose_graph`
 		11. `isomorphism`
 		12. `cuthill_mckee_ordering`
