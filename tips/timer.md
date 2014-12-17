@@ -9,7 +9,7 @@
 - [出力結果のフォーマットをカスタマイズする]
 
 
-## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 `cpu_timer`クラスでは、コンストラクタで時間計測が開始され、`format()`メンバ関数で計測結果の`std::string`を返す。
 
 ```cpp
@@ -47,7 +47,7 @@ int main ()
 | %表記        |        | ユーザーCPU処理時間 + システムCPU処理時間の合計時間による、実際の経過時間の%表現 |
 
 
-## <a name="start-stop-resume" href="start-stop-resume">開始、停止、再開を制御する</a>
+## <a name="start-stop-resume" href="#start-stop-resume">開始、停止、再開を制御する</a>
 `cpu_timer`の開始、停止、再開を制御するには、それぞれ`start()`、`stop()`、`resume()`メンバ関数を使用する。
 
 ```cpp
@@ -98,7 +98,7 @@ int main ()
 ```
 
 
-## <a name="elapsed-values" href="elapsed-values">処理時間の値を個別に取得する</a>
+## <a name="elapsed-values" href="#elapsed-values">処理時間の値を個別に取得する</a>
 処理時間の値を個別に取得するには、`elapsed()`メンバ関数を使用する。
 
 ```cpp
@@ -143,7 +143,7 @@ system : 0
 これらのメンバ変数は、ナノ秒分解能を表現する整数型である。
 
 
-## <a name="customize-format" href="customize-format">出力結果のフォーマットをカスタマイズする</a>
+## <a name="customize-format" href="#customize-format">出力結果のフォーマットをカスタマイズする</a>
 `cpu_timer::format()`メンバ関数は、デフォルトでは以下のようなフォーマットで印字される。
 
 ```cpp

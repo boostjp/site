@@ -16,7 +16,7 @@
 - [Operators](#operators)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 `boost::posix_time::time_duration` クラスは時間の長さを確実に表現できる基底型である。 時間長(duration)は正あるいは負の値を取り得る。
 
 以下に示すように、異なった分解能を調整するために基底の `time_duration` から継承するいくつかの小さなヘルパークラスがある。 これらのクラスによって、コードを短く、意図をより明確にすることができる。
@@ -35,7 +35,7 @@ td = hours(1) + nanosec(5); //01:00:00.000000005
 
 注意：高分解能(たとえば`nanosec`)が存在するかどうかは、依存するインストールライブラリによって異なる。詳細は、[Build-Compiler Information](./build_info.md)を参照。
 
-## <a name="header" href="header">Header</a>
+## <a name="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/posix_time/posix_time.hpp" //全ての型とI/Oを含む
 ```
@@ -47,14 +47,14 @@ td = hours(1) + nanosec(5); //01:00:00.000000005
 ```
 
 
-## <a name="construction" href="construction">Construction</a>
+## <a name="construction" href="#construction">Construction</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
 | `time_duration(hours,minutes,seconds,fractional_seconds)` | 数値から時間長(duration)を生成する | `time_duration td(1,2,3,9); //1 hr 2 min 3 sec 9 nanoseconds` |
 
 
-## <a name="count-based-construction" href="count-based-construction">Construction By Count</a>
+## <a name="count-based-construction" href="#count-based-construction">Construction By Count</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -66,14 +66,14 @@ td = hours(1) + nanosec(5); //01:00:00.000000005
 | `nanoseconds(long)`  | ナノ秒単位で生成     | `time_duration td = nanoseconds(3);`  |
 
 
-## <a name="conversion-to-string" href="conversion-to-string">Construction From String</a>
+## <a name="conversion-to-string" href="#conversion-to-string">Construction From String</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
 | `time_duration duration_from_string(const std::string&)` | 区切られた文字列から生成 | `std::string ts("23:59:59.000");`<br/> `time_duraton td(duration_from_string(ts));` |
 
 
-## <a name="accessors" href="accessors">Accessors</a>
+## <a name="accessors" href="#accessors">Accessors</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -88,7 +88,7 @@ td = hours(1) + nanosec(5); //01:00:00.000000005
 | `static time_duration unit()` | 時間長(duration)型の扱える最小単位を返す(1ナノ秒) | `time_duration::unit() --> time_duration(0,0,0,1)` |
 
 
-## <a name="conversion-to-string" href="conversion-to-string">Conversion To String</a>
+## <a name="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -96,7 +96,7 @@ td = hours(1) + nanosec(5); //01:00:00.000000005
 | `std::string to_iso_string(time_duration)` | HHMMSS,fffffffff 形式に変換する | 100001,123456789 |
 
 
-## <a name="operators" href="operators">Operators</a>
+## <a name="operators" href="#operators">Operators</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|

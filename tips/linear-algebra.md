@@ -10,7 +10,7 @@
 - [2つのベクトルが成す角度を求める](#angle)
 
 
-## <a name="basic-vector-usage" href="basic-vector-usage">ベクトルの基本操作</a>
+## <a name="basic-vector-usage" href="#basic-vector-usage">ベクトルの基本操作</a>
 ベクトルには、`boost::numeric::ublas`名前空間の[`vector`](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/vector.htm#vector)クラステンプレートを使用する。
 
 ```cpp
@@ -68,7 +68,7 @@ int main()
 | `v / n` | `(v[0] / n, v[1] / n, ..., v[i] / n)`          |
 
 
-## <a name="vector-length" href="vector-length">ベクトルの長さを取得する</a>
+## <a name="vector-length" href="#vector-length">ベクトルの長さを取得する</a>
 ベクトルの長さを取得するには、[`boost::numeric::ublas::norm_2()`](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/vector_expression.htm#vector_reductions)関数を使用する。この関数は、ユークリッドノルム(2-ノルム)を計算して返す。
 
 ```cpp
@@ -98,7 +98,7 @@ int main()
 ```
 
 
-## <a name="normalize" href="normalize">ベクトルを正規化する</a>
+## <a name="normalize" href="#normalize">ベクトルを正規化する</a>
 ベクトルの正規化とは、ベクトルの長さを1にする変換のことである。Boost.uBLASでは、正規化のための関数が直接的には用意されていないため、自分で計算する必要がある。
 
 正規化の計算は、以下の`normalize()`関数のように、ベクトルを長さで割ることでできる。
@@ -141,7 +141,7 @@ length : 1
 値の比率をそのままに、長さが1になっていることがわかる。
 
 
-## <a name="inner-product" href="inner-product">2つのベクトルの内積を求める</a>
+## <a name="inner-product" href="#inner-product">2つのベクトルの内積を求める</a>
 2つのベクトルの内積を求めるには、[`boost::ublas::inner_prod()`](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/vector_expression.htm#vector_operations)関数を使用する。この関数は、2つのベクトルを引数にとり、ベクトルの要素型で内積値を返す。
 
 ```cpp
@@ -176,7 +176,7 @@ int main()
 これを利用して、「負の値だったら位置ベクトルが目的地に到達した(衝突した)」と判定するのに応用できる。
 
 
-## <a name="angle" href="angle">2つのベクトルが成す角度を求める</a>
+## <a name="angle" href="#angle">2つのベクトルが成す角度を求める</a>
 2つのベクトルが成す角度の計算を、以下の`angle()`関数の実装で示す。この関数は、2つのベクトルを与えると、ラジアンで角度が返される。
 
 ```cpp

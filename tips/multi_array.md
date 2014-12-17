@@ -9,7 +9,7 @@
 - [部分配列の走査](#iterate-partial-array)
 
 
-## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 `boost::multi_array`クラスはCスタイル多次元配列特有の分かりにくさを解消し、様々な走査を提供する。
 
 ただし、`boost::array`とは違いオーバーヘッドが存在するため注意が必要である。
@@ -52,7 +52,7 @@ int main()
 `boost::multi_array`は`boost::extents`などによって各次元の次元長を設定するか、部分配列、ビューを用いて初期化することが可能である。
 
 
-## <a name="iterate-partial-array" href="iterate-partial-array">部分配列の走査</a>
+## <a name="iterate-partial-array" href="#iterate-partial-array">部分配列の走査</a>
 
 `boost::multi_array`はCスタイルの配列では難しい部分配列への走査を提供している。
 

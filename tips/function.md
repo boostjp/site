@@ -6,7 +6,7 @@
 - [基本的な使い方](#basic-usage)
 
 
-## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 
 `boost::function`型は、テンプレート引数で関数のシグニチャ、すなわち関数の形を指定する。
 

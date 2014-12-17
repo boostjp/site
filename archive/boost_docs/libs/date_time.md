@@ -44,17 +44,17 @@ Version 1.00
 - [UTC / Local Time Adjustments](./date_time/local_time_adjust.md)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 ジェネリックプログラミングの概念に基づいた日付・時間ライブラリ
 
 
-## <a name="motivation" href="motivation">Motivation</a>
+## <a name="motivation" href="#motivation">Motivation</a>
 このライブラリの開発動機は、多くのプロジェクトの多くの日付時間ライブラリで動作すること、また、それらの構築を手助けすることである。 日付時間ライブラリは多くの開発プロジェクトに対して、基礎的な構造を提供する。 しかしそれらの多くは、計算、書式化、変換、その他のいくつかの機能に限界がある。 例えば多くのライブラリは、うるう秒を正しく扱うこと、無限のような概念を提供すること、高分解能の時間資源やネットワーク上の時間資源を利用することが出来ない。 そのうえ、これらのライブラリは、どれも日付や時間の表現形式が厳密である傾向にあるため、プロジェクトやサブプロジェクトのためにカスタマイズすることが出来ない。
 
 日付や時間に関するプログラミングは、文字列や整数に関するプログラミングと同じくらいシンプルで自然であるべきである。 多くの時間論理を備えたアプリケーションは、演算子と計算能力の頑健な集合により、根本的に単純化することができる。 クラスは日付時間の比較、時間の長さ(length)や期間(duration)の加算、時計からの日付時間の取得、日付時間間隔(interval)に関する自然な動作を提供すべきである。
 
 
-## <a name="usage-examples" href="usage-examples">Usage Examples</a>
+## <a name="usage-examples" href="#usage-examples">Usage Examples</a>
 次に，グレゴリオ暦システムの使用例を示す。 詳細は「[日付プログラミング](./date_time/gregorian.md)」で解説する。
 
 ```cpp
@@ -97,7 +97,7 @@ for (; titr < tommorrow_start; ++titr) {
 ```
 
 
-## <a name="domain-concepts" href="domain-concepts">Domain Concepts</a>
+## <a name="domain-concepts" href="#domain-concepts">Domain Concepts</a>
 日付・時間の分野には専門用語と問題が多い。以下はライブラリ中に見られる概念の簡単な紹介である。
 
 このライブラリは3つの基本的な時間型をサポートする。
@@ -123,7 +123,7 @@ for (; titr < tommorrow_start; ++titr) {
 - [参考文献](./date_time/references.md)
 
 
-## <a name="tests" href="tests">Tests</a>
+## <a name="tests" href="#tests">Tests</a>
 
 ライブラリは、以下のディレクトリで多数のテストを提供している。
 
@@ -134,7 +134,7 @@ for (; titr < tommorrow_start; ++titr) {
 これらのテストをビルドして実行することで、ライブラリが正しくインストールされ、確実に機能していることを確認できる。 加えて、これらのテストは新しいコンパイラへの移植を容易にする。 最後に、テストは使用例で明示的に記述されない多くの機能の例を提供する。
 
 
-## <a name="design-and-extensions" href="design-and-extensions">Design and Extensions</a>
+## <a name="design-and-extensions" href="#design-and-extensions">Design and Extensions</a>
 このライブラリの起源の大部分は（今まで）ほとんどの日付時間ライブラリがカスタマイズと拡張を許す方法で構築されないという観察であった。 典型的な例では、カレンダーロジックは直接日付クラスに構築される。 あるいは時計検索機能は直接時間クラスに作り上げられる。 これらのデザイン決定は通常、拡張したりライブラリの振る舞いを変更することを不可能にする。 もっと基本的なレベルにおいては、時間表現あるいはグレゴリオ暦の分解能について通常仮定がある。
 
 高分解能の時間表現やそれ以外の仮定からの要求を、時間ライブラリの実装が満たすことが出来ないために、結果的に不完全なライブラリを使わざるをえない、というのは、よくあることである。 この種のライブラリの開発は、まったく些細なことではないので、こういう結果は非常に残念なことである。
@@ -142,11 +142,11 @@ for (; titr < tommorrow_start; ++titr) {
 （このライブラリの）設計は完璧というには程遠いが、それでも現在の設計は、著者の知るどんな時間ライブラリよりもはるかに柔軟である。 将来のバージョンでは、拡張性のさまざまな面について、さらに文書化されることが期待される。 ライブラリの設計目標についての情報は[ここ](./date_time/DesignGoals.md)に要約されている。
 
 
-## <a name="acknowledgements" href="acknowledgements">Acknowledgements</a>
+## <a name="acknowledgements" href="#acknowledgements">Acknowledgements</a>
 Many people have contributed to the development of this library. In particular Hugo Duncan and Joel de Guzman for help with porting to various compilers. For initial development of concepts and design Corwin Joy and Michael Kenniston deserve special thanks. Also extra thanks to Michael for writing up the theory and tradeoffs part of the documentation. Dave Zumbro for initial inspiration and sage thoughts. Many thanks to boost reviewers and users including: William Seymour, Kjell Elster, Beman Dawes, Gary Powell, Andrew Maclean, William Kempf, Peter Dimov, Chris Little, David Moore, Darin Adler, Gennadiy Rozental, Joachim Achtzehnter, Paul Bristow, Jan Langer, Mark Rodgers, Glen Knowles, Matthew Denman, and George Heintzelman.
 
 
-## <a name="more-info" href="more-info">More Info</a>
+## <a name="more-info" href="#more-info">More Info</a>
 現在、ライブラリの設計はWikiと電子メールによる議論によって発展している。 詳しい情報はこちらへ:
 
 - [Boost Wiki GDTL Start Page](http://www.crystalclearsoftware.com/cgi-bin/boost_wiki/wiki.pl?GDTL)

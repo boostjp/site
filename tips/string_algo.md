@@ -12,7 +12,7 @@
 - [全て置き換える](#replace-all)
 
 
-## <a name="trim" href="trim">前後のスペースを削除する</a>
+## <a name="trim" href="#trim">前後のスペースを削除する</a>
 文字列の前後にあるスペースを削除するには、[`boost::algorithm::trim()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/trim.html)関数、もしくは[`boost::algorithm::trim_copy()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/trim_copy.html)関数を使用する。
 
 `trim()`関数は引数として渡された文字列自身を書き換え、`trim_copy()`関数は、前後のスペースを削除した文字列のコピーを返す。
@@ -49,7 +49,7 @@ int main()
 ```
 
 
-## <a name="trim-left" href="trim-left">左のスペースを削除する</a>
+## <a name="trim-left" href="#trim-left">左のスペースを削除する</a>
 左のスペースを削除するには、[`boost::algorithm::trim_left()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/trim_left.html)関数、もしくは[`boost::algorithm::trim_left_copy()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/trim_left_copy.html)関数を使用する。
 
 `trim_left()`関数は、引数として渡された文字列自身を書き換え、`trim_left_copy()`関数は、左のスペースを削除した文字列のコピーを返す。
@@ -86,7 +86,7 @@ int main()
 ```
 
 
-## <a name="trim-right" href="trim-right">右のスペースを削除する</a>
+## <a name="trim-right" href="#trim-right">右のスペースを削除する</a>
 左のスペースを削除するには、[`boost::algorithm::trim_right()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/trim_right.html)関数、もしくは[`boost::algorithm::trim_right_copy()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/trim_right_copy.html)関数を使用する。
 
 `trim_right()`関数は、引数として渡された文字列自身を書き換え、`trim_right_copy()`関数は、右のスペースを削除した文字列のコピーを返す。
@@ -123,7 +123,7 @@ int main()
 ```
 
 
-## <a name="split" href="split">区切り文字で文字列を分割する</a>
+## <a name="split" href="#split">区切り文字で文字列を分割する</a>
 指定した区切り文字で文字列を分割するには、[`boost::algorithm::split()`](http://www.boost.org/doc/libs/1_53_0/doc/html/boost/algorithm/split_idp83847184.html)関数を使用する。
 
 第1引数には、分割された文字列の結果を受け取るコンテナ、第2引数には対象となる文字列、第3引数には区切り文字かどうかを判定する述語を指定する。
@@ -160,7 +160,7 @@ xyz
 ```
 
 
-## <a name="join" href="join">区切り文字を指定して、コンテナを文字列化する</a>
+## <a name="join" href="#join">区切り文字を指定して、コンテナを文字列化する</a>
 区切り文字を指定してコンテナを文字列化するには、[`boost::algorithm::join()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/join.html)関数を使用する。
 
 第1引数には文字列のコンテナ、第2引数には、区切り文字列を指定する。
@@ -188,7 +188,7 @@ a,b,c
 ```
 
 
-## <a name="iends-with" href="iends-with">拡張子を判定する</a>
+## <a name="iends-with" href="#iends-with">拡張子を判定する</a>
 拡張子の判定には、[`boost::algorithm::iends_with()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/iends_with.html)関数を使用する。
 
 この関数は、第1引数の対象文字列が、第2引数の文字列で終了するかどうかを判定する。
@@ -218,7 +218,7 @@ true
 ```
 
 
-## <a name="replace-all" href="replace-all">全て置き換える</a>
+## <a name="replace-all" href="#replace-all">全て置き換える</a>
 標準ライブラリの`replace()`関数は、最初に見つけた要素しか置き換えない。
 [`boost::algorithm::replace_all()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/replace_all.html)関数、もしくは[`boost::algorithm::replace_all_copy()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/replace_all_copy.html)関数を使用すれば、該当する要素全てを置き換えることができる。
 

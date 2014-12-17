@@ -8,7 +8,7 @@
 - [`if`文の条件式で定義した変数に格納する](#store-value-in-if-expr)
 
 
-## <a name="fail-value" href="fail-value">関数の失敗値と成功値</a>
+## <a name="fail-value" href="#fail-value">関数の失敗値と成功値</a>
 Boost.Optionalの基本的な使い道は、関数の失敗値を表現することである。
 
 検索の関数を考えてみよう。よくあるのは、該当要素が見つかったときに要素を指すポインタを返し、見つからなかった場合は`NULL`ポインタを返すといったものだ。
@@ -83,7 +83,7 @@ int main()
 このケースは単なるポインタの置き換えだが、`boost::optional`はその他あらゆるケースで無効値を表現するのに使用できる。
 
 
-### <a name="type-as-nullary-value" href="type-as-nullary-value">無効値がありえることを仕様ではなく型で示す</a>
+### <a name="type-as-nullary-value" href="#type-as-nullary-value">無効値がありえることを仕様ではなく型で示す</a>
 例として、本の見た目を模倣する電子書籍ビューアを考えよう。
 
 画面には、2ページを見開き表示するが、そのデータが偶数ページ数あるとは限らず、最終ページは見開きではなく左1ページしか表示しないかもしれない。また、ページめくりの方向によっては、右ページのみ表示する場合もある。
@@ -117,7 +117,7 @@ class Viewer {
 `boost::optional`により、「`-1`ページを無効値とする」のようなプログラム仕様ではなく、型によって無効値がありえることを示すことができる。
 
 
-## <a name="store-value-in-if-expr" href="store-value-in-if-expr">if文の条件式で定義した変数に格納する</a>
+## <a name="store-value-in-if-expr" href="#store-value-in-if-expr">if文の条件式で定義した変数に格納する</a>
 C++の言語仕様では、`if`文の条件式で変数を定義できる。`boost::optional`の変数を`if`文で定義すると便利だ。
 
 ```cpp

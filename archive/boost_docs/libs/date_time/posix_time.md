@@ -21,11 +21,11 @@
 - [UTC / Local Time Adjustments](./local_time_adjust.md)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 ナノ秒分解能および安定した計算特性を備えた、調整されていない時間システムを定義する。 この時間システムは、時間表現における日付部分の実装にグレゴリオ暦を使用する。
 
 
-## <a name="usage-examples" href="usage-examples">Usage Examples</a>
+## <a name="usage-examples" href="#usage-examples">Usage Examples</a>
 
 | Example | Description |
 |---------|-------------|

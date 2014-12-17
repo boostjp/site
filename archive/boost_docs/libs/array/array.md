@@ -7,7 +7,7 @@
 - [コード例](#code)
 
 
-## <a name="introduction" href="introduction">はじめに</a>
+## <a name="introduction" href="#introduction">はじめに</a>
 C++ 標準ライブラリの一部である C++ 標準テンプレートライブラリ STL は、さまざまな種類のコンテナに対してアルゴリズムを適用するためのフレームワークを提供している。しかしながら、通常の配列は STL コンテナのインターフェイスには備わっていない(STL コンテナのイテレータとしてのインターフェイスは用意されているけれども)。
 
 通常の配列を置き換えるものとして、STL では `vector<>`が提供されているが、`vector<>` は動的配列のセマンティクスを持つので、要素数が変化する可能性を持つデータを管理対象とする。静的なサイズさえあれば充分な場面では、このことはいくぶんかのオーバーヘッドを生じさせることとなる。
@@ -17,7 +17,7 @@ Matthew H. Austern は彼の本、 *Generic Programming and the STL* の中で�
 いろいろな名前を考えたすえ、このクラスの名前はシンプルに **array** と決定した。
 
 
-## <a name="interface" href="interface">インタフェース</a>
+## <a name="interface" href="#interface">インタフェース</a>
 このクラスは以下のインターフェイスを提供する。
 
 **型:**
@@ -65,7 +65,7 @@ Matthew H. Austern は彼の本、 *Generic Programming and the STL* の中で�
 | `static_size` | コンパイル時の要素数 |
 
 
-## <a name="discussion" href="discussion">議論</a>
+## <a name="discussion" href="#discussion">議論</a>
 `array` クラスは"reversible container"(C++ 標準 Section 23.1, [lib.container.requirements] を参照)の要件のほとんどを満たしているが、完全にではない。`array` が reversible な STL コンテナではない理由は以下のとおりである。
 
 - 提供されるべきコンストラクタがない
@@ -104,7 +104,7 @@ Matthew H. Austern は彼の本、 *Generic Programming and the STL* の中で�
 建設的な[フィードバック](solutions@josuttis.com)はどのようなものでも歓迎する。**注意してほしいのは、boostメーリングリストのすべてのメールを読むだけの時間が、私にはないという点だ。というわけで、確実にフィードバックが私に届くようにするため、このクラスに関するメールについては、私にコピーを送ってほしい。**
 
 
-## <a name="code" href="code">コード例</a>
+## <a name="code" href="#code">コード例</a>
 以下のコードは「このままの形(as is)」で提供され、明示的あるいは暗黙的な保証はない。
 
 - [**array.hpp**](./array.hpp.md), `array<>` の実装ファイル

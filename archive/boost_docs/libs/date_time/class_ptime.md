@@ -16,7 +16,7 @@
 - [Operators](#operators)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 `boost::posix_time::ptime` クラスは時間位置(time point)を操作するための主要なインタフェースである。 一般に，`ptime` クラスは代入可能ではあるが，一度構築されると不変である事が多い。
 
 クラス `ptime` は，時間位置(time point)の日付部分へのインタフェースである `gregorian::date` に依存する。
@@ -24,7 +24,7 @@
 `ptime` を生成する別の手法が，[time iterators](./time_iterators.md) にある。
 
 
-## <a name="header" href="header">Header</a>
+## <a name="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/posix_time/posix_time.hpp" //全ての型とI/Oを含む
 ```
@@ -36,7 +36,7 @@
 ```
 
 
-## <a name="construction" href="construction">Construction</a>
+## <a name="construction" href="#construction">Construction</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -44,14 +44,14 @@
 | `ptime(ptime)` | コピーコンストラクタ | `ptime t3(t1)` |
 
 
-## <a name="construct-from-string" href="construct-from-string">Construction From String</a>
+## <a name="construct-from-string" href="#construct-from-string">Construction From String</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
 | `ptime time_from_string(const std::string&)` | 区切られた文字列から構築 | `std::string ts("2002-01-20 23:59:59.000");`<br/> `date d(time_from_string(ts));` |
 
 
-## <a name="construct-from-clock" href="construct-from-clock">Construction From Clock</a>
+## <a name="construct-from-clock" href="#construct-from-clock">Construction From Clock</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -59,7 +59,7 @@
 | `static ptime second_clock::universal_time()` | UTC 時間で初期化 | `ptime t(second_clock::universal_day());` |
 
 
-## <a name="accessors" href="accessors">Accessors</a>
+## <a name="accessors" href="#accessors">Accessors</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -67,7 +67,7 @@
 | `time_duration time_of_day() const` | その日の時間オフセットを取得 | `date d(2002,Jan,10);`<br/> `ptime t(d, hour(1));`<br/> `t.time_of_day() --> 01:00:00;` |
 
 
-## <a name="conversion-to-string" href="conversion-to-string">Conversion To String</a>
+## <a name="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
 
 | Syntax | Description | Example |
 | `std::string to_simple_string(ptime)` | YYYY-mmm-DD HH:MM:SS.fffffffff 形式の文字列(mmm は月名の3文字短縮名)に変換。 秒の小数部(.fffffffff)は0でないとき含まれる。 | 2002-Jan-01 10:00:01.123456789 |
@@ -75,7 +75,7 @@
 | `std::string to_iso_extended_string(ptime)` | YYYY-MM-DDTHH:MM:SS,fffffffff 形式(T は日付と時間の区切り) に変換 | 2002-01-31T10:00:01,123456789 |
 
 
-## <a name="operators" href="operators">Operators</a>
+## <a name="operators" href="#operators">Operators</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|

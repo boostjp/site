@@ -15,7 +15,7 @@
 - [データサイズをカスタマイズする](#customize-data-size)
 
 
-# <a name="resize" href="resize">サイズを指定する</a>
+# <a name="resize" href="#resize">サイズを指定する</a>
 
 コンストラクタ、もしくはメンバ関数`resize()`でビット集合のサイズを指定できる。
 
@@ -40,7 +40,7 @@ int main()
 * resize(5)[color ff0000]
 
 
-## <a name="nth-bit" href="nth-bit">ビットの値を設定する</a>
+## <a name="nth-bit" href="#nth-bit">ビットの値を設定する</a>
 
 メンバ関数`set`/`reset`、`[ ]`演算子でビットの値を設定できる。
 
@@ -77,7 +77,7 @@ int main()
 * [0] = true[color ff0000]
 
 
-## <a name="count-one" href="count-one">1の数を数える</a>
+## <a name="count-one" href="#count-one">1の数を数える</a>
 
 メンバ関数`count()`を使う
 
@@ -96,7 +96,7 @@ int main()
 * count()[color ff0000]
 
 
-## <a name="test-bit" href="test-bit">ビットの値を検査する</a>
+## <a name="test-bit" href="#test-bit">ビットの値を検査する</a>
 特定のビットが1かを調べるにはメンバ関数`test()`もしくは`[ ]`演算子を使う。
 
 1のビットがあるかどうかを調べるにはメンバ関数`any()`, `none()`を使う。
@@ -136,7 +136,7 @@ int main()
 * bs.count() == bs.size()[color ff0000]
 
 
-## <a name="string-conversion" href="string-conversion">文字列との相互変換</a>
+## <a name="string-conversion" href="#string-conversion">文字列との相互変換</a>
 
 `boost::dynamic_bitset`クラスでは演算子`<<`および`>>`がオーバーロードされているため、`istream`/`ostream`を通して文字列との相互変換が可能である。
 
@@ -175,7 +175,7 @@ int main()
 * lexical_cast<std::string>(bs2);[color ff0000]
 
 
-## <a name="flip" href="flip">ビットの値を反転する</a>
+## <a name="flip" href="#flip">ビットの値を反転する</a>
 
 メンバ関数`flip()`でビットの値を反転できる。
 
@@ -198,7 +198,7 @@ int main()
 * flip()[color ff0000]
 
 
-## <a name="set" href="set">集合演算</a>
+## <a name="set" href="#set">集合演算</a>
 各種演算子(`&`, `|`, `^`, `~`,　`-`)およびその代入版(`&=`, `|=`, `^=`, `-=`)によるビット毎の論理演算により、集合演算ができる。
 
 ただし、2項演算子の引数のサイズは等しくなければならない。
@@ -226,7 +226,7 @@ int main()
 * bs1 - bs2[color ff0000]
 
 
-## <a name="is-subset-of" href="is-subset-of">2つの集合の包含関係を調べる</a>
+## <a name="is-subset-of" href="#is-subset-of">2つの集合の包含関係を調べる</a>
 
 ビット集合A, Bがある時、AがBの部分集合（A ⊆ B)かを調べるには、メンバ関数`is_subset_of()`を使う。
 
@@ -259,7 +259,7 @@ int main()
 * !B.intersects(C)[color ff0000]
 
  
-## <a name="each-one-bits" href="each-one-bits">1が立っているインデックスを走査する</a>
+## <a name="each-one-bits" href="#each-one-bits">1が立っているインデックスを走査する</a>
 
 メンバ関数`find_first()`と`find_next()`を組み合わせて、`1`が立っているインデックスを走査できる。 
 
@@ -293,7 +293,7 @@ int main()
 ```
 
 
-## <a name="customize-data-size" href="customize-data-size">データサイズをカスタマイズする</a>
+## <a name="customize-data-size" href="#customize-data-size">データサイズをカスタマイズする</a>
 
 `boost::dynamic_bitset`は、第1テンプレート引数の`Block`型の`std::vector`でビット列を管理する。
 

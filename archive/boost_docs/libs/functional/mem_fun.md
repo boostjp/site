@@ -23,7 +23,7 @@ functional.hpp ヘッダは C++ 標準ライブラリ (§ 20.3.8): 由来のメ�
 `mem_fun1_t`やその変種に渡される引数は、メンバ関数の引数型として、`call_traits::param_type` を用いて渡される。
 
 
-## <a name="firstarg" href="firstarg">first_argument_type</a>
+## <a name="firstarg" href="#firstarg">first_argument_type</a>
 標準は `const_mem_fun1_t` を例えば、以下のように指定する:
 
 ```cpp
@@ -56,7 +56,7 @@ typedef Foo* first_argument_type;
 このハックは改良された [バインダ](./binders.md) とともに用いる場合十分ではないので、我々はメンバ関数アダプタの修正されたバージョンも同様に提供しなければならなかった。
 
 
-## <a name="arguments" href="arguments">Argument Types</a>
+## <a name="arguments" href="#arguments">Argument Types</a>
 標準は `mem_fun1_t` を例えば以下のように定義する (§20.3.8 ¶2):
 
 ```cpp
@@ -83,7 +83,7 @@ S operator()(T* p, typename call_traits<A>::param_type x) const
 我々は望ましい結果を引き出した - 参照の参照を生み出すことなく、効率性を得たのだ。
 
 
-## <a name="limitations" href="limitations">Limitations</a>
+## <a name="limitations" href="#limitations">Limitations</a>
 call traits テンプレートはこの改良を実現するために使われる関数オブジェ クト特性と `call_traits` の両方が部分特殊化版に頼っているので、この改良は部分特殊化の機能を持つコンパイラでのみ有効である。そうでないコンパイラでは、メンバ関数に渡される引数は(`mem_fun1_t` ファミリの中で) 常に参照渡しとなるので、参照の参照の可能性を生みだすことになる。
 
 

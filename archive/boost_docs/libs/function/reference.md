@@ -105,7 +105,7 @@ namespace boost {
 ```
 * [1][link #note]
 
-## <a name="definitions" href="definitions">定義</a>
+## <a name="definitions" href="#definitions">定義</a>
 - 引数型 `Arg1`, `Arg2`, ..., `ArgN` と戻り値型 `ResultType` に対して、該当する以下の関数が適格な時、関数オブジェクト `f` は「 互換性がある 」という。
 
 	```cpp
@@ -310,7 +310,7 @@ void swap(function<Signature, Policy, Mixin, Allocator>& f,
 - 作用: `f.swap(g);`
 
 
-## <a name="note" href="note">脚注</a>
+## <a name="note" href="#note">脚注</a>
 - [1] : コンパイラが `void` 型の `return` をサポートしていない場合、 `ReturnType` に `void` を指定すると、 Boost.Function オブジェクトの `result_type` は実装依存になる。
 
 

@@ -23,7 +23,7 @@
 - [クレジット](#credits)
 
 
-## <a name="synopsis" href="synopsis">概要</a>
+## <a name="synopsis" href="#synopsis">概要</a>
 `format` オブジェクトは書式文字列から構築され、その後 `operator%` を繰り返し呼び出されることで引数を与えられる。 
 
 それぞれの引数は文字列に変換され、書式文字列に従って順に一つの文字列へと結合される。
@@ -34,7 +34,7 @@ cout << boost::format("writing %1%,  x=%2% : %3%-th try") % "toto" % 40.23 % 50;
 ```
 
 
-## <a name="how-it-works" href="how-it-works">どのように作用するか</a>
+## <a name="how-it-works" href="#how-it-works">どのように作用するか</a>
 
 1.書式文字列 `s` を伴って `format(s)` を呼び出すと、あるオブジェクトが構築される。このオブジェクトは、書式文字列を構文解析してすべての命令を探し、次のステップのために内部構造を準備する。
 2.そして、すぐに
@@ -77,7 +77,7 @@ string s2 = boost::io::str( format("%2% %1%") % 36 % 77 );
 結局のところ、 `format` クラスは、書式文字列(`printf` に似た命令を用いる)を内部のストリームへの操作に翻訳する。そして最終的に、その書式化の結果を文字列として、あるいは直接に出力ストリームへと返す。
 
 
-## <a name="examples" href="examples">コード例</a>
+## <a name="examples" href="#examples">コード例</a>
 
 ```cpp
 using namespace std;
@@ -165,7 +165,7 @@ Jean, de Lattre de Tassigny,           +33 (0) 987 654 321
 ```
 
 
-## <a name="sample-files" href="sample-files">サンプルファイル</a>
+## <a name="sample-files" href="#sample-files">サンプルファイル</a>
 [sample_formats.cpp](./example/sample_formats.cpp.md) は `format` の簡単な使い方をデモする。
 
 [sample_new_features.cpp](./example/sample_new_features.cpp.md) は、単純な位置指定命令、中寄せ、そして「桁送り」など、 `printf` の構文に追加された書式化機能のいくつかを説明する。
@@ -175,7 +175,7 @@ Jean, de Lattre de Tassigny,           +33 (0) 987 654 321
 そして [sample_userType.cpp](./example/sample_userType.cpp.md) はユーザ定義型に対する `format` の振る舞いを示す。
 
 
-## <a name="syntax" href="syntax">構文</a>
+## <a name="syntax" href="#syntax">構文</a>
 
 ```cpp
 boost::format( format-string ) % arg1 % arg2 % ... % argN
@@ -200,7 +200,7 @@ C/C++ の世界におけるレガシーな構文は `printf` で使われてい�
 `printf` の標準の書式指定子に加えて、中寄せのような新しい機能が実装されている。詳細は [new format specification](#new-format-specifications) を参照。
 
 
-### <a name="printf-format-specifications" href="printf-format-specifications">printfフォーマット仕様</a>
+### <a name="printf-format-specifications" href="#printf-format-specifications">printfフォーマット仕様</a>
 Boost.Format でサポートされる `printf` の書式指定子は、引数の位置指定をサポートしない標準 C の `printf` よりも、むしろ Unix98 [Open-group printf](http://www.opengroup.org/onlinepubs/7908799/xsh/fprintf.html) の構文に従っている。 (両者の間では共通のフラグは同じ意味を持つので、誰も頭痛に悩まされることはない) 
 
 なお、一つの書式文字列に位置指定付きの書式指定子(例．`%3$+d`)と位置指定なしのもの(例．`%+d`)を混ぜて使用するのはエラーである。 
@@ -253,14 +253,14 @@ Open-group の仕様では同じ引数を複数回参照すること(例．`"%1$
 また、 `printf` の `'l'`, `'L'`, あるいは `'h'` 修飾子(ワイド、ロングおよびショート型を示す)もサポートされている(が、内部ストリームには何の作用もしない)。
 
 
-### <a name="new-format-specifications" href="new-format-specifications">新たなフォーマット仕様</a>
+### <a name="new-format-specifications" href="#new-format-specifications">新たなフォーマット仕様</a>
 
 - 前述の表で述べたように、中寄せフラグ `'='` が追加された。
 - `%{n`**t**`}` は絶対桁送りを挿入する。ここで n は正の数である。 すなわち `format` は、必要であれば、作成済みの文字列の長さが n 文字に届くまで文字で埋め込む。 ([examples](#examples) を参照)
 - `%{n`**T**`X}` も同様に桁送りを挿入するが、埋め込む文字としてストリームの現在の「埋め込み」文字の代わりに `X` を用いる。 (デフォルト状態のストリームではスペースを埋め込む)
 
 
-### <a name="differences-of-behavior-vs-printf" href="differences-of-behavior-vs-printf">printfとの振る舞いの違い</a>
+### <a name="differences-of-behavior-vs-printf" href="#differences-of-behavior-vs-printf">printfとの振る舞いの違い</a>
 `x1`, `x2` という二つの変数(組み込み型で、 C の `printf` でサポートされているもの)と書式文字列`s`があって、 `printf` 関数で以下のように使われるとする :
 
 ```cpp
@@ -299,7 +299,7 @@ cout << formatter % x;
 unsigned int n = formatter.str().size();
 ```
 
-## <a name="user-defined-types-output" href="user-defined-types-output">ユーザー定義型の出力</a>
+## <a name="user-defined-types-output" href="#user-defined-types-output">ユーザー定義型の出力</a>
 ストリーム状態の修飾に翻訳されたすべてのフラグは、ユーザ定義型にも再帰的に作用する。 ( フラグはアクティブなまま残るので、 ユーザ定義クラスによって呼ばれる各々の `<<` 演算に対しても、期待するオプションが渡される) 
 
 例．妥当なクラス `Rational` なら次のようになる :
@@ -323,7 +323,7 @@ cerr << format("%+08d \n")  % ratio;  // -> "+00016/9"
 cerr << format("% 08d \n")  % ratio;  // -> "000 16/9"
 ```
 
-## <a name="manipulators-and-the-internal-stream-state" href="manipulators-and-the-internal-stream-state">マニピュレータと、内部的なストリーム状態</a>
+## <a name="manipulators-and-the-internal-stream-state" href="#manipulators-and-the-internal-stream-state">マニピュレータと、内部的なストリーム状態</a>
 `format` の内部ストリームの状態は、引数を出力する直前に保存され、直後に復帰される。そのため、修飾子の影響は後まで引きづられずに、適用される引数にだけ作用する。 
 
 ストリームのデフォルト状態は標準で述べられているように : 精度 6 、幅 0 、右寄せ、そして１０進数基数である。
@@ -346,7 +346,7 @@ cout << format("%1$d %2% %1%\n") % group(hex, showbase, 40) % 50;
 // "0x28 50 0x28\n" と表示
 ```
 
-## <a name="alternatives" href="alternatives">代替手段</a>
+## <a name="alternatives" href="#alternatives">代替手段</a>
 - *printf* は古典的な代替手段である。型安全でなく、ユーザ定義型に対して拡張可能ではない。
 - [ofrstream.cc](http://www.ece.ucdavis.edu/~kenelson/ofrstream.cc) Karl Nelson によるデザインはこの `format` クラスへのインスピレーションの大きな源となった。
 - [format.hpp](http://groups.yahoo.com/group/boost/files/format/) Rüiger Loo による。 `boost:format` クラスの以前の提案だった。 デザインの簡易さにおいてこのクラスの起源である。最小主義的な `"%1 %2"` という構文はこのクラスでも借用している。
@@ -354,7 +354,7 @@ cout << format("%1$d %2% %1%\n") % group(hex, showbase, 40) % 50;
 - [Karl Nelson's library](http://groups.yahoo.com/group/boost/files/format3/) は、 Boost.Format のデザインのための boost メーリングリストの討論において、別の解決法を示すために用意された。
 
 
-## <a name="exceptions" href="Exceptions">例外</a>
+## <a name="exceptions" href="#Exceptions">例外</a>
 Boost.Format は `format` オブジェクトの使い方にいくつかのルールを強要する。書式文字列は前述の構文に従わなくてはならず、ユーザは最終的な出力までに正しい個数の引数を供給しなければならない。また `modify_item` や `bind_arg` を用いるなら、項目や引数のインデックスが範囲外を指してはならない。
 
 ミスが見過ごされたり放置されたりしないように、 `format` はいずれかのルールが満たされていないことを検出すると対応する例外を発生する。
@@ -399,7 +399,7 @@ cout << my_fmt(" _%2%_ _%1%_ \n") % 1 ;
 // prints      " __ _1_ \n"
 ```
 
-## <a name="extract" href="extract">抜粋</a>
+## <a name="extract" href="#extract">抜粋</a>
 
 ```cpp
 namespace boost {
@@ -443,7 +443,7 @@ std::basic_string<charT,Traits>  str(const basic_format<charT,Traits>& f) {
 } // namespace boost
 ```
 
-## <a name="rationale" href="rationale">設計原理</a>
+## <a name="rationale" href="#rationale">設計原理</a>
 このクラスのゴールは、より良い、 C++ 用の、型安全かつ型拡張性のある `printf` の等価物が、 ストリームとともに用いられるようにすることである。
 
 正確には、 `format` は以下の機能を実現するようデザインされた :
@@ -458,7 +458,7 @@ std::basic_string<charT,Traits>  str(const basic_format<charT,Traits>& f) {
 デザインの過程で多くの問題に直面し、いくつかの選択をすることになったが、 中には直観的には正しくないものもあった。しかしいずれのケースにも [何らかの意味がある](./choices.md)。
 
 
-## <a name="credits" href="credits">クレジット</a>
+## <a name="credits" href="#credits">クレジット</a>
 Boost.Format の著者は Samuel Krempp である。彼は Rüiger Loos と Karl Nelson の両者の `format` クラスのアイディアを利用した。
 
 

@@ -8,7 +8,7 @@ Boost C++ Librariesでは、関数を抜ける際に実行される式、また�
 - [Boost Scope Exit Libraryを使用する](#scope-exit)
 
 
-## <a name="scope-exit" href="scope-exit">Boost Scope Exit Libraryを使用する</a>
+## <a name="scope-exit" href="#scope-exit">Boost Scope Exit Libraryを使用する</a>
 Boost.ScopeExitは、関数のスコープを抜ける際に実行されるブロックを定義するための`BOOST_SCOPE_EXIT`マクロを提供する。
 
 以下がその基本的な使い方である：

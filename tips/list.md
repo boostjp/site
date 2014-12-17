@@ -13,7 +13,7 @@
 - [リストに対する複数の遅延処理を合成する](#pipe)
 
 
-## <a name="filter" href="filter">条件抽出 - filtered</a>
+## <a name="filter" href="#filter">条件抽出 - filtered</a>
 リストから値の条件抽出をするには、`boost::adapotrs::filtered`を使用する。
 
 以下は、`{1, 2, 3, 4, 5}`というリストから、偶数値のみを抽出している。
@@ -44,7 +44,7 @@ int main()
 4
 ```
 
-## <a name="transform-value" href="transform-value">値の変換 - transformed</a>
+## <a name="transform-value" href="#transform-value">値の変換 - transformed</a>
 リストの全ての要素に関数を適用するには、`boost::adaptors::transformed`を使用する。
 
 これは、関数型言語一般での`map`関数に相当する。
@@ -81,7 +81,7 @@ int main()
 ```
 
 
-## <a name="transform-type" href="transform-type">型変換 - transformed</a>
+## <a name="transform-type" href="#transform-type">型変換 - transformed</a>
 リストの全ての要素に関数を適用する`boost::adaptors::transformed`は、型変換にも使用することができる。
 
 以下は、リストの全ての要素を`int`から`std::string`に変換する処理である。
@@ -117,7 +117,7 @@ int main()
 5
 ```
 
-## <a name="reverse" href="reverse">逆順に走査する - reversed</a>
+## <a name="reverse" href="#reverse">逆順に走査する - reversed</a>
 リストを逆順に走査するには、`boost::adaptors::reversed`を使用する。
 
 ```cpp
@@ -148,7 +148,7 @@ int main()
 1
 ```
 
-## <a name="map-key" href="map-key">mapのキーのみを抽出する - map_keys</a>
+## <a name="map-key" href="#map-key">mapのキーのみを抽出する - map_keys</a>
 `std::map`、`boost::unordered_map`、`std::vector<std::pair<Key, Value> >`のようなコンテナからキーのみを抽出するには、`boost::adaptors::map_keys`を使用する。
 
 ```cpp
@@ -181,7 +181,7 @@ int main()
 4
 ```
 
-## <a name="map-value" href="map-value">mapの値のみを抽出する - map_values</a>
+## <a name="map-value" href="#map-value">mapの値のみを抽出する - map_values</a>
 `std::map`、`boost::unordered_map`、`std::vector<std::pair<Key, Value> >`のようなコンテナから値のみを抽出するには、`boost::adaptors::map_values`を使用する。
 
 ```cpp
@@ -214,7 +214,7 @@ Alice
 Carol
 ```
 
-## <a name="join" href="join">2つのリストを連結する - join</a>
+## <a name="join" href="#join">2つのリストを連結する - join</a>
 リストを連結するには、`boost::join()`関数を使用する。
 
 この関数は、2つのリストを連結した新たなリストを返すのではなく、1つのリストの走査が終わったら2つめのリストを走査するRangeを返す。
@@ -247,7 +247,7 @@ int main()
 5
 ```
 
-## <a name="counting-range" href="counting-range">値の範囲を生成する - irange</a>
+## <a name="counting-range" href="#counting-range">値の範囲を生成する - irange</a>
 `{1..5}`のような連続した値の範囲を生成する場合には、`boost::irange()`関数を使用する。
 
 この関数に値の範囲を引数として渡すことで、その値の範囲を走査可能なRandom Access Rangeを返す。
@@ -300,7 +300,7 @@ int main()
 7
 ```
 
-## <a name="pipe" href="pipe">リストに対する複数の遅延処理を合成する</a>
+## <a name="pipe" href="#pipe">リストに対する複数の遅延処理を合成する</a>
 Boost Range LibraryのRangeアダプタは、個々の処理を遅延評価するだけでなく、`operator|()`でさらに繋ぎ、それらの処理を合成できる。
 
 以下は、条件抽出(`filtered`)と関数適用(`transformed`)を合成する処理である。リストが実際に走査されそれらの処理が必要になるまで評価が遅延される。

@@ -13,11 +13,11 @@
 - [Operators](#operators)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 `boost::gregorian::date_duration` は，`gregorian::date`の演算で使うシンプルな日数を表すクラスである。durationの値は正と負どちらも使用できる。
 
 
-## <a name="header" href="header">Header</a>
+## <a name="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/gregorian/gregorian.hpp" //全ての型とI/Oを含む
 ```
@@ -29,14 +29,14 @@
 ```
 
 
-## <a name="construction" href="construction">Construction</a>
+## <a name="construction" href="#construction">Construction</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
 | `date_duration(long)` | 日数を生成 | `date_duration dd(3); //3 日` |
 
 
-## <a name="accessors" href="accessors">Accessors</a>
+## <a name="accessors" href="#accessors">Accessors</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -45,7 +45,7 @@
 | `static date_duration unit()` | duration type の取りうる最小単位を返す | `date_duration::unit() --> date_duration(1)` |
 
 
-## <a name="operators" href="operators">Operators</a>
+## <a name="operators" href="#operators">Operators</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|

@@ -11,11 +11,11 @@
 - [謝辞](#acknowledgements)
 
 
-## <a name="files" href="files">ファイル</a>
+## <a name="files" href="#files">ファイル</a>
 - ref.hpp
 
 
-## <a name="purpose" href="purpose">目的</a>
+## <a name="purpose" href="#purpose">目的</a>
 boost/ref.hpp ヘッダーでは、クラス テンプレートである `boost::reference_wrapper<T>` と、`boost::reference_wrapper<T>` のインスタンスを返す二つの関数 `boost::ref` と `boost::cref`、それに二つの特性クラス `boost::is_reference_wrapper<T>` と `boost::unwrap_reference<T>` が定義されている。
 
 `boost::reference_wrapper<T>` の目的は、`T` 型のオブジェクトへの参照を格納することにある。主に、値渡しの仮引数をとる関数のテンプレート (アルゴリズム) に参照を「食わせる (feed)」のに使われる。
@@ -31,7 +31,7 @@ boost/ref.hpp ヘッダーでは、クラス テンプレートである `boost:
 `boost::unwrap_reference<T>::type` という型式 (type-expression) は、`T` が `reference_wrapper` のときには `T::type` であり、それ以外のときには `T` である。
 
 
-## <a name="interface" href="interface">インタフェース</a>
+## <a name="interface" href="#interface">インタフェース</a>
 ###Synopsis
 ```cpp
 namespace boost
@@ -50,7 +50,7 @@ namespace boost
 * unwrap_reference[link #unwrap_reference]
 
 
-### <a name="reference_wrapper" href="reference_wrapper">reference_wrapper</a>
+### <a name="reference_wrapper" href="#reference_wrapper">reference_wrapper</a>
 ```cpp
 template<class T> class reference_wrapper
 {
@@ -71,27 +71,27 @@ public:
 * T* get_pointer[#get_pointer]
 
 
-#### <a name="op_constructor" href="op_constructor">`explicit reference_wrapper(T & t)`</a>
+#### <a name="op_constructor" href="#op_constructor">`explicit reference_wrapper(T & t)`</a>
 - 作用: `t` への参照を格納する `reference_wrapper` のオブジェクトを構築する。
 - 例外: なし。
 
 
-#### <a name="op_t" href="op_t">`operator T & () const`</a>
+#### <a name="op_t" href="#op_t">`operator T & () const`</a>
 - 戻り値: 格納した参照。
 - 例外: なし。
 
 
-#### <a name="get" href="get">`T & get() const`</a>
+#### <a name="get" href="#get">`T & get() const`</a>
 - 戻り値: 格納した参照。
 - 例外: なし。
 
 
-#### <a name="get_pointer" href="get_pointer">`T* get_pointer() const`</a>
+#### <a name="get_pointer" href="#get_pointer">`T* get_pointer() const`</a>
 - 戻り値: 格納したオブジェクトへのポインタ。
 - 例外: なし。
 
 
-### <a name="ref" href="ref">`ref`</a>
+### <a name="ref" href="#ref">`ref`</a>
 ```cpp
 template<class T> reference_wrapper<T> ref(T & t);
 ```
@@ -100,7 +100,7 @@ template<class T> reference_wrapper<T> ref(T & t);
 - 例外: なし。
 
 
-### <a name="cref" href="cref">`cref`</a>
+### <a name="cref" href="#cref">`cref`</a>
 ```cpp
 template<class T> reference_wrapper<T const> cref(T const & t);
 ```
@@ -109,7 +109,7 @@ template<class T> reference_wrapper<T const> cref(T const & t);
 - 例外: なし。
 
 
-### <a name="is_reference_wrapper" href="is_reference_wrapper">`is_reference_wrapper`</a>
+### <a name="is_reference_wrapper" href="#is_reference_wrapper">`is_reference_wrapper`</a>
 ```cpp
 template<class T> class is_reference_wrapper<T const>
 {
@@ -122,7 +122,7 @@ template<class T> class is_reference_wrapper<T const>
 もし `T` が `reference_wrapper` の特殊化版であれば値は `true`。
 
 
-### <a name="unwrap_reference" href="unwrap_reference">unwrap_reference</a>
+### <a name="unwrap_reference" href="#unwrap_reference">unwrap_reference</a>
 ```cpp
 template<class T> class unwrap_reference<T const>
 {
@@ -135,7 +135,7 @@ template<class T> class unwrap_reference<T const>
 もし `T` が `reference_wrapper` の特殊化版であれば `type` は `T::type` と等価。そうでなければ `type` は `T` と等価。
 
 
-## <a name="acknowledgements" href="acknowledgements">謝辞</a>
+## <a name="acknowledgements" href="#acknowledgements">謝辞</a>
 `ref` と `cref` は元々は Jaakko Järvi 氏作の Boost.Tuple というライブラリの一部であった。それが、一般的に有用であるという理由で Peter Dimov 氏の手によって「`boost::` に昇格」した。Douglas Gregor 氏と Dave Abrahams 氏が `is_reference_wrapper` と `unwrap_reference` を提供した。
 
 

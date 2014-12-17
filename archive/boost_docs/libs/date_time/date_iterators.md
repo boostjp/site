@@ -11,13 +11,13 @@
 - [Class Overview](#class-overview)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 日付イテレータは、日単位で反復するための標準的なメカニズムを提供する。 日付イテレータは(STLの)[入力イテレータ](http://www.sgi.com/tech/stl/InputIterator.html)のモデルであり、日付と他の日付生成タスクで集合を代入するために使われる。 例えば、[print month の例](./print_month.cpp.md)では、1ヶ月の全ての日々を反復し、それらをプリントする。
 
 ここにあるイテレータは全て `boost::gregorian::date_iterator` からの派生である。
 
 
-## <a name="header" href="header">Header</a>
+## <a name="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/gregorian/gregorian.hpp" //全ての型とI/Oを含む
 ```
@@ -29,7 +29,7 @@
 ```
 
 
-## <a name="class-overview" href="class-overview">Class Overview</a>
+## <a name="class-overview" href="#class-overview">Class Overview</a>
 
 | Class | Construction Parameters | Description |
 |-------|-------------------------|-------------|

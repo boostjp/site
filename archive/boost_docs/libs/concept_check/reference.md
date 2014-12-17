@@ -12,13 +12,13 @@
 10. [コンテナ原型クラス](#container-archetype)
 
 
-## <a name="functions" href="functions">関数</a>
+## <a name="functions" href="#functions">関数</a>
 ```cpp
 template <class Concept>
 void function_requires();
 ```
 
-## <a name="macros" href="macros">マクロ</a>
+## <a name="macros" href="#macros">マクロ</a>
 ```cpp
 // クラス定義内でコンセプト・チェックに適用する
 BOOST_CLASS_REQUIRE(type, namespace-of-concept, concept);
@@ -51,7 +51,7 @@ BOOST_CLASS_REQUIRES4(type1, type2, type3, type4, concept);
 * concept[italic]
 
 
-## <a name="basic-concepts" href="basic-concepts">基本コンセプト・チェック用クラス</a>
+## <a name="basic-concepts" href="#basic-concepts">基本コンセプト・チェック用クラス</a>
 ```cpp
 template <class T>
 struct IntegerConcept; // T は組み込み整数型であるか？
@@ -95,7 +95,7 @@ struct ComparableConcept; // SGI STL LessThanComparable コンセプト
 * SGI STL LessThanComparable[link http://www.sgi.com/tech/stl/LessThanComparable.html]
 
 
-## <a name="iterator-concepts" href="iterator-concepts">イテレータ･コンセプト･チェック用クラス</a>
+## <a name="iterator-concepts" href="#iterator-concepts">イテレータ･コンセプト･チェック用クラス</a>
 ```cpp
 template <class Iter>
 struct TrivialIteratorConcept;
@@ -135,7 +135,7 @@ struct Mutable_RandomAccessIteratorConcept;
 * RandomAccessIterator[link http://www.sgi.com/tech/stl/RandomAccessIterator.html]
 
 
-## <a name="function-object-concepts" href="function-object-concepts">関数オブジェクト・コンセプト･チェック用クラス</a>
+## <a name="function-object-concepts" href="#function-object-concepts">関数オブジェクト・コンセプト･チェック用クラス</a>
 ```cpp
 template <class Func, class Return>
 struct GeneratorConcept;
@@ -171,7 +171,7 @@ template <class Func, class First, class Second>
 struct AdaptableBinaryPredicateConcept;
 ```
 
-## <a name="container-concepts" href="container-concepts">コンテナ･コンセプト･チェック用クラス</a>
+## <a name="container-concepts" href="#container-concepts">コンテナ･コンセプト･チェック用クラス</a>
 ```cpp
 template <class C>
 struct ContainerConcept; // 規格 23.1 Table 65 参照
@@ -239,7 +239,7 @@ struct SortedAssociativeContainerConcept;
 * SortedAssociativeContainer[link http://www.sgi.com/tech/stl/SortedAssociativeContainer.html]
 
 
-## <a name="basic-archetype" href="basic-archetype">基本原型クラス</a>
+## <a name="basic-archetype" href="#basic-archetype">基本原型クラス</a>
 ```cpp
 template <class T = int>
 class null_archetype; // モデル化するコンセプトが無いことを示す型
@@ -261,7 +261,7 @@ class convertible_to_archetype;
 ```
 
 
-## <a name="iterator-archetype" href="iterator-archetype">イテレータ原型クラス</a>
+## <a name="iterator-archetype" href="#iterator-archetype">イテレータ原型クラス</a>
 ```cpp
 template <class ValueType>
 class trivial_iterator_archetype;
@@ -283,7 +283,7 @@ class random_access_iterator_archetype;
 ```
 
 
-## <a name="function-object-archetype" href="function-object-archetype">関数オブジェクト原型クラス</a>
+## <a name="function-object-archetype" href="#function-object-archetype">関数オブジェクト原型クラス</a>
 ```cpp
 template <class Arg, class Return>
 class unary_function_archetype;
@@ -299,7 +299,7 @@ class binary_predicate_archetype;
 ```
 
 
-## <a name="container-archetype" href="container-archetype">コンテナ原型クラス</a>
+## <a name="container-archetype" href="#container-archetype">コンテナ原型クラス</a>
 構築中
 
 

@@ -11,7 +11,7 @@
 - [サポートされている数学関数一覧](#math-functions)
 
 
-## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 ここでは、Boost.Multiprecisionから提供される多倍長浮動小数点数の、基本的な使い方を示す。
 
 以下は、任意精度の符号あり多倍長整数である[`boost::multiprecision::cpp_dec_float_100`](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/floats/cpp_dec_float.html)クラス型を使用して、2の平方根を求めるプログラムである。
@@ -67,7 +67,7 @@ Boost.Multiprecisionの多倍長浮動小数点数は、以下の演算をサポ
 | `is >> a;`              | ストリームからの入力 |
 
 
-## <a name="variation" href="variation">多倍長浮動小数点数の種類</a>
+## <a name="variation" href="#variation">多倍長浮動小数点数の種類</a>
 以下に、Boost.Multiprecisionから提供される多倍長整数の種類を示す。
 
 **[Boost Multiprecision独自実装の多倍長浮動小数点数](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/floats/cpp_dec_float.html)**
@@ -173,7 +173,7 @@ MPFR多倍長浮動小数点数の特徴：
 - 0で割ると`infinity`になる
 
 
-## <a name="from-string" href="from-string">文字列からの変換</a>
+## <a name="from-string" href="#from-string">文字列からの変換</a>
 文字列から多倍長浮動小数点数に変換するには、`explicit`な変換コンストラクタ、もしくは`assign()`メンバ関数を使用する。
 文字列は、`char`配列および[`std::string`](http://cpprefjp.github.io/reference/string/basic_string.html)を受け取ることができる。
 
@@ -229,7 +229,7 @@ int main()
 変換できない文字列が渡された場合は、[`std::runtime_error`](http://cpprefjp.github.io/reference/stdexcept.html)例外が送出される。
 
 
-## <a name="to-string" href="to-string">文字列への変換</a>
+## <a name="to-string" href="#to-string">文字列への変換</a>
 文字列への変換には、`str()`メンバ関数を使用する。この関数は、`std::string`型で多倍長浮動小数点数の文字列表現を返す。
 
 デフォルトでは固定小数点表記の文字列が返されるが、以下の引数を設定することで、精度と表記、その他出力方法を選択できる。
@@ -273,7 +273,7 @@ int main()
 ```
 
 
-## <a name="convert-precision" href="convert-precision">異なる精度間で型変換する</a>
+## <a name="convert-precision" href="#convert-precision">異なる精度間で型変換する</a>
 Boost.Multiprecisionの多倍長浮動小数点数は、異なる精度間での変換をサポートしている。
 
 
@@ -321,7 +321,7 @@ int main()
 ```
 
 
-## <a name="math-functions" href="math-functions">サポートされている数学関数一覧</a>
+## <a name="math-functions" href="#math-functions">サポートされている数学関数一覧</a>
 
 **標準関数サポート**
 

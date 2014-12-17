@@ -9,7 +9,7 @@
 - [シグナル呼び出しの戻り値をカスタマイズする](#customize-return-value)
 
 
-## <a name="connect-multiple-functions" href="connect-multiple-functions">複数の関数を登録する</a>
+## <a name="connect-multiple-functions" href="#connect-multiple-functions">複数の関数を登録する</a>
 Boost.Signals2のシグナルには、`connect()`関数によって、複数の関数を接続することができる。
 
 シグナルの関数呼び出し演算子によって、接続した関数全てを呼び出すことができる。
@@ -73,7 +73,7 @@ SubView : clicked
 ```
 
 
-## <a name="disconnect" href="disconnect">スロットを切断する</a>
+## <a name="disconnect" href="#disconnect">スロットを切断する</a>
 スロットを切断するには、`connect()`関数の戻り値であるコネクションを保持しておき、コネクションの`disconnect()`メンバ関数を呼び出すことで、切断する。
 
 ```cpp
@@ -139,7 +139,7 @@ MainView : clicked
 ```
 
 
-## <a name="return-value" href="return-value">シグナル呼び出しの戻り値</a>
+## <a name="return-value" href="#return-value">シグナル呼び出しの戻り値</a>
 特に指定しなければ、シグナルを呼び出した時の戻り値は接続する関数の戻り値の`optional`となり、最後に登録した関数の戻り値が戻される。また、関数が接続されていなければ無効値を戻す。
 
 [`optional_last_value()`](http://www.boost.org/doc/html/boost/signals2/optional_last_value.html)を参照。
@@ -196,7 +196,7 @@ invalid value
 ```
 
 
-## <a name="customize-return-value" href="customize-return-value">シグナル呼び出しの戻り値をカスタマイズする</a>
+## <a name="customize-return-value" href="#customize-return-value">シグナル呼び出しの戻り値をカスタマイズする</a>
 `boost::signals2::signal`クラスの2番目のテンプレート引数`Combiner`を変更することで、戻り値のカスタムが可能である。
 
 ```cpp

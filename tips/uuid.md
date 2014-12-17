@@ -7,7 +7,7 @@ COMや分散環境において、オブジェクトにユニークなIDが必要
 - [UUIDを文字列に変換する](#uuid-to-string)
 
 
-## <a name="random-uuid" href="random-uuid">ランダムなUUIDを生成する</a>
+## <a name="random-uuid" href="#random-uuid">ランダムなUUIDを生成する</a>
 `boost::uuids::random_generator`は、ランダムなUUIDを生成する関数オブジェクトである。
 
 `random_generator`を使用するには、`<boost/uuid/uuid_generators.hpp>`をインクルードする。
@@ -38,7 +38,7 @@ c5bcb847-5750-4388-ae8d-092e239ef2e6
 ```
 
 
-## <a name="uuid-to-string" href="uuid-to-string">UUIDを文字列に変換する</a>
+## <a name="uuid-to-string" href="#uuid-to-string">UUIDを文字列に変換する</a>
 `boost::uuids::uuid`型は、`operator<<()`出力ストリーム演算子を持っているので、`boost::lexical_cast()`を使用して文字列に変換できる。
 
 ```cpp

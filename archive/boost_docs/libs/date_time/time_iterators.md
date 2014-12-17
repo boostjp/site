@@ -11,7 +11,7 @@
 - [Class Overview](#class-overview)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 時間イテレータは、時間単位で反復するための標準的なメカニズムを提供する。 時間イテレータは(STLの)[入力イテレータ](http://www.sgi.com/tech/stl/InputIterator.html)のモデルであり、時間の集合の代入に用いることができる。 次の例は、15分間隔で反復する。
 
 ```cpp
@@ -29,7 +29,7 @@ for (; titr < ptime(d,hour(1)); ++titr) {
 [print hours](./print_hours.cpp.md) の例は、1時間増加させ、その日の残りを繰り返す。
 
 
-## <a name="header" href="header">Header</a>
+## <a name="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/posix_time/posix_time.hpp" //全ての型とI/Oを含む
 ```
@@ -41,7 +41,7 @@ for (; titr < ptime(d,hour(1)); ++titr) {
 ```
 
 
-## <a name="class-overview" href="class-overview">Class Overview</a>
+## <a name="class-overview" href="#class-overview">Class Overview</a>
 
 | Class | Construction Parameters | Description |
 |-------|-------------------------|-------------|

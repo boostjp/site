@@ -10,7 +10,7 @@ XMLの読み込み、書き込みには、[Boost Property Tree Library](http://w
 - [XMLを書き込む](#write)
 
 
-## <a name="read" href="read">XMLを読み込む</a>
+## <a name="read" href="#read">XMLを読み込む</a>
 XMLの読み込みには、`boost::property_tree::read_xml()`関数を使用する。
 
 この関数を使用するには、`<boost/property_tree/xml_parser.hpp>`をインクルードする。
@@ -87,7 +87,7 @@ BOOST_FOREACH (const ptree::value_type& child, pt.get_child("root.values") {
 ```
 
 
-## <a name="get-attribute" href="get-attribute">属性を取得する</a>
+## <a name="get-attribute" href="#get-attribute">属性を取得する</a>
 XML要素の属性を取得するには、`"<xmlattr>"`という特殊な要素名をパス指定する。以下は、属性のあるXMLを読み込む例である：
 
 data.xml：
@@ -137,7 +137,7 @@ str
 ```
 
 
-## <a name="write" href="write">XMLを書き込む</a>
+## <a name="write" href="#write">XMLを書き込む</a>
 XMLを書き込むには、要素を追加するために`boost::property_tree::ptree`の`add()`メンバ関数を使用し、`put()`メンバ関数で値を設定する。
 
 保存には、`boost::property_tree::write_xml()`関数に、ファイル名と`ptree`オブジェクトを指定する。

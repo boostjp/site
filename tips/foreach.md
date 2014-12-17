@@ -12,7 +12,7 @@ Boost Foreach Libraryは、C++においてシーケンスをループするた�
 - [C++11 範囲`for`文との違い](#difference-cpp11-range-for)
 
 
-## <a name="boost-foreach-macro" href="boost-foreach-macro">BOOST_FOREACHマクロ</a>
+## <a name="boost-foreach-macro" href="#boost-foreach-macro">BOOST_FOREACHマクロ</a>
 
 for each文には、`BOOST_FOREACH`というマクロを使用する。
 
@@ -44,7 +44,7 @@ int main()
 ```
 
 
-## <a name="reference" href="reference">要素を参照する</a>
+## <a name="reference" href="#reference">要素を参照する</a>
 
 `BOOST_FOREACH`マクロは、シーケンスの各要素を参照し、書き換えることができる。
 
@@ -74,7 +74,7 @@ int main()
 5
 ```
 
-## <a name="apply-container" href="apply-container">標準コンテナに対して使用する</a>
+## <a name="apply-container" href="#apply-container">標準コンテナに対して使用する</a>
 
 `BOOST_FOREACH`マクロは、組み込み配列だけではなく、`std::vector`や`std::list`、`std::map`といった標準ライブラリのコンテナを処理することができる。
 
@@ -103,7 +103,7 @@ int main()
 ```
 
 
-## <a name="apply-map" href="apply-map">std::mapに対して使用する</a>
+## <a name="apply-map" href="#apply-map">std::mapに対して使用する</a>
 
 `BOOST_FOREACH`マクロで`std::map`を処理するには、少し工夫が必要になる。
 
@@ -181,7 +181,7 @@ b a c
 ```
 
 
-## <a name="reverse-iteration" href="reverse-iteration">逆順にループする</a>
+## <a name="reverse-iteration" href="#reverse-iteration">逆順にループする</a>
 
 逆順にループするには、`BOOST_REVERSE_FOREACH`マクロを使用するか、もしくはシーケンスに対してBoost Range Libraryの`boost::adaptors::reversed`を適用する。
 
@@ -241,7 +241,7 @@ int main()
 ```
 
 
-## <a name="apply-multi-array" href="apply-multi-array">配列の配列に対して使用する</a>
+## <a name="apply-multi-array" href="#apply-multi-array">配列の配列に対して使用する</a>
 
 多次元配列のような「シーケンスのシーケンス」に対しては、`BOOST_FOREACH`を重ねて使用することで対処できる。
 
@@ -313,7 +313,7 @@ int main()
 ```
 
 
-## <a name="difference-cpp11-range-for" href="difference-cpp11-range-for">C++11 範囲for文との違い</a>
+## <a name="difference-cpp11-range-for" href="#difference-cpp11-range-for">C++11 範囲for文との違い</a>
 
 C++11から、`BOOST_FOREACH`マクロ相当の言語機能である「範囲`for`文(range-based for statement)」が導入された。この2つには、大きく以下の差異がある：
 

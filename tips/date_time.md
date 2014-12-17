@@ -9,7 +9,7 @@
 - [月を表す`enum`値](#month-enum)
 
 
-## <a name="end-of-month-day" href="end-of-month-day">月末日の取得</a>
+## <a name="end-of-month-day" href="#end-of-month-day">月末日の取得</a>
 
 月末日を取得するには、`boost::gregorian::gregorian_calendar::end_of_month_day()`関数を使用する。
 
@@ -35,7 +35,7 @@ int main()
 ```
 
 
-## <a name="date-add-subtract" href="date-add-subtract">日付の加減算</a>
+## <a name="date-add-subtract" href="#date-add-subtract">日付の加減算</a>
 
 Boost.DateTimeの`boost::gregorian::date`型は、`operator+()`や`operator-()`を使用して、日付の加減算を行うことができる。
 
@@ -64,7 +64,7 @@ int main()
 2011-Apr-30
 ```
 
-## <a name="month-enum" href="month-enum">月を表すenum値</a>
+## <a name="month-enum" href="#month-enum">月を表すenum値</a>
 
 Boost.Dateの月を表す`enum`値は、`boost::date_time`名前空間において、以下のように定義されている：
 

@@ -7,7 +7,7 @@
 - [シードを再設定する](#set-seed)
 
 
-## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 以下は、メルセンヌツイスター法による乱数生成と、1から6までの値を一様分布する例である。
 
 `mt19937`がメルセンヌツイスター法による擬似乱数生成アルゴリズムのエンジンクラス、`uniform_int_distribution`が一様分布(等確率)による分布アルゴリズムのクラスである。
@@ -44,7 +44,7 @@ int main()
 2
 ```
 
-## <a name="set-seed" href="set-seed">シードを再設定する</a>
+## <a name="set-seed" href="#set-seed">シードを再設定する</a>
 Boost.Randomのジェネレータでシードの再設定をするには、ジェネレータの`seed()`メンバ関数を使用する。
 
 この関数は、ジェネレータのコンセプトとして規定されているので、Boost.Randomの全てのジェネレータで同じように使用できる。

@@ -67,7 +67,7 @@ int main()
 * process_event[color ff0000]
 
 
-## <a name="state-event" href="state-event">状態の開始と終了のタイミングで任意の処理を行う</a>
+## <a name="state-event" href="#state-event">状態の開始と終了のタイミングで任意の処理を行う</a>
 
 状態クラスに `on_entry()`, `on_exit()` メンバ関数を定義すると、それぞれ状態の開始と終了時に、自動的に呼ばれる。
 
@@ -130,7 +130,7 @@ entry: my_state2
 ```
 
 
-## <a name="change-state-event" href="change-state-event">状態遷移イベントを受け取ったタイミングで任意の処理を行う</a>
+## <a name="change-state-event" href="#change-state-event">状態遷移イベントを受け取ったタイミングで任意の処理を行う</a>
 
 有限状態マシンがイベントを受け取ったとき、任意の処理を実行できる。
 
@@ -193,7 +193,7 @@ on_event1
 on_event2
 ```
 
-## <a name="guard" href="guard">状態遷移を拒否する</a>
+## <a name="guard" href="#guard">状態遷移を拒否する</a>
 
 有限状態マシンがイベントを受け取ったとき、実行時に状態遷移を拒否することができる。
 

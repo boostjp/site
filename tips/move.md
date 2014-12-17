@@ -15,7 +15,7 @@ Boost1.49から導入された[Boost Move Library](http://www.boost.org/doc/libs
 - [エミュレーションの制限](#limit-emulation)
 
 
-## <a name="define-copyable-and-movable-class" href="define-copyable-and-movable-class">コピー可能／ムーブ可能なクラスを定義する</a>
+## <a name="define-copyable-and-movable-class" href="#define-copyable-and-movable-class">コピー可能／ムーブ可能なクラスを定義する</a>
 
 
 - クラス宣言の`private`セクションに「`BOOST_COPYABLE_AND_MOVABLE(クラス名)`」を置く。
@@ -79,7 +79,7 @@ class clone_ptr
 ※ リソースを何も保持していないクラス(例えば`std::complex`など)は自分でコピーコンストラクタを定義する必要ない。(コンパイラがデフォルトで最適なコピーコンストラクタを定義するため)
 
 
-## <a name="use-movable-base" href="use-movable-base">ムーブ可能な基底クラス／メンバ変数を使用する</a>
+## <a name="use-movable-base" href="#use-movable-base">ムーブ可能な基底クラス／メンバ変数を使用する</a>
 クラスのムーブコンストラクタ／ムーブ代入演算子が呼ばれる際に、適切に基底クラス、メンバ変数のムーブコンストラクタ／ムーブ代入演算子が呼ばれるようにする。
 
 
@@ -159,7 +159,7 @@ class Derived : public Base
 ※ C++03のコンパイラでのエミュレーションによるムーブセマンティクスの制限として、上記のムーブコンストラクタではムーブの直前に`Base &`へキャストする必要がある。(これによって正しく`Base`クラスのムーブコンストラクタが呼ばれるようになる)
 
 
-## <a name="define-non-copyable-but-movable-class" href="define-non-copyable-but-movable-class">コピー不可／ムーブ可能なクラスを定義する</a>
+## <a name="define-non-copyable-but-movable-class" href="#define-non-copyable-but-movable-class">コピー不可／ムーブ可能なクラスを定義する</a>
 
 `unique_ptr`や`thread`など、コピー不可／ムーブ可能なクラスを、Boost.Moveを使用して定義できる。
 
@@ -207,7 +207,7 @@ class file_descriptor
 ```
 
 
-## <a name="movable-container" href="movable-container">ムーブセマンティクスに対応したコンテナを使用する</a>
+## <a name="movable-container" href="#movable-container">ムーブセマンティクスに対応したコンテナを使用する</a>
 
 Boost.Containerなど、ムーブセマンティクスに対応したコンテナを使用すると、コピー不可／ムーブ可能なクラスをコンテナに入れて扱える。
 
@@ -253,7 +253,7 @@ int main()
 ```
 
 
-## <a name="limit-emulation" href="limit-emulation">エミュレーションの制限</a>
+## <a name="limit-emulation" href="#limit-emulation">エミュレーションの制限</a>
 
 To be written...
 

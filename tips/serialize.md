@@ -9,7 +9,7 @@
 - [非侵入型のシリアライズ関数で保存と読み込みで違う動作をさせる](#different-bahavior-serialize-deserialize)
 
 
-## <a name="support-format" href="support-format">サポートされているフォーマット</a>
+## <a name="support-format" href="#support-format">サポートされているフォーマット</a>
 Boost.Serializationでは、以下のフォーマットへのシリアライズ、デシリアライズをサポートしている。
 
 
@@ -20,7 +20,7 @@ Boost.Serializationでは、以下のフォーマットへのシリアライズ�
 | XML      | `<boost/archive/xml_iarchive.hpp>`<br/> `<boost/archive/xml_oarchive.hpp>` |  |
 
 
-## <a name="serialize-user-defined-type" href="serialize-user-defined-type">ユーザー定義型をシリアライズする</a>
+## <a name="serialize-user-defined-type" href="#serialize-user-defined-type">ユーザー定義型をシリアライズする</a>
 Boost.Serializationでは、ユーザー定義型に、
 
 - `boost::serialization::access`への`friend`指定を行い、
@@ -110,7 +110,7 @@ abc
 ここでは`boost::archive::text_oarchive`を使用してテキスト形式にシリアライズしているが、これを`boost::archive::xml_oarchive`に変えるだけでXML形式にシリアライズされる。
 
 
-## <a name="non-intrusive" href="non-intrusive">非侵入型のシリアライズ関数を定義する</a>
+## <a name="non-intrusive" href="#non-intrusive">非侵入型のシリアライズ関数を定義する</a>
 すでに作成されたクラス、またはサードパーティで用意されているクラスをシリアライズしたい場合がある。
 
 その場合は非侵入型のシリアライズを定義するのが良いだろう。
@@ -141,7 +141,7 @@ void serialize(Archive & ar, Data & d, unsigned int /* version */) {
 当然ながら、非侵入型シリアライズが正しく動作するのは、クラス外部からアクセスできるデータでインスタンスが再構成可能なクラスに限られる。
 
 
-## <a name="different-bahavior-serialize-deserialize" href="different-bahavior-serialize-deserialize">非侵入型のシリアライズ関数で保存と読み込みで違う動作をさせる</a>
+## <a name="different-bahavior-serialize-deserialize" href="#different-bahavior-serialize-deserialize">非侵入型のシリアライズ関数で保存と読み込みで違う動作をさせる</a>
 サードパーティで用意されているクラスをシリアライズする場合、専用の関数などをつかって構築する場合など、`serialize()` 関数だけでは実装しにくい場合がある。
 
 そのため、非侵入型でも `save()`/`load()` 関数に分解して保存時と読み込み時の動作を分ける方法が用意されている。使用するには `split_free()` 関数を用いる。

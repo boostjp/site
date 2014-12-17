@@ -11,7 +11,7 @@ C言語では、`sprintf`を使用して`char`配列としての文字列をフ�
 - [フォーマット設定された`std::string`を作成する](#make-formatted-string)
 
 
-## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 
 Boost.Formatの基本的な使い方は、`boost::format()`に書式文字列を設定し、`operator%()`を使用して各プレースホルダーを置き換える値を可変引数として設定する、というものである。
 
@@ -42,7 +42,7 @@ Boost.Formatでは、型指定の代わりに、`"%1%"`のようにして引数�
 この場合、`"%1%"`が`3`に置き換えられ、`"%2%"`が""Hello""に置き換えられて標準出力に出力される。
 
 
-## <a name="printf-like-format" href="printf-like-format">`printf`風に書式を設定する</a>
+## <a name="printf-like-format" href="#printf-like-format">`printf`風に書式を設定する</a>
 
 Boost.Formatでは、`printf()`風の書式設定もサポートしている。
 
@@ -70,7 +70,7 @@ int main()
 この場合、`"%d"`が`3`に置き換えられ、`"%s"`が`"Hello"`に置き換えられて標準出力に出力される。
 
 
-## <a name="make-formatted-string" href="make-formatted-string">フォーマット設定されたstd::stringを作成する</a>
+## <a name="make-formatted-string" href="#make-formatted-string">フォーマット設定されたstd::stringを作成する</a>
 
 Boost.Formatで書式設定された`std::string`を作成するには、`boost::format`クラスの`str()`メンバ関数を使用する。
 

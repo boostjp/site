@@ -11,7 +11,7 @@
 - [Class Overview](#class-overview)
 
 
-## <a name="introduction" href="introduction">Introduction</a>
+## <a name="introduction" href="#introduction">Introduction</a>
 日付アルゴリズムあるいはジェネレータは、他の日付あるいは日付のスケジュールを生成するためのツールである。 生成関数は、月と日のような日付のある部分で始まり、その後、具体的な日付を生成するために残りの部分を供給される。 これは、プログラマが「2月の最初の日曜日」のような概念を表わし、次に、1つ以上の年を供給された時に日付の具体的なセットを生成することを想定している。
 
 ```cpp
@@ -24,14 +24,14 @@ date labor_day = ldgen.get_date(2002); // 2002年の労働者の日を計算
 [print holidays example](./print_holidays.cpp.md) に詳細な使い方の例を示す。
 
 
-## <a name="header" href="header">Header</a>
+## <a name="header" href="#header">Header</a>
 
 ```cpp
 #include "boost/date_time/date_generators.hpp" 
 ```
 
 
-## <a name="class-overview" href="class-overview">Class Overview</a>
+## <a name="class-overview" href="#class-overview">Class Overview</a>
 
 | Class              | Construction Parameters    | get_date Parameter | Description | Example |
 |--------------------|----------------------------|--------------------|-------------|---------|

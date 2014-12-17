@@ -18,7 +18,7 @@
 - [前へ：「コンセプトの充当化と原型」](./concept_covering.md)
 
 ***
-<a name="translate-note" href="translate-note">訳注1</a>
+<a name="translate-note" href="#translate-note">訳注1</a>
 
 ここには、重要な論点について記したパラグラフがありましたが、標準との整合性の理由からコメントアウトされています。コメントアウトされた内容を、以下に翻訳引用します：
 

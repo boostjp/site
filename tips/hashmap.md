@@ -10,7 +10,7 @@
 - [ユーザー定義型をキーにする(ポリシー)](#user-defined-type-as-key-using-policy)
 
 
-## <a name="basic-usage" href="basic-usage">基本的な使い方</a>
+## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 基本操作は、`std::set`や`std::map`と同様である。
 
 ポリシーを設定しない場合、要求されるテンプレートパラメータは、キーと値の型である。
@@ -48,7 +48,7 @@ int main()
 1
 ```
 
-## <a name="user-defined-type-as-key-using-overload" href="user-defined-type-as-key-using-overload">ユーザー定義型をキーにする(オーバーロード)</a>
+## <a name="user-defined-type-as-key-using-overload" href="#user-defined-type-as-key-using-overload">ユーザー定義型をキーにする(オーバーロード)</a>
 
 ユーザー定義型をキーにするには、その型の等値比較を行う関数と、ハッシュを計算する関数を定義する必要がある。
 
@@ -107,7 +107,7 @@ int main()
 ```
 
 
-## <a name="user-defined-type-as-key-using-policy" href="user-defined-type-as-key-using-policy">ユーザー定義型をキーにする(ポリシー)</a>
+## <a name="user-defined-type-as-key-using-policy" href="#user-defined-type-as-key-using-policy">ユーザー定義型をキーにする(ポリシー)</a>
 
 ユーザー定義型をキーにする方法として、等値比較の演算子やハッシュを計算する関数がすでに定義されている場合がある。
 

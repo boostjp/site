@@ -6,7 +6,7 @@
 - [最小公倍数を求める](#lcm)
 
 
-## <a name="pi" href="pi">円周率を取得する</a>
+## <a name="pi" href="#pi">円周率を取得する</a>
 円周率を取得するには、[Boost Math Library](http://www.boost.org/doc/libs/release/libs/math/)の`boost::math::constants::pi()`関数を使用する。この関数を使用するには、`<boost/math/constants/constants.hpp>`ヘッダをインクルードする。
 
 `pi()`関数のテンプレート引数として、浮動小数点数型を指定することができ、`double`だけでなく、`float`や`long double`、[多倍長浮動小数点数型](./multiprec-float.md)として円周率を取得することもできる。
@@ -36,7 +36,7 @@ int main ()
 - [C++で円周率を取得する - pepshisoの日記](http://d.hatena.ne.jp/pepshiso/20120501)
 
 
-## <a name="gcd" href="gcd">最大公約数を求める</a>
+## <a name="gcd" href="#gcd">最大公約数を求める</a>
 最大公約数を求めるには、Boost Math Libraryの[`boost::math::gcd()`](http://www.boost.org/doc/libs/release/libs/math/doc/html/math_toolkit/run_time.html)関数を使用する。この関数を使用するには、`<boost/math/common_factor_rt.hpp>`ヘッダをインクルードする。
 
 この関数には、2つの整数型の値を指定する。戻り値として、その整数型としての最大公約数が返される。
@@ -62,7 +62,7 @@ int main()
 6
 ```
 
-## <a name="lcm" href="lcm">最小公倍数を求める</a>
+## <a name="lcm" href="#lcm">最小公倍数を求める</a>
 最小公倍数を求めるには、Boost Math Libraryの[`boost::math::lcm()`](http://www.boost.org/doc/libs/release/libs/math/doc/html/math_toolkit/run_time.html)関数を使用する。この関数を使用するには、`<boost/math/common_factor_rt.hpp>`ヘッダをインクルードする。
 
 この関数には、2つの整数型の値を指定する。戻り値として、その整数型としての最小公倍数が返される。
