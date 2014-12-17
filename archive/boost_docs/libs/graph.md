@@ -113,7 +113,7 @@
 	2. `read_graphviz`
 21. 補助コンセプト、補助クラス、補助関数
 	1. `property`
-	2. ColorValue
+	2. [ColorValue](./graph/ColorValue.md)
 	3. [Buffer](./graph/Buffer.md)
 	4. [BasicMatrix](./graph/BasicMatrix.md)
 	5. `incident`
