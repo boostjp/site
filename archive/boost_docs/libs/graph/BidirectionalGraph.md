@@ -25,7 +25,7 @@ BidirectionalGraph コンセプトは、[IncidenceGraph](./IncidenceGraph.md) �
 	- 頂点 `v` のための入辺イテレータは `v` の入辺へのアクセスを提供する。そのため入辺イテレータの値型はそのグラフの辺記述子型である。 入辺イテレータは [MultiPassInputIterator](./MultiPassInputIterator.md) の要求を満たしていなければならない。
 
 
-##妥当な式
+##有効な表現式
 
 | 式 | 説明 |
 |----|------|
