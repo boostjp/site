@@ -90,7 +90,7 @@
 		2. 最小全域木アルゴリズム
 			1. `kruskal_minimum_spanning_tree`
 			2. `prim_minimum_spanning_tree`
-		3. `connected_components`
+		3. [`connected_components`](./graph/connected_components.md)
 		4. `strong_components`
 		5. Incremental Connected Components
 			1. `initialize_incremental_components`
