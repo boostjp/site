@@ -78,7 +78,7 @@
 		1. [`breadth_first_search`](./graph/breadth_first_search.md)
 		2. [`breadth_first_visit`](./graph/breadth_first_visit.md)
 		3. [`depth_first_search`](./graph/depth_first_search.md)
-		4. `depth_first_visit`
+		4. [`depth_first_visit`](./graph/depth_first_visit.md)
 		5. `undirected_dfs`
 		6. `uniform_cost_search` (非推奨、代わりに Dijkstra を使うこと)
 	3. グラフ・アルゴリズム
