@@ -85,7 +85,7 @@
 		1. 最短経路アルゴリズム
 			1. `dijkstra_shortest_paths`
 			2. [`bellman_ford_shortest_paths`](./graph/bellman_ford_shortest_paths.md)
-			3. `dag_shortest_paths`
+			3. [`dag_shortest_paths`](./graph/dag_shortest_paths.md)
 			4. `johnson_all_pairs_shortest_paths`
 		2. 最小全域木アルゴリズム
 			1. `kruskal_minimum_spanning_tree`
