@@ -13,7 +13,7 @@
 3. 刊行物
 4. [謝辞](./graph/acknowledgements.md)
 5. クイック・ツアー
-6. 基本的なグラフ理論の復習
+6. [基本的なグラフ理論の復習](./graph/graph_theory_review.md)
 7. チュートリアル
 	1. Property Maps
 	2. The `adjacency_list` class
