@@ -5,7 +5,7 @@ adjacency_list<EdgeList, VertexList, Directed,
                GraphProperties>
 ```
 
-`adjacency_list` クラスは一般化された隣接リストグラフ構造を実装する。 テンプレート・パラメータは要求を最も満たすクラスのバージョンを選べるように多くの形態の選択肢を提供する。[adjacency-list](./graph_theory_overview.md#adjacency-list-representation) は基本的に二次元の構造で、ここで最初の次元の各要素は頂点を表し、頂点の各々はその辺リストの一次元構造を含んでいる。 Figure 1 は有向グラフの隣接リスト表現を示す。
+`adjacency_list` クラスは一般化された隣接リストグラフ構造を実装する。 テンプレート・パラメータは要求を最も満たすクラスのバージョンを選べるように多くの形態の選択肢を提供する。[adjacency-list](./graph_theory_review.md#adjacency-list-representation) は基本的に二次元の構造で、ここで最初の次元の各要素は頂点を表し、頂点の各々はその辺リストの一次元構造を含んでいる。 Figure 1 は有向グラフの隣接リスト表現を示す。
 
 
 ![](http://www.boost.org/doc/libs/1_31_0/libs/graph/doc/figs/adj-matrix-graph2.gif)
