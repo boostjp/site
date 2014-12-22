@@ -83,7 +83,7 @@
 		6. `uniform_cost_search` (非推奨、代わりに Dijkstra を使うこと)
 	3. グラフ・アルゴリズム
 		1. 最短経路アルゴリズム
-			1. `dijkstra_shortest_paths`
+			1. [`dijkstra_shortest_paths`](./graph/dijkstra_shortest_paths.md)
 			2. [`bellman_ford_shortest_paths`](./graph/bellman_ford_shortest_paths.md)
 			3. [`dag_shortest_paths`](./graph/dag_shortest_paths.md)
 			4. `johnson_all_pairs_shortest_paths`
