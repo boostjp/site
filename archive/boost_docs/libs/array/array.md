@@ -98,8 +98,8 @@ Matthew H. Austern は彼の本、 *Generic Programming and the STL* の中で�
 - 可搬性のために、初期化リストとして、"`{ { ... } }`"のかわりに、"`{ ... }`"を使えるようにするべきだろうか？
 	- 規格の 8.5.1 (11) ではこれは許されているようだが、gcc 2.95.2 では警告メッセージを表示する。
 - 初期値の決定と、初期化リストのサポートのための、別の方法があるだろうか？
-- <font color="red"逆イテレータのstuffのための Static_casts はどうするか？</font>
-	- <font color="red">原文は「Static_casts for reverse iterator stuff?」。よくわかりません…</font>
+- <span style="color:red;">逆イテレータのstuffのための Static_casts はどうするか？</span>
+	- <span style="color:red;">原文は「Static_casts for reverse iterator stuff?」。よくわかりません…</span>
 
 建設的な[フィードバック](solutions@josuttis.com)はどのようなものでも歓迎する。**注意してほしいのは、boostメーリングリストのすべてのメールを読むだけの時間が、私にはないという点だ。というわけで、確実にフィードバックが私に届くようにするため、このクラスに関するメールについては、私にコピーを送ってほしい。**
 

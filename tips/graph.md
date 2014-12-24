@@ -646,7 +646,7 @@ AからDに到達不可能
 
 <strike>Boost.Graphの`boost::dijkstra_shortest_paths()`は重みのないグラフを与えるとコンパイルエラーになるので、辺の重みを全て1に設定することで代用できる。</strike>
 
-<font color="red">※2014/02/16 修正：そのような場面では [Breadth-First Search](http://www.boost.org/doc/libs/1_55_0/libs/graph/doc/breadth_first_search.html) を使うべきである。</font>
+<span style="color:red;">※2014/02/16 修正：そのような場面では [Breadth-First Search](http://www.boost.org/doc/libs/1_55_0/libs/graph/doc/breadth_first_search.html) を使うべきである。</span>
 
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/simple_shortest_path.png)
 
