@@ -40,7 +40,7 @@
 12. ビジタ・コンセプト
 	1. [BFS （幅優先探査） Visitor](./graph/BFSVisitor.md)
 	2. [DFS （深さ優先探査） Visitor](./graph/DFSVisitor.md)
-	3. Dijkstra Visitor
+	3. [Dijkstra Visitor](./graph/DijkstraVisitor.md)
 	4. [Bellman Ford Visitor](./graph/BellmanFordVisitor.md)
 	5. Event Visitor
 13. EventVisitorList アダプタ
