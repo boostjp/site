@@ -47,7 +47,7 @@
 	1. Event Visitor List
 	2. [`bfs_visitor`](./graph/bfs_visitor.md)
 	3. [`dfs_visitor`](./graph/dfs_visitor.md)
-	4. `dijkstra_visitor`
+	4. [`dijkstra_visitor`](./graph/dijkstra_visitor.md)
 	5. [`bellman_visitor`](./graph/bellman_visitor.md)
 14. イベント・ビジタ
 	1. `predecessor_recorder`
