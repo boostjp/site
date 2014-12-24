@@ -51,7 +51,7 @@
 	5. [`bellman_visitor`](./graph/bellman_visitor.md)
 14. イベント・ビジタ
 	1. `predecessor_recorder`
-	2. `distance_recorder`
+	2. [`distance_recorder`](./graph/distance_recorder.md)
 	3. `time_stamper`
 	4. `property_writer`
 15. グラフ・クラス
