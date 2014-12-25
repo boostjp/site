@@ -108,5 +108,6 @@
 - [Boost勉強会#16大阪 - 本の虫](http://cpplover.blogspot.jp/2014/09/boost16.html)
 - [[勉強会]Boost.勉強会#16大阪を開催しました - 遥佐保の技術メモ](http://blog.livedoor.jp/haruka_sao/archives/52081460.html)
 - [Boost.勉強会で発表した-(´･@･)](http://qiita.com/mrdagon/items/e54223f3895f281a6beb)
-
-
+- [Boost.勉強会 #16 大阪 に参加 - 桜、抹茶、白、日記](http://d.hatena.ne.jp/youandi/20140920/p2)
+- [Boost勉強会 #16 大阪に行ってきた - Generative](http://ishimotokoji.tumblr.com/post/98704785951/boost-16)
+- [CasablancaでHTTP（Boost.勉強会） ‐ イグトランスの頭の中（のかけら）](http://dev.activebasic.com/egtra/2014/10/05/684/)
