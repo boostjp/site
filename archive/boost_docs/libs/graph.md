@@ -31,7 +31,7 @@
 	3. [Bidirectional Graph](./graph/BidirectionalGraph.md)
 	4. [Adjacency Graph](./graph/AdjacencyGraph.md)
 	5. Vertex List Graph
-	6. Edge List Graph
+	6. [Edge List Graph](./graph/EdgeListGraph.md)
 	7. Vertex and Edge List Graph
 	8. Mutable Graph
 	9. Property Graph
