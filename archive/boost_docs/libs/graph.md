@@ -59,7 +59,7 @@
 	2. [`adjacency_matrix`](./graph/adjacency_matrix.md)
 16. グラフ・アダプタ
 	1. `subgraph`
-	2. `edge_list`
+	2. [`edge_list`](./graph/edge_list.md)
 	3. `reverse_graph`
 	4. `filtered_graph`
 	5. Vector as Graph(アンドキュメント)
