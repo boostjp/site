@@ -29,7 +29,7 @@ edmunds_karp_max_flow(VertexListGraph& g,
 
 このアルゴリズムは、最大流問題を実装するための大変単純で容易な解答である。しかしながら、このアルゴリズムが [`push_relabel_max_flow()`](./push_relabel_max_flow.md) アルゴリズムほどには良くないいくつかの理由がある。
 
-- 非整数の容量の場合、時間計算量は最疎グラフを除く全てのグラフにとって push-relabel アルゴリズムの O(V<sup2</sup>E<sup<1/2</sup>) より悪い O(V E<sup>2</sup>) である。
+- 非整数の容量の場合、時間計算量は最疎グラフを除く全てのグラフにとって push-relabel アルゴリズムの O(V<sup>2</sup>E<sup>1/2</sup>) より悪い O(V E<sup>2</sup>) である。
 - 整数の容量の場合、もし容量の範囲 `U` が大変大きいならば、アルゴリズムに長い時間がかかるだろう。
 
 
