@@ -98,7 +98,7 @@
 			3. `same_component`
 			4. `component_index`
 		6. 最大流アルゴリズム
-			1. `edmunds_karp_max_flow`
+			1. [`edmunds_karp_max_flow`](./graph/edmunds_karp_max_flow.md)
 			2. `push_relabel_max_flow`
 		7. `topological_sort`
 		8. `transitive_closure`
