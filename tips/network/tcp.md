@@ -673,12 +673,14 @@ class Client {
     asio::streambuf receive_buff_;
 
     asio::steady_timer timer_; // タイムアウト用のタイマー
+    bool is_canceled_;
 
 public:
     Client(asio::io_service& io_service)
         : io_service_(io_service),
           socket_(io_service),
-          timer_(io_service)
+          timer_(io_service),
+          is_canceled_(false)
     {}
 
     void start()
@@ -733,6 +735,7 @@ private:
             // タイムアウトになる前に処理が正常終了したのでタイマーを切る
             // タイマーのハンドラにエラーが渡される
             timer_.cancel();
+            is_canceled_ = true;
 
             if (error) {
                 std::cout << "その他のエラー : " << error.message() << std::endl;
@@ -745,7 +748,7 @@ private:
 
     // タイマーのイベント受信
     void on_timer(const boost::system::error_code& error) {
-        if (!error) {
+        if (!error && !is_canceled_) {
             socket_.cancel(); // 通信処理をキャンセルする。受信ハンドラがエラーになる
         }
     }
@@ -809,7 +812,7 @@ timer_.async_wait(boost::bind(&Client::on_timer, this, _1));
 ```cpp
 // タイマーのイベント受信
 void on_timer(const boost::system::error_code& error) {
-    if (!error) {
+    if (!error && !is_canceled_) {
         socket_.cancel(); // 通信処理をキャンセルする。受信ハンドラがエラーになる
     }
 }
@@ -845,9 +848,13 @@ else {
     // タイムアウトになる前に処理が正常終了したのでタイマーを切る
     // タイマーのハンドラにエラーが渡される
     timer_.cancel();
+    is_canceled_ = true;
 }
 ```
 
 タイマークラスの`calcel()`メンバ関数を呼ぶと、`socket`の場合と逆に、タイマーのハンドラに[`boost::asio::error::operation_aborted`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/error__basic_errors.html)エラーが渡されることになる。
+
+ただし、`cancel()`メンバ関数を呼ぶ直前ですでにタイムアウトになっている場合、`boost::asio::error::operation_aborted`エラーがハンドラに渡されない可能性がある。
+この場合に備えてフラグ変数等でタイマーを止めたことを知らせる必要がある。
 
 documented boost version is 1.51.0
