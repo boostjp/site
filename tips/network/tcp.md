@@ -781,7 +781,7 @@ int main()
 |-----------------------------------------------------------|----------------------------------------------------------|
 | [`boost::asio::deadline_timer`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/deadline_timer.html) | Boost.DateTimeライブラリの`posix_time`で時間指定を行う古いタイマー |
 | [`boost::asio::high_resolution_timer`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/high_resolution_timer.html) | 高分解能タイマー |
-| [boost::asio::steady_timer](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/steady_timer.html) | 時間が逆行しないことを保証するタイマー |
+| [`boost::asio::steady_timer`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/steady_timer.html) | 時間が逆行しないことを保証するタイマー |
 | [`boost::asio::system_timer`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/system_timer.html) | `time_t`と互換性のあるタイマー |
 
 用途に応じて使い分ける必要があるが、基本的には`steady_timer`を推奨する。これは、タイマー処理中にOSの時間設定が変更されても時間が逆行しないタイマーであるため、外部要因によるバグを防ぐことができる。
