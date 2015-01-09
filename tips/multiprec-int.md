@@ -11,7 +11,7 @@
 - [最小値を取得する](#min)
 - [最大値を取得する](#max)
 - [有限かどうかを判定する](#is-bounded)
-- [サポートされている数学関数一覧]
+- [サポートされている数学関数一覧](#math-functions)
 
 
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
