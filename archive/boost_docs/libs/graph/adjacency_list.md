@@ -41,7 +41,7 @@ Figure 2:無向グラフの隣接リスト表現
 
 
 ##Model of
-[VertexAndEdgeListGraph](./VertexAndEdgeListGraph.md), [MutablePropertyGraph](./MutablePropertyGraph.md), [CopyConstructible](../utility/CopyConstructible.md), and [Assignable](../utility/Assignable.md).
+[VertexAndEdgeListGraph](./VertexAndEdgeListGraph.md.nolink), [MutablePropertyGraph](./MutablePropertyGraph.md.nolink), [CopyConstructible](../utility/CopyConstructible.md), and [Assignable](../utility/Assignable.md).
 
 
 ##Where Defined
@@ -49,9 +49,9 @@ Figure 2:無向グラフの隣接リスト表現
 
 
 ##Vertex and Edge Properties
-色、距離、重み、そしてユーザ定義のプロパティのようなプロパティは、プロパティ を用いてグラフの頂点と辺に結びつけることができる。プロパティの値はグラフに よって提供されるプロパティ・マップ経由で読み書きできる。プロパティ・マップ は get(property, g) 関数経由で得られる。プロパティの使い方は 章 [Internal Properties](./using_adjacency_list.md.nolink#adjacency-list-properties) 内で述べられている。プロパティ・マップは章 [Property Map Concepts](../property_map.md) 内で定義されているインターフェースを実装するオブジェクトである。 `adjacency_list` クラスから得られるプロパティ・マップは [Lvalue Property Map](../property_map/LvaluePropertyMap.md) コンセプトのモデルである。もし `adjacency_list` が `const` なら、 プロパティ・マップは定数である。さもなくばプロパティ・マップは変更可能である。
+色、距離、重み、そしてユーザ定義のプロパティのようなプロパティは、プロパティ を用いてグラフの頂点と辺に結びつけることができる。プロパティの値はグラフに よって提供されるプロパティ・マップ経由で読み書きできる。プロパティ・マップ は get(property, g) 関数経由で得られる。プロパティの使い方は 章 [Internal Properties](./using_adjacency_list.md.nolink#adjacency-list-properties) 内で述べられている。プロパティ・マップは章 [Property Map Concepts](../property_map.md.nolink) 内で定義されているインターフェースを実装するオブジェクトである。 `adjacency_list` クラスから得られるプロパティ・マップは [Lvalue Property Map](../property_map/LvaluePropertyMap.md.nolink) コンセプトのモデルである。もし `adjacency_list` が `const` なら、 プロパティ・マップは定数である。さもなくばプロパティ・マップは変更可能である。
 
-もしグラフの `VertexList` が `vecS` なら、グラフは `vertex_index_t` プロパティのためのプロパティ・マップを経由して アクセスされた組み込みの頂点の添え字を持っている。添え字は `[0, num_vertices(g))` の範囲内に整列し、連続している。頂点が 削除される時、添え字はそれらのプロパティを持ち続けるよう調整される。 これらの添え字を外部のプロパティの記憶領域にアクセスするために使う際には いくらか気をつけなければならない。 頂点の添え字のためのプロパティ・マップは [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルである。
+もしグラフの `VertexList` が `vecS` なら、グラフは `vertex_index_t` プロパティのためのプロパティ・マップを経由して アクセスされた組み込みの頂点の添え字を持っている。添え字は `[0, num_vertices(g))` の範囲内に整列し、連続している。頂点が 削除される時、添え字はそれらのプロパティを持ち続けるよう調整される。 これらの添え字を外部のプロパティの記憶領域にアクセスするために使う際には いくらか気をつけなければならない。 頂点の添え字のためのプロパティ・マップは [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルである。
 
 
 ##Iterator and Descriptor Stability/Invalidation
@@ -645,7 +645,7 @@ template <class PropertyTag>
 property_map<adjacency_list, Tag>::const_type
 get(PropertyTag, const adjacency_list& g)
 ```
-* PropertyTag[link ./PropertyTag.md]
+* PropertyTag[link ./PropertyTag.md.nolink]
 
 `PropertyTag` で指定される頂点プロパティのためのプロパティ・マップ・ オブジェクトを返す。`PropertyTag` はグラフの `VertexProperty` テンプレート引数中に指定されたプロパティの一つに一致しなければならない。
 
@@ -656,7 +656,7 @@ template <class PropertyTag, class X>
 typename property_traits<property_map<adjacency_list, PropertyTag>::const_type>::value_type
 get(PropertyTag, const adjacency_list& g, X x)
 ```
-* PropertyTag[link ./PropertyTag.md]
+* PropertyTag[link ./PropertyTag.md.nolink]
 
 `x` が頂点記述子か辺記述子のどちらか一方である場合、これは `x` のためのプロパティ値を返す。
 
@@ -667,7 +667,7 @@ template <class PropertyTag, class X, class Value>
 void
 put(PropertyTag, const adjacency_list& g, X x, const Value& value)
 ```
-* PropertyTag[link ./PropertyTag.md]
+* PropertyTag[link ./PropertyTag.md.nolink]
 
 これは `x` のためのプロパティ値を `value` にする。`x` は頂点記述子か辺記述子のどちらか一方である。`Value` は `typename property_traits<property_map<adjacency_list, PropertyTag>::type>::value_type` と互換でなければならない。
 
@@ -678,7 +678,7 @@ template <class GraphProperties, class GraphPropertyTag>
 typename graph_property<adjacency_list, GraphPropertyTag>::type&
 get_property(adjacency_list& g, GraphPropertyTag);
 ```
-* GraphPropertyTag[link ./PropertyTag.md#GraphPropertyTag]
+* GraphPropertyTag[link ./PropertyTag.md.nolink#GraphPropertyTag]
 
 グラフ・オブジェクト `g` に結びつけられた `GraphPropertyTag` で指定されたプロパティを返す。`graph_property` 特性クラスは `boost/graph/adjacency_list.hpp` 中で定義されている。
 
@@ -689,14 +689,14 @@ template <class GraphProperties, class GraphPropertyTag>
 const typename graph_property<adjacency_list, GraphPropertyTag>::type&
 get_property(const adjacency_list& g, GraphPropertyTag);
 ```
-* GraphPropertyTag[link ./PropertyTag.md#GraphPropertyTag]
+* GraphPropertyTag[link ./PropertyTag.md.nolink#GraphPropertyTag]
 
 グラフ・オブジェクト `g` に結びつけられた `GraphPropertyTag` で指定されたプロパティを返す。`graph_property` 特性クラスは `boost/graph/adjacency_list.hpp` 中で定義されている。
 
 
 
 ##See Also
-[`adjacency_list_traits`](./adjacency_list_traits.md), [`property_map`](./property_map.md), [`graph_traits`](./graph_traits.md)
+[`adjacency_list_traits`](./adjacency_list_traits.md), [`property_map`](../property_map.md.nolink), [`graph_traits`](./graph_traits.md.nolink)
 
 
 ***
