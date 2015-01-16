@@ -4,7 +4,7 @@
 
 
 ##資料
-[Haskell - C++テンプレートメタプログラミングのための擬似言語](/boostcon/2011#haskell-pseudo-cpp)
+[Haskell - C++テンプレートメタプログラミングのための擬似言語](/boostcon/2011.md#haskell-pseudo-cpp)
 
 
 ##参加者リスト
