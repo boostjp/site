@@ -115,7 +115,7 @@ f = std::bind1st(std::mem_fun(&X::foo), &x);
 f(5); // x.foo(5)を呼び出す
 ```
 
-- [Boost.Lambda](../lambda.md) ライブラリ。このライブラリは、自然な C++ の文法を使って関数オブジェクトを構築する強力な機構を提供する。 Lambda は、コンパイラが C++ 標準にかなり準拠していないと使えない。
+- [Boost.Lambda](../lambda.md.nolink) ライブラリ。このライブラリは、自然な C++ の文法を使って関数オブジェクトを構築する強力な機構を提供する。 Lambda は、コンパイラが C++ 標準にかなり準拠していないと使えない。
 
 
 ##References to Functions
