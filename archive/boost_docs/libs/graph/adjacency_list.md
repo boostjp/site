@@ -12,7 +12,7 @@ adjacency_list<EdgeList, VertexList, Directed,
 
 Figure 1:有向グラフの隣接リスト表現
 
-`adjacency_list` クラスの `VertexList` テンプレート・パラメータは外部の二次元コンテナを表すためにどんな種類のコンテナが使われるかを制御する。 `EdgeList` テンプレート・パラメータは辺リストを表すためにどんな種類の コンテナが使われるかを制御する。`EdgeList` と `VertexList` の 選択はグラフ構造の空間計算量を決定するだろう、そして様々なグラフ操作の時間計算量を決定するだろう。可能な選択とトレード・オフは章 [Choosing the Edgelist and VertexList](./using_adjacency_list.md#choosing-graph-type) 中で論じられる。
+`adjacency_list` クラスの `VertexList` テンプレート・パラメータは外部の二次元コンテナを表すためにどんな種類のコンテナが使われるかを制御する。 `EdgeList` テンプレート・パラメータは辺リストを表すためにどんな種類の コンテナが使われるかを制御する。`EdgeList` と `VertexList` の 選択はグラフ構造の空間計算量を決定するだろう、そして様々なグラフ操作の時間計算量を決定するだろう。可能な選択とトレード・オフは章 [Choosing the Edgelist and VertexList](./using_adjacency_list.md.nolink#choosing-graph-type) 中で論じられる。
 
 `Directed` テンプレート・パラメータはグラフが有向か無向か、または 入辺と出辺の両方にアクセスする (これを双方向性と呼ぶ) 有向かを制御する。 双方向性グラフは各辺が出辺リストと入辺リストの両方に現れるため、辺当たり有向グラフの二倍の空間を取る。Figure 2 は無向グラフの隣接リスト表現を示す。
 
@@ -21,11 +21,11 @@ Figure 1:有向グラフの隣接リスト表現
 
 Figure 2:無向グラフの隣接リスト表現
 
-`adjacency_list` クラスの使い方のチュートリアルは章 [Using `adjacency_list`](./using_adjacency_list.md) にある。
+`adjacency_list` クラスの使い方のチュートリアルは章 [Using `adjacency_list`](./using_adjacency_list.md.nolink) にある。
 
 
 ##Example
-[`examples/family-tree-eg.cpp`](./example/family-tree-eg.cpp.md) 中にある例は家族の木 (family tree) をグラフで表現する方法を示す。
+[`examples/family-tree-eg.cpp`](./examples/family-tree-eg.cpp.md) 中にある例は家族の木 (family tree) をグラフで表現する方法を示す。
 
 
 ##Template Parameters
@@ -49,7 +49,7 @@ Figure 2:無向グラフの隣接リスト表現
 
 
 ##Vertex and Edge Properties
-色、距離、重み、そしてユーザ定義のプロパティのようなプロパティは、プロパティ を用いてグラフの頂点と辺に結びつけることができる。プロパティの値はグラフに よって提供されるプロパティ・マップ経由で読み書きできる。プロパティ・マップ は get(property, g) 関数経由で得られる。プロパティの使い方は 章 [Internal Properties](./using_adjacency_list.md#adjacency-list-properties) 内で述べられている。プロパティ・マップは章 [Property Map Concepts](../property_map.md) 内で定義されているインターフェースを実装するオブジェクトである。 `adjacency_list` クラスから得られるプロパティ・マップは [Lvalue Property Map](../property_map/LvaluePropertyMap.md) コンセプトのモデルである。もし `adjacency_list` が `const` なら、 プロパティ・マップは定数である。さもなくばプロパティ・マップは変更可能である。
+色、距離、重み、そしてユーザ定義のプロパティのようなプロパティは、プロパティ を用いてグラフの頂点と辺に結びつけることができる。プロパティの値はグラフに よって提供されるプロパティ・マップ経由で読み書きできる。プロパティ・マップ は get(property, g) 関数経由で得られる。プロパティの使い方は 章 [Internal Properties](./using_adjacency_list.md.nolink#adjacency-list-properties) 内で述べられている。プロパティ・マップは章 [Property Map Concepts](../property_map.md) 内で定義されているインターフェースを実装するオブジェクトである。 `adjacency_list` クラスから得られるプロパティ・マップは [Lvalue Property Map](../property_map/LvaluePropertyMap.md) コンセプトのモデルである。もし `adjacency_list` が `const` なら、 プロパティ・マップは定数である。さもなくばプロパティ・マップは変更可能である。
 
 もしグラフの `VertexList` が `vecS` なら、グラフは `vertex_index_t` プロパティのためのプロパティ・マップを経由して アクセスされた組み込みの頂点の添え字を持っている。添え字は `[0, num_vertices(g))` の範囲内に整列し、連続している。頂点が 削除される時、添え字はそれらのプロパティを持ち続けるよう調整される。 これらの添え字を外部のプロパティの記憶領域にアクセスするために使う際には いくらか気をつけなければならない。 頂点の添え字のためのプロパティ・マップは [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルである。
 
@@ -488,7 +488,7 @@ add_edge(vertex_descriptor u, vertex_descriptor v,
 
 もし `VertexList` の選択子が `vecS` でありかつ頂点記述子 `u` または `v` (それは整数である) がグラフ中の現在の頂点の数より大きな値を持っているなら、頂点の数が `std::max(u,v) + 1` に なるようにグラフが拡大される。
 
-もし `EdgeList` の選択子が `vecS` であれば、この操作によって頂点 `u` のためのどの `out_edge_iterator` も無効になるだろう。 これはもし `EdgeList` が `push(container, x)` が呼び出されたときにそのイテレータを無効にするようなユーザ定義のコンテナ (章 [Customizing the Adjacency List Storage](./using_adjacency_list.md#custom-storage) を見なさい) であれば同様にあてはまる。 もしグラフが同様に双方向であれば、`v` のためのどの `in_edge_iterator` もやはり無効にされる。もしその代わりに グラフが無向グラフならば `v` のためのどの `out_edge_iterator` もやはり無効にされる。もしその代わりにグラフが有向グラフならば、 `add_edge()` は同様にどの `edge_iterator` も無効にする。
+もし `EdgeList` の選択子が `vecS` であれば、この操作によって頂点 `u` のためのどの `out_edge_iterator` も無効になるだろう。 これはもし `EdgeList` が `push(container, x)` が呼び出されたときにそのイテレータを無効にするようなユーザ定義のコンテナ (章 [Customizing the Adjacency List Storage](./using_adjacency_list.md.nolink#custom-storage) を見なさい) であれば同様にあてはまる。 もしグラフが同様に双方向であれば、`v` のためのどの `in_edge_iterator` もやはり無効にされる。もしその代わりに グラフが無向グラフならば `v` のためのどの `out_edge_iterator` もやはり無効にされる。もしその代わりにグラフが有向グラフならば、 `add_edge()` は同様にどの `edge_iterator` も無効にする。
 
 
 ***
