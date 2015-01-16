@@ -17,7 +17,7 @@ disjoint_sets<Rank, Parent, FindCompress>
 
 | パラメータ     | 説明 |
 |----------------|------|
-| `Rank`         | 値型が整数型で、キー型が集合の要素型と等しい [`ReadWritePropertyMap`](./property_map/ReadWritePropertyMap .md) のモデルでなければならない。 |
+| `Rank`         | 値型が整数型で、キー型が集合の要素型と等しい [`ReadWritePropertyMap`](./property_map/ReadWritePropertyMap.md) のモデルでなければならない。 |
 | `Parent`       | [`ReadWritePropertyMap`](./property_map/ReadWritePropertyMap.md) のモデルで、かつ、キー型および値型は集合の要素型と等しくなければならない。 |
 | `FindCompress` | 代表値の検索およびパス圧縮関数オブジェクトのうちの 1つであるべきだ。 |
 
