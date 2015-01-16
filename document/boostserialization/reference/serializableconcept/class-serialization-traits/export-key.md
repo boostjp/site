@@ -11,7 +11,7 @@
 
 上記2つのマクロは、実装に展開されます。(GUIDはグローバルユニーク識別子のことを示します）
 
-(このマニュアルの別の場所([ExportingClassSerialization](../special-considerations/exporting-class-serialization.md))で、派生クラスのシリアライズについて詳細に説明します。)
+(このマニュアルの別の場所([ExportingClassSerialization](../../special-considerations/exporting-class-serialization.md))で、派生クラスのシリアライズについて詳細に説明します。)
 
 ライブラリは以下の場合に例外を投げます。
 

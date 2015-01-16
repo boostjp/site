@@ -75,7 +75,7 @@
 - Twitter : [https://twitter.com/5mingame2](https://twitter.com/5mingame2)
 
 - 資料：[[slideshare](http://www.slideshare.net/5mingame2/iphoneboost)][[pptx](https://www.dropbox.com/s/96g3h8pvqjsmlji/iPhone%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8E%E3%81%86%E3%81%84%E3%82%8D%E3%81%86%E3%80%8F%E3%81%A8boost.pptx)]
-- ビデオ:[MP4動画 478MB](/'/>   <a href='https://docs.google.com/file/d/0B9BH0LS6wCKId0Q3d3d2aWFmQ0U/edit?usp=sharing)  
+- ビデオ:[MP4動画 478MB](https://docs.google.com/file/d/0B9BH0LS6wCKId0Q3d3d2aWFmQ0U/edit?usp=sharing)
 - アフターケア：[Boost.勉強会 #13 仙台 で発表してきた - でらうま倶楽部](http://blog.livedoor.jp/tek_nishi/archives/8109245.html)
 
 

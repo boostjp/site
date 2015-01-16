@@ -1,7 +1,7 @@
 #Other Classses
 
-- [`extended_type_info`](./other-classses/extended_type_info)
-- [`void_cast`](./other-classses/void_cast)
+- [`extended_type_info`](./other-classses/extended_type_info.md)
+- [`void_cast`](./other-classses/void_cast.md)
 - `utf8_codecvt_facet`
 - `BOOST_STRONG_TYPEDEF`
 - `state_saver`

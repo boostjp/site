@@ -8,7 +8,7 @@
 
 ##インデックス
 - [1 API](#api)
-	- [1.1 入力を全て消費したかを確認する](check-all-consume)
+	- [1.1 入力を全て消費したかを確認する](#check-all-consume)
 	- [1.2 空白等を読み飛ばす](#skip)
 	- [1.3 解析された値を受け取る](#get-parsed-result)
 - 2 ルール

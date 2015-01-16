@@ -2,7 +2,7 @@
 ここでは、優先順位を付きのオブジェクト比較と、それによる並べ替えの方法を示す。優先順位付きの比較とは、Windowsのエクスプローラで言うところの「ファイル種別順に並べて、同じファイル種別のものはファイル名順に並べる」というようなものである。
 このような比較方法は、一覧画面のようなものを作る場合に必要となる。
 
-優先順位付きの比較には、[Boost Fusion Library](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/)が提供するタプル型を使用する。タプルとは、異なる複数の型からなるシーケンスである。[`std::pair`](/reference/utility/pair.md)が2つの異なる型のオブジェクトを格納するのに対して、タプルは任意個のオブジェクトを格納できる。
+優先順位付きの比較には、[Boost Fusion Library](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/)が提供するタプル型を使用する。タプルとは、異なる複数の型からなるシーケンスである。[`std::pair`](http://cpprefjp.github.io/reference/utility/pair.html)が2つの異なる型のオブジェクトを格納するのに対して、タプルは任意個のオブジェクトを格納できる。
 
 [Boost.Fusion](http://www.boost.org/doc/libs/release/libs/fusion/doc/html/)が提供するタプルは比較演算子を持っており、それがちょうど前述した「ファイル種別順に並べて、同じファイル種別のものはファイル名順に並べる」という意味論での比較を行う。
 
