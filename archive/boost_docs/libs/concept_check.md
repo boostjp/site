@@ -49,7 +49,7 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 
 
 ## <a name="motivating-example" href="#motivating-example">動機の例</a>
-テンプレート・ライブラリの不正な使用法と、その結果生じるエラーメッセージを例証するために単純なサンプルを示す。 下記のコードでは、標準テンプレート・ライブラリー (STL) のジェネリックな `std::stable_sort()` アルゴリズム [[3](./concept_check/bibiography.md#generic-programming-and-the-stl)、[4](./concept_check/bibliography.md#stl-tutorial-and-reference-guide)、[5](./concept_check/bibliography.md#the-standard-template-library)] をリンクリストに適用している。
+テンプレート・ライブラリの不正な使用法と、その結果生じるエラーメッセージを例証するために単純なサンプルを示す。 下記のコードでは、標準テンプレート・ライブラリー (STL) のジェネリックな `std::stable_sort()` アルゴリズム [[3](./concept_check/bibliography.md#generic-programming-and-the-stl)、[4](./concept_check/bibliography.md#stl-tutorial-and-reference-guide)、[5](./concept_check/bibliography.md#the-standard-template-library)] をリンクリストに適用している。
 
 bad_error_eg.cpp:
 ```
