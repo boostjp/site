@@ -63,7 +63,7 @@ public:
 
 我々の `Operation` の `second_argument_type` は `std::ostream&` であるから、コンストラクタの中の `y` の型は `std::ostream&&` となるだろう。参照の参照を作ることはできないから、参照の参照は C++ では非合法であるとしてこの時点でコンパイルエラーになる。(ただし [C++ 言語中核の問題点 106 番目](http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#106) を参照せよ)。
 
-このライブラリのバインダは Boost [`call_traits`](../utility/call_traits.md) テンプレートを使うことによってこの問題を回避している。
+このライブラリのバインダは Boost [`call_traits`](../utility/call_traits.md.nolink) テンプレートを使うことによってこの問題を回避している。
 
 コンストラクタは以下のように宣言される。
 

@@ -4,7 +4,7 @@
 
 functional.hpp ヘッダは C++ 標準ライブラリの関数オブジェクトアダプタ(セクション 20.3.5 から 20.3.8)を強化する。この強化は主に二つの変更を行う。
 
-1. 我々は、[参照の参照](./functional/binders.md#refref) 問題を回避し、[引数渡し](./functional/mem_fun.md#args) の効率を良くするために、Boost の [`call_traits`](./utility/call_traits.md) テンプレートを使う。
+1. 我々は、[参照の参照](./functional/binders.md#refref) 問題を回避し、[引数渡し](./functional/mem_fun.md#args) の効率を良くするために、Boost の [`call_traits`](./utility/call_traits.md.nolink) テンプレートを使う。
 2. 我々は、[`ptr_fun`](./functional/ptr_fun.md) の必要性を回避するために、このライブラリのアダプタとともに、ふたつの[function object traits](./functional/function_traits.md) を使う。
 
 

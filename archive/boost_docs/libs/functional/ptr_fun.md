@@ -49,7 +49,7 @@ public:
 
 つまり、`operator()` の引数を宣言する望ましい方法は、ラップされる関数の引数が参照であるかないかに依っている。もしそれが参照であるならば、単純に `Arg` と宣言したいのであり、もし値であれば `const Arg&` と宣言したいのである。
 
-Boost の [`call_traits`](../utility/call_traits.md) クラステンプレートは `param_type` `typedef` を含んでいて、それは部分特殊化版を用いて正確にこの判断をを行う。`operator()` を以下のように宣言することによって。
+Boost の [`call_traits`](../utility/call_traits.md.nolink) クラステンプレートは `param_type` `typedef` を含んでいて、それは部分特殊化版を用いて正確にこの判断をを行う。`operator()` を以下のように宣言することによって。
 
 ```cpp
 Result operator()(typename call_traits<Arg>::param_type x) const
