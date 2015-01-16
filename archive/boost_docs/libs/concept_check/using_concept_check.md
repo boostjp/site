@@ -1,5 +1,5 @@
 #コンセプト・チェックの利用
-各コンセプトに対して、与えられた型 (あるいは型の集合) がコンセプトをモデル化していることを確かめるために使用することができる、何らかのコンセプト・チェック用クラスが存在する。 Boost コンセプト・チェック・ライブラリ (BCCL) は、C++ 標準ライブラリの中で使用される全てのコンセプト＋αを対象とした、コンセプト・チェック用クラスを含んでいる。 [リファレンス](./reference.md) セクションに、このコンセプト・チェック用クラスをリストしてある。 さらに、他の Boost ライブラリも、ライブラリ独自の特別なコンセプトに対応するコンセプト・チェック用クラスを付随している。 例えば、[graph concept](../graph/graph_concepts.md) および [property map concept](../property_map/property_map.md) がある。 さらに、クラス・テンプレートや関数テンプレートを記述する者は、既存のコンセプトでカバーされていない要求事項を表現する必要のある場合は常に、新しいコンセプト・チェック用クラスを作成すべきである。 その方法は [コンセプト・チェック用クラスの作成](./creating_concepts.md) セクションで説明する。
+各コンセプトに対して、与えられた型 (あるいは型の集合) がコンセプトをモデル化していることを確かめるために使用することができる、何らかのコンセプト・チェック用クラスが存在する。 Boost コンセプト・チェック・ライブラリ (BCCL) は、C++ 標準ライブラリの中で使用される全てのコンセプト＋αを対象とした、コンセプト・チェック用クラスを含んでいる。 [リファレンス](./reference.md) セクションに、このコンセプト・チェック用クラスをリストしてある。 さらに、他の Boost ライブラリも、ライブラリ独自の特別なコンセプトに対応するコンセプト・チェック用クラスを付随している。 例えば、[graph concept](../graph/graph_concepts.md.nolink) および [property map concept](../property_map/property_map.md.nolink) がある。 さらに、クラス・テンプレートや関数テンプレートを記述する者は、既存のコンセプトでカバーされていない要求事項を表現する必要のある場合は常に、新しいコンセプト・チェック用クラスを作成すべきである。 その方法は [コンセプト・チェック用クラスの作成](./creating_concepts.md) セクションで説明する。
 
 BCCL のコンセプト・チェック用クラスの例として、`EqualityComparableConcept` クラスを挙げる。 このクラスは、C++ 標準 20.1.1 に記述されている `EqualityComparable` (等値比較可能) 要求事項および、SGI STL で文書化されている [`EqualityComparable`](http://www.sgi.com/tech/stl/EqualityComparable.html) (等値比較可能) コンセプトに相当する。
 
@@ -76,7 +76,7 @@ void stable_sort(RandomAccessIter first, RandomAccessIter last)
 }
 ```
 
-コンセプトによっては複数の型を処理するものがある。 この場合、対応するコンセプト・チェック用クラスは複数のテンプレート・パラメータを持つことになる。 以下の例は、`function_requires()` を、２つの型パラメータ（プロパティ・マップ型とそのキーとなる型）をとる [`ReadWritePropertyMap`](../property_map/ReadWritePropertyMap.md) コンセプトに対して使用する方法を示す。
+コンセプトによっては複数の型を処理するものがある。 この場合、対応するコンセプト・チェック用クラスは複数のテンプレート・パラメータを持つことになる。 以下の例は、`function_requires()` を、２つの型パラメータ（プロパティ・マップ型とそのキーとなる型）をとる [`ReadWritePropertyMap`](../property_map/ReadWritePropertyMap.md.nolink) コンセプトに対して使用する方法を示す。
 
 ```cpp
 template <class IncidenceGraph, class Buffer, class BFSVisitor, 
