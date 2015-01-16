@@ -63,7 +63,7 @@ int main() {
 ```
 
 ##例
-以前の [動機の例](./concept_check.md#motivating_example) に対してコンセプト・チェックを応用する場合、良いやり方として、テンプレート・パラメータ型が [`RandomAccessIterator`](http://www.sgi.com/tech/stl/RandomAccessIterator.html) をモデル化していることを確認するために `std::stable_sort()` の一番上に `function_requires()` を挿入することが一つ挙げられる。 さらに、`std::stable_sort()` は、イレテータの `value_type` が[`LessThanComparable` (未満比較可能)](http://www.sgi.com/tech/stl/LessThanComparable.html) を満足することが必要であるから、これをチェックするために、重ねて `function_requires()` を使用する。
+以前の [動機の例](../concept_check.md#motivating_example) に対してコンセプト・チェックを応用する場合、良いやり方として、テンプレート・パラメータ型が [`RandomAccessIterator`](http://www.sgi.com/tech/stl/RandomAccessIterator.html) をモデル化していることを確認するために `std::stable_sort()` の一番上に `function_requires()` を挿入することが一つ挙げられる。 さらに、`std::stable_sort()` は、イレテータの `value_type` が[`LessThanComparable` (未満比較可能)](http://www.sgi.com/tech/stl/LessThanComparable.html) を満足することが必要であるから、これをチェックするために、重ねて `function_requires()` を使用する。
 
 ```cpp
 template <class RandomAccessIter>
