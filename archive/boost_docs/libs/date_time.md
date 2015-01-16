@@ -30,7 +30,7 @@ Version 1.00
 - [Date Iterators](./date_time/date_iterators.md)
 - [Date Generators / Algorithms](./date_time/date_algorithms.md)
 - [Class gregorian_calendar](./date_time/class_gregorian_calendar.md)
-- [Class day_clock](./class_date.md#construct-from-clock)
+- [Class day_clock](./date_time/class_date.md#construct-from-clock)
 
 
 **時間プログラミング**
