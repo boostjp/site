@@ -92,7 +92,7 @@ void k(std::vector<boost::shared_ptr<X> > const & v)
 
 ## <a name="faq" href="#faq">FAQ</a>
 ### <a name="Q1" href="#Q1">mem_fnを、標準の std::mem_fun[_ref]アダプタのかわりに使用できるか?</a>
-はい。単純な使い方では、`mem_fn` は標準のアダプタが提供しないいくつかの機能を提供する。 `std::bind1st`、`std::bind2nd`、[Boost.Compose](../compose/index.md) と標準のアダプタを組み合わせるような複雑な使い方をしている場合は、 [`boost::bind`](./bind.md) を使用するように書き換えることで、`mem_fn`の恩恵を自動的に受けることができる。
+はい。単純な使い方では、`mem_fn` は標準のアダプタが提供しないいくつかの機能を提供する。 `std::bind1st`、`std::bind2nd`、[Boost.Compose](./compose.md) と標準のアダプタを組み合わせるような複雑な使い方をしている場合は、 [`boost::bind`](./bind.md) を使用するように書き換えることで、`mem_fn`の恩恵を自動的に受けることができる。
 
 
 ### <a name="Q2" href="#Q2">既に書いてしまったコード中のstd::mem_fun[_ref]を、 全てmem_fnで置き換えるべきか?</a>
