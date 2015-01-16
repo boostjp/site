@@ -28,12 +28,12 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 3. [歴史](#history)
 4. [公開資料](#publications)
 5. [謝辞](#acknowledgements)
-6. [コンセプト・チェックの利用](./using_concept_check.md)
-7. [コンセプト・チェック用クラスの作成](./creating_concepts.md)
-8. [コンセプトの充当化と原型](./concept_covering.md)
-9. [コンセプトを用いたプログラミング](./prog_with_concepts.md)
-10. [コンセプト・チェックの実装](./implementation.md)
-11. [リファレンス](./reference.md)
+6. [コンセプト・チェックの利用](./concept_check/using_concept_check.md)
+7. [コンセプト・チェック用クラスの作成](./concept_check/creating_concepts.md)
+8. [コンセプトの充当化と原型](./concept_check/concept_covering.md)
+9. [コンセプトを用いたプログラミング](./concept_check/prog_with_concepts.md)
+10. [コンセプト・チェックの実装](./concept_check/implementation.md)
+11. [リファレンス](./concept_check/reference.md)
 
 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm) はこのライブラリを寄稿した。 [Beman Dawes](http://www.boost.org/doc/libs/1_31_0/people/beman_dawes.html) が公式レビューを管理した。
 
