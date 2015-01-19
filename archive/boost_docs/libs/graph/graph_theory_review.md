@@ -171,9 +171,9 @@ sumv in V f(u,v) = 0 for all u in V - {s,t} (流れ保存則)
 ***
 Copyright © 2000-2001 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Indiana University (<jsiek@osl.iu.edu>)
 
-Japanese Translation Copyright © 2003 KATO Kimikazu, [OKI Miyuki](oki_miyuki@cppll.jp)
+Japanese Translation Copyright © 2003 KATO Kimikazu, [OKI Miyuki](mailto:oki_miyuki@cppll.jp)
 
-Japanese Translation Copyright © 2014 [Akira Takahashi](faithandbrave@gmail.com)
+Japanese Translation Copyright © 2014 [Akira Takahashi](mailto:faithandbrave@gmail.com)
 
 オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。また、いかなる目的に対しても、その利用が適していることを関知しない。
 

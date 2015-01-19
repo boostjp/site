@@ -86,8 +86,8 @@
 
 
 ***
-Last modified: Wed Aug 28 17:52:03 MST 2002 by [Jeff Garland](jeff@crystalclearsoftware.com) © 2000-2002 
+Last modified: Wed Aug 28 17:52:03 MST 2002 by [Jeff Garland](mailto:jeff@crystalclearsoftware.com) © 2000-2002 
 
-Japanese Translation Copyright (C) 2014 [Akira Takahashi](faithandbrave@gmail.com).
+Japanese Translation Copyright (C) 2014 [Akira Takahashi](mailto:faithandbrave@gmail.com).
 
 

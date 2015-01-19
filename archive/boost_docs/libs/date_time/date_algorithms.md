@@ -43,7 +43,7 @@ date labor_day = ldgen.get_date(2002); // 2002年の労働者の日を計算
 
 
 ***
-Last modified: Tue Sep 3 16:02:55 MST 2002 by [Jeff Garland](jeff@crystalclearsoftware.com) © 2000-2002 
+Last modified: Tue Sep 3 16:02:55 MST 2002 by [Jeff Garland](mailto:jeff@crystalclearsoftware.com) © 2000-2002 
 
-Japanese Translation Copyright (C) 2003 [Shoji Shinohara](sshino@cppll.jp).
+Japanese Translation Copyright (C) 2003 [Shoji Shinohara](mailto:sshino@cppll.jp).
 

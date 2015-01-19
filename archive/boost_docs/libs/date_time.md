@@ -156,5 +156,5 @@ Many people have contributed to the development of this library. In particular H
 ***
 Last modified: Thu Sep 5 07:22:00 MST 2002 by Jeff Garland © 2000-2002 
 
-Japanese Translation Copyright (C) 2003 [Shoji Shinohara](sshino@cppll.jp).
+Japanese Translation Copyright (C) 2003 [Shoji Shinohara](mailto:sshino@cppll.jp).
 

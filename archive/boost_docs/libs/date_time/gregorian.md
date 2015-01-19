@@ -52,5 +52,5 @@ gregorian system の全ての型は `boost::gregorian` 名前空間で見つか�
 ***
 Last modified: Thu Sep 5 07:33:06 MST 2002 by Jeff Garland © 2000-2002 
 
-Japanese Translation Copyright (C) 2003 [Shoji Shinohara](sshino@cppll.jp).
+Japanese Translation Copyright (C) 2003 [Shoji Shinohara](mailto:sshino@cppll.jp).
 

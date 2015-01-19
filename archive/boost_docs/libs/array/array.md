@@ -101,7 +101,7 @@ Matthew H. Austern は彼の本、 *Generic Programming and the STL* の中で�
 - <span style="color:red;">逆イテレータのstuffのための Static_casts はどうするか？</span>
 	- <span style="color:red;">原文は「Static_casts for reverse iterator stuff?」。よくわかりません…</span>
 
-建設的な[フィードバック](solutions@josuttis.com)はどのようなものでも歓迎する。**注意してほしいのは、boostメーリングリストのすべてのメールを読むだけの時間が、私にはないという点だ。というわけで、確実にフィードバックが私に届くようにするため、このクラスに関するメールについては、私にコピーを送ってほしい。**
+建設的な[フィードバック](mailto:solutions@josuttis.com)はどのようなものでも歓迎する。**注意してほしいのは、boostメーリングリストのすべてのメールを読むだけの時間が、私にはないという点だ。というわけで、確実にフィードバックが私に届くようにするため、このクラスに関するメールについては、私にコピーを送ってほしい。**
 
 
 ## <a name="code" href="#code">コード例</a>

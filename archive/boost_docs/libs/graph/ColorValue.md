@@ -34,7 +34,7 @@ Copyright © 2000-2001
 - [Lie-Quan Lee](http://www.boost.org/doc/libs/1_31_0/people/liequan_lee.htm), Indiana University (<llee@cs.indiana.edu>)
 - [Andrew Lumsdaine](http://www.osl.iu.edu/~lums), Indiana University (<lums@osl.iu.edu>)
 
-Japanese Translation Copyright © 2003 [OKI Miyuki](oki_miyuki@cppll.jp)
+Japanese Translation Copyright © 2003 [OKI Miyuki](mailto:oki_miyuki@cppll.jp)
 
 オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。また、いかなる目的に対しても、その利用が適していることを関知しない。
 

@@ -16,7 +16,7 @@
 
 ***
 
-Last modified: Wed Aug 21 15:42:19 MST 2002 by [Jeff Garland](jeff@crystalclearsoftware.com) © 2000-2002
+Last modified: Wed Aug 21 15:42:19 MST 2002 by [Jeff Garland](mailto:jeff@crystalclearsoftware.com) © 2000-2002
 
-Japanese Translation Copyright (C) 2003 [Shoji Shinohara](sshino@cppll.jp).
+Japanese Translation Copyright (C) 2003 [Shoji Shinohara](mailto:sshino@cppll.jp).
 

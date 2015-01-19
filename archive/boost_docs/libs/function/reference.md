@@ -319,7 +319,7 @@ Douglas Gregor
 
 Last modified: Fri Oct 11 05:40:09 EDT 2002
 
-Japanese Translation Copyright © 2003 [Hiroshi Ichikawa](gimite@mx12.freecom.ne.jp)
+Japanese Translation Copyright © 2003 [Hiroshi Ichikawa](mailto:gimite@mx12.freecom.ne.jp)
 
 オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。また、いかなる目的に対しても、その利用が適していることを関知しない。
 

@@ -86,8 +86,8 @@ UTC と 地域時間のような重要な時間型が実際には予測不能な
 
 
 ***
-Last modified: Wed Aug 28 17:52:03 MST 2002 by [Jeff Garland](jeff@crystalclearsoftware.com) © 2000-2002 
+Last modified: Wed Aug 28 17:52:03 MST 2002 by [Jeff Garland](mailto:jeff@crystalclearsoftware.com) © 2000-2002 
 
-Japanese Translation Copyright (C) 2003 [Shoji Shinohara](sshino@cppll.jp).
+Japanese Translation Copyright (C) 2003 [Shoji Shinohara](mailto:sshino@cppll.jp).
 
 
