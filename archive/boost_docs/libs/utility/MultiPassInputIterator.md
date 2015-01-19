@@ -31,7 +31,7 @@ Valentinの分析は正しい。もちろん、ここには後方互換性の問
 
 
 ***
-Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Univ.of Notre Dame (<jsiek@lsc.nd.edu>)
+Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Univ.of Notre Dame (<mailto:jsiek@lsc.nd.edu>)
 
 Japanese Translation Copyright © 2014 [Akira Takahashi](mailto:faithandbrave@gmail.com)
 

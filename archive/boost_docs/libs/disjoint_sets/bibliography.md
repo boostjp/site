@@ -11,5 +11,5 @@
 - McGraw-Hill, 1990.
 
 ***
-Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Univ.of Notre Dame (<jsiek@lsc.nd.edu>)
+Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Univ.of Notre Dame (<mailto:jsiek@lsc.nd.edu>)
 

@@ -29,7 +29,7 @@
 
 
 ***
-Copyright © 2000 [Jeremy Siek](http://www.lsc.nd.edu/~jsiek), Univ.of Notre Dame (<jsiek@lsc.nd.edu>)
+Copyright © 2000 [Jeremy Siek](http://www.lsc.nd.edu/~jsiek), Univ.of Notre Dame (<mailto:jsiek@lsc.nd.edu>)
 
 Japanese Translation Copyright © 2014 [Akira Takahashi](mailto:faithandbrave@gmail.com)
 

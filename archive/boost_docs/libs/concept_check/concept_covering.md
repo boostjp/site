@@ -51,5 +51,5 @@ namespace std {
 
 
 ***
-Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<jsiek@osl.iu.edu>) Andrew Lumsdaine(<lums@osl.iu.edu>)
+Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<mailto:jsiek@osl.iu.edu>) Andrew Lumsdaine(<mailto:lums@osl.iu.edu>)
 

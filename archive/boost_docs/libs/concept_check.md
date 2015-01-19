@@ -135,5 +135,5 @@ boost/concept_check.hpp:209: no match for `_List_iterator<int,int &,int *> &
 - [次へ：「コンセプト・チェックの利用」](./concept_check/using_concept_check.md)
 
 ***
-Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<jsiek@osl.iu.edu>) Andrew Lumsdaine(<lums@osl.iu.edu>)
+Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<mailto:jsiek@osl.iu.edu>) Andrew Lumsdaine(<mailto:lums@osl.iu.edu>)
 

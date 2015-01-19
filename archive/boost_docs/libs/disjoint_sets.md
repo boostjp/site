@@ -136,11 +136,11 @@ Element operator()(Parent p, Element x)
 ***
 Copyright © 2000
 
-- [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Univ.of Notre Dame (<jsiek@lsc.nd.edu>)
-- [Lie-Quan Lee](http://www.lsc.nd.edu/~llee1), Univ.of Notre Dame (<llee1@lsc.nd.edu>)
-- [Andrew Lumsdaine](http://www.lsc.nd.edu/~lums), Univ.of Notre Dame (<lums@lsc.nd.edu>)
+- [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Univ.of Notre Dame (<mailto:jsiek@lsc.nd.edu>)
+- [Lie-Quan Lee](http://www.lsc.nd.edu/~llee1), Univ.of Notre Dame (<mailto:llee1@lsc.nd.edu>)
+- [Andrew Lumsdaine](http://www.lsc.nd.edu/~lums), Univ.of Notre Dame (<mailto:lums@lsc.nd.edu>)
 
-Japanese Translation Copyright (C) 2003 IKOMA Yoshiki <ikoma@mb.i-chubu.ne.jp>
+Japanese Translation Copyright (C) 2003 IKOMA Yoshiki <mailto:ikoma@mb.i-chubu.ne.jp>
 
 オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の 複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」 に提供されており、いかなる明示的、暗黙的保証も行わない。また、 いかなる目的に対しても、その利用が適していることを関知しない。
 

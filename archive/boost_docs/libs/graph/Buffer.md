@@ -38,5 +38,5 @@ Buffer をモデル化する型は、以下のメンバーを持たなければ�
 
 
 ***
-Copyright © 2000-2001 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Indiana University and C++ Library & Compiler Group/SGI (<jsiek@engr.sgi.com>)
+Copyright © 2000-2001 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Indiana University and C++ Library & Compiler Group/SGI (<mailto:jsiek@engr.sgi.com>)
 

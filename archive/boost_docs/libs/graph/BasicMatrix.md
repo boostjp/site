@@ -50,9 +50,9 @@ struct BasicMatrixConcept
 ```
 
 ***
-Copyright © 2000-2001 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Indiana University (<jsiek@osl.iu.edu>)
+Copyright © 2000-2001 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm), Indiana University (<mailto:jsiek@osl.iu.edu>)
 
-Japanese Translation Copyright (C) 2003 KANAHORI Toshihiro <kanahori@k.tsukuba-tech.ac.jp>
+Japanese Translation Copyright (C) 2003 KANAHORI Toshihiro <mailto:kanahori@k.tsukuba-tech.ac.jp>
 
 オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。また、いかなる目的に対しても、その利用が適していることを関知しない。
 
