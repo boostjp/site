@@ -8,7 +8,7 @@
 
 - [Overview](#overview)
 - [Compilation Options](#compilation-options)
-- [Compiler/Portability Notes](compiler-portability-notes)
+- [Compiler/Portability Notes](#compiler-portability-notes)
 - [Directory Structure](#directory-structure)
 - [Required Boost Libraries](#required-boost-libraries)
 

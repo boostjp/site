@@ -47,7 +47,7 @@ public:
 
 つまり`operator()` を宣言する望ましい方法は、 `Predicate` の `argument_type` が参照であるか否かに依 る。もしそれが参照であれば、単純に `argument_type` として宣言したいし、それが値であれば `const argument_type&` として宣言したいのである。
 
-Boost の [`call_traits`](../utility/call_traits.md) クラステンプレートは `param_type` `typedef` を含んでいて、それは部分特 殊化版を用いて正確にこの判断を行う。`operator()` を 以下のように宣言することによって。
+Boost の [`call_traits`](../utility/call_traits.md.nolink) クラステンプレートは `param_type` `typedef` を含んでいて、それは部分特 殊化版を用いて正確にこの判断を行う。`operator()` を 以下のように宣言することによって。
 
 ```cpp
 bool operator()(typename call_traits<typename Predicate::argument_type>::param_type x) const
