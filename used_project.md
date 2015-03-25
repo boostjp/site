@@ -91,11 +91,9 @@ Boost.TypeTraits、Boost.MPLなどを使用。
 
 
 
-<h4 style='font-family:Trebuchet MS,arial,sans-serif;font-size:1.2em;background-color:rgb(238,238,238);border-top-style:dotted;border-right-style:dotted;border-bottom-style:dotted;border-left-style:dotted;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-color:rgb(199,199,199);border-right-color:rgb(199,199,199);border-bottom-color:rgb(199,199,199);border-left-color:rgb(199,199,199);color:rgb(26,66,146);padding-top:3px;padding-right:5px;padding-bottom:3px;padding-left:5px;background-repeat:initial initial'>会社</h4>
-
-<li style='list-style-position:outside;list-style-type:square'>[株式会社Aiming](http://aiming-inc.com/)
+###会社
+- [株式会社Aiming](http://aiming-inc.com/)
 オンラインゲームのサーバー開発にBoost.Any、Boost.Array、Boost.Foreach、Boost.Format、Boost.Function、Boost.LexicalCast、Boost.Multi-Index、Boost.Optional、Boost.Regex、Boost.Spirit、Boost.StringAlgo、Boost.Tokenizer、Boost.Utility、Boost.Xpressiveなどを使用。
 
-</li>
 
 
