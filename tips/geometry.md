@@ -662,6 +662,7 @@ int main()
     bg::intersection(bx, poly, out);
 }
 ```
+* intersection[color ff0000]
 
 計算された共通部分の図形：
 
