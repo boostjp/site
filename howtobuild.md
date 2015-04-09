@@ -13,10 +13,22 @@ Windowsとそれ以外に分けて説明します。また、LinuxではBoostラ
 - [http://www.boost.org/users/download/#live](http://www.boost.org/users/download/#live)
 
 
-開発バージョンは、Githubから取得することができます：
+開発バージョンは、Githubから取得できます：
 
 - [https://github.com/boostorg](https://github.com/boostorg)
 
+Github から clone する場合、具体的には [boostorg/boost](https://github.com/boostorg/boost) を clone し、実際の Boost ライブラリ群は `git submodule` で扱います。新たに clone する場合は次のように `--recursive` オプションを付けて clone します。
+
+```sh
+git clone --recursive git@github.com:boostorg/boost.git
+```
+
+もし、 `--recursive` せずに clone した場合や、`checkout` に伴い必要な場合には次のようにします。
+
+```
+cd boost
+git submodule --init --recursive
+```
 
 ##Windowsの場合
 手順はここ([http://www.boost.org/doc/libs/release/more/getting_started/windows.html](http://www.boost.org/doc/libs/release/more/getting_started/windows.html))に書かれていますのでそれを翻訳します。
