@@ -23,10 +23,9 @@ Boost.勉強会の英語表記は「Boost.StudyMeeting」です。英語圏で�
 <span style="color:red;">↑みんな書いてね！</span>
 
 - [ライブラリ逆引き](/study_meeting/reversed_index.md) (どの回でどのライブラリが誰によって発表されたかの表）
-
+- [行動規範](/study_meeting/code_of_conduct.md) (Boost.勉強会の参加者に守ってほしいこと)
 
 ###開催予定
-- [Boost.勉強会 #16 大阪 (2014/09/20(土))](/study_meeting/study16.md)
 
 
 ###開催履歴
