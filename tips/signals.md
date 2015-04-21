@@ -7,7 +7,7 @@
 - [スロットを切断する](#disconnect)
 - [シグナル呼び出しの戻り値](#return-value)
 - [シグナル呼び出しの戻り値をカスタマイズする](#customize-return-value)
-
+- [自動コネクション管理](#automatic-connection-management)
 
 ## <a name="connect-multiple-functions" href="#connect-multiple-functions">複数の関数を登録する</a>
 Boost.Signals2のシグナルには、`connect()`関数によって、複数の関数を接続することができる。
@@ -257,5 +257,54 @@ int main()
 実行結果：
 ```
 45
+```
+
+
+## <a name="automatic-connection-management" href="#automatic-connection-management">自動コネクション管理</a>
+スマートポインタで管理されたオブジェクトのメンバ関数を登録する場合、`boost::signals2::signal::slot_type::track`を用いることで、オブジェクトが破棄されるタイミングで自動的に切断させることができる。
+
+参照: http://www.boost.org/doc/libs/1_58_0/doc/html/signals2/tutorial.html#signals2.tutorial.connection-management
+
+```cpp
+#include <iostream>
+#include <boost/signals2/signal.hpp>
+#include <boost/make_shared.hpp>
+
+class Fuga{};
+
+class Hoge
+{
+public:
+    void Func(const Fuga&){
+        std::cout << "Hoge::func()" << std::endl;
+    }
+};
+
+int main(){
+    typedef boost::signals2::signal<void(const Fuga&)> signal_type; // signal型 
+    signal_type sig;  // signal オブジェクト 
+    const Fuga fuga;  // 引数用 
+    {
+        std::cout << "block start." << std::endl;
+        // shared_ptrで管理しているオブジェクトのメンバ関数を登録  
+        // signal::slot_typeはbindのように引数の部分適用が可能.
+        // signal::slot_type::trackにスマートポインタを渡す事で
+        // オブジェクトが破棄されるタイミングで切断される 
+        boost::shared_ptr<Hoge> hoge = boost::make_shared<Hoge>();
+        sig.connect(
+            signal_type::slot_type(&Hoge::Func, hoge.get(), _1).track(hoge) 
+        );
+        sig(fuga);        // 登録した関数が正しく呼ばれる 
+        std::cout << "block end." << std::endl;
+    }   // ここで hoge が管理するオブジェクトが破棄され、自動的にsigから切断される 
+    sig(fuga);  // 切断後なので何もしない  
+}
+```
+
+実行結果：
+```
+block start.
+Hoge::func()
+block end.
 ```
 
