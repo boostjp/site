@@ -263,7 +263,7 @@ int main()
 ## <a name="automatic-connection-management" href="#automatic-connection-management">自動コネクション管理</a>
 スマートポインタで管理されたオブジェクトのメンバ関数を登録する場合、`boost::signals2::signal::slot_type::track`を用いることで、オブジェクトが破棄されるタイミングで自動的に切断させることができる。
 
-参照: http://www.boost.org/doc/libs/relaease/doc/html/signals2/tutorial.html#signals2.tutorial.connection-management
+参照: http://www.boost.org/doc/libs/release/doc/html/signals2/tutorial.html#signals2.tutorial.connection-management
 
 ```cpp
 #include <iostream>
