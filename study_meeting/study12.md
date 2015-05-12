@@ -51,7 +51,7 @@
 
 C++をJavaScriptにコンパイルするコンパイラ、Emscriptenを使ってWEBブラウザで動くアプリケーションをC++で作る方法を紹介します。
 
-- 発表資料：[http://www.slideshare.net/fadis/cweb-23287589](http://www.slideshare.net/fadis/cweb-23287589)
+- 発表資料：[http://www.slideshare.net/fadis/cweb-23287589](https://speakerdeck.com/fadis/c-plus-plus-dezuo-ruwebapurikesiyon)
 - アフターケア：[Boost.勉強会 #12に行ってきた - Fadisのノート](http://www41050u.sakura.ne.jp/blog/index.php?/archives/7-Boost.-12.html)
 
 

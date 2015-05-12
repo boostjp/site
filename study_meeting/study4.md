@@ -69,7 +69,7 @@
 - ブログ : [http://ameblo.jp/fadis/](http://ameblo.jp/fadis/)
 - Twitter : [http://twitter.com/fadis_](http://twitter.com/fadis_)
 
-- 発表資料 : al [[keynote](http://quaternion.sakura.ne.jp/study/al.key)][[quicktime](http://quaternion.sakura.ne.jp/study/al.mov)][[samplecode](http://quaternion.sakura.ne.jp/study/al_samples.tar.bz2)]
+- 発表資料 : al [[speakerdeck](https://speakerdeck.com/fadis/al-plus-plus)][[keynote](http://quaternion.sakura.ne.jp/study/al.key)][[quicktime](http://quaternion.sakura.ne.jp/study/al.mov)][[samplecode](http://quaternion.sakura.ne.jp/study/al_samples.tar.bz2)]
 
 
 ### C++コミュニティーの中心でC++をDISる
