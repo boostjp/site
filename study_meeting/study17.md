@@ -11,6 +11,7 @@
 
 ##募集ページ
 - [Boost.勉強会 #17 東京 - connpass](http://connpass.com/event/14355/)
+- [Boost.懇親会 #17 東京 - connpass](http://connpass.com/event/15094/)
 
 
 ##主催者&スタッフ
@@ -28,7 +29,7 @@
 | 12:30〜13:45 | 昼休み | |
 | 13:45〜14:15 | Siv3D & C++ を使ったメディアアート・ゲームプログラミングの楽しみ方(仮) | [Reputeless](https://twitter.com/Reputeless) |
 | 14:30〜15:00 | Boost.Logとfluentdで始めるログ活用術（仮） | [termoshtt](https://twitter.com/termoshtt) |
-| 15:15〜15:45 | odeint or Google Test(仮) | [rydotyosh](https://twitter.com/rydotyosh) |
+| 15:15〜15:45 | Boost.odeintで遊ぼう | [rydotyosh](https://twitter.com/rydotyosh) |
 | 16:00〜16:30 | MessagePack for C++関係の話(仮) | [redboltz](https://twitter.com/redboltz) |
 | 16:45〜17:15 | Boost.Containerの特徴 | [cpp_akira](https://twitter.com/cpp_akira) |
 | 17:30〜18:00 | C\+\+11やEmscriptenと付き合って１年間の振り返り(仮) | [kou_yeung](https://twitter.com/kou_yeung), [paosidufygthrj](https://twitter.com/paosidufygthrj) |
