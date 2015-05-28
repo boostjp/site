@@ -29,7 +29,7 @@
 | 12:00〜12:30 | LINQ for C++について(仮) | [mikiemon_h](https://twitter.com/mikiemon_h) |
 | 12:30〜13:45 | 昼休み | |
 | 13:45〜14:15 | Siv3D で楽しむゲームとメディアアート開発 | [Reputeless](https://twitter.com/Reputeless) |
-| 14:30〜15:00 | Boost.Logとfluentdで始めるログ活用術（仮） | [termoshtt](https://twitter.com/termoshtt) |
+| 14:30〜15:00 | Boost.Logとfluentdで始めるログ活用術 | [termoshtt](https://twitter.com/termoshtt) |
 | 15:15〜15:45 | Boost.odeintで遊ぼう | [rydotyosh](https://twitter.com/rydotyosh) |
 | 16:00〜16:30 | MessagePackとAPIバージョニング | [redboltz](https://twitter.com/redboltz) |
 | 16:45〜17:15 | Boost.Container特有の機能 | [cpp_akira](https://twitter.com/cpp_akira) |
