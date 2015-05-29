@@ -26,7 +26,7 @@
 | 10:30〜      | 開場 | |
 | 11:00〜11:10 | オープニング。Boost.勉強会について。会場の諸注意 | [cpp_akira](https://twitter.com/cpp_akira) |
 | 11:10〜11:40 | Boostライブラリ一周の旅 1.54.0-1.58.0 | [cpp_akira](https://twitter.com/cpp_akira) |
-| 12:00〜12:30 | LINQ for C++について(仮) | [mikiemon_h](https://twitter.com/mikiemon_h) |
+| 12:00〜12:30 | LINQ for C++のご紹介 | [mikiemon_h](https://twitter.com/mikiemon_h) |
 | 12:30〜13:45 | 昼休み | |
 | 13:45〜14:15 | Siv3D で楽しむゲームとメディアアート開発 | [Reputeless](https://twitter.com/Reputeless) |
 | 14:30〜15:00 | Boost.Logとfluentdで始めるログ活用術 | [termoshtt](https://twitter.com/termoshtt) |
