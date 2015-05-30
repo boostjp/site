@@ -52,3 +52,12 @@
 - 発表者 : [mikiemon_h](https://twitter.com/mikiemon_h)
 - 発表資料 : [[slideshare](http://www.slideshare.net/miki_hirofumi/boost17-cpplinq)]
 
+
+##Siv3D で楽しむゲームとメディアアート開発
+- 発表者 : 鈴木 遼, [@Reputeless](https://twitter.com/Reputeless)
+- ブログ :
+	- [Siv3D 開発ブログ](http://siv3d.hateblo.jp/)
+	- [Play Siv3D!](http://play-siv3d.hateblo.jp/)
+- デモのコード : [Boost. 勉強会 Siv3D デモ - Play Siv3D!](http://play-siv3d.hateblo.jp/entry/boost17)
+
+
