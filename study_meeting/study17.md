@@ -61,3 +61,8 @@
 - デモのコード : [Boost. 勉強会 Siv3D デモ - Play Siv3D!](http://play-siv3d.hateblo.jp/entry/boost17)
 
 
+##Boost.Logとfluentdで始めるログ活用術
+- 発表者 : [@termoshtt](https://twitter.com/termoshtt)
+- 発表資料 : [[slideshare](http://www.slideshare.net/termoshtt/boostlogfluentd)]
+
+
