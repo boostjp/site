@@ -16,7 +16,7 @@
 
 ##主催者&スタッフ
 - 高橋 晶(@cpp_akira)
-- @Flast_RO, @k_katsuhiro
+- @Flast_RO, @fadis_, @k_katsuhiro
 
 
 ##タイムテーブル
