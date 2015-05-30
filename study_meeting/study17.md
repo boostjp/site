@@ -40,4 +40,15 @@
 [#boostjp](http://twitter.com/search?q=%23boostjp)
 
 
+##Boostライブラリ一周の旅 1.54.0-1.58.0
+- 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
+- ブログ : [Faith and Brave - C++で遊ぼう](http://faithandbrave.hateblo.jp/)
+- 発表資料 :
+	- 差分版 [[slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1580)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_17/boost_tour_1_58_0.pdf)]
+	- マージ版 [[slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1580-merge)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_17/boost_tour_1_58_0_merge.pdf)]
+
+
+##LINQ for C++のご紹介
+- 発表者 : [mikiemon_h](https://twitter.com/mikiemon_h)
+- 発表資料 : [[slideshare](http://www.slideshare.net/miki_hirofumi/boost17-cpplinq)]
 
