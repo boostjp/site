@@ -58,6 +58,7 @@
 - ブログ :
 	- [Siv3D 開発ブログ](http://siv3d.hateblo.jp/)
 	- [Play Siv3D!](http://play-siv3d.hateblo.jp/)
+- 発表資料 : [[slideshare](http://www.slideshare.net/Reputeless/siv3d)]
 - デモのコード : [Boost. 勉強会 Siv3D デモ - Play Siv3D!](http://play-siv3d.hateblo.jp/entry/boost17)
 
 
