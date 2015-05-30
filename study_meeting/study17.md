@@ -69,5 +69,5 @@
 ##Boost.odeintで遊ぼう
 - 発表者 : Ryogo Yoshimura, [@rydotyosh](https://twitter.com/rydotyosh)
 - ブログ : [rydotの呟''](http://rydot.hatenablog.com/)
-- 発表資料 : http://rydotyosh.github.io/docs/odeintintro/
+- 発表資料 : <http://rydotyosh.github.io/docs/odeintintro/>
 
