@@ -77,3 +77,9 @@
 - ブログ : [redboltzの日記](http://d.hatena.ne.jp/redboltz/)
 - 発表資料 : [[slideshare](http://www.slideshare.net/taka111/boost-sg-msgpack)]
 
+
+##Boost.Container特有の機能
+- 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
+- ブログ : [Faith and Brave - C++で遊ぼう](http://faithandbrave.hateblo.jp/)##Boost.Container特有の機能
+- 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/boost-container-feature)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_17/boost_container_feature.pdf)]
+
