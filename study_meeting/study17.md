@@ -71,3 +71,9 @@
 - ブログ : [rydotの呟''](http://rydot.hatenablog.com/)
 - 発表資料 : <http://rydotyosh.github.io/docs/odeintintro/>
 
+
+##MessagePackとAPIバージョニング
+- 発表者 : 近藤貴俊, [@redboltz](https://twitter.com/redboltz)
+- ブログ : [redboltzの日記](http://d.hatena.ne.jp/redboltz/)
+- 発表資料 : [[slideshare](http://www.slideshare.net/taka111/boost-sg-msgpack)]
+
