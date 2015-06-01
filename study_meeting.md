@@ -51,4 +51,4 @@ Boost.勉強会の英語表記は「Boost.StudyMeeting」です。英語圏で�
 - [Boost.勉強会 #14 東京 (2014/03/01(土))](/study_meeting/study14.md)
 - [Boost.勉強会 #15 札幌 (2014/05/24(土))](/study_meeting/study15.md)
 - [Boost.勉強会 #16 大阪 (2014/09/20(土))](/study_meeting/study16.md)
-
+- [Boost.勉強会 #17 東京 (2015/05/30(土))](/study_meeting/study17.md)
