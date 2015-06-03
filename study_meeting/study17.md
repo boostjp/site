@@ -85,7 +85,3 @@
 - 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/boost-container-feature)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_17/boost_container_feature.pdf)]
 
 
-##C++11やEmscriptenと付き合って１年間の振り返り
-- 発表者 : 楊 志恒([@kou_yeung](https://twitter.com/kou_yeung)), ウラ サトシ([@paosidufygthrj](https://twitter.com/paosidufygthrj))
-- 発表資料 : [[slideshare](http://www.slideshare.net/paosidufgythrj/c11emscripten)]
-
