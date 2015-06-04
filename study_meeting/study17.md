@@ -87,3 +87,5 @@
 
 ##C++11やEmscriptenと付き合って１年間の振り返り
 - 発表者 : 楊 志恒([@kou_yeung](https://twitter.com/kou_yeung)), ウラ サトシ([@paosidufygthrj](https://twitter.com/paosidufygthrj))
+- 発表資料 : [[slideshare](http://www.slideshare.net/paosidufgythrj/c11emscripten-48972842)]
+
