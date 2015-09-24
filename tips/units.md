@@ -51,7 +51,7 @@ int main()
 	// 値型のデフォルト値は double
 	quantity<si::length> len2 = len; 
 
-	std::cout << len << endl; // 2 m
+	std::cout << len << std::endl; // 2 m
 
     return 0;
 }
