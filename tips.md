@@ -126,7 +126,7 @@
 - [乱数](/tips/random.md)
 - [線形代数](/tips/linear-algebra.md)
 - [数学](/tips/math.md)
-- 単位演算
+- [単位演算](/tips/units.md)
 - [区間演算](/tips/interval_arithmetic.md)
 - [統計処理](/tips/statistics.md)
 - [計算幾何](/tips/geometry.md)
