@@ -303,6 +303,7 @@ adjacency_list(vertices_size_type n,
 
 
 ***
+```cpp
 template <class EdgeIterator>
 adjacency_list(EdgeIterator first, EdgeIterator last,
                vertices_size_type n, 
