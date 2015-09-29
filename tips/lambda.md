@@ -61,7 +61,7 @@ int main()
         std::cout << "Not Found" << std::endl;
 }
 ```
-* _1 == 3[color ff0000]
+* boost::find_if(v, _1 == 3);[color ff0000]
 
 実行結果：
 ```

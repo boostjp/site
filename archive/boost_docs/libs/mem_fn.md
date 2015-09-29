@@ -116,31 +116,31 @@ namespace boost
 
 template<class T> T * get_pointer(T * p);
 
-template<class R, class T> unspecified-1 mem_fn(R (T::*pmf) ());
+template<class R, class T> unspecified_1 mem_fn(R (T::*pmf) ());
 
-template<class R, class T> unspecified-2 mem_fn(R (T::*pmf) () const);
+template<class R, class T> unspecified_2 mem_fn(R (T::*pmf) () const);
 
-template<class R, class T> unspecified-2-1 mem_fn(R T::*pm);
+template<class R, class T> unspecified_2_1 mem_fn(R T::*pm);
 
-template<class R, class T, class A1> unspecified-3 mem_fn(R (T::*pmf) (A1));
+template<class R, class T, class A1> unspecified_3 mem_fn(R (T::*pmf) (A1));
 
-template<class R, class T, class A1> unspecified-4 mem_fn(R (T::*pmf) (A1) const);
+template<class R, class T, class A1> unspecified_4 mem_fn(R (T::*pmf) (A1) const);
 
-template<class R, class T, class A1, class A2> unspecified-5 mem_fn(R (T::*pmf) (A1, A2));
+template<class R, class T, class A1, class A2> unspecified_5 mem_fn(R (T::*pmf) (A1, A2));
 
-template<class R, class T, class A1, class A2> unspecified-6 mem_fn(R (T::*pmf) (A1, A2) const);
+template<class R, class T, class A1, class A2> unspecified_6 mem_fn(R (T::*pmf) (A1, A2) const);
 
 // 実際には、より多くの引数をとるような関数が、更にいくつかオーバーロードされている
 
 }
 ```
-* unspecified-1[italic]
-* unspecified-2[italic]
-* unspecified-2-1[italic]
-* unspecified-3[italic]
-* unspecified-4[italic]
-* unspecified-5[italic]
-* unspecified-6[italic]
+* unspecified_1[italic]
+* unspecified_2[italic]
+* unspecified_2_1[italic]
+* unspecified_3[italic]
+* unspecified_4[italic]
+* unspecified_5[italic]
+* unspecified_6[italic]
 
 
 ### <a name="requirements" href="#requirements">必須事項</a>
@@ -158,59 +158,63 @@ template<class T> T * get_pointer(T * p)
 
 ### <a name="mem_fn" href="#mem_fn">mem_fn</a>
 ```cpp
-template<class R, class T> unspecified-1 mem_fn(R (T::*pmf) ())
+template<class R, class T> unspecified_1 mem_fn(R (T::*pmf) ())
 ```
-* unspecified-1[italic]
+* unspecified_1[italic]
 
 - 戻り値： 関数オブジェクト `f` を戻す。ここで、式 `f(t)` は `(t.*pmf)()` と等価である (`t` が `T`あるいはその派生型の左辺値である場合)。 あるいは `(get_pointer(t)->*pmf)()` と等価である(それ以外の場合)。
 - 例外： 送出しない。
 
 
 ```cpp
-template<class R, class T> unspecified-2 mem_fn(R (T::*pmf) () const)
+template<class R, class T> unspecified_2 mem_fn(R (T::*pmf) () const)
 ```
-* unspecified-2[italic]
+* unspecified_2[italic]
 
 - 戻り値： 関数オブジェクト `f` を戻す。ここで、式 `f(t)` は `(t.*pmf)()` と等価である (`t` が `T [const]` あるいはその派生型である場合)。 あるいは `(get_pointer(t)->*pmf)()` と等価である(それ以外の場合)。
 - 例外： 送出しない。
 
 
 ```cpp
-template<class R, class T> unspecified-2-1 mem_fn(R T::*pm)
+template<class R, class T> unspecified_2_1 mem_fn(R T::*pm)
 ```
-* unspecified-2-1[italic]
+* unspecified_2_1[italic]
 
 - 戻り値： 関数オブジェクト `f` を戻す。ここで、式 `f(t)` は `t.*pm` と等価である (`t` が `T [const]` あるいはその派生型である場合)。 あるいは `get_pointer(t)->*pm` と等価である（それ以外の場合）。
 - 例外： 送出しない。
 
 
 ```cpp
-template<class R, class T, class A1> unspecified-3 mem_fn(R (T::*pmf) (A1))
+template<class R, class T, class A1> unspecified_3 mem_fn(R (T::*pmf) (A1))
 ```
+* unspecified_3[italic]
 
 - 戻り値： 関数オブジェクト `f` を戻す。ここで、式 `f(t, a1)` は `(t.*pmf)(a1)` と等価である (`t` が `T` あるいはその派生型の左辺値である場合)。 あるいは `(get_pointer(t)->*pmf)(a1)` と等価である（それ以外の場合）。
 - 例外： 送出しない。
 
 
 ```cpp
-template<class R, class T, class A1> unspecified-4 mem_fn(R (T::*pmf) (A1) const)
+template<class R, class T, class A1> unspecified_4 mem_fn(R (T::*pmf) (A1) const)
 ```
+* unspecified_4[italic]
 
 - 戻り値： 関数オブジェクト `f` を戻す。ここで、式 `f(t, a1)` は `(t.*pmf)(a1)` と等価である (`t` が `T [const]` あるいはその派生型である場合)。 あるいは `(get_pointer(t)->*pmf)(a1)` と等価である（それ以外の場合）。
 - 例外： 送出しない。
 
 
 ```cpp
-template<class R, class T, class A1, class A2> unspecified-5 mem_fn(R (T::*pmf) (A1, A2))
+template<class R, class T, class A1, class A2> unspecified_5 mem_fn(R (T::*pmf) (A1, A2))
 ```
+* unspecified_5[italic]
 
 - 戻り値： 関数オブジェクト `f` を戻す。ここで、式 `f(t, a1, a2)` は `(t.*pmf)(a1, a2)` と等価である (`t` が `T` あるいはその派生型の左辺値である場合)。 あるいは `(get_pointer(t)->*pmf)(a1, a2)` と等価である（それ以外の場合）。
 - 例外： 送出しない。
 
 
 ```cpp
-template<class R, class T, class A1, class A2> unspecified-6 mem_fn(R (T::*pmf) (A1, A2) const)
+template<class R, class T, class A1, class A2> unspecified_6 mem_fn(R (T::*pmf) (A1, A2) const)
 ```
+* unspecified_6[italic]
 
 - 戻り値： 関数オブジェクト `f` を戻す。ここで、式 `f(t, a1, a2)` は `(t.*pmf)(a1, a2)` と等価である (`t` が `T [const]` あるいはその派生型である場合)。 あるいは `(get_pointer(t)->*pmf)(a1, a2)` と等価である（それ以外の場合）。
 - 例外： 送出しない。
