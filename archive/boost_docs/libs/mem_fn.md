@@ -50,9 +50,12 @@ for_each(v.begin(), v.end(), &Shape::draw);
 
 このアルゴリズムの機能を文書化する際には、単に次のように書けば良い：
 
-> `template<class It, class R, class T>`
-> `void for_each(It first, It last, R (T::*pmf) ());`
-> **結果:** `std::for_each(first, last, boost::mem_fn(pmf));` と同等。
+```cpp
+template<class It, class R, class T>
+void for_each(It first, It last, R (T::*pmf) ());
+
+結果: std::for_each(first, last, boost::mem_fn(pmf)); と同等。
+```
 
 ここで、 `boost::mem_fn` の部分はこのページへのリンクとするとよいだろう。 [bindのドキュメント](./bind.md) にそのような例があるので参照のこと。
 
