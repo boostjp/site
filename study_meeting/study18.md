@@ -38,10 +38,12 @@
 ### 区間演算ライブラリを開発した話
 
 - [発表資料]()
+- [Cranberries Interval-Library for C++](https://github.com/LoliGothick/Interval-Analysis)
 
 ### ナウなヤングにバカうけのイカしたタグ付き共用体
 
 - [発表資料](http://www.slideshare.net/digitalghost/ss-53762226)
+- [TaggedUnion](https://github.com/dechimal/TaggedUnion)
 
 ### pre-Kona文書の動向
 
