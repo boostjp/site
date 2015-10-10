@@ -11,4 +11,5 @@ BoostConは以下のページを参照してください：
 - [C++Now! 2012](/cppnow/2012.md)
 - [C++Now! 2013](/cppnow/2013.md)
 - [C++Now! 2014](/cppnow/2014.md)
+- [C++Now! 2015](/cppnow/2015.md)
 
