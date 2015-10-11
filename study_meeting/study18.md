@@ -37,7 +37,7 @@
 
 ### 区間演算ライブラリを開発した話
 
-- [発表資料]()
+- [発表資料](http://www.slideshare.net/Enum_hack/cranberries-interval-library)
 - [Cranberries Interval-Library for C++](https://github.com/LoliGothick/Interval-Analysis)
 
 ### ナウなヤングにバカうけのイカしたタグ付き共用体
@@ -55,4 +55,4 @@
 
 ### Proxygen
 
-- [発表資料]()
+- [発表資料](https://speakerdeck.com/fadis/proxygen)
