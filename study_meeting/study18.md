@@ -52,7 +52,9 @@
 ### C++14世代のメタプログラミング Boost.Hana
 
 - [発表資料]()
+- [Boost.Hana](http://ldionne.com/hana/)
 
 ### Proxygen
 
 - [発表資料](https://speakerdeck.com/fadis/proxygen)
+- [Proxygen](https://github.com/facebook/proxygen)
