@@ -356,21 +356,21 @@ int main()
 | `T fmod(T x, T y);`           | 浮動小数点剰余 |
 | [`T atan2(T x, T y);`][atan2] | 対辺と隣辺からの逆正接関数（アークタンジェント） |
 
-[fabs]: https://sites.google.com/site/cpprefjp/reference/cmath/fabs
-[sqrt]: https://sites.google.com/site/cpprefjp/reference/cmath/sqrt
-[exp]: https://sites.google.com/site/cpprefjp/reference/cmath/exp
-[log]: https://sites.google.com/site/cpprefjp/reference/cmath/log
-[log10]: https://sites.google.com/site/cpprefjp/reference/cmath/log10
-[cos]: https://sites.google.com/site/cpprefjp/reference/cmath/cos
-[sin]: https://sites.google.com/site/cpprefjp/reference/cmath/sin
-[tan]: https://sites.google.com/site/cpprefjp/reference/cmath/tan
-[acos]: https://sites.google.com/site/cpprefjp/reference/cmath/acos
-[asin]: https://sites.google.com/site/cpprefjp/reference/cmath/asin
-[atan]: https://sites.google.com/site/cpprefjp/reference/cmath/atan
-[cosh]: https://sites.google.com/site/cpprefjp/reference/cmath/cosh
-[sinh]: https://sites.google.com/site/cpprefjp/reference/cmath/sinh
-[tanh]: https://sites.google.com/site/cpprefjp/reference/cmath/tanh
-[pow]: https://sites.google.com/site/cpprefjp/reference/cmath/pow
-[atan2]: https://sites.google.com/site/cpprefjp/reference/cmath/atan2
+[fabs]: https://cpprefjp.github.io/reference/cmath/fabs.html
+[sqrt]: https://cpprefjp.github.io/reference/cmath/sqrt.html
+[exp]: https://cpprefjp.github.io/reference/cmath/exp.html
+[log]: https://cpprefjp.github.io/reference/cmath/log.html
+[log10]: https://cpprefjp.github.io/reference/cmath/log10.html
+[cos]: https://cpprefjp.github.io/reference/cmath/cos.html
+[sin]: https://cpprefjp.github.io/reference/cmath/sin.html
+[tan]: https://cpprefjp.github.io/reference/cmath/tan.html
+[acos]: https://cpprefjp.github.io/reference/cmath/acos.html
+[asin]: https://cpprefjp.github.io/reference/cmath/asin.html
+[atan]: https://cpprefjp.github.io/reference/cmath/atan.html
+[cosh]: https://cpprefjp.github.io/reference/cmath/cosh.html
+[sinh]: https://cpprefjp.github.io/reference/cmath/sinh.html
+[tanh]: https://cpprefjp.github.io/reference/cmath/tanh.html
+[pow]: https://cpprefjp.github.io/reference/cmath/pow.html
+[atan2]: https://cpprefjp.github.io/reference/cmath/atan2.html
 
 documented boost version is 1.53.0
