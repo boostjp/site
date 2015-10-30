@@ -140,7 +140,7 @@ Boost.Multiprecisionの多倍長整数は、組み込みの整数型と同じ演
 | 符号なしなのにマイナス値になった | [`std::range_error`][stdexcept]例外が送出される    |
 | オーバーフロー時                 | [`std::overflow_error`][stdexcept]例外が送出される |
 
-[stdexcept]: https://sites.google.com/site/cpprefjp/reference/stdexcept
+[stdexcept]: https://cpprefjp.github.io/reference/stdexcept.html
 
 
 **[GMPバックエンドの多倍長整数](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/ints/gmp_int.html)**
