@@ -12,7 +12,7 @@
 
 
 ## <a name="no-share-smart-pointer" href="#no-share-smart-pointer">共有しないオブジェクトのスマートポインタ</a>
-共有する必要がない`new`で確保したオブジェクト、例えばローカルスコープで`new`と`delete@を使うような状況では、`scoped_ptr`、`scoped_array`を使うことができる。`scoped_ptr`について、以下の点に注意する。
+共有する必要がない`new`で確保したオブジェクト、例えばローカルスコープで`new`と`delete`を使うような状況では、`scoped_ptr`、`scoped_array`を使うことができる。`scoped_ptr`について、以下の点に注意する。
 
 - `scoped_ptr`同士のコピーは不可
 - 標準コンテナで保持できない
