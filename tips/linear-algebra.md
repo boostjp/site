@@ -194,7 +194,7 @@ T angle(const ublas::vector<T>& v, const ublas::vector<T>& u)
 {
     const T length = ublas::norm_2(v) * ublas::norm_2(u);
     if (boost::geometry::math::equals(length, static_cast<T>(0.0))) {
-        return static_cast<T>(0.0);
+        return boost::math::constants::half_pi<T>();
     }
 
     const T x = ublas::inner_prod(v, u) / length;
@@ -221,7 +221,7 @@ int main()
     const double result = angle(v, u); // 角度がラジアンで返される
     std::cout << result << std::endl;
 
-    const double deg = radian_to_degree(result); // ディグリに変換してみる
+    const double deg = radian_to_degree(result); // 度に変換してみる
     std::cout << deg << std::endl;
 }
 ```
