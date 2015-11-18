@@ -9,7 +9,7 @@ format ライブラリは、書式文字列に従って引数を書式化する�
 
 詳細は以下を参照：
 
-- [Documentation](./format/format.md)
+- [Documentation](format/format.md)
 - Headers
     - format.hpp : ユーザフロントエンド。
     - format_fwd.hpp : ユーザ先行宣言。

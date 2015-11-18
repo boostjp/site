@@ -2,7 +2,7 @@
 - Version
 - Implementation Level
 - Object Tracking
-- [Export Key](./class-serialization-traits/export-key.md)
+- [Export Key](class-serialization-traits/export-key.md)
 - Abstract
 - Type Information Implementation
 - Wrappers

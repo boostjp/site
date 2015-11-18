@@ -1,5 +1,5 @@
 #edge_list<EdgeIterator, ValueType, DiffType>
-`edge_list` クラスは辺イテレータのペアを [EdgeListGraph](./EdgeListGraph.md) をモデルとするクラスに変えるアダプタである。辺イテレータの `value_type` は `std::pair` (もしくは少なくとも `first` メンバと `second` メンバを持っている) でなければならない。ペアの `first_type` と `second_type` は同じでなければならず、それらはグラフの `vertex_descriptor` のために使われるだろう。 `ValueType` と `DiffType` のテンプレート・パラメータは、コンパイラが部分特殊化版をサポートしていない時にのみ必要である。そうでなければデフォルトは正しい型になる。
+`edge_list` クラスは辺イテレータのペアを [EdgeListGraph](EdgeListGraph.md) をモデルとするクラスに変えるアダプタである。辺イテレータの `value_type` は `std::pair` (もしくは少なくとも `first` メンバと `second` メンバを持っている) でなければならない。ペアの `first_type` と `second_type` は同じでなければならず、それらはグラフの `vertex_descriptor` のために使われるだろう。 `ValueType` と `DiffType` のテンプレート・パラメータは、コンパイラが部分特殊化版をサポートしていない時にのみ必要である。そうでなければデフォルトは正しい型になる。
 
 
 ##コード例

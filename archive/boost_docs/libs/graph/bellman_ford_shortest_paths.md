@@ -19,7 +19,7 @@ bool bellman_ford_shortest_paths(EdgeListGraph& g, Size N,
 * BinaryPredicate[link http://www.sgi.com/tech/stl/BinaryPredicate.html]
 * BellmanFordVisitor[link ./BellmanFordVisitor.md]
 
-Bellman-Ford アルゴリズム [[4](./bibliography.md#bellman58),[11](./bibliography.md#ford62:_flows),[20](./bibliography.md#lawler76:_comb_opt),[8](./bibliography.md#clr90)] は、正と負の両方の辺の重みを持つグラフの単一始点の最短経路問題を解く。最短経路問題の定義のために、 章 [Shortest-Paths Algorithms](./graph_theory_review.md#shortest-paths-algorithms) を見なさい。 もし正の辺の重みを持つ最短経路問題を解く必要があるだけなら、Dijkstra の アルゴリズムがより効率的な代替手段を提供する。もし全ての辺の重みが 1 に等しいなら幅優先探索がより一層効率的な代替手段を提供する。
+Bellman-Ford アルゴリズム [[4](bibliography.md#bellman58),[11](bibliography.md#ford62:_flows),[20](bibliography.md#lawler76:_comb_opt),[8](bibliography.md#clr90)] は、正と負の両方の辺の重みを持つグラフの単一始点の最短経路問題を解く。最短経路問題の定義のために、 章 [Shortest-Paths Algorithms](graph_theory_review.md#shortest-paths-algorithms) を見なさい。 もし正の辺の重みを持つ最短経路問題を解く必要があるだけなら、Dijkstra の アルゴリズムがより効率的な代替手段を提供する。もし全ての辺の重みが 1 に等しいなら幅優先探索がより一層効率的な代替手段を提供する。
 
 `bellman_ford_shortest_paths()` 関数を呼ぶ前に、ユーザは始点に 0 の 距離を割り当て、他の全ての頂点に無限大の距離を割り当てなければならない。 Bellman-Ford アルゴリズムはグラフ中の全ての辺を通してループし、各辺に リラックス操作 (減らす操作) を適用することによって進められる。下記の擬似コード中で、 `v` は `u` の隣接頂点で、`w` は辺にそれらの重みをマップし、 `d` は今の所見られる各辺への最短経路の長さを記録する距離マップである。`p` は各辺の親を記録する先行点マップで、それは結局最短経路木中で親となるであろう。
 
@@ -61,7 +61,7 @@ BELLMAN-FORD(G)
 
 ##パラメータ
 - IN: `EdgeListGraph& g`
-    - 型が [Edge List Graph](./EdgeListGraph.md) のモデルの有向グラフまたは無向グラフでなければならない。
+    - 型が [Edge List Graph](EdgeListGraph.md) のモデルの有向グラフまたは無向グラフでなければならない。
 
 - IN: `Size N`
     - グラフ中の頂点の数。型 `Size` は汎整数型でなければならない。
@@ -69,19 +69,19 @@ BELLMAN-FORD(G)
 
 ##名前付きパラメータ
 - IN: `weight_map(WeightMap w)`
-    - グラフ中の各辺の重み　(そして「長さ」もしくは「コスト」として知られる)。 `WeightMap` の型は [Readable Property Map](./ReadablePropertyMap.md) のモデルでなければならない。このプロパティ・マップのキー型はグラフの辺記述子でなければならない。重みマップの値型は距離マップの値型を伴った Addable でなければならない。
+    - グラフ中の各辺の重み　(そして「長さ」もしくは「コスト」として知られる)。 `WeightMap` の型は [Readable Property Map](ReadablePropertyMap.md) のモデルでなければならない。このプロパティ・マップのキー型はグラフの辺記述子でなければならない。重みマップの値型は距離マップの値型を伴った Addable でなければならない。
     - デフォルト: `get(edge_weight, g)`
 
 - OUT: `predecessor_map(PredecessorMap p_map)`
-    - 先行点マップ (predecessor map) は最小全域木中に辺を記録する。 アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](./ReadWritePropertyMap.md) でなければならない。
+    - 先行点マップ (predecessor map) は最小全域木中に辺を記録する。 アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](ReadWritePropertyMap.md) でなければならない。
     - デフォルト: `dummy_property_map`
 
 - IN/OUT: `distance_map(DistanceMap d)`
-    - グラフ `g` 中の始点から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。`DistanceMap` の型は [Read/Write Property Map](./ReadWritePropertyMap.md) のモデルでなければならない。プロパティ・マップのキー型は グラフの頂点記述子型でなければならず、距離マップの値型は [Less Than Comparable](http://www.sgi.com/tech/stl/LessThanComparable.html) でなければならない。
+    - グラフ `g` 中の始点から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。`DistanceMap` の型は [Read/Write Property Map](ReadWritePropertyMap.md) のモデルでなければならない。プロパティ・マップのキー型は グラフの頂点記述子型でなければならず、距離マップの値型は [Less Than Comparable](http://www.sgi.com/tech/stl/LessThanComparable.html) でなければならない。
     - デフォルト: `get(vertex_distance, g)`
 
 - IN: `visitor(BellmanFordVisitor v)`
-    - ビジタ・オブジェクトで、その型は [Bellman-Ford Visitor](./BellmanFordVisitor.md) のモデルでなければならない。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
+    - ビジタ・オブジェクトで、その型は [Bellman-Ford Visitor](BellmanFordVisitor.md) のモデルでなければならない。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
     - デフォルト: `bellman_visitor<null_visitor>`
 
 - IN: `distance_combine(BinaryFunction combine)`
@@ -107,7 +107,7 @@ BELLMAN-FORD(G)
 
 
 ##コード例
-Bellman-Ford のアルゴリズムを用いた例が [examples/bellman-example.cpp](./examples/bellman-example.cpp.md) 中にある。
+Bellman-Ford のアルゴリズムを用いた例が [examples/bellman-example.cpp](examples/bellman-example.cpp.md) 中にある。
 
 
 ##注釈

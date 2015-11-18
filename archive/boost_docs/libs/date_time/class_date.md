@@ -1,8 +1,8 @@
 #gregorian::date
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **Date Documentation**
 
@@ -19,7 +19,7 @@
 ## <a name="introduction" href="#introduction">Introduction</a>
 `boost::gregorian::date` クラスはライブラリユーザーにとって主要なインタフェースである。 一般に、日付クラスは代入可能ではあるが、一度構築されると不変である事が多い。
 
-日付の生成について別の方法が[date iterators](./date_iterators.md)と[date algorithms or generators](./date_algorithms.md)に含まれている。
+日付の生成について別の方法が[date iterators](date_iterators.md)と[date algorithms or generators](date_algorithms.md)に含まれている。
 
 
 ## <a name="header" href="#header">Header</a>

@@ -1,8 +1,8 @@
 #Date-Timeの専門用語
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 以下は日付・時間分野に関する用語である。
 

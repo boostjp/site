@@ -16,7 +16,7 @@ void breadth_first_search(const VertexListGraph& g,
 ```
 * VertexListGraph[link ./VertexListGraph.md]
 
-`breadth_first_search()` 関数は有向グラフまたは無向グラフの幅優先巡回(breadth-first traversal) [[49]](./bibliography.md#moore59) を行う。幅優先巡回は、始点から遠方に離れた頂点を訪れる前に近い頂点を訪れる。 この文脈中で「距離」とは始点からの最短経路中の辺の数として定義される。 `breadth_first_search()` 関数は始点から全ての到達可能な頂点への最短経路を計算するのに使用でき、結果として最短経路の距離が得られる。 BFS に関連した更なる定義は章 [Breadth-First Search](./graph_theory_review.md#bfs-algorithm) を見よ。
+`breadth_first_search()` 関数は有向グラフまたは無向グラフの幅優先巡回(breadth-first traversal) [[49]](bibliography.md#moore59) を行う。幅優先巡回は、始点から遠方に離れた頂点を訪れる前に近い頂点を訪れる。 この文脈中で「距離」とは始点からの最短経路中の辺の数として定義される。 `breadth_first_search()` 関数は始点から全ての到達可能な頂点への最短経路を計算するのに使用でき、結果として最短経路の距離が得られる。 BFS に関連した更なる定義は章 [Breadth-First Search](graph_theory_review.md#bfs-algorithm) を見よ。
 
 BFS は巡回を実装するのに二つのデータ構造を使っている: 各頂点のカラー・マーカーとキューである。白色の頂点は未発見で、一方灰色の頂点は発見されたけれども未発見の隣接頂点を持つ。黒色の頂点は発見されており、他の黒色もしくは灰色の頂点にのみ隣接している。アルゴリズムは頂点 `u` をキューから取り除き、 各出辺 `(u,v)` を調べながら進められる。もし隣接頂点 `v` がまだ 未発見ならば、灰色に色づけしてキューに置く。すべての出辺を調べた後、頂点 `u` を黒色に色づけして手順を繰り返す。BFS アルゴリズムの疑似コードを下に示す。
 
@@ -50,7 +50,7 @@ BFS(G, s)
   return (d, p)
 ```
 
-`breadth_first_search()` 関数は一定のイベント・ポイントと呼ばれる、 ユーザ定義のアクションで拡張することができる。アクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [BFS Visitor](./BFSVisitor.md) の要求を満たしているオブジェクトである。上の擬似コード内で、イベント・ポイントは右側のラベルである。さらに各イベント・ポイントの記述を以下に示した。デフォルトでは `breadth_first_search()` 関数はどんなアクションも実行しない。距離や先行点の記録さえも。しかしながらこれらは [`distance_recorder`](./distance_recorder.md) と [`predecessor_recorder`](./predecessor_recorder.md) のイベント・ビジタを用いて容易に追加できる。
+`breadth_first_search()` 関数は一定のイベント・ポイントと呼ばれる、 ユーザ定義のアクションで拡張することができる。アクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [BFS Visitor](BFSVisitor.md) の要求を満たしているオブジェクトである。上の擬似コード内で、イベント・ポイントは右側のラベルである。さらに各イベント・ポイントの記述を以下に示した。デフォルトでは `breadth_first_search()` 関数はどんなアクションも実行しない。距離や先行点の記録さえも。しかしながらこれらは [`distance_recorder`](distance_recorder.md) と [`predecessor_recorder`](predecessor_recorder.md) のイベント・ビジタを用いて容易に追加できる。
 
 
 ##定義場所
@@ -59,7 +59,7 @@ boost/graph/breadth_first_search.hpp
 
 ##パラメータ
 - IN: `VertexListGraph& g`
-	- 有向グラフまたは無向グラフ。グラフの型は [Vertex List Graph](./VertexListGraph.md) のモデルでなければならない。
+	- 有向グラフまたは無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
 
 - IN: `vertex_descriptor s`
 	- 探索が開始される始点。
@@ -67,12 +67,12 @@ boost/graph/breadth_first_search.hpp
 
 ##名前付きパラメータ
 - IN: `visitor(BFSVisitor vis)`
-	- アルゴリズムの内側で [BFS Visitor](./BFSVisitor.md) コンセプトで指定されたイベント・ポイントで呼び出されるビジタ・オブジェクト。 ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
+	- アルゴリズムの内側で [BFS Visitor](BFSVisitor.md) コンセプトで指定されたイベント・ポイントで呼び出されるビジタ・オブジェクト。 ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
 	- デフォルト: `bfs_visitor<null_visitor>`
 
 - UTIL/OUT: `color_map(ColorMap color)`
 	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 アルゴリズムは開始時に全ての頂点の色を白色に初期化するため、ユーザは `breadth_first_search()` を呼ぶ前にカラー・マップを初期化する必要はない。もし複合的な幅優先探索をグラフ上で行う必要があるなら (例えばいくつかの切断された成分があるなら) `breadth_first_visit()` 関数を使って独自の初期化を行うこと。
-		`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](./ColorValue.md) をモデルとしなければならない。
+		`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。
 	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた `iterator_property_map`で、添え字マップには `i_map` を用いる。
 
 - IN: `vertex_index_map(VertexIndexMap i_map)`
@@ -80,7 +80,7 @@ boost/graph/breadth_first_search.hpp
 	- デフォルト: `get(vertex_index, g)`
 
 - UTIL: `buffer(Buffer& Q)`
-	- 頂点が発見される順序を決定するために使用されるキュー。もしFIFOキューが使われると、 巡回は通常の BFS 順序付けに従う。他の型のキューも使用できるが、巡回順序は異なる。例えば Dijkstra のアルゴリズムは優先度付きキューを用いて実装することができる。`Buffer` の型は [Buffer](./Buffer.md) のモデルでなければならない。`buffer` の `value_type` はグラフの `vertex_descriptor` 型でなければならない。 
+	- 頂点が発見される順序を決定するために使用されるキュー。もしFIFOキューが使われると、 巡回は通常の BFS 順序付けに従う。他の型のキューも使用できるが、巡回順序は異なる。例えば Dijkstra のアルゴリズムは優先度付きキューを用いて実装することができる。`Buffer` の型は [Buffer](Buffer.md) のモデルでなければならない。`buffer` の `value_type` はグラフの `vertex_descriptor` 型でなければならない。 
 	- デフォルト: `boost::queue`
 
 
@@ -103,13 +103,13 @@ boost/graph/breadth_first_search.hpp
 
 ##コード例
 
-[examples/bfs-example.cpp](./examples/bfs-example.cpp.md) 中にある例は、[Figure 6](./graph_theory_review.md#bfs-algorithm) のグラフにおいて BGL 幅優先探索アルゴリズムを用いて実演している。
+[examples/bfs-example.cpp](examples/bfs-example.cpp.md) 中にある例は、[Figure 6](graph_theory_review.md#bfs-algorithm) のグラフにおいて BGL 幅優先探索アルゴリズムを用いて実演している。
 
-[examples/bfs-example2.cpp](./examples/bfs-example2.cpp.md) のファイルは同じ例を含むが、使われている `adacency_list` クラスは `VertexList` を持っており、`EdgeList` が `listS` に置かれている。
+[examples/bfs-example2.cpp](examples/bfs-example2.cpp.md) のファイルは同じ例を含むが、使われている `adacency_list` クラスは `VertexList` を持っており、`EdgeList` が `listS` に置かれている。
 
 
 ##関連項目
-[`bfs_visitor`](./bfs_visitor.md) と [`depth_first_search()`](./depth_first_search.md)
+[`bfs_visitor`](bfs_visitor.md) と [`depth_first_search()`](depth_first_search.md)
 
 
 ##注釈

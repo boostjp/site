@@ -28,12 +28,12 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 3. [歴史](#history)
 4. [公開資料](#publications)
 5. [謝辞](#acknowledgements)
-6. [コンセプト・チェックの利用](./concept_check/using_concept_check.md)
-7. [コンセプト・チェック用クラスの作成](./concept_check/creating_concepts.md)
-8. [コンセプトの充当化と原型](./concept_check/concept_covering.md)
-9. [コンセプトを用いたプログラミング](./concept_check/prog_with_concepts.md)
-10. [コンセプト・チェックの実装](./concept_check/implementation.md)
-11. [リファレンス](./concept_check/reference.md)
+6. [コンセプト・チェックの利用](concept_check/using_concept_check.md)
+7. [コンセプト・チェック用クラスの作成](concept_check/creating_concepts.md)
+8. [コンセプトの充当化と原型](concept_check/concept_covering.md)
+9. [コンセプトを用いたプログラミング](concept_check/prog_with_concepts.md)
+10. [コンセプト・チェックの実装](concept_check/implementation.md)
+11. [リファレンス](concept_check/reference.md)
 
 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm) はこのライブラリを寄稿した。 [Beman Dawes](http://www.boost.org/doc/libs/1_31_0/people/beman_dawes.html) が公式レビューを管理した。
 
@@ -49,7 +49,7 @@ Boost コンセプト・チェック・ライブラリは、次のような手�
 
 
 ## <a name="motivating-example" href="#motivating-example">動機の例</a>
-テンプレート・ライブラリの不正な使用法と、その結果生じるエラーメッセージを例証するために単純なサンプルを示す。 下記のコードでは、標準テンプレート・ライブラリー (STL) のジェネリックな `std::stable_sort()` アルゴリズム [[3](./concept_check/bibliography.md#generic-programming-and-the-stl)、[4](./concept_check/bibliography.md#stl-tutorial-and-reference-guide)、[5](./concept_check/bibliography.md#the-standard-template-library)] をリンクリストに適用している。
+テンプレート・ライブラリの不正な使用法と、その結果生じるエラーメッセージを例証するために単純なサンプルを示す。 下記のコードでは、標準テンプレート・ライブラリー (STL) のジェネリックな `std::stable_sort()` アルゴリズム [[3](concept_check/bibliography.md#generic-programming-and-the-stl)、[4](concept_check/bibliography.md#stl-tutorial-and-reference-guide)、[5](concept_check/bibliography.md#the-standard-template-library)] をリンクリストに適用している。
 
 bad_error_eg.cpp:
 ```
@@ -129,10 +129,10 @@ boost/concept_check.hpp:209: no match for `_List_iterator<int,int &,int *> &
 
 
 ## <a name="acknowledgements" href="#acknowledgements">謝辞</a>
-インスタンス化を引き起こすために関数ポインタを使用するアイディアは、Alexander Stepanov に拠る。 テンプレートの事前チェックに式を使用するアイディアに関して、その起源を確認できなかった。しかし、それは D&E[[2](./concept_check/bibliography.md#design-and-evolution)] に記載されている。 STL コンセプトに関する優れた文書化と構造化を行った Matt Austern に感謝をささげる。このコンセプト・チェックは彼の仕事を基礎にしている。 有益なコメントとレビューを賜った Boost のメンバにも感謝を。
+インスタンス化を引き起こすために関数ポインタを使用するアイディアは、Alexander Stepanov に拠る。 テンプレートの事前チェックに式を使用するアイディアに関して、その起源を確認できなかった。しかし、それは D&E[[2](concept_check/bibliography.md#design-and-evolution)] に記載されている。 STL コンセプトに関する優れた文書化と構造化を行った Matt Austern に感謝をささげる。このコンセプト・チェックは彼の仕事を基礎にしている。 有益なコメントとレビューを賜った Boost のメンバにも感謝を。
 
 
-- [次へ：「コンセプト・チェックの利用」](./concept_check/using_concept_check.md)
+- [次へ：「コンセプト・チェックの利用」](concept_check/using_concept_check.md)
 
 ***
 Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<mailto:jsiek@osl.iu.edu>) Andrew Lumsdaine(<mailto:lums@osl.iu.edu>)

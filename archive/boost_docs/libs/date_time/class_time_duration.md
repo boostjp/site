@@ -1,8 +1,8 @@
 #posix_time::time_duration
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **Time Duration Documentation**
 
@@ -33,7 +33,7 @@ time_duration td = hours(1) + seconds(10); //01:00:01
 td = hours(1) + nanosec(5); //01:00:00.000000005
 ```
 
-注意：高分解能(たとえば`nanosec`)が存在するかどうかは、依存するインストールライブラリによって異なる。詳細は、[Build-Compiler Information](./build_info.md)を参照。
+注意：高分解能(たとえば`nanosec`)が存在するかどうかは、依存するインストールライブラリによって異なる。詳細は、[Build-Compiler Information](build_info.md)を参照。
 
 ## <a name="header" href="#header">Header</a>
 ```cpp

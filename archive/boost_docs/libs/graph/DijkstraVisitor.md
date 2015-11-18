@@ -1,5 +1,5 @@
 #Dijkstra Visitor Concept
-このコンセプトは [`dijkstra_shortest_paths()`](./dijkstra_shortest_paths.md) 用のビジタのインタフェースと、関連するアルゴリズムを定義する。ユーザはこのインタフェースに一致するクラスを作って、そのクラスのオブジェクトを `dijkstra_shortest_paths()` に渡すことで、探索中に実行される操作を追加できる。
+このコンセプトは [`dijkstra_shortest_paths()`](dijkstra_shortest_paths.md) 用のビジタのインタフェースと、関連するアルゴリズムを定義する。ユーザはこのインタフェースに一致するクラスを作って、そのクラスのオブジェクトを `dijkstra_shortest_paths()` に渡すことで、探索中に実行される操作を追加できる。
 
 
 ##Refinement of
@@ -40,7 +40,7 @@
 
 
 ##モデル
-[`dijkstra_visitor`](./dijkstra_visitor.md)
+[`dijkstra_visitor`](dijkstra_visitor.md)
 
 
 ***

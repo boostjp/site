@@ -1,8 +1,8 @@
 #posix_time::time iterators
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **Time Iterators**
 
@@ -26,7 +26,7 @@ for (; titr < ptime(d,hour(1)); ++titr) {
 }
 ```
 
-[print hours](./print_hours.cpp.md) の例は、1時間増加させ、その日の残りを繰り返す。
+[print hours](print_hours.cpp.md) の例は、1時間増加させ、その日の残りを繰り返す。
 
 
 ## <a name="header" href="#header">Header</a>

@@ -3,7 +3,7 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 
 
 ##Refinement of
-[Graph](./Graph.md)
+[Graph](Graph.md)
 
 
 ##表記
@@ -35,8 +35,8 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 
 
 ##モデル
-- [`adjacency_list`](./adjacency_list.md)
-- [`edge_list`](./edge_list.md)
+- [`adjacency_list`](adjacency_list.md)
+- [`edge_list`](edge_list.md)
 
 
 ##計算量の保証
@@ -44,7 +44,7 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 
 
 ##関連項目
-[Graphコンセプト](./graph_concepts.md)
+[Graphコンセプト](graph_concepts.md)
 
 
 ##コンセプトチェックするクラス

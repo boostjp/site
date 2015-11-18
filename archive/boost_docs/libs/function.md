@@ -9,14 +9,14 @@
 
 ##目次
 - [Compatibility Note](#compatibility-note)
-- [Tutorial](./function/tutorial.md)
-- [Reference manual](./function/reference.md)
+- [Tutorial](function/tutorial.md)
+- [Reference manual](function/reference.md)
 - [Boost.Function vs. Function Pointers](#function-vs-function-pointers)
 - [Performance](#performance)
 - [Portability](#portability)
 - [Design rationale](#design-rationale)
 - [Acknowledgements](#acknowledgements)
-- [FAQ](./function/faq.md)
+- [FAQ](function/faq.md)
 
 
 ## <a name="compatibility-note" href="#compatibility-note">Compatibility Note</a>

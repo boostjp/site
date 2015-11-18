@@ -4,20 +4,20 @@
 ##Index
 
 - ReleaseNotes
-- [Overview](./boostserialization/overview.md)
+- [Overview](boostserialization/overview.md)
 - Tutorial
-- [Reference](./boostserialization/reference.md)
+- [Reference](boostserialization/reference.md)
 	- ArchiveConcepts
-	- [SerializableConcept](./boostserialization/reference/serializableconcept.md)
+	- [SerializableConcept](boostserialization/reference/serializableconcept.md)
 		- PrimitiveTypes
     	- ClassTypes
     	- Pointers
     	- References
-    	- [ClassSerializationTraits](./boostserialization/reference/serializableconcept/class-serialization-traits.md)
+    	- [ClassSerializationTraits](boostserialization/reference/serializableconcept/class-serialization-traits.md)
       		- Version
       		- ImplementationLevel
       		- ObjectTracking
-      		- [ExportKey](./boostserialization/reference/serializableconcept/class-serialization-traits/export-key.md)
+      		- [ExportKey](boostserialization/reference/serializableconcept/class-serialization-traits/export-key.md)
       		- Abstract
       		- TypeInformationImplementation
       		- Wrappers
@@ -26,13 +26,13 @@
       		- CompileTimeWarningsAndErrors
 		- SerializationWrappers
     	- Models
-	- [SpecialConsiderations](./boostserialization/reference/special-considerations.md)
+	- [SpecialConsiderations](boostserialization/reference/special-considerations.md)
     	- ObjectTracking
     	- ClassInformation
     	- ArchivePortability
     	- BinaryArchives
     	- XMLArchives
-    	- [ExportingClassSerialization](./boostserialization/reference/special-considerations/exporting-class-serialization.md)
+    	- [ExportingClassSerialization](boostserialization/reference/special-considerations/exporting-class-serialization.md)
     	- StaticLibrariesAndSerialization
     	- DLLS_Serialization and Runtime Linking
     	- Plugins
@@ -43,16 +43,16 @@
   		- ArchiveClassReference
 - ImplementationNotes
 - CaseStudies
-- [OtherClasses](./boostserialization/other-classses.md)
-  	- [`extended_type_info`](.//boostserialization/other-classses/extended_type_info.md)
-  	- [`void_cast`](./boostserialization/other-classses/void_cast.md)
+- [OtherClasses](boostserialization/other-classses.md)
+  	- [`extended_type_info`](/boostserialization/other-classses/extended_type_info.md)
+  	- [`void_cast`](boostserialization/other-classses/void_cast.md)
   	- `utf8_codecvt_facet`
   	- `BOOST_STRONG_TYPEDEF`
   	- `state_saver`
   	- DataflowIterators
   	- `smart_cast`
   	- `BOOST_STATIC_WARNING`
-  	- [`singleton`](./boostserialization/other-classses/singleton.md)
+  	- [`singleton`](boostserialization/other-classses/singleton.md)
 - TipsAndTricks
 - Rationale
 - ToDo

@@ -6,7 +6,7 @@
 ##参照
 次の文書は堅牢で汎用的なコンポーネントを書くときのいくつかの問題に対する、 良い手引きである。
 
-- D. Abrahams: ["Exception Safety in Generic Components"(邦訳：「ジェネリックコンポーネントにおける例外安全性」)](./generic_exception_safety.md), originally published in [M. Jazayeri, R. Loos, D. Musser (eds.): Generic Programming, Proc. of a Dagstuhl Seminar, Lecture Notes on Computer Science 1766](http://www.springer.de/cgi-bin/search_book.pl?isbn=3-540-41090-2)
+- D. Abrahams: ["Exception Safety in Generic Components"(邦訳：「ジェネリックコンポーネントにおける例外安全性」)](generic_exception_safety.md), originally published in [M. Jazayeri, R. Loos, D. Musser (eds.): Generic Programming, Proc. of a Dagstuhl Seminar, Lecture Notes on Computer Science 1766](http://www.springer.de/cgi-bin/search_book.pl?isbn=3-540-41090-2)
 
 
 ##ガイドライン

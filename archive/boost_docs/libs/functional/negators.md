@@ -11,7 +11,7 @@ functional.hpp ヘッダは C++ 標準 (§20.3.5) 由来のネゲータアダプ
 
 このライブラリのネゲータは標準バージョンを二つの方法で改良する。
 
-適合関数オブジェクトではなく関数を否定する時、それらは `ptr_fun` の必要を回避するために、[function object traits](./function_traits.md) を用いる。
+適合関数オブジェクトではなく関数を否定する時、それらは `ptr_fun` の必要を回避するために、[function object traits](function_traits.md) を用いる。
 
 それらは引数や適合された関数に渡す引数を宣言する最上の方法を決するため、Boost の [call traits](../utility/call_traits.md.nolink) を用いる。([下記](#arguments)参照)
 

@@ -166,13 +166,13 @@ Jean, de Lattre de Tassigny,           +33 (0) 987 654 321
 
 
 ## <a name="sample-files" href="#sample-files">サンプルファイル</a>
-[sample_formats.cpp](./example/sample_formats.cpp.md) は `format` の簡単な使い方をデモする。
+[sample_formats.cpp](example/sample_formats.cpp.md) は `format` の簡単な使い方をデモする。
 
-[sample_new_features.cpp](./example/sample_new_features.cpp.md) は、単純な位置指定命令、中寄せ、そして「桁送り」など、 `printf` の構文に追加された書式化機能のいくつかを説明する。
+[sample_new_features.cpp](example/sample_new_features.cpp.md) は、単純な位置指定命令、中寄せ、そして「桁送り」など、 `printf` の構文に追加された書式化機能のいくつかを説明する。
 
-[sample_advanced.cpp](./example/sample_advanced.cpp.md) は、 `format` オブジェクトの 再利用や修飾といった、さらに進んだ機能の使い方をデモする。
+[sample_advanced.cpp](example/sample_advanced.cpp.md) は、 `format` オブジェクトの 再利用や修飾といった、さらに進んだ機能の使い方をデモする。
 
-そして [sample_userType.cpp](./example/sample_userType.cpp.md) はユーザ定義型に対する `format` の振る舞いを示す。
+そして [sample_userType.cpp](example/sample_userType.cpp.md) はユーザ定義型に対する `format` の振る舞いを示す。
 
 
 ## <a name="syntax" href="#syntax">構文</a>
@@ -455,7 +455,7 @@ std::basic_string<charT,Traits>  str(const basic_format<charT,Traits>& f) {
 - あらゆる型の変数を受け付ける。文字列への実際の変換はストリームに任せる。 これは特にユーザ定義型について、書式化オプションの作用が直観的に自然なものとなるよう考慮したものである。
 - `printf` 互換性の提供、型安全で型拡張性のある文脈においてもできるだけ意味をなすようにする。
 
-デザインの過程で多くの問題に直面し、いくつかの選択をすることになったが、 中には直観的には正しくないものもあった。しかしいずれのケースにも [何らかの意味がある](./choices.md)。
+デザインの過程で多くの問題に直面し、いくつかの選択をすることになったが、 中には直観的には正しくないものもあった。しかしいずれのケースにも [何らかの意味がある](choices.md)。
 
 
 ## <a name="credits" href="#credits">クレジット</a>

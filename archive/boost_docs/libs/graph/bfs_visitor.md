@@ -1,9 +1,9 @@
 #bfs_visitor<EventVisitorList>
-このクラスは、(`std::pair` を使って作られる) [EventVisitor](./EventVisitor.md) のリストを [BFSVisitor](./BFSVisitor.md) に変換するアダプタである。
+このクラスは、(`std::pair` を使って作られる) [EventVisitor](EventVisitor.md) のリストを [BFSVisitor](BFSVisitor.md) に変換するアダプタである。
 
 
 ##コード例
-以下は [examples/bfs.cpp](./examples/bfs.cpp.md) からの抜粋である。ここでは 3 つのイベントビジタを結合して BFS ビジタを作っている。関数 `boost::record_distances` 、 `boost::record_predecessors` 、 `copy_graph` は全て、イベントビジタを作る関数だ。
+以下は [examples/bfs.cpp](examples/bfs.cpp.md) からの抜粋である。ここでは 3 つのイベントビジタを結合して BFS ビジタを作っている。関数 `boost::record_distances` 、 `boost::record_predecessors` 、 `copy_graph` は全て、イベントビジタを作る関数だ。
 
 ```cpp
 // Construct graph G and obtain the source vertex s ...
@@ -17,14 +17,14 @@ boost::breadth_first_search(G, s,
 ```
 
 ##モデル
-[BFSVisitor](./BFSVisitor.md)
+[BFSVisitor](BFSVisitor.md)
 
 
 ##テンプレートパラメータ
 
 | パラメータ | 説明 | デフォルト |
 |------------|------|------------|
-| `EventVisitorList` | `std::pair` で作られた [EventVisitor](./EventVisitor.md) のリスト。 | [`null_visitor`](./null_visitor.md) |
+| `EventVisitorList` | `std::pair` で作られた [EventVisitor](EventVisitor.md) のリスト。 | [`null_visitor`](null_visitor.md) |
 
 
 ##定義場所
@@ -32,7 +32,7 @@ boost/graph/breadth_first_search.hpp
 
 
 ##メンバ関数
-このクラスは [BFSVisitor](./BFSVisitor.md) に要求される全てのメンバ関数を実装している。それぞれの関数で、適切なイベントが EventVisitorList の中の [EventVisitor](./EventVisitor.md) にディスパッチされる。
+このクラスは [BFSVisitor](BFSVisitor.md) に要求される全てのメンバ関数を実装している。それぞれの関数で、適切なイベントが EventVisitorList の中の [EventVisitor](EventVisitor.md) にディスパッチされる。
 
 
 ##非メンバ関数
@@ -43,9 +43,9 @@ boost/graph/breadth_first_search.hpp
 
 
 ##関連項目
-[Visitorコンセプト](./visitor_concepts.md)
+[Visitorコンセプト](visitor_concepts.md)
 
-イベントビジタ: [`predecessor_recorder`](./predecessor_recorder.md) 、 [`distance_recorder`](./distance_recorder.md) 、 [`time_stamper`](./time_stamper.md) 、 [`property_writer`](./property_writer.md) 。
+イベントビジタ: [`predecessor_recorder`](predecessor_recorder.md) 、 [`distance_recorder`](distance_recorder.md) 、 [`time_stamper`](time_stamper.md) 、 [`property_writer`](property_writer.md) 。
 
 
 ***

@@ -52,7 +52,7 @@ struct CopyConstructibleConcept
 
 
 ##関連項目
-[Default Constructible](http://www.sgi.com/tech/stl/DefaultConstructible.html) and [Assignable](./Assignable.md)
+[Default Constructible](http://www.sgi.com/tech/stl/DefaultConstructible.html) and [Assignable](Assignable.md)
 
 
 ***

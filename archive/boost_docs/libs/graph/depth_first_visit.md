@@ -8,7 +8,7 @@ void depth_first_visit(IncidenceGraph& g,
 * IncidenceGraph[link ./IncidenceGraph.md]
 * DFSVisitor[link ./DFSVisitor.md]
 
-この関数は [depth-firstパターン](./graph/doc/graph_theory_review.md#dfs-algorithm) を使って、始点 `s` と同じ連結成分中にある全ての頂点を訪れる。時々単独で有用ではあるが、この関数の主な目的は `depth_first_search()` の実装のためにある。
+この関数は [depth-firstパターン](graph/doc/graph_theory_review.md#dfs-algorithm) を使って、始点 `s` と同じ連結成分中にある全ての頂点を訪れる。時々単独で有用ではあるが、この関数の主な目的は `depth_first_search()` の実装のためにある。
 
 ユーザによって提供される `DFSVisitor` はアルゴリズムの内側の各イベント・ポイントで行われるアクションを決定する。
 
@@ -22,16 +22,16 @@ boost/graph/depth_first_search.hpp
 ##パラメータ
 
 - IN `IncidenceGraph& g`
-	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](./IncidenceGraph.md) のモデルでなければならない。
+	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
 
 - IN: `vertex_descriptor s`
 	- 探索が開始される始点。
 
 - IN: `DFSVisitor visitor`
-	- アルゴリズムの内側で [DFS Visitor](./DFSVisitor.md) コンセプトで指定されるイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
+	- アルゴリズムの内側で [DFS Visitor](DFSVisitor.md) コンセプトで指定されるイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
 
 - UTIL: `ColorMap color`
-	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [Color Value](./ColorValue.md) をモデルとしなければならない。
+	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [Color Value](ColorValue.md) をモデルとしなければならない。
 
 
 ##計算量

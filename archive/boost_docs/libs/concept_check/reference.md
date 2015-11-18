@@ -304,7 +304,7 @@ class binary_predicate_archetype;
 
 
 - [「はじめに」へ戻る](../concept_check.md)
-- [前へ：「コンセプト・チェックの実装」](./implementation.md)
+- [前へ：「コンセプト・チェックの実装」](implementation.md)
 
 ***
 Copyright © 2000 [Jeremy Siek](http://www.boost.org/doc/libs/1_31_0/people/jeremy_siek.htm)(<mailto:jsiek@osl.iu.edu>) Andrew Lumsdaine(<mailto:lums@osl.iu.edu>)

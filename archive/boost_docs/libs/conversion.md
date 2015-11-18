@@ -6,8 +6,8 @@ Conversion Libraryは、他の扱いにくい変換機能を用いたプログ�
 
 特に、標準ライブラリ`iostream`への依存をできる限りなくすために、 Boost Conversion Libraryは以下のいくつかのヘッダに分かれている。
 
-- [boost/cast](./conversion/cast.md)ヘッダはポリモフィックな型の間の安全な変換を行う `polymorphic_cast<>`、`polymorphic_downcast<>`と、数値型の間の安全な変換を行う `numeric_cast<>`を提供する。
-- [boost/lexical_cast](./conversion/lexical_cast.md)ヘッダは`int`を`string` で表現したり、その逆変換を行うときのような、文字列で表現出来る型同士の変換を行う`lexical_cast<>` を提供する。
+- [boost/cast](conversion/cast.md)ヘッダはポリモフィックな型の間の安全な変換を行う `polymorphic_cast<>`、`polymorphic_downcast<>`と、数値型の間の安全な変換を行う `numeric_cast<>`を提供する。
+- [boost/lexical_cast](conversion/lexical_cast.md)ヘッダは`int`を`string` で表現したり、その逆変換を行うときのような、文字列で表現出来る型同士の変換を行う`lexical_cast<>` を提供する。
 
 
 ***

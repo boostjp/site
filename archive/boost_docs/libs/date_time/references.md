@@ -1,8 +1,8 @@
 #参考文献
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 以下に挙げるのは、日付・時間ドメインに関するリファレンスと情報元である。
 

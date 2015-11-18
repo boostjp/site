@@ -5,5 +5,5 @@ Boostへ提案する日本語コミュニティのプロジェクトの管理に
 
 情報収集などに協力いただける方は、権利者の名前が必要になった場合のために、名前を記入すること。名前が未記入の場合、権利を主張しないものして扱います。
 
-- [テンプレートの再帰上限数workaround(rejected)](./propose/templ_rec_max.md)
+- [テンプレートの再帰上限数workaround(rejected)](propose/templ_rec_max.md)
 

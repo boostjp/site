@@ -6,7 +6,7 @@
 disjoint_sets<Rank, Parent, FindCompress>
 ```
 
-このクラスは、互いに素な集合（素集合）の演算に 順位による和集合 および パス圧縮 を提供する。disjoint-sets のデータ構造は、素集合の S = {S<sub>1</sub>, S<sub>2</sub>, ..., S<sub>k</sub>} というコレクションを維持する。 各集合は、集合のいくつかの要素である 代表値 によって識別される。 集合は、Parent プロパティマップの中の符号化された有向木によって表わされる。 2つの発見的手法: 「順位による和集合」 および 「パス圧縮」 は、 演算を高速化するのに使われる  [[1](./disjoint_sets/bibliography.md#tarjan83), [2](./disjoint_sets/bibliography.md#clr90)]。
+このクラスは、互いに素な集合（素集合）の演算に 順位による和集合 および パス圧縮 を提供する。disjoint-sets のデータ構造は、素集合の S = {S<sub>1</sub>, S<sub>2</sub>, ..., S<sub>k</sub>} というコレクションを維持する。 各集合は、集合のいくつかの要素である 代表値 によって識別される。 集合は、Parent プロパティマップの中の符号化された有向木によって表わされる。 2つの発見的手法: 「順位による和集合」 および 「パス圧縮」 は、 演算を高速化するのに使われる  [[1](disjoint_sets/bibliography.md#tarjan83), [2](disjoint_sets/bibliography.md#clr90)]。
 
 
 ##Where Defined
@@ -17,13 +17,13 @@ disjoint_sets<Rank, Parent, FindCompress>
 
 | パラメータ     | 説明 |
 |----------------|------|
-| `Rank`         | 値型が整数型で、キー型が集合の要素型と等しい [`ReadWritePropertyMap`](./property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならない。 |
-| `Parent`       | [`ReadWritePropertyMap`](./property_map/ReadWritePropertyMap.md.nolink) のモデルで、かつ、キー型および値型は集合の要素型と等しくなければならない。 |
+| `Rank`         | 値型が整数型で、キー型が集合の要素型と等しい [`ReadWritePropertyMap`](property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならない。 |
+| `Parent`       | [`ReadWritePropertyMap`](property_map/ReadWritePropertyMap.md.nolink) のモデルで、かつ、キー型および値型は集合の要素型と等しくなければならない。 |
 | `FindCompress` | 代表値の検索およびパス圧縮関数オブジェクトのうちの 1つであるべきだ。 |
 
 
 ##Example
-`disjoint_sets` に対する典型的な使用法の手本は [`kruskal_minimum_spanning_tree()`](./graph/kruskal_minimum_spanning_tree.md.nolink) アルゴリズムで見ることができる。 この例では、`union_set()` の代わりに `link()` を呼び出す。 なぜなら、`u` および `v` が `find_set()` から得られ、したがって、既にそれら集合の代表値であるからだ。
+`disjoint_sets` に対する典型的な使用法の手本は [`kruskal_minimum_spanning_tree()`](graph/kruskal_minimum_spanning_tree.md.nolink) アルゴリズムで見ることができる。 この例では、`union_set()` の代わりに `link()` を呼び出す。 なぜなら、`u` および `v` が `find_set()` から得られ、したがって、既にそれら集合の代表値であるからだ。
 
 ```cpp
 ...
@@ -65,7 +65,7 @@ while ( !Q.empty() ) {
 
 参照：
 
-- [`incremental_connected_components()`](./graph/incremental_connected_components.md.nolink)
+- [`incremental_connected_components()`](graph/incremental_connected_components.md.nolink)
 
 
 ***
@@ -74,15 +74,15 @@ while ( !Q.empty() ) {
 disjoint_sets_with_storage<ID,InverseID,FindCompress>
 ```
 
-このクラスは、順位および親のプロパティのための記憶領域を内部で管理する。 記憶領域は、要素IDにより索引付けされた配列の中にある。ゆえに、ID および InverseID ファンクタを必要とする。 順位および親のプロパティは、構築中に初期化される、 したがって、各要素は自動的に集合の中にある（従って、このクラスのオブジェクトを [`initialize_incremental_components()`](./graph/incremental_components.md.nolink#sec:initialize-incremental-components) 関数で初期化することは必要でない。）。 このクラスは、頂点プロパティを格納する場所を提供しない `edge_list` グラフの（動的）接続している構成要素を計算する場合に特に有用である。
+このクラスは、順位および親のプロパティのための記憶領域を内部で管理する。 記憶領域は、要素IDにより索引付けされた配列の中にある。ゆえに、ID および InverseID ファンクタを必要とする。 順位および親のプロパティは、構築中に初期化される、 したがって、各要素は自動的に集合の中にある（従って、このクラスのオブジェクトを [`initialize_incremental_components()`](graph/incremental_components.md.nolink#sec:initialize-incremental-components) 関数で初期化することは必要でない。）。 このクラスは、頂点プロパティを格納する場所を提供しない `edge_list` グラフの（動的）接続している構成要素を計算する場合に特に有用である。
 
 
 ##Template Parameters
 
 | パラメータ | 説明 | デフォルト |
 |------------|------|------------|
-| `ID` | 0からN（集合中の要素の総数）までの整数に要素を対応付ける [`ReadablePropertyMap`](./property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。 | `boost::identity_property_map` |
-| `InverseID` | 要素に整数を対応付ける [`ReadablePropertyMap`](./property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。 | `boost::identity_property_map` |
+| `ID` | 0からN（集合中の要素の総数）までの整数に要素を対応付ける [`ReadablePropertyMap`](property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。 | `boost::identity_property_map` |
+| `InverseID` | 要素に整数を対応付ける [`ReadablePropertyMap`](property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。 | `boost::identity_property_map` |
 | `FindCompress` | 代表値の検索およびパス圧縮関数オブジェクトのうちの 1つであるべきだ。 | `representative_with_full_path_compression` |
 
 

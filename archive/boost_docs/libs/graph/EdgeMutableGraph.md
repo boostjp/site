@@ -3,7 +3,7 @@ Edge Mutable Graph コンセプトは、辺の追加と削除をサポートす�
 
 
 ##Refinement of
-[Graph](./Graph.md)
+[Graph](Graph.md)
 
 
 ##関連型
@@ -38,7 +38,7 @@ Edge Mutable Graph コンセプトは、辺の追加と削除をサポートす�
 
 
 ##関連項目
-[Graphコンセプト](./graph_concepts.md)
+[Graphコンセプト](graph_concepts.md)
 
 
 ***

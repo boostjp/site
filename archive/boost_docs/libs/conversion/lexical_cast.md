@@ -27,7 +27,7 @@ C++標準ライブラリは、ここで問題になっている種類のin-core 
 
 `lexical_cast`テンプレート関数はテキストで表現可能な任意の型同士の変換を便利で一貫性のある形、簡単に言えば式レベルでの便利な変換を提供する。
 
-精度や書式において`lexical_cast`が標準で行うより柔軟な操作を必要とするとき、`stringstream`の使用を推奨する。また、数値型間の変換を行う場合、[`numeric_cast`](./cast.md#numeric_cast)の方が適している。
+精度や書式において`lexical_cast`が標準で行うより柔軟な操作を必要とするとき、`stringstream`の使用を推奨する。また、数値型間の変換を行う場合、[`numeric_cast`](cast.md#numeric_cast)の方が適している。
 
 文字列ベースの表現に関する問題点等に関する議論を扱ったものとして、Herb Sutterの記事 [The String Formatters of Manor Farm](http://www.gotw.ca/publications/mill19.htm)を紹介しておこう。これには、`stringstream`や`lexical_cast`等の比較も含まれている。
 

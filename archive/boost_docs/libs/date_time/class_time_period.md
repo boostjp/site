@@ -1,8 +1,8 @@
 #posix_time::time_period
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **Time Period Documentation**
 
@@ -17,7 +17,7 @@
 ## <a name="introduction" href="#introduction">Introduction</a>
 クラス `boost::posix_time::time_period` は2つの時刻の範囲を直接表現する。 期間(period)は、プログラムの条件付きの論理を単純化することによって、ある種の計算を単純化する能力を提供する。
 
-[time periods example](./time_periods.cpp.md) は `time_period` の使用例を提供する。
+[time periods example](time_periods.cpp.md) は `time_period` の使用例を提供する。
 
 
 ## <a name="header" href="#header">Header</a>

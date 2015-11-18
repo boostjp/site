@@ -4,8 +4,8 @@
 
 functional.hpp ヘッダは C++ 標準ライブラリの関数オブジェクトアダプタ(セクション 20.3.5 から 20.3.8)を強化する。この強化は主に二つの変更を行う。
 
-1. 我々は、[参照の参照](./functional/binders.md#refref) 問題を回避し、[引数渡し](./functional/mem_fun.md#args) の効率を良くするために、Boost の [`call_traits`](./utility/call_traits.md.nolink) テンプレートを使う。
-2. 我々は、[`ptr_fun`](./functional/ptr_fun.md) の必要性を回避するために、このライブラリのアダプタとともに、ふたつの[function object traits](./functional/function_traits.md) を使う。
+1. 我々は、[参照の参照](functional/binders.md#refref) 問題を回避し、[引数渡し](functional/mem_fun.md#args) の効率を良くするために、Boost の [`call_traits`](utility/call_traits.md.nolink) テンプレートを使う。
+2. 我々は、[`ptr_fun`](functional/ptr_fun.md) の必要性を回避するために、このライブラリのアダプタとともに、ふたつの[function object traits](functional/function_traits.md) を使う。
 
 
 ##Contents
@@ -13,11 +13,11 @@ functional.hpp ヘッダは C++ 標準ライブラリの関数オブジェクト
 
 | 分類 | 機能 | 説明 |
 |------|------|------|
-| [Function object traits](./functional/function_traits.md) | `unary_traits`<br/> `binary_traits` | 関数オブジェクトや関数の引数型を決定するために使われる。`ptr_fun`の必要性を除去する。 |
-| [Negators](./functional/negators.md) | `unary_negate`<br/> `binary_negate`<br/> `not1`<br/> `not2` | 標準のセクション 20.3.5 に基づく。 |
-| [Binders](./functional/binders.md) | `binder1st`<br/> `binder2nd`<br/> `bind1st`<br/> `bind2nd` | 標準のセクション 20.3.6 に基づく。 |
-| [Adapters for pointers to functions](./functional/ptr_fun.md) | `pointer_to_unary_function`<br/> `pointer_to_binary_function`<br/> `ptr_fun` | 標準のセクション 20.3.7 に基づく。このライブラリとともに使用する場合はバインダやネゲータは関数に適合できるので不要である。しかし、サードパーティのアダプタに必要とされるかもしれない。 |
-| [Adapters for pointers to member functions](./functional/mem_fun.md) | `mem_fun_t`<br/> `mem_fun1_t`<br/> `const_mem_fun_t`<br/> `const_mem_fun1_t`<br/> `mem_fun_ref_t`<br/> `mem_fun1_ref_t`<br/> `const_mem_fun_ref_t`<br/> `const_mem_fun1_ref_t`<br/> `mem_fun`<br/> `mem_fun_ref` | 標準のセクション 20.3.8 に基づく。 |
+| [Function object traits](functional/function_traits.md) | `unary_traits`<br/> `binary_traits` | 関数オブジェクトや関数の引数型を決定するために使われる。`ptr_fun`の必要性を除去する。 |
+| [Negators](functional/negators.md) | `unary_negate`<br/> `binary_negate`<br/> `not1`<br/> `not2` | 標準のセクション 20.3.5 に基づく。 |
+| [Binders](functional/binders.md) | `binder1st`<br/> `binder2nd`<br/> `bind1st`<br/> `bind2nd` | 標準のセクション 20.3.6 に基づく。 |
+| [Adapters for pointers to functions](functional/ptr_fun.md) | `pointer_to_unary_function`<br/> `pointer_to_binary_function`<br/> `ptr_fun` | 標準のセクション 20.3.7 に基づく。このライブラリとともに使用する場合はバインダやネゲータは関数に適合できるので不要である。しかし、サードパーティのアダプタに必要とされるかもしれない。 |
+| [Adapters for pointers to member functions](functional/mem_fun.md) | `mem_fun_t`<br/> `mem_fun1_t`<br/> `const_mem_fun_t`<br/> `const_mem_fun1_t`<br/> `mem_fun_ref_t`<br/> `mem_fun1_ref_t`<br/> `const_mem_fun_ref_t`<br/> `const_mem_fun1_ref_t`<br/> `mem_fun`<br/> `mem_fun_ref` | 標準のセクション 20.3.8 に基づく。 |
 
 
 ##Usage
@@ -41,11 +41,11 @@ std::for_each(c.begin(), c.end(),
               boost::bind2nd(boost::mem_fun_ref(&Person::set_name), "Fred"));
 ```
 
-もし代わりに標準アダプタが使われていれば、このコードは普通、コンパイルに失敗する。それは、`set_name` が参照引数を取るからである。何故こうなるかを解明したければ、[バインダのドキュメント](./functional/binders.md#refref) の中のコメントを参照するとよい。
+もし代わりに標準アダプタが使われていれば、このコードは普通、コンパイルに失敗する。それは、`set_name` が参照引数を取るからである。何故こうなるかを解明したければ、[バインダのドキュメント](functional/binders.md#refref) の中のコメントを参照するとよい。
 
 
 ##Compiler Compatibility
-このヘッダと [テストプログラム](./functional/function_test.cpp.md) は以下のコンパイラでコンパイルされる:
+このヘッダと [テストプログラム](functional/function_test.cpp.md) は以下のコンパイラでコンパイルされる:
 
 | コンパイラ | コメント | 
 |------------|----------|

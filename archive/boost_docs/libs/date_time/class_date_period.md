@@ -1,8 +1,8 @@
 #gregorian::date_period
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **Date Period Documentation**
 
@@ -15,7 +15,7 @@
 
 
 ## <a name="introduction" href="#introduction">Introduction</a>
-`boost::gregorian::date_period` クラスは、二つの日付の範囲(期間)を直接表現する。 プログラムの条件付きの論理を単純化することによって、ある種の計算を単純化する能力を提供する。 例えば、日付が週末あるいは休日のような不規則なスケジュールの中であるかどうか試すのは `date_period` のコレクションを使って達成され得る。 これは、`date_period` が別の期間(date period)と重複する場合に評価を許可する、あるいは重複している期間を生成する、といったいくつかの方法によって容易になる。 [period calculation example(期間計算の例)](./period_calc.cpp.md) はこの例を提供する。
+`boost::gregorian::date_period` クラスは、二つの日付の範囲(期間)を直接表現する。 プログラムの条件付きの論理を単純化することによって、ある種の計算を単純化する能力を提供する。 例えば、日付が週末あるいは休日のような不規則なスケジュールの中であるかどうか試すのは `date_period` のコレクションを使って達成され得る。 これは、`date_period` が別の期間(date period)と重複する場合に評価を許可する、あるいは重複している期間を生成する、といったいくつかの方法によって容易になる。 [period calculation example(期間計算の例)](period_calc.cpp.md) はこの例を提供する。
 
 無限値と組み合わせて使用される期間(date periods)は、「追って通知があるまで」といった複雑な概念を表現する能力を持っている。
 

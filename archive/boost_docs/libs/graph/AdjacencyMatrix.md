@@ -1,5 +1,5 @@
 #AdjacencyMatrix
-AdjacencyMatrix コンセプトは [Graph](./Graph.md) コンセプトを精製し、始点と終点によって与えられるグラフ中の任意の辺への効率的なアクセスのために必要なものを付け加えている。今のところどの Boost の グラフ・ライブラリ・アルゴリズムもこのコンセプトを使っていない。しかしながらこのコンセプトを必要とするであろう Floyd-Warshall のようなまだ実装されていないアルゴリズムが存在する。
+AdjacencyMatrix コンセプトは [Graph](Graph.md) コンセプトを精製し、始点と終点によって与えられるグラフ中の任意の辺への効率的なアクセスのために必要なものを付け加えている。今のところどの Boost の グラフ・ライブラリ・アルゴリズムもこのコンセプトを使っていない。しかしながらこのコンセプトを必要とするであろう Floyd-Warshall のようなまだ実装されていないアルゴリズムが存在する。
 
 
 ##Refinement of
@@ -20,7 +20,7 @@ AdjacencyMatrix コンセプトは [Graph](./Graph.md) コンセプトを精製�
 
 
 ##モデル
-[`adjacency_matrix`](./adjacency_matrix.md)
+[`adjacency_matrix`](adjacency_matrix.md)
 
 
 ##コンセプトチェックするクラス

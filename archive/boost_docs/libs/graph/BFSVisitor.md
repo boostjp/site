@@ -1,5 +1,5 @@
 #BFS（幅優先探査）Visitor Concept
-このコンセプトは [`breadth_first_search()`](./breadth_first_search.md) 用のビジタのインタフェースを定義する。ユーザは BFS Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `breadth_first_search()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
+このコンセプトは [`breadth_first_search()`](breadth_first_search.md) 用のビジタのインタフェースを定義する。ユーザは BFS Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `breadth_first_search()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
 
 
 ##Refinement of
@@ -38,11 +38,11 @@
 
 
 ##モデル
-[`bfs_visitor`](./bfs_visitor.md)
+[`bfs_visitor`](bfs_visitor.md)
 
 
 ##関連項目
-[Visitorコンセプト](./visitor_concepts.md)
+[Visitorコンセプト](visitor_concepts.md)
 
 
 ***

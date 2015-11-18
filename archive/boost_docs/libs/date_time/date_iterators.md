@@ -1,8 +1,8 @@
 #gregorian::date iterators
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **Date Documentation**
 
@@ -12,7 +12,7 @@
 
 
 ## <a name="introduction" href="#introduction">Introduction</a>
-日付イテレータは、日単位で反復するための標準的なメカニズムを提供する。 日付イテレータは(STLの)[入力イテレータ](http://www.sgi.com/tech/stl/InputIterator.html)のモデルであり、日付と他の日付生成タスクで集合を代入するために使われる。 例えば、[print month の例](./print_month.cpp.md)では、1ヶ月の全ての日々を反復し、それらをプリントする。
+日付イテレータは、日単位で反復するための標準的なメカニズムを提供する。 日付イテレータは(STLの)[入力イテレータ](http://www.sgi.com/tech/stl/InputIterator.html)のモデルであり、日付と他の日付生成タスクで集合を代入するために使われる。 例えば、[print month の例](print_month.cpp.md)では、1ヶ月の全ての日々を反復し、それらをプリントする。
 
 ここにあるイテレータは全て `boost::gregorian::date_iterator` からの派生である。
 

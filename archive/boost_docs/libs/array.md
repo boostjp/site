@@ -2,7 +2,7 @@
 
 array.hpp ヘッダは、固定サイズ配列をラップする、STL 対応のコンテナを提供する。
 
-- [ドキュメント](./array/array.md)
+- [ドキュメント](array/array.md)
 - ヘッダ array.hpp
 - プログラムの例はドキュメントのリンクを参照してほしい。
 - [Nicolai M. Josuttis](http://www.josuttis.com)より提供された。

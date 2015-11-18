@@ -1,8 +1,8 @@
 #Date Generators / Algorithms
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **Date Generators / Algorithms**
 
@@ -21,7 +21,7 @@ nkday ldgen(nkday::first, Monday, Sep)); // US labor day (アメリカ合衆国 
 date labor_day = ldgen.get_date(2002); // 2002年の労働者の日を計算
 ```
 
-[print holidays example](./print_holidays.cpp.md) に詳細な使い方の例を示す。
+[print holidays example](print_holidays.cpp.md) に詳細な使い方の例を示す。
 
 
 ## <a name="header" href="#header">Header</a>

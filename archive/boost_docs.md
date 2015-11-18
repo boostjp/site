@@ -6,11 +6,11 @@
 また、これらのドキュメントは`/archive`以下の置いているため、メンテナンスはされていない。メンテナンスする場合は、そのドキュメントを`/document`以下に移動してメンテナンスしてほしい。
 
 ##ドキュメント
-- [ジェネリックプログラミング手法](./boost_docs/document/generic_programming.md)
-- [ジェネリックコンポーネントにおける例外安全性](./boost_docs/document/generic_exception_safety.md)
-- [エラーと例外のハンドリング](./boost_docs/document/error_handling.md)
+- [ジェネリックプログラミング手法](boost_docs/document/generic_programming.md)
+- [ジェネリックコンポーネントにおける例外安全性](boost_docs/document/generic_exception_safety.md)
+- [エラーと例外のハンドリング](boost_docs/document/error_handling.md)
 
 
 ##ライブラリ
-- [各ライブラリの翻訳ドキュメント](./boost_docs/libs.md)
+- [各ライブラリの翻訳ドキュメント](boost_docs/libs.md)
 

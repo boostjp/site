@@ -32,7 +32,7 @@
 
 - References
 - Arrays
-- [Class Serialization Traits](./serializableconcept/class-serialization-traits.md)
+- [Class Serialization Traits](serializableconcept/class-serialization-traits.md)
 - Serialization Wrappers
 - Models - Serialization Implementations Included in the Library
 

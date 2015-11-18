@@ -15,7 +15,7 @@ void breadth_first_visit
 * Buffer[link ./Buffer.md]
 * BFSVisitor[link ./BFSVisitor.md]
 
-この関数はカラー・マーカーがアルゴリズム中で初期化されないことを除けば、基本的に `breadth_first_search()` と同じである。 ユーザはアルゴリズムを呼ぶ前に全ての頂点の色が白色であることを確かめる責任がある。この違いでグラフの型は [Vertex List Graph](./VertexListGraph.md) である代わりに [Incidence Graph](./IncidenceGraph.md) であることのみが要求される。 さらにこの違いはカラー・プロパティ・マップ中のより多くの柔軟性を考慮に入れている。例えば頂点上の部分的な関数を実装するだけのマップを使うことができる。そしてそれは探索がグラフのごく一部にしか及ばない場合、より良い空間効率であることができる。
+この関数はカラー・マーカーがアルゴリズム中で初期化されないことを除けば、基本的に `breadth_first_search()` と同じである。 ユーザはアルゴリズムを呼ぶ前に全ての頂点の色が白色であることを確かめる責任がある。この違いでグラフの型は [Vertex List Graph](VertexListGraph.md) である代わりに [Incidence Graph](IncidenceGraph.md) であることのみが要求される。 さらにこの違いはカラー・プロパティ・マップ中のより多くの柔軟性を考慮に入れている。例えば頂点上の部分的な関数を実装するだけのマップを使うことができる。そしてそれは探索がグラフのごく一部にしか及ばない場合、より良い空間効率であることができる。
 
 
 ##定義場所
@@ -24,7 +24,7 @@ boost/graph/breadth_first_search.hpp
 
 ##パラメータ
 - IN: `IncidenceGraph& g`
-	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](./IncidenceGraph.md) のモデルでなければならない。
+	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
 
 - IN: `vertex_descriptor s`
 	- 探索が開始される始点。
@@ -33,15 +33,15 @@ boost/graph/breadth_first_search.hpp
 ##名前付きパラメータ
 
 - IN: `visitor(BFSVisitor vis)`
-	- アルゴリズムの内側で [BFS Visitor](./BFSVisitor.md) コンセプトで指定されたイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
+	- アルゴリズムの内側で [BFS Visitor](BFSVisitor.md) コンセプトで指定されたイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
 	- デフォルト: `bfs_visitor<null_visitor>`
 
 - UTIL/OUT: `color_map(ColorMap color)`
-	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](./ColorValue.md) をモデルとしなければならない。 
+	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。 
 	- デフォルト: `get(vertex_color, g)`
 
 - UTIL: `buffer(Buffer& Q)`
-	- 頂点が発見される順序を決定するために使用されるキュー。 もしFIFO キューが使われると、巡回は通常の BFS 順序付けに従う。 他の型のキューも使用できるが、巡回順序は異なる。 例えば Dijkstra のアルゴリズムは優先度付きキューを用いて実装することができる。 `Buffer` の型は [Buffer](./Buffer.md) のモデルでなければならない。 
+	- 頂点が発見される順序を決定するために使用されるキュー。 もしFIFO キューが使われると、巡回は通常の BFS 順序付けに従う。 他の型のキューも使用できるが、巡回順序は異なる。 例えば Dijkstra のアルゴリズムは優先度付きキューを用いて実装することができる。 `Buffer` の型は [Buffer](Buffer.md) のモデルでなければならない。 
 	- デフォルト: `boost::queue`
 
 
@@ -63,7 +63,7 @@ boost/graph/breadth_first_search.hpp
 
 
 ##関連項目
-[`breadth_first_search()`](./breadth_first_search.md), [`bfs_visitor`](./bfs_visitor.md), and [`depth_first_search()`](./depth_first_search.md)
+[`breadth_first_search()`](breadth_first_search.md), [`bfs_visitor`](bfs_visitor.md), and [`depth_first_search()`](depth_first_search.md)
 
 
 ##注釈

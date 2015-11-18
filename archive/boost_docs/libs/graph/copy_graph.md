@@ -17,10 +17,10 @@ boost/graph/copy.hpp
 ##パラメータ
 
 - IN: `const VertexListGraph& G`
-	- 有向または無向グラフ。グラフの型は [Vertex List Graph](./VertexListGraph.md) モデルでなければならない。
+	- 有向または無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) モデルでなければならない。
 
 - OUT: `MutableGraph& G_copy`
-	- グラフのコピー結果。 グラフの型は [Mutable Graph](./MutableGraph.md) モデルでなければならない。
+	- グラフのコピー結果。 グラフの型は [Mutable Graph](MutableGraph.md) モデルでなければならない。
 
 
 ##名前付きパラメータ

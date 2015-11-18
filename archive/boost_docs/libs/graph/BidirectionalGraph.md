@@ -1,10 +1,10 @@
 #BidirectionalGraph
 
-BidirectionalGraph コンセプトは、[IncidenceGraph](./IncidenceGraph.md) を精製し、各頂点の入辺への効率的なアクセスのために必要とされるものを付け加えている。 有向グラフにとって、入辺への効率的なアクセスは一般的により多くの記憶スペースを必要とし、多くのアルゴリズムは入辺へのアクセスを必要としないため、 このコンセプトは [IncidenceGraph](./IncidenceGraph.md) から分離されている。 無向グラフにとってはこれは問題とならない。というのは `in_edges()` 関数 と `out_edges()` 関数は同じであり、両方の関数は頂点に隣接した辺を返すからである。
+BidirectionalGraph コンセプトは、[IncidenceGraph](IncidenceGraph.md) を精製し、各頂点の入辺への効率的なアクセスのために必要とされるものを付け加えている。 有向グラフにとって、入辺への効率的なアクセスは一般的により多くの記憶スペースを必要とし、多くのアルゴリズムは入辺へのアクセスを必要としないため、 このコンセプトは [IncidenceGraph](IncidenceGraph.md) から分離されている。 無向グラフにとってはこれは問題とならない。というのは `in_edges()` 関数 と `out_edges()` 関数は同じであり、両方の関数は頂点に隣接した辺を返すからである。
 
 
 ##Refinement of
-[IncidenceGraph](./IncidenceGraph.md)
+[IncidenceGraph](IncidenceGraph.md)
 
 
 ##表記
@@ -22,7 +22,7 @@ BidirectionalGraph コンセプトは、[IncidenceGraph](./IncidenceGraph.md) �
 	- このタグ型は `bidirectional_graph_tag` に変換可能でなければならない。
 
 - `boost::graph_traits<G>::in_edge_iterator`
-	- 頂点 `v` のための入辺イテレータは `v` の入辺へのアクセスを提供する。そのため入辺イテレータの値型はそのグラフの辺記述子型である。 入辺イテレータは [MultiPassInputIterator](./MultiPassInputIterator.md) の要求を満たしていなければならない。
+	- 頂点 `v` のための入辺イテレータは `v` の入辺へのアクセスを提供する。そのため入辺イテレータの値型はそのグラフの辺記述子型である。 入辺イテレータは [MultiPassInputIterator](MultiPassInputIterator.md) の要求を満たしていなければならない。
 
 
 ##有効な表現式
@@ -35,8 +35,8 @@ BidirectionalGraph コンセプトは、[IncidenceGraph](./IncidenceGraph.md) �
 
 
 ##モデル
-- [`adjacency_list`](./adjacency_list.md) で `Directed=bidirectionalS`
-- [`adjacency_list`](./adjacency_list.md) で `Directed=undirectedS`
+- [`adjacency_list`](adjacency_list.md) で `Directed=bidirectionalS`
+- [`adjacency_list`](adjacency_list.md) で `Directed=undirectedS`
 
 
 ##計算量の保証
@@ -44,7 +44,7 @@ BidirectionalGraph コンセプトは、[IncidenceGraph](./IncidenceGraph.md) �
 
 
 ##関連項目
-[Graphコンセプト](./graph_concepts.md)
+[Graphコンセプト](graph_concepts.md)
 
 
 ##コンセプトチェックするクラス

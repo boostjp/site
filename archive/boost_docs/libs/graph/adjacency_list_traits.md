@@ -48,7 +48,7 @@ struct adjacency_list_traits {
 
 
 ##See Also
-[`adjacency_list`](./adjacency_list.md)
+[`adjacency_list`](adjacency_list.md)
 
 
 ***

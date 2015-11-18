@@ -10,16 +10,16 @@
 
 **Temporal Types**
 
-- [Class date](./class_date.md)
-- [Class date_duration](./class_date_duration.md)
-- [Class date_period](./class_date_period.md)
+- [Class date](class_date.md)
+- [Class date_duration](class_date_duration.md)
+- [Class date_period](class_date_period.md)
 
 **Other Topics**
 
-- [Date Iterators](./date_iterators.md)
-- [Date Generators / Algorithms](./date_algorithms.md)
-- [Class gregorian_calendar](./class_gregorian_calendar.md)
-- [Class day_clock](./class_date.md#construct-from-clock)
+- [Date Iterators](date_iterators.md)
+- [Date Generators / Algorithms](date_algorithms.md)
+- [Class gregorian_calendar](class_gregorian_calendar.md)
+- [Class day_clock](class_date.md#construct-from-clock)
 
 
 ## <a name="introduction" href="#introduction">Introduction</a>
@@ -35,18 +35,18 @@ gregorian system の全ての型は `boost::gregorian` 名前空間で見つか�
 
 もう一つのヘッダ `boost/date_time/gregorian/gregorian.hpp` は型と入出力コードを含む。
 
-[`boost::gregorian::date`](./class_date.md) クラスはユーザーにとって主要な時間型である。 もし，"4月の第1日曜日"を見つけるといった特別な日付計算プログラムの書き方に興味があるなら、[date generators and algorithms](./date_algorithms.md)ページを見ると良い。
+[`boost::gregorian::date`](class_date.md) クラスはユーザーにとって主要な時間型である。 もし，"4月の第1日曜日"を見つけるといった特別な日付計算プログラムの書き方に興味があるなら、[date generators and algorithms](date_algorithms.md)ページを見ると良い。
 
 
 ## <a name="usage-examples" href="#usage-examples">Usage Examples</a>
 
 | コード例 | 説明 |
 |----------|------|
-| [Days Alive](./days_alive.cpp.md)<br/> [Days Till New Year](./days_till_new_year.cpp.md) | 簡単な日数計算。現在の日付を時計から取得 |
-| [Dates as strings](./dates_as_strings.cpp.md) | 日付と文字列の相互変換、簡単な解析と書式化 |
-| [Date Period Calculations](./period_calc.cpp.md) | 日付が、期間(periods)の集合に含まれるか調べる (例: 休日・週末の判定) |
-| [Print a month](./print_month.cpp.md) | コマンドラインで与えた月の日付を全て出力する小さなユーティリティプログラム。 1999年1月1日が金曜だったか土曜だったか知る必要がある? このプログラムはその方法を示す |
-| [Print Holidays](./print_holidays.cpp.md) | 抽象的な指定を具体的な日付の集合に変換するために、日付ジェネレータを使う |
+| [Days Alive](days_alive.cpp.md)<br/> [Days Till New Year](days_till_new_year.cpp.md) | 簡単な日数計算。現在の日付を時計から取得 |
+| [Dates as strings](dates_as_strings.cpp.md) | 日付と文字列の相互変換、簡単な解析と書式化 |
+| [Date Period Calculations](period_calc.cpp.md) | 日付が、期間(periods)の集合に含まれるか調べる (例: 休日・週末の判定) |
+| [Print a month](print_month.cpp.md) | コマンドラインで与えた月の日付を全て出力する小さなユーティリティプログラム。 1999年1月1日が金曜だったか土曜だったか知る必要がある? このプログラムはその方法を示す |
+| [Print Holidays](print_holidays.cpp.md) | 抽象的な指定を具体的な日付の集合に変換するために、日付ジェネレータを使う |
 
 
 ***

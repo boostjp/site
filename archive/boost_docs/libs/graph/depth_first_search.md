@@ -15,11 +15,11 @@ void depth_first_search(const Graph& g, DFSVisitor vis, ColorMap color,
 ```
 * DFSVisitor[link ./DFSVisitor.md]
 
-`depth_first_search()` 関数は、有向グラフ中の頂点の深さ優先巡回(depth-first traversal)を行う。可能な時は、深さ優先巡回は次に訪れるために現在の頂点の隣接頂点を選ぶ。もし全ての隣接頂点がすでに発見されているならば、もしくは隣接頂点が存在しないならば、アルゴリズムは未発見の隣接を持つ前の頂点へとバックトラックする。一旦全ての到達可能な頂点が訪問されたら、アルゴリズムは残っている未発見の頂点のどれかを選び出し、巡回を続ける。このアルゴリズムは全ての頂点が訪問された時に終了する。深さ優先探索はグラフ中の辺を分類するのと、頂点を順序づけるのに役立つ。章 [Depth-First Search](./graph_theory_review.md#dfs-algorithm) は DFS の様々な特性を記述し、適当に例をあげている。
+`depth_first_search()` 関数は、有向グラフ中の頂点の深さ優先巡回(depth-first traversal)を行う。可能な時は、深さ優先巡回は次に訪れるために現在の頂点の隣接頂点を選ぶ。もし全ての隣接頂点がすでに発見されているならば、もしくは隣接頂点が存在しないならば、アルゴリズムは未発見の隣接を持つ前の頂点へとバックトラックする。一旦全ての到達可能な頂点が訪問されたら、アルゴリズムは残っている未発見の頂点のどれかを選び出し、巡回を続ける。このアルゴリズムは全ての頂点が訪問された時に終了する。深さ優先探索はグラフ中の辺を分類するのと、頂点を順序づけるのに役立つ。章 [Depth-First Search](graph_theory_review.md#dfs-algorithm) は DFS の様々な特性を記述し、適当に例をあげている。
 
 BFS に似て、頂点が発見された過程を保持するためにカラー・マーカーが使われる。白色はまだ発見されていない頂点を印づけ、灰色は発見されたけれどもまだ未発見の隣接している頂点を持つ頂点を印づける。黒い頂点はどの白い頂点にも隣接していない発見された頂点である。
 
-`depth_first_search()` 関数は、アルゴリズムの内部で一定のイベント・ポイントにおいて、ユーザ定義のアクションを呼び出す。これは一般的な DFS アルゴリズムが使用できる多くの状況に適用させるための機構を提供する。下の疑似コード中で、 DFS のためのイベント・ポイントは三角形と右側のラベルで示されている。ユーザ定義のアクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [DFS Visitor](./DFSVisitor.md) の要求を満たしているオブジェクトである。擬似コード中では、先行点を計算するアルゴリズムを `p`、発見時間を `d`、そして終了時間を `t` と表す。デフォルトでは、`depth_first_search()` 関数はこれらのプロパティを計算しない。しかしながら、これを実行するのに使える [`predecessor_recorder`](./predecessor_recorder.md) と [`time_stamper`](./time_stamper.md) のような、あらかじめ定義されたビジタが存在する。
+`depth_first_search()` 関数は、アルゴリズムの内部で一定のイベント・ポイントにおいて、ユーザ定義のアクションを呼び出す。これは一般的な DFS アルゴリズムが使用できる多くの状況に適用させるための機構を提供する。下の疑似コード中で、 DFS のためのイベント・ポイントは三角形と右側のラベルで示されている。ユーザ定義のアクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [DFS Visitor](DFSVisitor.md) の要求を満たしているオブジェクトである。擬似コード中では、先行点を計算するアルゴリズムを `p`、発見時間を `d`、そして終了時間を `t` と表す。デフォルトでは、`depth_first_search()` 関数はこれらのプロパティを計算しない。しかしながら、これを実行するのに使える [`predecessor_recorder`](predecessor_recorder.md) と [`time_stamper`](time_stamper.md) のような、あらかじめ定義されたビジタが存在する。
 
 
 ```
@@ -61,17 +61,17 @@ boost/graph/depth_first_search.hpp
 ##パラメータ
 
 - IN: `Graph& g`
-	- 有向グラフ。グラフの型は [Incidence Graph](./IncidenceGraph.md) と [Vertex List Graph](./VertexListGraph.md) のモデルでなければならない。
+	- 有向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) と [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
 
 
 ##名前付きパラメータ
 
 - IN: `visitor(DFSVisitor vis)`
-	- アルゴリズムの内側で [DFS Visitor](./DFSVisitor.md) コンセプトで指定されるイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
+	- アルゴリズムの内側で [DFS Visitor](DFSVisitor.md) コンセプトで指定されるイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
 	- デフォルト: `dfs_visitor<null_visitor>`
 
 - UTIL/OUT: `color_map(ColorMap color)`
-	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](./ColorValue.md) をモデルとしなければならない。
+	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。
 	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md) で、添え字マップには `i_map` を用いる。
 
 - IN: `root_vertex(typename graph_traits<VertexListGraph>::vertex_descriptor start)`
@@ -100,11 +100,11 @@ boost/graph/depth_first_search.hpp
 
 
 ##コード例
-[examples/dfs-example.cpp](./examples/dfs-example.cpp.md) 中の例は、 [Figure 1](./graph_theory_review.md#dfs-algorithm) にあるグラフへ適用された DFS を示す。
+[examples/dfs-example.cpp](examples/dfs-example.cpp.md) 中の例は、 [Figure 1](graph_theory_review.md#dfs-algorithm) にあるグラフへ適用された DFS を示す。
 
 
 ##関連項目
-[`depth_first_visit`](./depth_first_visit.md)、[`undirected_dfs`](./undirected_dfs.md)
+[`depth_first_visit`](depth_first_visit.md)、[`undirected_dfs`](undirected_dfs.md)
 
 
 ##注釈

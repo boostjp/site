@@ -1,5 +1,5 @@
 #DFS Visitor Concept
-このコンセプトは [`depth_first_search()`](./depth_first_search.md) 用のビジタのインタフェースを定義する。ユーザは DFS Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `depth_first_search()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
+このコンセプトは [`depth_first_search()`](depth_first_search.md) 用のビジタのインタフェースを定義する。ユーザは DFS Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `depth_first_search()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
 
 
 ##Refinement of
@@ -37,7 +37,7 @@
 
 
 ##モデル
-[`dfs_visitor`](./dfs_visitor.md)
+[`dfs_visitor`](dfs_visitor.md)
 
 
 ***

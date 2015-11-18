@@ -293,7 +293,7 @@ int main(int argc, char** argv) {
 ```
 
 ## <a name="serialize" href="#serialize">非プリミティブ型を他のノードへ送信する</a>
-Boost.MPI では非プリミティブな型、自作のクラスなどを [Boost.Serialization](./serialize.md) を用いてシリアライズして他のランクへ送信することができる。
+Boost.MPI では非プリミティブな型、自作のクラスなどを [Boost.Serialization](serialize.md) を用いてシリアライズして他のランクへ送信することができる。
 
 Boost.Serialization の使用方法自体は他に譲るとして、Boost.MPI では固定サイズであるか、またはメンバにポインタを持たないユーザ定義型を MPI DataType としてマークできる。例えば `gps_positions` クラスがあるとして、
 

@@ -1,8 +1,8 @@
 #posix_time::ptime Documentation
 
 - [全体のインデックスへ](../date_time.md)
-- [Gregorianのインデックスへ](./gregorian.md)
-- [Posix Timeのインデックスへ](./posix_time.md)
+- [Gregorianのインデックスへ](gregorian.md)
+- [Posix Timeのインデックスへ](posix_time.md)
 
 **ptime Documentation**
 
@@ -21,7 +21,7 @@
 
 クラス `ptime` は，時間位置(time point)の日付部分へのインタフェースである `gregorian::date` に依存する。
 
-`ptime` を生成する別の手法が，[time iterators](./time_iterators.md) にある。
+`ptime` を生成する別の手法が，[time iterators](time_iterators.md) にある。
 
 
 ## <a name="header" href="#header">Header</a>

@@ -1,5 +1,5 @@
 #Bellman Ford Visitor Concept
-このコンセプトは [`bellman_ford_shortest_paths()`](./bellman_ford_shortest_paths.md) 用のビジタのインタフェースを定義する。ユーザは Bellman Ford Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `bellman_ford_shortest_paths()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
+このコンセプトは [`bellman_ford_shortest_paths()`](bellman_ford_shortest_paths.md) 用のビジタのインタフェースを定義する。ユーザは Bellman Ford Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `bellman_ford_shortest_paths()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
 
 
 ##Refinement of
@@ -35,7 +35,7 @@
 
 
 ##モデル
-[`bellman_visitor`](./bellman_visitor.md)
+[`bellman_visitor`](bellman_visitor.md)
 
 
 ***

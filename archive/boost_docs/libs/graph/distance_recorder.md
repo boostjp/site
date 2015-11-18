@@ -1,15 +1,15 @@
 #distance_recorder<DistanceMap, EventTag>
-これは、グラフ探索中に、ある始点から各頂点までの距離を ([property map](../property_map.md) を使って) 記録する [EventVisitor](./EventVisitor.md) である。辺 `e = (u,v)` に対して実行されると、 `v` への距離は `u` への距離より大きくなる。 `distance_recorder` は `on_tree_edge` や `on_relax_edge` イベントでよく使われる。頂点イベントには使用できない。
+これは、グラフ探索中に、ある始点から各頂点までの距離を ([property map](../property_map.md) を使って) 記録する [EventVisitor](EventVisitor.md) である。辺 `e = (u,v)` に対して実行されると、 `v` への距離は `u` への距離より大きくなる。 `distance_recorder` は `on_tree_edge` や `on_relax_edge` イベントでよく使われる。頂点イベントには使用できない。
 
-[`bfs_visitor`](./bfs_visitor.md) や [`dfs_visitor`](./dfs_visitor.md) などのアルゴリズム別のアダプタでラップすることで、 `distance_recorder` を グラフアルゴリズムで使えるようになる。また、`std::pair` を使って他のイベントビジタと結合して、 EventVisitorList を作れる。
+[`bfs_visitor`](bfs_visitor.md) や [`dfs_visitor`](dfs_visitor.md) などのアルゴリズム別のアダプタでラップすることで、 `distance_recorder` を グラフアルゴリズムで使えるようになる。また、`std::pair` を使って他のイベントビジタと結合して、 EventVisitorList を作れる。
 
 
 ##コード例
-例は [`bfs_visitor`](./bfs_visitor.md) を参照。
+例は [`bfs_visitor`](bfs_visitor.md) を参照。
 
 
 ##モデル
-[EventVisitor](./EventVisitor.md)
+[EventVisitor](EventVisitor.md)
 
 
 ##定義場所
@@ -47,9 +47,9 @@ boost/graph/visitors.hpp
 
 
 ##関連項目
-[Visitorコンセプト](./visitor_concepts.md)
+[Visitorコンセプト](visitor_concepts.md)
 
-イベントビジタ: [`predecessor_recorder`](./predecessor_recorder.md) 、 [`time_stamper`](./time_stamper.md) 、 [`property_writer`](./property_writer.md) 。
+イベントビジタ: [`predecessor_recorder`](predecessor_recorder.md) 、 [`time_stamper`](time_stamper.md) 、 [`property_writer`](property_writer.md) 。
 
 
 ##訳注

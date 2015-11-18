@@ -17,11 +17,11 @@
 
 本ライブラリのコードは「あるがまま(as is)」に提供されており、いかなる明示的、暗黙的保証も行わない。
 
-- ヘッダ [compose.hpp](./compose.hpp.md)
-- `compose_f_gx` のサンプル [compose1.cpp](./compose1.cpp.md)
-- `compose_f_gx_hx` のサンプル [compose2.cpp](./compose2.cpp.md)
-- `compose_f_gx_hy` のサンプル [compose3.cpp](./compose3.cpp.md)
-- 引数を与えない、`compose_f_g` および `ptr_fun` のサンプル [compose4.cpp](./compose4.cpp.md)
+- ヘッダ [compose.hpp](compose.hpp.md)
+- `compose_f_gx` のサンプル [compose1.cpp](compose1.cpp.md)
+- `compose_f_gx_hx` のサンプル [compose2.cpp](compose2.cpp.md)
+- `compose_f_gx_hy` のサンプル [compose3.cpp](compose3.cpp.md)
+- 引数を与えない、`compose_f_g` および `ptr_fun` のサンプル [compose4.cpp](compose4.cpp.md)
 
 
 関数オブジェクトと合成関数の詳細は以下を参照されたい:

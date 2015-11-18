@@ -57,7 +57,7 @@ void for_each(It first, It last, R (T::*pmf) ());
 結果: std::for_each(first, last, boost::mem_fn(pmf)); と同等。
 ```
 
-ここで、 `boost::mem_fn` の部分はこのページへのリンクとするとよいだろう。 [bindのドキュメント](./bind.md) にそのような例があるので参照のこと。
+ここで、 `boost::mem_fn` の部分はこのページへのリンクとするとよいだろう。 [bindのドキュメント](bind.md) にそのような例があるので参照のこと。
 
 `mem_fn` は1つの引数(メンバ関数へのポインタ)をとり、標準あるいは独自の アルゴリズムに渡すのに適した関数オブジェクトを戻す：
 
@@ -95,7 +95,7 @@ void k(std::vector<boost::shared_ptr<X> > const & v)
 
 ## <a name="faq" href="#faq">FAQ</a>
 ### <a name="Q1" href="#Q1">mem_fnを、標準の std::mem_fun[_ref]アダプタのかわりに使用できるか?</a>
-はい。単純な使い方では、`mem_fn` は標準のアダプタが提供しないいくつかの機能を提供する。 `std::bind1st`、`std::bind2nd`、[Boost.Compose](./compose.md) と標準のアダプタを組み合わせるような複雑な使い方をしている場合は、 [`boost::bind`](./bind.md) を使用するように書き換えることで、`mem_fn`の恩恵を自動的に受けることができる。
+はい。単純な使い方では、`mem_fn` は標準のアダプタが提供しないいくつかの機能を提供する。 `std::bind1st`、`std::bind2nd`、[Boost.Compose](compose.md) と標準のアダプタを組み合わせるような複雑な使い方をしている場合は、 [`boost::bind`](bind.md) を使用するように書き換えることで、`mem_fn`の恩恵を自動的に受けることができる。
 
 
 ### <a name="Q2" href="#Q2">既に書いてしまったコード中のstd::mem_fun[_ref]を、 全てmem_fnで置き換えるべきか?</a>

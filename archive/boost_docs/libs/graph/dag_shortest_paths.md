@@ -19,7 +19,7 @@ void dag_shortest_paths(const VertexListGraph& g,
    Compare compare, Combine combine, DistInf inf, DistZero zero)
 ```
 
-このアルゴリズム [[8]](./bibliography.md#clr90) は 重み付きの非循環有向グラフ (DAG) の単一始点の最短経路問題を解く。 このアルゴリズムは DAG にとって、Dijkstra や Bellman-Ford アルゴリズムより 一層効率的である。全ての辺の重みが 1 に等しい時はこのアルゴリズムの代わりに幅優先探索を使いなさい。最短経路問題の定義のために、最短経路問題のいくつかの背景についての章 [Shortest-Paths Algorithms](./graph_theory_review.md#shortest-path-algorithms) を見なさい。
+このアルゴリズム [[8]](bibliography.md#clr90) は 重み付きの非循環有向グラフ (DAG) の単一始点の最短経路問題を解く。 このアルゴリズムは DAG にとって、Dijkstra や Bellman-Ford アルゴリズムより 一層効率的である。全ての辺の重みが 1 に等しい時はこのアルゴリズムの代わりに幅優先探索を使いなさい。最短経路問題の定義のために、最短経路問題のいくつかの背景についての章 [Shortest-Paths Algorithms](graph_theory_review.md#shortest-path-algorithms) を見なさい。
 
 `dag_shortest_paths()` 関数から出力を得るための主な二つの選択が存在する。`distance_map()` パラメータを通して距離プロパティ・マップを提供するならばグラフ中の始点から他の全ての頂点への最短距離は距離マップに記録されるだろう。さらに最短経路木を先行点マップ (predecessor map) に記録する事ができる。その場合 `V` 中の各頂点 `u` にとって、最短経路木中では `p[u]` が `u` の先行点になるだろう (ただし `p[u] = u` でここに `u` が始点であるかまたは始点からは到達不能な頂点である場合を除く)。これらの二つの選択に加え、ユーザはアルゴリズムのイベント・ポイントのどれかの間アクションをとれる独自のビジタを提供することができる。
 
@@ -31,7 +31,7 @@ boost/graph/dag_shortest_paths.hpp
 ##パラメータ
 
 - IN: `const VertexListGraph& g`
-	- アルゴリズムが適用されるグラフオブジェクト。`VertexListGraph` の型は [Vertex List Graph](./VertexListGraph.md) のモデルでなければならない。
+	- アルゴリズムが適用されるグラフオブジェクト。`VertexListGraph` の型は [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
 
 - IN: `vertex_descriptor s`
 	- 始点。全ての距離はこの頂点から計算され、最短経路木はこの頂点を根とする。
@@ -52,7 +52,7 @@ boost/graph/dag_shortest_paths.hpp
 	- デフォルト: `dummy_property_map`
 
 - UTIL/OUT: `distance_map(DistanceMap d_map)`
-	- グラフ `g` 中の始点 `s` から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。最短経路の重みは、最短経路に沿った辺の重みの和である。`DistanceMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならない。グラフの頂点記述子型は距離マップのキー型として使用できる必要がある。距離マップの値型は `combine` 関数 オブジェクトと単位要素のための `zero` オブジェクトから作られた [Monoid](./Monoid.md) の要素型である。さらに距離の値型は `compare` 関数オブジェクトによって供給される [StrictWeakOrdering](http://www.sgi.com/tech/stl/StrictWeakOrdering.html) の順序付けを持っていなければならない。
+	- グラフ `g` 中の始点 `s` から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。最短経路の重みは、最短経路に沿った辺の重みの和である。`DistanceMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならない。グラフの頂点記述子型は距離マップのキー型として使用できる必要がある。距離マップの値型は `combine` 関数 オブジェクトと単位要素のための `zero` オブジェクトから作られた [Monoid](Monoid.md) の要素型である。さらに距離の値型は `compare` 関数オブジェクトによって供給される [StrictWeakOrdering](http://www.sgi.com/tech/stl/StrictWeakOrdering.html) の順序付けを持っていなければならない。
 	- デフォルト: サイズ `num_vertices(g)` の `WeightMap` の値型の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md) で、添え字マップには `i_map` を用いる。
 
 - IN: `distance_compare(CompareFunction cmp)`
@@ -68,15 +68,15 @@ boost/graph/dag_shortest_paths.hpp
 	- デフォルト: `std::numeric_limits<D>::max()`
 
 - IN: `distance_zero(D zero)`
-	- `zero` の値は距離の値と `combine` 関数オブジェクトによって作られた [Monoid](./Monoid.md) のための単一要素でなければならない。 `D` の型は `DistanceMap` の値型である。
+	- `zero` の値は距離の値と `combine` 関数オブジェクトによって作られた [Monoid](Monoid.md) のための単一要素でなければならない。 `D` の型は `DistanceMap` の値型である。
 	- デフォルト: `D()`
 
 - UTIL/OUT: `color_map(ColorMap c_map)`
-	- これは頂点に印をつけるためにアルゴリズムの実行の間使われる。頂点は白色から始めて、それがキュー中に挿入された時に灰色になる。それからそれがキューから取り除かれた時に黒色になる。アルゴリズムの終了時に、始点から到達可能な頂点は黒色に色づけされている。その他の全ての頂点は白色のままである。`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならない。頂点記述子はマップのキー型として使用できる必要があり、マップの値型は [Color Value](./ColorValue.md) のモデルでなければならない。 
+	- これは頂点に印をつけるためにアルゴリズムの実行の間使われる。頂点は白色から始めて、それがキュー中に挿入された時に灰色になる。それからそれがキューから取り除かれた時に黒色になる。アルゴリズムの終了時に、始点から到達可能な頂点は黒色に色づけされている。その他の全ての頂点は白色のままである。`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならない。頂点記述子はマップのキー型として使用できる必要があり、マップの値型は [Color Value](ColorValue.md) のモデルでなければならない。 
 	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md) で、添え字マップには `i_map` を用いる。
 
 - OUT: `visitor(DijkstraVisitor v)`
-	- アルゴリズム内の一定のイベント・ポイントの間に起こしたいアクションを指定するのに使いなさい。`DijkstraVisitor` は [Dijkstra Visitor](./DijkstraVisitor.md) コンセプトのモデルでなければならない。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
+	- アルゴリズム内の一定のイベント・ポイントの間に起こしたいアクションを指定するのに使いなさい。`DijkstraVisitor` は [Dijkstra Visitor](DijkstraVisitor.md) コンセプトのモデルでなければならない。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
 	- デフォルト: `dijkstra_visitor<null_visitor>`
 
 
@@ -96,7 +96,7 @@ boost/graph/dag_shortest_paths.hpp
 
 
 ##コード例
-[examples/dag_shortest_paths.cpp](./examples/dag_shortest_paths.cpp.md) を見よ。これはこのアルゴリズムの使用例である。
+[examples/dag_shortest_paths.cpp](examples/dag_shortest_paths.cpp.md) を見よ。これはこのアルゴリズムの使用例である。
 
 
 ##注釈
