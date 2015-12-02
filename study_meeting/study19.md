@@ -32,9 +32,8 @@
 | 13:25〜13:30 | 「女性のためのC++コミュニティ Ladies++ meetup #1」の紹介 | [cocodrips](https://twitter.com/cocodrips) |
 | 13:30～14:00 | クロスプラットフォームマルチメディアライブラリSDL2の紹介 | [nyaocat](https://twitter.com/nyaocat) | |
 | 14:20～14:50 | クソザコ鳥頭が非順序連想コンテナに入門してみた | [kariya_mitsuru](https://twitter.com/kariya_mitsuru) |
-| 15:10～15:40 | expectedによるエラーハンドリング | [cpp_akira](https://twitter.com/cpp_akira) |
-| 16:00～16:10 | Boost.Configについて | [Flast](https://twitter.com/Flast_RO) |
-| 16:15～16:30 | 暫定版C++モジュールシステムの解説 | [lapis_tw](https://twitter.com/lapis_tw) |
+| 15:10～15:50 | expectedによるエラーハンドリング | [cpp_akira](https://twitter.com/cpp_akira) |
+| 16:15～16:30 | Boost.Configについて | [Flast](https://twitter.com/Flast_RO) |
 | 16:50～18:00 | メモリモデル再入門 | [yamasa](https://twitter.com/yamasa)  |
 
 
