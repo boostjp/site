@@ -56,7 +56,13 @@
 
 ##SIMDのゆるい話
 - 発表者 : [krustf](https://twitter.com/krustf)
-- 発表資料 :
+- 発表資料 : <http://www.slideshare.net/krustf/avx-simd>
+
+
+##女性のためのC++コミュニティ Ladies++
+- 発表者 : [cocodrips](https://twitter.com/cocodrips)
+- サイト : <http://ladiespp.github.io/>
+- 発表資料 : <http://www.slideshare.net/cocodrips/c-ladies>
 
 
 ##SDL2の紹介
