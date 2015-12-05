@@ -48,3 +48,9 @@
     - 差分版 : [[slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1600)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_19/boost_tour_1_60_0.pdf)]
     - マージ版 : [[slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1600-merge)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_19/boost_tour_1_60_0_merge.pdf)]
 
+
+##Effective Modern C++とCppCoreGuidelinesについて
+- 発表者 : okada, [@okdshin](https://twitter.com/okdshin)
+- 発表資料 : <http://www.slideshare.net/ShintarouOkada/boost19-effective-modern-cc-core-guidelines>
+
+
