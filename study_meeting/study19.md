@@ -54,3 +54,14 @@
 - 発表資料 : <http://www.slideshare.net/ShintarouOkada/boost19-effective-modern-cc-core-guidelines>
 
 
+##SIMDのゆるい話
+- 発表者 : [krustf](https://twitter.com/krustf)
+- 発表資料 :
+
+
+##SDL2の紹介
+- 発表者 : 楠田 真矢, [@nyaocat](https://twitter.com/nyaocat)
+- サイト : <http://nyaocat.jp/>
+- 発表資料 : <http://www.slideshare.net/nyaocat/sdl2>
+
+
