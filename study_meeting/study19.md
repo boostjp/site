@@ -81,3 +81,8 @@
 - サイト : <http://faithandbrave.github.io/>
 - 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/error-handling-using-expected)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_19/expected.pdf)]
 
+
+##Boost.ConfigとSG10と
+- 発表者 : Kohei Takahashi, [@Flast_RO](https://twitter.com/Flast_RO), [@Flast_NET](https://twitter.com/Flast_NET)
+- 発表資料 : <http://www.flast.jp/article/boost-19-tokyo/index.html>
+
