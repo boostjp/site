@@ -65,3 +65,13 @@
 - 発表資料 : <http://www.slideshare.net/nyaocat/sdl2>
 
 
+##クソザコ鳥頭が非順序連想コンテナに入門してみた
+- 発表者 : 鳥頭かりやマン, [@kariya_mitsuru](https://twitter.com/kariya_mitsuru)
+- 発表資料 : <http://www.slideshare.net/kariya_mitsuru/ss-55842496>
+
+
+##expectedによるエラーハンドリング
+- 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
+- サイト : <http://faithandbrave.github.io/>
+- 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/error-handling-using-expected)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_19/expected.pdf)]
+
