@@ -86,3 +86,8 @@
 - 発表者 : Kohei Takahashi, [@Flast_RO](https://twitter.com/Flast_RO), [@Flast_NET](https://twitter.com/Flast_NET)
 - 発表資料 : <http://www.flast.jp/article/boost-19-tokyo/index.html>
 
+
+##メモリモデル再入門
+- 発表者 : やまさ, [@yamasa](https://twitter.com/yamasa)
+- 発表資料 : <https://docs.google.com/presentation/d/1ClVZvXo8lj7TE66hZ0eqNyVc1DBcRciJRXUxukhOb2k/pub?slide=id.p>
+
