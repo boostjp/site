@@ -61,7 +61,7 @@
 
 ##女性のためのC++コミュニティ Ladies++
 - 発表者 : [cocodrips](https://twitter.com/cocodrips)
-- サイト : <http://ladiespp.github.io/>
+- サイト : <http://ladiescpp.github.io/>
 - 発表資料 : <http://www.slideshare.net/cocodrips/c-ladies>
 
 
