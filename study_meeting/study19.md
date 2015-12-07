@@ -40,6 +40,11 @@
 ##Twitterハッシュタグ
 [#boostjp](https://twitter.com/search?q=%23boostjp)
 
+
+##配信
+<https://www.youtube.com/watch?v=hXwdokY_xHY>
+
+
 ##発表資料
 ###Boostライブラリ一周の旅 1.59.0-1.60.0
 - 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
