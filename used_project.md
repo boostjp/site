@@ -73,6 +73,12 @@ SSHの置き換えを狙う端末アプリケーション。回線切断から�
 オフィススイート（文書作成、表計算、プレゼンテーション、etc.）。ver.4.0.1(2013/03/07)時点でのBoost使用状況をソースコードから[抽出して見る](https://gist.github.com/usagi/5108142)とArray、DateTime、Foreach、Preprocessor、Random、SmartPtr、Spirit、UnorderedMapなど使われている。ver.4のCalcからはRANDOM()にBoost.Randomを用いたメルセンヌツイスターを[採用](https://bugs.freedesktop.org/show_bug.cgi?id=33365)するなどBoostの利用も広まっている模様。
 
 
+- [MySQL](http://www-jp.mysql.com/)
+リレーショナルデータベース管理システム (RDBMS)。オープンソースのRDBMSにおいて、人気がある製品の1つである。
+GIS関係の実装においてBoost.Geometoryを使用している。
+参考: [MySQLの実装にBoost.Geometryが使われはじめた - Faith and Brave - C++で遊ぼう](http://faithandbrave.hateblo.jp/entry/2014/04/28/131514)
+
+
 ###商用製品
 - [Shade](http://shade.e-frontier.co.jp/)
 e-frontier社 3DCG作成ソフト。
