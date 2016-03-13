@@ -51,9 +51,10 @@ Boost.Array, Boost.CircularBuffer, Boost.DateTime, Boost.Foreach, Boost.Function
 Debian系Linuxディストリビューションで使用されているパッケージ管理システムaptの対話的フロントエンド。
 Boost.Iostreamsを使用している。
 
-- [Phusion Passenger](http://www.modrails.com/)
-Ruby on RailsをはじめとするRubyのウェブアプリケーションフレームワークを動作されるためのミドルウェア（ApacheモジュールとNginxモジュール）。mod_rails, mod_rackなどとも呼ばれる。
-[copy_boost_headers.rb](https://github.com/FooBarWidget/passenger/blob/master/dev/copy_boost_headers.rb)を見る限り、Boost.Thread、Boost.DateTime、Boost.SmartPtr、Boost.Function、Boost.Bindあたりを使用している模様。
+
+- [Phusion Passenger](https://www.phusionpassenger.com/)
+Ruby, Python, Node.jsのウェブアプリケーションフレームワークを動作されるアプリケーションサーバー。mod_rails, mod_rackなどとも呼ばれる。既存のウェブサーバー（Apacheまたはnginx）のモジュールとして動作するほか、単体でもHTTPサーバーとして動作する。
+[dev/copy_boost_headers](https://github.com/phusion/passenger/blob/master/dev/copy_boost_headers)を見る限り、Boost.Thread、Boost.DateTime、Boost.SmartPtr、Boost.Function、Boost.Bindあたりを使用している模様。
 
 
 - [Hiphop for PHP](https://github.com/facebook/hiphop-php)
