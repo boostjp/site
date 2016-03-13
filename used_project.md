@@ -61,7 +61,7 @@ Ruby, Python, Node.jsのウェブアプリケーションフレームワーク�
 PHPのソースコードからC++ソースコードを生成するトランスレータ。これ自体もC++で書かれており、Boostも使用されている模様。
 
 
-- [Mosh: the mobile shell](http://mosh.mit.edu/)
+- [Mosh: the mobile shell](https://mosh.mit.edu/)
 SSHの置き換えを狙う端末アプリケーション。回線切断からの再接続やローカルエコーにより、SSHと比べ高信頼・快適な環境を売りにしている。
 
 
