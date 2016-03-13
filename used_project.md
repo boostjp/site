@@ -56,11 +56,6 @@ Ruby on RailsをはじめとするRubyのウェブアプリケーションフレ
 [copy_boost_headers.rb](https://github.com/FooBarWidget/passenger/blob/master/dev/copy_boost_headers.rb)を見る限り、Boost.Thread、Boost.DateTime、Boost.SmartPtr、Boost.Function、Boost.Bindあたりを使用している模様。
 
 
-- [VirtualBox](http://www.virtualbox.org/)
-x86およびx86-64の仮想マシン環境を提供するソフトウェア。SunからOracleへと引き継がれた。
-[trunk/src/libs](http://www.virtualbox.org/browser/trunk/src/libs)以下のディレクトリに使用しているヘッダを置いているようだ。リビジョン37986 (2011/07/16)時点ではBoost.Exceptions、Boost.SmartPtrのファイルが存在する。
-
-
 - [Hiphop for PHP](https://github.com/facebook/hiphop-php)
 PHPのソースコードからC++ソースコードを生成するトランスレータ。これ自体もC++で書かれており、Boostも使用されている模様。
 
