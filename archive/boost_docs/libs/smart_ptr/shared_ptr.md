@@ -1,15 +1,15 @@
 #shared_ptr class template
 
-[Introduction](#Introduction)
-[Best Practices](#BestPractices)
-[Synopsis](#Synopsis)
-[Members](#Members)
-[Free Functions](#functions)
-[Example](#example)
-[Handle/Body Idiom](#Handle/Body)
-[Thread Safety](#ThreadSafety)
-[Frequently Asked Questions](#FAQ)
-[Smart Pointer Timings](smarttests.md)
+- [Introduction](#Introduction)
+- [Best Practices](#BestPractices)
+- [Synopsis](#Synopsis)
+- [Members](#Members)
+- [Free Functions](#functions)
+- [Example](#example)
+- [Handle/Body Idiom](#Handle/Body)
+- [Thread Safety](#ThreadSafety)
+- [Frequently Asked Questions](#FAQ)
+- [Smart Pointer Timings](smarttests.md)
 
 ##<a name="Introduction">Introduction</a>
 
@@ -125,9 +125,11 @@ bool operator!=(shared_ptr<T> const & a, shared_ptr<U> const & b); // never thro
 template<typename T>
 bool operator<(shared_ptr<T> const & a, shared_ptr<T> const & b); // never throws
 
-template<typename T> void swap(shared_ptr<T> & a, shared_ptr<T> & b); // never throws
+template<typename T>
+void swap(shared_ptr<T> & a, shared_ptr<T> & b); // never throws
 
-template<typename T> T * get_pointer(shared_ptr<T> const & p); // never throws
+template<typename T>
+T * get_pointer(shared_ptr<T> const & p); // never throws
 
 template<typename T, typename U>
 shared_ptr<T> shared_static_cast(shared_ptr<U> const & r); // never throws
@@ -304,7 +306,7 @@ shared_ptr(shared_ptr<Y> const & r); // never throws
 
 ```cpp
 template<typename Y>
-explicit shared_ptr([weak_ptr](weak_ptr.md)<Y> const & r);
+explicit shared_ptr(weak_ptr<Y> const & r);
 ```
 
 - **Effects:**

@@ -10,6 +10,8 @@
 
 スマートポインタライブラリは5種類のスマートポインタクラステンプレートを提供する:
 
+| スマートポインタ | ヘッダ | 概要 |
+|---|---|---|
 | [`scoped_ptr`](scoped_ptr.md) | [&lt;boost/scoped_ptr.hpp&gt;](http://www.boost.org/doc/libs/1_31_0/boost/scoped_ptr.hpp) | オブジェクトの所有権を独占する単純なスマートポインタ。コピー不可。 |
 | [`scoped_array`](scoped_array.md) | [&lt;boost/scoped_array.hpp&gt;](http://www.boost.org/doc/libs/1_31_0/boost/scoped_array.hpp) | 配列を独占的に所有する単純なスマートポインタ。コピー不可。 |
 | [`shared_ptr`](shared_ptr.md) | [&lt;boost/shared_ptr.hpp&gt;](http://www.boost.org/doc/libs/1_31_0/boost/shared_ptr.hpp) | 複数のポインタでオブジェクトの所有権を共有するスマートポインタ。 |
