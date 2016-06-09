@@ -427,7 +427,7 @@ Boost.MultiArray には，同ライブラリの機能とセマンティクスを
 [Ronald Garcia](mailto:garcia@.cs.indiana.edu)
 Last modified: Tue Sep 10 11:14:15 EST 2002
 
-翻訳: Tietew with BDT project<br>$Id $
+翻訳: Tietew with BDT project
 
 Copyright (c) Ronald Garcia, Jeremy Siek 2001
 
