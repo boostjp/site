@@ -204,10 +204,10 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
 
     //
     // array_view dims: [base,bound) (dimension striding default = 1)
-    // dim 0: [0,2) 
-    // dim 1: [1,3) 
-    // dim 2: [0,4) (strided by 2), 
-    // 
+    // dim 0: [0,2)
+    // dim 1: [1,3)
+    // dim 2: [0,4) (strided by 2),
+    //
 
     typedef array_type::index_range range;
     array_type::array_view<3>::type myview =
@@ -215,8 +215,8 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
 
     for (array_type::index i = 0; i != 2; ++i)
         for (array_type::index j = 0; j != 2; ++j)
-            for (array_type::index k = 0; k != 2; ++k) 
-	            assert(myview[i][j][k] == myarray[i][j+1][k*2]);
+            for (array_type::index k = 0; k != 2; ++k)
+                assert(myview[i][j][k] == myarray[i][j+1][k*2]);
 ```
 
 ひとつの整数値を `index_gen` へ渡すことで，オリジナルの配列コンポーネントより少ない次元でビューを作成できる(これはスライシング (slicing) とも呼ばれる)。
@@ -229,8 +229,8 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
     //
     // array_view dims:
     // [base,stride,bound)
-    // [0,1,2), 1, [0,2,4) 
-    // 
+    // [0,1,2), 1, [0,2,4)
+    //
 
     typedef array_type::index_range range;
     array_type::index_gen indices;
@@ -239,7 +239,7 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
 
     for (array_type::index i = 0; i != 2; ++i)
         for (array_type::index j = 0; j != 2; ++j)
-	        assert(myview[i][j] == myarray[i][1][j*2]);
+            assert(myview[i][j] == myarray[i][1][j*2]);
 ```
 
 ###More on `index_range` - もっと `index_range`
@@ -251,7 +251,7 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
 
 ```cpp
     // [base,stride,bound)
-    // [0,2,4) 
+    // [0,2,4)
 
     typedef array_type::index_range range;
     range a_range;
@@ -273,10 +273,10 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
     range a_range;
 
     // All elements in this dimension
-    a_range = range(); 
+    a_range = range();
 
     // indices i where 3 <= i
-    a_range = range().start(3) 
+    a_range = range().start(3)
     a_range = 3 <= range();
     a_range = 2 < range();
 
@@ -321,14 +321,14 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
 ```cpp
   typedef boost::general_storage_order<3> storage;
   typedef boost::multi_array<int,3> array_type;
- 
+
   // Store last dimension, then first, then middle
   array_type::size_type ordering[] = {2,0,1};
 
-  // Store the first dimension(dimension 0) in descending order 
+  // Store the first dimension(dimension 0) in descending order
   bool ascending[] = {false,true,true};
 
-  array_type A(extents[3][4][2],storage(ordering,ascending)); 
+  array_type A(extents[3][4][2],storage(ordering,ascending));
 ```
 
 ##<a name="sec_base">Setting The Array Base - 配列起点の設定</a>
@@ -344,7 +344,7 @@ Boost.MultiArray コンポーネントは，配列の起点を変更するふた
     typedef array_type::extent_range range;
 
     array_type::extent_gen extents;
- 
+
     // dimension 0: 0-based
     // dimension 1: 1-based
     // dimension 2: -1 - based
@@ -361,7 +361,7 @@ Boost.MultiArray コンポーネントは，配列の起点を変更するふた
   typedef array_type::extent_range range;
 
   array_type::extent_gen extents;
- 
+
   array_type A(extents[2][3][4]);
   // change to 1-based
   A.reindex(1)
@@ -376,12 +376,12 @@ Boost.MultiArray コンポーネントは，配列の起点を変更するふた
     typedef array_type::extent_range range;
 
     array_type::extent_gen extents;
- 
+
     // dimension 0: 0-based
     // dimension 1: 1-based
     // dimension 2: (-1)-based
     array_type A(extents[2][3][4]);
-    boost::array<array_type::index,ndims> bases = {{0, 1, -1}};       
+    boost::array<array_type::index,ndims> bases = {{0, 1, -1}};
     A.reindex(bases);
 ```
 
@@ -398,7 +398,7 @@ Boost.MultiArray は配列形を変更する操作を提供する。
 
   array_type::extent_gen extents;
   array_type A(extents[2][3][4]);
-  boost::array<array_type::index,ndims> dims = {{4, 3, 2}};       
+  boost::array<array_type::index,ndims> dims = {{4, 3, 2}};
   A.reshape(dims);
 ```
 
