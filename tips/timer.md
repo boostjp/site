@@ -17,7 +17,7 @@
 #include <cmath>
 #include <boost/timer/timer.hpp>
 
-int main ()
+int main()
 {
     boost::timer::cpu_timer timer; // 時間計測を開始
 
@@ -55,7 +55,7 @@ int main ()
 #include <cmath>
 #include <boost/timer/timer.hpp>
 
-int main ()
+int main()
 {
     boost::timer::cpu_timer timer;
 
@@ -106,7 +106,7 @@ int main ()
 #include <cmath>
 #include <boost/timer/timer.hpp>
 
-int main ()
+int main()
 {
     boost::timer::cpu_timer timer;
 
@@ -157,7 +157,7 @@ system : 0
 #include <cmath>
 #include <boost/timer/timer.hpp>
 
-int main ()
+int main()
 {
     boost::timer::cpu_timer timer;
 
