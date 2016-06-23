@@ -6,7 +6,7 @@
 - [基本的な使い方](#basic-usage)
 - [開始、停止、再開を制御する](#start-stop-resume)
 - [処理時間の値を個別に取得する](#elapsed-values)
-- [出力結果のフォーマットをカスタマイズする]
+- [出力結果のフォーマットをカスタマイズする](#customize-format)
 
 
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
