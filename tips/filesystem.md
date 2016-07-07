@@ -10,6 +10,7 @@
 - [ファイルが存在するかを調べる](#exists)
 - [ファイルサイズを取得する](#file-size)
 - [ファイルの最終更新日時を取得する](#last-write-time)
+- [パスの拡張子を変更する](#change-extension)
 - [ディレクトリを作成する](#create-directory)
 - [ディレクトリ内のファイルを列挙する](#enumerate-file)
 - [ディレクトリ内の全てのファイルを再帰的に列挙](#recursive-enumerate-file)
@@ -158,6 +159,7 @@ int main()
 }
 ```
 
+
 ## <a name="exists" href="#exists">ファイルが存在するかを調べる</a>
 
 ファイルが存在するか調べるには、`boost::filesystem::exists()`関数を使用する。
@@ -253,6 +255,35 @@ int main()
 
 ```
 2011-Mar-30 05:56:11
+```
+
+
+## <a name="change-extension" href="#change-extension">パスの拡張子を変更する</a>
+
+パスの拡張子を変更するには、`boost::filesystem::path`クラスの`replace_extension()`メンバ関数を使用する。
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main()
+{
+    // 拡張子を.pngに変更する
+    // replace_extension()に指定する拡張子は、
+    // ドット(.)があってもなくても、どちらでもよい。
+    fs::path p = "/a.txt/b.txt";
+    p.replace_extension("png");
+
+    std::cout << p.generic_string() << std::endl;
+}
+```
+
+出力：
+
+```
+/a.txt/b.png
 ```
 
 
