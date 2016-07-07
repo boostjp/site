@@ -10,6 +10,7 @@
 - [ファイルが存在するかを調べる](#exists)
 - [ファイルサイズを取得する](#file-size)
 - [ファイルの最終更新日時を取得する](#last-write-time)
+- [パスのファイル名を取得する](#get-filename)
 - [パスの拡張子を取得する](#get-extension)
 - [パスの拡張子を変更する](#change-extension)
 - [ディレクトリを作成する](#create-directory)
@@ -258,6 +259,31 @@ int main()
 2011-Mar-30 05:56:11
 ```
 
+
+## <a name="get-filename" href="#get-filename">パスのファイル名を取得する</a>
+
+パスのファイル名を取得するには、`boost::filesystem::path`クラスの`filename()`メンバ関数を使用する。
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main()
+{
+    fs::path p = "/a/b.txt";
+    fs::path filename = p.filename();
+
+    std::cout << filename.generic_string() << std::endl;
+}
+```
+
+出力：
+
+```
+b.txt
+```
 
 ## <a name="get-extension" href="#get-extension">パスの拡張子を取得する</a>
 
