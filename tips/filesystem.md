@@ -10,6 +10,7 @@
 - [ファイルが存在するかを調べる](#exists)
 - [ファイルサイズを取得する](#file-size)
 - [ファイルの最終更新日時を取得する](#last-write-time)
+- [パスの拡張子を取得する](#get-extension)
 - [パスの拡張子を変更する](#change-extension)
 - [ディレクトリを作成する](#create-directory)
 - [ディレクトリ内のファイルを列挙する](#enumerate-file)
@@ -255,6 +256,34 @@ int main()
 
 ```
 2011-Mar-30 05:56:11
+```
+
+
+## <a name="get-extension" href="#get-extension">パスの拡張子を取得する</a>
+
+パスの拡張子を取得するには、`boost::filesystem::path`クラスの`extension()`メンバ関数を使用する。この関数が返すパスは、ドット(.)を含む。
+
+拡張子を持たないパスに対してこの関数を適用した場合は、空のパスが返る。
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+
+int main()
+{
+    fs::path p = "/a/b.txt";
+    fs::path extension = p.extension();
+
+    std::cout << extension.generic_string() << std::endl;
+}
+```
+
+出力：
+
+```
+.txt
 ```
 
 
