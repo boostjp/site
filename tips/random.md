@@ -10,17 +10,23 @@
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 以下は、メルセンヌツイスター法による乱数生成と、1から6までの値を一様分布する例である。
 
-`mt19937`がメルセンヌツイスター法による擬似乱数生成アルゴリズムのエンジンクラス、`uniform_int_distribution`が一様分布(等確率)による分布アルゴリズムのクラスである。
+まず、非決定的な乱数生成器である`random_device`クラスを使用して、ランダムなシード値を生成する。これは、シード値がユーザーにばれると、その後に生成される乱数列が予測されてしまうためである。
+
+メインで使用する乱数生成アルゴリズムとしては、擬似乱数生成器である`mt19937`クラスをデフォルトで使用する。これは32ビット版のメルセンヌ・ツイスターアルゴリズムである。
+
+整数の範囲を等確率で分布させるために、`uniform_int_distribution`クラスを使用する。
 
 `uniform_int_distribution`はコンストラクタで値の範囲を受け取り、その関数呼び出し演算子の引数としてエンジンを受け取ることにより、そのエンジンで指定された値の範囲の擬似乱数を生成する。
 
 ```cpp
 #include <iostream>
 #include <boost/random.hpp>
+#include <boost/random/random_device.hpp>
 
 int main()
 {
-    boost::random::mt19937 gen;
+    boost::random::random_device seed_gen;
+    boost::random::mt19937 gen(seed_gen);
     boost::random::uniform_int_distribution<> dist(1, 6);
 
     for (int i = 0; i < 10; ++i) {
