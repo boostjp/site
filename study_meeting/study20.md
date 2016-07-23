@@ -63,3 +63,6 @@
 - <http://rydotyosh.github.io/docs/adintro/index.html>
 
 
+###C++1zに現状入る予定の言語拡張
+- [slideshare](http://www.slideshare.net/faithandbrave/c1z-draft)
+
