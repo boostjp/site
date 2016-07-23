@@ -46,5 +46,20 @@
 
 
 ##発表資料
-TODO
+###Boostライブラリ一周の旅 1.61.0
+- 差分版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610)
+- マージ版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610-merge)
+
+
+###Boost.Fusion/Phoenixのメンテナになったのでその記念的ななにか
+- <http://www.flast.jp/article/boost-20-tokyo/index.html#>
+
+
+###Resumable Functionsについて
+- <https://docs.com/user726408/2785/20160723-resumable-functions>
+
+
+###自動微分で遊ぼう
+- <http://rydotyosh.github.io/docs/adintro/index.html>
+
 
