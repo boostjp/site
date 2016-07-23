@@ -63,6 +63,10 @@
 - <http://rydotyosh.github.io/docs/adintro/index.html>
 
 
+###Pub/Subモデルとmsmとasioと
+- [slideshare](http://www.slideshare.net/taka111/pubsub-model-msm-and-asio)
+
+
 ###C++1zに現状入る予定の言語拡張
 - [slideshare](http://www.slideshare.net/faithandbrave/c1z-draft)
 
