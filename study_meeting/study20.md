@@ -42,8 +42,15 @@
 
 
 ##配信
-(録画ビデオを準備中)
 
+| 発表内容 | 発表者 | 録画 |
+| Boostライブラリ一周の旅 1.61.0 | [cpp_akira](https://twitter.com/cpp_akira) | https://youtu.be/-Htpaoplr-A |
+| Boost.Fusion/Phoenixのメンテナになったのでその記念的ななにか | [Flast_RO](https://twitter.com/Flast_RO) | https://youtu.be/nKr0ysoWCek |
+| Boost.勉強会 札幌の宣伝 | [ignis_fatuus](https://twitter.com/ignis_fatuus) | https://youtu.be/5AF2CsWrr2s |
+| Resumable Functionsについて | [meryngii](https://twitter.com/meryngii) | https://youtu.be/iCPDglkZWHY |
+| 自動微分で遊ぼう | [rydotyosh](https://twitter.com/rydotyosh) | https://youtu.be/458yucZ6T_0 |
+| Pub/Subモデルとmsmとasioと | [redboltz](https://twitter.com/redboltz) | https://youtu.be/IM4rU_IDhCM |
+| C\+\+1zに現状入る予定の言語拡張 | [cpp_akira](https://twitter.com/cpp_akira) | https://youtu.be/hsgThXd-5Ac |
 
 ##発表資料
 ###Boostライブラリ一周の旅 1.61.0
