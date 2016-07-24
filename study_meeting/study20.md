@@ -44,6 +44,7 @@
 ##配信
 
 | 発表内容 | 発表者 | 録画 |
+|------|----------|--------|
 | Boostライブラリ一周の旅 1.61.0 | [cpp_akira](https://twitter.com/cpp_akira) | https://youtu.be/-Htpaoplr-A |
 | Boost.Fusion/Phoenixのメンテナになったのでその記念的ななにか | [Flast_RO](https://twitter.com/Flast_RO) | https://youtu.be/nKr0ysoWCek |
 | Boost.勉強会 札幌の宣伝 | [ignis_fatuus](https://twitter.com/ignis_fatuus) | https://youtu.be/5AF2CsWrr2s |
