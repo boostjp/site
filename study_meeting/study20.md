@@ -75,7 +75,8 @@
 
 
 ###エクストリームC++11/14プログラミング
-- [[slideshare](http://www.slideshare.net/egtra/c1114-64328543)][[pdf](http://dev.activebasic.com/egtra2nd/documents/extreme-cpp-11-14.pdf)][[pptx](http://dev.activebasic.com/egtra2nd/documents/extreme-cpp-11-14.pptx)]
+- 発表者 : Egtra, [@egtra](https://twitter.com/egtra)
+- 発表資料 : [[slideshare](http://www.slideshare.net/egtra/c1114-64328543)][[pdf](http://dev.activebasic.com/egtra2nd/documents/extreme-cpp-11-14.pdf)][[pptx](http://dev.activebasic.com/egtra2nd/documents/extreme-cpp-11-14.pptx)]
 
 
 
