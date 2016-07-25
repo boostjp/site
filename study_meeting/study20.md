@@ -41,32 +41,37 @@
 [#boostjp](https://twitter.com/search?q=%23boostjp)
 
 
-##配信
-
-- [Boostライブラリ一周の旅 1.61.0](https://youtu.be/-Htpaoplr-A)
-- [Boost.Fusion/Phoenixのメンテナになったのでその記念的ななにか](https://youtu.be/nKr0ysoWCek)
-- [Boost.勉強会 札幌の宣伝](https://youtu.be/5AF2CsWrr2s)
-- [Resumable Functionsについて](https://youtu.be/iCPDglkZWHY)
-- [自動微分で遊ぼう](https://youtu.be/458yucZ6T_0)
-- [Pub/Subモデルとmsmとasioと](https://youtu.be/IM4rU_IDhCM)
-- [C\+\+1zに現状入る予定の言語拡張](https://youtu.be/hsgThXd-5Ac)
-
 ##発表資料
 ###Boostライブラリ一周の旅 1.61.0
-- 差分版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610)
-- マージ版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610-merge)
+- 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
+- サイト : <http://faithandbrave.github.io/>
+- 発表資料
+    - 差分版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610)
+    - マージ版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610-merge)
+- 発表動画 : <https://youtu.be/-Htpaoplr-A>
 
 
 ###Boost.Fusion/Phoenixのメンテナになったのでその記念的ななにか
-- <http://www.flast.jp/article/boost-20-tokyo/index.html#>
+- 発表者 : Kohei Takahashi (Flast), [@Flast_RO](https://twitter.com/Flast_RO)
+- 発表資料 : <http://www.flast.jp/article/boost-20-tokyo/index.html#>
+- 発表動画 : <https://youtu.be/nKr0ysoWCek>
+
+
+###Boost.勉強会 札幌の宣伝
+- 発表者 : [@ignis_fatuus](https://twitter.com/ignis_fatuus)
+- 発表動画 : <https://youtu.be/5AF2CsWrr2s>
 
 
 ###Resumable Functionsについて
-- <https://docs.com/user726408/2785/20160723-resumable-functions>
+- 発表者 : めりんぎ, [@meryngii](https://twitter.com/meryngii)
+- 発表資料 : <https://docs.com/user726408/2785/20160723-resumable-functions>
+- 発表動画 : <https://youtu.be/iCPDglkZWHY>
 
 
 ###自動微分で遊ぼう
-- <http://rydotyosh.github.io/docs/adintro/index.html>
+- 発表者 : Ryogo Yoshimura, [@rydotyosh](https://twitter.com/rydotyosh)
+- 発表資料 : <http://rydotyosh.github.io/docs/adintro/index.html>
+- 発表動画 : <https://youtu.be/458yucZ6T_0>
 
 
 ###エクストリームC++11/14プログラミング
@@ -75,9 +80,14 @@
 
 
 ###Pub/Subモデルとmsmとasioと
-- [slideshare](http://www.slideshare.net/taka111/pubsub-model-msm-and-asio)
+- 発表者 : 近藤 貴俊, Takatoshi Kondo, [@redboltz](https://twitter.com/redboltz)
+- 発表資料 :  [[slideshare](http://www.slideshare.net/taka111/pubsub-model-msm-and-asio)]
+- 発表動画 : <https://youtu.be/IM4rU_IDhCM>
 
 
 ###C++1zに現状入る予定の言語拡張
-- [slideshare](http://www.slideshare.net/faithandbrave/c1z-draft)
+- 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
+- サイト : <http://faithandbrave.github.io/>
+- 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/c1z-draft)]
+- 発表動画 : <https://youtu.be/hsgThXd-5Ac>
 
