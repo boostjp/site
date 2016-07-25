@@ -46,8 +46,8 @@
 - 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
 - サイト : <http://faithandbrave.github.io/>
 - 発表資料
-    - 差分版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610)
-    - マージ版 : [slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610-merge)
+    - 差分版 : [[slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_20/boost_tour_1_61_0.pdf)][[key](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_20/boost_tour_1_61_0.key)]
+    - マージ版 : [[slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1610-merge)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_20/boost_tour_1_61_0_merge.pdf)][[key](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_20/boost_tour_1_61_0_merge.key)]
 - 発表動画 : <https://youtu.be/-Htpaoplr-A>
 
 
@@ -88,6 +88,6 @@
 ###C++1zに現状入る予定の言語拡張
 - 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
 - サイト : <http://faithandbrave.github.io/>
-- 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/c1z-draft)]
+- 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/c1z-draft)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_20/cpp1z_draft.pdf)][[key](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_20/cpp1z_draft.key)]
 - 発表動画 : <https://youtu.be/hsgThXd-5Ac>
 
