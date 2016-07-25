@@ -69,6 +69,11 @@
 - <http://rydotyosh.github.io/docs/adintro/index.html>
 
 
+###エクストリームC++11/14プログラミング
+- [[slideshare](http://www.slideshare.net/egtra/c1114-64328543)][[pdf](http://dev.activebasic.com/egtra2nd/documents/extreme-cpp-11-14.pdf)][[pptx](http://dev.activebasic.com/egtra2nd/documents/extreme-cpp-11-14.pptx)]
+
+
+
 ###Pub/Subモデルとmsmとasioと
 - [slideshare](http://www.slideshare.net/taka111/pubsub-model-msm-and-asio)
 
