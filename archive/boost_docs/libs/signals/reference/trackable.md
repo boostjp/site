@@ -6,7 +6,6 @@
 #include <boost/signals/trackable.hpp>
 ```
 * boost/signals/trackable.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/boost/signals/trackable.hpp]
-```
 
 ##概要
 
@@ -51,7 +50,7 @@ namespace boost {
 
 ###デストラクタ
 
-<a name="destructor">~`trackable();`</a>
+<a name="destructor">`~trackable();`</a>
 
 - **作用**: すべての接続済みスロットを切断する。
 

@@ -1,15 +1,18 @@
 #Boost.Signals: ヘッダ &lt;[boost/signals/connection.hpp](http://www.boost.org/doc/libs/1_31_0/boost/signals/connection.hpp)&gt;
 
-##&lt;[boost/signals/connection.hpp](http://www.boost.org/doc/libs/1_31_0/boost/boost/signals/connection.hpp)&gt; ヘッダ概要
+```cpp
+#include <boost/signals/connection.hpp>
+```
+* boost/signals/connection.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/boost/signals/connection.hpp]
 
 ```cpp
 namespace boost {
 	namespace signals {
-	class connection;
-	class scoped_connection;
+		class connection;
+		class scoped_connection;
 
-	void swap(connection&, connection&);
-	void swap(scoped_connection&, scoped_connection&);
+		void swap(connection&, connection&);
+		void swap(scoped_connection&, scoped_connection&);
 	}
 }
 ```
@@ -94,6 +97,7 @@ namespace boost {
 - **例外**: なし。
 
 ###代入と交換
+
 <a name="copy_assignment">`connection& operator=(const connection& other);`</a>
 
 - **作用**: `connection(other).swap(*this);`

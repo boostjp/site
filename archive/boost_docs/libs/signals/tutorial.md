@@ -22,8 +22,9 @@ compatible 形式は Boost によってサポートされているすべての�
 
 [Boost.Function](../function.md) の利用者は、Signals の prefered 形式は Function の preferred 形式と等価なことに注意。
 
-###GNU C++ 2.95.x, 3.0.x, 3.1.x##preferred 形式
+###preferred 形式
 
+- GNU C++ 2.95.x, 3.0.x, 3.1.x
 - Comeau C++ 4.2.45.2
 - SGI MIPSpro 7.3.0
 - Intel C++ 5.0, 6.0
@@ -472,7 +473,7 @@ std::copy(results.begin(), results.end(), std::ostream_iterator<float>(cout, " "
 明示的な接続管理の入口は `boost::signal::connection` クラスである。
 `connection` クラスは、それぞれ特定のシグナルと特定のスロットの間の接続を表している。
 `connected()` メソッドはそのシグナルとスロットがまだ接続されているかを調べ、 `disconnect()` メソッドは、シグナルとスロットが接続されているなら呼び出される前に切断する。
-シグナルの `connect()` メソッドはそれぞれ connection オブジェクトを返す。
+シグナルの `connect()` メソッドはそれぞれ `connection` オブジェクトを返す。
 そのオブジェクトは接続がまだ存在しているかを決定し、またシグナルとスロットを切断するために用いることができる。
 
 ```cpp

@@ -5,10 +5,10 @@
 
 ##目次
 
-[型抹消](#type_erasure)
-[`connection` クラス](#connection)
-[スロット呼び出しイテレータ](#slot_call_iterator)
-[`visit_each` function template](#visit_each)
+- [型抹消](#type_erasure)
+- [`connection` クラス](#connection)
+- [スロット呼び出しイテレータ](#slot_call_iterator)
+- [`visit_each` function template](#visit_each)
 
 ##<a name="type_erasure">型抹消</a>
 
