@@ -177,6 +177,7 @@ namespace boost {
 - **作用**: `this->disconnect()`
 
 ###代入と交換
+
 <a name="scoped_copy_assignment">`scoped_connection& operator=(const scoped_connection& other);`</a>
 
 - **作用**: `scoped_connection(other).swap(*this);`

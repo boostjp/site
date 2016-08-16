@@ -144,7 +144,6 @@ namespace boost {
 
 <a name="connect">
 `signals::connection connect(const slot_type& slot);`
-* connection[link connection.md]
 </a>
 
 - **作用**: シグナル `this` を `slot` に接続する。
@@ -159,7 +158,6 @@ namespace boost {
 
 <a name="group_connect">
 `signals::connection connect(const group_type& group, const slot_type& slot);`
-* connection[link connection.md]
 </a>
 
 - **作用**: 与えられたスロットを (`connect(slot)` と同様に) シグナルに接続し、このスロット接続を与えられたグループ `group` に関連づける。

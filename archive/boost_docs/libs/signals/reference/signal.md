@@ -30,7 +30,7 @@ namespace boost {
 * last_value[link last_value.md]
 * function[link ../../function.md]
 * signal[link signalN.md]
-* explicit signal[link #constructor]
+* signal[link #constructor]
 
 ###コンストラクタ
 

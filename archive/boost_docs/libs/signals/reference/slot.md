@@ -25,7 +25,7 @@ namespace boost {
 };
 }
 ```
-* SlotFunction[link signalN.md#slot_function_type)
+* SlotFunction[link signalN.md#slot_function_type]
 * slot[link #constructor]
 
 ###コンストラクタ
