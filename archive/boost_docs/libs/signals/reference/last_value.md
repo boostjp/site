@@ -35,24 +35,14 @@ namespace boost {
 
 ##メンバ
 
-<a name="call">
-```cpp
-template<typename InputIterator>
-result_type operator()(InputIterator first, InputIterator last) const;
-```
-</a>
+<a name="call">`template<typename InputIterator> result_type operator()(InputIterator first, InputIterator last) const;`</a>
 
 - **事前条件**: `first != last`.
 - **作用**: シーケンス `[first, last)` 中のすべてのイテレータを参照外しする。
 - **戻り値**: 最後のイテレータを参照外しした結果。
 
 
-<a name="void_call">
-```cpp
-template<typename InputIterator>
-result_type operator()(InputIterator first, InputIterator last) const;
-```
-</a>
+<a name="void_call">`template<typename InputIterator> result_type operator()(InputIterator first, InputIterator last) const;`</a>
 
 - **作用**: シーケンス `[first, last)` 中のすべてのイテレータを参照外しする。
 - **戻り値**: 値は無意味だが `void` ではない。

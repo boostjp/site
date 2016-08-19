@@ -30,12 +30,7 @@ namespace boost {
 
 ###コンストラクタ
 
-<a name="constructor">
-```cpp
-template<typename Slot>
-slot(const Slot& slot);
-```
-</a>
+<a name="constructor">`template<typename Slot> slot(const Slot& slot);`</a>
 
 - **作用**: `this` が、渡された `slot` を保持するように初期化する。
 	渡される `slot` は、それによって [`SlotFunction`](signalN.md#slot_function_type) を構築可能な任意の関数オブジェクトである。
