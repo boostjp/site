@@ -129,7 +129,7 @@ namespace boost {
 
 ###<a name="constructor">コンストラクタ</a>
 
-`explicit signalN(const combiner_type& = combiner_type(), const group_compare_type& = group_compare_type());`
+explicit signalN(const combiner_type& = combiner_type(), const group_compare_type& = group_compare_type());`
 
 - **作用**: シグナルをスロットを含まない状態に初期化し、与えられた統合子を内部記憶域にコピーし、与えられたグループ比較関数オブジェクトを格納する。
 - **事後条件**: `this->empty();`
@@ -142,9 +142,7 @@ namespace boost {
 
 ###接続管理
 
-<a name="connect">
-`signals::connection connect(const slot_type& slot);`
-</a>
+<a name="connect">`signals::connection connect(const slot_type& slot);`</a>
 
 - **作用**: シグナル `this` を `slot` に接続する。
 	スロットが *非アクティブ* である場合、たとえばスロット呼び出しに結合された [`trackable`](trackable.md) オブジェクトが破棄されている場合、`connect` 呼び出しは無視される。
@@ -156,9 +154,7 @@ namespace boost {
 	ここで `n` はシグナルが認識しているスロット数。
 - **注記**: シグナル呼び出し中に接続されたスロットが直ちに呼び出されるか否かは、不定である。
 
-<a name="group_connect">
-`signals::connection connect(const group_type& group, const slot_type& slot);`
-</a>
+<a name="group_connect">`signals::connection connect(const group_type& group, const slot_type& slot);`</a>
 
 - **作用**: 与えられたスロットを (`connect(slot)` と同様に) シグナルに接続し、このスロット接続を与えられたグループ `group` に関連づける。
 - **戻り値**: 新規に作成されたシグナル・スロット間の接続を参照する [`signals::connection`](connection.md) オブジェクト。
@@ -167,9 +163,7 @@ namespace boost {
 	ここで `n` はシグナルが認識しているスロット数。
 - **注記**: シグナル呼び出し中に接続されたスロットが直ちに呼び出されるか否かは、不定である。
 
-<a name="group_disconnect">
-`void disconnect(const group_type& group);`
-</a>
+<a name="group_disconnect">`void disconnect(const group_type& group);`</a>
 
 - **作用**: 与えられたグループ中の全スロットが切断される。
 - **例外**: ユーザのデストラクタが投げない限りは、例外を投げない。
@@ -177,9 +171,7 @@ namespace boost {
 - **計算量**: `O(lg n) + k`。
 	ここで `n` はシグナルが認識しているスロット数であり、`k` は `group` に含まれるスロット数である。
 
-<a name="disconnect_all">
-`void disconnect_all_slots();`
-</a>
+<a name="disconnect_all">`void disconnect_all_slots();`</a>
 
 - **作用**: シグナルに接続された全スロットを切断する。
 - **事後条件**: `this->empty()`.
@@ -187,9 +179,7 @@ namespace boost {
 - **計算量**: シグナルが認識しているスロット数に比例。
 - **注記**: シグナルがスロットを呼び出している最中を含めて、シグナルの生存期間中、いつでも呼び出してよい。
 
-<a name="empty">
-`bool empty() const;`
-</a>
+<a name="empty">`bool empty() const;`</a>
 
 - **戻り値**: そのシグナルに接続されたスロットがない場合 `true`、そうでなければ `false`。
 - **例外**: なし。
@@ -199,12 +189,7 @@ namespace boost {
 
 ###シグナル呼び出し
 
-<a name="function_call_operator">
-```cpp
-result_type operator()(T1 a1, T2 a2, ..., TN aN);
-result_type operator()(T1 a1, T2 a2, ..., TN aN) const;
-```
-</a>
+<a name="function_call_operator">`result_type operator()(T1 a1, T2 a2, ..., TN aN); result_type operator()(T1 a1, T2 a2, ..., TN aN) const;`</a>
 
 - **作用**: `slot_call_iterator` の範囲 `[first, last)` を与えて統合子を呼び出す (言い換えると `combiner(first, last)`)。
 	この範囲は、各スロットに与えられたパラメタの集合 `a1, a2, ..., aN` を渡して呼び出した結果をイテレートする。

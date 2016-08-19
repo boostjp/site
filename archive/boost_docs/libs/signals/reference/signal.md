@@ -34,11 +34,7 @@ namespace boost {
 
 ###コンストラクタ
 
-<a name="#constructor">
-```cpp
-explicit signal(const Combiner& combiner = Combiner(), const GroupCompare& group_compare = GroupCompare());
-```
-</a>
+<a name="#constructor">`explicit signal(const Combiner& combiner = Combiner(), const GroupCompare& group_compare = GroupCompare());`</a>
 
 - **作用**: `combiner` と `group_compare` で基底クラスを初期化する。
 
