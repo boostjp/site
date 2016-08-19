@@ -129,7 +129,7 @@ namespace boost {
 
 ###<a name="constructor">コンストラクタ</a>
 
-explicit signalN(const combiner_type& = combiner_type(), const group_compare_type& = group_compare_type());`
+`explicit signalN(const combiner_type& = combiner_type(), const group_compare_type& = group_compare_type());`
 
 - **作用**: シグナルをスロットを含まない状態に初期化し、与えられた統合子を内部記憶域にコピーし、与えられたグループ比較関数オブジェクトを格納する。
 - **事後条件**: `this->empty();`
