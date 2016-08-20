@@ -185,14 +185,9 @@ BOOST_STATIC_ASSERT((is_same<my, remove_const<my const>::type>::value));
 
 上の表中にある記号の意味は以下の通り。
 
-<dl>
-	<dt>P</dt>
-	<dd>クラスが正しく働くためにはクラステンプレートの部分特殊化版のサポートを必要としていることを示す。</dd>
-	<dt>C</dt>
-	<dd>その特性クラスのためにコンパイラの直接的なサポートが必要であることを示す。</dd>
-	<dt>D</dt>
-	<dd>特性クラスがコンパイラの直接的なサポートを必要とするクラスに依存していることを示す。</dd>
-</dl>
+- **P**: クラスが正しく働くためにはクラステンプレートの部分特殊化版のサポートを必要としていることを示す。
+- **C**: その特性クラスのためにコンパイラの直接的なサポートが必要であることを示す。
+- **D**: 特性クラスがコンパイラの直接的なサポートを必要とするクラスに依存していることを示す。
 
 D や C の印が付いたクラスに対して、コンパイラのサポートが受けられなければ、この型特性は実際には &quot;真&quot; が正しい場合に &quot;偽&quot; を返すことがある。
 この規則の唯一の例外は `is_class` で、`T` が本当にクラスかどうかの推量を試みるにあたって、実際には &quot;偽&quot; が正しい場合に &quot;真&quot; を返すことがある。
@@ -221,50 +216,50 @@ D や C の印が付いたクラスに対して、コンパイラのサポート
 したがって、この方法は意外に節減にはならないかもしれない。
 以下の表では型特性クラスをアルファベット順に、各テンプレートが収められたヘッダとともに並べる。
 
-| Template class | Header |
-|----------------|--------|
-| `add_const` | `<boost/type_traits/transform_traits.hpp>` |
-| `add_const` | `<boost/type_traits/transform_traits.hpp>` |
-| `add_pointer` | `<boost/type_traits/transform_traits.hpp>` |
-| `add_reference` | `<boost/type_traits/transform_traits.hpp>` |
-| `add_volatile` | `<boost/type_traits/transform_traits.hpp>` |
-| `alignment_of` | `<boost/type_traits/alignment_traits.hpp>` |
-| `has_trivial_assign` | `<boost/type_traits/object_traits.hpp>` |
-| `function_traits` | `<boost/type_traits/function_traits.hpp>` |
-| `has_trivial_constructor` | `<boost/type_traits/object_traits.hpp>` |
-| `has_trivial_copy` | `<boost/type_traits/object_traits.hpp>` |
-| `has_trivial_destructor` | `<boost/type_traits/object_traits.hpp>` |
-| `is_arithmetic` | `<boost/type_traits/arithmetic_traits.hpp>` |
-| `is_array` | `<boost/type_traits/composite_traits.hpp>` |
-| `is_base_and_derived` | `<boost/type_traits/object_traits.hpp>` |
-| `is_class` | `<boost/type_traits/object_traits.hpp>` |
-| `is_compound` | `<boost/type_traits/object_traits.hpp>` |
-| `is_const` | `<boost/type_traits/cv_traits.hpp>` |
-| `is_convertible` | `<boost/type_traits/conversion_traits.hpp>` |
-| `is_empty` | `<boost/type_traits/object_traits.hpp>` |
-| `is_enum` | `<boost/type_traits/composite_traits.hpp>` |
-| `is_float` | `<boost/type_traits/arithmetic_traits.hpp>` |
-| `is_function` | `<boost/type_traits/function_traits.hpp>` |
-| `is_fundamental` | `<boost/type_traits/arithmetic_traits.hpp>` |
-| `is_integral` | `<boost/type_traits/arithmetic_traits.hpp>` |
-| `is_member_pointer` | `<boost/type_traits/composite_traits.hpp>` |
-| `is_member_function_pointer` | `<boost/type_traits/composite_traits.hpp>` |
-| `is_object` | `<boost/type_traits/object_traits.hpp>` |
-| `is_POD` | `<boost/type_traits/object_traits.hpp>` |
-| `is_pointer` | `<boost/type_traits/composite_traits.hpp>` |
-| `is_reference` | `<boost/type_traits/composite_traits.hpp>` |
-| `is_same` | `<boost/type_traits/same_traits.hpp>` |
-| `is_scalar` | `<boost/type_traits/object_traits.hpp>` |
-| `is_union` | `<boost/type_traits/composite_traits.hpp>` |
-| `is_void` | `<boost/type_traits/arithmetic_traits.hpp>` |
-| `is_volatile` | `<boost/type_traits/cv_traits.hpp>` |
-| `remove_bounds` | `<boost/type_traits/transform_traits.hpp>` |
-| `remove_const` | `<boost/type_traits/cv_traits.hpp>` |
-| `remove_cv` | `<boost/type_traits/cv_traits.hpp>` |
-| `remove_pointer` | `<boost/type_traits/transform_traits.hpp>` |
-| `remove_reference` | `<boost/type_traits/transform_traits.hpp>` |
-| `remove_volatile` | `<boost/type_traits/cv_traits.hpp>` |
-| `type_with_alignment` | `<boost/type_traits/alignment_traits.hpp>` |
+| Template class               | Header                                      |
+|------------------------------|---------------------------------------------|
+| `add_const`                  | `<boost/type_traits/transform_traits.hpp>`  |
+| `add_const`                  | `<boost/type_traits/transform_traits.hpp>`  |
+| `add_pointer`                | `<boost/type_traits/transform_traits.hpp>`  |
+| `add_reference`              | `<boost/type_traits/transform_traits.hpp>`  |
+| `add_volatile`               | `<boost/type_traits/transform_traits.hpp>`  |
+| `alignment_of`               | `<boost/type_traits/alignment_traits.hpp>`  |
+| `has_trivial_assign`         | `<boost/type_traits/object_traits.hpp>`     |
+| `function_traits`            | `<boost/type_traits/function_traits.hpp>`   |
+| `has_trivial_constructor`    | `<boost/type_traits/object_traits.hpp>`     |
+| `has_trivial_copy`           | `<boost/type_traits/object_traits.hpp>`     |
+| `has_trivial_destructor`     | `<boost/type_traits/object_traits.hpp>`     |
+| `is_arithmetic`              | `<boost/type_traits/arithmetic_traits.hpp>` |
+| `is_array`                   | `<boost/type_traits/composite_traits.hpp>`  |
+| `is_base_and_derived`        | `<boost/type_traits/object_traits.hpp>`     |
+| `is_class`                   | `<boost/type_traits/object_traits.hpp>`     |
+| `is_compound`                | `<boost/type_traits/object_traits.hpp>`     |
+| `is_const`                   | `<boost/type_traits/cv_traits.hpp>`         |
+| `is_convertible`             | `<boost/type_traits/conversion_traits.hpp>` |
+| `is_empty`                   | `<boost/type_traits/object_traits.hpp>`     |
+| `is_enum`                    | `<boost/type_traits/composite_traits.hpp>`  |
+| `is_float`                   | `<boost/type_traits/arithmetic_traits.hpp>` |
+| `is_function`                | `<boost/type_traits/function_traits.hpp>`   |
+| `is_fundamental`             | `<boost/type_traits/arithmetic_traits.hpp>` |
+| `is_integral`                | `<boost/type_traits/arithmetic_traits.hpp>` |
+| `is_member_pointer`          | `<boost/type_traits/composite_traits.hpp>`  |
+| `is_member_function_pointer` | `<boost/type_traits/composite_traits.hpp>`  |
+| `is_object`                  | `<boost/type_traits/object_traits.hpp>`     |
+| `is_POD`                     | `<boost/type_traits/object_traits.hpp>`     |
+| `is_pointer`                 | `<boost/type_traits/composite_traits.hpp>`  |
+| `is_reference`               | `<boost/type_traits/composite_traits.hpp>`  |
+| `is_same`                    | `<boost/type_traits/same_traits.hpp>`       |
+| `is_scalar`                  | `<boost/type_traits/object_traits.hpp>`     |
+| `is_union`                   | `<boost/type_traits/composite_traits.hpp>`  |
+| `is_void`                    | `<boost/type_traits/arithmetic_traits.hpp>` |
+| `is_volatile`                | `<boost/type_traits/cv_traits.hpp>`         |
+| `remove_bounds`              | `<boost/type_traits/transform_traits.hpp>`  |
+| `remove_const`               | `<boost/type_traits/cv_traits.hpp>`         |
+| `remove_cv`                  | `<boost/type_traits/cv_traits.hpp>`         |
+| `remove_pointer`             | `<boost/type_traits/transform_traits.hpp>`  |
+| `remove_reference`           | `<boost/type_traits/transform_traits.hpp>`  |
+| `remove_volatile`            | `<boost/type_traits/cv_traits.hpp>`         |
+| `type_with_alignment`        | `<boost/type_traits/alignment_traits.hpp>`  |
 
 ##<a name="example">Example code</a>
 
@@ -520,5 +515,7 @@ Maintained by [John Maddock](http://www.boost.org/doc/libs/1_31_0/people/john_ma
 
 Japanese Translation Copyright &copy; 2003 [Takagi,Yusei](mailto:yusei-t@mx15.freecom.ne.jp)
 
-*オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。また、いかなる目的に対しても、その利用が適していることを関知しない。*
+*オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。
+このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。
+また、いかなる目的に対しても、その利用が適していることを関知しない。*
 
