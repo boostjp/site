@@ -22,4 +22,5 @@
 | [muti_array](libs/multi_array.md) | メモリ上で連続したデータの配列のための多次元コンテナとアダプタ。 Ron Garcia 作 |
 | [signals](libs/signals.md) | 管理されたシグナルとスロットのコールバックでの実装。 Doug Gregor 作 |
 | [smart_ptr](libs/smart_ptr.md) | 5つのスマートポインタクラステンプレート Greg Colvin, Beman Dawes, Peter Dimov, and Darin Adler 作 |
+| [type_traits](libs/type_traits.md) | 型の基本的な特徴のためのテンプレート。 John Maddock, Steve Cleary, et al 作 |
 
