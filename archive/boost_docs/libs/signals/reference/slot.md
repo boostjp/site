@@ -5,7 +5,7 @@
 ```cpp
 #include <boost/signals/slot.hpp>
 ```
-* boost/signals/slot.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/boost/signals/slot.hpp]
+* boost/signals/slot.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/signals/slot.hpp]
 
 ##概要
 

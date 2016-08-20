@@ -3,7 +3,7 @@
 ```cpp
 #include <boost/signals/connection.hpp>
 ```
-* boost/signals/connection.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/boost/signals/connection.hpp]
+* boost/signals/connection.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/signals/connection.hpp]
 
 ```cpp
 namespace boost {

@@ -5,7 +5,7 @@
 ```cpp
 #include <boost/visit_each.hpp>
 ```
-* boost/visit_each.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/boost/visit_each.hpp]
+* boost/visit_each.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/visit_each.hpp]
 
 ##概要
 

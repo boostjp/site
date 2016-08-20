@@ -5,7 +5,7 @@
 ```cpp
 #include <boost/signals/trackable.hpp>
 ```
-* boost/signals/trackable.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/boost/signals/trackable.hpp]
+* boost/signals/trackable.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/signals/trackable.hpp]
 
 ##概要
 
