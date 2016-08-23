@@ -501,7 +501,7 @@ inline void destroy_array(T* p1, T* p2)
 
 Revised 22 April 2001
 
-Documentation &copy Copyright John Maddock 2001.
+Documentation (c) Copyright John Maddock 2001.
 Permission to copy, use, modify, sell and distribute this document is granted provided this copyright notice appears in all copies.
 This document is provided &quot;as is&quot; without express or implied warranty, and with no claim as to its suitability for any purpose.
 
@@ -513,7 +513,7 @@ The is_convertible template is based on code originally devised by Andrei Alexan
 
 Maintained by [John Maddock](http://www.boost.org/doc/libs/1_31_0/people/john_maddock.htm), the latest version of this file can be found at [www.boost.org](http://www.boost.org/), and the boost discussion list at [www.yahoogroups.com/list/boost](http://www.yahoogroups.com/list/boost).
 
-Japanese Translation Copyright &copy; 2003 [Takagi,Yusei](mailto:yusei-t@mx15.freecom.ne.jp)
+Japanese Translation Copyright (c) 2003 [Takagi,Yusei](mailto:yusei-t@mx15.freecom.ne.jp)
 
 *オリジナルの、及びこの著作権表示が全ての複製の中に現れる限り、この文書の複製、利用、変更、販売そして配布を認める。*
 *このドキュメントは「あるがまま」に提供されており、いかなる明示的、暗黙的保証も行わない。*
