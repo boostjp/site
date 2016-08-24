@@ -15,7 +15,7 @@ Boost Random Number Generator Library は、計算やセキュリティの領域
 
 > "Numerical Recipes in C: The art of scientific computing", William
 > H. Press, Saul A. Teukolsky, William A. Vetterling, Brian P. Flannery,
-> 2nd ed., 1992, pp. 274-328<br>
+> 2nd ed., 1992, pp. 274-328<br/>
 > [訳注: 日本語版は、丹慶 勝市 他訳
 > 「ニューメリカルレシピ・イン・シー 日本語版―C言語による数値計算のレシピ」
 > 東京: 技術評論社、1993年 (ISBN: 4874085601)]
