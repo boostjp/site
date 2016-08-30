@@ -20,6 +20,7 @@
 | [graph](libs/graph.md) | 汎用グラフコンポーネント及びアルゴリズム。 Jeremy Siek and a University of Notre Dame team 作 |
 | [io state savers](libs/io/ios_state.md) | 入出力の状態を保存して、データが化けるのを防ぐ。 Daryle Walker 作 |
 | [muti_array](libs/multi_array.md) | メモリ上で連続したデータの配列のための多次元コンテナとアダプタ。 Ron Garcia 作 |
+| [preprocessor](libs/preprocessor.md) | 繰り返しと再帰を含むプリプロセッサメタプログラミングツール群。 Vesa Karvonen 作 |
 | [random](libs/random.md) | 乱数生成のためのシステム一式。 Jens Maurer 作 |
 | [signals](libs/signals.md) | 管理されたシグナルとスロットのコールバックでの実装。 Doug Gregor 作 |
 | [smart_ptr](libs/smart_ptr.md) | 5つのスマートポインタクラステンプレート Greg Colvin, Beman Dawes, Peter Dimov, and Darin Adler 作 |
