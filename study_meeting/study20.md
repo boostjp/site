@@ -65,7 +65,7 @@
 ###Resumable Functionsについて
 - 発表者 : めりんぎ, [@meryngii](https://twitter.com/meryngii)
 - 発表資料 : <https://docs.com/user726408/2785/20160723-resumable-functions>
-- 発表動画 : <https://youtu.be/iCPDglkZWHY>
+- 発表動画 : <https://youtu.be/2HQgGgURvIM>
 
 
 ###自動微分で遊ぼう
