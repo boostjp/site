@@ -1,8 +1,8 @@
-#�ƥ��˥å���
+#テクニック集
 
-�ץ�ץ����å��᥿�ץ�����ߥ󥰤ε����㼨���롣
+プリプロセッサメタプログラミングの技を例示する。
 
-##�� - �����ʵ��Ϥ�ȿ�����򤱤뤿��˶ɽ�Ū�ʥޥ�����Ȥ���
+##例 - 小さな規模の反復を避けるために局所的なマクロを使う。
 
 ```cpp
 #define BOOST_PP_DEF(op) /* ..................................... */  \
@@ -22,23 +22,23 @@ BOOST_PP_DEF(/)
 #undef BOOST_PP_DEF
 ```
 
-###����:
+###小技:
 
-�̾�Ϥ��Τ褦�ʼ���Υ����ɤ��Ф��� `BOOST_PP_DEF` �Τ褦��ɸ��Ū�ʥޥ�����̾����Ȥäƹ���ʤ���
-�ʤ��ʤ餳�Υޥ����ϻ��Ѥ������Τ������Ф��������դ�����̤����ˤ���Ƥ��뤫�顣
+通常はこのような種類のコードに対して `BOOST_PP_DEF` のような標準的なマクロの名前を使って構わない。
+なぜならこのマクロは使用される場所のすぐそばで定義されふたたび未定義にされているから。
 
-###����:
+###小技:
 
-��³�Ԥ����������Ѥ���Ƥ��뤫��ǧ���䤹������ˤϷ�³ʸ��(�Хå�����å���ʸ��)�ΰ��֤�·����Ȥ褤��
+継続行が正しく使用されているか確認しやすくするには継続文字(バックスラッシュ文字)の位置を揃えるとよい。
 
-###����:
+###注意:
 
-�̤α黻�Ҥ�������뤳�Ȥˤ�äƤ�������ĥ���뤳�Ȥ��Ǥ��롣
-����򤹤����ˡ�*algebraic categories* (ʸ�� [[Barton]](bibliography.md#barton) �ǾҲ𤵤�Ƥ���)�� *layered architecture* (�㤨��ʸ�� [[Czarnecki]](bibliography.html#czarnecki)) ��Ȥ����Ȥ��θ���衣
-�������ʤ��顢�黻�ҥȡ����� `*`, `/`, `+`, `-`, ���ϥƥ�ץ졼�Ȥˤ�äƤ������Ǥ��ʤ����顢�����Υȡ������ɤ����˽�ɬ�פ��Ф�����������
-���Υȡ������ȿ��(*categorical repetition*)�ϥƥ�ץ졼�ȥ᥿�ץ�����ߥ󥰤ˤ�äƽ���Ǥ��롣
+別の演算子を定義することによってこの例を拡張することができる。
+それをする前に、*algebraic categories* (文献 [[Barton]](bibliography.md#barton) で紹介されている)や *layered architecture* (例えば文献 [[Czarnecki]](bibliography.html#czarnecki)) を使うことを考慮せよ。
+しかしながら、演算子トークン `*`, `/`, `+`, `-`, 等はテンプレートによっては生成できないから、これらのトークンをどこかに書く必要が出て来るだろう。
+そのトークンの反復(*categorical repetition*)はテンプレートメタプログラミングによって除去できる。
 
-##�� - �ޥ��� BOOST_PP_EMPTY ��ɽ�Ū�ʥޥ����Υ��󥹥��󥹲��κݤ�̤���ѥѥ�᡼���Ȥ��ƻ��Ѥ��롣
+##例 - マクロ BOOST_PP_EMPTY を局所的なマクロのインスタンス化の際の未使用パラメータとして使用する。
 
 ```cpp
 #define BOOST_PP_DEF(cv) /* ... */ \
@@ -50,37 +50,37 @@ BOOST_PP_DEF(/)
 	/**/
 ```
 
-###���Ȥ�:
+###仕組み:
 
-`BOOST_PP_EMPTY()` �϶���Ÿ�������Τ�̤���ѥѥ�᡼���Ȥ��ƻ��Ѥ��뤳�Ȥ��Ǥ��롣
+`BOOST_PP_EMPTY()` は空に展開されるので未使用パラメータとして使用することができる。
 
-###����:
+###注意:
 
-`BOOST_PP_EMPTY` �θ���� () ���դ��ʤ���Ÿ������ʤ���
+`BOOST_PP_EMPTY` の後ろに () を付けないと展開されない。
 
-�ؿ��Τ褦�ʥޥ�����Ƥ֤ˤ� () ��ɬ�פǤ��롣
+関数のようなマクロを呼ぶには () が必要である。
 
-###�ٹ�:
+###警告:
 
-`BOOST_PP_EMPTY()` ��ȤäƤ����硢 Ϣ��(concatenation)�ϰ����˻��ѤǤ��ʤ���
+`BOOST_PP_EMPTY()` を使っている場合、 連結(concatenation)は安全に使用できない。
 
-###����:
+###小技:
 
-���ޡ�1���2�Ԥ�¾�ιԤ���ü��Ĺ���ʤ뤳�Ȥ����롣
-��³�Ա黻�Ҥΰ��֤����ƤιԤˤĤ���·���뤳�Ȥ� *���ʤ�* ���Ȥˤ�äơ��������򤽤�ۤɵ����ˤ����˺�Ȥ�ڤˤ��뤳�Ȥ��Ǥ��롣
+時折、1～2行が他の行より極端に長くなることがある。
+継続行演算子の位置を全ての行について揃えることを *しない* ことによって、可読性をそれほど犠牲にせずに作業を楽にすることができる。
 
-###����:
+###小技:
 
-�ץ�ץ����å��᥿�ץ�����ߥ󥰤Τ���Υޥ������̻Ҥ�ϥ��饤��ɽ������:
+プリプロセッサメタプログラミングのためのマクロ識別子をハイライト表示せよ:
 
 - `BOOST_PP_DEF`
 - `BOOST_PP_EMPTY`
 - `BOOST_PP_REPEAT`
 - ...
 
-����ˤ�äƲ����������夹�롣
+これによって可読性が向上する。
 
-##�� - ɬ�פʤ� ## �Τ����� BOOST_PP_CAT ��Ȥ���
+##例 - 必要なら ## のかわりに BOOST_PP_CAT を使う。
 
 ```cpp
 #define STATIC_ASSERT(expr) \
@@ -94,13 +94,13 @@ BOOST_PP_DEF(/)
 STATIC_ASSERT(sizeof(int) <= sizeof(long));
 ```
 
-###��ͳ:
+###理由:
 
-�ޥ���Ÿ����(�ؾ���)�Ƶ�Ū��Ŭ�Ѥ���롣
-�ȡ�����η��ϥޥ���Ÿ�����˳����롣
-���Τ���ȡ�����η����ٱ䤻�ͤФʤ�ʤ����Ȥ����Ф��е����롣
+マクロ展開は(層状に)再帰的に適用される。
+トークンの結合はマクロ展開を阻害する。
+そのためトークンの結合を遅延せねばならないことがしばしば起きる。
 
-##�� - ɬ�פʤ� # �Τ����� BOOST_PP_STRINGIZE ��Ȥ���
+##例 - 必要なら # のかわりに BOOST_PP_STRINGIZE を使う。
 
 ```cpp
 #define NOTE(str) \
@@ -112,12 +112,12 @@ STATIC_ASSERT(sizeof(int) <= sizeof(long));
 #pragma NOTE("TBD!")
 ```
 
-###��ͳ:
+###理由:
 
-�ޥ���Ÿ����(�ؾ���)�Ƶ�Ū��Ŭ�Ѥ���롣
-ʸ���󲽤ϥޥ���Ÿ�����˳����뤿�ᡢʸ���󲽤��ٱ䤻�ͤФʤ�ʤ����Ȥ����Ф��е����롣
+マクロ展開は(層状に)再帰的に適用される。
+文字列化はマクロ展開を阻害するため、文字列化を遅延せねばならないことがしばしば起きる。
 
-##�� - BOOST_PP_ENUM_PARAMS (�䤽���Ѽ�)�� BOOST_PP_REPEAT �� BOOST_PP_COMMA_IF ����Ȥäƥꥹ������ *O*(*n*) �����֤������롣
+##例 - BOOST_PP_ENUM_PARAMS (やその変種)や BOOST_PP_REPEAT や BOOST_PP_COMMA_IF 等を使ってリスト操作の *O*(*n*) 繰り返しを除去する。
 
 ```cpp
 struct make_type_list_end;
@@ -151,9 +151,9 @@ public:
 };
 ```
 
-###���Ȥ�:
+###仕組み:
 
-`BOOST_PP_REPEAT` �ϺƵ���ɤ�����Ѥ��� (����������):
+`BOOST_PP_REPEAT` は再帰もどきを使用する (疑似コード):
 
 ```cpp
 #define BOOST_PP_REPEAT(n, m, p) BOOST_PP_REPEAT ## n(m, p)
@@ -166,15 +166,15 @@ public:
 // ...
 ```
 
-###����:
+###注意:
 
-*��Υ����ɤϷ褷�� `BOOST_PP_REPEAT` �μ����ʤɤǤϤʤ���ñ�������Τ���Τ�ΤǤ��롪*
+*上のコードは決して `BOOST_PP_REPEAT` の実装などではなく、単に説明のためのものである！*
 
-`BOOST_PP_ENUM_PARAMS` �Ȥ����Ѽ�� `BOOST_PP_REPEAT` ��ȤäƤ��롣
-`BOOST_PP_COMMA_IF(I)` �� I != 0 �ΤȤ�����ޤ�Ÿ������롣
-`BOOST_PP_INC(I)` ���ܼ�Ū�ˤ� "I+1" ��Ÿ�����졢`BOOST_PP_DEC(I)` �� "I-1" ��Ÿ������롣
+`BOOST_PP_ENUM_PARAMS` とその変種は `BOOST_PP_REPEAT` を使っている。
+`BOOST_PP_COMMA_IF(I)` は I != 0 のときコンマに展開される。
+`BOOST_PP_INC(I)` は本質的には "I+1" に展開され、`BOOST_PP_DEC(I)` は "I-1" に展開される。
 
-##�� - �����¤����ΤǤϤʤ���*����դ��Υޥ������* ��Ȥäơ�ɬ�פ˱����ƥ桼���������ɤη����֤�������Ǥ���褦�ˤ��롣
+##例 - ある上限を決めるのではなく、*条件付きのマクロ定義* を使って、必要に応じてユーザがコードの繰り返しを制御できるようにする。
 
 ```cpp
 #ifndef MAKE_TYPE_LIST_MAX_LENGTH
@@ -182,12 +182,12 @@ public:
 #endif
 ```
 
-���Τ褦�ˤ���С��饤�֥��Υ����ɤ��ѹ����뤳�Ȥʤ��桼���� `make_type_list` �����ꤹ�뤳�Ȥ��Ǥ��롣
+このようにすれば、ライブラリのコードを変更することなくユーザが `make_type_list` を設定することができる。
 
-##�� - BOOST_PP_REPEAT �� *�ȡ�����ȹ�ؿ�* ��Ȥä� categorical repetition �����롣
+##例 - BOOST_PP_REPEAT と *トークン照合関数* を使って categorical repetition を除去する。
 
 ```cpp
-// ����: ��Υ���ѥ���ϻ��ѷ��˴ؤ���ɸ��Ū�ǤϤʤ���
+// 注意: 私のコンパイラは算術型に関して標準的ではない。
 #define ARITHMETIC_TYPE(I) ARITHMETIC_TYPE ## I
 
 #define ARITHMETIC_TYPE0    bool
@@ -220,12 +220,12 @@ BOOST_PP_REPEAT(ARITHMETIC_TYPE_CNT, BOOST_PP_DEF, _)
 #undef BOOST_PP_DEF
 ```
 
-###����:
+###注意:
 
-�����η����֤��ϥƥ�ץ졼�ȥ᥿�ץ�����ߥ� [[Czarnecki]](bibliography.html#czarnecki) �ˤ�äƤ����Ǥ��롣
-�������ʤ���黻�ҥȡ������ categorical repetition �ϥƥ�ץ졼�ȥ᥿�ץ�����ߥ󥰤ˤ�äƤϴ����˽���Ǥ��ʤ���
+上の例の繰り返しはテンプレートメタプログラミング [[Czarnecki]](bibliography.html#czarnecki) によっても除去できる。
+しかしながら演算子トークンの categorical repetition はテンプレートメタプログラミングによっては完全に除去できない。
 
-##�� - BOOST_PP_REPEAT ��Ȥä�*O*(*n* * *n*)�η����֤������롣
+##例 - BOOST_PP_REPEAT を使って*O*(*n* * *n*)の繰り返しを除去する。
 
 ```cpp
 #ifndef MAX_VEC_ARG_CNT
@@ -252,11 +252,11 @@ BOOST_PP_REPEAT(BOOST_PP_INC(MAX_VEC_ARG_CNT), DEF_VEC_CTOR_FUN, _)
 // ...
 ```
 
-###���Ȥ�:
+###仕組み:
 
-`BOOST_PP_REPEAT` �� *��ư�Ƶ�* [����: ???]�򵯤�������褦�����̤���ˡ�Ǽ�������Ƥ��롣
+`BOOST_PP_REPEAT` は *自動再帰* [訳注: ???]を起こさせるような特別な方法で実装されている。
 
-##�� - BOOST_PP_IF ��Ȥä�ʬ����¸����롣
+##例 - BOOST_PP_IF を使って分岐を実現する。
 
 ```cpp
 #define COMMA_IF(c) \
@@ -267,14 +267,14 @@ BOOST_PP_IF(0, true, false) == false;
 BOOST_PP_IF(1, true, false) == true;
 ```
 
-`BOOST_PP_IF` ��Ȥ��� `BOOST_PP_REPEAT` ��Ȥä��ꥹ�Ȥ��������ñ�ˤǤ��롣
+`BOOST_PP_IF` を使えば `BOOST_PP_REPEAT` を使ったリストの生成を簡単にできる。
 
-###����:
+###注意:
 
-*THEN* �� *ELSE* ����ʬ(��2����3����)�ϥޥ����Ǥ���ɬ�פϤʤ���
-���������⤷�����ΰ������ؿ�Ū�ʥޥ����Ǥ��äơ���������դ���Ÿ���������ΤǤ���С��⤦������ؿ�Ū�ޥ����ˤ��ʤ���Фʤ�ʤ���
-������Ū�Τ���� `BOOST_PP_IDENTITY` ��Ȥ����Ȥ��Ǥ��롣
-������ (Aleksey Gurtovoy �ˤ��) �򸫤�:
+*THEN* と *ELSE* の部分(第2、第3引数)はマクロである必要はない。
+しかし、もしそれらの一方が関数的なマクロであって、それを条件付きで展開したいのであれば、もう一方も関数的マクロにしなければならない。
+その目的のために `BOOST_PP_IDENTITY` を使うことができる。
+下の例 (Aleksey Gurtovoy による) を見よ:
 
 ```cpp
 #define NUMBERED_EXPRESSION(i, x) /* ... */ \
@@ -286,15 +286,15 @@ BOOST_PP_IF(1, true, false) == true;
 	/**/
 ```
 
-###����:
+###注意:
 
-��� `COMMA_IF` ����Τ褦�ˡ�`BOOST_PP_IF` �η�̤��ƤФ�Ƥ� *THEN* �� *ELSE* �ѥ�᡼�����ƤФ�ʤ����Ȥ����롣
-�⤷�ѥ�᡼����ƤФ��ʤ顢`BOOST_PP_IF` ��Ŭ�ڤ�Ÿ����������� `BOOST_PP_EMPTY` ������Ÿ������뤿�ᡢ���Υ����ɤ�������Ÿ������ʤ��ʤäƤ��ޤ���
-[����: ???]
+上の `COMMA_IF` の例のように、`BOOST_PP_IF` の結果が呼ばれても *THEN* や *ELSE* パラメータが呼ばれないことがある。
+もしパラメータも呼ばれるなら、`BOOST_PP_IF` が適切に展開される前に `BOOST_PP_EMPTY` が空に展開されるため、そのコードは正しく展開されなくなってしまう。
+[訳注: ???]
 
-###���Ȥ�:
+###仕組み:
 
-`BOOST_PP_IF` �����Ƥη����֤��ϰϤˤĤ����������Ƥ���(����������):
+`BOOST_PP_IF` は全ての繰り返し範囲について定義されている(疑似コード):
 
 ```cpp
 #define BOOST_PP_IF(c, THEN, ELSE) BOOST_PP_IF ## c(THEN, ELSE)
@@ -305,7 +305,7 @@ BOOST_PP_IF(1, true, false) == true;
 // ...
 ```
 
-##��: ���ѡ���������ӱ黻��Ȥ���
+##例: 算術、論理、比較演算を使う。
 
 ```cpp
 #define SPECIAL_NUMBERED_LIST(n, i, elem, special) \
