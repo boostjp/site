@@ -343,6 +343,6 @@ SPECIAL_NUMBERED_LIST(3, 3, E, S)
 
 (C) Copyright [Housemarque Oy](http://www.housemarque.com) 2002
 
-Permission to copy, use, modify, sell and distribute this document is granted provided this copyright notice appears in all copies.&nbsp;
+Permission to copy, use, modify, sell and distribute this document is granted provided this copyright notice appears in all copies.
 This document is provided "as is" without express or implied warranty and with no claim as to its suitability for any purpose.
 
