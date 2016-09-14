@@ -419,6 +419,27 @@ int main()
 "b.png"
 ```
 
+あるいは、上記の実装例の `BOOST_FOREACH` 部分は C++11 以降で range-based-for を使いたい場合、次のようにも書ける。
+
+```cpp
+#include <iostream>
+#include <boost/filesystem.hpp>
+#include <boost/range/iterator_range.hpp>
+
+namespace fs = boost::filesystem;
+
+int main()
+{
+    const fs::path path(".");
+    
+    // この例の場合、 e は fs::path 型ではなく fs::directory_entry 型となる点に注意する。
+    for ( const auto& e : boost::make_iterator_range( fs::directory_iterator( path ), { } ) )
+        if ( ! fs::is_directory( e ) )
+            std::cout << e.path().filename() << std::endl;
+}
+```
+
+実行結果の例は先の `BOOST_FOREACH` バージョンと同様となるので省略する。
 
 ## <a name="recursive-enumerate-file" href="#recursive-enumerate-file">ディレクトリ内の全てのファイルを再帰的に列挙する</a>
 
