@@ -6,6 +6,7 @@
 - [グラフ型を定義する](#define-graph)
 - [頂点と辺を追加する](#add-vertex-edge)
 - [任意のクラスをプロパティにする](#bundle-property)
+- [頂点と辺のリストを取得する](#listing-vertices-edges)
 - [ダイクストラ法で最短経路を求める](#dijkstra-shortest-paths)
 - [最短経路の長さ(重みの合計)を求める](#distance-map)
 - [ある頂点に到達可能かどうかを調べる](#is-reachable)
@@ -41,10 +42,10 @@ class adjacency_list;
 ```cpp
 typedef
     boost::adjacency_list<
-		boost::listS,
-		boost::vecS,
-		boost::undirectedS
-	>
+                boost::listS,
+                boost::vecS,
+                boost::undirectedS
+        >
 Graph;
 ```
 
@@ -52,13 +53,13 @@ Graph;
 
 ```cpp
 typedef
-	boost::adjacency_list<
-		boost::listS,
-		boost::vecS,
-		boost::directedS,
-    	boost::no_property,
-		boost::property<boost::edge_weight_t, int>
-	>
+        boost::adjacency_list<
+                boost::listS,
+                boost::vecS,
+                boost::directedS,
+        boost::no_property,
+                boost::property<boost::edge_weight_t, int>
+        >
 Graph;
 ```
 
@@ -338,6 +339,125 @@ int main()
 ```
 Tokyo-Nagoya : 325.5km
 ```
+
+
+## <a name="listing-vertices-edges" href="#listing-vertices-edges">頂点と辺のリストを取得する</a>
+グラフオブジェクトから頂点と辺のリストを取得するには、それぞれ`vertices()`非メンバ関数と`edges()`非メンバ関数を使用する。
+
+これらの関数は、頂点記述子もしくは辺記述子を要素とするリストの、イテレータの組を返す。
+
+これらの機能を使用して、[バンドルプロパティ](#bundle-property)の例で作成したグラフの情報を列挙してみよう。
+
+```cpp
+#include <iostream>
+#include <string>
+#include <boost/graph/adjacency_list.hpp>
+
+struct City {
+    std::string name;
+    int population;
+    std::vector<int> zipcodes;
+};
+
+struct Highway {
+    std::string name;
+    double distance; // km
+};
+
+typedef boost::adjacency_list<
+    boost::listS, boost::vecS, boost::bidirectionalS,
+    City,    // 頂点のBundleプロパティ
+    Highway // 辺のBundleプロパティ
+> Map;
+
+int main()
+{
+    Map map;
+
+    // 街(頂点)を2つ追加
+    Map::vertex_descriptor v1 = add_vertex(map);
+    Map::vertex_descriptor v2 = add_vertex(map);
+
+    // 頂点のBundleプロパティを設定
+    map[v1].name = "Tokyo";
+    map[v1].population = 13221169;
+    map[v1].zipcodes.push_back(1500013);
+
+    map[v2].name = "Nagoya";
+    map[v2].population = 2267048;
+    map[v2].zipcodes.push_back(4600006);
+
+    // 辺を追加
+    bool inserted = false;
+    Map::edge_descriptor e;
+    boost::tie(e, inserted) = add_edge(v1, v2, map);
+
+    // 辺のBundleプロパティを設定
+    map[e].name = "Tomei Expessway";
+    map[e].distance = 325.5;
+
+    // 頂点を列挙
+    // vertices()関数は、グラフオブジェクトを引数にとり、
+    // 頂点リストのイテレータ範囲としてstd::pair<Iterator, Iterator>型を返す。
+    std::cout << "vertices :" << std::endl;
+    auto vertex_range = vertices(map);
+    for (auto first = vertex_range.first, last = vertex_range.second; first != last; ++first) {
+        Map::vertex_descriptor v = *first;
+        std::cout << "  " << map[v].name << std::endl;
+    }
+
+    // 辺を列挙
+    // edges()関数は、グラフオブジェクトを引数にとり、
+    // 辺リストのイテレータ範囲としてstd::pair<Iterator, Iterator>型を返す。
+    std::cout << "edges :" << std::endl;
+    auto edge_range = edges(map);
+    for (auto first = edge_range.first, last = edge_range.second; first != last; ++first) {
+        Map::edge_descriptor e = *first;
+        std::cout << "  " << map[e].name << std::endl;
+    }
+}
+```
+* vertices[color ff0000]
+* edges[color ff0000]
+
+出力
+
+```
+vertices :
+  Tokyo
+  Nagoya
+edges :
+  Tomei Expessway
+```
+
+`vertices()`と`edges()`はイテレータの組を返すため、扱いが少々むずかしい。これを簡単にイテレーションさせるためには、以下のような方法がある：
+
+1. `BOOST_FOREACH`マクロを使用する
+2. イテレータの組を範囲for文で使用できる形式に変換する
+
+`BOOST_FOREACH`マクロは、イテレータの組を範囲と見なすようになっているため、`vertices()`と`edges()`の戻り値を直接扱える：
+
+```cpp
+#include <boost/foreach.hpp>
+
+…
+
+BOOST_FOREACH (Map::vertex_descriptor v : vertices(map)) {
+}
+```
+
+C++11の範囲for文は、`begin()`/`end()`メンバ関数を持っていること、もしくは非メンバ関数の`begin(x)`/`end(x)`で`x`オブジェクトに対するイテレータを取得できることが要求される。イテレータの組を、そのどちらかの形式に変換することで、範囲for文で`vertices()`/`edges()`を扱えるようになる。
+
+身近なところでは、Boost.Rangeライブラリの`boost::make_iterator_range()`関数にイテレータの組を渡すことで、`begin()`/`end()`メンバ関数を持つ型に変換できる：
+
+```cpp
+#include <boost/range/iterator_range_core.hpp>
+
+for (Map::vertex_descriptor v : boost::make_iterator_range(vertices(map))) {
+}
+```
+
+ほかにも、`std`名前空間に、`std::pair<Iterator, Iterator>`に対する`std::begin()`/`std::end()`非メンバ関数のオーバーロードを追加する方法もあるが、`std`名前空間に機能を追加することは規約違反であるため、説明やかんたんなお試しコード以外の用途では推奨しない。
 
 
 ## <a name="dijkstra-shortest-paths" href="#dijkstra-shortest-paths">ダイクストラ法で最短経路を求める</a>
