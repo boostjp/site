@@ -24,7 +24,7 @@ Boost.Serializationでは、以下のフォーマットへのシリアライズ�
 Boost.Serializationでは、ユーザー定義型に、
 
 - `boost::serialization::access`への`friend`指定を行い、
-- `serialize()`メンバ関数を持たせ、`Arhive`にシリアライズするメンバ変数を登録
+- `serialize()`メンバ関数を持たせ、`Archive`にシリアライズするメンバ変数を登録
 
 することで、ユーザー定義型をシリアライズとデシリアライズが可能な型にすることができる。
 
