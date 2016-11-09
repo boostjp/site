@@ -8,7 +8,7 @@ Boost.Interprocessは、プロセス間通信をサポートするための各�
 
 ##インデックス
 - [存在しているファイルからマッピングする](#file-mapping)
-- [ファイルをテンポラリバッファとしての利用する](#file-as-temporary-buffer)
+- [ファイルをテンポラリバッファとして利用する](#file-as-temporary-buffer)
 - [ファイルをコンテナにマッピングする](#container-file-mapping)
 
 
@@ -42,7 +42,7 @@ BOOST_ASSERT( size == view.get_size() );
 ```
 
 
-## <a name="file-as-temporary-buffer" href="#file-as-temporary-buffer">ファイルをテンポラリバッファとしての利用する</a>
+## <a name="file-as-temporary-buffer" href="#file-as-temporary-buffer">ファイルをテンポラリバッファとして利用する</a>
 メモリマップドファイルの機能をテンポラリデータ保存のために利用することもできる。Boost.InterprocessにはManaged Memory Segmentsというオブジェクト生成支援関数群が用意されており、ファイルをテンポラリバッファとして利用するのが簡単になる。
 
 `managed_mapped_file`クラスの`construct()`メンバを使用し、`find()`メンバで検索可能なnamed instanceを生成、unique instanceやanonymous instanceも生成できる。
