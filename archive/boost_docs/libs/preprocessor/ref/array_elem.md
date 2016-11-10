@@ -19,7 +19,7 @@ BOOST_PP_ARRAY_ELEM(i, array)
 
 ##Requirements
 
-**Header:** &nbsp;&lt;boost/preprocessor/array/elem.hpp&gt;
+**Header:** &lt;boost/preprocessor/array/elem.hpp&gt;
 
 ##Sample Code
 

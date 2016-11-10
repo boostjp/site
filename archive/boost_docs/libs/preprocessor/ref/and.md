@@ -33,7 +33,7 @@ BOOST_PP_AND(p, q)
 
 ##Requirements
 
-**Header:** &nbsp;&lt;boost/preprocessor/logical/and.hpp&gt;
+**Header:** &lt;boost/preprocessor/logical/and.hpp&gt;
 
 ##Sample Code
 

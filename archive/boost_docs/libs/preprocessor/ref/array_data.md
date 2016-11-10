@@ -19,7 +19,7 @@ BOOST_PP_ARRAY_DATA(array)
 
 ##Requirements
 
-**Header:** &nbsp;&lt;boost/preprocessor/array/data.hpp&gt;
+**Header:** &lt;boost/preprocessor/array/data.hpp&gt;
 
 ##Sample Code
 
