@@ -65,5 +65,6 @@
 
 ### LT 「Visual C\+\+コンパイラのコードの注釈機能について」
 - 発表者: Egtra [@egtra](https://twitter.com/egtra)
-- 発表資料: [slideshare](http://www.slideshare.net/egtra/visual-csal)
+- 発表資料: [slideshare](http://www.slideshare.net/egtra/visual-csal), [pdf](http://dev.activebasic.com/egtra2nd/documents/msvc-sal.pdf), [pptx](http://dev.activebasic.com/egtra2nd/documents/msvc-sal.pptx)
+- アフターケア : [Visual C++コード分析を支えるSALという題で話をしてきました - イグトランスの頭の中（のかけら）](http://dev.activebasic.com/egtra/2016/11/08/923/)
 
