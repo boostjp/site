@@ -1,7 +1,7 @@
 site
 ====
 
-このリポジトリは、Boost C++ Librariesの日本語情報サイト[boostjp](http://boostjp.github.io/)のMarkdownソースです。
+このリポジトリは、Boost C++ Librariesの日本語情報サイト[boostjp](https://boostjp.github.io/)のMarkdownソースです。
 
 現在、編集環境をGoogle SitesからこちらのGitHubリポジトリに移行する作業を行っています。
 

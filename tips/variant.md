@@ -88,7 +88,7 @@ int main()
 2
 ```
 
-`type()`メンバ関数は、格納されている型の[`std::type_info`](http://cpprefjp.github.io/reference/typeinfo/type_info.html)オブジェクトへの`const`左辺値参照を返す。
+`type()`メンバ関数は、格納されている型の[`std::type_info`](https://cpprefjp.github.io/reference/typeinfo/type_info.html)オブジェクトへの`const`左辺値参照を返す。
 
 ```cpp
 #include <iostream>

@@ -34,7 +34,7 @@ namespace std {
 
 ジェネリック・アルゴリズムのテストとして、一般的な複数の入力型に対してインスタンスの生成を行う場合が往々にしてある。 一例として、`std::stable_sort()` に対して、イテレータとして組み込みのポインタ型を適用することが考えられる。 これは、アルゴリズムの実行時の振る舞いをテストするには適切であるが、コンセプト充当性の保証には有用ではない。 なぜなら、C++ の組み込み型は特定のコンセプトとー致を見ることは決してなく、たいていの場合、それが提供する機能は何らかのコンセプトが単独で必要とする最小のそれを上回っている。 すなわち、たとえ与えられた型で関数テンプレートがコンパイルできたとしても、そのコンセプトの要求事項は、その関数を充当する実際の要求事項に及ばないことがありうる。 それ故に、一般的な入力型でテストすることに加えて、原型クラスでコンパイルすることは重要である。
 
-以下は、記載されている [`std::stable_sort()`](http://cpprefjp.github.io/reference/algorithm/stable_sort.html) の要求事項をチェックするために原型を使用する方法を示す、[stl_concept_covering.cpp](stl_concept_covering.cpp.md) からの抜粋である。 この場合、[`CopyConstructible`（コピー・コンストラクト可能）](http://www.boost.org/doc/libs/1_31_0/libs/utility/CopyConstructible.html) と [`Assignable`（割り当て可能）](http://www.boost.org/doc/libs/1_31_0/libs/utility/Assignable.html) 要求事項が、SGI STL 文書から無視されているように見える (試しに、その原型を削除してみるとよい) 。 Boost の原型クラスは、階層構造が取れるように設計されている。 この例において、イテレータの値型は３つの原型から構成される。 下記で参照されている原型クラスでは、`Base` という名前のテンプレート・パラメータが、階層化された原型を使用可能であることを示している。
+以下は、記載されている [`std::stable_sort()`](https://cpprefjp.github.io/reference/algorithm/stable_sort.html) の要求事項をチェックするために原型を使用する方法を示す、[stl_concept_covering.cpp](stl_concept_covering.cpp.md) からの抜粋である。 この場合、[`CopyConstructible`（コピー・コンストラクト可能）](http://www.boost.org/doc/libs/1_31_0/libs/utility/CopyConstructible.html) と [`Assignable`（割り当て可能）](http://www.boost.org/doc/libs/1_31_0/libs/utility/Assignable.html) 要求事項が、SGI STL 文書から無視されているように見える (試しに、その原型を削除してみるとよい) 。 Boost の原型クラスは、階層構造が取れるように設計されている。 この例において、イテレータの値型は３つの原型から構成される。 下記で参照されている原型クラスでは、`Base` という名前のテンプレート・パラメータが、階層化された原型を使用可能であることを示している。
 
 ```cpp
 {

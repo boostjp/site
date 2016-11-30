@@ -11,7 +11,7 @@
 
 `boost::any`型には、あらゆる型の値を格納することができる。
 
-格納されている型のチェックには、`boost::any::type()`メンバ関数を使用し、[`std::type_info`](http://cpprefjp.github.io/reference/typeinfo/type_info.html)型で判定することができる。
+格納されている型のチェックには、`boost::any::type()`メンバ関数を使用し、[`std::type_info`](https://cpprefjp.github.io/reference/typeinfo/type_info.html)型で判定することができる。
 
 格納されている値を元の型に変換するには、`boost::any_cast()`関数を使用する。
 
