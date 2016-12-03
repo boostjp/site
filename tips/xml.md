@@ -58,7 +58,7 @@ int main()
         std::cout << value << std::endl;
     }
 }
-
+```
 
 実行結果：
 ```
