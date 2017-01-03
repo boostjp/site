@@ -42,7 +42,7 @@ GUI構築にAdam,Eveという2つの独自言語を採用しており、ウィ�
 
 ###オープンソースソフトウェア
 
-- [DynamO](http://www.marcusbannerman.co.uk/dynamo) [[sourcecode](https://github.com/toastedcrumpets/DynamO)]
+- [DynamO](http://dynamomd.org/) [[sourcecode](https://github.com/toastedcrumpets/DynamO)]
 イベント駆動シミュレータ。
 Boost.Array, Boost.CircularBuffer, Boost.DateTime, Boost.Foreach, Boost.Function, Boost.Iostreams, Boost.LexicalCast, Boost.Math, Boost.ProgramOptions, Boost.Random, Boost.SmartPtr, Boost.Tokenizer, Boost.Tuple, Boost.Unorderedなどを使用している。
 
@@ -80,7 +80,7 @@ GIS関係の実装においてBoost.Geometoryを使用している。
 
 
 ###商用製品
-- [Shade](http://shade.e-frontier.co.jp/)
+- [Shade](https://shade3d.jp/)
 e-frontier社 3DCG作成ソフト。
 プラグイン用SDKにBoostを含む。
 Boost.TypeTraits、Boost.MPLなどを使用。
@@ -94,7 +94,7 @@ Boost.TypeTraits、Boost.MPLなどを使用。
 
 
 ###会社
-- [株式会社Aiming](http://aiming-inc.com/)
+- [株式会社Aiming](https://aiming-inc.com/ja)
 オンラインゲームのサーバー開発にBoost.Any、Boost.Array、Boost.Foreach、Boost.Format、Boost.Function、Boost.LexicalCast、Boost.Multi-Index、Boost.Optional、Boost.Regex、Boost.Spirit、Boost.StringAlgo、Boost.Tokenizer、Boost.Utility、Boost.Xpressiveなどを使用。
 
 

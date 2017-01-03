@@ -34,7 +34,7 @@
 - [NTP.org](http://www.ntp.org/)のネットワーク時間プロトコル
 - US Navy [Systems of Time](http://tycho.usno.navy.mil/systime.html)
 - [国際原子時(International Atomic Time)](http://www.bipm.fr/enus/5_Scientific/c_time/time_1.html)
-- [Date-Time type PostgreSQL](http://beta.zyprexia.com/docs/pgsql/user/datatype1130.htm) ユーザーガイド
+- [8.5. 日付/時刻データ型](https://www.postgresql.jp/document/9.6/html/datatype-datetime.html) PostgreSQLユーザーガイド
 
 
 ## <a name="other-cpp-libs" href="#other-cpp-libs">Other C/C++ Libraries</a>
@@ -52,14 +52,14 @@
 
 
 ## <a name="java-libs" href="#java-libs">JAVA Date & Time Library Quick Reference</a>
-- [Calendar class](http://java.sun.com/products/jdk/1.1/docs/api/java.util.Calendar.html#_top_)
-- [Gregorian calendar](http://java.sun.com/products/jdk/1.1/docs/api/java.util.GregorianCalendar.html#_top_)
-- [Date class](http://java.sun.com/products/jdk/1.1/docs/api/java.util.Date.html)
-- [sql.time class](http://java.sun.com/products/jdk/1.1/docs/api/java.sql.Time.html#_top_)
-- [Date format symbols](http://java.sun.com/products/jdk/1.1/docs/api/java.text.DateFormatSymbols.html#_top_)
-- [Date format](http://java.sun.com/products/jdk/1.1/docs/api/java.text.DateFormat.html#_top_)
-- [Simple Date Format](http://java.sun.com/products/jdk/1.1/docs/api/java.text.SimpleDateFormat.html#_top_)
-- [Simple Time Zone](http://java.sun.com/products/jdk/1.1/docs/api/java.util.SimpleTimeZone.html#_top_)
+- [クラスCalendar](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Calendar.html)
+- [クラスGregorianCalendar](https://docs.oracle.com/javase/jp/8/docs/api/java/util/GregorianCalendar.html)
+- [クラスDate](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Date.html)
+- [クラスjava.sql.Time](https://docs.oracle.com/javase/jp/8/docs/api/java/sql/Time.html)
+- [クラスDateFormatSymbols](https://docs.oracle.com/javase/jp/8/docs/api/java/text/DateFormatSymbols.html)
+- [クラスDateFormat](https://docs.oracle.com/javase/jp/8/docs/api/java/text/DateFormat.html)
+- [クラスSimpleDateFormat](https://docs.oracle.com/javase/jp/8/docs/api/java/text/SimpleDateFormat.html)
+- [クラスSimpleTimeZone](https://docs.oracle.com/javase/jp/8/docs/api/java/util/SimpleTimeZone.html)
 
 
 ## <a name="script-lang-libs" href="#script-lang-libs">Scripting Language Libraries</a>
