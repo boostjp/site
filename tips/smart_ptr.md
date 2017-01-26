@@ -204,7 +204,7 @@ call deleter
 ```
 
 ### <a name="weak-reference" href="#weak-reference">弱い参照</a>
-`weak_ptr`はs`hared_ptr`に対する弱い参照で、`shared_ptr`の参照カウントを上げ下げせずにオブジェクトを指すものである。`weak_ptr`単独で用いられることはない。オブジェクトへのアクセスは`weak_ptr`の`lock()`メンバ関数、`shared_ptr`のコンストラクタによって対応する`shared_ptr`を得ることで可能である。`shared_ptr`が破棄されていた場合における動作は、`lock()`メンバ関数の場合は空の`shared_ptr`を返し、`shared_ptr`のコンストラクタの場合は`bad_weak_ptr`例外を送出する。
+`weak_ptr`は`shared_ptr`に対する弱い参照で、`shared_ptr`の参照カウントを上げ下げせずにオブジェクトを指すものである。`weak_ptr`単独で用いられることはない。オブジェクトへのアクセスは`weak_ptr`の`lock()`メンバ関数、`shared_ptr`のコンストラクタによって対応する`shared_ptr`を得ることで可能である。`shared_ptr`が破棄されていた場合における動作は、`lock()`メンバ関数の場合は空の`shared_ptr`を返し、`shared_ptr`のコンストラクタの場合は`bad_weak_ptr`例外を送出する。
 
 ```cpp
 #include <iostream>
