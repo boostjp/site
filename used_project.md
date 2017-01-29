@@ -39,6 +39,9 @@ Web アプリケーションフレームワーク。Boost.Any, Boost.Array, Boos
 GUI構築にAdam,Eveという2つの独自言語を採用しており、ウィジェット間依存関係、GUIレイアウトとロジックの記述をそれぞれと完全に分離できる。
 少なくとも Boost.Utility,Function,Signals,Range,Bind,TypeTraits,ConceptCheck,MPL,FunctionTypes,Noncopyable,Fusion,Operators,Iterator,Array,Any,Tuple,SharedPtr,Integer,StaticAssert を使用している。
 
+- [Nghttp2](https://nghttp2.org/)
+通信プロトコルHTTPの最新版であるHTTP/2の実装を提供するCライブラリおよびアプリケーションプログラム。
+C APIだけでなく、Boost.Asioベースの高水準なC++ APIが用意されている: [libnghttp2_asio: High level HTTP/2 C++ library](https://nghttp2.org/documentation/libnghttp2_asio.html)。
 
 ###オープンソースソフトウェア
 
