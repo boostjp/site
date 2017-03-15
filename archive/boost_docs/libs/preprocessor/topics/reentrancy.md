@@ -1,4 +1,4 @@
-#Reentrancy
+# Reentrancy
 
 Macro expansion in the preprocessor is entirely functional.
 Therefore, there is no iteration.
@@ -8,8 +8,8 @@ This means that the library must fake iteration or recursion by defining sets of
 To illustrate, here is a simple concatenation macro:
 
 ```cpp
-#define CONCAT(a, b) CONCAT_D(a, b)
-#define CONCAT_D(a, b) a ## b
+# define CONCAT(a, b) CONCAT_D(a, b)
+# define CONCAT_D(a, b) a ## b
 
 CONCAT(a, CONCAT(b, c)) // abc
 ```
@@ -17,7 +17,7 @@ CONCAT(a, CONCAT(b, c)) // abc
 This is fine for a simple case like the above, but what happens in a scenario like the following:
 
 ```cpp
-#define AB(x, y) CONCAT(x, y)
+# define AB(x, y) CONCAT(x, y)
 
 CONCAT(A, B(p, q)) // CONCAT(p, q)
 ```
@@ -29,13 +29,13 @@ First, it can be documented that `AB` uses `CONCAT` and disallow usage similar t
 Second, multiple concatenation macros can be provided....
 
 ```cpp
-#define CONCAT_1(a, b) CONCAT_1_D(a, b)
-#define CONCAT_1_D(a, b) a ## b
+# define CONCAT_1(a, b) CONCAT_1_D(a, b)
+# define CONCAT_1_D(a, b) a ## b
 
-#define CONCAT_2(a, b) CONCAT_2_D(a, b)
-#define CONCAT_2_D(a, b) a ## b
+# define CONCAT_2(a, b) CONCAT_2_D(a, b)
+# define CONCAT_2_D(a, b) a ## b
 
-#define AB(x, y) CONCAT_2(x, y)
+# define AB(x, y) CONCAT_2(x, y)
 
 CONCAT_1(A, B(p, q)) // pq
 ```
@@ -46,7 +46,7 @@ However, it is now necessary to know that `AB` uses, not only *a* concatenation 
 A better solution is to abstract *which* concatenation macro is used....
 
 ```cpp
-#define AB(c, x, y) CONCAT_ ## c(x, y)
+# define AB(c, x, y) CONCAT_ ## c(x, y)
 
 CONCAT_1(A, B(2, p, q)) // pq
 ```
@@ -62,7 +62,7 @@ Consequently, the library chooses to provide several sets of macros with mechani
 In particular, the library must provide reentrance for `BOOST_PP_FOR`, `BOOST_PP_REPEAT`, and `BOOST_PP_WHILE`.
 There are two mechanisms that are used to accomplish this: state parameters (like the above concatenation example) and *automatic recursion*.
 
-##State Parameters
+## State Parameters
 
 Each of the above constructs (`BOOST_PP_FOR`, `BOOST_PP_REPEAT`, and `BOOST_PP_WHILE`) has an associated state.&
 This state provides the means to reenter the respective construct.
@@ -90,7 +90,7 @@ Consider the following multiplication implementation that illustrates this techn
 // The _D signifies that it reenters
 // BOOST_PP_WHILE with concatenation.
 
-#define ADD_D(d, x, y) \
+# define ADD_D(d, x, y) \
 	BOOST_PP_TUPLE_ELEM( \
 		2, 0, \
 		BOOST_PP_WHILE_ ## d(ADD_P, ADD_O, (x, y)) \
@@ -100,14 +100,14 @@ Consider the following multiplication implementation that illustrates this techn
 // The predicate that is passed to BOOST_PP_WHILE.
 // It returns "true" until "y" becomes zero.
 
-#define ADD_P(d, xy) BOOST_PP_TUPLE_ELEM(2, 1, xy)
+# define ADD_P(d, xy) BOOST_PP_TUPLE_ELEM(2, 1, xy)
 
 // The operation that is passed to BOOST_PP_WHILE.
 // It increments "x" and decrements "y" which will
 // eventually cause "y" to equal zero and therefore
 // cause the predicate to return "false."
 
-#define ADD_O(d, xy) \
+# define ADD_O(d, xy) \
 	( \
 		BOOST_PP_INC( \
 			BOOST_PP_TUPLE_ELEM(2, 0, xy) \
@@ -120,7 +120,7 @@ Consider the following multiplication implementation that illustrates this techn
 
 // The multiplication interface macro.
 
-#define MUL(x, y) \
+# define MUL(x, y) \
 	BOOST_PP_TUPLE_ELEM( \
 		3, 0, \
 		BOOST_PP_WHILE(MUL_P, MUL_O, (0, x, y)) \
@@ -130,14 +130,14 @@ Consider the following multiplication implementation that illustrates this techn
 // The predicate that is passed to BOOST_PP_WHILE.
 // It returns "true" until "y" becomes zero.
 
-#define MUL_P(d, rxy) BOOST_PP_TUPLE_ELEM(3, 2, rxy)
+# define MUL_P(d, rxy) BOOST_PP_TUPLE_ELEM(3, 2, rxy)
 
 // The operation that is passed to BOOST_PP_WHILE.
 // It adds "x" to "r" and decrements "y" which will
 // eventually cause "y" to equal zero and therefore
 // cause the predicate to return "false."
 
-#define MUL_O(d, rxy) \
+# define MUL_O(d, rxy) \
 	( \
 		ADD_D( \
 			d, /* pass the state on to ADD_D */ \
@@ -171,7 +171,7 @@ The same set of conventions are used for `BOOST_PP_FOR` and `BOOST_PP_REPEAT`, b
 Also note that the above `MUL` implementation, though not immediately obvious, is using *all three* types of reentrance.
 Not only is it using both types of *state* reentrance, it is also using *automatic recursion*....
 
-##Automatic Recursion
+## Automatic Recursion
 
 Automatic recursion is a technique that vastly simplifies the use of reentrant constructs.
 It is used by simply *not* using any state parameters at all.
@@ -195,7 +195,7 @@ This is not the case when automatic recursion is used.
 The automatic recursion mechanism has to *deduce* the state at each point that it is used.
 This implies a cost in macro complexity that in some situations--notably at deep macro depths--will slow some preprocessors to a crawl.
 
-##Conclusion
+## Conclusion
 
 It is really a tradeoff whether to use state parameters or automatic recursion for reentrancy.
 The strengths of automatic recursion are ease of use and implementation encapsulation.
@@ -204,7 +204,7 @@ The primary strength of state parameters, on the other hand, is efficiency.
 Use of the state parameters is the only way to achieve *maximum* efficiency.
 This efficiency comes at the cost of both code complexity and exposition of implementation.
 
-##See Also
+## See Also
 
 - [`BOOST_PP_FOR`](../ref/for.md)
 - [`BOOST_PP_REPEAT`](../ref/repeat.md)

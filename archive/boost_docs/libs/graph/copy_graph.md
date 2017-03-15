@@ -1,4 +1,4 @@
-#copy_graph
+# copy_graph
 ```cpp
 template <class VertexListGraph, class MutableGraph> 
 void copy_graph(const VertexListGraph& G, MutableGraph& G_copy,
@@ -10,11 +10,11 @@ void copy_graph(const VertexListGraph& G, MutableGraph& G_copy,
 この関数はグラフ `G` から `G_copy` へとすべての頂点と辺をコピーする。また、頂点と辺のプロパティも、 `vertex_all` と `edge_all` プロパティマップを用いるか、あるいはユーザが与えたコピー関数を用いてコピーする。
 
 
-##定義場所
+## 定義場所
 boost/graph/copy.hpp
 
 
-##パラメータ
+## パラメータ
 
 - IN: `const VertexListGraph& G`
 	- 有向または無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) モデルでなければならない。
@@ -23,7 +23,7 @@ boost/graph/copy.hpp
 	- グラフのコピー結果。 グラフの型は [Mutable Graph](MutableGraph.md) モデルでなければならない。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 
 - IN: `vertex_copy(VertexCopier vc)`
 	- これは オリジナルのグラフの頂点のプロパティをコピーの対応する頂点にコピーする [Binary Function](http://www.sgi.com/tech/stl/BinaryFunction.html) である。
@@ -42,7 +42,7 @@ boost/graph/copy.hpp
 	- デフォルト: 出力グラフの頂点デスクリプタ型のサイズ `num_vertices(g)` の `std::vector` から 作られる [`iterator_property_map`](../property_map/iterator_property_map.md) で、 添え字マップのために `i_map` を用いる。
 
 
-##計算量
+## 計算量
 時間計算量は O(V + E) 。
 
 

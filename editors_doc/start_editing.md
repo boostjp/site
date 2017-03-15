@@ -1,4 +1,4 @@
-#boostjpを編集するには
+# boostjpを編集するには
 
 本boostjpサイトのコンテンツは、GitHubリポジトリにあるMarkdown形式のプレーンテキストで行います。
 
@@ -12,7 +12,7 @@ boostjpサイトのGitHubリポジトリは、以下になります：
 * [画像ファイルリポジトリ](https://github.com/boostjp/image)
 
 
-##編集権限を得るには
+## 編集権限を得るには
 編集権限は現在のコミッタに与えてもらうか、pull requestしてコミッタに修正を取り込んでもらうかする必要があります。
 
 旧boostjpサイトで編集を行っていた方には、優先的に編集権限をお渡しします。
@@ -27,7 +27,7 @@ boostjpサイトの編集に慣れていない方は、pull requestからでも�
 
 
 
-##Markdown形式による編集方法
+## Markdown形式による編集方法
 boostjpサイトは、Markdown(.md)形式でリファレンスを記述します。
 
 Markdownは、GitHubサービス上でドキュメントを記述するフォーマットとして広く使用されている形式です。

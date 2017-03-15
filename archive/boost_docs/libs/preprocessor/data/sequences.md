@@ -1,4 +1,4 @@
-#Sequences
+# Sequences
 
 A *sequence* (abbreviated to *seq*) is a group of adjacent parenthesized elements.
 For example,
@@ -13,8 +13,8 @@ For example,
 Therefore, an "empty" *seq* is considered a special case scenario that must be handled separately in C++.
 
 ```cpp
-#define SEQ (x)(y)(z)
-#define REVERSE(s, state, elem) (elem) state
+# define SEQ (x)(y)(z)
+# define REVERSE(s, state, elem) (elem) state
 	// append to head                 ^
 
 BOOST_PP_SEQ_FOLD_LEFT(REVERSE, BOOST_PP_EMPTY, SEQ)()
@@ -22,8 +22,8 @@ BOOST_PP_SEQ_FOLD_LEFT(REVERSE, BOOST_PP_EMPTY, SEQ)()
 	// 1) placeholder for "empty" seq
 	// 2) remove placeholder
 
-#define SEQ_B (1)(2)(3)
-#define INC(s, state, elem) state (BOOST_PP_INC(elem))
+# define SEQ_B (1)(2)(3)
+# define INC(s, state, elem) state (BOOST_PP_INC(elem))
 	// append to tail            ^
 
 BOOST_PP_SEQ_FOLD_RIGHT(INC, BOOST_PP_SEQ_NIL, SEQ)
@@ -39,7 +39,7 @@ Therefore, elements can be accessed at extremely high indices even on preprocess
 
 Elements of a *seq* can be extracted with `BOOST_PP_SEQ_ELEM`.
 
-##Primitives
+## Primitives
 
 - [`BOOST_PP_SEQ_ELEM`](../ref/seq_elem.md)
 

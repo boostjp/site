@@ -1,19 +1,19 @@
-#Copy Constructible
+# Copy Constructible
 
 - 翻訳元ドキュメント : <http://www.boost.org/doc/libs/1_31_0/libs/utility/CopyConstructible.html>
 
-##説明
+## 説明
 オブジェクトのコピーが可能である場合、その型はCopy Constructibleである。
 
 
-##表記
+## 表記
 - `T`はCopy Constructibleモデルの型
 - `t`は`T`型のオブジェクト
 - `u`は`const T`型のオブジェクト
 
 
-##定義
-##妥当な式
+## 定義
+## 妥当な式
 
 | 名前 | 式 | 戻り値の型 | 意味論 |
 |------|----|------------|--------|
@@ -24,12 +24,12 @@
 | アドレス演算子       | `&u`     | `T*` | `u`のアドレスを意味する |
 
 
-##モデル
+## モデル
 - `int`
 - `std::pair`
 
 
-##コンセプトチェックするクラス
+## コンセプトチェックするクラス
 ```cpp
 template <class T>
 struct CopyConstructibleConcept
@@ -51,7 +51,7 @@ struct CopyConstructibleConcept
 ```
 
 
-##関連項目
+## 関連項目
 [Default Constructible](http://www.sgi.com/tech/stl/DefaultConstructible.html) and [Assignable](Assignable.md)
 
 

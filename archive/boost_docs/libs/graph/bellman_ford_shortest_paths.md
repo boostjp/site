@@ -1,4 +1,4 @@
-#bellman_ford_shortest_paths
+# bellman_ford_shortest_paths
 ```cpp
 // 名前付きパラメータバージョン
 template <class EdgeListGraph, class Size, class P, class T, class R>
@@ -59,7 +59,7 @@ BELLMAN-FORD(G)
 `bellman_ford_shortest_paths()` 関数から出力を得るための主な二つの選択が存在する。 ユーザが `distance_map()` パラメータを通して距離プロパティ・マップを提供するならばグラフ中の始点から他の全ての頂点への最短距離は距離マップに記録されるだろう (もし関数が `true` を返すなら)。 二番目の選択は最短経路木を `predecessor_map()` に記録することである。 `V` 中の各頂点 `u` にとって、最短経路木中では `p[u]` が `u` の先行点になるだろう (ただし `p[u] = u` でここに `u` が始点 であるか、または始点からは到達不能な頂点である場合を除く)。 これらの二つの選択に加え、ユーザはアルゴリズムのイベント・ポイントのどれかの間、アクションを取れる独自のビジタをそこに提供することができる。
 
 
-##パラメータ
+## パラメータ
 - IN: `EdgeListGraph& g`
     - 型が [Edge List Graph](EdgeListGraph.md) のモデルの有向グラフまたは無向グラフでなければならない。
 
@@ -67,7 +67,7 @@ BELLMAN-FORD(G)
     - グラフ中の頂点の数。型 `Size` は汎整数型でなければならない。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 - IN: `weight_map(WeightMap w)`
     - グラフ中の各辺の重み　(そして「長さ」もしくは「コスト」として知られる)。 `WeightMap` の型は [Readable Property Map](ReadablePropertyMap.md) のモデルでなければならない。このプロパティ・マップのキー型はグラフの辺記述子でなければならない。重みマップの値型は距離マップの値型を伴った Addable でなければならない。
     - デフォルト: `get(edge_weight, g)`
@@ -93,11 +93,11 @@ BELLMAN-FORD(G)
     - デフォルト: `std::less<D>` ここで `D=typename property_traits<DistanceMap>::value_type` とする。
 
 
-##計算量
+## 計算量
 時間複雑性は O(V E) である。
 
 
-##Visitor Event Points
+## Visitor Event Points
 
 - `vis.examine_edge(e, g)` は、グラフ中の各辺において `|V|` 回呼び出される。
 - `vis.edge_relaxed(e, g)` は終点のための距離ラベルが減じられた時に呼び出される。頂点 `v` のための最近のリラックス (減少) にあずかった 辺 `(u,v)` は最短経路木の中にある辺である。
@@ -106,11 +106,11 @@ BELLMAN-FORD(G)
 - `vis.edge_not_minimized(e, g)` もまた、アルゴリズムの第二段階の間、各辺が最小化されたかどうかの検査の間に呼び出される。もし辺が最小化されていなければ、この関数が呼び出される。これはグラフ中に負の閉路が存在する時に起こる。
 
 
-##コード例
+## コード例
 Bellman-Ford のアルゴリズムを用いた例が [examples/bellman-example.cpp](examples/bellman-example.cpp.md) 中にある。
 
 
-##注釈
+## 注釈
 - <a name="note_1" href="#note_1">[1]</a> ビジタのパラメータは値渡しされるので、もしビジタが状態を持っているなら、アルゴリズムの間のいかなる状態の変更も、送ったビジタ・オブジェクトには行われず ビジタ・オブジェクトのコピーに対して行われる。それゆえポインタまたは リファレンスによってこの状態をビジタに保持させる事を望むかもしれない。
 
 

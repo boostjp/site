@@ -1,4 +1,4 @@
-#connected_components
+# connected_components
 ```cpp
 // 名前付きパラメータバージョン
 template <class VertexListGraph, class ComponentMap, class P, class T, class R>
@@ -14,11 +14,11 @@ connected_components(VertexListGraph& G, ComponentMap comp,
 このアルゴリズムの出力は成分プロパティ・マップ `comp` に記録され、そしてそれは各頂点に割り当てられた成分番号を与える数を含んでいる。 全成分数が関数の返却値である。
 
 
-##定義場所
+## 定義場所
 boost/graph/connected_components.hpp
 
 
-##パラメータ
+## パラメータ
 
 - IN: `const Graph& g`
 	- 無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) かつ [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
@@ -27,7 +27,7 @@ boost/graph/connected_components.hpp
 	- このアルゴリズムはグラフ中にある連結成分数を計算し、各成分に整数のラベルを割り当てる。このアルゴリズムはそれから成分プロパティ・マップ中の成分番号を記録することによってグラフ中の各頂点がどの成分に属しているかを登録する。`ComponentMap` 型は [Writable Property Map](../property_map/[WritablePropertyMap.md) のモデルでなければならない。値型は汎整数型であるべきで、できればグラフの `vertices_size_type` に等しい方が望ましい。キー型はグラフの頂点記述子型でなければならない。
 
 
-##名前付き引数
+## 名前付き引数
 
 - UTIL: `color_map(ColorMap color)`
 	- これはグラフの進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` 型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](ColorValue.md) のモデルでなければならない。
@@ -39,15 +39,15 @@ boost/graph/connected_components.hpp
 	- デフォルト: `get(vertex_index, g)`
 
 
-##計算量
+## 計算量
 連結成分のアルゴリズムの時間計算量もまた O(V + E) である。
 
 
-##関連項目
+## 関連項目
 [`strong_components()`](strong_components.md) and [`incremental_components()`](incremental_components.md)
 
 
-##コード例
+## コード例
 ファイル [examples/connected_components.cpp](examples/connected_components.cpp.md) は無向グラフの連結成分を計算する例を含む。
 
 

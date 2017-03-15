@@ -1,18 +1,18 @@
-#Boost.Signals FAQ
+# Boost.Signals FAQ
 
-##Q: シグナルが noncopyable であるということは、シグナルをメンバとして保持するクラスもまた noncopyable であることを意味するのか？
+## Q: シグナルが noncopyable であるということは、シグナルをメンバとして保持するクラスもまた noncopyable であることを意味するのか？
 
 いいえ。
 コンパイラは、シグナルをメンバとして持つクラスに対してコピーコンストラクタならびに代入演算子を生成することはできないが、あなたがコピーコンストラクタや代入演算子を書くのは自由だ。
 ただしシグナルをコピーしようと試みないように。
 
-##Q: Boost.Signals はスレッドセーフか？
+## Q: Boost.Signals はスレッドセーフか？
 
 いいえ。
 マルチスレッド環境下で Boost.Signals を利用することは大変危険であり、結果は満足とはほど遠いものとなるだろう。
 将来 Boost.Signals はスレッドセーフをサポートするだろう。
 
-##Q: Boost.Signals を Qt と共に使う方法は？
+## Q: Boost.Signals を Qt と共に使う方法は？
 
 Qt とともに構築する場合、プロプロセッサマクロを用いて定義されている moc の予約語 `signals` と `slots` が、Boost.Signals と Qt を共に利用しているプログラムのコンパイルを失敗させる。
 これは Qt の問題であり Boost.Signals の問題ではないのだが、Boost.Signals ライブラリを構築・利用するときに `BOOST_SIGNALS_NAMESPACE` を他の識別子 (例: signalslib) に定義することで、両方のシステムを共に使うことができる。

@@ -1,12 +1,12 @@
-#DFS Visitor Concept
+# DFS Visitor Concept
 このコンセプトは [`depth_first_search()`](depth_first_search.md) 用のビジタのインタフェースを定義する。ユーザは DFS Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `depth_first_search()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
 
 
-##Refinement of
+## Refinement of
 [Copy Constructible](../utility/CopyConstructible.md) (ビジタのコピーは軽い操作である方がいい)
 
 
-##表記
+## 表記
 
 | 識別子  | 説明 |
 |---------|------|
@@ -18,11 +18,11 @@
 | `s`,`u` | `boost::graph_traits<G>::vertex_descriptor` 型のオブジェクト。 |
 
 
-##関連型
+## 関連型
 なし
 
 
-##有効な表現式
+## 有効な表現式
 
 | 名前 | 式 | 戻り値 | 説明 |
 |------|----|--------|------|
@@ -36,7 +36,7 @@
 | Finish Vertex   | `vis.finish_vertex(u, g)`    | `void` | 頂点 `u` を根とする DFS 木の全ての頂点に対して `finish_vertex` が呼ばれた後に、頂点 `u` に対して実行される。頂点 `u` が DFS 木の葉であれば、 `u` の全ての出力辺が調査された後に、 `u` に対して `finish_vertex` が呼ばれる。 |
 
 
-##モデル
+## モデル
 [`dfs_visitor`](dfs_visitor.md)
 
 

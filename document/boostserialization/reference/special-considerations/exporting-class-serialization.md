@@ -1,4 +1,4 @@
-#Exporting Class Serialization
+# Exporting Class Serialization
 このマニュアルの他の箇所([ExportKey](../serializableconcept/class-serialization-traits/export-key.md))で、`BOOST_CLASS_EXPORT`を解説しています。Exportは2つのことを意味します。
 
 - 他で参照されないコードをインスタンス化します。

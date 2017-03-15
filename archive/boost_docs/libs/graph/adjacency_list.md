@@ -1,4 +1,4 @@
-#adjacency_list
+# adjacency_list
 ```cpp
 adjacency_list<EdgeList, VertexList, Directed,
                VertexProperties, EdgeProperties,
@@ -24,11 +24,11 @@ Figure 2:無向グラフの隣接リスト表現
 `adjacency_list` クラスの使い方のチュートリアルは章 [Using `adjacency_list`](using_adjacency_list.md.nolink) にある。
 
 
-##Example
+## Example
 [`examples/family-tree-eg.cpp`](examples/family-tree-eg.cpp.md) 中にある例は家族の木 (family tree) をグラフで表現する方法を示す。
 
 
-##Template Parameters
+## Template Parameters
 
 | パラメータ | 説明 | デフォルト |
 |------------|------|------------|
@@ -40,21 +40,21 @@ Figure 2:無向グラフの隣接リスト表現
 | `GraphProperties`  | グラフ・オブジェクトのためのプロパティの記憶領域を指定する。 | `no_property` |
 
 
-##Model of
+## Model of
 [VertexAndEdgeListGraph](VertexAndEdgeListGraph.md.nolink), [MutablePropertyGraph](MutablePropertyGraph.md.nolink), [CopyConstructible](../utility/CopyConstructible.md), and [Assignable](../utility/Assignable.md).
 
 
-##Where Defined
+## Where Defined
 `boost/graph/adjacency_list.hpp`
 
 
-##Vertex and Edge Properties
+## Vertex and Edge Properties
 色、距離、重み、そしてユーザ定義のプロパティのようなプロパティは、プロパティ を用いてグラフの頂点と辺に結びつけることができる。プロパティの値はグラフに よって提供されるプロパティ・マップ経由で読み書きできる。プロパティ・マップ は get(property, g) 関数経由で得られる。プロパティの使い方は 章 [Internal Properties](using_adjacency_list.md.nolink#adjacency-list-properties) 内で述べられている。プロパティ・マップは章 [Property Map Concepts](../property_map.md.nolink) 内で定義されているインターフェースを実装するオブジェクトである。 `adjacency_list` クラスから得られるプロパティ・マップは [Lvalue Property Map](../property_map/LvaluePropertyMap.md.nolink) コンセプトのモデルである。もし `adjacency_list` が `const` なら、 プロパティ・マップは定数である。さもなくばプロパティ・マップは変更可能である。
 
 もしグラフの `VertexList` が `vecS` なら、グラフは `vertex_index_t` プロパティのためのプロパティ・マップを経由して アクセスされた組み込みの頂点の添え字を持っている。添え字は `[0, num_vertices(g))` の範囲内に整列し、連続している。頂点が 削除される時、添え字はそれらのプロパティを持ち続けるよう調整される。 これらの添え字を外部のプロパティの記憶領域にアクセスするために使う際には いくらか気をつけなければならない。 頂点の添え字のためのプロパティ・マップは [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルである。
 
 
-##Iterator and Descriptor Stability/Invalidation
+## Iterator and Descriptor Stability/Invalidation
 辺の追加や削除によってグラフの構造を変更する時はいくらか注意しなければならない。`adjacency_list` の型と操作に依存して、グラフ内を指すイテレータや記述子オブジェクトのいくつかは無効になるかもしれない。 例えば、次のコードは未定義の (悪い) 振る舞いの結果となるだろう:
 
 ```cpp
@@ -135,7 +135,7 @@ for(tie(vi, vend) = vertices(G); vi != vend; ++vi)
 Table: 記述子とイテレータの無効化の要約
 
 
-##Associated Types
+## Associated Types
 ```cpp
 graph_traits<adjacency_list>::vertex_descriptor
 ```
@@ -269,7 +269,7 @@ graph_property<adjacency_list, Property>::type
 `Property` タグで指定されたグラフのプロパティのためのプロパティの値型。
 
 
-##Member Functions
+## Member Functions
 ```cpp
 adjacency_list(const GraphProperty& p = GraphProperty())
 ```
@@ -343,9 +343,9 @@ void swap(adjacency_list& x)
 `this` のグラフの頂点、辺、そしてプロパティと、グラフ`x`の頂点、辺、そしてプロパティを交換する。
 
 
-##Non-Member Functions
+## Non-Member Functions
 
-###Structure Access
+### Structure Access
 
 ```cpp
 std::pair<vertex_iterator, vertex_iterator>
@@ -475,7 +475,7 @@ edge_range(vertex_descriptor u, vertex_descriptor v,
 
 
 
-###Structure Modification
+### Structure Modification
 
 ```cpp
 std::pair<edge_descriptor, bool>
@@ -636,7 +636,7 @@ void remove_vertex(vertex_descriptor u, adjacency_list& g)
 
 
 
-###Property Map Accessors
+### Property Map Accessors
 ```cpp
 template <class PropertyTag>
 property_map<adjacency_list, PropertyTag>::type
@@ -696,7 +696,7 @@ get_property(const adjacency_list& g, GraphPropertyTag);
 
 
 
-##See Also
+## See Also
 [`adjacency_list_traits`](adjacency_list_traits.md), [`property_map`](../property_map.md.nolink), [`graph_traits`](graph_traits.md.nolink)
 
 

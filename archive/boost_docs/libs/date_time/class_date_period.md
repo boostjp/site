@@ -1,4 +1,4 @@
-#gregorian::date_period
+# gregorian::date_period
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

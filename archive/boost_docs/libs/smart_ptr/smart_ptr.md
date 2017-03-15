@@ -1,4 +1,4 @@
-#Smart Pointers
+# Smart Pointers
 
 スマートポインタは動的に割り当てられた(ヒープ上の)オブジェクトへのポインタを保持するオブジェクトである。
 これは C++ 組み込みポインタのように振舞うが、指されたオブジェクトを適当なタイミングで自動的に削除する。
@@ -29,7 +29,7 @@ Boost Smart Pointerライブラリの古いバージョンについてのペー�
 
 [smart pointer timings](http://www.boost.org/doc/libs/1_31_0/libs/smart_ptr/smarttests.htm)はパフォーマンスの問題についての興味である。
 
-##<a name="Common requirements">Common Requirements</a>
+## <a name="Common requirements">Common Requirements</a>
 
 これらのスマートポインタクラステンプレートはテンプレートパラメータ`T`をもつ。
 これはスマートポインタが指すオブジェクトの方を特定する。
@@ -42,7 +42,7 @@ Boost Smart Pointerライブラリの古いバージョンについてのペー�
 
 `shared_ptr`はこの制限を持たず、メンバ関数の多くは`T`が完全な型であることを要求しないことに注意せよ。
 
-###Rationale
+### Rationale
 
 `T`への要求は、安全性を最大化しつつ、扱いやすいように、という格言の下で注意深く作られている。
 この格言の中ではスマートポインタは、`T`が不完全な型である翻訳単位の中で現れる。
@@ -51,7 +51,7 @@ Boost Smart Pointerライブラリの古いバージョンについてのペー�
 
 `scoped_ptr`は`T`がデストラクト時に完全な型であることを要求するが、`shared_ptr`はそうでないことに注意せよ。
 
-##Exception Safety
+## Exception Safety
 
 これらのスマートポインタクラスの多くの関数は、もし例外が投げられれば「効果なし」あるいは「これこれ以外は効果なし」として明示されている。
 これはこれらのクラスの一つのオブジェクトが例外を投げた時、プログラムの状態全てが、結果的に例外を発生した関数が呼び出される前の状態と同じであることを意味している。
@@ -60,7 +60,7 @@ Boost Smart Pointerライブラリの古いバージョンについてのペー�
 関数が投げる唯一の例外は`std::bad_alloc`である(`T`が[common requirements](#Common requirements)を満たしていることを仮定する)。
 `std::bad_alloc`を投げる可能性があると、明示的にドキュメントに書かれている関数だけが、この例外を投げる。
 
-##Exception-specifications
+## Exception-specifications
 
 Exception-specificationsは利用されない。
 [exception-specification rationale](../../more/lib_guide.md#Exception-specification)を参考にせよ。
@@ -71,7 +71,7 @@ Exception-specificationsは利用されない。
 
 指されたオブジェクト型を破壊(destroy)する関数は[common requirements](#Common requirements)によって例外を投げることを禁止されている。
 
-##History and Acknowledgements
+## History and Acknowledgements
 
 2002 年 1 月。
 Peter Dimov により 4 つのクラスの全てが作り直された。

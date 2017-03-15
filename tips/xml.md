@@ -1,10 +1,10 @@
-#XMLの読み込み／書き込み
+# XMLの読み込み／書き込み
 XMLの読み込み、書き込みには、[Boost Property Tree Library](http://www.boost.org/doc/libs/release/doc/html/property_tree.html)を使用する。Boost.PropertyTreeは、ツリー構造の汎用プロパティ管理のためのライブラリで、XML, JSON, INIファイルなどへの統一的なアクセス方法を提供する。
 
 ここでは、Boost.PropertyTreeを使用したXMLファイルの読み込みと書き込みを紹介する。
 
 
-##インデックス
+## インデックス
 - [XMLを読み込む](#read)
 - [属性を取得する](#get-attribute)
 - [XMLを書き込む](#write)

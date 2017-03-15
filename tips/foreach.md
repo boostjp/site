@@ -1,7 +1,7 @@
-#for each文
+# for each文
 Boost Foreach Libraryは、C++においてシーケンスをループするためのfor each文をライブラリで提供する。
 
-##インデックス
+## インデックス
 
 - [`BOOST_FOREACH`マクロ](#boost-foreach-macro)
 - [要素を参照する](#reference)

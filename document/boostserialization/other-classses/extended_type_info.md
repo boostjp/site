@@ -1,12 +1,12 @@
-#extended_type_info
+# extended_type_info
 
-##Motivation
+## Motivation
 serializationライブラリは、以下の機能を実現するために`type_info`/`typeid()`のような仕組みを必要とします。
 
 - タイプ`T`のポインタが与えられたとき、それが示す真のタイプを見つける。
 - 『外部』キーが与えられたとき、どんなタイプのオブジェクトを生成するか決定する。
 
-##The problem with std::type_info
+## The problem with std::type_info
 
 - 主として必要なる関数`std::typeid()`が、すべての環境で利用できるわけではありません。この関数のサポートは、実行時タイピング(RTTI)のサポートに依存します。この関数は、非効率という理由から、存在しないまたは、利用可能にされないかもしれません。
 - `std::type_info`は、タイプ名からなる文字列を含みます。これは上記条件2を満たすようです。しかし、この文字列のフォーマットは、コンパイラ、ライブラリ、オペレーティングシステムをまたいで一貫していません。これでは、ポータブルなアーカイブをサポートすることはできません。
@@ -14,7 +14,7 @@ serializationライブラリは、以下の機能を実現するために`type_i
 - 実際、異なるヘッダを異なる名前空間に置くことは、名前の衝突を避けるための手段です。このように、`namespace::class_name`は、キーとして利用することができないのです。
 - 異なるクラスが、異なるtype idメカニズムを使う可能性があります。クラスヘッダはこの情報を含むかもしれません。アプリケーションをまたいでクラスヘッダをインポートしたいならば、異なるtype idシステムをサポートするのが便利です。
 
-##Features
+## Features
 `extended_type_info`は以下の特徴を持つ`std::type_info`の実装です。
 
 - `extended_type_info`の(シリアライズされるタイプごとに1つの)レコードの`set`を構築します。
@@ -122,7 +122,7 @@ static const extended_type_info * find(const char *key);
 文字列キーかGUIDを与えると、対応する`extended_type_info`オブジェクトを返します。
 
 
-##Requirements
+## Requirements
 serializationライブラリによって利用されるために、`extended_type_info`(ETI)の実装は、`extended_type_info`を継承しなければなりません。さらに、以下を実装しなければなりません。
 
 ```cpp
@@ -173,13 +173,13 @@ virtual void * destroy(void const * const ptr ) ) const;
 この型のインスタンスを破棄します。適切なデストラクタを呼び出し、メモリを解放します。
 
 
-##Models
+## Models
 serializationライブラリは、2つの異なった`extended_type_info`の実装を持っています。
 
-###extended_type_info_typeid
+### extended_type_info_typeid
 `extended_type_info_typeid`は、標準的な`typeid()`によって実装されます。 コンパイラによって、RTTIサポートが有効になっていることを想定しています。
 
-###extended_type_info_no_rtti
+### extended_type_info_no_rtti
 `extended_type_info_no_rtti`は、RTTIの存在に依存しない形で実装されています。
 
 その代わり、すべてのポリモーフィックな型が明示的にexportされることを要求します。 それに加え、exportをベースクラスポインタ経由で行うならば、それらのタイプは以下の
@@ -193,7 +193,7 @@ virtual const char * get_key();
 この関数は、上述の通り`get_derived_extended_type_info`によって必要とされる機能を実装するために仮想でなければなりません。
 
 
-##Example
+## Example
 テスト・プログラムtest_no_rttiは、クラスに対応するexportキーを返すために、上記の`extended_type_info` APIに関して、この関数を実装します。
 
 これは、非抽象型がエクスポートされることを要求します。

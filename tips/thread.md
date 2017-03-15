@@ -1,8 +1,8 @@
-#スレッド
+# スレッド
 スレッドを扱うには、[Boost Thread Library](http://www.boost.org/doc/libs/release/doc/html/thread.html)を使用する。このライブラリは、複数の実行スレッドとそれに伴う共有データを、C++のポータブルなコードで扱えるようにするライブラリである。
 
 
-##インデックス
+## インデックス
 - [スレッドを生成(開始)する](#create-thread)
 - [引数付きでスレッドを生成(開始)する](#create-thread-with-argument)
 - [[応用]オブジェクトのメンバ関数でスレッドを生成(開始)する](#create-thread-member-function)

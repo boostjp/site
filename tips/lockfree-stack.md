@@ -1,7 +1,7 @@
-#ロックフリースタック
+# ロックフリースタック
 ロックフリースタックには、[Boost Lockfree Library](http://www.boost.org/libs/lockfree/)の[`boost::lockfree::stack`](http://www.boost.org/doc/libs/release/doc/html/boost/lockfree/stack.html)クラスを使用する。
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 
 

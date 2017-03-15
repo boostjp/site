@@ -1,4 +1,4 @@
-#libs/functional/function_test.cpp
+# libs/functional/function_test.cpp
 
 ```cpp
 // ------------------------------------------------------------------------------
@@ -46,12 +46,12 @@
 // use the standard function object adapters, but is likely to result
 // in numerous errors due to the fact that you cannot have references
 // to references.
-#ifdef USE_STD
+# ifdef USE_STD
 #include <functional>
-#define boost std
-#else
+# define boost std
+# else
 #include <boost/functional.hpp>
-#endif
+# endif
 
 #include <algorithm>
 #include <iostream>
@@ -134,7 +134,7 @@ int main()
 
     std::ostream &os = std::cout;
 
-#if !defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION) && !defined(__ICL)
+# if !defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION) && !defined(__ICL)
     // unary_traits, unary_negate
     std::transform(v2.begin(), v2.end(),
                    std::ostream_iterator<bool>(std::cout, " "),
@@ -192,7 +192,7 @@ int main()
 
     std::cout << '\n';
     std::for_each(v2.begin(), v2.end(), boost::bind1st(do_set_name_ref, r));
-#endif
+# endif
 
     // const_mem_fun_t
     std::cout << '\n';
@@ -221,7 +221,7 @@ int main()
                    std::ostream_iterator<std::string>(std::cout, " "),
                    boost::mem_fun_ref(&Person::get_name));
 
-#ifndef BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION
+# ifndef BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION
     // const_mem_fun1_t, bind2nd
     std::cout << '\n';
     std::for_each(v3.begin(), v3.end(), boost::bind2nd(boost::mem_fun(&Person::print), std::cout));
@@ -246,7 +246,7 @@ int main()
 
     std::cout << '\n';
     std::for_each(v2.begin(), v2.end(), boost::bind1st(boost::mem_fun_ref(&Person::set_name), r));
-#endif
+# endif
 
     // mem_fun_t
     std::cout << '\n';

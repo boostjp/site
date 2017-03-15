@@ -1,14 +1,14 @@
-#BOOST_PP_ARRAY_INSERT
+# BOOST_PP_ARRAY_INSERT
 
 The `BOOST_PP_ARRAY_INSERT` macro inserts an element into an *array*.
 
-##Usage
+## Usage
 
 ```cpp
 BOOST_PP_ARRAY_INSERT(array, i, elem)
 ```
 
-##Arguments
+## Arguments
 
 - `array` :
 	The `array` into which an element is to be inserted.
@@ -20,7 +20,7 @@ BOOST_PP_ARRAY_INSERT(array, i, elem)
 - `elem` :
 	The element to insert.
 
-##Remarks
+## Remarks
 
 This macro inserts `elem` before the element at index `i`.
 
@@ -29,20 +29,20 @@ If the operation attempts to create an `array` that is larger than `BOOST_PP_LIM
 This macro uses `BOOST_PP_WHILE` interally.
 Therefore, to use the `d` parameter passed from other macros that use `BOOST_PP_WHILE`, see `BOOST_PP_ARRAY_INSERT_D`.
 
-##See Also
+## See Also
 
 - [`BOOST_PP_ARRAY_INSERT_D`](array_insert_d.md)
 
-##Requirements
+## Requirements
 
 **Header:** &lt;boost/preprocessor/array/insert.hpp&gt;
 
-##Sample Code
+## Sample Code
 
 ```cpp
 #include <boost/preprocessor/array/insert.hpp>
 
-#define ARRAY (3, (a, b, d))
+# define ARRAY (3, (a, b, d))
 
 BOOST_PP_ARRAY_INSERT(ARRAY, 2, c) // expands to (4, (a, b, c, d))
 ```

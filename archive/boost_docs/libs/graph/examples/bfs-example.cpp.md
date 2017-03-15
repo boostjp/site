@@ -1,4 +1,4 @@
-#libs/graph/example/bfs-example.cpp
+# libs/graph/example/bfs-example.cpp
 
 ```cpp
 //=======================================================================
@@ -62,15 +62,15 @@ main()
   };
   // Create the graph object
   const int n_edges = sizeof(edge_array) / sizeof(E);
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   // VC++ has trouble with the edge iterator constructor
   graph_t g(N);
   for (std::size_t j = 0; j < n_edges; ++j)
     add_edge(edge_array[j].first, edge_array[j].second, g);
-#else
+# else
   typedef graph_traits<graph_t>::vertices_size_type v_size_t;
   graph_t g(edge_array, edge_array + n_edges, v_size_t(N));
-#endif
+# endif
 
   // Typedefs
   typedef graph_traits < graph_t >::vertex_descriptor Vertex;

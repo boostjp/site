@@ -1,4 +1,4 @@
-#ドキュメント
+# ドキュメント
 
 - [リリースノート](/document/version.md)
 - [Boost Software License, Version 1.0(日本語訳)](http://hamigaki.sourceforge.jp/doc/html/license.html)

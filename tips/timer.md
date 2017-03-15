@@ -1,8 +1,8 @@
-#処理時間の計測
+# 処理時間の計測
 処理時間の計測には、 [Boost Timer Library](http://www.boost.org/doc/libs/release/libs/timer/doc/index.html) の`boost::timer::cpu_timer`クラスを使用する。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [開始、停止、再開を制御する](#start-stop-resume)
 - [処理時間の値を個別に取得する](#elapsed-values)

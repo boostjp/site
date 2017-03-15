@@ -1,4 +1,4 @@
-#Binders
+# Binders
 functional.hpp ヘッダは C++ 標準 (§20.3.6): 由来のバインダ関数オブジェクトアダプタの両方の強化バージョンを提供する:
 
 - `binder1st`

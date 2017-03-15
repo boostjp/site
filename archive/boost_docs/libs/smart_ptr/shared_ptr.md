@@ -1,4 +1,4 @@
-#shared_ptr class template
+# shared_ptr class template
 
 - [Introduction](#Introduction)
 - [Best Practices](#BestPractices)
@@ -11,7 +11,7 @@
 - [Frequently Asked Questions](#FAQ)
 - [Smart Pointer Timings](smarttests.md)
 
-##<a name="Introduction">Introduction</a>
+## <a name="Introduction">Introduction</a>
 
 `shared_ptr`クラステンプレートは、C++の`new`などによって動的に割り当てられたオブジェクトへのポインタを保持する。
 `shared_ptr`に指されたオブジェクトは、そのオブジェクトを指す最後の`shared_ptr`が破棄もしくはリセットされるときに削除されることが保証されている。
@@ -37,7 +37,7 @@
 特に、`shared_ptr<T>`は暗黙の型変換により、`shared_ptr<T const>`、`shared_ptr<U>`、`shared_ptr<void>`に変換できる。
 (`U`はアクセス可能な`T`の基底型)
 
-##<a name="BestPractices">Best Practices</a>
+## <a name="BestPractices">Best Practices</a>
 
 メモリリークの可能性をほとんど排除する為のシンプルな指針 : `new`の結果を常に名前のあるスマートポインタに格納すること。
 コードに含まれる全ての`new`キーワードは、次の形にされるべきである :
@@ -73,7 +73,7 @@ void bad()
 その結果、もし`g`が例外を送出すると、`shared_ptr`のコンストラクタは呼び出されない。
 この問題についてのより詳しい情報は[Herb Sutter's treatment (英文)](http://www.gotw.ca/gotw/056.htm)を参照のこと。
 
-##<a name="Synopsis">Synopsis</a>
+## <a name="Synopsis">Synopsis</a>
 
 ```cpp
 namespace boost {
@@ -174,15 +174,15 @@ shared_ptr<T> shared_polymorphic_downcast(shared_ptr<U> const & r); // never thr
 *柔軟性が低すぎるからである。*
 *その代わり典型的に、`std::allocator::rebind-type`を"書き換える"。]*
 
-##<a name="Members">Members</a>
+## <a name="Members">Members</a>
 
-###<a name="element_type">element_type</a>
+### <a name="element_type">element_type</a>
 
 `typedef T element_type;`
 
 テンプレートパラメータ T の型を規定する
 
-###<a name="constructors">コンストラクタ ( constructors )</a>
+### <a name="constructors">コンストラクタ ( constructors )</a>
 
 `shared_ptr();`
 
@@ -345,7 +345,7 @@ shared_ptr(std::auto_ptr<Y> & r);
 *[このコンストラクタは`auto_ptr`を値渡しでなく参照で受け取り、一時的な`auto_ptr`を受け取らない。*
 *これは、このコンストラクタが強力な保証を提供する設計にするためである。]*
 
-###<a name="destructor">デストラクタ ( destructor )</a>
+### <a name="destructor">デストラクタ ( destructor )</a>
 
 `~shared_ptr(); // never throws`
 
@@ -356,7 +356,7 @@ shared_ptr(std::auto_ptr<Y> & r);
 - **Throws:**
     - なし。
 
-###<a name="assignment">代入 ( assignment )</a>
+### <a name="assignment">代入 ( assignment )</a>
 
 ```cpp
 shared_ptr & operator=(shared_ptr const & r); // never throws
@@ -387,7 +387,7 @@ q = p;
 *しかし、作用の説明に C++ のコードを用いられるとき、しばしばそれが必要な実装であるかのように誤って解釈されてしまうことがあると、経験的に示唆されている。*
 *さらに付け加えると、この部分で&quot;as if&quot;規則が適用されるかどうかは全くわからないが、可能な最適化について明示しておくことは好ましいと思われる。]*
 
-###<a name="reset">リセット ( reset )</a>
+### <a name="reset">リセット ( reset )</a>
 
 `void reset();`
 
@@ -411,7 +411,7 @@ void reset(Y * p, D d);
 - **Effects:**
     - `shared_ptr(p, d).swap(*this)`と等価。
 
-###<a name="indirection">ポインタ偽装 ( indirection )</a>
+### <a name="indirection">ポインタ偽装 ( indirection )</a>
 
 `T & operator*() const; // never throws`
 
@@ -431,7 +431,7 @@ void reset(Y * p, D d);
 - **Throws:**
     - 無し。
 
-###<a name="get">ポインタの取得 ( get )</a>
+### <a name="get">ポインタの取得 ( get )</a>
 
 `T * get() const; // never throws`
 
@@ -440,7 +440,7 @@ void reset(Y * p, D d);
 - **Throws:**
     - 無し。
 
-###<a name="unique">一意性 ( unique )</a>
+### <a name="unique">一意性 ( unique )</a>
 
 `bool unique() const; // never throws`
 
@@ -454,7 +454,7 @@ void reset(Y * p, D d);
 
 *[将来のリリースでは、デフォルトコンストラクタで構築された`shared_ptr`に対し、`unique()`は不定の値を返すようになるだろう。]*
 
-###<a name="use_count">参照カウント ( use_count )</a>
+### <a name="use_count">参照カウント ( use_count )</a>
 
 `long use_count() const; // never throws`
 
@@ -466,7 +466,7 @@ void reset(Y * p, D d);
     - `use_count()`は必ずしも必要なものではない。
       デバッグや試験の為にだけ使用するべきで、製品のコードに使用するべきでない。
 
-###<a name="conversions">変換 ( conversions )</a>
+### <a name="conversions">変換 ( conversions )</a>
 
 `operator unspecified-bool-type () const; // never throws`
 
@@ -481,7 +481,7 @@ void reset(Y * p, D d);
 *[このブールへの変換は単にコードをスマートにする物(syntactic sugar : 構文糖)というわけではない。*
 *この変換により`shared_dynamic_cast`や`make_shared`を使用するときに、`shared_ptr`を条件式として利用することができる。]*
 
-###<a name="swap">交換 ( swap )</a>
+### <a name="swap">交換 ( swap )</a>
 
 `void swap(shared_ptr & b); // never throws`
 
@@ -490,9 +490,9 @@ void reset(Y * p, D d);
 - **Throws:**
     - 無し。
 
-##<a name="functions">Free Functions</a>
+## <a name="functions">Free Functions</a>
 
-###<a name="comparison">比較 ( comparison )</a>
+### <a name="comparison">比較 ( comparison )</a>
 
 ```cpp
 template<typename T, typename U>
@@ -532,7 +532,7 @@ bool operator<(shared_ptr<T> const & a, shared_ptr<T> const & b); // never throw
 
 *比較演算子の安全の確保は、設計によって省略された。]*
 
-###<a name="free-swap">交換 ( swap )</a>
+### <a name="free-swap">交換 ( swap )</a>
 
 ```cpp
 template<typename T>
@@ -549,7 +549,7 @@ void swap(shared_ptr<T> & a, shared_ptr<T> & b); // never throws
 *[`swap`は`shared_ptr`と同じ名前空間で定義される。*
 *これは現在のところ、標準ライブラリから使用可能な`swap`関数を提供するための唯一の正当な方法である。]*
 
-###<a name="get_pointer">ポインタを取得 ( get_pointer )</a>
+### <a name="get_pointer">ポインタを取得 ( get_pointer )</a>
 
 ```cpp
 template<typename T>
@@ -564,7 +564,7 @@ T * get_pointer(shared_ptr<T> const & p); // never throws
     - 汎用プログラミングを補助する機能を提供する。
 	  [`mem_fn`](../mem_fn.md)で使用する。
 
-###<a name="shared_static_cast">静的キャスト ( shared_static_cast )</a>
+### <a name="shared_static_cast">静的キャスト ( shared_static_cast )</a>
 
 ```cpp
 template<typename T, typename U>
@@ -582,7 +582,7 @@ shared_ptr<T> shared_static_cast(shared_ptr<U> const & r); // never throws
       `shared_ptr<T>(static_cast<T*>(r.get()))`
       これは、同じオブジェクトを2度削除しようとする事になるため、結局は未定義のふるまいとなる。
 
-###<a name="shared_dynamic_cast">動的キャスト ( shared_dynamic_cast )</a>
+### <a name="shared_dynamic_cast">動的キャスト ( shared_dynamic_cast )</a>
 
 ```cpp
 template<typename T, typename U>
@@ -603,7 +603,7 @@ shared_ptr<T> shared_dynamic_cast(shared_ptr<U> const & r);</pre>
       `shared_ptr<T>(dynamic_cast<T*>(r.get()))`
       これは、同じオブジェクトを2度削除しようとする事になるため、結局は未定義のふるまいとなる。
 
-###<a name="shared_polymorphic_cast">ポリモーフィックキャスト ( shared_polymorphic_cast )</a>
+### <a name="shared_polymorphic_cast">ポリモーフィックキャスト ( shared_polymorphic_cast )</a>
 
 ```cpp
 template<typename T, typename U>
@@ -619,7 +619,7 @@ shared_ptr<T> shared_polymorphic_cast(shared_ptr<U> const & r);
 - **Exception safety:**
     - 例外が発生すると、この関数は何もしない。
 
-###<a name="shared_polymorphic_downcast">ポリモーフィックダウンキャスト ( shared_polymorphic_downcast )</a>
+### <a name="shared_polymorphic_downcast">ポリモーフィックダウンキャスト ( shared_polymorphic_downcast )</a>
 
 ```cpp
 template<typename T, typename U>
@@ -633,7 +633,7 @@ shared_ptr<T> shared_polymorphic_downcast(shared_ptr<U> const & r); // never thr
 - **Throws:**
     - 無し。
 
-##<a name="example">Example</a>
+## <a name="example">Example</a>
 
 サンプルプログラムの本体はshared_ptr_example.cppを参照のこと。
 このプログラムは、`shared_ptr`オブジェクトからなる`std::set`と`std::vector`を作成する。
@@ -644,7 +644,7 @@ shared_ptr<T> shared_polymorphic_downcast(shared_ptr<U> const & r); // never thr
 更に複雑になると、コンテナ操作の際に様々な要因によって例外が発生する可能性もある。
 スマートポインタを利用せずにこの様なメモリ管理や例外管理を行うことは、正に悪夢である。
 
-##<a name="Handle/Body">Handle/Body</a> Idiom
+## <a name="Handle/Body">Handle/Body</a> Idiom
 
 `shared_ptr`の一般的な用法の一つに、handle/body表現(pimplとも呼ばれる)の実装がある。
 handle/body表現とは、オブジェクト本体の実装を隠蔽する(ヘッダファイル中にさらけ出すことを回避する)ためのものである。
@@ -655,7 +655,7 @@ handle/body表現とは、オブジェクト本体の実装を隠蔽する(ヘ�
 ここでは明示的なデストラクタが必要とされていないことに注意せよ。
 `~scoped_ptr`と違い、`~shared_ptr`は`T`は完全型である必要はない。
 
-##<a name="ThreadSafety">Thread Safety</a>
+## <a name="ThreadSafety">Thread Safety</a>
 
 `shared_ptr`オブジェクトはプリミティブ型と同等のスレッドセーフティを提供する。
 `shared_ptr`のインスタンスは、複数のスレッドから(const 処理のためのアクセスに限り)同時に&quot;読む&quot;事ができる。
@@ -715,7 +715,7 @@ p3.reset(new int(2)); // undefined, multiple writes
 もしあなたのプログラムがシングルスレッドだとしても、マルチスレッドをサポートしているかどうかは*Boost.Config*が自動的に検出する。
 シングルスレッドのプロジェクトにおいて、スレッドセーフティの為のオーバーヘッドを取り除くためには、`#define BOOST_DISABLE_THREADS`を定義する。
 
-##<a name="FAQ">FAQ ( Frequently Asked Questions )</a>
+## <a name="FAQ">FAQ ( Frequently Asked Questions )</a>
 
 **Q.**
 共有ポインタにはそれぞれ異なる特長を持った幾つかの実装のバリエーションがあるが、なぜこのスマートポインタライブラリは単一の実装しか提供しないのか?

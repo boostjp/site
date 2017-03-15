@@ -1,28 +1,28 @@
-#BOOST_PP_ARRAY_SIZE
+# BOOST_PP_ARRAY_SIZE
 
 `BOOST_PP_ARRAY_SIZE` マクロは渡された*配列*のサイズに展開される。
 
-##Usage
+## Usage
 
 ```cpp
 BOOST_PP_ARRAY_SIZE(array)
 ```
 
-##Arguments
+## Arguments
 
 - `array` :
 	サイズが展開される*配列*。
 
-##Requirements
+## Requirements
 
 Header: &lt;boost/preprocessor/array/size.hpp&gt;
 
-##Sample Code
+## Sample Code
 
 ```cpp
 #include <boost/preprocessor/array/size.hpp>
 
-#define ARRAY (3, (x, y, z))
+# define ARRAY (3, (x, y, z))
 
 BOOST_PP_ARRAY_SIZE(ARRAY) // 3 に展開される
 ```

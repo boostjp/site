@@ -1,4 +1,4 @@
-#print_hours.cpp
+# print_hours.cpp
 
 時間のイテレーション、時計の取得、および簡単な計算を示す。
 

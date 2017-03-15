@@ -1,29 +1,29 @@
-#AdjacencyMatrix
+# AdjacencyMatrix
 AdjacencyMatrix コンセプトは [Graph](Graph.md) コンセプトを精製し、始点と終点によって与えられるグラフ中の任意の辺への効率的なアクセスのために必要なものを付け加えている。今のところどの Boost の グラフ・ライブラリ・アルゴリズムもこのコンセプトを使っていない。しかしながらこのコンセプトを必要とするであろう Floyd-Warshall のようなまだ実装されていないアルゴリズムが存在する。
 
 
-##Refinement of
+## Refinement of
 [Graph](./Graph)
 
 
-##関連型
+## 関連型
 - `boost::graph_traits<G>::traversal_category`
 
 このタグ型は `adjacency_matrix_tag` に変換可能でなければならない。
 
 
-##有効な表現式
+## 有効な表現式
 
 | 名前 | 式 | 返却値型 | 説明 |
 |------|----|----------|------|
 | 直接の辺アクセス | `edge(u,v,g)` | `std::pair<edge_descriptor, bool>` | グラフ `g` 中の `u` と `v` の間に辺が存在するかどうかを述べるフラグと、辺が見つかった場合に辺記述子から成るペアを返す。 |
 
 
-##モデル
+## モデル
 [`adjacency_matrix`](adjacency_matrix.md)
 
 
-##コンセプトチェックするクラス
+## コンセプトチェックするクラス
 
 ```cpp
 template <class G>

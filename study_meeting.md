@@ -1,11 +1,11 @@
-#Boost.勉強会
+# Boost.勉強会
 [Boost C++ Libraries](http://www.boost.org/)という、C++の有名なライブラリ群を中心とした、C++全般の勉強会です。
 
 Boostに限らず、C++全般の話、QtやOpenCVのような他のライブラリ、自分が作ったプログラムの紹介、その他C++プログラマに知っておいてもらいたいことの紹介(データ構造やアルゴリズム、イディオム、プログラムの設計やデザインパターン、他の言語での考え方やアプローチ)など、幅広いテーマを扱っています。 
 
 このページでは、開催履歴やネタ帳を置いていきます。
 
-##Boost.勉強会の主催者は誰？
+## Boost.勉強会の主催者は誰？
 Boost.勉強会は、各地のやる気のある人が主催しています。
 
 「自分のいる地域でもBoost.勉強会を開催したい」という方や、「自分が開催している勉強会をBoost.勉強会という名前にしたい」という方は、[boostjp Google Group](https://groups.google.com/group/boostjp)や、Twitterの[#boostjp](http://twitter.com/search?q=%23boostjp)ハッシュタグでご相談ください。 
@@ -13,11 +13,11 @@ Boost.勉強会は、各地のやる気のある人が主催しています。
 各地の主催者は、[運営メンバページ](/the-team.md)に記載してあります。
 
 
-##英語表記
+## 英語表記
 Boost.勉強会の英語表記は「Boost.StudyMeeting」です。英語圏でもぜひBoost.勉強会を紹介してください。
 
 
-##その他、Boost.勉強会情報
+## その他、Boost.勉強会情報
 - [ネタ帳](/study_meeting/idea.md)
 
 <span style="color:red;">↑みんな書いてね！</span>
@@ -27,10 +27,10 @@ Boost.勉強会の英語表記は「Boost.StudyMeeting」です。英語圏で�
 - [Boost.勉強会はなにであって、なにでないか](/study_meeting/what.md)
 
 
-###開催予定
+### 開催予定
 
 
-###開催履歴
+### 開催履歴
 - [Boost.勉強会 #1](/study_meeting/study1.md)
 - [Boost.勉強会 #2](/study_meeting/study2.md)
 - [Boost.勉強会 #3 関西](/study_meeting/study3.md)

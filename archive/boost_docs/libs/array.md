@@ -1,4 +1,4 @@
-#Array wrapper library
+# Array wrapper library
 
 array.hpp ヘッダは、固定サイズ配列をラップする、STL 対応のコンテナを提供する。
 

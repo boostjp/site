@@ -1,4 +1,4 @@
-#構文解析
+# 構文解析
 **本稿は記述途中です。**
 
 [Boost Spirit](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/index.html) ライブラリ、特にその中の [Qi](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/spirit/qi.html) を用いることにより構文解析器を作成することが可能である。
@@ -6,7 +6,7 @@
 文法、アクションを記述したファイルを元に C/C++ ソースを生成する yacc や bison といった伝統的なパーサジェネレータとは異なり、Spirit Qi では C++ 内で文法、アクションの記述を完結させることができる。また、対象とする文法も文脈自由文法のような伝統的なクラスではなく解析表現文法(PEG: Parsing Expression Grammar)である(一般に解析表現文法は自然言語の解析には適しておらずコンピュータ言語の解析に適している)。
 
 
-##インデックス
+## インデックス
 - [1 API](#api)
 	- [1.1 入力を全て消費したかを確認する](#check-all-consume)
 	- [1.2 空白等を読み飛ばす](#skip)

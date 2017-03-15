@@ -1,22 +1,22 @@
-#Boost.勉強会 #6 札幌
+# Boost.勉強会 #6 札幌
 
-##開催日時
+## 開催日時
 - 2011/11/05 (土)
 - 13:00-18:00
 
 
-##開催場所
+## 開催場所
 - 札幌市教育文化会館 402研修室（札幌市中央区北1条西13丁目）
 - <http://www.kyobun.org/>
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 #6 札幌 前夜祭](http://atnd.org/events/20936)
 - [Boost.勉強会 #6 札幌](http://atnd.org/events/18252)
 - [Boost.勉強会 #6 札幌 懇親会](http://atnd.org/events/18728)
 
 
-##タイムテーブル
+## タイムテーブル
 
 | 発表者           | タイトル |
 |------------------|----------|
@@ -32,8 +32,8 @@
 | @lapis_tw        | おみやげじゃんけん               |
 
 
-##発表内容
-###Boost.Geometryに学ぶテンプレートライブラリの設計
+## 発表内容
+### Boost.Geometryに学ぶテンプレートライブラリの設計
 - 発表者 ： 高橋 晶
 - ブログ ： [Faith and Brave - C++で遊ぼう](http://d.hatena.ne.jp/faith_and_brave/)
 - Twitter ： [https://twitter.com/#!/cpp_akira](https://twitter.com/#%21/cpp_akira)
@@ -42,7 +42,7 @@
 - アフターケア ： [Boost.勉強会 #6 札幌でした - Faith and Brave - C++で遊ぼう](http://d.hatena.ne.jp/faith_and_brave/20111107/1320643301)
 
 
-###関数プログラマの為のBoostとBoostユーザの為の関数プログラミング
+### 関数プログラマの為のBoostとBoostユーザの為の関数プログラミング
 - 発表者 ： uskz
 - ブログ ： [梶本裕介の日記](http://d.hatena.ne.jp/uskz/)
 - Twitter ： [https://twitter.com/#!/uskz](https://twitter.com/#!/uskz)
@@ -56,7 +56,7 @@
 	- [http://www.ustream.tv/recorded/18318901](http://www.ustream.tv/recorded/18318901)
 
 
-###ContainerFacade
+### ContainerFacade
 - 発表者 ： fadis_
 - ブログ ： [16.78MHz](http://ameblo.jp/fadis/)
 - Twitter ： [https://twitter.com/#!/fadis_](https://twitter.com/#!/fadis_)
@@ -65,13 +65,13 @@
 - ビデオ ： [http://www.ustream.tv/recorded/18319113](http://www.ustream.tv/recorded/18319113)
 
 
-###テンプレートメタプログラミング as 式
+### テンプレートメタプログラミング as 式
 - 発表者 ： DigitalGhostブログ : [http://d.hatena.ne.jp/DigitalGhost/](http://d.hatena.ne.jp/DigitalGhost/)Twitter : [https://twitter.com/#!/decimalbloat](https://twitter.com/#!/decimalbloat)
 
 - 発表資料 ： metaexpr [[slideshare](http://www.slideshare.net/digitalghost/as-10048031)] [[github](https://github.com/dechimal/metaexpr)]
 
 
-###PStade.OvenとEggの実装を読む
+### PStade.OvenとEggの実装を読む
 - 発表者 ： hotwatermorning
 - ブログ ： [How to disappear completely](http://d.hatena.ne.jp/heisseswasser/)
 - Twitter ： [https://twitter.com/#!/hotwatermorning](https://twitter.com/#!/hotwatermorning)
@@ -84,7 +84,7 @@
 	- [http://www.ustream.tv/recorded/18319815](http://www.ustream.tv/recorded/18319815)
 
 
-###char32_tとBoost.Xpressiveと
+### char32_tとBoost.Xpressiveと
 - 発表者 ： egtra
 - ブログ ： [イグトランスの頭の中（のかけら）](http://dev.activebasic.com/egtra/)
 - Twitter ： [https://twitter.com/#!/egtra](https://twitter.com/#!/egtra)
@@ -94,7 +94,7 @@
 - ビデオ ： [http://www.ustream.tv/recorded/18320249](http://www.ustream.tv/recorded/18320249)
 
 
-###組み込みでこそC++を使う100の理由
+### 組み込みでこそC++を使う100の理由
 - 発表者 ： kikairoya
 - ブログ ： [kikairoyaの日記](http://d.hatena.ne.jp/kikairoya/)
 - Twitter ： [https://twitter.com/#!/kikairoya](https://twitter.com/#!/kikairoya)
@@ -104,7 +104,7 @@
 - ビデオ ： [http://www.ustream.tv/recorded/18320716](http://www.ustream.tv/recorded/18320716)
 
 
-###Boost.MSMの使い方
+### Boost.MSMの使い方
 - 発表者 ： 近藤貴俊
 - ブログ ： [redboltzの日記](http://d.hatena.ne.jp/redboltz/)
 - Twitter ： [https://twitter.com/#!/redboltz](https://twitter.com/#!/redboltz)
@@ -117,7 +117,7 @@
 	- [http://www.ustream.tv/recorded/18321334](http://www.ustream.tv/recorded/18321334)
 
 
-###C++ Tips 1 #include編
+### C++ Tips 1 #include編
 - 発表者 ： 道化師
 - ブログ ： [TrickDiary](http://d.hatena.ne.jp/wraith13/)
 - Twitter ： [https://twitter.com/#!/wraith13](https://twitter.com/#!/wraith13)
@@ -126,7 +126,7 @@
 - ビデオ ： [http://www.ustream.tv/recorded/18321426](http://www.ustream.tv/recorded/18321426)
 
 
-##関連リンク
+## 関連リンク
 - [Boost.勉強会 #6 札幌を開催しました！ - How to disappear completely](http://d.hatena.ne.jp/heisseswasser/20111106/1320591237)
 - [boost 勉強会 in 札幌に参加してきた - grayhole](http://grayhole.blogspot.com/2011/11/boost-in.html)
 - [Boost.勉強会 #6 札幌 - C++でゲームプログラミング](http://d.hatena.ne.jp/osyo-manga/20111105/1320486251)
@@ -142,7 +142,7 @@
 - [Boost.勉強会 #6 @北海道 - togetterまとめ](http://togetter.com/li/210115)
 
 
-##写真
+## 写真
 [flickr/photos/miio119/tags/boost勉強会6札幌/](http://www.flickr.com/photos/miio119/tags/boost%E5%8B%89%E5%BC%B7%E4%BC%9A6%E6%9C%AD%E5%B9%8C/)
 
 <img width='400' src='http://farm7.static.flickr.com/6094/6318657258_e7d55004fd_b.jpg' height='300' border='0'/>

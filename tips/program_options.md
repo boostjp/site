@@ -1,10 +1,10 @@
-#コマンドラインオプションの定義／取得
+# コマンドラインオプションの定義／取得
 [Boost Program Options Library](http://www.boost.org/doc/libs/release/doc/html/program_options.html)を用いるとプログラムの実行時に付けられる引数文字列について、一般的なオプションの仕組みの定義とその取得を容易に行える。
 
 なお、Boost.ProgramOptionsを用いる場合はコンパイルの際に`g++ -lboost_program_options source.cxx`の様にしてバイナリーのライブラリーをリンクする必要がある点に注意。
 
 
-##インデックス
+## インデックス
 - [オプションを定義する](#define-option)
 - [オプションを取得する](#get-option)
 

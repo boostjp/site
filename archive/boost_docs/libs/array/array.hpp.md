@@ -1,4 +1,4 @@
-#array.hpp
+# array.hpp
 ```cpp
 /* The following code declares class array,
  * an STL container (as wrapper) for arrays of constant size.
@@ -15,8 +15,8 @@
  *
  * Aug 05, 2001
  */
-#ifndef BOOST_ARRAY_HPP
-#define BOOST_ARRAY_HPP
+# ifndef BOOST_ARRAY_HPP
+# define BOOST_ARRAY_HPP
 
 #include <cstddef>
 #include <stdexcept>
@@ -50,14 +50,14 @@ namespace boost {
         const_iterator end() const { return elems+N; }
 
         // reverse iterator support
-#if !defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION) && !defined(BOOST_MSVC_STD_ITERATOR)
+# if !defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION) && !defined(BOOST_MSVC_STD_ITERATOR)
         typedef std::reverse_iterator<iterator> reverse_iterator;
         typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
-#else
+# else
         // workaround for broken reverse_iterator implementations
         typedef std::reverse_iterator<iterator,T> reverse_iterator;
         typedef std::reverse_iterator<const_iterator,T> const_reverse_iterator;
-#endif
+# endif
 
         reverse_iterator rbegin() { return reverse_iterator(end()); }
         const_reverse_iterator rbegin() const {
@@ -109,9 +109,9 @@ namespace boost {
             std::fill_n(begin(),size(),value);
         }
 
-#ifndef BOOST_NO_PRIVATE_IN_AGGREGATE
+# ifndef BOOST_NO_PRIVATE_IN_AGGREGATE
       private:
-#endif
+# endif
         // check range (may be private because it is static)
         static void rangecheck (size_type i) {
             if (i >= size()) { throw std::range_error("array"); }
@@ -153,7 +153,7 @@ namespace boost {
 
 } /* namespace boost */
 
-#endif /*BOOST_ARRAY_HPP*/
+# endif /*BOOST_ARRAY_HPP*/
 ```
 * http://www.josuttis.com/cppcode[link http://www.josuttis.com/cppcode]
 

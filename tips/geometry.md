@@ -1,7 +1,7 @@
-#計算幾何
+# 計算幾何
 計算幾何は、[Boost Geometry Library](http://www.boost.org/libs/geometry/index.html)によって提供される。
 
-##インデックス
+## インデックス
 
 - [2つの図形が互いに素かを判定](#disjoint)
 - [2つの図形が交点を持っているかを判定](#intersects)

@@ -1,4 +1,4 @@
-#Boost.Signals: ヘッダ &lt;[boost/signals/connection.hpp](http://www.boost.org/doc/libs/1_31_0/boost/signals/connection.hpp)&gt;
+# Boost.Signals: ヘッダ &lt;[boost/signals/connection.hpp](http://www.boost.org/doc/libs/1_31_0/boost/sig
 
 ```cpp
 #include <boost/signals/connection.hpp>
@@ -21,7 +21,7 @@ namespace boost {
 * swap[link #swap_free]
 * swap[link #scoped_swap_free]
 
-##<a name="connection_class">`connection` クラス概要</a>
+## <a name="connection_class">`connection` クラス概要</a>
 
 `connection` クラスは [Signal](signal.md) と [Slot](slot.md) の間の接続を表す。
 これはシグナルとスロットが現在接続されているかを問い合わせ、またシグナルとスロットを切断する能力を有する軽量オブジェクトである。
@@ -63,9 +63,9 @@ namespace boost {
 * operator==[link #equality]
 * operator<[link #less_than]
 
-##`connection` クラスメンバ
+## `connection` クラスメンバ
 
-###コンストラクタ
+### コンストラクタ
 
 <a name="default_constructor">`connection();`</a>
 
@@ -78,13 +78,13 @@ namespace boost {
 - **作用**: `other` によって参照されていた接続を `this` が参照する。
 - **例外**: なし。
 
-###デストラクタ
+### デストラクタ
 
 <a name="destructor">`~connection();`</a>
 
 - **作用**: なし。
 
-###接続管理
+### 接続管理
 
 <a name="disconnect">`void disconnect() const;`</a>
 
@@ -96,7 +96,7 @@ namespace boost {
 - **戻り値**: `this` がアクティブな (接続されている) 非 NULL 接続を参照していれば `true`、そうでなければ `false`。
 - **例外**: なし。
 
-###代入と交換
+### 代入と交換
 
 <a name="copy_assignment">`connection& operator=(const connection& other);`</a>
 
@@ -108,7 +108,7 @@ namespace boost {
 - **作用**: `this` と `other` が参照している接続を交換する。
 - **例外**: なし。
 
-###比較
+### 比較
 
 <a name="equality">`bool operator==(const connection& other) const;`</a>
 
@@ -120,7 +120,7 @@ namespace boost {
 - **戻り値**: 実装定義の順序づけによって、`this` によって参照されている接続が `other` によって参照されている接続に先行する場合 `true`、そうでなければ `false`。
 - **例外**: なし。
 
-##<a name="scoped_connection_class">`scoped_connection` クラス概要</a>
+## <a name="scoped_connection_class">`scoped_connection` クラス概要</a>
 
 `scoped_connection` クラスは、そのインスタンスが破棄されるときに自動的に切断される接続である。
 
@@ -150,9 +150,9 @@ namespace boost {
 * operator=[link #scoped_copy_connection_assignment]
 * swap[link #scoped_swap_member]
 
-##`scoped_connection` クラスメンバ
+## `scoped_connection` クラスメンバ
 
-###コンストラクタ
+### コンストラクタ
 
 <a name="scoped_default_constructor">`scoped_connection();`</a>
 
@@ -170,13 +170,13 @@ namespace boost {
 - **作用**: `other` によって参照されていた接続を `this` が参照する。
 - **例外**: なし。
 
-###デストラクタ
+### デストラクタ
 
 <a name="destructor">`~connection();`</a>
 
 - **作用**: `this->disconnect()`
 
-###代入と交換
+### 代入と交換
 
 <a name="scoped_copy_assignment">`scoped_connection& operator=(const scoped_connection& other);`</a>
 
@@ -193,7 +193,7 @@ namespace boost {
 - **作用**: `this` と `other` が参照する接続を交換する。
 - **例外**: なし。
 
-##フリー関数
+## フリー関数
 
 <a name="swap_free">`void swap(connection& c1, connection& c2);`</a>
 

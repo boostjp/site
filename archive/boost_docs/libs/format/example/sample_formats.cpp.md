@@ -1,4 +1,4 @@
-#libs/format/example/sample_formats.cpp
+# libs/format/example/sample_formats.cpp
 
 ```cpp
 // -*- C++ -*-

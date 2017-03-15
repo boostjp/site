@@ -1,39 +1,39 @@
-#BOOST_PP_APPLY
+# BOOST_PP_APPLY
 
 `BOOST_PP_APPLY` マクロは、その引数と空文字との違いを吸収する。
 
-##Usage
+## Usage
 
 ```cpp
 BOOST_PP_APPLY(x)
 ```
 
-##Arguments
+## Arguments
 
 - `x` :
 	取り出された引数。
 	この引数は `BOOST_PP_NIL` か、または `(arg)` や `((a, b))` のような一要素の*タプル*である。
 
-##Remarks
+## Remarks
 
 `x` が `BOOST_PP_NIL` ならば、このマクロは空文字に展開される。
 `x` が一要素の*タプル*ならば、その*タプル*の内容に展開される。
 
-##See Also
+## See Also
 
 - [`BOOST_PP_NIL`](nil.md)
 
-##Requirements
+## Requirements
 
 **Header:** &lt;boost/preprocessor/facilities/apply.hpp&gt;
 
-##Sample Code
+## Sample Code
 
 ```cpp
 #include <boost/preprocessor/facilities/apply.hpp>
 #include <boost/preprocessor/tuple/elem.hpp>
 
-#define CV(i) \
+# define CV(i) \
 	BOOST_PP_APPLY( \
 		BOOST_PP_TUPLE_ELEM( \
 			4, i, \

@@ -1,4 +1,4 @@
-#array1.cpp
+# array1.cpp
 ```cpp
 /*クラス array<> を使った簡単な例
  */

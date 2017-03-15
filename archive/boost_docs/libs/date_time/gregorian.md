@@ -1,9 +1,9 @@
-#Gregorian Date System Documentation
+# Gregorian Date System Documentation
 
 [全体のインデックスへ](../date_time.md)
 
 
-##目次
+## 目次
 
 - [Introduction](#introduction)
 - [Usage Examples](#usage-examples)

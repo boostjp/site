@@ -1,25 +1,25 @@
-#Boost.勉強会 #12 大阪
+# Boost.勉強会 #12 大阪
 
-##開催日時
+## 開催日時
 - 2013/06/22(土) 11:00～17:30
 
 
-##開催場所
+## 開催場所
 - 大阪電気通信大学　駅前キャンパス　601（小ホール）
 - 大阪府寝屋川市早子町12-16
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 #12 大阪 - PARTAKE](http://partake.in/events/cb6309e7-67ad-41fe-8a99-302badbc5633)
 - [Boost.懇親会 #12 - PARTAKE](http://partake.in/events/2b4812e6-5902-4ee2-833b-a3aea8c91b6c#)
 
 
-##主催&スタッフ
+## 主催&スタッフ
 - 主催者： 遥佐保([@hr_sao](https://twitter.com/hr_sao))
 - お手伝い： 高橋晶([@cpp_akira](https://twitter.com/cpp_akira))
 
 
-##タイムテーブル
+## タイムテーブル
 
 | 時間    | タイトル | 発表者 |
 |---------|----------------------------------------|-------------------------------|
@@ -36,16 +36,16 @@
 | 17:30   | 終了 |  |
 
 
-##座席表
+## 座席表
 - [http://sekico.co/zaseki/154](http://sekico.co/zaseki/154)
 
 
-##配信
+## 配信
 - [http://www.ustream.tv/channel/boost-勉強会大阪](http://www.ustream.tv/channel/boost-%E5%8B%89%E5%BC%B7%E4%BC%9A%E5%A4%A7%E9%98%AA)
 
 
-##発表内容
-###C++で作るWEBアプリケーション
+## 発表内容
+### C++で作るWEBアプリケーション
 - 発表者 : Naomasa Matsubayashi
 - Twitter : [https://twitter.com/fadis_](https://twitter.com/fadis_)
 
@@ -55,7 +55,7 @@ C++をJavaScriptにコンパイルするコンパイラ、Emscriptenを使って
 - アフターケア：[Boost.勉強会 #12に行ってきた - Fadisのノート](http://www41050u.sakura.ne.jp/blog/index.php?/archives/7-Boost.-12.html)
 
 
-###C++初心者のためのBoost.MPL入門
+### C++初心者のためのBoost.MPL入門
 - 発表者 : すいかばー
 - Twitter : [https://twitter.com/suibaka](https://twitter.com/suibaka)
 
@@ -70,14 +70,14 @@ C++をJavaScriptにコンパイルするコンパイラ、Emscriptenを使って
 - アフターケア：[Boost.勉強会 #12 大阪に行って来ました - 冬でもスイカバーが食べたい](http://suikaba.hatenablog.com/entry/2013/06/23/004204)
 
 
-###Boost.Contractについて
+### Boost.Contractについて
 - 発表者 : uskz
 - Twitter : [https://twitter.com/uskz](https://twitter.com/uskz)
 
 昨年BoostにacceptされたBoost.Contractの使い方について話します
 
 
-###boost.multiprecisionと適応型無誤差演算
+### boost.multiprecisionと適応型無誤差演算
 - 発表者：oniprog
 - Twitter : [https://twitter.com/oniprog](https://twitter.com/oniprog)
 
@@ -87,7 +87,7 @@ C++をJavaScriptにコンパイルするコンパイラ、Emscriptenを使って
 - 発表練習動画：[http://www.youtube.com/watch?v=OCkqGOLXEa8](http://www.youtube.com/watch?v=OCkqGOLXEa8)
 
 
-###Allocators@C++11
+### Allocators@C++11
 - 発表者 : Cryolite
 - Twitter : [https://twitter.com/Cryolite](https://twitter.com/Cryolite)
 
@@ -99,7 +99,7 @@ vectorに対し，各string要素のallocatorをカスタマイズすること�
 - 発表資料：[http://www.slideshare.net/Cryolite/allocator11final](http://www.slideshare.net/Cryolite/allocator11final)
 
 
-###constexpr中３女子テクニック―実践と濫用そしてC++14へ
+### constexpr中３女子テクニック―実践と濫用そしてC++14へ
 - 発表者 : ボレロ村上
 - Twitter : [https://twitter.com/bolero_MURAKAMI](https://twitter.com/bolero_MURAKAMI)
 
@@ -108,7 +108,7 @@ C++11のconstexprでコンパイル時アルゴリズムを実装する上での
 - 発表資料：[http://www.slideshare.net/GenyaMurakami/constexpr-23355469](http://www.slideshare.net/GenyaMurakami/constexpr-23355469)
 
 
-###君はまだ、本当のプリプロセスを知らない
+### 君はまだ、本当のプリプロセスを知らない
 - 発表者 : DigitalGhost
 - Twitter : [https://twitter.com/decimalbloat](https://twitter.com/decimalbloat)
 
@@ -119,7 +119,7 @@ C++11のconstexprでコンパイル時アルゴリズムを実装する上での
 - 発表資料：[http://www.slideshare.net/digitalghost/ss-23314487](http://www.slideshare.net/digitalghost/ss-23314487)
 
 
-###C++コミュニティを作る
+### C++コミュニティを作る
 - 発表者 : 高橋 晶
 - Twitter : [https://twitter.com/cpp_akira](https://twitter.com/cpp_akira)
 
@@ -130,7 +130,7 @@ C++11のconstexprでコンパイル時アルゴリズムを実装する上での
 
 
 
-##関連リンク
+## 関連リンク
 - [Boost.勉強会 #12 - Togetter](http://togetter.com/li/522537)
 - [気まぐれLinux: Boost.勉強会 #12 大阪に参加してみた](http://tylg-linux.blogspot.jp/2013/06/boost-12.html)
 - [Boost.勉強会 #12 大阪に行って来ました - 冬でもスイカバーが食べたい](http://suikaba.hatenablog.com/entry/2013/06/23/004204)
@@ -141,7 +141,7 @@ C++11のconstexprでコンパイル時アルゴリズムを実装する上での
 - [Boost.勉強会 にいってきた - 躓いて１マス進む](http://niche-prg-smith.hatenablog.com/entry/2013/07/03/000156)
 
 
-###写真
+### 写真
 ※写真に写って困る方がいらっしゃいましたら、主催者かスタッフまでご連絡ください。削除対応いたします。
 
 <img width='400' src='https://raw.github.com/boostjp/study12/master/image/DSC00123.JPG' height='300' border='0'/>

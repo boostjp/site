@@ -1,4 +1,4 @@
-#edmunds_karp_max_flow
+# edmunds_karp_max_flow
 ```cpp
 // 名前付きパラメータバージョン
 template <class VertexListGraph, class P, class T, class R>
@@ -33,11 +33,11 @@ edmunds_karp_max_flow(VertexListGraph& g,
 - 整数の容量の場合、もし容量の範囲 `U` が大変大きいならば、アルゴリズムに長い時間がかかるだろう。
 
 
-##定義場所
+## 定義場所
 boost/graph/edmunds_karp_max_flow.hpp
 
 
-##パラメータ
+## パラメータ
 - IN: `VertexListGraph& g`
 	- 有向グラフ。グラフの型は [VertexListGraph](VertexListGraph.md) のモデルでなければならない。グラフ中の各辺 `(u,v)` のために、逆辺 `(v,u)` もまたグラフ中になければならない。
 
@@ -48,7 +48,7 @@ boost/graph/edmunds_karp_max_flow.hpp
 	- 流れのネットワーク・グラフのためのシンク頂点。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 - IN: `capacity_map(CapacityEdgeMap cap)`
 	- 辺容量プロパティ・マップ。型は定数 [Lvalue Property Map](../property_map/LvaluePropertyMap.md) のモデルでなければならない。マップのキー型はグラフの辺記述子型でなければならない。
 	- デフォルト: `get(edge_capacity, g)`
@@ -74,15 +74,15 @@ boost/graph/edmunds_karp_max_flow.hpp
 	- デフォルト: `get(vertex_index, g)`
 
 
-##計算量
+## 計算量
 時間計算量は、通常の場合には O(V E<sup>2</sup>) で、もしくは容量値が 定数 `U` で範囲づけられた整数であるならば O(V E U) である。
 
 
-##コード例
+## コード例
 [examples/edmunds-karp-eg.cpp](examples/edmunds-karp-eg.cpp.md) 中のプログラムは最大流問題の例 (辺容量を伴うグラフ) を DIMACS 形式で書かれた ファイルから読み、最大流を計算する。
 
 
-##関連項目
+## 関連項目
 [`push_relabel_max_flow()`](push_relabel_max_flow.md)
 
 

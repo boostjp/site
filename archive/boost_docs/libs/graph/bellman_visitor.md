@@ -1,34 +1,34 @@
-#bellman_visitor<EventVisitorList>
+# bellman_visitor<EventVisitorList>
 このクラスは、(`std::pair` を使って作られる) [EventVisitor](EventVisitor.md) のリストを [BellmanFordVisitor](BellmanFordVisitor.md) に変換するアダプタである。
 
 
-##モデル
+## モデル
 [BellmanFordVisitor](BellmanFordVisitor.md)
 
 
-##テンプレートパラメータ
+## テンプレートパラメータ
 
 | パラメータ | 説明 | デフォルト |
 |------------|------|------------|
 | `EventVisitorList` | `std::pair` で作られた [EventVisitor](EventVisitor.md) のリスト。 | `null_visitor` |
 
 
-##定義場所
+## 定義場所
 boost/graph/bellman_ford_shortest_paths.hpp
 
 
-##メンバ関数
+## メンバ関数
 このクラスは [BellmanFordVisitor](BellmanFordVisitor.me) に要求される全てのメンバ関数を実装している。それぞれの関数で、適切なイベントが EventVisitorList の中の [EventVisitor](./EventVisitor.md) にディスパッチされる。
 
 
-##非メンバ関数
+## 非メンバ関数
 
 | 関数 | 説明 |
 |------|------|
 | `template <class EventVisitorList>`<br/> `bellman_visitor<EventVisitorList>`<br/> `make_bellman_visitor(EventVisitorList ev_list);` | イベントビジタのリストを [BellmanFordVisitor](BellmanFordVisitor.md) に適合させたものを返す。 |
 
 
-##関連項目
+## 関連項目
 [Visitorコンセプト](visitor_concepts.md)
 
 イベントビジタ: [`predecessor_recorder`](predecessor_recorder.md) 、 [`distance_recorder`](distance_recorder.me) 、 [`time_stamper`](./time_stamper.md) 、 [`property_writer`](property_writer.md) 。

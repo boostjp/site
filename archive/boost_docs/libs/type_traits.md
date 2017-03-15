@@ -1,4 +1,4 @@
-#Header &lt;[boost/type_traits.hpp](http://www.boost.org/doc/libs/1_31_0/boost/type_traits.hpp)&gt;
+# Header &lt;[boost/type_traits.hpp](http://www.boost.org/doc/libs/1_31_0/boost/type_traits.hpp)&gt;
 
 &lt;boost/type_traits.hpp&gt; の内容は boost 名前空間内で宣言される。
 
@@ -22,7 +22,7 @@
 本ライブラリにおける汎整数式はすべて [*汎整数定数式*](http://www.boost.org/doc/libs/1_31_0/more/int_const_guidelines.htm) である。
 それらの使用は時折コンパイラの問題に遭遇する原因となるため, 本ライブラリを用いて移植性のあるコードを書くための手引きとして [コーディングガイドライン](http://www.boost.org/doc/libs/1_31_0/more/int_const_guidelines.htm) に関連した事項がある。
 
-##<a name="primary">Primary Type Categorisation</a>
+## <a name="primary">Primary Type Categorisation</a>
 
 以下の型特性（type traits）テンプレートは型がどの型分類に属しているかを識別する。
 どんな型を与えた場合でも、以下の式のうちのひとつは確実に真に評価される。
@@ -44,7 +44,7 @@
 | `::boost::is_enum<T>::value` | `T` が列挙型であれば真に評価する。 | 3.9.2, 7.2 | `is_convertible` テンプレートが正しく機能することが必要（現時点では `is_enum` が Borland C++ では使えないという意味）。 |
 | `::boost::is_function<T>::value` | `T` が関数型であれば真に評価する（関数への参照やポインタではない）。 | 3.9.2p1, 8.3.5 | 部分特殊化版がサポートされない場合、このテンプレートは参照型についてはコンパイルできない。 |
 
-##<a name="secondary">Secondary Type Categorisation</a>
+## <a name="secondary">Secondary Type Categorisation</a>
 
 以下の型分類は１つ以上の primary type categorisations を組み合わせて作られている。
 ある型は、primary type categorisations の分類に加えて、これらの分類のうちの１つ以上に属している可能性がある。
@@ -58,7 +58,7 @@
 | `::boost::is_compound<T>::value` | `T` が複合型であれば真に評価する。関数型、ポインタ型、参照型、列挙型、共用体型、クラス型、メンバ関数型がこれにあたる。 | 3.9.2 | |
 | `::boost::is_member_function_pointer<T>::value` | `T` がメンバ関数へのポインタ型（メンバオブジェクトへのポインタではない）であれば真に評価する。このテンプレートは `is_member_pointer` を２つの副分類に分割する。 | 3.9.2, 8.3.3 | |
 
-##<a name="properties">Type Properties</a>
+## <a name="properties">Type Properties</a>
 
 以下のテンプレートは型が持っている特徴を識別する。
 
@@ -78,7 +78,7 @@
 | `::boost::has_nothrow_copy<T>::value` | `T` が例外を発生させないコピーコンストラクタを持っていれば真。 | | PC |
 | `::boost::has_nothrow_assign<T>::value` | `T` が例外を発生させない代入演算子を持っていれば真。 | | PC |
 
-##<a name="relationships">Relationships Between Types</a>
+## <a name="relationships">Relationships Between Types</a>
 
 以下のテンプレートは２つの型の間に関連性があるかどうかを調べる。
 
@@ -99,7 +99,7 @@ bool const x = boost::is_base_and_derived<A,D>::value;  // エラー
 bool const y = boost::is_convertible<D*,A*>::value;     // エラー
 ```
 
-##<a name="transformations">Transformations Between Types</a>
+## <a name="transformations">Transformations Between Types</a>
 
 以下のテンプレートは、ある型を別の型に、いくつかの明確な規則に基づいて変形する。
 各テンプレートにはテンプレート引数 `T` を変形した結果である `type` という名のメンバがひとつだけ含まれている。
@@ -163,7 +163,7 @@ BOOST_STATIC_ASSERT((is_same<my, remove_const<my const>::type>::value));
 
 部分特殊化版がサポートされないコンパイラでは、`BOOST_BROKEN_COMPILER_TYPE_TRAITS_SPECIALIZATION` は中身のないマクロとして評価されることに注意。
 
-##<a name="synthesized">Synthesizing Types</a>
+## <a name="synthesized">Synthesizing Types</a>
 
 以下のテンプレートは要求した特徴を持った型を作り出す。
 
@@ -171,7 +171,7 @@ BOOST_STATIC_ASSERT((is_same<my, remove_const<my const>::type>::value));
 |------------|-------------|-----------|-----------------------|
 | `::boost::type_with_alignment<Align>::type` | Align の倍数に整列された組み込み型または POD 型を見つける。 | | |
 
-##<a name="function_traits">Function Traits</a>
+## <a name="function_traits">Function Traits</a>
 
 `::boost::function_traits` クラステンプレートは関数型から情報を取り出す。
 
@@ -181,7 +181,7 @@ BOOST_STATIC_ASSERT((is_same<my, remove_const<my const>::type>::value));
 | `::boost::function_traits<F>::result_type` | 関数型 `F` が返す型。 | | P |
 | `::boost::function_traits<F>::argN_type` | 関数型 `F` の第 *N* （1≦N≦Fの引数の数）引数の型。 | | P |
 
-##<a name="compiler">Compiler Support Information</a>
+## <a name="compiler">Compiler Support Information</a>
 
 上の表中にある記号の意味は以下の通り。
 
@@ -203,7 +203,7 @@ D や C の印が付いたクラスに対して、コンパイラのサポート
 
 これが意味するのは、例えば、空の POD 構造体がある場合には、`is_empty` と `is_POD` を特化し、すべての `has_*` が真を返すようにするということである。
 
-##<a name="headers">Type Traits Headers</a>
+## <a name="headers">Type Traits Headers</a>
 
 型特性ライブラリは通常下記をインクルードする。
 
@@ -261,11 +261,11 @@ D や C の印が付いたクラスに対して、コンパイラのサポート
 | `remove_volatile`            | `<boost/type_traits/cv_traits.hpp>`         |
 | `type_with_alignment`        | `<boost/type_traits/alignment_traits.hpp>`  |
 
-##<a name="example">Example code</a>
+## <a name="example">Example code</a>
 
 型特性テンプレートを使用できるいくつかの方法を説明したプログラム例が４つある。
 
-###Copy_example.cpp
+### Copy_example.cpp
 
 `std::copy` のコピー操作を最適化するために適宜 `memcpy` を使用するバージョンを示す。
 
@@ -326,7 +326,7 @@ inline I2 copy(I1 first, I1 last, I2 out)
 }
 ```
 
-###fill_example.cpp
+### fill_example.cpp
 
 `std::fill` の充填操作を最適化するために適宜 `memset` を使用するバージョンを示す。
 また、エイリアシング問題を避けるため、引数の受け渡しを最適化するために `call_traits` を使用する。
@@ -393,7 +393,7 @@ inline void fill(I first, I last, const T& val)
 };   // namespace opt
 ```
 
-###iter_swap_example.cpp
+### iter_swap_example.cpp
 
 `std::iter_swap` の正規のものと同様の代替イテレータとともに動作するバージョンを示す。
 それは、正規のイテレータに対して `std::swap` を呼び出すか、あるいは &quot;遅いけれども安全&quot; な `swap` を呼び出す。
@@ -449,7 +449,7 @@ inline void iter_swap(I1 one, I2 two)
 };   // namespace opt
 ```
 
-###Trivial_destructor_example.cpp
+### Trivial_destructor_example.cpp
 
 このアルゴリズムは `std::uninitialized_copy` の逆である。
 初期化済みのメモリブロックを受け取り、その中のすべてのオブジェクトに対してデストラクタを呼び出す。

@@ -1,10 +1,10 @@
-#iniファイルの読み込み／書き込み
+# iniファイルの読み込み／書き込み
 iniの読み込み、書き込みには、[Boost Property Tree Library](http://www.boost.org/doc/libs/release/doc/html/property_tree.html)を使用する。Boost.PropertyTreeは、ツリー構造の汎用プロパティ管理のためのライブラリで、XML, JSON, INIファイルなどへの統一的なアクセス方法を提供する。
 
 ここでは、Boost.PropertyTreeを使用したiniファイルの読み込みと書き込みを紹介する。
 
 
-##インデックス
+## インデックス
 - [iniの読み込み](#read)
 - [iniの書き込み](#write)
 

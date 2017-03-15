@@ -1,10 +1,10 @@
-#ジェネリックプログラミング手法
+# ジェネリックプログラミング手法
 これは boost ライブラリで使われている、 ジェネリックプログラミング技術の不完全な概観である。
 
 - 翻訳元：<http://www.boost.org/community/generic_programming.html>
 
 
-##目次
+## 目次
 
 - [はじめに(Introduction)](#introduction)
 - [コンセプトの分析(The Anatomy of a Concept)](#the-anatomy-of-a-concept)
@@ -229,7 +229,7 @@ Andrei のポリシークラスについての記述は、その力を、 粒状
 
 
 
-##脚注
+## 脚注
 - [^1]: 型生成器は、 C++ に 「テンプレートの `typedef`」 が存在しないことに対する代替手段である。
 
 

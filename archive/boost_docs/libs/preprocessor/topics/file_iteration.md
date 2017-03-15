@@ -1,9 +1,9 @@
-#File Iteration
+# File Iteration
 
 File iteration is a complex, but powerful, vertical repetition construct.
 It repeatedly includes a *file* for each number in a user-specified range.
 
-##Tutorial
+## Tutorial
 
 This mechanism requires two pieces of information to operate:
 a range to iterate over and a file to include on each iteration.
@@ -17,7 +17,7 @@ Both the upper and lower bounds must be numeric values in the range of *0* to `B
 For example, if the user wishes a file to be included for numbers ranging from *0* to *10*, `BOOST_PP_ITERATION_LIMITS` would be defined like this:
 
 ```cpp
-#define BOOST_PP_ITERATION_LIMITS (0, 10)
+# define BOOST_PP_ITERATION_LIMITS (0, 10)
 ```
 
 Note that there is whitespace after the name of the macro.
@@ -29,16 +29,16 @@ This implies that they can include simple arithmetic or logical expressions.
 For instance, the above definition could easily have been written like this:
 
 ```cpp
-#define N() 5
-#define BOOST_PP_ITERATION_LIMITS (0, N() + 5)
+# define N() 5
+# define BOOST_PP_ITERATION_LIMITS (0, N() + 5)
 ```
 
 Because of this, if the whitespace after the macro name is elided, it is possible for the definition to be syntactically valid:
 
 ```cpp
-#define A 0
-#define B 10
-#define BOOST_PP_ITERATION_LIMITS(A, B)
+# define A 0
+# define B 10
+# define BOOST_PP_ITERATION_LIMITS(A, B)
 	// note:  no whitespace      ^
 ```
 
@@ -47,9 +47,9 @@ The error messages that result may be obscure, so always remember to include the
 A *correct* version of the above looks like this:
 
 ```cpp
-#define A 0
-#define B 10
-#define BOOST_PP_ITERATION_LIMITS (A, B)
+# define A 0
+# define B 10
+# define BOOST_PP_ITERATION_LIMITS (A, B)
 	// note:  has whitespace     ^
 ```
 
@@ -59,9 +59,9 @@ The *x* is a placeholder for the dimension of iteration.
 This macro must expand to a valid filename--in quotes or in angle brackets depending on how the file is accessed:
 
 ```cpp
-#define BOOST_PP_FILENAME_1 "file.h"
+# define BOOST_PP_FILENAME_1 "file.h"
 // -or-
-#define BOOST_PP_FILENAME_1 <file.h>
+# define BOOST_PP_FILENAME_1 <file.h>
 ```
 
 All that we need now to perform a simple file iteration is to invoke the mechanism:
@@ -79,8 +79,8 @@ All that we need now to perform a simple file iteration is to invoke the mechani
 So, if we wish to iterate "file.h" from *1* to *10*, we just need to put the pieces together:
 
 ```cpp
-#define BOOST_PP_ITERATION_LIMITS (1, 10)
-#define BOOST_PP_FILENAME_1 "file.h"
+# define BOOST_PP_ITERATION_LIMITS (1, 10)
+# define BOOST_PP_FILENAME_1 "file.h"
 ??=include BOOST_PP_ITERATE()
 ```
 
@@ -91,7 +91,7 @@ Once again, the *x* is a placeholder for the dimension of iteration--which we'll
 This macro must expand to an *array* that includes the lower bound, upper bound, filename, and optional flags (in that order).
 
 ```cpp
-#define BOOST_PP_ITERATION_PARAMS_1 (3, (1, 10, "file.h"))
+# define BOOST_PP_ITERATION_PARAMS_1 (3, (1, 10, "file.h"))
 ??=include BOOST_PP_ITERATE()
 ```
 
@@ -114,7 +114,7 @@ template<> struct sample<BOOST_PP_ITERATION()> { };
 ```cpp
 template<int> struct sample;
 
-#define BOOST_PP_ITERATION_PARAMS_1 (3, (1, 5, "file.h"))
+# define BOOST_PP_ITERATION_PARAMS_1 (3, (1, 5, "file.h"))
 ??=include BOOST_PP_ITERATE()
 ```
 
@@ -137,7 +137,7 @@ For example, to merge the contents of "file.h" into the file that iterates it:
 
 ```cpp
 // sample.h
-#if !BOOST_PP_IS_ITERATING
+# if !BOOST_PP_IS_ITERATING
 
 	#ifndef SAMPLE_H
 	#define SAMPLE_H
@@ -151,11 +151,11 @@ For example, to merge the contents of "file.h" into the file that iterates it:
 
 	#endif // SAMPLE_H
 
-#else
+# else
 
 	template<> struct sample<BOOST_PP_ITERATION()> { };
 
-#endif
+# endif
 ```
 
 Using the same file like this raises another issue.
@@ -165,7 +165,7 @@ It is used to discriminate between separate iterations.
 
 ```cpp
 // sample.h
-#if !BOOST_PP_IS_ITERATING
+# if !BOOST_PP_IS_ITERATING
 
 	#ifndef SAMPLE_H
 	#define SAMPLE_H
@@ -202,11 +202,11 @@ It is used to discriminate between separate iterations.
 
 	#endif // SAMPLE_H
 
-#elif BOOST_PP_ITERATION_FLAGS() == 1
+# elif BOOST_PP_ITERATION_FLAGS() == 1
 
 	template<> struct sample<BOOST_PP_ITERATION()> { };
 
-#elif BOOST_PP_ITERATION_FLAGS() == 2
+# elif BOOST_PP_ITERATION_FLAGS() == 2
 
 	#define N BOOST_PP_ITERATION()
 
@@ -221,7 +221,7 @@ It is used to discriminate between separate iterations.
 
 	#undef N
 
-#endif
+# endif
 ```
 
 Notice the use of the "flags" parameter (which is accessed through `BOOST_PP_ITERATION_FLAGS()`).
@@ -234,7 +234,7 @@ Actually, to continue the typelist example, with the help of another iteration w
 
 ```cpp
 // extract.h
-#if !BOOST_PP_IS_ITERATING
+# if !BOOST_PP_IS_ITERATING
 
 	#ifndef EXTRACT_H
 	#define EXTRACT_H
@@ -269,9 +269,9 @@ Actually, to continue the typelist example, with the help of another iteration w
 
 	#endif // EXTRACT_H
 
-#else
+# else
 
-#define N BOOST_PP_ITERATION()
+# define N BOOST_PP_ITERATION()
 	#define STRIP(z, n, _) \
 		typename strip_incomplete<T ## n>::type \
 		/**/
@@ -284,13 +284,13 @@ Actually, to continue the typelist example, with the help of another iteration w
 	#undef STRIP
 	#undef N
 
-#endif
+# endif
 ```
 
 Now we can define a helper macro to finish the job:
 
 ```cpp
-#define TYPELIST(args) extract<typelist, void args>::type
+# define TYPELIST(args) extract<typelist, void args>::type
 
 typedef TYPELIST((int, double, incomplete<void>)) xyz;
 ```
@@ -301,7 +301,7 @@ Second, the necessary double parenthesis is annoying.
 If and when C++ gets C99's variadic macros, `TYPELIST` can be redefined:
 
 ```cpp
-#define TYPELIST(...) extract<typelist, void (__VA_ARGS__)>::type
+# define TYPELIST(...) extract<typelist, void (__VA_ARGS__)>::type
 
 typedef TYPELIST(int, double, short) xyz;
 ```
@@ -312,21 +312,21 @@ It is my hope that the explanation and examples presented here demonstrate the p
 Even so, this is just the beginning.
 The file iteration mechanism also defines a full suite of facilities to support multidimensional iteration.
 
-##Multiple Dimensions
+## Multiple Dimensions
 
 The file iteration mechanism supports up to `BOOST_PP_LIMIT_ITERATION_DIM` dimensions.
 The first dimension (i.e. the outermost) we have already used above.
 In order to use the second dimension (inside the first), we simply have to replace the placeholder *x* with *2* instead of *1*.
 
 ```cpp
-#define BOOST_PP_ITERATION_PARAMS_2 /* ... */
+# define BOOST_PP_ITERATION_PARAMS_2 /* ... */
                                   ^
 ```
 
 ...or...
 
 ```cpp
-#define BOOST_PP_FILENAME_2 /* ... */
+# define BOOST_PP_FILENAME_2 /* ... */
                           ^
 ```
 
@@ -359,7 +359,7 @@ The file iteration mechanism provides the macro `BOOST_PP_ITERATION_DEPTH` for t
 
 ```cpp
 // file.h
-#if !BOOST_PP_IS_ITERATING
+# if !BOOST_PP_IS_ITERATING
 
 	#ifndef FILE_H
 	#define FILE_H
@@ -371,7 +371,7 @@ The file iteration mechanism provides the macro `BOOST_PP_ITERATION_DEPTH` for t
 
 	#endif // FILE_H
 
-#elif BOOST_PP_ITERATION_DEPTH() == 1
+# elif BOOST_PP_ITERATION_DEPTH() == 1
 
 	// A
 	+ BOOST_PP_ITERATION()
@@ -381,12 +381,12 @@ The file iteration mechanism provides the macro `BOOST_PP_ITERATION_DEPTH` for t
 
 	// C
 
-#elif BOOST_PP_ITERATION_DEPTH() == 2
+# elif BOOST_PP_ITERATION_DEPTH() == 2
 
 	// B
 	- BOOST_PP_ITERATION()
 
-#endif
+# endif
 ```
 
 This will result to the following:
@@ -408,7 +408,7 @@ Because of the preprocessor's lazy evaluation, this *doesn't* work....
 ```cpp
 // ...
 
-#elif BOOST_PP_ITERATION_DEPTH() == 1
+# elif BOOST_PP_ITERATION_DEPTH() == 1
 
 	#define I BOOST_PP_ITERATION()
 
@@ -417,7 +417,7 @@ Because of the preprocessor's lazy evaluation, this *doesn't* work....
 
 	#undef I
 
-#elif BOOST_PP_ITERATION_DEPTH() == 2
+# elif BOOST_PP_ITERATION_DEPTH() == 2
 
 	#define J BOOST_PP_ITERATION()
 
@@ -425,7 +425,7 @@ Because of the preprocessor's lazy evaluation, this *doesn't* work....
 
 	#undef I
 
-#endif
+# endif
 ```
 
 The problem here is that `I` refers to `BOOST_PP_ITERATION()`, not to the *value* of `BOOST_PP_ITERATION()` at the point of `I` 's definition.
@@ -443,7 +443,7 @@ So, to fix the last example, we modify the definition of `I` ....
 ```cpp
 // ...
 
-#elif BOOST_PP_ITERATION_DEPTH() == 1
+# elif BOOST_PP_ITERATION_DEPTH() == 1
 
 	#define I BOOST_PP_FRAME_ITERATION(1)
 
@@ -459,7 +459,7 @@ An argument of *0* is interpreted as an offset of *0* which causes `BOOST_PP_REL
 The lower and upper bounds of a dimension can be accessed in this fashion as well with `BOOST_PP_RELATIVE_START` and `BOOST_PP_RELATIVE_FINISH`.
 The flags of a relative dimension can be accessed with `BOOST_PP_RELATIVE_FLAGS`.
 
-##Relativity
+## Relativity
 
 I mentioned earlier that there is a reason that there are two ways to parametize the mechanism.
 The reason is dimensional abstraction.
@@ -481,49 +481,49 @@ They exist to isolate the only non-abstractable piece of data required by the me
 In order to define the filename in an abstract fashion, you need to do something like this:
 
 ```cpp
-#define UNIQUE_TO_FILE "some_file.h"
+# define UNIQUE_TO_FILE "some_file.h"
 
-#if BOOST_PP_ITERATION_DEPTH() == 0
+# if BOOST_PP_ITERATION_DEPTH() == 0
 	#define BOOST_PP_FILENAME_1 UNIQUE_TO_FILE
-#elif BOOST_PP_ITERATION_DEPTH() == 1
+# elif BOOST_PP_ITERATION_DEPTH() == 1
 	#define BOOST_PP_FILENAME_2 UNIQUE_TO_FILE
-#elif BOOST_PP_ITERATION_DEPTH() == 2
+# elif BOOST_PP_ITERATION_DEPTH() == 2
 	#define BOOST_PP_FILENAME_3 UNIQUE_TO_FILE
 
 // ... up to BOOST_PP_LIMIT_ITERATION_DIM
 
-#endif
+# endif
 ```
 
 The intent is to avoid having to do this for anything but the filename.
 If this needs to be done more than once in a file (`BOOST_PP_FILENAME_x` is undefined by the mechanism after it is used.), consider using a separate file to make the proper definition:
 
 ```cpp
-#// detail/define_file_h.h
-#ifndef FILE_H
-#	error FILE_H is not defined
-#endif
-#
-#if BOOST_PP_ITERATION_DEPTH() == 0
-#	define BOOST_PP_FILENAME_1 FILE_H
-#elif BOOST_PP_ITERATION_DEPTH() == 1
-#	define BOOST_PP_FILENAME_2 FILE_H
-#elif BOOST_PP_ITERATION_DEPTH() == 2
-#	define BOOST_PP_FILENAME_3 FILE_H
-#elif BOOST_PP_ITERATION_DEPTH() == 3
-#	define BOOST_PP_FILENAME_4 FILE_H
-#elif BOOST_PP_ITERATION_DEPTH() == 4
-#	define BOOST_PP_FILENAME_5 FILE_H
-#else
-#	error unsupported iteration dimension
-#endif
+# // detail/define_file_h.h
+# ifndef FILE_H
+# 	error FILE_H is not defined
+# endif
+# 
+# if BOOST_PP_ITERATION_DEPTH() == 0
+# 	define BOOST_PP_FILENAME_1 FILE_H
+# elif BOOST_PP_ITERATION_DEPTH() == 1
+# 	define BOOST_PP_FILENAME_2 FILE_H
+# elif BOOST_PP_ITERATION_DEPTH() == 2
+# 	define BOOST_PP_FILENAME_3 FILE_H
+# elif BOOST_PP_ITERATION_DEPTH() == 3
+# 	define BOOST_PP_FILENAME_4 FILE_H
+# elif BOOST_PP_ITERATION_DEPTH() == 4
+# 	define BOOST_PP_FILENAME_5 FILE_H
+# else
+# 	error unsupported iteration dimension
+# endif
 ```
 
 And then use it like this....
 
 ```cpp
 // file.h
-#if !BOOST_PP_IS_ITERATING
+# if !BOOST_PP_IS_ITERATING
 
 	#ifndef FILE_H
 	#define FILE_H "file.h"
@@ -533,22 +533,22 @@ And then use it like this....
 
 	??=include BOOST_PP_ITERATE()
 
-#endif // FILE_H
+# endif // FILE_H
 
-#else
+# else
 	// iterated portion
-#endif
+# endif
 ```
 
 With a little effort like this, it is possible to maintain the abstraction without the code bloat that would otherwise be required.
 Unfortunately, this is not a completely general solution as it would need to be done for each unique filename, but it is better than nothing.
 
-##Conclusion
+## Conclusion
 
 That about covers the facilities that are available from the mechanism.
 Using these facilities, let's implement a `function_traits` template to demonstrate a full-fledge use of the mechanism.
 
-##Function Traits - An Involved Example
+## Function Traits - An Involved Example
 
 Implementing a comprehensive `function_traits` template metafunction requires the use of every major part of the file iteration mechanism.
 
@@ -644,10 +644,10 @@ This example represents the power of the file iteration mechanism as well as the
 ```cpp
 // function_traits.hpp
 
-#if !BOOST_PP_IS_ITERATING
+# if !BOOST_PP_IS_ITERATING
 
-#ifndef FUNCTION_TRAITS_HPP
-#define FUNCTION_TRAITS_HPP
+# ifndef FUNCTION_TRAITS_HPP
+# define FUNCTION_TRAITS_HPP
 
 #include <boost/preprocessor/cat.hpp>
 #include <boost/preprocessor/facilities/apply.hpp>
@@ -658,9 +658,9 @@ This example represents the power of the file iteration mechanism as well as the
 #include <boost/preprocessor/tuple/elem.hpp>
 
 // enable user-expansion
-#ifndef FUNCTION_TRAITS_MAX_ARITY
+# ifndef FUNCTION_TRAITS_MAX_ARITY
 	#define FUNCTION_TRAITS_MAX_ARITY 15
-#endif
+# endif
 
 namespace detail {
 
@@ -678,20 +678,20 @@ struct function_traits_base {
 template<class> struct function_traits;
 
 // extract ellipsis state
-#define ELLIPSIS(n) \
+# define ELLIPSIS(n) \
 	BOOST_PP_APPLY( \
 		BOOST_PP_TUPLE_ELEM(2, n, ELLIPSIS_I) \
 	) \
 	/**/
 
 // iterate over function arities for function types
-#define BOOST_PP_ITERATION_PARAMS_1 \
+# define BOOST_PP_ITERATION_PARAMS_1 \
 	(4, (0, FUNCTION_TRAITS_MAX_ARITY, "function_traits.hpp", 0)) \
 	/**/
 ??=include BOOST_PP_ITERATE()
 
 // obtain a cv-qualifier by index
-#define QUALIFIER(n) \
+# define QUALIFIER(n) \
 	BOOST_PP_APPLY( \
 		BOOST_PP_TUPLE_ELEM( \
 			4, n, \
@@ -701,14 +701,14 @@ template<class> struct function_traits;
 	/**/
 
 // iterate over cv-qualifiers for pointers-to-members
-#define BOOST_PP_ITERATION_PARAMS_1 \
+# define BOOST_PP_ITERATION_PARAMS_1 \
 	(4, (0, 3, "function_traits.hpp", 1)) \
 	/**/
 ??=include BOOST_PP_ITERATE()
 
 // remove temporary macros
-#undef QUALIFIER
-#undef ELLIPSIS
+# undef QUALIFIER
+# undef ELLIPSIS
 
 // overriding jumper for pointers-to-functions
 template<class T> struct function_traits<T*> : function_traits<T> {
@@ -723,10 +723,10 @@ template<class T> struct function_traits<T&> : function_traits<T> {
 };
 
 // eof
-#endif // FUNCTION_TRAITS_HPP
+# endif // FUNCTION_TRAITS_HPP
 
 // specializations for function types
-#elif BOOST_PP_ITERATION_DEPTH() == 1 \
+# elif BOOST_PP_ITERATION_DEPTH() == 1 \
 	&& BOOST_PP_ITERATION_FLAGS() == 0 \
 	/**/
 
@@ -769,7 +769,7 @@ template<class T> struct function_traits<T&> : function_traits<T> {
 	#endif
 
 // iteration over cv-qualifiers
-#elif BOOST_PP_ITERATION_DEPTH() == 1 \
+# elif BOOST_PP_ITERATION_DEPTH() == 1 \
 	&& BOOST_PP_ITERATION_FLAGS() == 1 \
 	/**/
 
@@ -779,7 +779,7 @@ template<class T> struct function_traits<T&> : function_traits<T> {
 	??=include BOOST_PP_ITERATE()
 
 // generate specializations for pointers-to-members
-#elif BOOST_PP_ITERATION_DEPTH() == 2 \
+# elif BOOST_PP_ITERATION_DEPTH() == 2 \
 	&& BOOST_PP_FRAME_FLAGS(1) == 1 \
 
 	// define ellipsis state
@@ -827,7 +827,7 @@ template<class T> struct function_traits<T&> : function_traits<T> {
 	#endif
 
 // parameter specializations
-#else
+# else
 
 	#define X BOOST_PP_ITERATION()
 
@@ -837,7 +837,7 @@ template<class T> struct function_traits<T&> : function_traits<T> {
 
 	#undef X
 
-#endif
+# endif
 ```
 
 One problem that still exists is the lack of support for `throw` specifications.
@@ -845,7 +845,7 @@ There is no way that we can completely handle it anyway because we cannot partia
 However, we could accurately report the "actual" function type, etc., including the `throw` specification (which the above implementation doesn't do, as it reconstructs those types).
 If you like, you can figure out how to do that on your own as an exercise.
 
-##See Also
+## See Also
 
 - [BOOST_PP_ITERATE](../ref/iterate.html)
 

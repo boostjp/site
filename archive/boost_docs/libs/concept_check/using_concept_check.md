@@ -1,4 +1,4 @@
-#コンセプト・チェックの利用
+# コンセプト・チェックの利用
 各コンセプトに対して、与えられた型 (あるいは型の集合) がコンセプトをモデル化していることを確かめるために使用することができる、何らかのコンセプト・チェック用クラスが存在する。 Boost コンセプト・チェック・ライブラリ (BCCL) は、C++ 標準ライブラリの中で使用される全てのコンセプト＋αを対象とした、コンセプト・チェック用クラスを含んでいる。 [リファレンス](reference.md) セクションに、このコンセプト・チェック用クラスをリストしてある。 さらに、他の Boost ライブラリも、ライブラリ独自の特別なコンセプトに対応するコンセプト・チェック用クラスを付随している。 例えば、[graph concept](../graph/graph_concepts.md.nolink) および [property map concept](../property_map/property_map.md.nolink) がある。 さらに、クラス・テンプレートや関数テンプレートを記述する者は、既存のコンセプトでカバーされていない要求事項を表現する必要のある場合は常に、新しいコンセプト・チェック用クラスを作成すべきである。 その方法は [コンセプト・チェック用クラスの作成](creating_concepts.md) セクションで説明する。
 
 BCCL のコンセプト・チェック用クラスの例として、`EqualityComparableConcept` クラスを挙げる。 このクラスは、C++ 標準 20.1.1 に記述されている `EqualityComparable` (等値比較可能) 要求事項および、SGI STL で文書化されている [`EqualityComparable`](http://www.sgi.com/tech/stl/EqualityComparable.html) (等値比較可能) コンセプトに相当する。
@@ -13,7 +13,7 @@ struct EqualityComparableConcept;
 個々のコンセプト・チェック用クラスには、該当するコンセプトにおいて有効な式を内包する `constraints()` という名前のメンバー関数がある。 ある型が `EqualityComparable` (等値比較可能) であるかどうかチェックするためには、その型でコンセプト・チェック用クラスのインスタンスを生成し、次に、コンパイラに、実際に `constraints()` 関数を実行することなくコンパイルさせる方法を見つける必要がある。 Boost コンセプト・チェック・ライブラリは、これを容易にする2つのユーティリティ： `function_requires()` と `BOOST_CLASS_REQUIRE` を定義している。
 
 
-##`function_requires()`
+## `function_requires()`
 `function_requires()` 関数は関数本体の中で使用できる。また、`BOOST_CLASS_REQUIRE` マクロはクラス定義本体で使用できる。 `function_requires()` 関数は引数をとらないが、コンセプト・チェック用クラスを受けるためのテンプレート・パラメータを有する。 これは、以下に示すように、インスタンス化されたコンセプト・チェック用クラスを明示的にテンプレート引数として与えられなければならないことを意味する。
 
 ```cpp
@@ -38,7 +38,7 @@ int main() {
 ```
 
 
-##`BOOST_CLASS_REQUIRE`
+## `BOOST_CLASS_REQUIRE`
 `BOOST_CLASS_REQUIRE` マクロは、ある型がコンセプトをモデル化しているかどうかチェックするために、クラス定義の内部で使用することができる。
 
 ```cpp
@@ -62,7 +62,7 @@ int main() {
 }
 ```
 
-##例
+## 例
 以前の [動機の例](../concept_check.md#motivating_example) に対してコンセプト・チェックを応用する場合、良いやり方として、テンプレート・パラメータ型が [`RandomAccessIterator`](http://www.sgi.com/tech/stl/RandomAccessIterator.html) をモデル化していることを確認するために `std::stable_sort()` の一番上に `function_requires()` を挿入することが一つ挙げられる。 さらに、`std::stable_sort()` は、イレテータの `value_type` が[`LessThanComparable` (未満比較可能)](http://www.sgi.com/tech/stl/LessThanComparable.html) を満足することが必要であるから、これをチェックするために、重ねて `function_requires()` を使用する。
 
 ```cpp

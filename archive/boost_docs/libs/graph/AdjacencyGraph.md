@@ -1,12 +1,12 @@
-#AdjacencyGraph
+# AdjacencyGraph
 AdjacencyGraph コンセプトは、グラフ中の頂点への隣接頂点の効率的なアクセス のためのインターフェースを供給する。これは [IncidenceGraph](IncidenceGraph.md) コンセプト (出辺の終点が隣接頂点である) と非常に良く似ている。 いくつかの状況では頂点への関心のみがあり、しかし一方、他の状況では辺も同様に重要になるため、両者のコンセプトが供給された。
 
 
-##Refinement of
+## Refinement of
 [Graph](Graph.md)
 
 
-##表記
+## 表記
 
 | 識別子 | 説明 |
 |--------|------|
@@ -15,7 +15,7 @@ AdjacencyGraph コンセプトは、グラフ中の頂点への隣接頂点の�
 | `v`    | 型が `boost::graph_traits<G>::vertex_descriptor` のオブジェクト。 |
 
 
-##関連型
+## 関連型
 
 - `boost::graph_traits<G>::traversal_category`
 
@@ -27,22 +27,22 @@ AdjacencyGraph コンセプトは、グラフ中の頂点への隣接頂点の�
 頂点 `v` のための隣接イテレータは `v` に隣接した頂点へのアクセスを提供する。そのため隣接イテレータの値型はそのグラフの頂点記述子型である。 隣接イテレータは [MultiPassInputIterator](../utility/MultiPassInputIterator.md) の要求を満たしていなければならない。
 
 
-##有効な表現式
+## 有効な表現式
 
 | 式 | 説明 |
 |----|------|
 | `adjacent_vertices(v, g)` | グラフ `g` 中の頂点 `v` に隣接している頂点へのアクセスを提供 するイテレータ範囲を返す。[[1]](#note1)<br/> 返却型: `std::pair<adjacency_iterator, adjacency_iterator>` |
 
 
-##計算量の保証
+## 計算量の保証
 `adjacent_vertices()` 関数は定数時間内に終了するはずである。
 
 
-##関連項目
+## 関連項目
 [Graphコンセプト](Graph.md), [`adjacency_iterator`](adjacency_iterator.md)
 
 
-##コンセプトチェックするクラス
+## コンセプトチェックするクラス
 
 ```cpp
 template <class G>
@@ -68,11 +68,11 @@ struct AdjacencyGraphConcept
 ```
 
 
-##設計原理
+## 設計原理
 [IncidenceGraph](IncidenceGraph.md) が同じ (それ以上の) 機能を実際に含んでいるので、AdjacencyGraph コンセプトはいくぶん軽薄である。 `adjacent_vertices()` が `out_edges()` よりも使用すると便利な状況があるので AdjacencyGraph コンセプトは存在する。 グラフ・クラスを構築しており、隣接イテレータを作成する余分な仕事を行いたくない場合は、恐れを持たないでいただきたい。 出辺イテレータから隣接イテレータを作成するために使用できる[`adjacency_iterator`](adjacency_iterator.md)と名付けられたアダプタ・クラスがある。
 
 
-##注釈
+## 注釈
 - <a name="note1" href="#note1">[1]</a> **multigraph** (多数の辺が同じ二つの頂点を接続できる) の 場合は、`adjacent_vertices()` 関数によって返されたイテレータが各隣接頂点を一度含む範囲にアクセスするかどうか、また `out_edges()` 関数 のふるまいと一致し、二度以上隣接した頂点を含むことがある範囲にアクセスすべき かどうかとしての問題が持ち出される。 この決定はグラフ・アルゴリズムの実装と共により多くの経験を考慮して再検討される必要があるかもしれないが、今のところふるまいは `out_edges()` のそれと一致すると定義される。
 
 

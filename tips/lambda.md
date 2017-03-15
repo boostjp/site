@@ -1,8 +1,8 @@
-#無名関数
+# 無名関数
 無名関数は、[Boost Lambda Library](http://www.boost.org/doc/libs/release/doc/html/lambda.html) または、 [Boost Phoenix Library](http://www.boost.org/doc/libs/release/libs/phoenix/doc/html/index.html) を使用することによって表現できる。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [メンバ変数を扱う](#member-variable)
 - [2つ以上の式を書く](#multiple-expressions)

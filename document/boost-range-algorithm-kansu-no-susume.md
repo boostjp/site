@@ -1,4 +1,4 @@
-#Boost.Range アルゴリズム関数のすすめ
+# Boost.Range アルゴリズム関数のすすめ
 
 Egtraです。[C++ Advent Calender jp 2010](http://atnd.org/events/10573)の参加記事です。実は、[高専カンファレンス 2010秋 in 東京](http://kosenconf.jp/?014tokyo)でも同じような内容で発表していました。そのときの内容をベースとしています。
 
@@ -175,7 +175,7 @@ int main()
 }
 ```
 
-##関連
+## 関連
 というわけで、まだ入れていない方はBoostを入れましょう。こちらを参考に: [letsboost::インストール](http://www.kmonos.net/alang/boost/install.html)。
 
 今回、Range（レンジ）のレの字も出しませんでした。そもそもRangeとはなんぞやという方はこちらを参考に: [letsboost::range](http://www.kmonos.net/alang/boost/classes/range.html)。2010年12月28日現在、Boost.Range 1.0 (Boost 1.42まで)ベースの解説となっています。

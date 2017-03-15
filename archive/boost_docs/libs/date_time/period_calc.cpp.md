@@ -1,4 +1,4 @@
-#period_calc.cpp
+# period_calc.cpp
 
 期間計算関数を使用して、不規則な日付のコレクションの期間を計算する。
 

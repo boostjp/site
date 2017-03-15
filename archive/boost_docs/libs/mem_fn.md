@@ -1,8 +1,8 @@
-#mem_fn.hpp
+# mem_fn.hpp
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/bind/mem_fn.html>
 
-##目次
+## 目次
 - [目的](#purpose)
 - [FAQ](#faq)
     - [mem_fnを、標準の std::mem_fun[_ref]アダプタのかわりに使用できるか?](#Q1)

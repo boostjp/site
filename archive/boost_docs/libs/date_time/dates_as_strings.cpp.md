@@ -1,4 +1,4 @@
-#dates_as_strings.cpp
+# dates_as_strings.cpp
 
 文字列の様々な解析および出力
 

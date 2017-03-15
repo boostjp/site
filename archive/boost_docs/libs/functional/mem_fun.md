@@ -1,4 +1,4 @@
-#Member Function Adapters
+# Member Function Adapters
 
 functional.hpp ヘッダは C++ 標準ライブラリ (§ 20.3.8): 由来のメンバ関 数アダプタの全ての強化バージョンを含んでいる:
 

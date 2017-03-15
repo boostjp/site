@@ -1,14 +1,14 @@
-#BOOST_PP_ARRAY_PUSH_BACK
+# BOOST_PP_ARRAY_PUSH_BACK
 
 The `BOOST_PP_ARRAY_PUSH_BACK` macro appends an element to the end of an `array`.
 
-##Usage
+## Usage
 
 ```cpp
 BOOST_PP_ARRAY_PUSH_BACK(array, elem)
 ```
 
-##Arguments
+## Arguments
 
 - `array` :
 	The `array` to append an element to.
@@ -16,16 +16,16 @@ BOOST_PP_ARRAY_PUSH_BACK(array, elem)
 - `elem` :
 	The element to append.
 
-##Requirements
+## Requirements
 
 **Header:** &lt;boost/preprocessor/array/push_back.hpp&gt;
 
-##Sample Code
+## Sample Code
 
 ```cpp
 #include <boost/preprocessor/array/push_back.hpp>
 
-#define ARRAY (3, (a, b, c))
+# define ARRAY (3, (a, b, c))
 
 BOOST_PP_ARRAY_PUSH_BACK(ARRAY, d) // expands to (4, (a, b, c, d))
 ```

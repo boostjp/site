@@ -1,8 +1,8 @@
-#bind.hpp
+# bind.hpp
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/bind/bind.html>
 
-##目次
+## 目次
 - [目的](#purpose)
 	- [関数と関数ポインタに対して`bind`を使用する](#using-bind-with-function-and-function-pointer)
 	- [関数オブジェクトに対して`bind`を使用する](#using-bind-with-function-object)

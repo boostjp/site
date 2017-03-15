@@ -1,4 +1,4 @@
-#Other Classses
+# Other Classses
 
 - [`extended_type_info`](other-classses/extended_type_info.md)
 - [`void_cast`](other-classses/void_cast.md)

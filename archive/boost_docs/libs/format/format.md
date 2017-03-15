@@ -1,11 +1,11 @@
-#The Boost Format library
+# The Boost Format library
 
 `<boost/format.hpp>` `format `クラスは `printf` に似た、ユーザ定義型も扱える型安全な書式化処理を提供する。 
 
 (このライブラリは他の `boost` ライブラリに依存しない)
 
 
-##目次
+## 目次
 - [概要](#synopsis)
 - [どのように作用するか](#how-it-works)
 - [コード例](#examples)

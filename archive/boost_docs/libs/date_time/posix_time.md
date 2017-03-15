@@ -1,10 +1,10 @@
-#Posix Time System Documentation
+# Posix Time System Documentation
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)
 
 
-##目次
+## 目次
 
 - [Introduction](#introduction)
 - [Usage Examples](#usage-examples)

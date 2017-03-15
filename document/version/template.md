@@ -1,4 +1,4 @@
-#Boost 1.xx.0リリースノート
+# Boost 1.xx.0リリースノート
 
 本家リリースノート：
 
@@ -16,12 +16,12 @@
 - 「[Modularized Boost（GitHubへ移行したリポジトリ）を使用する](http://dev.activebasic.com/egtra/2013/12/03/620/)」
 
 
-##新ライブラリ
+## 新ライブラリ
 
 - [NewOne](#newone) # example
 
 
-##更新ライブラリ
+## 更新ライブラリ
 
 - [One](#one) # example
 - [Two](#two) # example
@@ -60,7 +60,7 @@
 - trailing [#xxxx](https://svn.boost.org/trac/boost/ticket/xxxx)
 
 
-##テスト済みコンパイラ
+## テスト済みコンパイラ
 主要なテストコンパイラ:
 
 - Linux:
@@ -105,6 +105,6 @@
 - QNX:
 	- QCC:
 
-##翻訳
+## 翻訳
 [Someone](https://github.com/)
 

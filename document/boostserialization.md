@@ -1,7 +1,7 @@
-#Boost.Serialization
+# Boost.Serialization
 全体的に翻訳途中です。
 
-##Index
+## Index
 
 - ReleaseNotes
 - [Overview](boostserialization/overview.md)

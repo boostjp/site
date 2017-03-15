@@ -1,4 +1,4 @@
-#Boost Random Number Library
+# Boost Random Number Library
 
 乱数は、様々な種類のアプリケーションで役立つ。
 Boost Random Number Library (略してBoost.Random)は、例えば一様分布といったような、有用な特徴をもつ乱数を生成するための膨大で多様な生成子と分布を供給する。
@@ -6,7 +6,7 @@ Boost Random Number Library (略してBoost.Random)は、例えば一様分布�
 導入と基本的な概念の定義の理解のため、 [concepts documentation[概要]](random/random-concepts.md) を読むべきである。
 早く始めたいのなら、[random_demo.cpp](http://www.boost.org/doc/libs/1_31_0/libs/random/random_demo.cpp) を一読すれば十分であろう。
 
-##Library Organization
+## Library Organization
 
 ライブラリは全て `boost/random/` ディレクトリ中に、複数のヘッダー・ファイルに分かれて存在している。
 さらに、`boost/random/` 中に存在する他の全てのヘッダー・ファイルをインクルードしている便利なヘッダー・ファイルが、 [`boost/random.hpp`](http://www.boost.org/doc/libs/1_31_0/boost/random.hpp) として利用可能である。
@@ -42,19 +42,19 @@ Boost Random Number Library (略してBoost.Random)は、例えば一様分布�
 
 生成子と分布関数のインターフェースを他のコンセプトに配置するために、[`decorators[装飾子?]`](http://www.boost.org/doc/libs/1_31_0/libs/random/random-misc.html) が利用可能である。
 
-##Tests
+## Tests
 
 広範囲にわたる擬似乱数生成子と分布のためのテストスーツが [random_test.cpp](http://www.boost.org/doc/libs/1_31_0/libs/random/random_test.cpp) で利用可能である。
 
 [random_speed.cpp](http://www.boost.org/doc/libs/1_31_0/libs/random/random_speed.cpp) を使用して得られた [performance results[実行結果]](http://www.boost.org/doc/libs/1_31_0/libs/random/random-performance.html) も見ることができる。
 
-##Rationale
+## Rationale
 
 決定論的乱数と非決定論的乱数の生成及び算出手法は根本的に異なるものである。
 おまけに、現代のコンピュータで本来的に使用されている決定論的[乱数生成]デザインのために、非決定論的乱数の生成手段を実装することは困難である。
 そこで、この乱数ライブラリは、2つの異なる適用領域を反映して、複数のヘッダー・ファイルに分割されている。
 
-##History and Acknowledgements
+## History and Acknowledgements
 
 1999年11月、Jeet Sakumaran は仮想関数に基づくフレームワークを提案、後にテンプレートに基づく方法の大筋を記した。
 Ed Brey が、Microsoft Visual C++ がクラス内のメンバ初期化をサポートしていないことを指摘し、`enum` による回避手段を提案。

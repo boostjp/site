@@ -1,4 +1,4 @@
-#posix_time::ptime Documentation
+# posix_time::ptime Documentation
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

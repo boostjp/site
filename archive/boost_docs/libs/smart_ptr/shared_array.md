@@ -1,4 +1,4 @@
-#shared_array class template
+# shared_array class template
 
 `shared_array`クラステンプレートは動的に割り当てられた配列へのポインタを保持する。
 (動的に割り当てられた配列とは、C++の`new[]`によって割り当てられたものである。)
@@ -20,7 +20,7 @@
 このクラステンプレートには、指し示す配列の要素の型を表すパラメータ`T`を与える。
 `T`はスマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を満たさなければならない。
 
-##Synopsis
+## Synopsis
 
 ```cpp
 namespace boost {
@@ -79,15 +79,15 @@ void swap(shared_array<T> & a, shared_array<T> & b); // never throws
 * operator<[link #comparison]
 * swap[link #free-swap]
 
-##Members
+## Members
 
-###<a name="element_type">element_type</a>
+### <a name="element_type">element_type</a>
 
 `typedef T element_type;`
 
 テンプレートパラメータ T の型を規定する。
 
-###<a name="constructors">constructors</a>
+### <a name="constructors">constructors</a>
 
 `explicit shared_array(T * p = 0);`
 
@@ -118,7 +118,7 @@ shared_array(T * p, D d);
 `shared_array`を構築し、`r`が保持するポインタのコピーを保持したかのように作用する。
 その後、全てのコピーの[use count](#use_count)は1増加する。
 
-###<a name="destructor">destructor</a>
+### <a name="destructor">destructor</a>
 
 `~shared_array(); // never throws`
 
@@ -129,14 +129,14 @@ shared_array(T * p, D d);
 削除される配列の要素のデストラクタが例外を送出しないという条件が満たされている場合、このデストラクタが例外を送出しないことが保証される。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-###<a name="operator=">assignment</a>
+### <a name="operator=">assignment</a>
 
 `shared_array & operator=(shared_array const & r); // never throws`
 
 [上](#constructors)で説明されているように新しい`shared_array`が構築され、現在の`shared_array`と新しい`shared_array`が交換される。
 交換された元のオブジェクトは破棄される。
 
-###<a name="reset">reset</a>
+### <a name="reset">reset</a>
 
 `void reset(T * p = 0);`
 
@@ -156,14 +156,14 @@ void reset(T * p, D d);
 送出する可能性のある例外は`std::bad_alloc`だけである。
 もし例外が発生すると、`d(p)`が呼び出される。
 
-###<a name="indirection">indexing</a>
+### <a name="indirection">indexing</a>
 
 `T & operator[](std::ptrdiff_t i) const; // never throws`
 
 保持しているポインタが指す配列の`i`番目の要素への参照を返す。
 保持しているポインタが0のとき、及び`i`が0未満または配列の要素数以上の数であるとき、この演算子のふるまいは未定であり、ほぼ確実に有害である。
 
-###<a name="get">get</a>
+### <a name="get">get</a>
 
 `T * get() const; // never throws`
 
@@ -171,7 +171,7 @@ void reset(T * p, D d);
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-###<a name="unique">unique</a>
+### <a name="unique">unique</a>
 
 `bool unique() const; // never throws`
 
@@ -180,7 +180,7 @@ void reset(T * p, D d);
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-###<a name="use_count">use_count</a>
+### <a name="use_count">use_count</a>
 
 `long use_count() const; // never throws`
 
@@ -191,7 +191,7 @@ void reset(T * p, D d);
 `use_count`は、明示的に参照カウントを使わないようにするための`shared_array`の実装に必要とされて用意されているものではないため、将来のバージョンでは削除される可能性がある。
 従って、`use_count`はデバッグや試験の為にだけ使用するべきで、製品のコードに使用するべきでない。 
 
-###<a name="swap">swap</a>
+### <a name="swap">swap</a>
 
 `void swap(shared_ptr & b); // never throws`
 
@@ -199,9 +199,9 @@ void reset(T * p, D d);
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-##<a name="functions">Free Functions</a>
+## <a name="functions">Free Functions</a>
 
-###<a name="comparison">comparison</a>
+### <a name="comparison">comparison</a>
 
 ```cpp
 template<ypename T>
@@ -222,7 +222,7 @@ bool operator<(shared_array<T> const & a, shared_array<T> const & b); // never t
 C++標準によると、ポインタに対する関係演算の結果は不定であるが(5.9 [expr.rel] paragraph 2)、ポインタに対する`std::less<>`の結果は明確に定義されている。
 (20.3.3 [lib.comparisons] paragraph 8).
 
-###<a name="free-swap">swap</a>
+### <a name="free-swap">swap</a>
 
 ```cpp
 template<typename T>

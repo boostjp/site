@@ -1,4 +1,4 @@
-#gregorian::date iterators
+# gregorian::date iterators
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

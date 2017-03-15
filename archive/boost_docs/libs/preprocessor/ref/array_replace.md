@@ -1,14 +1,14 @@
-#BOOST_PP_ARRAY_REPLACE
+# BOOST_PP_ARRAY_REPLACE
 
 The `BOOST_PP_ARRAY_REPLACE` macro replaces an element in an `array`.
 
-##Usage
+## Usage
 
 ```cpp
 BOOST_PP_ARRAY_REPLACE(array, i, elem)
 ```
 
-##Arguments
+## Arguments
 
 - `array` :
 	An `array` to replace an element in.
@@ -20,25 +20,25 @@ BOOST_PP_ARRAY_REPLACE(array, i, elem)
 - `elem` :
 	The replacement element.
 
-##Remarks
+## Remarks
 
 This macro uses `BOOST_PP_WHILE` interally.
 Therefore, to use the `d` parameter passed from other macros that use `BOOST_PP_WHILE`, see `BOOST_PP_ARRAY_REPLACE_D`.
 
-##See Also
+## See Also
 
 - [`BOOST_PP_ARRAY_REPLACE_D`](array_replace_d.md)
 
-##Requirements
+## Requirements
 
 **Header:** &lt;boost/preprocessor/array/replace.hpp&gt;
 
-##Sample Code
+## Sample Code
 
 ```cpp
 #include <boost/preprocessor/array/replace.hpp>
 
-#define ARRAY (3, (a, x, c))
+# define ARRAY (3, (a, x, c))
 
 BOOST_PP_ARRAY_REPLACE(ARRAY, 1, b) // expands to (3, (a, b, c))
 ```

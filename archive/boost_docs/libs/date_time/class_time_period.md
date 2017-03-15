@@ -1,4 +1,4 @@
-#posix_time::time_period
+# posix_time::time_period
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

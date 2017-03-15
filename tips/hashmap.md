@@ -1,10 +1,10 @@
-#ハッシュ表
+# ハッシュ表
 ハッシュ表には、[Boost Unordered Library](http://www.boost.org/doc/libs/release/doc/html/unordered.html)を使用する。
 
 `std::map`のハッシュ表バージョンが`boost::unordered_map`。`std::set`のハッシュ表バージョンが`boost::unordered_set`。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [ユーザー定義型をキーにする(オーバーロード)](#user-defined-type-as-key-using-overload)
 - [ユーザー定義型をキーにする(ポリシー)](#user-defined-type-as-key-using-policy)

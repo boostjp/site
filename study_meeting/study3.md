@@ -1,20 +1,20 @@
-#Boost.勉強会 #3 関西
+# Boost.勉強会 #3 関西
 
-##開催日時
+## 開催日時
 2010/10/23 10:00～17:00
 
 
-##開催場所
+## 開催場所
 株式会社オージス総研 
 (大阪府豊中市新千里西町1丁目2番1号)
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 #3 関西 - こくちーず](http://kokucheese.com/event/index/4335/)
 - [Boost.懇親会 #3 関西 - ATND](http://atnd.org/events/7665)
 
 
-##タイムテーブル
+## タイムテーブル
 - 09:30～ : 開場
 - 09:50～10:00 : 会場の説明
 - 10:00～10:30 : 「Boostで3日で作るtwitterクライアント」(clown)
@@ -29,15 +29,15 @@
 - 16:10～16:50 : Boost.PropertyMap(Cryolite)
 
 
-##Ust
+## Ust
 [http://www.ustream.tv/channel/boostkansai](http://www.ustream.tv/channel/boostkansai)
 
 
-##Twitterハッシュタグ
+## Twitterハッシュタグ
 - [#boostjp](http://twitter.com/search?q=%23boostjp)
 
 
-##発表内容
+## 発表内容
 ### Boostで3日で作るtwitterクライアント
 - 発表者 ： clown
 - ブログ ： <http://d.hatena.ne.jp/tt_clown/>
@@ -143,7 +143,7 @@
 - 高画質版ビデオ ： [http://www.ustream.tv/recorded/10424505](http://www.ustream.tv/recorded/10424505)
 
 
-##関連リンク
+## 関連リンク
 - [Boost関西勉強会 高画質版Movie](http://d.hatena.ne.jp/redboltz/20101026/1288094749)
 - [Boost.勉強会 #3 関西 に参加 - 桜、抹茶、白、日記](http://d.hatena.ne.jp/youandi/20101023/p1)
 - [Boost.勉強会 #3 関西を開催しました - Faith and Brave - C++で遊ぼう](http://d.hatena.ne.jp/faith_and_brave/20101025/1287979418)

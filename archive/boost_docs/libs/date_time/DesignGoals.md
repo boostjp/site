@@ -1,4 +1,4 @@
-#全体的な設計の目標
+# 全体的な設計の目標
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

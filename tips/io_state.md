@@ -1,7 +1,7 @@
-#ストリームの状態を戻す
+# ストリームの状態を戻す
 [Boost IO State Savers Library](http://www.boost.org/doc/libs/release/libs/io/doc/ios_state.html)を使用すると、ストリームオブジェクトを以前の状態に戻すことができる。
 
-##インデックス
+## インデックス
 - [フォーマットフラグを戻す](#format-flags)
 
 

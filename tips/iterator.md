@@ -1,7 +1,7 @@
-#イテレータを作る
+# イテレータを作る
 [Boost Iterator Library](http://www.boost.org/doc/libs/release/libs/iterator/doc/index.html)を用いると、イテレータをより楽に作成できる。
 
-##インデックス
+## インデックス
 - [イテレータを作成する（`iterator_facade`）](#iterator_facade)
 - [イテレータの種類と要求されるメンバ関数](#variation)
 - [より楽にイテレータを作成する（`iterator_adaptor`）](#iterator_adaptor)

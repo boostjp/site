@@ -1,4 +1,4 @@
-#EventVisitorList Concept
+# EventVisitorList Concept
 
 EventVisitorList は、[EventVisitor](EventVisitor.md) そのものか、 `std::pair` で結合された EventVisitor のリストである。各グラフアルゴリズムには、 EventVisitorList を、アルゴリズムに必要な独自のビジタに変換するアダプタが定義されている。 以下に、イベントビジタを `std::pair` で結合してリストにする方法の例と、アルゴリズムのビジタアダプタクラスの使い方の例を示す。
 
@@ -54,7 +54,7 @@ std::make_pair(visitor1,
 ```
 
 
-##関連項目
+## 関連項目
 [EventVisitor](EventVisitor.md), [Visitorコンセプト](visitor_concepts.md)
 
 

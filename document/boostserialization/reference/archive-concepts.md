@@ -1,5 +1,5 @@
-#Archive Concepts
-##Notaion
+# Archive Concepts
+## Notaion
 
 - `SA`はSaving Archive Conceptのモデルである
 - `sa`は`SA`のインスタンスである
@@ -10,8 +10,8 @@
 - `u`,`v`は`T`型のインスタンスへのポインタである
 - `count`は、`std::size_t`に変換可能な型のインスタンスである
 
-##Saving Archive Concept
-###Associated Types
+## Saving Archive Concept
+### Associated Types
 
 直感的に、このモデル概念はC++のデータ構造のセットに対応するバイトシーケンスを生成します。
 
@@ -21,7 +21,7 @@
 
 つまり、SAによって生成されたバイト列を与えると、LAは、元のC++データ構造の等価物を生成します。
 
-###Valid Expressions
+### Valid Expressions
 
 ```
 SA::is_saving

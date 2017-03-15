@@ -1,8 +1,8 @@
-#カリー化／部分適用
+# カリー化／部分適用
 カリー化と部分適用は、[Boost Bind Library](http://www.boost.org/doc/libs/release/libs/bind/bind.html)と[Boost Function Library](http://www.boost.org/doc/libs/release/doc/html/function.html)を組み合わせることで表現できる。
 
 
-##インデックス
+## インデックス
 - [部分適用(partial application)](#partial-application)
 - [カリー化(currying)+適用(applying)](#currying)
 - [メンバ関数のレシーバを部分適用する](#receiver-partial-application)

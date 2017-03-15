@@ -1,12 +1,12 @@
-#Dijkstra Visitor Concept
+# Dijkstra Visitor Concept
 このコンセプトは [`dijkstra_shortest_paths()`](dijkstra_shortest_paths.md) 用のビジタのインタフェースと、関連するアルゴリズムを定義する。ユーザはこのインタフェースに一致するクラスを作って、そのクラスのオブジェクトを `dijkstra_shortest_paths()` に渡すことで、探索中に実行される操作を追加できる。
 
 
-##Refinement of
+## Refinement of
 [Copy Constructible](../utility/CopyConstructible.md) (ビジタのコピーは軽い操作である方がいい)
 
 
-##表記
+## 表記
 
 | 識別子 | 説明 |
 |--------|------|
@@ -22,11 +22,11 @@
 | `w`           | `DistanceMap` 型のオブジェクト。 |
 
 
-##関連型
+## 関連型
 なし
 
 
-##有効な表現式
+## 有効な表現式
 
 | 名前 | 式 | 戻り値 | 説明 |
 |------|----|--------|------|
@@ -39,7 +39,7 @@
 | Finish Vertex     | `vis.finish_vertex(u, g)`     | `void` | ある頂点の全ての出力辺が探索木に追加され、全ての隣接する頂点が発見された後に、その頂点に対して実行される (ただし、隣接する頂点の出力辺を調査するよりは前に) 。 |
 
 
-##モデル
+## モデル
 [`dijkstra_visitor`](dijkstra_visitor.md)
 
 

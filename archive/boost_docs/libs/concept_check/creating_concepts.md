@@ -1,4 +1,4 @@
-#コンセプト・チェック用クラスの作成
+# コンセプト・チェック用クラスの作成
 コンセプト・チェック用クラスを作成する方法の例証として、[`RandomAccessIterator`](http://www.sgi.com/tech/stl/RandomAccessIterator.html) コンセプトに対応するチェック用クラスを作成する方法を考察する。 最初に、命名規約として、コンセプト・チェック用クラスの名前を、対象コンセプトの名称に接尾辞として "Concept" を加えて生成する。 次に、コンセプトにおける有効式を試行する `constraints()` という名のメンバ関数を定義しなければならない。 `function_requires()` 関数は、この関数のシグネチャが正確に次に示すとおりであることを前提にしている：非 `const` メンバ、パラメータ無し、戻り値型 `void` 。
 
 `constraints()` 関数の最初の部分は、[`RandomAccessIterator`](http://www.sgi.com/tech/stl/RandomAccessIterator.html) と、それが基礎を置くコンセプト、[`BidirectionalIterator`](http://www.sgi.com/tech/stl/BidirectionalIterator.html) 及び [`LessThanComparable`](http://www.sgi.com/tech/stl/LessThanComparable.html) との間にある発展形 "refinement" の関係を表現する要求事項を含んでいる。 そうする代わりに、`BOOST_CLASS_REQUIRE` マクロを使用して、クラス本体に要求事項を置くこともできる。しかし、`BOOST_CLASS_REQUIRE` マクロは、C++ 言語機能としてはやや移植性に欠けるものを使用しているので、ここでは避けた。

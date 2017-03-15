@@ -1,4 +1,4 @@
-#Header `<boost/function.hpp>`
+# Header `<boost/function.hpp>`
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/doc/html/function.html>
 
@@ -7,7 +7,7 @@
 一般に、遅延呼び出しやコールバックを実現するために関数ポインタを使うあらゆる場面で、代わりに Boost.Function を使用できる。そして、それによって呼ばれる側の実装はぐっと自由になる。呼ばれる側にはあらゆる「互換性のある」関数オブジェクト (や関数ポインタ) が指定できる。「互換性がある」とは、 Boost.Function に渡した引数が、対象となる関数オブジェクトの引数に変換できるということだ(訳注：戻り値にも互換性が必要)。
 
 
-##目次
+## 目次
 - [Compatibility Note](#compatibility-note)
 - [Tutorial](function/tutorial.md)
 - [Reference manual](function/reference.md)
@@ -52,17 +52,17 @@ Boost.Function には関数ポインタに比べていくつかの利点があ�
 
 ## <a name="performance" href="#performance">Performance</a>
 
-###Function object wrapper size
+### Function object wrapper size
 
 関数オブジェクトのラッパのサイズは 2 つの関数ポインタと、 1 つの関数ポインタまたはデータのポインタ (の大きい方) のサイズになる。一般的な 32 ビットプラットフォームでは、 1 つのラッパ当たり 12 バイトになる。さらに、対象となる関数オブジェクトがヒープに割り当てられる。
 
 
-###Copying efficiency
+### Copying efficiency
 
 関数オブジェクトのラッパのコピーによって、格納された関数オブジェクトのコピーのためにメモリ割り当てが発生する。デフォルトのアロケータを、もっと速いカスタムアロケータで置換することもできる。また、関数オブジェクトのラッパが、対象となる関数オブジェクトの「参照」を格納するように指定できる (`ref`を使用) 。これは関数オブジェクトのコピーが酷く高価な場合に有効だ。
 
 
-###Invocation efficiency
+### Invocation efficiency
 
 適切なインライン化を行うコンパイラならば、関数オブジェクトの呼び出しによって、関数ポインタを通した呼び出しが 1 回行われる。非メンバ関数ポインタの呼び出しならば、その関数ポインタの呼び出しに加えて、もう 1 回の呼び出しが行われる (コンパイラがとても強力な関数をまたいだ分析を行うならば別だが) 。
 
@@ -87,7 +87,7 @@ Boost.Function は、できるだけ移植性を高めるように、できる�
 
 ## <a name="design-rationale" href="#design-rationale">Design rationale</a>
 
-###Combatting virtual function bloat
+### Combatting virtual function bloat
 
 多くのコンパイラでは、仮想関数の使用によって「コードの膨張」が起きがちである。クラスが仮想関数を持つ場合、オブジェクトの型を分類する補助関数を作る必要がある。私達の経験では、多くの `boost::function` オブジェクトが使われると、この補助関数が実行可能ファイルのサイズを大きく膨張させる。
 

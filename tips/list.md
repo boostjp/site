@@ -1,7 +1,7 @@
-#リスト処理の遅延評価
+# リスト処理の遅延評価
 [Boost Range Library](http://www.boost.org/doc/libs/release/libs/range/doc/html/index.html)のRangeアダプタは、リスト処理を遅延評価する仕組みを提供する。
 
-##インデックス
+## インデックス
 - [条件抽出 - `filtered`](#filter)
 - [値の変換 - `transformed`](#transform-value)
 - [型変換 - `transformed`](#transform-type)

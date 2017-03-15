@@ -1,6 +1,6 @@
-#運営メンバ
+# 運営メンバ
 
-##高橋 晶(Akira Takahashi)
+## 高橋 晶(Akira Takahashi)
 ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/faithandbrave.png)
 
 - Boost.勉強会 東京 主催者
@@ -11,7 +11,7 @@
 - My Favorite Boost : Fusion, MultiIndex, Spirit.Qi, Geometry 
 
 
-##湯朝剛介(hotwatermorning)
+## 湯朝剛介(hotwatermorning)
 [![](https://raw.githubusercontent.com/boostjp/image/master/the-team/hotwatermorning.png)
 
 - Boost.勉強会 札幌 主催者
@@ -20,7 +20,7 @@
 - My Favorite Boost : Thread, Spirit.Qi, Lambda
 
 
-##平野雅寛(bleis-tift)
+## 平野雅寛(bleis-tift)
 ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/bleis.png)
 
 - Boost.勉強会 名古屋 主催者
@@ -29,7 +29,7 @@
 - My Favorite Boost : Variant, Optional, Function, Lambda
 
 
-##高橋 航平(Flast)
+## 高橋 航平(Flast)
 
 ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/flast.png)
 
@@ -39,7 +39,7 @@
 - My Favorite Boost : Build, Thread, Context, MPL, Preprocessor
 
 
-##清水 聡(Akira Shimizu)
+## 清水 聡(Akira Shimizu)
 ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/akineko.png)
 
 - Boost.勉強会 大阪 主催者
@@ -48,7 +48,7 @@
 - My Favorite Boost : Optional, Xpressive, Bind, Function
 
 
-##近藤 貴俊(Takatoshi Kondo)
+## 近藤 貴俊(Takatoshi Kondo)
 ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/redboltz.png)
 
 - Boost.Serialization, Boost.MSMコントリビュータ
@@ -57,7 +57,7 @@
 - My Favorite Boost : Serialization, Msm
 
 
-##遥 佐保(Akiko Yamanouchi)
+## 遥 佐保(Akiko Yamanouchi)
 ![](https://raw.githubusercontent.com/boostjp/image/master/the-team/haruka_sao.png)
 
 - Boost.勉強会 大阪 主催者

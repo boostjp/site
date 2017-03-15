@@ -1,8 +1,8 @@
-#テンプレートの再帰上限数workaround(rejected)
+# テンプレートの再帰上限数workaround(rejected)
 本提案の発起人： Akira Takahashi(@cpp_akira), Kohei Takahashi(@Flast_RO)
 
 
-##内容
+## 内容
 `BOOST_TEMPLATE_RECURSION_MAX`のようなマクロで、現在のコンパイラのテンプレート再帰上限数を取得できるようにする。C++03の規格では17推奨、C++11の規格では1024推奨。
 
 
@@ -17,7 +17,7 @@
 | VC++2010                      | 499  | Hirofumi Miki |
 
 
-##課題
+## 課題
 - Boost 1.47.0現在、Boost.Buildがテンプレートの再帰数を強制的に128に設定してしまう(Kohei Takahashi)
 	- → 提案するときついでにバグ報告しましょう(Akira Takahashi)
 	- → `<c++-template-depth>n`で変更可能です(Kohei Takahashi)
@@ -27,7 +27,7 @@
 - VCのテンプレート再帰数は500という情報もあるが、それに達する前にクラッシュすることがある。最低値を算出する必要がある(zak)。[http://channel9.msdn.com/Shows/Going+Deep/C9-Lectures-Stephan-T-Lavavej-Advanced-STL-1-of-n](http://channel9.msdn.com/Shows/Going+Deep/C9-Lectures-Stephan-T-Lavavej-Advanced-STL-1-of-n)[http://stackoverflow.com/questions/2638409/just-introducing-myself-to-tmping-and-came-across-a-quirk/2638485](http://stackoverflow.com/questions/2638409/just-introducing-myself-to-tmping-and-came-across-a-quirk/2638485)
 
 
-##検証コード
+## 検証コード
 VCはアンドキュメントなので実際に試してみるしかない。
 
 VC++2008

@@ -1,13 +1,13 @@
-#Boost.Signals: ヘッダ &lt;boost/signal.hpp&gt;
+# Boost.Signals: ヘッダ &lt;boost/signal.hpp&gt;
 
-##ヘッダ
+## ヘッダ
 
 ```cpp
 #include <boost/signal.hpp>
 ```
 * boost/signal.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/signal.hpp]
 
-##概要
+## 概要
 
 `signal` クラステンプレートの仕様では、二つの正整数 `BOOST_SIGNALS_MAX_ARGS` と `N` が使われている。
 前者はスロットに受け渡すことが出来る関数のパラメタ最大数を、後者は所与の実体化されたシグナルに対する関数のパラメタ数を記述する。
@@ -32,7 +32,7 @@ namespace boost {
 * signal[link signalN.md]
 * signal[link #constructor]
 
-###コンストラクタ
+### コンストラクタ
 
 <a name="#constructor">`explicit signal(const Combiner& combiner = Combiner(), const GroupCompare& group_compare = GroupCompare());`</a>
 

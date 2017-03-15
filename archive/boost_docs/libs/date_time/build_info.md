@@ -1,4 +1,4 @@
-#Date-Time Build-Compiler Information
+# Date-Time Build-Compiler Information
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

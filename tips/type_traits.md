@@ -1,8 +1,8 @@
-#型特性
+# 型特性
 [Boost Type Traits Library](http://www.boost.org/doc/libs/release/libs/type_traits/doc/html/index.html)では、型がどういった特徴を持っているかを判定するメタ関数が多く提供されている。
 
 
-##インデックス
+## インデックス
 - [型の分類](#type-category)
     - [配列型かどうかを判定する](#is-array)
     - [クラスかどうかを判定する](#is-class)

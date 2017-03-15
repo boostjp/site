@@ -1,8 +1,8 @@
-#日付の計算
+# 日付の計算
 
 日付の計算には、Boost.DateTimeライブラリのGregorianを使用する。
 
-##インデックス
+## インデックス
 
 - [月末日の取得](#end-of-month-day)
 - [日付の加減算](#date-add-subtract)

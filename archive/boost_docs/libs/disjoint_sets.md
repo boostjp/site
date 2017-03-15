@@ -1,4 +1,4 @@
-#Distjoint Sets（互いに素な集合）
+# Distjoint Sets（互いに素な集合）
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/disjoint_sets/disjoint_sets.html>
 
@@ -9,11 +9,11 @@ disjoint_sets<Rank, Parent, FindCompress>
 このクラスは、互いに素な集合（素集合）の演算に 順位による和集合 および パス圧縮 を提供する。disjoint-sets のデータ構造は、素集合の S = {S<sub>1</sub>, S<sub>2</sub>, ..., S<sub>k</sub>} というコレクションを維持する。 各集合は、集合のいくつかの要素である 代表値 によって識別される。 集合は、Parent プロパティマップの中の符号化された有向木によって表わされる。 2つの発見的手法: 「順位による和集合」 および 「パス圧縮」 は、 演算を高速化するのに使われる  [[1](disjoint_sets/bibliography.md#tarjan83), [2](disjoint_sets/bibliography.md#clr90)]。
 
 
-##Where Defined
+## Where Defined
 - boost/disjoint_sets.hpp
 
 
-##Template Parameters
+## Template Parameters
 
 | パラメータ     | 説明 |
 |----------------|------|
@@ -22,7 +22,7 @@ disjoint_sets<Rank, Parent, FindCompress>
 | `FindCompress` | 代表値の検索およびパス圧縮関数オブジェクトのうちの 1つであるべきだ。 |
 
 
-##Example
+## Example
 `disjoint_sets` に対する典型的な使用法の手本は [`kruskal_minimum_spanning_tree()`](graph/kruskal_minimum_spanning_tree.md.nolink) アルゴリズムで見ることができる。 この例では、`union_set()` の代わりに `link()` を呼び出す。 なぜなら、`u` および `v` が `find_set()` から得られ、したがって、既にそれら集合の代表値であるからだ。
 
 ```cpp
@@ -45,7 +45,7 @@ while ( !Q.empty() ) {
 ```
 
 
-##Members
+## Members
 
 | メンバ | 説明 |
 |--------|------|
@@ -59,7 +59,7 @@ while ( !Q.empty() ) {
 | `template <class ElementIterator>`<br/> `void compress_sets(ElementIterator first, ElementIterator last)` | すべての要素の親がその代表値であるように親ツリーを平滑化する。 |
 
 
-##Complexity
+## Complexity
 時間計算量は、O(m alpha(m,n)) である。alpha は逆アッカーマン関数、 m は disjoint-set の演算（`make_set()`、`find_set()`、および `link()`）の総数、n は要素数である。 alpha 関数はとても遅く、log 関数よりもはるかに遅くなる。
 
 
@@ -77,7 +77,7 @@ disjoint_sets_with_storage<ID,InverseID,FindCompress>
 このクラスは、順位および親のプロパティのための記憶領域を内部で管理する。 記憶領域は、要素IDにより索引付けされた配列の中にある。ゆえに、ID および InverseID ファンクタを必要とする。 順位および親のプロパティは、構築中に初期化される、 したがって、各要素は自動的に集合の中にある（従って、このクラスのオブジェクトを [`initialize_incremental_components()`](graph/incremental_components.md.nolink#sec:initialize-incremental-components) 関数で初期化することは必要でない。）。 このクラスは、頂点プロパティを格納する場所を提供しない `edge_list` グラフの（動的）接続している構成要素を計算する場合に特に有用である。
 
 
-##Template Parameters
+## Template Parameters
 
 | パラメータ | 説明 | デフォルト |
 |------------|------|------------|
@@ -86,7 +86,7 @@ disjoint_sets_with_storage<ID,InverseID,FindCompress>
 | `FindCompress` | 代表値の検索およびパス圧縮関数オブジェクトのうちの 1つであるべきだ。 | `representative_with_full_path_compression` |
 
 
-##Members
+## Members
 このクラスは、以下のメンバだけでなく `disjoint_sets` のすべてのメンバも持っている。
 
 ```cpp

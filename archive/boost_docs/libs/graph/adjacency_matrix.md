@@ -1,4 +1,4 @@
-#adjacency_matrix
+# adjacency_matrix
 ```cpp
 adjacency_matrix<Directed, VertexProperty, 
                  EdgeProperty, GraphProperty,
@@ -19,7 +19,7 @@ adjacency_matrix<Directed, VertexProperty,
 図 2: 無向グラフの隣接行列表現。
 
 
-##Example
+## Example
 
 図1のグラフを生成する。
 
@@ -111,11 +111,11 @@ F <--> A B
 ```
 
 
-##Where Defined
+## Where Defined
 boost/graph/adjacency_matrix.hpp
 
 
-##Template Parameters
+## Template Parameters
 
 | パラメータ | 説明 | デフォルト |
 |------------|------|------------|
@@ -125,11 +125,11 @@ boost/graph/adjacency_matrix.hpp
 | `GraphProperty`  | グラフのオブジェクトの内部プロパティ記憶域を指定する。 | `no_property` |
 
 
-##Model Of
+## Model Of
 [VertexAndEdgeListGraph](VertexAndEdgeListGraph.md), [AdjacencyMatrix](AdjacencyMatrix.md), [MutablePropertyGraph](MutablePropertyGraph.md), [CopyConstructible](../utility/CopyConstructible.md), and [Assignable](Assignable.md).
 
 
-##Associates Types
+## Associates Types
 ```cpp
 graph_traits<adjacency_matrix>::vertex_descriptor
 ```
@@ -250,7 +250,7 @@ property_map<adjacency_matrix, PropertyTag>::const_type
 ([PropertyGraph](PropertyGraph.md) からの要求。)
 
 
-##Member Functions
+## Member Functions
 ```cpp
 adjacency_matrix(vertices_size_type n,
                  const GraphProperty& p = GraphProperty())
@@ -286,7 +286,7 @@ adjacency_matrix(EdgeIterator first, EdgeIterator last,
 頂点数 `n` で、辺が `[first, last)` の範囲で与えられたリストで指定された辺をもつグラフのオブジェクトを生成する。 `EdgeIterator` の値の型は `std::pair` でなければならず、それは整数型の組である。 それら整数は頂点に対応し、`[0, n)` の範囲になければならない。 `ep_iter` の `value_type` は `EdgeProperty` であるべきである。
 
 
-##Non-Member Functions
+## Non-Member Functions
 ```cpp
 std::pair<vertex_iterator, vertex_iterator>
 vertices(const adjacency_matrix& g)

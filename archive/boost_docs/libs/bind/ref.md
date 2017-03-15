@@ -1,10 +1,10 @@
-#ref.hpp
+# ref.hpp
 
  1.00.0004 (2002-01-27)
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/doc/html/ref.html>
 
-##目次
+## 目次
 - [ファイル](#files)
 - [目的](#purpose)
 - [インタフェース](#interface)
@@ -32,7 +32,7 @@ boost/ref.hpp ヘッダーでは、クラス テンプレートである `boost:
 
 
 ## <a name="interface" href="#interface">インタフェース</a>
-###Synopsis
+### Synopsis
 ```cpp
 namespace boost
 {

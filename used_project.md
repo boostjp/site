@@ -1,11 +1,11 @@
-#Boostを使用しているプロジェクト
+# Boostを使用しているプロジェクト
 
 見つけたら書いていってください。
 
 Boostのどのライブラリを使用しているかも書くとさらにGood！Boostを使用したコードの参考にしてください。
 
 
-##公式情報
+## 公式情報
 - [商用製品](http://www.boost.org/users/uses_shrink.html)
 - [オープンソースプロジェクト](http://www.boost.org/users/uses_open.html)
 - [会社](http://www.boost.org/users/uses_inhouse.html)
@@ -15,8 +15,8 @@ Boostのどのライブラリを使用しているかも書くとさらにGood�
 - [Boost.Graphを使用しているプロジェクト](http://www.boost.org/libs/graph/doc/users.html)
 
 
-##boostjp
-###オープンソースライブラリ
+## boostjp
+### オープンソースライブラリ
 - [MongoDB](http://www.mongodb.org/) [[sourcecode](https://github.com/mongodb/mongo)]
 データベースライブラリ。
 Boost.Any, Boost.Asio, Boost.Bind, Boost.Filesystem, Boost.Function, Boost.ProgramOptions, Boost.SmartPtr, Boost.Spirit, Boost.Thread, Boost.Tuple, Boost.Utilityなどを使用している。
@@ -43,7 +43,7 @@ GUI構築にAdam,Eveという2つの独自言語を採用しており、ウィ�
 通信プロトコルHTTPの最新版であるHTTP/2の実装を提供するCライブラリおよびアプリケーションプログラム。
 C APIだけでなく、Boost.Asioベースの高水準なC++ APIが用意されている: [libnghttp2_asio: High level HTTP/2 C++ library](https://nghttp2.org/documentation/libnghttp2_asio.html)。
 
-###オープンソースソフトウェア
+### オープンソースソフトウェア
 
 - [DynamO](http://dynamomd.org/) [[sourcecode](https://github.com/toastedcrumpets/DynamO)]
 イベント駆動シミュレータ。
@@ -82,7 +82,7 @@ GIS関係の実装においてBoost.Geometoryを使用している。
 参考: [MySQLの実装にBoost.Geometryが使われはじめた - Faith and Brave - C++で遊ぼう](http://faithandbrave.hateblo.jp/entry/2014/04/28/131514)
 
 
-###商用製品
+### 商用製品
 - [Shade](https://shade3d.jp/)
 e-frontier社 3DCG作成ソフト。
 プラグイン用SDKにBoostを含む。
@@ -96,7 +96,7 @@ Boost.TypeTraits、Boost.MPLなどを使用。
 
 
 
-###会社
+### 会社
 - [株式会社Aiming](https://aiming-inc.com/ja)
 オンラインゲームのサーバー開発にBoost.Any、Boost.Array、Boost.Foreach、Boost.Format、Boost.Function、Boost.LexicalCast、Boost.Multi-Index、Boost.Optional、Boost.Regex、Boost.Spirit、Boost.StringAlgo、Boost.Tokenizer、Boost.Utility、Boost.Xpressiveなどを使用。
 

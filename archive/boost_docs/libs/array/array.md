@@ -1,6 +1,6 @@
-#arrayクラス, 固定サイズ配列のSTLコンテナ
+# arrayクラス, 固定サイズ配列のSTLコンテナ
 
-##目次
+## 目次
 - [はじめに](#introduction)
 - [インタフェース](#interface)
 - [議論](#discussion)

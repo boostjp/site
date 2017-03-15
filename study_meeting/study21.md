@@ -37,11 +37,11 @@
 |17:50 | ignis    |	Closing |
 
 
-##Twitterハッシュタグ
+## Twitterハッシュタグ
 [#boostjp](https://twitter.com/search?q=%23boostjp)
 
 
-##発表資料
+## 発表資料
 
 ### C++1zにstring_viewが導入されてうれしいので紹介します
 - 発表者: H.Hiro, [@h_hiro_](https://twitter.com/h_hiro_)

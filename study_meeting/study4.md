@@ -1,18 +1,18 @@
-#Boost.勉強会 #4
+# Boost.勉強会 #4
 
-##開催日時
+## 開催日時
 2011/02/26 10:00～18:00
 
-##開催場所
+## 開催場所
 - IIJ本社
 - (東京都千代田区神田神保町1-105)
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 #4 - ATND](http://atnd.org/events/11551)
 - [Boost.懇親会 #4 - ATND](http://atnd.org/events/12517)
 
-##タイムテーブル
+## タイムテーブル
 - 09:30～ 開場
 - 09:50～ Boost.勉強会について
 - 09:55～ 会場説明
@@ -33,15 +33,15 @@
 	- 17:50～18:00 : 「Boost.Timer」(melpon)
 
 
-##配信
+## 配信
 - [http://live.streamingmedia.jp/boostjp/](http://live.streamingmedia.jp/boostjp/)
 
 
-##Twitterハッシュタグ
+## Twitterハッシュタグ
 - [#boostjp](http://twitter.com/search?q=%23boostjp)
 
 
-##発表内容
+## 発表内容
 ### オープニング
 - 資料 : boost_study_meeting_opening_4 [[pdf](http://dl.dropbox.com/u/1682460/boost_study_meeting_4/boost_study_meeting_opening_4.pdf)][[slideshare](http://www.slideshare.net/faithandbrave/boost-study-meeting-opening-4)]
 
@@ -166,7 +166,7 @@
 - 発表資料 : boosttimer-7068526 [[slideshare](http://www.slideshare.net/melpon/boosttimer-7068526)]
 
 
-##関連リンク
+## 関連リンク
 - [Boost.勉強会＃4 簡易版 - C++でゲームプログラミング](http://d.hatena.ne.jp/osyo-manga/20110226/1298715364)
 - [Boost.勉強会 #4 に行ってきた - 永遠に未完成](http://d.hatena.ne.jp/thinca/20110227/1298821055)
 - [Boost.勉強会 #4 に参加 - 桜、抹茶、白、日記](http://d.hatena.ne.jp/youandi/20110226/p1)

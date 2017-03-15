@@ -1,7 +1,7 @@
-#コンパイラ間の差を吸収する
+# コンパイラ間の差を吸収する
 ここでは、コンパイラ間の差を吸収するための方法を挙げる。
 
-##インデックス
+## インデックス
 
 - [コンパイラが、あるC++11の機能をサポートしているかどうかでコードを変更する](#support-cpp11)
 - [コンパイラによって、テンプレート中の `hoge<T>::type x;` や `fuga.f();` がコンパイルエラーになったりならなかったりする問題を回避する](#deduced-typename)
@@ -15,7 +15,7 @@
 ```cpp
 #include <boost/config.hpp>
 
-#if defined BOOST_NO_CXX11_VARIADIC_TEMPLATES
+# if defined BOOST_NO_CXX11_VARIADIC_TEMPLATES
 #  include <boost/preprocessor/repetition/enum_params.hpp>
 #  include <boost/preprocessor/repetition/enum_binary_params.hpp>
 #  include <boost/preprocessor/facilities/intercept.hpp>
@@ -23,20 +23,20 @@
 #  if !defined MAX_PARAM_LIMIT
 #    define MAX_PARAM_LIMIT 10
 #  endif
-#endif
+# endif
 
-#if !defined BOOST_NO_CXX11_VARIADIC_TEMPLATES
+# if !defined BOOST_NO_CXX11_VARIADIC_TEMPLATES
 
 template<typename ...T>
 void f(T ...x) {
     // fの定義
 }
 
-#else
+# else
 
 // fの定義（長くなるので省略）
 
-#endif
+# endif
 ```
 
 `boost/config.hpp` をインクルードすると、コンパイラやバージョンに応じて `BOOST_NO_`*FEATURE_NAME* が定義される。定義されているマクロ名に対応した機能は、そのコンパイラでは使えない。

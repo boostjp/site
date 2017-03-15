@@ -1,10 +1,10 @@
-#文字列フォーマット
+# 文字列フォーマット
 C言語では、`sprintf`を使用して`char`配列としての文字列をフォーマット設定することができたが、C++において、`std::string`に対する文字列フォーマット機能は、C++14時点で標準ライブラリとしては提供されていない。
 
 [Boost Format Library](http://www.boost.org/libs/format/)は、`std::string`の文字列フォーマット、およびストリームへのフォーマット出力の機能を提供するライブラリである。
 
 
-##インデックス
+## インデックス
 
 - [基本的な使い方](#basic-usage)
 - [`printf`風に書式を設定する](#printf-like-format)

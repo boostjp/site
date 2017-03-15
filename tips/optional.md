@@ -1,8 +1,8 @@
-#無効値の統一的な表現
+# 無効値の統一的な表現
 関数が失敗した場合に返される値が、`-1`だったり`NULL`だったり`false`だったりその他の特別な値だったり、ライブラリによって、または型によってバラバラである。[Boost Optional Library](http://www.boost.org/libs/optional/)では、無効値を統一的に表現するための`boost::optional`型を提供する。
 
 
-##インデックス
+## インデックス
 - [関数の失敗値と成功値](#fail-value)
 - [無効値がありえることを仕様ではなく型で示す](#type-as-nullary-value)
 - [`if`文の条件式で定義した変数に格納する](#store-value-in-if-expr)

@@ -1,15 +1,15 @@
-#BOOST_PP_ARRAY_REMOVE_D
+# BOOST_PP_ARRAY_REMOVE_D
 
 The `BOOST_PP_ARRAY_REMOVE_D` macro removes an element from an `array`.
 It reenters `BOOST_PP_WHILE` with maximum efficiency.
 
-##Usage
+## Usage
 
 ```cpp
 BOOST_PP_ARRAY_REMOVE_D(d, array, i)
 ```
 
-##Arguments
+## Arguments
 
 - `d` :
 	The next available `BOOST_PP_WHILE` iteration.
@@ -21,11 +21,11 @@ BOOST_PP_ARRAY_REMOVE_D(d, array, i)
 	The zero-based position in `array` of the element to be removed.
 	Valid values range from `0` to `BOOST_PP_ARRAY_SIZE(array) - 1`.
 
-##See Also
+## See Also
 
 - [`BOOST_PP_ARRAY_REMOVE`](array_remove.md)
 
-##Requirements
+## Requirements
 
 **Header:** &lt;boost/preprocessor/array/remove.hpp&gt;
 

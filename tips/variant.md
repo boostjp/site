@@ -1,8 +1,8 @@
-#ユーザー定義型を扱える型安全な共用体
+# ユーザー定義型を扱える型安全な共用体
 ユーザー定義型を共用体で扱うには、[Boost Variant Library](http://www.boost.org/doc/libs/release/doc/html/variant.html)を使用する。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [どの型が格納されているかを判定する](#which-type)
 - [格納されている値を取り出す](#get-value)

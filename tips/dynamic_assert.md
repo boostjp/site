@@ -1,8 +1,8 @@
-#実行時アサート
+# 実行時アサート
 実行時アサートには、`BOOST_ASSERT`マクロ、もしくは`BOOST_ASSERT_MSG`マクロを使用する。これらのマクロは、[`<boost/assert.hpp>`](http://www.boost.org/doc/libs/release/libs/utility/assert.html)ヘッダで定義される。
 
 
-##インデックス
+## インデックス
 - [式を検証する](#assertion-expression)
 - [メッセージ付きで式を検証する](#assertion-with-message)
 - [検証失敗時の動作をカスタマイズする](#customize-fail-behavior)
@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
 - 行番号(`__LINE__`)
 
 ```cpp
-#define BOOST_ENABLE_ASSERT_HANDLER
+# define BOOST_ENABLE_ASSERT_HANDLER
 #include <boost/assert.hpp>
 #include <fstream>
 #include <cstdlib>
@@ -152,7 +152,7 @@ Line : 21
 - 行番号(`__LINE__`)
 
 ```cpp
-#define BOOST_ENABLE_ASSERT_HANDLER
+# define BOOST_ENABLE_ASSERT_HANDLER
 #include <boost/assert.hpp>
 #include <fstream>
 #include <cstdlib>

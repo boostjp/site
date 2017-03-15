@@ -1,4 +1,4 @@
-#libs/graph/example/edmunds-karp-eg.cpp
+# libs/graph/example/edmunds-karp-eg.cpp
 
 ```cpp
 //=======================================================================
@@ -84,14 +84,14 @@ main()
   Traits::vertex_descriptor s, t;
   read_dimacs_max_flow(g, capacity, rev, s, t);
 
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   std::vector<default_color_type> color(num_vertices(g));
   std::vector<Traits::edge_descriptor> pred(num_vertices(g));
   long flow = edmunds_karp_max_flow
     (g, s, t, capacity, residual_capacity, rev, &color[0], &pred[0]);
-#else
+# else
   long flow = edmunds_karp_max_flow(g, s, t);
-#endif
+# endif
 
   std::cout << "c  The total flow:" << std::endl;
   std::cout << "s " << flow << std::endl << std::endl;

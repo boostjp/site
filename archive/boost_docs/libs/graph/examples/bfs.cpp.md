@@ -1,4 +1,4 @@
-#libs/graph/example/bfs.cpp.md
+# libs/graph/example/bfs.cpp.md
 
 ```cpp
 //=======================================================================
@@ -164,11 +164,11 @@ int main(int , char* [])
 
   if (boost::num_vertices(G) < 11) {
     std::cout << "distances: ";
-#ifdef BOOST_OLD_STREAM_ITERATORS
+# ifdef BOOST_OLD_STREAM_ITERATORS
     std::copy(d, d + 5, std::ostream_iterator<int, char>(std::cout, " "));
-#else
+# else
     std::copy(d, d + 5, std::ostream_iterator<int>(std::cout, " "));
-#endif
+# endif
     std::cout << std::endl;
 
     std::for_each(boost::vertices(G).first, boost::vertices(G).second, 

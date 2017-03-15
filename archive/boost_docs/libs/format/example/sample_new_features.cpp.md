@@ -1,4 +1,4 @@
-#libs/format/example/sample_new_features.cpp
+# libs/format/example/sample_new_features.cpp
 
 ```cpp
 // ----------------------------------------------------------------------------

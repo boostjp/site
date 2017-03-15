@@ -1,10 +1,10 @@
-#Local Iteration
+# Local Iteration
 
 Local iteration is a simple vertical repetition construct.
 It expands a macro with each number in a user-specified range.
 Each expansion is on a separate line.
 
-##Tutorial
+## Tutorial
 
 This mechanism requires two pieces of information to operate:
 a range to iterate over and a macro to expand on each iteration.
@@ -18,7 +18,7 @@ For example, if the user wishes a macro to be expanded with numbers ranging from
 `BOOST_PP_LOCAL_LIMITS` would be defined like this:
 
 ```cpp
-#define BOOST_PP_LOCAL_LIMITS (0, 10)
+# define BOOST_PP_LOCAL_LIMITS (0, 10)
 ```
 
 Note that there is whitespace after the name of the macro.
@@ -30,16 +30,16 @@ This implies that they can include simple arithmetic or logical expressions.
 For instance, the above definition could easily have been written like this:
 
 ```cpp
-#define N() 5
-#define BOOST_PP_LOCAL_LIMITS (0, N() + 5)
+# define N() 5
+# define BOOST_PP_LOCAL_LIMITS (0, N() + 5)
 ```
 
 Because of this, if the whitespace after the macro name is elided, it is possible for the definition to be syntactically valid:
 
 ```cpp
-#define A 0
-#define B 10
-#define BOOST_PP_LOCAL_LIMITS(A, B)
+# define A 0
+# define B 10
+# define BOOST_PP_LOCAL_LIMITS(A, B)
 	// note:  no whitespace  ^
 ```
 
@@ -48,9 +48,9 @@ The error messages that result may be obscure, so always remember to include the
 A *correct* version of the above looks like this:
 
 ```cpp
-#define A 0
-#define B 10
-#define BOOST_PP_LOCAL_LIMITS (A, B)
+# define A 0
+# define B 10
+# define BOOST_PP_LOCAL_LIMITS (A, B)
 	// note:  has whitespace ^
 ```
 
@@ -59,7 +59,7 @@ This macro is expanded on each iteration with the current number of the iteratio
 It must defined as a unary macro *or* result in a macro that can be called with one argument:
 
 ```cpp
-#define BOOST_PP_LOCAL_MACRO(n) \
+# define BOOST_PP_LOCAL_MACRO(n) \
 	template<> struct sample<n> { }; \
 	/**/
 ```
@@ -67,11 +67,11 @@ It must defined as a unary macro *or* result in a macro that can be called with 
 ...or...
 
 ```cpp
-#define SAMPLE(n) \
+# define SAMPLE(n) \
 	template<> struct sample<n> { }; \
 	/**/
 
-#define BOOST_PP_LOCAL_MACRO SAMPLE
+# define BOOST_PP_LOCAL_MACRO SAMPLE
 ```
 
 Once these two macros are defined, the local iteration is initiated by *including* `BOOST_PP_LOCAL_ITERATE()`.
@@ -89,11 +89,11 @@ Other than that, use whichever one you prefer.)
 In order to repeat the `sample` specialization, the pieces must be put together....
 
 ```cpp
-#define BOOST_PP_LOCAL_MACRO(n) \
+# define BOOST_PP_LOCAL_MACRO(n) \
 	template<> struct sample<n> { }; \
 	/**/
 
-#define BOOST_PP_LOCAL_LIMITS (0, 10)
+# define BOOST_PP_LOCAL_LIMITS (0, 10)
 ??=include BOOST_PP_LOCAL_ITERATE()
 ```
 
@@ -114,19 +114,19 @@ After the local-iteration is complete, both `BOOST_PP_LOCAL_LIMITS` and `BOOST_P
 If the values need to be retained for a future local-iteration, they must be defined indirectly:
 
 ```cpp
-#define LIMITS (0, 10)
+# define LIMITS (0, 10)
 
-#define SAMPLE(n) \
+# define SAMPLE(n) \
 	template<> struct sample<n> { }; \
 	/**/
 
-#define BOOST_PP_LOCAL_LIMITS LIMITS
-#define BOOST_PP_LOCAL_MACRO(n) SAMPLE(n)
+# define BOOST_PP_LOCAL_LIMITS LIMITS
+# define BOOST_PP_LOCAL_MACRO(n) SAMPLE(n)
 
 ??=include BOOST_PP_LOCAL_ITERATE()
 ```
 
-##See Also
+## See Also
 
 - [`BOOST_PP_LOCAL_ITERATE`](../ref/local_iterate.md)
 - [`BOOST_PP_LOCAL_LIMITS`](../ref/local_limits.md)

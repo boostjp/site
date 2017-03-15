@@ -1,4 +1,4 @@
-#days_alive.cpp
+# days_alive.cpp
 
 日数差と日数を使って、今日まで何日生きてきたかを計算してみる
 

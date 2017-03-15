@@ -1,8 +1,8 @@
-#コンテナに複数の並び順を持たせる
+# コンテナに複数の並び順を持たせる
 `std::vector`や`std::map`といったコンテナを使用していると、希に「`map`として使いたいけど挿入順も覚えておきたい」といったことや、「`map`に、値からキーを検索する機能がほしい」といった要求が出てくることがある。そういった要求を叶えてくれるのが、[Boost Multi-Index Library](http://www.boost.org/libs/multi_index/doc/index.html)である。
 
 
-##インデックス
+## インデックス
 - [`boost::multi_index_container`の基本的な使い方 - 挿入順を知っている`std::set`](#basic-usage)
 - [インデックスの表現を変数に持つ](#store-index)
 - [インデックスに名前を付ける](#give-a-name-to-index)

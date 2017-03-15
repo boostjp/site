@@ -1,4 +1,4 @@
-#dijkstra_shortest_paths
+# dijkstra_shortest_paths
 ```cpp
 // 名前付きパラメータバージョン
 template <typename VertexListGraph, typename P, typename T, typename R>
@@ -65,11 +65,11 @@ DIJKSTRA(G, s, w)
   return (d, p)
 ```
 
-##定義場所
+## 定義場所
 boost/graph/dijkstra_shortest_paths.hpp
 
 
-##パラメータ
+## パラメータ
 
 - IN: `const VertexListGraph& g`
 	- アルゴリズムが適用されるグラフオブジェクト。`VertexListGraph` の型は [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
@@ -78,7 +78,7 @@ boost/graph/dijkstra_shortest_paths.hpp
 	- 始点。全ての距離はこの頂点から計算される。そして最短経路木はこの頂点を根とする。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 
 - IN: `weight_map(WeightMap w_map)`
 	- グラフ中の各辺の重みまたは「長さ」。重みは全て非負でなければならず、辺の一つが負であればアルゴリズムは [`negative_edge`](exception.md#negative_edge) 例外を投げる。`WeightMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルでなければならない。グラフの辺記述子型は重みマップのキー型として使用できる必要がある。このマップの値型は距離マップの値型と同じでなければならない。
@@ -121,11 +121,11 @@ boost/graph/dijkstra_shortest_paths.hpp
 	- デフォルト: `dijkstra_visitor<null_visitor>`
 
 
-##計算量
+## 計算量
 時間計算量は O((V + E) log V) か、もし全ての頂点が始点から到達可能ならちょうど O(E log V) になる。
 
 
-##ビジタ・イベント・ポイント
+## ビジタ・イベント・ポイント
 
 - `vis.initialize_vertex(u, g)` は、アルゴリズムの開始前に各頂点で呼び出される。
 - `vis.examine_vertex(u, g)` は、頂点が優先度付きキューから取り除かれ、集合 `S` に加えられた時に呼び出される。この時点で `(p[u],u)` は最短経路木の辺であることが分かるので `d[u] = delta(s,u) = d[p[u]] + w(p[u],u)` である。さらに、調査された頂点の距離は単調増加 `d[u1] <= d[u2] <= d[un]` である。
@@ -136,11 +136,11 @@ boost/graph/dijkstra_shortest_paths.hpp
 - `vis.finish_vertex(u, g)` は、頂点の出辺が全て調査された後に呼び出される。
 
 
-##コード例
+## コード例
 [examples/dijkstra-example.cpp](examples/dijkstra-example.cpp.md) を見よ。これは Dijkstra のアルゴリズムの使用例である。
 
 
-##注釈
+## 注釈
 - <a name="note_1" href="#note_1">[1]</a> ここで使われているアルゴリズムは全ての `V - S` 頂点を一度に優先度付きキュー中に置かないことによって、わずかなスペースを節約している。その代わり、発見された `V - S` 中のこれらの頂点だけであり、それゆえ無限より少ない距離を持っている。
 
 - <a name="note_2" href="#note_2">[2]</a> ビジタのパラメータは値渡しされるので、もしビジタが状態を持っているなら、アルゴリズムの間のいかなる状態の変更も、送ったビジタ・オブジェクトには行われずビジタ・オブジェクトのコピーに対して行われる。それゆえポインタまたはリファレンスによってこの状態をビジタに保持させることを望むかもしれない。

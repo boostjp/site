@@ -1,23 +1,23 @@
-#Boost.勉強会 #13 仙台
+# Boost.勉強会 #13 仙台
 
-##開催日時
+## 開催日時
 - 2013/10/19(土) 10:30～
 
 
-##開催場所
+## 開催場所
 - 宮城県仙台市内 戦災復興記念館 第2会議室
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 #13 @仙台](http://partake.in/events/6d6339e0-95df-4275-ba00-5e5344cb84f3#)
 - [Boost.勉強会 #13 @仙台 懇親会](http://partake.in/events/e16749f6-bb06-45bf-8f15-09a0b2b82506#)
 
 
-##主催&スタッフ
+## 主催&スタッフ
 - 主催者： 橋本達明([@chichimotsu](https://twitter.com/chichimotsu))
 
 
-##タイムテーブル
+## タイムテーブル
 
 | 時間 | 内容 | 担当者 |
 |-------------|------------------------------------------|---------------|
@@ -36,16 +36,16 @@
 | 16:30       | 閉会 |  |
 
 
-##ライブ配信
+## ライブ配信
 - [http://www.ustream.tv/channel/boost-勉強会-13-仙台](http://www.ustream.tv/channel/boost-%E5%8B%89%E5%BC%B7%E4%BC%9A-13-%E4%BB%99%E5%8F%B0)
 
 
-##Twitterハッシュタグ
+## Twitterハッシュタグ
 - [#boostjp](http://twitter.com/search?q=%23boostjp)
 
 
-##発表内容
-###Boost.Asioを使おう
+## 発表内容
+### Boost.Asioを使おう
 - 発表者：橋本達明
 - Twitter： [https://twitter.com/chichimotsu](https://twitter.com/chichimotsu)
 
@@ -53,7 +53,7 @@
 - ビデオ:  [MP4動画 637MB](https://docs.google.com/file/d/0B9BH0LS6wCKIWlEtclpncjVSSFU/edit?usp=sharing)
 
 
-###Boost.Randomで乱数を学ぼう
+### Boost.Randomで乱数を学ぼう
 - 発表者：高橋晶
 - サイト： [https://sites.google.com/site/faithandbrave/about](https://sites.google.com/site/faithandbrave/about)
 
@@ -62,7 +62,7 @@
 - アフターケア：[Boost.勉強会 #13 仙台 - Faith and Brave - C++で遊ぼう](http://d.hatena.ne.jp/faith_and_brave/20131021/1382340838)
 
 
-###boost::multiprecisionに勝負を挑んだのち，オリジナル三角形分割手法の実装
+### boost::multiprecisionに勝負を挑んだのち，オリジナル三角形分割手法の実装
 - 発表者：oniprog
 - Twiter: [https://twitter.com/oniprog](https://twitter.com/oniprog)
 
@@ -70,7 +70,7 @@
 - ビデオ: [MP4動画 393MB](https://docs.google.com/file/d/0B9BH0LS6wCKISlNhdElDX3NhaU0/edit?usp=sharing)
 
 
-###boost::signals2とboost::anyで作ったiPhoneアプリ『ういろう』
+### boost::signals2とboost::anyで作ったiPhoneアプリ『ういろう』
 - 発表者：西山信行
 - Twitter : [https://twitter.com/5mingame2](https://twitter.com/5mingame2)
 
@@ -79,7 +79,7 @@
 - アフターケア：[Boost.勉強会 #13 仙台 で発表してきた - でらうま倶楽部](http://blog.livedoor.jp/tek_nishi/archives/8109245.html)
 
 
-###並列アルゴリズムライブラリThrustについて
+### 並列アルゴリズムライブラリThrustについて
 - 発表者： krustf
 - Twitter : [https://twitter.com/krustf](https://twitter.com/krustf)
 
@@ -87,7 +87,7 @@
 - ビデオ: [MP4動画 364MB](https://docs.google.com/file/d/0B9BH0LS6wCKIQ2pnR0w3TDZEcTQ/edit?usp=sharing)
 
 
-###Wandbox を支える技術
+### Wandbox を支える技術
 - 発表者：melpon
 - Twitter : [https://twitter.com/melponn](https://twitter.com/melponn)
 
@@ -95,7 +95,7 @@
 - ビデオ: [MP4動画 784MB](https://docs.google.com/file/d/0B9BH0LS6wCKIUjE3aWpIRGhTRjQ/edit?usp=sharing)
 
 
-###アプリ紹介
+### アプリ紹介
 - 発表者：about_hiroppy
 - Twitter : [https://twitter.com/about_hiroppy](https://twitter.com/about_hiroppy)
 
@@ -104,7 +104,7 @@
 - ビデオ:  [MP4動画 156MB](https://docs.google.com/file/d/0B9BH0LS6wCKIbVMxNnE2TkEyMVE/edit?usp=sharing)
 
 
-###鳥小屋を支える技術＆問題点
+### 鳥小屋を支える技術＆問題点
 - 発表者：yutopp
 - Twitter : [https://twitter.com/yutopp](https://twitter.com/yutopp)
 
@@ -112,7 +112,7 @@
 - ビデオ:  [MP4動画 210MB](https://docs.google.com/file/d/0B9BH0LS6wCKISkxQZW8xWC1TVnM/edit?usp=sharing)
 
 
-##関連リンク
+## 関連リンク
 - [Boost.勉強会 #13 仙台 - Faith and Brave - C++で遊ぼう](http://d.hatena.ne.jp/faith_and_brave/20131021/1382340838)
 - [Boost.勉強会 #13 仙台 で発表してきた - でらうま倶楽部](http://blog.livedoor.jp/tek_nishi/archives/8109245.html)
 - [Boost.勉強会 #13 ＠仙台 - togetter](http://togetter.com/li/579014)

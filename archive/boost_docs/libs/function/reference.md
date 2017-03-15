@@ -1,6 +1,6 @@
-#Boost.Function Reference Manual
+# Boost.Function Reference Manual
 
-##Header `<boost/function.hpp>` synopsis
+## Header `<boost/function.hpp>` synopsis
 
 以下で、 `MAX_ARGS` は実装定義の定数であり、 Boost.Function でサポートされる引数の数の最大値 (少なくとも 10) である。このドキュメント中で参照される `MAX_ARGS` 定数は、ライブラリ中で直接的には定義されていない。
 
@@ -135,7 +135,7 @@ R operator()(cv-quals P& x, Arg1 arg1, Arg2 arg2, ..., ArgN argN) const
 - `F` が関数ポインタであるか、 `boost::is_stateless<T>` が真の時、 `F` 型の関数オブジェクト `f` は「 状態を持たない 」という。状態を持たない関数オブジェクトの Boost.Function での構築/コピーは発生せず、例外は起きず、記憶域の割り当ても起きない。
 
 
-##Class `function_base`
+## Class `function_base`
 クラス `function_base` は全ての Boost.Function オブジェクトに共通する基底クラスだ。 `function_base` 型のオブジェクトが直接作られることはないだろう。
 
 ```cpp
@@ -146,7 +146,7 @@ bool empty() const
 - 例外: 例外を起こさない。
 
 
-##Class template `functionN`
+## Class template `functionN`
 クラステンプレート `functionN` は実際には、 `function0`, `function1`, ... と、ある実装定義の最大値まで続く、関連するクラス群である。以下の文では、 `N` はパラメータの数、 `f` は暗黙のオブジェクトパラメータを表す。
 
 ```cpp
@@ -278,13 +278,13 @@ result_type operator()(Arg1 a1, Arg2 a2, ..., ArgN aN) const;
 - 注意: 呼び出しポリシーは推奨されなくなり、今後のリリースで削除される。
 
 
-##Class template `function`
+## Class template `function`
 クラステンプレート `function` は、番号付きクラステンプレート `function0`, `function1`, ... の薄いラッパである。 `MAX_ARGS` までの引数を受け付ける。 `N` 個の引数を渡されれば、 `functionN` (引数 `N` 個専用のクラス) から派生する。
 
 クラステンプレート `function` のメンバ関数のセマンティクスは、全て `functionN` オブジェクトと同じである。ただし、 `function` オブジェクトの正しいコピーコンストラクトやコピーの代入のために、追加のメンバ関数を定義している。
 
 
-###Operations
+### Operations
 
 ```cpp
 template<typename ResultType,

@@ -1,4 +1,4 @@
-#Tuples
+# Tuples
 
 *タプル*は、丸カッコの中に、要素を単純にコンマで区切って並べたものである。
 例えば、
@@ -14,7 +14,7 @@
 
 *タプル*の要素は `BOOST_PP_TUPLE_ELEM` により展開される。
 
-##Primitives
+## Primitives
 
 - [`BOOST_PP_TUPLE_ELEM`](../ref/tuple_elem.md)
 

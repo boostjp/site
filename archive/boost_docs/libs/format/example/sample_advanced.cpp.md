@@ -1,4 +1,4 @@
-#libs/format/example/sample_advanced.cpp
+# libs/format/example/sample_advanced.cpp
 
 ```cpp
 // -*- C++ -*-

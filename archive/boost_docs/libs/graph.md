@@ -1,4 +1,4 @@
-#the Boost Graph Library
+# the Boost Graph Library
 
 - 翻訳元ドキュメント : <http://www.boost.org/doc/libs/1_31_0/libs/graph/doc/table_of_contents.html>
 
@@ -6,7 +6,7 @@
 ![](http://www.boost.org/doc/libs/1_31_0/libs/graph/doc/bgl-cover.jpg)
 
 
-##目次
+## 目次
 
 1. BGLへの序章
 2. 歴史

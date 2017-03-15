@@ -1,4 +1,4 @@
-#Improved Function Object Adapters
+# Improved Function Object Adapters
 
 - 翻訳元ドキュメント : <http://www.boost.org/doc/libs/1_31_0/libs/functional/>
 
@@ -8,7 +8,7 @@ functional.hpp ヘッダは C++ 標準ライブラリの関数オブジェクト
 2. 我々は、[`ptr_fun`](functional/ptr_fun.md) の必要性を回避するために、このライブラリのアダプタとともに、ふたつの[function object traits](functional/function_traits.md) を使う。
 
 
-##Contents
+## Contents
 このヘッダは以下の関数・クラステンプレートを含む:
 
 | 分類 | 機能 | 説明 |
@@ -20,7 +20,7 @@ functional.hpp ヘッダは C++ 標準ライブラリの関数オブジェクト
 | [Adapters for pointers to member functions](functional/mem_fun.md) | `mem_fun_t`<br/> `mem_fun1_t`<br/> `const_mem_fun_t`<br/> `const_mem_fun1_t`<br/> `mem_fun_ref_t`<br/> `mem_fun1_ref_t`<br/> `const_mem_fun_ref_t`<br/> `const_mem_fun1_ref_t`<br/> `mem_fun`<br/> `mem_fun_ref` | 標準のセクション 20.3.8 に基づく。 |
 
 
-##Usage
+## Usage
 これらのアダプタの使い方は標準関数オブジェクトアダプタの使い方にとてもよく似ている。唯一の違いは、`std::` の代わりに `boost::` と書く必要があることだけである。そうすればあなたの頭痛は軽減される。
 
 例えば、あなたが `set_name` 関数を持つ`Person`クラスを持っていると考えてほしい:
@@ -44,7 +44,7 @@ std::for_each(c.begin(), c.end(),
 もし代わりに標準アダプタが使われていれば、このコードは普通、コンパイルに失敗する。それは、`set_name` が参照引数を取るからである。何故こうなるかを解明したければ、[バインダのドキュメント](functional/binders.md#refref) の中のコメントを参照するとよい。
 
 
-##Compiler Compatibility
+## Compiler Compatibility
 このヘッダと [テストプログラム](functional/function_test.cpp.md) は以下のコンパイラでコンパイルされる:
 
 | コンパイラ | コメント | 
@@ -55,7 +55,7 @@ std::for_each(c.begin(), c.end(),
 | Microsoft Visual C++ Service Pack 3 | コンパイラが部分特殊化版を欠いているため、このライブラリは標準アダプタによって提供されるより、少しだけしか多くの機能を提供しない。<br/> ・参照の参照問題を回避するための `call_traits` メカニズムが使えない。それゆえ、このライブラリのアダプタはより少ない状況でしか使えないだろう。<br/> ・関数の引数や返り値型を特定するための `function_traits` メカニズムが使えない。それゆえ、関数を適合させるため、`ptr_fun` が引き続き必要になる。 |
 
 
-##Future Directions
+## Future Directions
 このライブラリの第一目的は、できる限り多くの標準ライブラリの互換性を 持つ、参照の参照問題に対する解である。これによって本や雑誌で読む技術を 今日のたくさんのコンパイラで使うことができる。
 
 長期的には、より良い解は以下のようなものだろう:
@@ -64,11 +64,11 @@ std::for_each(c.begin(), c.end(),
 2. 標準委員会はテンプレートの実体化に際して参照の参照問題が起きることを認識していて、標準を修正する気になっている( [C++ 言語中核の問題点 106 番目](http://www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#106) を参照せよ)。
 
 
-##Author
+## Author
 [Mark Rodgers](http://www.boost.org/doc/libs/1_31_0/people/mark_rodgers.htm)
 
 
-##Acknowledgements
+## Acknowledgements
 Thanks to [John Maddock](http://www.boost.org/doc/libs/1_31_0/people/john_maddock.htm) for suggesting the mechanism that allowed the function objects traits to work correctly. [Jens Maurer](http://www.boost.org/doc/libs/1_31_0/people/jens_maurer.htm) provided invaluable feedback during the [formal review process](http://www.boost.org/doc/libs/1_31_0/more/formal_review_process.htm).
 
 ***

@@ -1,4 +1,4 @@
-#Date Generators / Algorithms
+# Date Generators / Algorithms
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

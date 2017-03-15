@@ -1,4 +1,4 @@
-#メモリマップドファイル
+# メモリマップドファイル
 メモリマップドファイルには[ Boost Interprocess Library](http://www.boost.org/doc/libs/release/doc/html/interprocess.html) を使用する。
 
 Boost.Interprocessは、プロセス間通信をサポートするための各種機能を提供しているライブラリである。ライブラリはビルドを必要としないが、[Boost DateTime Library](http://www.boost.org/doc/libs/release/doc/html/date_time.html) を利用している箇所があるため注意すること。
@@ -6,7 +6,7 @@ Boost.Interprocessは、プロセス間通信をサポートするための各�
 またこのページでManaged Memory Segmentsについての記述は基本的に`managed_mapped_file`以外のクラス(`managed_shared_memory`など)でも同様の動作を行う。
 
 
-##インデックス
+## インデックス
 - [存在しているファイルからマッピングする](#file-mapping)
 - [ファイルをテンポラリバッファとして利用する](#file-as-temporary-buffer)
 - [ファイルをコンテナにマッピングする](#container-file-mapping)

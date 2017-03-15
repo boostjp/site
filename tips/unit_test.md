@@ -1,8 +1,8 @@
-#単体テスト
+# 単体テスト
 単体テストには、[Boost Test Library](http://www.boost.org/doc/libs/release/libs/test/doc/html/index.html)を使用する。
 
 
-##インデックス
+## インデックス
 - [等値テスト](#equality-test)
 - [浮動小数点数の等値テスト](#floating-point-equality-test)
 - [例外が投げられるかどうかのテスト](#throw-test)
@@ -12,7 +12,7 @@
 等値テストには、`BOOST_CHECK`マクロに条件式を指定する。
 
 ```cpp
-#define BOOST_TEST_MAIN
+# define BOOST_TEST_MAIN
 #include <boost/test/included/unit_test.hpp>
 
 BOOST_AUTO_TEST_CASE(test1)
@@ -34,7 +34,7 @@ Running 1 test case...
 浮動小数点数の等値テストには、`BOOST_CHECK_CLOSE`マクロに、比較対象の2つの変数と、許容する誤差（%）を指定する。
 
 ```cpp
-#define BOOST_TEST_MAIN
+# define BOOST_TEST_MAIN
 #include <boost/test/included/unit_test.hpp>
 
 BOOST_AUTO_TEST_CASE(test1)
@@ -57,7 +57,7 @@ test.cpp(9): error in "test1": difference{0.000809999%} between v1{1.23455999999
 `0`との等値テストには`BOOST_CHECK_CLOSE`マクロが使えない。代わりに、`BOOST_CHECK_SMALL`マクロに、比較対象の変数と、許容する誤差（絶対誤差）を指定する。
 
 ```cpp
-#define BOOST_TEST_MAIN
+# define BOOST_TEST_MAIN
 #include <boost/test/included/unit_test.hpp>
 
 BOOST_AUTO_TEST_CASE( test1 )
@@ -81,7 +81,7 @@ test.cpp(8): error in "test1": absolute value of v{-0.00123456} exceeds 0.0001
 `BOOST_CHECK_THROW`マクロは、ある式が指定した例外を投げるかどうかをテストする。
 
 ```cpp
-#define BOOST_TEST_MAIN
+# define BOOST_TEST_MAIN
 #include <vector>
 #include <boost/test/included/unit_test.hpp>
 

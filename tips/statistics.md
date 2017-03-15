@@ -1,8 +1,8 @@
-#統計処理
+# 統計処理
 統計処理には、[Boost Accumulators Library](http://www.boost.org/doc/libs/release/doc/html/accumulators.html)を使用する。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [既存のコンテナにあるデータから統計をとる](#container-stats)
 - [要素数を求める - `count`](#count)

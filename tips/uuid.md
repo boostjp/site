@@ -1,8 +1,8 @@
-#オブジェクトにユニークなIDを付ける
+# オブジェクトにユニークなIDを付ける
 COMや分散環境において、オブジェクトにユニークなIDが必要になることがある。[Boost Uuid Library](http://www.boost.org/doc/libs/release/libs/uuid/uuid.html)は、UUID(Universally unique identifier)の型とジェネレータを提供するライブラリである。
 
 
-##インデックス
+## インデックス
 - [ランダムなUUIDを生成する](#random-uuid)
 - [UUIDを文字列に変換する](#uuid-to-string)
 

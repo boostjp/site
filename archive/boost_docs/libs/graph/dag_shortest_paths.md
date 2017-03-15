@@ -1,4 +1,4 @@
-#dag_shortest_paths
+# dag_shortest_paths
 ```cpp
 // 名前付きパラメータバージョン
 template <class VertexListGraph, class Param, class Tag, class Rest>
@@ -24,11 +24,11 @@ void dag_shortest_paths(const VertexListGraph& g,
 `dag_shortest_paths()` 関数から出力を得るための主な二つの選択が存在する。`distance_map()` パラメータを通して距離プロパティ・マップを提供するならばグラフ中の始点から他の全ての頂点への最短距離は距離マップに記録されるだろう。さらに最短経路木を先行点マップ (predecessor map) に記録する事ができる。その場合 `V` 中の各頂点 `u` にとって、最短経路木中では `p[u]` が `u` の先行点になるだろう (ただし `p[u] = u` でここに `u` が始点であるかまたは始点からは到達不能な頂点である場合を除く)。これらの二つの選択に加え、ユーザはアルゴリズムのイベント・ポイントのどれかの間アクションをとれる独自のビジタを提供することができる。
 
 
-##定義場所
+## 定義場所
 boost/graph/dag_shortest_paths.hpp
 
 
-##パラメータ
+## パラメータ
 
 - IN: `const VertexListGraph& g`
 	- アルゴリズムが適用されるグラフオブジェクト。`VertexListGraph` の型は [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
@@ -37,7 +37,7 @@ boost/graph/dag_shortest_paths.hpp
 	- 始点。全ての距離はこの頂点から計算され、最短経路木はこの頂点を根とする。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 
 - IN: `weight_map(WeightMap w_map)`
 	- グラフ中の各辺の重みまたは「長さ」。`WeightMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルでなければならない。グラフの辺記述子型は重みマップのキー型として使用できる必要がある。マップの値型は距離マップの値型を伴った Addable でなければならない。 
@@ -80,11 +80,11 @@ boost/graph/dag_shortest_paths.hpp
 	- デフォルト: `dijkstra_visitor<null_visitor>`
 
 
-##計算量
+## 計算量
 時間計算量は O(V + E) である。
 
 
-##ビジタ・イベント・ポイント
+## ビジタ・イベント・ポイント
 
 - `vis.initialize_vertex(u, g)` は、アルゴリズムの開始前に各頂点で呼び出される。
 - `vis.examine_vertex(u, g)` は、頂点が集合 `S` に加えられた時に呼び出される。この時点で `(p[u],u)` は最短経路木の辺であることがわかるので、 `d[u] = delta(s,u) = d[p[u]] + w(p[u],u)` である。さらに調査された頂点の距離は単調増加 `d[u1] <= d[u2] <= d[un]` である。
@@ -95,11 +95,11 @@ boost/graph/dag_shortest_paths.hpp
 - `vis.finish_vertex(u, g)` は、頂点の出辺が全て調査された後に呼び出される。
 
 
-##コード例
+## コード例
 [examples/dag_shortest_paths.cpp](examples/dag_shortest_paths.cpp.md) を見よ。これはこのアルゴリズムの使用例である。
 
 
-##注釈
+## 注釈
 <a name="note_1" href="#note_1">[1]</a> ビジタのパラメータは値渡しされるので、もしビジタが状態を持っているなら、アルゴリズムの間のいかなる状態の変更も、送ったビジタ・オブジェクトには行われず ビジタ・オブジェクトのコピーに対して行われる。それゆえポインタまたはリファレンスによってこの状態をビジタに保持させることを望むかもしれない。
 
 

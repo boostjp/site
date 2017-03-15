@@ -1,4 +1,4 @@
-#Smart Pointer Library
+# Smart Pointer Library
 
 このスマートポインタライブラリは 5 種類のスマートポインタクラステンプレートを含む。
 スマートポインタはC++の`new`で動的に割り当てられるメモリの管理を容易にする。

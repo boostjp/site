@@ -1,4 +1,4 @@
-#time_periods.cpp
+# time_periods.cpp
 
 time periodsの、いくつかの簡単な使い方を示す。
 

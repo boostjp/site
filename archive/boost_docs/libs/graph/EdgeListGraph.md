@@ -1,12 +1,12 @@
-#EdgeListGraph
+# EdgeListGraph
 EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ中の全ての辺への効率的なアクセスに必要とされるものを付け加えている。
 
 
-##Refinement of
+## Refinement of
 [Graph](Graph.md)
 
 
-##表記
+## 表記
 
 | 識別子 | 説明 |
 |--------|------|
@@ -15,7 +15,7 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 | `e`    | 型が `boost::graph_traits<G>::edge_descriptor` のオブジェクト。 |
 
 
-##関連型
+## 関連型
 - `boost::graph_traits<G>::traversal_category`
 	- このタグ型は `edge_list_graph_tag` に変換可能でなければならない。
 - `boost::graph_traits<G>::edge_iterator`
@@ -24,7 +24,7 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 	- 符号なし汎整数型はグラフ中の辺の数を表すのに使われる。
 
 
-##有効な表現式
+## 有効な表現式
 
 | 式 | 返却値 | 説明 |
 |----|--------|------|
@@ -34,20 +34,20 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 | `target(e, g)` | `vertex_descriptor` | `e` によって表される辺 `(u,v)` の `v` のための頂点記述子を返す。 |
 
 
-##モデル
+## モデル
 - [`adjacency_list`](adjacency_list.md)
 - [`edge_list`](edge_list.md)
 
 
-##計算量の保証
+## 計算量の保証
 `edges()` 関数、`source()` 関数、そして `target()` 関数は、すべて定数時間内に終了するはずである。
 
 
-##関連項目
+## 関連項目
 [Graphコンセプト](graph_concepts.md)
 
 
-##コンセプトチェックするクラス
+## コンセプトチェックするクラス
 
 ```cpp
 template <class G>

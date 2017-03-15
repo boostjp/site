@@ -1,6 +1,6 @@
-#Boost.Signals: クラステンプレート `signalN`
+# Boost.Signals: クラステンプレート `signalN`
 
-##ヘッダ
+## ヘッダ
 
 `N` はサポートされているシグナルのパラメタ数である。
 つまり、ヘッダ `<boost/signals/signal0.hpp>` には `signal0` が含まれており、ヘッダ `<boost/signals/signal1.hpp>` には `signal1` が含まれている。
@@ -10,7 +10,7 @@
 #include <boost/signals/signalN.hpp>
 ```
 
-##概要
+## 概要
 
 本ドキュメントは複数の関係するクラス `signal0`, `signal1`, `signal2` などを扱う。
 ここで末尾の数値は、シグナルとそれに接続されたスロットがとるパラメタ数を表す。
@@ -90,24 +90,24 @@ namespace boost {
 * empty[link #empty]
 * operator()[link #function_call_operator]
 
-##関連型
+## 関連型
 
-###<a name="combiner">Combiner</a>
+### <a name="combiner">Combiner</a>
 
 `Combiner` はイテレータのシーケンス `[first, last)` を受け取り、シーケンス中のいくつかのイテレータを参照外しして値を戻す関数オブジェクトである。
 `Combiner` に渡されるイテレータの型は [slot call iterator](#slot_call_iterator) である。
 
-###<a name="slot_group">Group</a>
+### <a name="slot_group">Group</a>
 
 `Group` は、接続をグループ化するために用いる型を定義する。
 これは [`DefaultConstructible`](http://www.sgi.com/tech/stl/DefaultConstructible.html) かつ [`CopyConstructible`](http://www.sgi.com/tech/stl/CopyConstructible.html) でなければならない。
 
-###<a name="group_compare">GroupCompare</a>
+### <a name="group_compare">GroupCompare</a>
 
 `GroupCompare` は、実引数型が [group type](#slot_group) と一致する [`BinaryPredicate`](http://www.sgi.com/tech/stl/BinaryPredicate.html) である。
 これは接続グループの順序関係を定める。
 
-###<a name="slot_function_type">SlotFunction</a>
+### <a name="slot_function_type">SlotFunction</a>
 
 `SlotFunction` は、他の互換性がある関数オブジェクトからコンストラクト可能な関数オブジェクトアダプタであることが要求される(互換性は `SlotFunction` それ自身によって定義される)。
 `SlotFunction` は `T1, T2, .. TN` 型のパラメタを受け取り、シグナルのテンプレートパラメタ型 `R` に変換可能な結果を返す必要がある;
@@ -115,32 +115,32 @@ namespace boost {
 
 他のシグナルへの接続、ならびに関数オブジェクトの参照への接続では、 `SlotFunction` は `reference_wrapper` オブジェクトを受理可能である必要がある。
 
-##メンバ
+## メンバ
 
-###<a name="slot_result_type">`slot_result_type` 型</a>
+### <a name="slot_result_type">`slot_result_type` 型</a>
 
 `SlotFunction` が `void` を戻す場合、スロットの戻り値型は実装定義である; そうでないばあいにはスロットの戻り値型は `SlotFunction` 関数オブジェクトによって戻される型であることが要求される。
 
-###<a name="slot_call_iterator">`slot_call_iterator` 型</a>
+### <a name="slot_call_iterator">`slot_call_iterator` 型</a>
 
 `value_type` が `R` であるような [`InputIterator`](http://www.sgi.com/tech/stl/InputIterator.html)。
 `slot_call_iterator` の参照外し演算子は、指定された実引数を与えてスロットを呼び出し、その結果を戻す責任を負う。
 イテレータを複数回参照外ししたときでもスロットが一度だけ呼び出されることを保証するため、結果はキャッシュされなければならない。
 
-###<a name="constructor">コンストラクタ</a>
+### <a name="constructor">コンストラクタ</a>
 
 `explicit signalN(const combiner_type& = combiner_type(), const group_compare_type& = group_compare_type());`
 
 - **作用**: シグナルをスロットを含まない状態に初期化し、与えられた統合子を内部記憶域にコピーし、与えられたグループ比較関数オブジェクトを格納する。
 - **事後条件**: `this->empty();`
 
-###<a name="destructor">デストラクタ</a>
+### <a name="destructor">デストラクタ</a>
 
 `~signal();`
 
 - **作用**: すべてのスロット接続を切断する。
 
-###接続管理
+### 接続管理
 
 <a name="connect">`signals::connection connect(const slot_type& slot);`</a>
 
@@ -187,7 +187,7 @@ namespace boost {
 - **論拠**: スロットは、そのスロットの実行中も含めて、任意の時点で切断することが可能である。
 	したがって実装は切断されたスロットのリストを検索し、まだスロットが接続されているかを決定しなければならない可能性がある。
 
-###シグナル呼び出し
+### シグナル呼び出し
 
 <a name="function_call_operator">`result_type operator()(T1 a1, T2 a2, ..., TN aN); result_type operator()(T1 a1, T2 a2, ..., TN aN) const;`</a>
 

@@ -1,4 +1,4 @@
-#Smart Pointer Changes
+# Smart Pointer Changes
 
 The February 2002 change to the Boost smart pointers introduced a number of changes.
 Since the previous version of the smart pointers was in use for a long time, it's useful to have a detailed list of what changed from a library
@@ -6,7 +6,7 @@ user's point of view.
 
 Note that for compilers that don't support member templates well enough, a separate implementation is used that lacks many of the new features and is more like the old version.
 
-##Features Requiring Code Changes to Take Advantage
+## Features Requiring Code Changes to Take Advantage
 
 - The smart pointer class templates now each have their own header file.
   For compatibility, the [&lt;boost/smart_ptr.hpp&gt;](http://www.boost.org/doc/libs/1_31_0/boost/smart_ptr.hpp) header now includes the headers for the four classic smart pointer class templates.
@@ -20,14 +20,14 @@ Note that for compilers that don't support member templates well enough, a separ
 - The `BOOST_SMART_PTR_CONVERSION` feature has been removed.
 - `shared_ptr<void>` is now allowed.
 
-##Features That Improve Robustness
+## Features That Improve Robustness
 
 - The manipulation of use counts is now <a name="threadsafe">thread safe</a> on Windows, Linux, and platforms that support pthreads.
   See the [&lt;boost/detail/atomic_count.hpp&gt;](http://www.boost.org/doc/libs/1_31_0/boost/detail/atomic_count.hpp) file for details
 - The new `shared_ptr` will always delete the object using the pointer it was originally constructed with.
   This prevents subtle problems that could happen if the last `shared_ptr` was a pointer to a sub-object of a class that did not have a virtual destructor.
 
-##Implementation Details
+## Implementation Details
 
 - Some bugs in the assignment operator implementations and in `reset` have been fixed by using the &quot;copy and swap&quot; idiom.
 - Assertions have been added to check preconditions of various functions; however, since these use the new [&lt;boost/assert.hpp&gt;](http://www.boost.org/doc/libs/1_31_0/boost/assert.hpp) header, the assertions are disabled by default.

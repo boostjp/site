@@ -1,4 +1,4 @@
-#動機
+# 動機
 
 C++ の関数やテンプレートの引数リストは特別な構文によって組み立てられるもので、C++ の式によって構成したり操作したりできない。
 このことによってコードを無駄に反復してしまうことがある。
@@ -27,7 +27,7 @@ yes_type is_function_tester(R (*)(A0, A1, A2));
 
 このような種類の繰り返しは総称的なコンポーネントやメタプログラミングのための機能の実装をする際に頻繁に起きる。
 
-##典型的な解決法
+## 典型的な解決法
 
 典型的には、このような繰り返しは手動で解決される。
 手動による繰り返しは生産的ではないが、訓練されていない人間の目にはそのようなコードが読みやすいことがある。
@@ -42,7 +42,7 @@ yes_type is_function_tester(R (*)(A0, A1, A2));
 	(呼び出しの自動化は頻繁に変更されるライブラリにとっては魅力的である。)
 - 生成プログラムの移植や配布は難しいかもしれないし、時間を消費する。
 
-##プリプロセッサではどうか？
+## プリプロセッサではどうか？
 
 C++にはプリプロセッサが付いているので、このような需要に向いていると考えるかもしれない。
 実際、プリプロセッサはこのようなケースに極めて妥当である。なぜなら:
@@ -57,19 +57,19 @@ C++にはプリプロセッサが付いているので、このような需要�
 
 - 詳細なプリプロセッサの機能と制限については、C++ 標準 [[Std]](bibliography.md#std) を参照してほしい。
 
-##ふたたび先の例
+## ふたたび先の例
 
 プリプロセッサライブラリを使用すると、 `is_function_tester()` は次のように実装できる:
 
 ```cpp
-#define IS_FUNCTION_TESTER(Z, N, _) \
+# define IS_FUNCTION_TESTER(Z, N, _) \
 	template<class R BOOST_PP_COMMA_IF(N) BOOST_PP_ENUM_PARAMS(N, class A)> \
 	yes_type is_function_tester(R (*)(BOOST_PP_ENUM_PARAMS(N, A))); \
 	/**/
 
 BOOST_PP_REPEAT(BOOST_PP_INC(MAX_IS_FUNCTION_TESTER_PARAMS), IS_FUNCTION_TESTER, _)
 
-#undef IS_FUNCTION_TESTER
+# undef IS_FUNCTION_TESTER
 ```
 
 サポートする引数の最大個数を変更するには、単に `MAX_IS_FUNCTION_TESTER_PARAMS` を変更してコンパイルしなおせばよい。

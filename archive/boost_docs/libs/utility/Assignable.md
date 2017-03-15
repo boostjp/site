@@ -1,30 +1,30 @@
-#Assignable
+# Assignable
 
-##説明
+## 説明
 その型のオブジェクトから、その型の他のオブジェクトに代入が可能である場合、その型はAssignableである。
 
 
-##表記
+## 表記
 - `T`はAssignableモデルの型
 - `t`は`T`型のオブジェクト
 - `u`は`T`型のオブジェクト、もしくは可能であれば`const T`型のオブジェクト
 
 
-##定義
+## 定義
 
-##妥当な式
+## 妥当な式
 
 | 名前 | 式 | 戻り値の型 | 意味論 |
 |------|----|------------|--------|
 | 代入 | `t = u` | `T&` | `t`は`u`と同等である |
 
 
-##モデル
+## モデル
 - `int`
 - `std::pair`
 
 
-##関連項目
+## 関連項目
 [DefaultConstructible](http://www.sgi.com/tech/stl/DefaultConstructible.html) and [CopyConstructible](CopyConstructible.md)
 
 

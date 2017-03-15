@@ -1,4 +1,4 @@
-#adjacency_list_traits
+# adjacency_list_traits
 ```cpp
 adjacency_list_traits<EdgeList, VertexList, Directed>
 ```
@@ -16,11 +16,11 @@ struct adjacency_list_traits {
 ```
 
 
-##Where Defined
+## Where Defined
 `boost/graph/adjacency_list.hpp`
 
 
-##Template Parameters
+## Template Parameters
 
 | パラメータ   | 説明 | デフォルト |
 |--------------|------|------------|
@@ -29,15 +29,15 @@ struct adjacency_list_traits {
 | `Directed`   | グラフが有向であるか無向であるかの選択子型。 | `directedS` |
 
 
-##Model of
+## Model of
 [DefaultConstructible](http://www.sgi.com/tech/stl/DefaultConstructible.html) and [Assignable](http://www.sgi.com/tech/stl/Assignable.html)
 
 
-##Type Requirements
+## Type Requirements
 工事中
 
 
-##Members
+## Members
 
 | メンバ | 説明 |
 |--------|------|
@@ -47,7 +47,7 @@ struct adjacency_list_traits {
 | `edge_parallel_category` | これはグラフが多重辺の挿入を許可する (`allow_parallel_edge_tag`) か、または自動的に多重辺を取り除く (`disallow_parallel_edge_tag`) かを述べる。 |
 
 
-##See Also
+## See Also
 [`adjacency_list`](adjacency_list.md)
 
 

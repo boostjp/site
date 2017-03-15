@@ -1,7 +1,7 @@
-#グラフ
+# グラフ
 グラフ構造とそれに対する操作を行うには、[Boost Graph Library](http://www.boost.org/doc/libs/release/libs/graph/doc/index.html)を使用する。
 
-##インデックス
+## インデックス
 
 - [グラフ型を定義する](#define-graph)
 - [頂点と辺を追加する](#add-vertex-edge)

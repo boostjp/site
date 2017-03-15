@@ -1,7 +1,7 @@
-#関数ポインタと関数オブジェクトを統一的に扱う
+# 関数ポインタと関数オブジェクトを統一的に扱う
 [Boost Function Library](http://www.boost.org/doc/libs/release/doc/html/function.html)の`boost::function`クラスは、関数ポインタでも関数オブジェクトでもどちらでも格納、呼び出しができる型である。
 
-##インデックス
+## インデックス
 
 - [基本的な使い方](#basic-usage)
 

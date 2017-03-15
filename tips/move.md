@@ -1,4 +1,4 @@
-#ムーブ可能なクラスを定義する
+# ムーブ可能なクラスを定義する
 Boost1.49から導入された[Boost Move Library](http://www.boost.org/doc/libs/release/doc/html/move.html)を使用することで、
 
 - C++03環境でもムーブセマンティクスをエミュレートし、
@@ -7,7 +7,7 @@ Boost1.49から導入された[Boost Move Library](http://www.boost.org/doc/libs
 (TODO： エミュレーションの制限を書く)
 
 
-##インデックス
+## インデックス
 - [コピー可能／ムーブ可能なクラスを定義する](#define-copyable-and-movable-class)
 - [ムーブ可能な基底クラス／メンバ変数を使用する](#use-movable-base)
 - [コピー不可／ムーブ可能なクラスを定義する](#define-non-copyable-but-movable-class)

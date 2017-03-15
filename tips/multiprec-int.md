@@ -1,8 +1,8 @@
-#多倍長整数
+# 多倍長整数
 多倍長整数を使用するには、[Boost Multiprecision Library](http://www.boost.org/libs/multiprecision/)を使用する。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [多倍長整数の種類](#variation)
 - [文字列からの変換](#from-string)

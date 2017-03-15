@@ -1,8 +1,8 @@
-#線形代数
+# 線形代数
 線形代数には、[Boost uBLAS Library](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/index.htm)を使用する。
 
 
-##インデックス
+## インデックス
 - [ベクトルの基本操作](#basic-vector-usage)
 - [ベクトルの長さを取得する](#vector-length)
 - [ベクトルを正規化する](#normalize)

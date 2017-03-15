@@ -1,4 +1,4 @@
-#Header boost/cast.hpp
+# Header boost/cast.hpp
 
 ヘッダboost/cast.hppは、C++の組み込みキャストを補完するべく作成された、 [`polymorphic_cast`](#polymorphic_cast), [`polymorphic_downcast`](#polymorphic_cast), [`numeric_cast`](#numeric_cast)を提供する。
 
@@ -18,7 +18,7 @@ C++に組み込まれた`dynamic_cast`は、多態オブジェクトへのポイ
 C++に組み込まれた`dynamic_cast`は、ポインタではなく参照のキャストに使われるべきである。さもなくば、あるインタフェースがサポートされているかどうか調べるために使うことができる。この場合、返却値が`0`になることはエラーではない。
 
 
-###`polymorphic_cast`と`polymorphic_downcast`の概要
+### `polymorphic_cast`と`polymorphic_downcast`の概要
 ```cpp
 namespace boost {
 
@@ -37,7 +37,7 @@ inline Derived polymorphic_downcast(Base* x);
 ```
 
 
-###`polymorphic_downcast`の例
+### `polymorphic_downcast`の例
 ```cpp
 #include <boost/cast.hpp>
 ...
@@ -60,7 +60,7 @@ void f( Fruit * fruit ) {
 - 引数型は、返却値型に`static_cast`を用いて変換できなければならない。
 
 
-###`numeric_cast`の概要
+### `numeric_cast`の概要
 ```cpp
 namespace boost {
 
@@ -77,7 +77,7 @@ template<typename Target, typename Source>
 }
 ```
 
-###`numeric_cast`の例
+### `numeric_cast`の例
 ```cpp
 #include <boost/cast.hpp>
 using namespace boost::cast;
@@ -91,11 +91,11 @@ void ariane(double vx)
 ```
 
 
-###`numeric_cast`の理論的根拠
+### `numeric_cast`の理論的根拠
 例外送出の条件は、`!=` 演算の必要を無くすように構成されている。
 
 
-##歴史的経緯
+## 歴史的経緯
 `polymorphic_cast`は"The C++ Programming Language"においてBjarne Stroustrupより提案された。
 
 `polymorphic_downcast`は[Dave Abrahams](http://www.boost.org/doc/libs/1_31_0/people/dave_abrahams.htm)より寄贈された。

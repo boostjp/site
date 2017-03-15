@@ -1,16 +1,16 @@
-#Boost.Signals 設計
+# Boost.Signals 設計
 
 このドキュメントは Boost.Signals に関する高レベルの設計を解説する。
 追加のドキュメントが [設計の論拠](design_rationale.md) を解説する。
 
-##目次
+## 目次
 
 - [型抹消](#type_erasure)
 - [`connection` クラス](#connection)
 - [スロット呼び出しイテレータ](#slot_call_iterator)
 - [`visit_each` function template](#visit_each)
 
-##<a name="type_erasure">型抹消</a>
+## <a name="type_erasure">型抹消</a>
 
 型抹消は、テンプレート実体化で生成されるコードの量を減らすため、Boost.Signals ライブラリ中で広範に使われている。
 各シグナルは、スロット名から関連する接続を写像する `std::map` とともに、スロットとそれに関係する接続のリストを管理しなければならない。
@@ -20,7 +20,7 @@
 スロットのリストと名付けられたスロットから接続への写像を扱うコードはすべて、`any` と `Function` オブジェクトのみを扱う [`signal_base`](http://www.boost.org/doc/libs/1_31_0/boost/signals/detail/signal_base.hpp) クラスに含められ、実際の実装はよく知られた pimpl イディオムを用いて隠蔽されている。
 実際の [`signalN`](reference/signalN.md) クラスは、引数の数によって変化する、もしくは connection のように本質的にテンプレート依存であるコードのみを扱う。
 
-##<a name="connection">`connection` クラス</a>
+## <a name="connection">`connection` クラス</a>
 
 `connection` クラスは Boost.Signals の働きにおいて中枢をなす。
 これは Boost.Signals システムにおいて、与えられた接続に関連づけられた全オブジェクトを把握している唯一の存在である。
@@ -33,7 +33,7 @@
 この `connection` オブジェクトはシグナル破棄時に切断される。
 最後にスロットグループからスロットへの対応は `std::multimap` のキー値に基づいている(`std::multimap` が保持するデータはスロットの対である)。
 
-##<a name="slot_call_iterator">スロット呼び出しイテレータ</a>
+## <a name="slot_call_iterator">スロット呼び出しイテレータ</a>
 
 スロット呼び出しイテレータは、スロットのリストを通じてその下にあるイテレータの振る舞いを変更するイテレータアダプタのスタックである。
 下の表は、型と各イテレータアダプタに要求される振る舞いを記述している。
@@ -51,7 +51,7 @@
 | Input Caching Iterator Adaptor | 下層のイテレータを参照外しした結果をキャッシュする。したがってこのイテレータを複数回参照外ししても、下層のイテレータは一度だけ参照外しされる; つまりスロットは一度だけ呼ばれるが、結果は何度でも利用できる。 |
 | Slot Call Iterator | Slot Call Iterator |
 
-##関数テンプレート <a name="visit_each">`visit_each`</a>
+## 関数テンプレート <a name="visit_each">`visit_each`</a>
 
 [`visit_each`](reference/visit_each.md) 関数テンプレートは、他のオブジェクトに格納されているオブジェクトを発見するための仕組みである。
 関数テンプレート `visit_each` は 3 つの引数をとる:

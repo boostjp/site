@@ -1,4 +1,4 @@
-#Boost Format library
+# Boost Format library
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/format/>
 

@@ -1,10 +1,10 @@
-#有限状態マシン
+# 有限状態マシン
 有限状態マシン(finite state machine)を扱うライブラリとしてBoost.StatechartとBoost.MSM (Meta State Machine)のふたつが存在する。
 
 ここではBoost.MSMの利用方法を紹介する。
 
 
-##インデックス
+## インデックス
 - [有限状態マシンの定義と利用](#define-state-machine)
 - [状態の開始と終了のタイミングで任意の処理を行う](#state-event)
 - [状態遷移イベントを受け取ったタイミングで任意の処理を行う](#change-state-event)

@@ -1,8 +1,8 @@
-#Evaluated Slots
+# Evaluated Slots
 
 The evaluated slot mechanism is a tool to fully evaluate a constant integral expression and avoid the lazy evaluation normally performed by the preprocessor.
 
-##Tutorial
+## Tutorial
 
 In order to understand the use of such a mechanism, I will start with a simple file-iteration example.
 Consider the following scenario....
@@ -19,7 +19,7 @@ The above is a simple runtime model of the following multidimensional file-itera
 
 ```cpp
 // file.hpp
-#if !BOOST_PP_IS_ITERATING
+# if !BOOST_PP_IS_ITERATING
 	#ifndef FILE_HPP_
 	#define FILE_HPP_
 
@@ -29,20 +29,20 @@ The above is a simple runtime model of the following multidimensional file-itera
 	#include BOOST_PP_ITERATE()
 
 	#endif // FILE_HPP_
-#elif BOOST_PP_ITERATION_DEPTH() == 1
+# elif BOOST_PP_ITERATION_DEPTH() == 1
 	#define I BOOST_PP_ITERATION()
 
 	#define BOOST_PP_ITERATION_PARAMS_2 (3, (0, I, "file.hpp"))
 	#include BOOST_PP_ITERATE()
 
 	#undef I
-#elif BOOST_PP_ITERATION_DEPTH() == 2
+# elif BOOST_PP_ITERATION_DEPTH() == 2
 	#define J BOOST_PP_ITERATION()
 
 	// use I and J
 
 	#undef J
-#endif
+# endif
 ```
 
 There is a problem with the code above.
@@ -56,7 +56,7 @@ To solve the problem, we need *I* to be *evaluated* here:
 
 ```cpp
 // ...
-#elif BOOST_PP_ITERATION_DEPTH() == 1
+# elif BOOST_PP_ITERATION_DEPTH() == 1
 	#define I BOOST_PP_ITERATION()
 // ...
 ```
@@ -66,7 +66,7 @@ The following code uses this mechanism to "fix" the example above...
 
 ```cpp
 // ...
-#elif BOOST_PP_ITERATION_DEPTH() == 1
+# elif BOOST_PP_ITERATION_DEPTH() == 1
 	#define BOOST_PP_VALUE BOOST_PP_ITERATION()
 	#include BOOST_PP_ASSIGN_SLOT(1)
 	#define I BOOST_PP_SLOT(1)
@@ -85,7 +85,7 @@ In the case above, *I* is *still* lazily evaluated.
 However, it now evaluates to `BOOST_PP_SLOT(1)`.
 This value *will not change* unless there is a subsequent call to `BOOST_PP_ASSIGN_SLOT(1)`.
 
-##Advanced Techniques
+## Advanced Techniques
 
 The slot mechanism can also be used to perform calculations:
 
@@ -95,12 +95,12 @@ The slot mechanism can also be used to perform calculations:
 #include <boost/preprocessor/slot/slot.hpp>
 #include <boost/preprocessor/stringize.hpp>
 
-#define X() 4
+# define X() 4
 
-#define BOOST_PP_VALUE 1 + 2 + 3 + X()
-#include BOOST_PP_ASSIGN_SLOT(1)
+# define BOOST_PP_VALUE 1 + 2 + 3 + X()
+# include BOOST_PP_ASSIGN_SLOT(1)
 
-#undef X
+# undef X
 
 int main(void) {
 	std::cout
@@ -115,16 +115,16 @@ In essence, anything that can be evaluated in an `#if` (or `#elif`) preprocessor
 It is even possible to use a particular slot itself while reassigning it:
 
 ```cpp
-#define BOOST_PP_VALUE 20
-#include BOOST_PP_ASSIGN_SLOT(1)
+# define BOOST_PP_VALUE 20
+# include BOOST_PP_ASSIGN_SLOT(1)
 
-#define BOOST_PP_VALUE 2 * BOOST_PP_SLOT(1)
-#include BOOST_PP_ASSIGN_SLOT(1)
+# define BOOST_PP_VALUE 2 * BOOST_PP_SLOT(1)
+# include BOOST_PP_ASSIGN_SLOT(1)
 
 BOOST_PP_SLOT(1) // 40
 ```
 
-##See Also
+## See Also
 
 - [`BOOST_PP_ASSIGN_SLOT`](../ref/assign_slot.md)
 - [`BOOST_PP_LIMIT_SLOT_COUNT`](../ref/limit_slot_count.md)

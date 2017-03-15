@@ -1,9 +1,9 @@
-#多次元配列
+# 多次元配列
 
 多次元配列には、[Boost Multi-Array Library](http://www.boost.org/doc/libs/release/libs/multi_array/doc/index.html)を使用する。
 
 
-##インデックス
+## インデックス
 
 - [基本的な使い方](#basic-usage)
 - [部分配列の走査](#iterate-partial-array)

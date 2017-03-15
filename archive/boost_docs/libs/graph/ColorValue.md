@@ -1,12 +1,12 @@
-#ColorValue
+# ColorValue
 このコンセプトは色付けを必要とする型として記述されており、グラフ中を探査する時に頂点が訪問済か色でマークするために利用される。
 
 
-##Refinement of
+## Refinement of
 [EqualityComparable](http://www.sgi.com/tech/stl/EqualityComparable.html) and [DefaultConstructible](http://www.sgi.com/tech/stl/DefaultConstructible.html)
 
 
-##表記
+## 表記
 
 | 識別子 | 説明 |
 |--------|------|
@@ -14,7 +14,7 @@
 | `cv`   | 型 `T` のオブジェクト |
 
 
-##有効な表現式
+## 有効な表現式
 
 | 名前 | 式 | 戻り型 | 説明 |
 |------|----|--------|------|
@@ -23,7 +23,7 @@
 | Get Color Black | `color_traits<T>::black()` | `T` | 黒色を表すオブジェクトを返す。 |
 
 
-##モデル
+## モデル
 `default_color_type` (boost/graph/properties.hpp の中に記述)
 
 

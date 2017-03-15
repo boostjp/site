@@ -1,8 +1,8 @@
-#シグナル／スロット
+# シグナル／スロット
 イベント処理などで使われるシグナル／スロットには、[Boost Signals2 Library](http://www.boost.org/doc/libs/release/doc/html/signals2.html)を使用する。
 
 
-##インデックス
+## インデックス
 - [複数の関数を登録する](#connect-multiple-functions)
 - [スロットを切断する](#disconnect)
 - [シグナル呼び出しの戻り値](#return-value)

@@ -1,4 +1,4 @@
-#libs/concept_check/stl_concept_check.cpp
+# libs/concept_check/stl_concept_check.cpp
 ```cpp
 // (C) Copyright Jeremy Siek 2000. Permission to copy, use, modify,
 // sell and distribute this software is granted provided this
@@ -23,9 +23,9 @@
 #include <vector>
 #include <list>
 #include <deque>
-#ifndef BOOST_NO_SLIST
+# ifndef BOOST_NO_SLIST
 #include <slist>
-#endif
+# endif
 
 // Define this macro if you want to hide the expected error, that is,
 // error in the various C++ standard library implementations.
@@ -37,10 +37,10 @@ main()
 {
   using namespace boost;
 
-#if defined(_ITERATOR_) && defined(BOOST_HIDE_EXPECTED_ERRORS)
+# if defined(_ITERATOR_) && defined(BOOST_HIDE_EXPECTED_ERRORS)
   // VC++ STL implementation is not standard conformant and
   // fails to pass these concept checks
-#else
+# else
   typedef std::vector<int> Vector;
   typedef std::deque<int> Deque;
   typedef std::list<int> List;
@@ -49,25 +49,25 @@ main()
   function_requires< Mutable_RandomAccessContainerConcept<Vector> >();
   function_requires< BackInsertionSequenceConcept<Vector> >();
 
-#if !(defined(__GNUC__) && defined(BOOST_HIDE_EXPECTED_ERRORS))
-#if !(defined(__sgi) && defined(BOOST_HIDE_EXPECTED_ERRORS))
+# if !(defined(__GNUC__) && defined(BOOST_HIDE_EXPECTED_ERRORS))
+# if !(defined(__sgi) && defined(BOOST_HIDE_EXPECTED_ERRORS))
   // old deque iterator missing n + iter operation
   function_requires< Mutable_RandomAccessContainerConcept<Deque> >();
-#endif
+# endif
   // warnings about signed and unsigned in old deque version
   function_requires< FrontInsertionSequenceConcept<Deque> >();
   function_requires< BackInsertionSequenceConcept<Deque> >();
-#endif
+# endif
 
   // VC++ missing pointer and const_pointer typedefs
   function_requires< Mutable_ReversibleContainerConcept<List> >();
   function_requires< FrontInsertionSequenceConcept<List> >();
   function_requires< BackInsertionSequenceConcept<List> >();
 
-#ifndef BOOST_NO_SLIST
+# ifndef BOOST_NO_SLIST
   typedef BOOST_STD_EXTENSION_NAMESPACE::slist<int> SList;
   function_requires< FrontInsertionSequenceConcept<SList> >();
-#endif
+# endif
 
   typedef std::set<int> Set;
   typedef std::multiset<int> MultiSet;
@@ -89,7 +89,7 @@ main()
   function_requires< SortedAssociativeContainerConcept<MultiMap> >();
   function_requires< MultipleAssociativeContainerConcept<MultiMap> >();
   function_requires< PairAssociativeContainerConcept<MultiMap> >();
-#endif
+# endif
 
   return 0;
 }

@@ -1,6 +1,6 @@
-#singleton
+# singleton
 
-##Motivation
+## Motivation
 serializationライブラリは、いくつかの静的変数とテーブルが存在し、それが実行時のタイプに関連する情報を格納することに基づいています。 たとえば、exportされた名前とタイプを関連づけるテーブルや、基底クラスと派生クラスとを関連づけるテーブルです。 これらの変数の生成と破棄、そして利用においては、以下に示す問題の考慮が必要です。
 
 - いくつかの静的なデータ変数と定数は、他の要素を参照します。初期化の順序は任意ではだめで、適切な順序でなければなりません。
@@ -11,7 +11,7 @@ serializationライブラリは、いくつかの静的変数とテーブルが�
 この`singleton`クラスは上記問題を解決します。
 
 
-##Features
+## Features
 この`singleton`実装は、以下の特徴を持ちます。
 
 - あらゆるインスタンスがそれにアクセスが試みられる前に構築されます。
@@ -21,7 +21,7 @@ serializationライブラリは、いくつかの静的変数とテーブルが�
 - 上記は、どんなconstインスタンスでも、プログラム全体でスレッドセーフであることを意味します。もう一度言いますが、スレッドのロックは必要ありません。
 - mutableなインスタンスが作られ、`main`関数がマルチスレッドシステムで呼び出されたあとに変更されるならば、レースコンディションが発生する可能性があります。serializationライブラリでは、mutableな`singleton`が必要となるわずかな場所において、`main`関数が呼び出されたあとに、それが変更されないように注意します。より一般的な目的のため、この`singleton`上でロックを行うスレッドを簡単に実装することができましたが、serializationライブラリがそれを必要としなかったので、実装しませんでした。
 
-##Class Interface
+## Class Interface
 
 ```cpp
 namespace boost {
@@ -52,7 +52,7 @@ static T & get_mutable_instance();
 このタイプの`singleton`へのmutable参照を返します。
 
 
-##Requirements
+## Requirements
 `singleton<T>`として使えるように、型`T`はdefault constructibleでなければなりません。
 
 それ(`T`?)は静的変数を持っているかもしれませんが、静的変数を必要としません。
@@ -62,7 +62,7 @@ static T & get_mutable_instance();
 ライブラリが、`singleton<T>`の唯一のインスタンスへのすべてのアクセスが、上記静的インターフェースを介して行われるため、`T`の一般的なメンバ関数は、機能的には、静的メンバ関数と同等となります。
 
 
-##Examples
+## Examples
 このクラステンプレートには少なくとも2つの異なる使用法があります。 これらは両方ともserializationライブラリで用いられています。 最初の利用方法を、下記のコードを含むextended_type_info.cppから抜粋します。
 
 ```cpp
@@ -109,7 +109,7 @@ extended_type_info_typeid<T>::get_const_instance()
 どこでも上記の文を1つ以上プログラムに含むならば、唯一のインスタンスが生成され、参照されることを保証します。
 
 
-##Multi-Threading
+## Multi-Threading
 この`singleton`は、次の単純なルールにしたがうことで、マルチスレッドアプリケーションから安全に使うことができます。
 
 複数のスレッドが走っているとき、`get_mutable_instance`を呼び出さないこと!

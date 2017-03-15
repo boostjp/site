@@ -1,7 +1,7 @@
-#ロギング
+# ロギング
 ロギングには、[Boost Log Library](http://www.boost.org/doc/libs/release/libs/log/doc/html/index.html)を使用する。
 
-##インデックス
+## インデックス
 - [基本的なログ出力](#basic-usage)
 - [ファイルにログを出力する](#file-log)
 - [ログレベルでフィルタを掛ける](#filter-loglevel)

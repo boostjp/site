@@ -1,4 +1,4 @@
-#local_utc_conversion.cpp
+# local_utc_conversion.cpp
 
 DSTを含む、ローカルからUTC、UTCからローカルへの計算を示す。
 

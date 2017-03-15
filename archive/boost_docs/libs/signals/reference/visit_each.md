@@ -1,13 +1,13 @@
-#関数テンプレート `visit_each`
+# 関数テンプレート `visit_each`
 
-##ヘッダ
+## ヘッダ
 
 ```cpp
 #include <boost/visit_each.hpp>
 ```
 * boost/visit_each.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/visit_each.hpp]
 
-##概要
+## 概要
 
 `visit_each` の機構は、`visitor` を与えられたオブジェクトの全部分オブジェクトに対して適用することを可能にする。
 これは Signals ライブラリによって関数オブジェクト中の `trackable` オブジェクトを見つけ出すために使われているが、広く使われれば他の用途も出てくるだろう (例: 保守的ガベージコレクション)。
@@ -21,7 +21,7 @@ namespace boost {
 ```
 * visit_each[link #visit_each]
 
-##関数
+## 関数
 
 <a name="visit_each">`template<typename Visitor, typename T> void visit_each(Visitor& v, const T& t, int);`</a>
 

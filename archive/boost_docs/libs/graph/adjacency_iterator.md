@@ -1,11 +1,11 @@
-#Adjacency Iterator Adaptor
+# Adjacency Iterator Adaptor
 
 Defined in header `boost/graph/adjacency_iterator.hpp`
 
 隣接イテレータ・アダプタは `out_edge_iterator` を隣接イテレータに変形する。すなわち、辺の方々を巡回するイテレータを取り、それらの **終点** の方々を巡回するイテレータを作成する。このアダプタと共に [Incidence Graph](IncidenchGraph.md) をモデルとするグラフ型を取り、[Adjacency Graph](AdjacencyGraph.md) によって要求される能力を付け加えるのは些細なことである。
 
 
-##Synopsis
+## Synopsis
 
 ```cpp
 namespace boost {
@@ -18,7 +18,7 @@ namespace boost {
 ```
 
 
-##Example
+## Example
 下記は `adjacency_iterator_generator` クラスの使い方の例である。
 
 ```cpp
@@ -34,7 +34,7 @@ class my_graph {
 ```
 
 
-##Template Parameters
+## Template Parameters
 
 | パラメータ | 説明 |
 |------------|------|
@@ -43,11 +43,11 @@ class my_graph {
 | `OutEdgeIter` | これは `graph_traits<Graph>::out_edge_iterator` と同じ型でなければならない。<br/> デフォルト: `graph_traits<Graph>::out_edge_iterator` |
 
 
-##Model of
+## Model of
 隣接イテレータ・アダプタ (型 `adjacency_iterator_generator<...>::type`) は [Multi-Pass Input Iterator](../utility/MultiPassInputIterator.md) のモデルである。
 
 
-##Members
+## Members
 隣接イテレータ型は `reference` の型が `value_type` と同じで、それから `operator*()` が値返しであることを除けば、[Random Access Iterator](http://www.sgi.com/tech/stl/RandomAccessIterator.html) コンセプトによって要求されるメンバ関数と演算子を実装している。 さらに次のコンストラクタを持つ:
 
 ```cpp

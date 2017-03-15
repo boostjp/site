@@ -1,4 +1,4 @@
-#Local Time Adjustment
+# Local Time Adjustment
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

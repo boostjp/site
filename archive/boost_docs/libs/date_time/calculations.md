@@ -1,4 +1,4 @@
-#Date-Time Concepts - 計算
+# Date-Time Concepts - 計算
 
 - [全体のインデックスへ](../date_time.md)
 - [Gregorianのインデックスへ](gregorian.md)

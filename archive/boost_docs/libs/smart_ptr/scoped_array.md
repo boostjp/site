@@ -1,4 +1,4 @@
-#scoped_array class template
+# scoped_array class template
 
 `scoped_array`クラステンプレートは動的に割り当てられた配列へのポインタを保持する。
 (動的に割り当てられた配列とは、C++の`new[]`によって割り当てられたものである。)
@@ -24,7 +24,7 @@
 このクラステンプレートには、指し示す配列の要素の型を表すパラメータ`T`を与える。
 `T`はスマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を満たさなければならない。
 
-##Synopsis
+## Synopsis
 
 ```cpp
 namespace boost {
@@ -60,15 +60,15 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 * swap[link #swap]
 * swap[link #free-swap]
 
-##Members
+## Members
 
-###<a name="element_type">element_type</a>
+### <a name="element_type">element_type</a>
 
 `typedef T element_type;`
 
 保持されるポインタの型を規定する。
 
-###<a name="ctor">constructors</a>
+### <a name="ctor">constructors</a>
 
 `explicit scoped_array(T * p = 0); // never throws`
 
@@ -77,7 +77,7 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-###<a name="~scoped_array">destructor</a>
+### <a name="~scoped_array">destructor</a>
 
 `~scoped_array(); // never throws`
 
@@ -87,7 +87,7 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 削除される配列の要素のデストラクタが例外を送出しないという条件が満たされている場合、このデストラクタが例外を送出しないことが保証される。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-###<a name="reset">reset</a>
+### <a name="reset">reset</a>
 
 `void reset(T * p = 0); // never throws`
 
@@ -96,14 +96,14 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 削除される配列の要素のデストラクタが例外を送出しないという条件が満たされている場合、このデストラクタが例外を送出しないことが保証される。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-###<a name="operator[]">subscripting</a>
+### <a name="operator[]">subscripting</a>
 
 `T & operator[](std::ptrdiff_t i) const; // never throws`
 
 保持しているポインタが指す配列の`i`番目の要素への参照を返す。
 保持しているポインタが0のとき、及び`i`が0未満または配列の要素数以上の数であるとき、この演算子のふるまいは未定であり、ほぼ確実に有害である。
 
-###<a name="get">get</a>
+### <a name="get">get</a>
 
 `T * get() const; // never throws`
 
@@ -111,7 +111,7 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-###<a name="swap">swap</a>
+### <a name="swap">swap</a>
 
 `void swap(scoped_array & b); // never throws`
 
@@ -119,9 +119,9 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-##<a name="functions">Free Functions</a>
+## <a name="functions">Free Functions</a>
 
-###<a name="free-swap">swap</a>
+### <a name="free-swap">swap</a>
 
 ```cpp
 template<typename T>

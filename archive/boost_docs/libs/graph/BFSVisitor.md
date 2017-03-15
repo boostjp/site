@@ -1,12 +1,12 @@
-#BFS（幅優先探査）Visitor Concept
+# BFS（幅優先探査）Visitor Concept
 このコンセプトは [`breadth_first_search()`](breadth_first_search.md) 用のビジタのインタフェースを定義する。ユーザは BFS Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `breadth_first_search()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
 
 
-##Refinement of
+## Refinement of
 [Copy Constructible](../utility/CopyConstructible.md) (ビジタのコピーは軽い操作である方がいい)
 
 
-##表記
+## 表記
 
 | 識別子  | 説明 |
 |---------|------|
@@ -18,11 +18,11 @@
 | `s`,`u` | `boost::graph_traits<G>::vertex_descriptor` 型のオブジェクト。 |
 
 
-##関連型
+## 関連型
 なし
 
 
-##有効な表現式
+## 有効な表現式
 
 | 名前 | 式 | 戻り値 | 説明 |
 |------|----|--------|------|
@@ -37,11 +37,11 @@
 | Finish Vertex | `vis.finish_vertex(u, g)` | `void` | ある頂点の全ての出力辺が探索木に追加され、全ての隣接する頂点が発見された後に、その頂点に対して実行される (ただし、隣接する頂点の出力辺を調査するよりは前に) 。 |
 
 
-##モデル
+## モデル
 [`bfs_visitor`](bfs_visitor.md)
 
 
-##関連項目
+## 関連項目
 [Visitorコンセプト](visitor_concepts.md)
 
 

@@ -1,4 +1,4 @@
-#MPI による並列計算
+# MPI による並列計算
 [Boost MPI Library](http://www.boost.org/doc/libs/release/doc/html/mpi.html)はメッセージ通信インターフェイスである MPI を C++ でより簡単に扱えるようにしたライブラリである。
 
 このライブラリを使用する際には MPI の実装 (OpenMPI, MPICH...) が必要になるため注意すること。
@@ -8,7 +8,7 @@
 とくに断りがなければ、ここで紹介するプログラムは C++11 を使用する。
 
 
-##インデックス
+## インデックス
 - [Boost.MPI を使ったプログラムをビルドする](#build)
 - [MPI の初期化を行う](#initialize)
 - [自身のランクやノード数を調べる](#rank-and-size)

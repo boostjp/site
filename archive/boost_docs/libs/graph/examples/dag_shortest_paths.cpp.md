@@ -1,4 +1,4 @@
-#libs/graph/example/dag_shortest_paths.cpp
+# libs/graph/example/dag_shortest_paths.cpp
 
 ```cpp
 //=======================================================================
@@ -63,7 +63,7 @@ int main()
   property_map<graph_t, vertex_distance_t>::type
     d_map = get(vertex_distance, g);
 
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   // VC++ has trouble with the named-parameter mechanism, so
   // we make a direct call to the underlying implementation function.
   std::vector<default_color_type> color(num_vertices(g));
@@ -74,9 +74,9 @@ int main()
   property_map<graph_t, edge_weight_t>::type w_map = get(edge_weight, g);
   dag_shortest_paths(g, s, d_map, w_map, &color[0], &pred[0], 
      vis, compare, combine, std::numeric_limits<int>::max(), 0);
-#else
+# else
   dag_shortest_paths(g, s, distance_map(d_map));
-#endif
+# endif
 
   graph_traits<graph_t>::vertex_iterator vi , vi_end;
   for (tie(vi, vi_end) = vertices(g); vi != vi_end; ++vi)

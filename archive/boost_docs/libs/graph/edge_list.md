@@ -1,8 +1,8 @@
-#edge_list<EdgeIterator, ValueType, DiffType>
+# edge_list<EdgeIterator, ValueType, DiffType>
 `edge_list` クラスは辺イテレータのペアを [EdgeListGraph](EdgeListGraph.md) をモデルとするクラスに変えるアダプタである。辺イテレータの `value_type` は `std::pair` (もしくは少なくとも `first` メンバと `second` メンバを持っている) でなければならない。ペアの `first_type` と `second_type` は同じでなければならず、それらはグラフの `vertex_descriptor` のために使われるだろう。 `ValueType` と `DiffType` のテンプレート・パラメータは、コンパイラが部分特殊化版をサポートしていない時にのみ必要である。そうでなければデフォルトは正しい型になる。
 
 
-##コード例
+## コード例
 Bellman-Ford の最短経路アルゴリズムを `edge_list` に適用する。
 
 ```cpp
@@ -52,11 +52,11 @@ z: 0 z
 ```
 
 
-##定義場所
+## 定義場所
 boost/graph/edge_list.hpp
 
 
-##テンプレートパラメータ
+## テンプレートパラメータ
 
 | パラメータ | 説明 |
 |------------|------|
@@ -65,11 +65,11 @@ boost/graph/edge_list.hpp
 | `DiffType`     | `EdgeIterator` の `difference_type`。<br/> デフォルト: `std::iterator_traits<EdgeIterator>::difference_type` |
 
 
-##モデル
+## モデル
 [EdgeListGraph](./EdgeListGraph)
 
 
-##関連型
+## 関連型
 
 ```cpp
 boost::graph_traits<edge_list>::vertex_descriptor 
@@ -94,7 +94,7 @@ boost::graph_traits<edge_list>::edge_iterator
 `edges()` によって返されるイテレータのための型。`edge_iterator` のイテレータの種類は `EdgeIterator` のそれと同じであるだろう。
 
 
-##メンバ関数
+## メンバ関数
 ```cpp
 edge_list(EdgeIterator first, EdgeIterator last) 
 ```
@@ -102,7 +102,7 @@ edge_list(EdgeIterator first, EdgeIterator last)
 範囲 `[first,last)` で与えられる辺リストで指定された `n` 個の頂点と辺からなるグラフ・オブジェクトを作成する。
 
 
-##非メンバ関数
+## 非メンバ関数
 ```cpp
 std::pair<edge_iterator, edge_iterator>
 edges(const edge_list& g)

@@ -1,4 +1,4 @@
-#静的な正規表現
+# 静的な正規表現
 正規表現には、[Boost Xpressive Library](http://www.boost.org/doc/libs/release/doc/html/xpressive.html)を使用する。
 
 ここでは、静的な正規表現の使い方を解説していく。
@@ -9,7 +9,7 @@
 - [http://alpha.sourceforge.jp/devel/boost.xpressive_ja.pdf](http://alpha.sourceforge.jp/devel/boost.xpressive_ja.pdf)
 
 
-##インデックス
+## インデックス
 - [静的な正規表現とは](#static-regex)
 - [基本的な使い方](#basic-usage)
 - [動的と静的の正規表現対応表](#dynamic-static-table)

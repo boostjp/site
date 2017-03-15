@@ -1,19 +1,19 @@
-#Boost.勉強会 #1
+# Boost.勉強会 #1
 
-##開催日時
+## 開催日時
 2009/12/12 10:00 ～ 18:00
 
-##開催場所
+## 開催場所
 グリー株式会社
 東京都港区六本木4-1-4 黒崎ビル5F
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 - ATND](http://atnd.org/events/1839)
 - [Boost.懇親会 - ATND](http://atnd.org/events/1872)
 
 
-##タイムテーブル
+## タイムテーブル
 - 09:30～10:00 ： 開場、準備
 - 10:00～10:10 ： 最初のご挨拶
 - 10:10～11:40 ： Boostライブラリ一周の旅(Akira)
@@ -30,15 +30,15 @@
 - 18:00～18:15 ： Boost.Python & Boost.PHP(moriyoshi)
 
 
-##Ust
+## Ust
 [http://www.ustream.tv/channel/boostjp](http://www.ustream.tv/channel/boostjp)
 
 
-##Twitterハッシュタグ
+## Twitterハッシュタグ
 [#boostjp](http://twitter.com/search?q=%23boostjp)
 
 
-##発表内容
+## 発表内容
 ### Boostライブラリ一周の旅
 - 発表者 ： 高橋 晶
 - ブログ ： [http://d.hatena.ne.jp/faith_and_brave](http://d.hatena.ne.jp/faith_and_brave/)/
@@ -165,7 +165,7 @@
 
 
 
-###関連リンク
+### 関連リンク
 - [Boost.勉強会に参加 - 桜、抹茶、白、日記](http://d.hatena.ne.jp/youandi/20091212/p1)
 - [Boost.勉強会なう - 苫小牧産のオタク](http://d.hatena.ne.jp/hiratara/20091212/1260577791)
 - [Boost.勉強会でした - 危ないRiSKのブログ](http://d.hatena.ne.jp/RiSK/20091212/1260609394)

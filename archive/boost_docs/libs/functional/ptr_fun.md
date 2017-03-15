@@ -1,4 +1,4 @@
-#Function Pointer Adapters
+# Function Pointer Adapters
 functional.hpp ヘッダは C++ 標準 (§ 20.3.7): 由来の関数ポインタアダプ タの両方の強化バージョンを提供する:
 
 - `pointer_to_unary_function`

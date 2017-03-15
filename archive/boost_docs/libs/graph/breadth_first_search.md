@@ -1,4 +1,4 @@
-#breadth_first_search
+# breadth_first_search
 
 ```cpp
 // 名前付きパラメータバージョン
@@ -53,11 +53,11 @@ BFS(G, s)
 `breadth_first_search()` 関数は一定のイベント・ポイントと呼ばれる、 ユーザ定義のアクションで拡張することができる。アクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [BFS Visitor](BFSVisitor.md) の要求を満たしているオブジェクトである。上の擬似コード内で、イベント・ポイントは右側のラベルである。さらに各イベント・ポイントの記述を以下に示した。デフォルトでは `breadth_first_search()` 関数はどんなアクションも実行しない。距離や先行点の記録さえも。しかしながらこれらは [`distance_recorder`](distance_recorder.md) と [`predecessor_recorder`](predecessor_recorder.md) のイベント・ビジタを用いて容易に追加できる。
 
 
-##定義場所
+## 定義場所
 boost/graph/breadth_first_search.hpp
 
 
-##パラメータ
+## パラメータ
 - IN: `VertexListGraph& g`
 	- 有向グラフまたは無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
 
@@ -65,7 +65,7 @@ boost/graph/breadth_first_search.hpp
 	- 探索が開始される始点。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 - IN: `visitor(BFSVisitor vis)`
 	- アルゴリズムの内側で [BFS Visitor](BFSVisitor.md) コンセプトで指定されたイベント・ポイントで呼び出されるビジタ・オブジェクト。 ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
 	- デフォルト: `bfs_visitor<null_visitor>`
@@ -84,11 +84,11 @@ boost/graph/breadth_first_search.hpp
 	- デフォルト: `boost::queue`
 
 
-##計算量
+## 計算量
 時間計算量は O(E + V) である。
 
 
-##ビジタ・イベント・ポイント
+## ビジタ・イベント・ポイント
 
 - `vis.initialize_vertex(v, g)` は、探索の開始前に各頂点で呼び出される。
 - `vis.examine_vertex(u, g)` は、各頂点においてそれがキューから削除される時に呼び出される。
@@ -101,18 +101,18 @@ boost/graph/breadth_first_search.hpp
 - `vis.finish_vertex(u, g)` は、 `u` の全ての出辺が調べられ、全ての隣接頂点が発見された後で呼び出される。
 
 
-##コード例
+## コード例
 
 [examples/bfs-example.cpp](examples/bfs-example.cpp.md) 中にある例は、[Figure 6](graph_theory_review.md#bfs-algorithm) のグラフにおいて BGL 幅優先探索アルゴリズムを用いて実演している。
 
 [examples/bfs-example2.cpp](examples/bfs-example2.cpp.md) のファイルは同じ例を含むが、使われている `adacency_list` クラスは `VertexList` を持っており、`EdgeList` が `listS` に置かれている。
 
 
-##関連項目
+## 関連項目
 [`bfs_visitor`](bfs_visitor.md) と [`depth_first_search()`](depth_first_search.md)
 
 
-##注釈
+## 注釈
 - <a name="note_1" href="#note_1">[1]</a> ビジタのパラメータは値渡しされるので、もしビジタが状態を持っているなら、アルゴリズムの間のいかなる状態の変更も、送ったビジタ・オブジェクトには行われずビジタ・オブジェクトのコピーに対して行われる。それゆえポインタまたはリファレンスによってこの状態をビジタに保持させることを望むかもしれない。
 
 

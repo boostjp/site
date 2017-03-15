@@ -1,4 +1,4 @@
-#compose1.cpp
+# compose1.cpp
 The following code example is taken from the book
 
 [The C++ Standard Library - A Tutorial and Reference](http://www.josuttis.com/libbook/)

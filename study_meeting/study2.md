@@ -1,19 +1,19 @@
-#Boost.勉強会 #2
+# Boost.勉強会 #2
 
-##開催日時
+## 開催日時
 2010/09/11(土) 13:00～18:00
 
-##開催場所
+## 開催場所
 IIJ本社
 東京都千代田区神田神保町1-105
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 #2 - ATND](http://atnd.org/events/7148)
 [- Boost.懇親会 #2 - ATND](http://atnd.org/events/7365)
 
 
-##タイムテーブル
+## タイムテーブル
 - 12:20～ : 開場
 - 12:55～13:00 : 会場の案内
 - 13:00～13:20 : Boostライブラリ一周の旅 1.41.0～1.44.0までの差分 (faith_and_brave)
@@ -26,15 +26,15 @@ IIJ本社
 - 17:45～18:00 : Boost.Interface(melpon)
 
 
-##Ust
+## Ust
 - [http://www.ustream.tv/channel/okaniwa-live](http://www.ustream.tv/channel/okaniwa-live)
 
 
-##Twitterハッシュタグ
+## Twitterハッシュタグ
 - [#boostjp](http://twitter.com/search?q=%23boostjp)
 
 
-##発表内容
+## 発表内容
 ### Boostライブラリ一周の旅 1.41.0～1.44.0までの差分
 - 発表者 ： 高橋 晶
 - ブログ ： [http://d.hatena.ne.jp/faith_and_brave](http://d.hatena.ne.jp/faith_and_brave/)/
@@ -112,7 +112,7 @@ IIJ本社
 - アフターケア ： [Boost.勉強会 #2 に参加してきました](http://d.hatena.ne.jp/melpon/20100911#1284214554)
 
 
-##関連リンク
+## 関連リンク
 - [Boost.勉強会 #2 に参加 - 桜、抹茶、白、日記](http://d.hatena.ne.jp/youandi/20100911/p1)
 - [Boost.勉強会 #2 雑感 - Life like a clown](http://d.hatena.ne.jp/tt_clown/20100911/1284381263)
 - [Boost.勉強会#2行ってきましたよと](http://d.hatena.ne.jp/rane-hs/20100913/1284346099)

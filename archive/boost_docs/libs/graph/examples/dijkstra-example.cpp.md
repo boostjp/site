@@ -1,4 +1,4 @@
-#libs/graph/example/dijkstra-example.cpp
+# libs/graph/example/dijkstra-example.cpp
 
 ```cpp
 //=======================================================================
@@ -51,7 +51,7 @@ main(int, char *[])
   };
   int weights[] = { 1, 2, 1, 2, 7, 3, 1, 1, 1 };
   int num_arcs = sizeof(edge_array) / sizeof(Edge);
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   graph_t g(num_nodes);
   property_map<graph_t, edge_weight_t>::type weightmap = get(edge_weight, g);
   for (std::size_t j = 0; j < num_arcs; ++j) {
@@ -59,24 +59,24 @@ main(int, char *[])
     tie(e, inserted) = add_edge(edge_array[j].first, edge_array[j].second, g);
     weightmap[e] = weights[j];
   }
-#else
+# else
   graph_t g(edge_array, edge_array + num_arcs, weights, num_nodes);
   property_map<graph_t, edge_weight_t>::type weightmap = get(edge_weight, g);
-#endif
+# endif
   std::vector<vertex_descriptor> p(num_vertices(g));
   std::vector<int> d(num_vertices(g));
   vertex_descriptor s = vertex(A, g);
 
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   // VC++ has trouble with the named parameters mechanism
   property_map<graph_t, vertex_index_t>::type indexmap = get(vertex_index, g);
   dijkstra_shortest_paths(g, s, &p[0], &d[0], weightmap, indexmap, 
                           std::less<int>(), closed_plus<int>(), 
                           std::numeric_limits<int>::max(), 0,
                           default_dijkstra_visitor());
-#else
+# else
   dijkstra_shortest_paths(g, s, predecessor_map(&p[0]).distance_map(&d[0]));
-#endif
+# endif
 
   std::cout << "distances and parents:" << std::endl;
   graph_traits < graph_t >::vertex_iterator vi, vend;

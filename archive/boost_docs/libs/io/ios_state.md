@@ -1,9 +1,9 @@
-#Header <boost/io/ios_state.hpp>
+# Header <boost/io/ios_state.hpp>
 
 boost/io/ios_state.hppは、C++の入出力ストリームシステムにおけるオブジェクトのストリーム状態を保持することを保証する。
 
 
-##目次
+## 目次
 - [Rationale](#rationale)
 - [Header Synopsis](#header)
 - [Savers for Basic Standard Attributes](#base_savers)
@@ -16,7 +16,7 @@ boost/io/ios_state.hppは、C++の入出力ストリームシステムにおけ�
     - [Contributors](#contributors)
     - [History](#history)
 
-##<a name="rationale">Rationale</a>
+## <a name="rationale">Rationale</a>
 
 時々、ある値が制限されたスコープ内でのみ変化しなければならない時がある。
 セーバークラス群は、オブジェクトの現在の状態（またはオブジェクトの様相）のコピーを保持し、デストラクト時にスコープ内で発生した変更を全て元通りにして、そのオブジェクトの状態を回復する。
@@ -43,7 +43,7 @@ void  hex_my_byte( std::ostream &os, char byte )
 
 セーバークラスを使ったより優れたコードの[例](#example)を下の方に示す。
 
-##<a name="header">Header Synopsis</a>
+## <a name="header">Header Synopsis</a>
 
 ```cpp
 #include <iosfwd>  // for std::char_traits (declaration)
@@ -96,7 +96,7 @@ class ios_all_word_saver;
 }
 ```
 
-##<a name="base_savers">Savers for Basic Standard Attributes</a>
+## <a name="base_savers">Savers for Basic Standard Attributes</a>
 
 基本セーバークラスは、次のようなフォーマットを持っている。:
 
@@ -118,14 +118,14 @@ class saver_class
 ２番目のコンストラクタは一つ目のと同様に働くが、さらにそれに加えて第２引数に新しい`aspect_type`を指定することでストリームの属性を変更できる。
 デストラクタはストリームの属性を保持しておいた状態に戻す。
 
-###Basic IOStreams State Saver Classes
+### Basic IOStreams State Saver Classes
 | Class | Saved Attribute | Attribute Type | Reading Method | Writing Method |
 |---|---|---|---|---|
 | `boost::io::ios_flags_saver` | Format control flags | `std::ios_base::fmtflags` | `flags` | `flags` |
 | `boost::io::ios_precision_saver` | Number of digits to print after decimal point | `std::streamsize` | `precision` | `precision` |
 | `boost::io::ios_width_saver` | Minimum field width for printing objects | `std::streamsize` | `width` | `width` |
 
-##<a name="adv_savers">Savers for Advanced Standard Attributes</a>
+## <a name="adv_savers">Savers for Advanced Standard Attributes</a>
 
 セーバークラステンプレートは次のようなフォーマットを持つ:
 
@@ -149,7 +149,7 @@ class saver_class
 ２番目のコンストラクタは一つ目のと同様に働くが、さらにそれに加えて第２引数に新しい`aspect_type`を指定することでストリームの属性を変更できる。
 デストラクタはストリームの属性を保持しておいた状態に戻す。
 
-###Advanced IOStreams State Saver Class Templates
+### Advanced IOStreams State Saver Class Templates
 | Class Template | Saved Attribute | Attribute Type | Reading Method | Writing Method |
 |---|---|---|---|---|
 | `boost::io::basic_ios_iostate_saver<Ch, Tr>` | Failure state of the stream [[1]](#Note1) | `std::ios_base::iostate` | `rdstate` | `clear` |
@@ -159,7 +159,7 @@ class saver_class
 | `boost::io::basic_ios_fill_saver<Ch, Tr>` | Character used to pad oversized field widths | `Ch` | `fill` | `fill` |
 | `boost::io::basic_ios_locale_saver<Ch, Tr>` | Locale information associated with the stream [[3]](#Note3) | `std::locale` | `getloc` (from `std::ios_base`) | `imbue` (from `std::basic_ios<Ch, Tr>`) |
 
-###Notes
+### Notes
 
 - 失敗状態フラグとフラグを監視している失敗状態例外の両方またはどちらかが変化した場合、もし２つのフラグが一致したら例外が投げられる。
   これは、<a name="Note1">これらのクラステンプレートのコンストラクタまたはデストラクタが例外を投げることを意味するかもしれない。</a>
@@ -172,7 +172,7 @@ class saver_class
   この問題は、`basic_ios`の中の必要とするメンバ関数が多態的に`basic_ios`のそれに結びついていないためである。
   セーバークラスと共に使用されるストリームクラスは継承によってそれらに最も近いメンバ関数を使用するべきである。
 
-##<a name="user_savers">Savers for User-Defined Attributes</a>
+## <a name="user_savers">Savers for User-Defined Attributes</a>
 
 ユーザー定義の情報の為のセーバークラスは、次のようなフォーマットを持つ。
 
@@ -201,13 +201,13 @@ class saver_class
 ２番目のコンストラクタは一つ目のと同様に働くが、さらにそれに加えて第３引数に新しい`aspect_type`を指定することでストリームの属性を変更できる。
 デストラクタはストリームの属性を保持しておいた状態に戻す。
 
-###IOStream User-Defined State Saver Classes
+### IOStream User-Defined State Saver Classes
 | Class | Saved Attribute | Attribute Type | Reference Method |
 |---|---|---|---|
 | `boost::io::ios_iword_saver` | Numeric user-defined format flag | `long` | `iword` |
 | `boost::io::ios_pword_saver` | Pointer user-defined format flag | `void *` | `pword` |
 
-##<a name="combo_savers">Savers for Combined Attributes</a>
+## <a name="combo_savers">Savers for Combined Attributes</a>
 
 属性セーバークラスを統合するために３つのクラス（テンプレート）がある。
 `boost:io::ios_base_all_saver`セーバークラスは、全ての基本属性セーバークラスの機能を統合している。
@@ -217,7 +217,7 @@ class saver_class
 `boost::io::ios_all_word_saver`セーバークラスは、ユーザー定義の情報を保持するクラスを結合する。
 このコンストラクタは、属性を保持させたいストリームとユーザーが定義した属性のインデックスを引数に取る。
 
-##<a name="example">Example</a>
+## <a name="example">Example</a>
 
 [Rationale](#rationale)で使用したコードは２つの点で改善できる。
 表示出力関数は書式設定状態を変更するコードの周りでセーバーを使えるかもしれない。
@@ -253,14 +253,14 @@ int  main()
 }
 ```
 
-##<a name="refer">References</a>
+## <a name="refer">References</a>
 
 - The I/O state saver library header itself: boost/io/ios_state.hpp
 - Some test/example code: ios_state_test.cpp
 
-##<a name="credits">Credits</a>
+## <a name="credits">Credits</a>
 
-###<a name="contributors">Contributors</a>
+### <a name="contributors">Contributors</a>
 
 - <a href="../../../people/daryle_walker.html">Daryle Walker</a>
 
@@ -270,7 +270,7 @@ int  main()
 	属性クラスとクラステンプレートを統合するのに貢献した。
 	テストファイルios_state_test.cppに貢献した。
 
-###<a name="history">History</a>
+### <a name="history">History</a>
 
 - 13 Mar 2002, Daryle Walker
     - Initial version

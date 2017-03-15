@@ -1,4 +1,4 @@
-#depth_first_visit
+# depth_first_visit
 ```cpp
 template <class IncidenceGraph, class DFSVisitor, class ColorMap>
 void depth_first_visit(IncidenceGraph& g,
@@ -15,11 +15,11 @@ void depth_first_visit(IncidenceGraph& g,
 `ColorMap` は訪れられた頂点の過程を保持するためにアルゴリズムによって使われる。
 
 
-##定義場所
+## 定義場所
 boost/graph/depth_first_search.hpp
 
 
-##パラメータ
+## パラメータ
 
 - IN `IncidenceGraph& g`
 	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
@@ -34,11 +34,11 @@ boost/graph/depth_first_search.hpp
 	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [Color Value](ColorValue.md) をモデルとしなければならない。
 
 
-##計算量
+## 計算量
 時間計算量は O(E) である。
 
 
-##注釈
+## 注釈
 <a name="note_1" href="#note_1">[1]</a> ビジタのパラメータは値渡しされるので、もしビジタが状態を持っているなら、アルゴリズムの間のいかなる状態の変更も、送ったビジタ・オブジェクトには行われずビジタ・オブジェクトのコピーに対して行われる。それゆえポインタまたは リファレンスによってこの状態をビジタに保持させることを望むかもしれない。
 
 

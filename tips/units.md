@@ -1,8 +1,8 @@
-#単位演算
+# 単位演算
 
 単位付きの値を扱うためには、[Boost Units Library](http://www.boost.org/doc/libs/release/doc/html/boost_units.html)を使用する。
 
-##インデックス
+## インデックス
 
 - [用語](#term)
 - [基本的な使い方](#basic-usage)

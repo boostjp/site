@@ -1,13 +1,13 @@
-#Boost.Signals: クラステンプレート slot
+# Boost.Signals: クラステンプレート slot
 
-##ヘッダ
+## ヘッダ
 
 ```cpp
 #include <boost/signals/slot.hpp>
 ```
 * boost/signals/slot.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/signals/slot.hpp]
 
-##概要
+## 概要
 
 `slot` クラステンプレートはスロットを作成し、非テンプレート関数への実引数として渡すことを可能にする。
 これは [`CopyConstructible`](http://www.sgi.com/tech/stl/CopyConstructible.html) であるが [`DefaultConstructible`](http://www.sgi.com/tech/stl/DefaultConstructible.html) ならびに [`Assignable`](http://www.sgi.com/tech/stl/Assignable.html) ではない。
@@ -28,7 +28,7 @@ namespace boost {
 * SlotFunction[link signalN.md#slot_function_type]
 * slot[link #constructor]
 
-###コンストラクタ
+### コンストラクタ
 
 <a name="constructor">`template<typename Slot> slot(const Slot& slot);`</a>
 

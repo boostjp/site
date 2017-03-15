@@ -1,4 +1,4 @@
-#time_math.cpp
+# time_math.cpp
 
 timeとtime durationのさまざまなタイプの計算
 

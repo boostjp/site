@@ -1,4 +1,4 @@
-#Boost.MultiArray
+# Boost.MultiArray
 
 Boost.MultiArray は，ジェネリックな N 次元配列のコンセプト定義と，そのインタフェイスの共通実装を提供する。
 

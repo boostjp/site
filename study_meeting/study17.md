@@ -1,25 +1,25 @@
-#Boost.勉強会 #17 東京
+# Boost.勉強会 #17 東京
 
-##開催日時
+## 開催日時
 - 2015/05/30(土) 11:00〜18:00
 
 
-##開催場所
+## 開催場所
 - 株式会社インターネットイニシアティブ (IIJ) 本社
 - 〒102-0071 東京都千代田区富士見2-10-2 飯田橋グラン・ブルーム 13F
 
 
-##募集ページ
+## 募集ページ
 - [Boost.勉強会 #17 東京 - connpass](http://connpass.com/event/14355/)
 - [Boost.懇親会 #17 東京 - connpass](http://connpass.com/event/15094/)
 
 
-##主催者&スタッフ
+## 主催者&スタッフ
 - 高橋 晶(@cpp_akira)
 - @Flast_RO, @fadis_, @k_katsuhiro
 
 
-##タイムテーブル
+## タイムテーブル
 
 | 時間 | 発表内容 | 発表者 |
 |------|----------|--------|
@@ -36,11 +36,11 @@
 | 17:30〜18:00 | C\+\+11やEmscriptenと付き合って１年間の振り返り | [kou_yeung](https://twitter.com/kou_yeung), [paosidufygthrj](https://twitter.com/paosidufygthrj) |
 
 
-##Twitterハッシュタグ
+## Twitterハッシュタグ
 [#boostjp](http://twitter.com/search?q=%23boostjp)
 
 
-##Boostライブラリ一周の旅 1.54.0-1.58.0
+## Boostライブラリ一周の旅 1.54.0-1.58.0
 - 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
 - ブログ : [Faith and Brave - C++で遊ぼう](http://faithandbrave.hateblo.jp/)
 - 発表資料 :
@@ -48,12 +48,12 @@
 	- マージ版 [[slideshare](http://www.slideshare.net/faithandbrave/boost-tour-1580-merge)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_17/boost_tour_1_58_0_merge.pdf)]
 
 
-##LINQ for C++のご紹介
+## LINQ for C++のご紹介
 - 発表者 : [mikiemon_h](https://twitter.com/mikiemon_h)
 - 発表資料 : [[slideshare](http://www.slideshare.net/miki_hirofumi/boost17-cpplinq)]
 
 
-##Siv3D で楽しむゲームとメディアアート開発
+## Siv3D で楽しむゲームとメディアアート開発
 - 発表者 : 鈴木 遼, [@Reputeless](https://twitter.com/Reputeless)
 - ブログ :
 	- [Siv3D 開発ブログ](http://siv3d.hateblo.jp/)
@@ -62,30 +62,30 @@
 - デモのコード : [Boost. 勉強会 Siv3D デモ - Play Siv3D!](http://play-siv3d.hateblo.jp/entry/boost17)
 
 
-##Boost.Logとfluentdで始めるログ活用術
+## Boost.Logとfluentdで始めるログ活用術
 - 発表者 : [@termoshtt](https://twitter.com/termoshtt)
 - 発表資料 : [[slideshare](http://www.slideshare.net/termoshtt/boostlogfluentd)]
 
 
-##Boost.odeintで遊ぼう
+## Boost.odeintで遊ぼう
 - 発表者 : Ryogo Yoshimura, [@rydotyosh](https://twitter.com/rydotyosh)
 - ブログ : [rydotの呟''](http://rydot.hatenablog.com/)
 - 発表資料 : <http://rydotyosh.github.io/docs/odeintintro/>
 
 
-##MessagePackとAPIバージョニング
+## MessagePackとAPIバージョニング
 - 発表者 : 近藤貴俊, [@redboltz](https://twitter.com/redboltz)
 - ブログ : [redboltzの日記](http://d.hatena.ne.jp/redboltz/)
 - 発表資料 : [[slideshare](http://www.slideshare.net/taka111/boost-sg-msgpack)]
 
 
-##Boost.Container特有の機能
+## Boost.Container特有の機能
 - 発表者 : 高橋 晶, [@cpp_akira](https://twitter.com/cpp_akira)
 - ブログ : [Faith and Brave - C++で遊ぼう](http://faithandbrave.hateblo.jp/)
 - 発表資料 : [[slideshare](http://www.slideshare.net/faithandbrave/boost-container-feature)][[pdf](https://dl.dropboxusercontent.com/u/1682460/presentation/boost_17/boost_container_feature.pdf)]
 
 
-##C++11やEmscriptenと付き合って１年間の振り返り
+## C++11やEmscriptenと付き合って１年間の振り返り
 - 発表者 : 楊 志恒([@kou_yeung](https://twitter.com/kou_yeung)), ウラ サトシ([@paosidufygthrj](https://twitter.com/paosidufygthrj))
 - 発表資料 : [[slideshare](http://www.slideshare.net/paosidufgythrj/c11emscripten-48972842)]
 

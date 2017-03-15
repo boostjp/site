@@ -1,4 +1,4 @@
-#libs/graph/example/bellman-example.cpp
+# libs/graph/example/bellman-example.cpp
 
 ```cpp
 //=======================================================================
@@ -77,14 +77,14 @@ main()
 
   typedef adjacency_list < vecS, vecS, directedS,
     no_property, property < edge_weight_t, int > > Graph;
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   // VC++ can't handle the iterator constructor
   Graph g(N);
   for (std::size_t j = 0; j < n_edges; ++j)
     add_edge(edge_array[j].first, edge_array[j].second, g);
-#else
+# else
   Graph g(edge_array, edge_array + n_edges, N);
-#endif
+# endif
   graph_traits < Graph >::edge_iterator ei, ei_end;
   property_map<Graph, edge_weight_t>::type weight_pmap = get(edge_weight, g);
   int i = 0;
@@ -97,15 +97,15 @@ main()
     parent[i] = i;
   distance[z] = 0;
 
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   bool r = bellman_ford_shortest_paths
     (g, int(N), weight_pmap, &parent[0], &distance[0], 
      closed_plus<int>(), std::less<int>(), default_bellman_visitor());
-#else
+# else
   bool r = bellman_ford_shortest_paths
     (g, int (N), weight_map(weight_pmap).distance_map(&distance[0]).
      predecessor_map(&parent[0]));
-#endif
+# endif
 
   if (r)
     for (i = 0; i < N; ++i)

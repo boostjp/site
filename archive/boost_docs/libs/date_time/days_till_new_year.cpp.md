@@ -1,4 +1,4 @@
-#days_till_new_year.cpp
+# days_till_new_year.cpp
 
 新年まであと何日か計算してみる
 

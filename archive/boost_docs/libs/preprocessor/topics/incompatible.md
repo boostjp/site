@@ -1,4 +1,4 @@
-#非互換性
+# 非互換性
 
 以前の Boost のリリース(1.28)とはいくつか非互換な部分がある。
 それらは大雑把に言って三つのカテゴリにわけられる。
@@ -7,7 +7,7 @@
 - 再入構文
 - *list* の畳み込み
 
-##反復ターゲット
+## 反復ターゲット
 
 まず、最も広く使われていると思われるのは、`BOOST_PP_REPEAT` へ渡されるターゲットマクロと、`BOOST_PP_REPEAT` を使った水平反復の構成である。
 これはターゲットマクロを必要とするような全ての `BOOST_PP_REPEAT_*` と全ての `BOOST_PP_ENUM_*` を含む。
@@ -21,21 +21,21 @@ It represents the next repetition dimension and brings `BOOST_PP_REPEAT` inline 
 したがって次のようであったものは:
 
 ```cpp
-#define macro(n, data) ...
+# define macro(n, data) ...
 BOOST_PP_REPEAT(5, macro, data)
 ```
 
 ...次のようになる:
 
 ```cpp
-#define macro(z, n, data) ...
+# define macro(z, n, data) ...
 BOOST_PP_REPEAT(5, macro, data)
 ```
 
 このパラメータは `BOOST_PP_REPEAT` メカニズムへの非常に効率的な再入に利用できる。
 しかしながら、ライブラリは自動的に次の反復次元を見つけるため、それを必ずしも使う必要はない。
 
-##次元の順序付け
+## 次元の順序付け
 
 しかしこの自動的な検知により、`BOOST_PP_REPEAT_1ST`、`BOOST_PP_REPEAT_2ND`、`BOOST_PP_3RD`を順序からはずれて使うことは安全でない。
 これらのマクロは *自動再帰* メカニズムをバイパスし、また *自動再帰* メカニズムは適切な順序でマクロが使われることに依存している。
@@ -43,7 +43,7 @@ BOOST_PP_REPEAT(5, macro, data)
 それ以外の使いかたはライブラリによってサポートされない。
 時々は動作するかもしれないが、動作しないこともあるかもしれない。
 
-##再入構文
+## 再入構文
 
 *自動再帰* も同様の問題がある。
 以前は `BOOST_PP_WHILE` の再帰構文(と同様に `BOOST_PP_FOR`)は次のようであった:
@@ -64,8 +64,8 @@ BOOST_PP_CAT(BOOST_PP_WHILE, d)(pred, op, state)
 それは次のようなものと同様である:
 
 ```cpp
-#define A(x, y) ...
-#define B A
+# define A(x, y) ...
+# define B A
 // ...
 B(2, 3)
 ```
@@ -82,7 +82,7 @@ BOOST_PP_REPEAT_ ## z(count, macro, data)
 BOOST_PP_WHILE_ ## d(pred, op, state)
 ```
 
-##畳み込み
+## 畳み込み
 
 以前は `BOOST_PP_LIST_FOLD_RIGHT` マクロの引数は `BOOST_PP_LIST_FOLD_LEFT` の逆順であった。
 また、`BOOST_PP_LIST_FOLD_RIGHT` へ渡される集積マクロも逆の引数で呼ばれていた。
@@ -91,23 +91,23 @@ BOOST_PP_WHILE_ ## d(pred, op, state)
 例示すると、`BOOST_PP_LIST_FOLD_RIGHT` は次のようであった:
 
 ```cpp
-#define macro(d, elem, state)
+# define macro(d, elem, state)
 BOOST_PP_LIST_FOLD_RIGHT(macro, list, state)
 ```
 
 これは次のように置き換わった...
 
 ```cpp
-#define macro(d, state, elem)
+# define macro(d, state, elem)
 BOOST_PP_LIST_FOLD_RIGHT(macro, state, list)
 ```
 
-##概要
+## 概要
 
 このライブラリは1.28リリースには無い新しい機能をたくさん持っていて、このリストはそれら全てを列挙するものではない。
 これは単に、新しいリリースに互換となるためにコードを変更したければならないもののリストである。
 
-##See Also
+## See Also
 
 - [`BOOST_PP_FOR`](../ref/for.md)
 - [`BOOST_PP_LIST_FOLD_RIGHT`](../ref/list_fold_right.md)

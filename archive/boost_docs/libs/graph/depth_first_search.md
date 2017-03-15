@@ -1,4 +1,4 @@
-#depth_first_search
+# depth_first_search
 ```cpp
 // 名前付きパラメータバージョン
 template <class Graph, class class P, class T, class R>
@@ -54,17 +54,17 @@ DFS-VISIT(G, u)
 ```
 
 
-##定義場所
+## 定義場所
 boost/graph/depth_first_search.hpp
 
 
-##パラメータ
+## パラメータ
 
 - IN: `Graph& g`
 	- 有向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) と [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 
 - IN: `visitor(DFSVisitor vis)`
 	- アルゴリズムの内側で [DFS Visitor](DFSVisitor.md) コンセプトで指定されるイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
@@ -83,11 +83,11 @@ boost/graph/depth_first_search.hpp
 	- デフォルト: `get(vertex_index, g)`
 
 
-##計算量
+## 計算量
 時間計算量は O(E + V) である。
 
 
-##ビジタ・イベント・ポイント
+## ビジタ・イベント・ポイント
 
 - `vis.initialize_vertex(s, g)` は、グラフの探索の開始前にグラフの各頂点で呼び出される。
 - `vis.start_vertex(s, g)` は、探索の開始前に始点において一度呼び出される。
@@ -99,15 +99,15 @@ boost/graph/depth_first_search.hpp
 - `vis.finish_vertex(u, g)` は、出辺の全てが探索木に追加され、全ての隣接頂点が発見された (ただし、それらの出辺が調査される前に) 後の頂点において呼び出される。
 
 
-##コード例
+## コード例
 [examples/dfs-example.cpp](examples/dfs-example.cpp.md) 中の例は、 [Figure 1](graph_theory_review.md#dfs-algorithm) にあるグラフへ適用された DFS を示す。
 
 
-##関連項目
+## 関連項目
 [`depth_first_visit`](depth_first_visit.md)、[`undirected_dfs`](undirected_dfs.md)
 
 
-##注釈
+## 注釈
 <a name="note_1" href="#note_1">[1]</a> ビジタのパラメータは値渡しされるので、もしビジタが状態を持っているなら、アルゴリズムの間のいかなる状態の変更も、送ったビジタ・オブジェクトには行われずビジタ・オブジェクトのコピーに対して行われる。それゆえポインタまたはリファレンスによってこの状態をビジタに保持させることを望むかもしれない。
 
 

@@ -1,4 +1,4 @@
-#libs/graph/example/dfs_parenthesis.cpp
+# libs/graph/example/dfs_parenthesis.cpp
 
 ```cpp
 //=======================================================================
@@ -75,13 +75,13 @@ main(int, char*[])
                 E(2, 1), E(2, 3),
                 E(3, 1), E(3, 4),
                 E(4, 0), E(4, 1) };  
-#if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
+# if defined(BOOST_MSVC) && BOOST_MSVC <= 1300
   Graph G(5);
   for (std::size_t j = 0; j < sizeof(edge_array) / sizeof(E); ++j)
     add_edge(edge_array[j].first, edge_array[j].second, G);
-#else
+# else
   Graph G(edge_array, edge_array + sizeof(edge_array)/sizeof(E), 5);
-#endif
+# endif
 
   typedef boost::graph_traits<Graph>::vertex_descriptor Vertex;
   typedef boost::graph_traits<Graph>::vertices_size_type size_type;

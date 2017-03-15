@@ -1,8 +1,8 @@
-#演算子を自動定義する
+# 演算子を自動定義する
 C++は演算子のオーバーロードによって、ユーザー定義型に演算子を持たせることができる。各演算子には関連性があり、ひとつ定義すれば他の演算子も同じように書ける。たとえば、`operator<()`さえ定義すれば、`operator>()`、`operator<=()`, `operator>=()`は`operator<()`から定義できる。[Boost Operators Library](http://www.boost.org/doc/libs/release/libs/utility/operators.htm)は、このような関連演算子を自動的に定義する機構を提供する。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方 - 整数型を定義する](#basic-usage)
 - [算術演算子](#arithmetic-operators)
     - [大小比較の演算子を自動定義する](#less-than-comparable)

@@ -1,8 +1,8 @@
-#名前付き引数
+# 名前付き引数
 C++において名前付き引数を表現するには、[Boost Parameter Library](http://www.boost.org/doc/libs/release/libs/parameter/doc/html/index.html)を使用する。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [ラベルを名前空間で定義する](#define-label-in-namespace)
 

@@ -1,12 +1,12 @@
-#Bellman Ford Visitor Concept
+# Bellman Ford Visitor Concept
 このコンセプトは [`bellman_ford_shortest_paths()`](bellman_ford_shortest_paths.md) 用のビジタのインタフェースを定義する。ユーザは Bellman Ford Visitor インタフェースを持つクラスを定義して、そのクラスのオブジェクトを `bellman_ford_shortest_paths()` に渡すことができ、それによってグラフ探索中に実行される動作を追加できる。
 
 
-##Refinement of
+## Refinement of
 [Copy Constructible](../utility/CopyConstructible.md) (ビジタのコピーは軽い操作である方がいい)
 
 
-##表記
+## 表記
 
 | 識別子  | 説明 |
 |---------|------|
@@ -18,11 +18,11 @@
 | `s`,`u` | `boost::graph_traits<G>::vertex_descriptor` 型のオブジェクト。 |
 
 
-##関連型
+## 関連型
 なし
 
 
-##有効な表現式
+## 有効な表現式
 
 | 名前 | 式 | 戻り値 | 説明 |
 |------|----|--------|------|
@@ -34,7 +34,7 @@
 | Edge Not Minimized | `edge_not_minimized(e, g)` | `void` | 辺が最小化されていなければ、この関数が呼ばれる。グラフ内に負の閉路が存在する時に、これが起こる。 |
 
 
-##モデル
+## モデル
 [`bellman_visitor`](bellman_visitor.md)
 
 

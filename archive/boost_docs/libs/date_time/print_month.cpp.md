@@ -1,4 +1,4 @@
-#print_month.cpp
+# print_month.cpp
 
 月日を与えて月日を印字する、簡単なユーティリティ。
 

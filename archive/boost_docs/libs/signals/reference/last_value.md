@@ -1,13 +1,13 @@
-#Boost.Signals: クラステンプレート `last_value`
+# Boost.Signals: クラステンプレート `last_value`
 
-##ヘッダ
+## ヘッダ
 
 ```cpp
 #include <boost/last_value.hpp>
 ```
 * boost/last_value.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/last_value.hpp]
 
-##概要
+## 概要
 
 ```cpp
 namespace boost {
@@ -33,7 +33,7 @@ namespace boost {
 * operator()[link #call]
 * operator()[link #void_call]
 
-##メンバ
+## メンバ
 
 <a name="call">`template<typename InputIterator> result_type operator()(InputIterator first, InputIterator last) const;`</a>
 

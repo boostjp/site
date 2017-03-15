@@ -1,4 +1,4 @@
-#cuthill_mckee_ordering
+# cuthill_mckee_ordering
 
 | 構成要素 | 値 |
 |----------|----|
@@ -49,7 +49,7 @@ for (size_type i = 0; i != inv_perm.size(); ++i)
 ```
 
 
-##パラメータ
+## パラメータ
 **バージョン (1) 用:**
 
 - `IncidenceGraph& g`  (IN) 
@@ -83,11 +83,11 @@ for (size_type i = 0; i != inv_perm.size(); ++i)
 	- これは頂点を次数にマップしなければならない。
 
 
-##コード例
+## コード例
 [examples/cuthill_mckee_ordering.cpp](examples/cuthill_mckee_ordering.cpp.md) を参照。
 
 
-##関連項目
+## 関連項目
 [`bandwidth`](bandwidth.md)、それと boost/graph/properties.hpp 中の `degree_property_map`。
 
 

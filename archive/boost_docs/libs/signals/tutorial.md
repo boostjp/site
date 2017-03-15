@@ -1,6 +1,6 @@
-#Boost.Signals チュートリアル
+# Boost.Signals チュートリアル
 
-##<a name="intro">チュートリアルの読み方</a>
+## <a name="intro">チュートリアルの読み方</a>
 
 このチュートリアルは直線的に読むことを意図していない。
 最上位の構成では、おおまかにライブラリにおける異なった概念(たとえば複数スロット呼び出しの扱い、スロットとの値の受け渡し)を分類している。
@@ -12,7 +12,7 @@
 最後に *上級* セクションは Signals ライブラリの非常に高度な使用方法を詳述しており、しばしば *初級* 、 *中級* の項目に関する堅固な理解が要求される。
 ほとんどのユーザは *上級* セクションを読む必要はない。
 
-##互換性に関する注記
+## 互換性に関する注記
 
 Boost.Signals は二通りの文法形式を持つ。
 preferred 形式は、より C++ に似合っており、考慮の必要がある隔てられたテンプレートパラメータの数を減少させ、たいてい可読性を向上させる。
@@ -22,7 +22,7 @@ compatible 形式は Boost によってサポートされているすべての�
 
 [Boost.Function](../function.md) の利用者は、Signals の prefered 形式は Function の preferred 形式と等価なことに注意。
 
-###preferred 形式
+### preferred 形式
 
 - GNU C++ 2.95.x, 3.0.x, 3.1.x
 - Comeau C++ 4.2.45.2
@@ -30,7 +30,7 @@ compatible 形式は Boost によってサポートされているすべての�
 - Intel C++ 5.0, 6.0
 - Compaq's cxx 6.2
 
-###compatible 形式
+### compatible 形式
 
 - Microsoft Visual C++ 6.0, 7.0
 - Borland C++ 5.5.1
@@ -39,7 +39,7 @@ compatible 形式は Boost によってサポートされているすべての�
 
 アナタのコンパイラがこのリストに含まれていない場合、この表を最新の状態に保つため、 preferred 形式を試して結果を Boost メーリングリストに報告して欲しい。
 
-##大要
+## 大要
 
 - *初級:* [Hello, World!](#hello_world)
 - 複数スロットの呼び出し
@@ -54,7 +54,7 @@ compatible 形式は Boost によってサポートされているすべての�
 	- *中級:* [自動化された接続管理](#tracking)
 - [スロットの受け渡し](#passing_slots)
 
-##<a name="hello_world">Hello, World!</a>
+## <a name="hello_world">Hello, World!</a>
 
 次の例はシグナルとスロットを用いて "Hello, World!" を出力する。
 はじめにシグナル `sig` を作成する。
@@ -63,7 +63,7 @@ compatible 形式は Boost によってサポートされているすべての�
 最後に、シグナル `sig` をスロットを呼び出す関数のように使用する。
 これが `HelloWorld::operator()` を呼び出し "Hello, World!" を表示する。
 
-###preferred 形式
+### preferred 形式
 
 ```cpp
 struct HelloWorld
@@ -87,7 +87,7 @@ sig.connect(hello);
 sig();
 ```
 
-###compatible 形式
+### compatible 形式
 
 ```cpp
 struct HelloWorld
@@ -111,7 +111,7 @@ sig.connect(hello);
 sig();
 ```
 
-##<a name="multiple_slots">複数スロットの接続</a>
+## <a name="multiple_slots">複数スロットの接続</a>
 
 単一のシグナルから単一のスロットを呼び出すのは、あまり面白いとはいえない。
 そこで "Hello, World!" を表示する仕事を二つの完全に分離されたスロットに分割することによって、 Hello, World プログラムをより興味深いものにする。
@@ -143,7 +143,7 @@ struct World
 先の例と同様に、引数なし、戻り値型 `void` のシグナル `sig` を作成する。
 ここで `hello` と `world` 両スロットを同一のシグナルに接続すると、シグナル呼び出しによって双方のスロットが呼ばれるだろう。
 
-###preferred 形式
+### preferred 形式
 
 ```cpp
 boost::signal<void ()> sig;
@@ -154,7 +154,7 @@ sig.connect(World());
 sig();
 ```
 
-###compatible 形式
+### compatible 形式
 
 ```cpp
 boost::signal0<void> sig;
@@ -177,7 +177,7 @@ Hello
 シグナルは `Hello` と `World` のいずれを先に呼び出しても構わないが、何かまずいこと (例えば例外) が起きない限り、すべてのスロットが呼ばれる。
 先を読み続けると "Hello, World!" が常に想定通りに表示されるように、順序を制御する方法を学ぶことができる。
 
-##<a name="ordering_slots">スロット呼び出しグループの順序づけ</a>
+## <a name="ordering_slots">スロット呼び出しグループの順序づけ</a>
 
 スロットには副作用があってもかまわないため、他のスロットに先立って呼ぶ必要があるスロットが存在する可能性がある。
 Boost.Signals ライブラリでは、スロットを何らかの方法で順序づけられたグループに配置することができる。
@@ -186,7 +186,7 @@ Hello, World プログラムでは "Hello" を ", World!" に先だって表示�
 既定の状態では、グループ値は `int` であり整数の `<` 関係によって順序づけがなされる。
 Hello, World を組み立てる方法は次の通りである:
 
-###preferred 形式
+### preferred 形式
 
 ```cpp
 boost::signal<void ()> sig;
@@ -195,7 +195,7 @@ sig.connect(1, World());
 sig();
 ```
 
-###compatible 形式
+### compatible 形式
 
 ```cpp
 boost::signal0<void> sig;
@@ -238,7 +238,7 @@ Hello, World!
 スロット `A` と `B` を同一グループ名で同じシグナルに接続すると、 `A` と `B` いずれかが最初に呼ばれる (ただし両方とも呼ばれる)。
 これは、我々が第二バージョンの Hello, World で見たのと同じ振る舞いであり、スロットが誤った順番で呼ばれ出力がめちゃくちゃになる可能性がある。
 
-##<a name="slot_arguments">スロットへの実引数</a>
+## <a name="slot_arguments">スロットへの実引数</a>
 
 シグナルは、呼び出すそれぞれのスロットに対して引数を伝搬させることができる。
 たとえばマウス動作イベントを伝搬させるシグナルは、新しいマウス座標とボタンが押されているか否かを渡したいだろう。
@@ -290,7 +290,7 @@ The quotient is 1.66667
 シグナルを作成する際は、先頭でこれらの値の型を宣言しなければならない。
 型 `boost::signal<void, float, float>` は、戻り値型 `void` を持ち二つの `float` 値をとるシグナルを意味する。
 
-##<a name="return_values">シグナルの戻り値</a>
+## <a name="return_values">シグナルの戻り値</a>
 
 スロットが実引数を受け取れるのと同様、スロットは値を戻すこともできる。
 これらの値は *統合子* を介してシグナルの呼び出し側に戻される。
@@ -301,7 +301,7 @@ The quotient is 1.66667
 先ほどの算術操作の例に少々手を加えて、それぞれのスロットが積、商、和もしくは差を返すように変更する。
 これによってシグナルが結果に基づいた値を戻し、それを表示することが可能になる。
 
-###preferred 形式
+### preferred 形式
 
 ```cpp
 float compute_product(float x, float y) { return x*y; }
@@ -319,7 +319,7 @@ sig.connect(&compute_difference);
 std::cout << sig(5, 3) << std::endl;
 ```
 
-###compatible 形式
+### compatible 形式
 
 ```cpp
 float compute_product(float x, float y) { return x*y; }
@@ -380,13 +380,13 @@ struct maximum
 実際には、この関数オブジェクトの型をシグナルに対する統合子として導入し、利用する。
 この型は、次のように *名前付きテンプレートパラメタ* を介して与える。
 
-###preferred 形式
+### preferred 形式
 
 ```cpp
 boost::signal<float (float x, float y), maximum<float> > sig;
 ```
 
-###compatible 形式
+### compatible 形式
 
 ```cpp
 boost::signal2<float, float, float, maximum<float> > sig;
@@ -425,7 +425,7 @@ struct aggregate_values
 
 再び、この新しい統合子を使ったシグナルを作ろう。
 
-###preferred 形式
+### preferred 形式
 
 ```cpp
 boost::signal<float (float, float), aggregate_values<std::vector<float> > > sig;
@@ -439,7 +439,7 @@ std::vector<float> results = sig(5, 3);
 std::copy(results.begin(), results.end(), std::ostream_iterator<float>(cout, " "));
 ```
 
-###compatible 形式
+### compatible 形式
 
 ```cpp
 boost::signal2<float, float, float, aggregate_values<std::vector<float> > > sig;
@@ -458,7 +458,7 @@ std::copy(results.begin(), results.end(), std::ostream_iterator<float>(cout, " "
 そうではなく、最初のテンプレート実引数は接続されたスロットの戻り値型であり、統合子に渡される入力イテレータの `value_type` として用いられる。
 統合子それ自身は関数オブジェクトであり、統合子の `result_type` メンバ型がシグナルの戻り値型となる。
 
-##<a name="disconnecting">スロットの切断</a>
+## <a name="disconnecting">スロットの切断</a>
 
 スロットは、接続後、永遠に存在することは期待されていない。
 しばしばスロットは 2, 3 のイベントを受け取るために用いられ、そして切断される。
@@ -483,7 +483,7 @@ assert(!c.connected()); // c はすでに接続されていない
 sig(); // 何もしない : 接続されたスロットはない
 ```
 
-##<a name="scoped">変数スコープによって管理された接続</a>
+## <a name="scoped">変数スコープによって管理された接続</a>
 
 `boost::signals::scoped_connection` クラスは、 `scoped_connection` クラスがスコープからはずれると切断されるシグナル／スロット接続を参照する。
 この機能は接続が一時的に必要な場合に有用である。
@@ -497,13 +497,13 @@ sig(); // 何もしない : 接続されたスロットはない
 sig(); // ShortLived 関数オブジェクトは、もはや sig に接続されていない
 ```
 
-##<a name="tracking">自動化された接続管理</a>
+## <a name="tracking">自動化された接続管理</a>
 
 Boost.Signals は、スロット呼び出しに含まれるオブジェクトが破棄されたときに自動的にスロットを切断することも含めて、シグナル／スロット接続に関係するオブジェクトの寿命を自動的に追跡することができる。
 たとえば、クライアントがニュース供給者に接続し、ニュース供給者は情報が届くとすべての接続されたクライアントにニュースを送るという、単純なニュース配信サービスを考えてみる。
 ニュース配信サービスは、次のようになるだろう:
 
-###preferred 形式
+### preferred 形式
 
 ```cpp
 class NewsItem { /* ... */ };
@@ -511,7 +511,7 @@ class NewsItem { /* ... */ };
 boost::signal<void (const NewsItem& latestNews)> deliverNews;
 ```
 
-###compatible 形式
+### compatible 形式
 
 ```cpp
 class NewsItem { /* ... */ };
@@ -562,14 +562,14 @@ struct NewsMessageArea : public MessageArea, public boost::signals::trackable
 しかし、ユーザ定義の関数オブジェクトや他のライブラリ (Boost.Function や Boost.Lambda など) 由来の関数オブジェクトは `trackable` オブジェクト検出のために必要なインターフェースを実装していないため、 *bind された trackable オブジェクトは黙って無視される。*
 将来の Boost ライブラリは、この制約に対処するだろう。
 
-##<a name="passing_slots">スロットの受け渡し</a>
+## <a name="passing_slots">スロットの受け渡し</a>
 
 Boost.Signals ライブラリのスロットは任意の関数オブジェクトから作成されるため、特定の型を持たない。
 しかしながら、テンプレートにできないインターフェースを介してスロットを受け渡すことが必要となるのは良くあることだ。
 スロットは、それぞれのシグナル型に対応する `slot_type` を介して受け渡すことが可能であり、任意の有効な関数オブジェクトを `slot_type` 型のパラメタに渡すことができる。
 例を次に示す:
 
-###Preferred 形式
+### Preferred 形式
 
 ```cpp
 class Button
@@ -589,7 +589,7 @@ void Button::doOnClick(const OnClick::slot_type& slot)
 }
 ```
 
-###Compatible 形式
+### Compatible 形式
 
 ```cpp
 class Button

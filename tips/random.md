@@ -1,8 +1,8 @@
-#乱数
+# 乱数
 [Boost Random Library](http://www.boost.org/doc/libs/release/doc/html/boost_random.html)は、多数の擬似乱数生成器と分布のクラスを提供するライブラリである。Boost.Randomは、メルセンヌツイスターや線形合同法といった擬似乱数を生成するアルゴリズムと、整数一様分布やベルヌーイ分布といった値の分布のアルゴリズムを組み合わせて使用するという特徴を持つ。
 
 
-##インデックス
+## インデックス
 - [基本的な使い方](#basic-usage)
 - [シードを再設定する](#set-seed)
 

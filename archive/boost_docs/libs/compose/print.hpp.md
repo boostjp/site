@@ -1,4 +1,4 @@
-#libs/compose/print.hpp
+# libs/compose/print.hpp
 ```cpp
 /* The following code example is taken from the book
  * "The C++ Standard Library - A Tutorial and Reference"

@@ -1,4 +1,4 @@
-#breadth_first_visit
+# breadth_first_visit
 ```cpp
 template <class IncidenceGraph, class P, class T, class R>
 void breadth_first_visit(IncidenceGraph& G, 
@@ -18,11 +18,11 @@ void breadth_first_visit
 この関数はカラー・マーカーがアルゴリズム中で初期化されないことを除けば、基本的に `breadth_first_search()` と同じである。 ユーザはアルゴリズムを呼ぶ前に全ての頂点の色が白色であることを確かめる責任がある。この違いでグラフの型は [Vertex List Graph](VertexListGraph.md) である代わりに [Incidence Graph](IncidenceGraph.md) であることのみが要求される。 さらにこの違いはカラー・プロパティ・マップ中のより多くの柔軟性を考慮に入れている。例えば頂点上の部分的な関数を実装するだけのマップを使うことができる。そしてそれは探索がグラフのごく一部にしか及ばない場合、より良い空間効率であることができる。
 
 
-##定義場所
+## 定義場所
 boost/graph/breadth_first_search.hpp
 
 
-##パラメータ
+## パラメータ
 - IN: `IncidenceGraph& g`
 	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
 
@@ -30,7 +30,7 @@ boost/graph/breadth_first_search.hpp
 	- 探索が開始される始点。
 
 
-##名前付きパラメータ
+## 名前付きパラメータ
 
 - IN: `visitor(BFSVisitor vis)`
 	- アルゴリズムの内側で [BFS Visitor](BFSVisitor.md) コンセプトで指定されたイベント・ポイントで呼び出されるビジタ・オブジェクト。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。
@@ -45,11 +45,11 @@ boost/graph/breadth_first_search.hpp
 	- デフォルト: `boost::queue`
 
 
-##計算量
+## 計算量
 時間計算量は O(E) である。
 
 
-##ビジタ・イベント・ポイント
+## ビジタ・イベント・ポイント
 
 - `vis.initialize_vertex(v, g)` は、探索の開始前に各頂点で呼び出される。
 - `vis.examine_vertex(u, g)` は、各頂点においてそれがキューから削除される時に呼び出される。
@@ -62,11 +62,11 @@ boost/graph/breadth_first_search.hpp
 - `vis.finish_vertex(u, g)` は、 `u` の全ての出辺が調べられ、全ての隣接頂点が発見された後で呼び出される。
 
 
-##関連項目
+## 関連項目
 [`breadth_first_search()`](breadth_first_search.md), [`bfs_visitor`](bfs_visitor.md), and [`depth_first_search()`](depth_first_search.md)
 
 
-##注釈
+## 注釈
 - <a name="note_1" href="#note_1">[1]</a> ビジタのパラメータは値渡しされるので、もしビジタが状態を持っているなら、アルゴリズムの間のいかなる状態の変更も、送ったビジタ・オブジェクトには行われずビジタ・オブジェクトのコピーに対して行われる。それゆえポインタまたはリファレンスによってこの状態をビジタに保持させることを望むかもしれない。
 
 

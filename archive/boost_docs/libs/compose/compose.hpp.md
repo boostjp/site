@@ -1,4 +1,4 @@
-#boost/compose.hpp
+# boost/compose.hpp
 ```cpp
 /* supplementing compose function objects
  * Fri Jul 16 21:01:58 MEST 1999
@@ -16,12 +16,12 @@
 
 // See http://www.boost.org/libs/compose for Documentation.
 
-#ifndef BOOST_DEPRECATED
+# ifndef BOOST_DEPRECATED
 #  error Boost.Compose has been deprecated in favor of Boost.Bind or Boost.Lambda, and will be removed in a future release. You may define the macro BOOST_DEPRECATED to suppress this warning.
-#endif
+# endif
 
-#ifndef BOOST_COMPOSE_HPP
-#define BOOST_COMPOSE_HPP
+# ifndef BOOST_COMPOSE_HPP
+# define BOOST_COMPOSE_HPP
 
 #include <functional>
 
@@ -232,6 +232,6 @@ compose_f_g (const OP1& o1, const OP2& o2) {
 
 } /* namespace boost */
 
-#endif /*BOOST_COMPOSE_HPP*/
+# endif /*BOOST_COMPOSE_HPP*/
 ```
 

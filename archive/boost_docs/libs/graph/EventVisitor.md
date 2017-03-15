@@ -1,4 +1,4 @@
-#EventVisitor Concept
+# EventVisitor Concept
 このコンセプトは単独イベントビジタのインタフェースを定義する。 EventVisitor は適用メンバ関数 (`operator()`) を持つ。これは、 EventVisitor 内の `event_filter` typedef で指定されるイベントが起きた時に、グラフアルゴリズム内で実行される。 EventVisitor を組み合わせて [EventVistorList](EventVistorList.md) を作成できる。
 
 以下に、 BGL アルゴリズムによって実行されるイベントのタグのリストを示す。各タグは、アルゴリズムのビジタのメンバ関数と対応している。例えば、[`breadth_first_search()`](breadth_first_search.md) の [BFSVisitor](BFSVisitor.md) には `cycle_edge()` というメンバ関数がある。これに対応するタグは `on_cycle_edge` だ。 `operator()` の第1引数は、イベントタグによって決まる、辺か頂点の記述子でなければならない。
@@ -21,11 +21,11 @@ namespace boost {
 } // namespace boost
 ```
 
-##Refinement of
+## Refinement of
 [Copy Constructible](../utility/CopyConstructible.md) (ビジタのコピーは軽い操作である方がいい)
 
 
-##表記
+## 表記
 
 | 識別子 | 説明 |
 |--------|------|
@@ -36,21 +36,21 @@ namespace boost {
 | `x`    | `boost::graph_traits<G>::vertex_descriptor` 型か `boost::graph_traits<G>::edge_descriptor` 型のオブジェクト。 |
 
 
-##関連型
+## 関連型
 
 | 名前 | 型 | 説明 |
 |------|----|------|
 | Event Filter | `V::event_filter` | どのイベントによってビジタが実行されるかを指定するタグ構造体。 |
 
 
-##有効な表現式
+## 有効な表現式
 
 | 名前 | 式 | 戻り値 | 説明 |
 |------|----|--------|------|
 | Apply Visitor | `vis(x, g)` | `void` | オブジェクト `x` に対してビジタの操作を実行する。 `x` はグラフの辺か頂点の記述子である。 |
 
 
-##モデル
+## モデル
 
 - [`predecessor_recorder`](predecessor_recorder.md)
 - [`distance_recorder`](distance_recorder.md)
@@ -59,7 +59,7 @@ namespace boost {
 - [`null_visitor`](null_visitor.md)
 
 
-##関連項目
+## 関連項目
 [EventVisitorList](EventVisitorList.md), [Visitorコンセプト](visitor_concepts.md)
 
 

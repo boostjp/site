@@ -1,16 +1,16 @@
-#Boost.Signals Revision History
+# Boost.Signals Revision History
 
-###2002-06-10
+### 2002-06-10
 
 - Added workarounds for Qt's rude introduction of keywords `signals` and `slots` (patch by Thomas Witt)
 
-###2002-05-17
+### 2002-05-17
 
 - Integrated into Boost CVS
 - Document call behavior when no slots present (Thomas Witt)
 - Document default combiner is `last_value`
 
-###2002-04-10
+### 2002-04-10
 
 - Added [Frequently Asked Questions](faq.md) document.
 - Added `visit_each` discussion to the [design document](design.md).
@@ -27,7 +27,7 @@
 - Slot names have become connection groups. Slot call ordering is now dependent on the connection group ordering, with ungrouped slots being called last.
 - Added testcase for slot call ordering.
 
-###2002-02-14
+### 2002-02-14
 
 - Make sure all `shared_ptr` copies are performed only when complete types are available.
 - Added test for dead slots.
@@ -35,7 +35,7 @@
 - Jamfile updates for the latest Jam changes in CVS.
 - Validated HTML.
 
-###2002-01-19
+### 2002-01-19
 
 - Refactored slot connection into `signal_base`.
 - Revisited exception safety in slot connection routines.
@@ -44,7 +44,7 @@
 - Added a comprehensive connection-tracking test system based on the Boost graph library. See [`random_signal_system.cpp`](../test/random_signal_system.cpp).
 - Refactored slot class into a `slot_base` class; connection management code moved into `slot.cpp`.
 
-###2001-12-28
+### 2001-12-28
 
 - Added `slot` class template so that slots may be passed as arguments to non-template functions. (Karl Nelson)
 - Updated `signalN` class templates to use the new `slot` class template.
@@ -52,7 +52,7 @@
 - `visit_each` documentation added. (Karl Nelson)
 - More Borland C++ fixes.
 
-###2001-12-24
+### 2001-12-24
 
 - Update to match `visit_each` framework supported by Boost.Bind
 - Signals can be connected to other signals directly.
@@ -72,7 +72,7 @@
 - `return_last_value` renamed to `last_value`.
 - Proper documentation for `last_value` class.
 
-###2001-11-25
+### 2001-11-25
 
 - Fixes for MSVC and Borland C++.
 - Added Documentation: design rationale &amp; comparisons with other signals &amp; slots implementations.
@@ -80,7 +80,7 @@
 - Jamfile fixes for building the "bindable.cpp" test
 - Combined transform_iterator, skip_if_iterator, and input_caching_iterator into a single slot_call_iterator to reduce template depth and compiler confusion.
 
-###2001-11-18
+### 2001-11-18
 
 - Refactoring of signal connection management code.
 - Exception safety greatly improved (it is now safe for slots to throw exceptions)
@@ -88,7 +88,7 @@
 - Documentation (reference and tutorial)
 - Updated to work with newer versions of Iterator Adaptors
 
-###2001-07-02
+### 2001-07-02
 
 - Initial prototype
 

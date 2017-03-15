@@ -1,9 +1,9 @@
-#boost/graph/exception.hpp
+# boost/graph/exception.hpp
 
 BGL は、 BGL アルゴリズムからエラーを報告するためにいくつかの例外クラスを定義している。 多くの BGL アルゴリズムは入力されるグラフについてある種の要求事項を設定している。 もしこれらの要求事項に則さないならば、 そのアルゴリズムは成功裏に完了することができず、その代わりに適切な例外を投げる。
 
 
-##Synopsis
+## Synopsis
 
 ```cpp
 struct bad_graph : public invalid_argument {

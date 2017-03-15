@@ -1,5 +1,5 @@
-#void_cast
-##Motivation
+# void_cast
+## Motivation
 C++は、2つの関連したタイプの間で実行時でポインターをキャストするために、オペレーター`dynamic_cast<T>(U * u)`をもっています。
 
 しかし、これが利用可能なのは、ポリモーフィックな関係にあるクラス間だけです。
@@ -8,7 +8,7 @@ C++は、2つの関連したタイプの間で実行時でポインターをキ�
 
 ポインターのserializatonをそのようなクラスだけに制限することは、serializationライブラリの適用可能性を制限することにつながります。
 
-##Usage
+## Usage
 以下の関数が、void_cast.hppにて定義されています。これらは、`boost::serialization`名前空間で宣言されています。
 
 ```cpp

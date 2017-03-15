@@ -1,4 +1,4 @@
-#Class Serialization Traits
+# Class Serialization Traits
 - Version
 - Implementation Level
 - Object Tracking

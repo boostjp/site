@@ -1,4 +1,4 @@
-#Negators
+# Negators
 functional.hpp ヘッダは C++ 標準 (§20.3.5) 由来のネゲータアダプタの両方の強化バージョンを提供する:
 
 - `unary_negate`

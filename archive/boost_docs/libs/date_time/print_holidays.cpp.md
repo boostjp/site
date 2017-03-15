@@ -1,4 +1,4 @@
-#print_holidays.cpp
+# print_holidays.cpp
 
 これは、関数オブジェクトを使用して祝日のスケジュールを定義する例。
 
@@ -71,14 +71,14 @@ main() {
   typedef std::set<date> date_set;
   date_set all_holidays;
   
-#if (defined(BOOST_MSVC) && (_MSC_VER <= 1200))  // 1200 == VC++ 6.0
+# if (defined(BOOST_MSVC) && (_MSC_VER <= 1200))  // 1200 == VC++ 6.0
   std::cout << "Sorry, this example temporarily disabled on VC 6.\n"
          << "The std::transform isn't accepted by the compiler\n"
          << "So if you hack up the example without std::transform\n"
          << "it should work\n"
          << std::endl; 
   
-#else
+# else
 
   //generate a set of concrete dates from the 'partial_date' holidays
   //by calling the get_date functions
@@ -99,7 +99,7 @@ main() {
   std::for_each(all_holidays.begin(), all_holidays.end(), print_date);
   std::cout << "Number Holidays: " << all_holidays.size() << std::endl;
 
-#endif
+# endif
 
 return 0;
 

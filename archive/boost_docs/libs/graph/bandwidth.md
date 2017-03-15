@@ -1,4 +1,4 @@
-#bandwidth
+# bandwidth
 ```cpp
 (1)
 template <typename Graph>
@@ -17,12 +17,12 @@ bandwidth(const Graph& g, VertexIndexMap index_map)
 B(G) = max { |index[u] - index[v]|  | (u,v) in E }
 
 
-##Defined in
+## Defined in
 boost/graph/bandwidth.hpp
 
 
 ***
-##ith_bandwidth
+## ith_bandwidth
 
 ```cpp
  (1)
@@ -49,7 +49,7 @@ B<sub>i</sub>(G) = max { |index[i] - index[j]|  | (i,j) in E }
 B(G) = max { B<sub>i</sub>(G)   | i=0...|V|-1 }
 
 
-##Defined in
+## Defined in
 boost/graph/bandwidth.hpp 
 
 

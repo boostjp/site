@@ -1,8 +1,8 @@
-#シリアライズ
+# シリアライズ
 データの保存、ネットワーク通信でのデータの送受信といった場面において、任意の型の特定のフォーマットへのシリアライズ、デシリアライズが必要になることがある。[Boost Serialization Library](http://www.boost.org/doc/libs/release/libs/serialization/doc/index.html)は、標準ライブラリやBoostライブラリのあらゆる型へのシリアライズとデシリアライズと、ユーザー定義型のシリアライズ方法を提供するライブラリである。
 
 
-##インデックス
+## インデックス
 - [サポートされているフォーマット](#support-format)
 - [ユーザー定義型をシリアライズする](#serialize-user-defined-type)
 - [非侵入型のシリアライズ関数を定義する](#non-intrusive)

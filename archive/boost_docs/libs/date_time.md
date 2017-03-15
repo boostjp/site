@@ -1,10 +1,10 @@
-#Boost Date-Time Library Documentation
+# Boost Date-Time Library Documentation
 Version 1.00
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/date_time/doc/index.html>
 
 
-##目次
+## 目次
 
 **概要**
 

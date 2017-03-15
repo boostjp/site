@@ -1,4 +1,4 @@
-#The Boost Concept Check Library (BCCL)
+# The Boost Concept Check Library (BCCL)
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/concept_check/concept_check.htm>
 - ヘッダーファイル： boost/concept_check.hpp と boost/concept_archetype.hpp

@@ -1,13 +1,13 @@
-#Boost.Signals: クラス `trackable`
+# Boost.Signals: クラス `trackable`
 
-##ヘッダ
+## ヘッダ
 
 ```cpp
 #include <boost/signals/trackable.hpp>
 ```
 * boost/signals/trackable.hpp[link http://www.boost.org/doc/libs/1_31_0/boost/signals/trackable.hpp]
 
-##概要
+## 概要
 
 `trackable` クラスは、スロットの一部として結合されたオブジェクトが破棄されたときに、シグナルとスロットを自動的に切断するよう管理する責任を負う。
 `trackable` クラスは他のクラスの基底クラスとしてのみ用いることが可能である; そのとき、派生クラスはスロットの一部として用いられる関数オブジェクトに結合される。
@@ -32,9 +32,9 @@ namespace boost {
 * ~trackable()[link #destructor]
 * operator=[link #copy_assignment]
 
-##メンバ
+## メンバ
 
-###コンストラクタ
+### コンストラクタ
 
 <a name="default_constructor">`trackable();`</a>
 
@@ -48,13 +48,13 @@ namespace boost {
 - **論拠**: シグナル・スロット接続は明示的な connect メソッド呼び出しを介してのみ作成される。
 	したがって `trackable` オブジェクトがコピーされるここでは、作成できない。
 
-###デストラクタ
+### デストラクタ
 
 <a name="destructor">`~trackable();`</a>
 
 - **作用**: すべての接続済みスロットを切断する。
 
-###代入
+### 代入
 
 <a name="copy_assignment">`trackable& operator=(const trackable& other);`</a>
 
