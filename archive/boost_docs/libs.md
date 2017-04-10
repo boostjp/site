@@ -23,6 +23,7 @@
 | [preprocessor](libs/preprocessor.md) | 繰り返しと再帰を含むプリプロセッサメタプログラミングツール群。 Vesa Karvonen 作 |
 | [random](libs/random.md) | 乱数生成のためのシステム一式。 Jens Maurer 作 |
 | [signals](libs/signals.md) | 管理されたシグナルとスロットのコールバックでの実装。 Doug Gregor 作 |
+| [static_assert](libs/static_assert.md) | 静的アサート(コンパイル時アサート)。 John Maddock 作 |
 | [smart_ptr](libs/smart_ptr.md) | 5つのスマートポインタクラステンプレート Greg Colvin, Beman Dawes, Peter Dimov, and Darin Adler 作 |
 | [type_traits](libs/type_traits.md) | 型の基本的な特徴のためのテンプレート。 John Maddock, Steve Cleary, et al 作 |
 
