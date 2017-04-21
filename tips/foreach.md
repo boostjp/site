@@ -1,5 +1,5 @@
 # for each文
-Boost Foreach Libraryは、C++においてシーケンスをループするためのfor each文をライブラリで提供する。
+[Boost Foreach Library](http://www.boost.org/doc/libs/release/libs/foreach/index.html)は、C++においてシーケンスをループするためのfor each文をライブラリで提供する。
 
 ## インデックス
 

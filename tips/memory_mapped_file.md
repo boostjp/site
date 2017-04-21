@@ -1,5 +1,5 @@
 # メモリマップドファイル
-メモリマップドファイルには[ Boost Interprocess Library](http://www.boost.org/doc/libs/release/doc/html/interprocess.html) を使用する。
+メモリマップドファイルには [Boost Interprocess Library](http://www.boost.org/doc/libs/release/doc/html/interprocess.html) を使用する。
 
 Boost.Interprocessは、プロセス間通信をサポートするための各種機能を提供しているライブラリである。ライブラリはビルドを必要としないが、[Boost DateTime Library](http://www.boost.org/doc/libs/release/doc/html/date_time.html) を利用している箇所があるため注意すること。
 

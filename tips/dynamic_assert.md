@@ -1,6 +1,7 @@
 # 実行時アサート
-実行時アサートには、`BOOST_ASSERT`マクロ、もしくは`BOOST_ASSERT_MSG`マクロを使用する。これらのマクロは、[`<boost/assert.hpp>`](http://www.boost.org/doc/libs/release/libs/utility/assert.html)ヘッダで定義される。
+[assert](http://www.boost.org/doc/libs/release/libs/assert/assert.html)
 
+実行時アサートには、`BOOST_ASSERT`マクロ、もしくは`BOOST_ASSERT_MSG`マクロを使用する。これらのマクロは、`<boost/assert.hpp>`ヘッダで定義される。
 
 ## インデックス
 - [式を検証する](#assertion-expression)

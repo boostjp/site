@@ -1,5 +1,5 @@
 # 動的な正規表現
-動的な正規表現には、Boost Xpressive Libraryを使用する。
+動的な正規表現には、[Boost.Xpressive](http://www.boost.org/doc/libs/release/doc/html/xpressive.html)を使用する。
 
 
 日本語リファレンス：

@@ -1,4 +1,5 @@
 # 動的型
+[Boost.Any](http://www.boost.org/doc/libs/release/doc/html/any.html)
 
 ## インデックス
 

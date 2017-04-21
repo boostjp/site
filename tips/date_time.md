@@ -1,6 +1,6 @@
 # 日付の計算
 
-日付の計算には、Boost.DateTimeライブラリのGregorianを使用する。
+日付の計算には、[Boost.Date\_Time](http://www.boost.org/doc/libs/release/doc/html/date_time.html)ライブラリのGregorianを使用する。
 
 ## インデックス
 

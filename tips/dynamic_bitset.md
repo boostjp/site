@@ -1,4 +1,6 @@
 # サイズを動的に変更できるビット集合
+[dynamic\_bitset](http://www.boost.org/doc/libs/release/libs/dynamic_bitset/dynamic_bitset.html)
+
 サイズ固定のビット集合である`std::bitset` に対して、`boost::dynamic_bitset` はサイズを実行時に変更できるビット集合である。
 
 ## インデックス

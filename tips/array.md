@@ -1,4 +1,6 @@
 # 配列
+[Boost.Array](http://www.boost.org/doc/libs/release/doc/html/array.html)
+
 Boostでは、標準コンテナのインタフェースで使用できる固定長配列クラス、`boost::array`を提供する。
 
 ## インデックス

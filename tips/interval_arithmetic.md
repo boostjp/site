@@ -1,4 +1,5 @@
 # 区間演算
+[Boost Interval Arithmetic Library](http://www.boost.org/doc/libs/release/libs/numeric/interval/doc/interval.htm)
 
 ## インデックス
 - [区間を表す型](#interval-type)

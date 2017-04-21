@@ -1,4 +1,5 @@
 # 数学
+[Boost Math Library](http://www.boost.org/doc/libs/release/libs/math/)
 
 ## インデックス
 - [円周率を取得する](#pi)
@@ -7,7 +8,7 @@
 
 
 ## <a name="pi" href="#pi">円周率を取得する</a>
-円周率を取得するには、[Boost Math Library](http://www.boost.org/doc/libs/release/libs/math/)の`boost::math::constants::pi()`関数を使用する。この関数を使用するには、`<boost/math/constants/constants.hpp>`ヘッダをインクルードする。
+円周率を取得するには、Boost Math Libraryの`boost::math::constants::pi()`関数を使用する。この関数を使用するには、`<boost/math/constants/constants.hpp>`ヘッダをインクルードする。
 
 `pi()`関数のテンプレート引数として、浮動小数点数型を指定することができ、`double`だけでなく、`float`や`long double`、[多倍長浮動小数点数型](multiprec-float.md)として円周率を取得することもできる。
 

@@ -1,4 +1,5 @@
 # 循環バッファ
+[Boost.Circular Buffer](http://www.boost.org/doc/libs/release/doc/html/circular_buffer.html)
 
 ## インデックス
 

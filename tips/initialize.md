@@ -1,7 +1,7 @@
 # 組み込み型を必ず初期化する
 `boost::initialized<T>`クラステンプレートは、組み込み型を必ず初期化するための型である。値を参照するには、`data()`メンバ関数を使用する。
 
-このクラスを使用するには、`<boost/utility/value_init.hpp>`をインクルードする。
+このクラスを使用するには、[`<boost/utility/value_init.hpp>`](http://www.boost.org/doc/libs/release/libs/utility/value_init.htm)をインクルードする。
 
 ```cpp
 #include <iostream>

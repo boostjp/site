@@ -1,5 +1,5 @@
 # 線形代数
-線形代数には、[Boost uBLAS Library](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/index.htm)を使用する。
+線形代数には、[Boost uBLAS Library](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/index.html)を使用する。
 
 
 ## インデックス

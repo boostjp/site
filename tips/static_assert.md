@@ -1,4 +1,6 @@
 # コンパイル時アサート
+[Boost.StaticAssert](http://www.boost.org/doc/libs/release/doc/html/boost_staticassert.html)
+
 定数式の条件によるアサートには、`BOOST_STATIC_ASSERT`マクロを使用することができる。
 
 `BOOST_STATIC_ASSERT`マクロを使用するには、`<boost/static_assert.hpp>`をインクルードする。
