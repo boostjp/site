@@ -2,7 +2,7 @@
 
 Defined in header `boost/graph/adjacency_iterator.hpp`
 
-隣接イテレータ・アダプタは `out_edge_iterator` を隣接イテレータに変形する。すなわち、辺の方々を巡回するイテレータを取り、それらの **終点** の方々を巡回するイテレータを作成する。このアダプタと共に [Incidence Graph](IncidenchGraph.md) をモデルとするグラフ型を取り、[Adjacency Graph](AdjacencyGraph.md) によって要求される能力を付け加えるのは些細なことである。
+隣接イテレータ・アダプタは `out_edge_iterator` を隣接イテレータに変形する。すなわち、辺の方々を巡回するイテレータを取り、それらの **終点** の方々を巡回するイテレータを作成する。このアダプタと共に [Incidence Graph](IncidenceGraph.md) をモデルとするグラフ型を取り、[Adjacency Graph](AdjacencyGraph.md) によって要求される能力を付け加えるのは些細なことである。
 
 
 ## Synopsis

@@ -24,7 +24,7 @@ boost/graph/connected_components.hpp
 	- 無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) かつ [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
 
 - OUT: `ComponentMap c`
-	- このアルゴリズムはグラフ中にある連結成分数を計算し、各成分に整数のラベルを割り当てる。このアルゴリズムはそれから成分プロパティ・マップ中の成分番号を記録することによってグラフ中の各頂点がどの成分に属しているかを登録する。`ComponentMap` 型は [Writable Property Map](../property_map/[WritablePropertyMap.md) のモデルでなければならない。値型は汎整数型であるべきで、できればグラフの `vertices_size_type` に等しい方が望ましい。キー型はグラフの頂点記述子型でなければならない。
+	- このアルゴリズムはグラフ中にある連結成分数を計算し、各成分に整数のラベルを割り当てる。このアルゴリズムはそれから成分プロパティ・マップ中の成分番号を記録することによってグラフ中の各頂点がどの成分に属しているかを登録する。`ComponentMap` 型は [Writable Property Map](../property_map/WritablePropertyMap.md) のモデルでなければならない。値型は汎整数型であるべきで、できればグラフの `vertices_size_type` に等しい方が望ましい。キー型はグラフの頂点記述子型でなければならない。
 
 
 ## 名前付き引数

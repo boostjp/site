@@ -3,7 +3,7 @@ AdjacencyMatrix コンセプトは [Graph](Graph.md) コンセプトを精製し
 
 
 ## Refinement of
-[Graph](./Graph)
+[Graph](Graph.md)
 
 
 ## 関連型
