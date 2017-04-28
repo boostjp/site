@@ -8,7 +8,7 @@ void depth_first_visit(IncidenceGraph& g,
 * IncidenceGraph[link ./IncidenceGraph.md]
 * DFSVisitor[link ./DFSVisitor.md]
 
-この関数は [depth-firstパターン](graph/doc/graph_theory_review.md#dfs-algorithm) を使って、始点 `s` と同じ連結成分中にある全ての頂点を訪れる。時々単独で有用ではあるが、この関数の主な目的は `depth_first_search()` の実装のためにある。
+この関数は [depth-firstパターン](graph_theory_review.md#dfs-algorithm) を使って、始点 `s` と同じ連結成分中にある全ての頂点を訪れる。時々単独で有用ではあるが、この関数の主な目的は `depth_first_search()` の実装のためにある。
 
 ユーザによって提供される `DFSVisitor` はアルゴリズムの内側の各イベント・ポイントで行われるアクションを決定する。
 

@@ -1,5 +1,5 @@
 # dfs_visitor<EventVisitorList>
-このクラスは、(`std::pair` を使って作られる) [EventVisitor](EventVisitor) のリストを [DFSVisitor](./DFSVisitor.md) に変換するアダプタである。
+このクラスは、(`std::pair` を使って作られる) [EventVisitor](EventVisitor.md) のリストを [DFSVisitor](./DFSVisitor.md) に変換するアダプタである。
 
 
 ## コード例

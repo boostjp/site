@@ -1,5 +1,5 @@
 # EventVisitor Concept
-このコンセプトは単独イベントビジタのインタフェースを定義する。 EventVisitor は適用メンバ関数 (`operator()`) を持つ。これは、 EventVisitor 内の `event_filter` typedef で指定されるイベントが起きた時に、グラフアルゴリズム内で実行される。 EventVisitor を組み合わせて [EventVistorList](EventVistorList.md) を作成できる。
+このコンセプトは単独イベントビジタのインタフェースを定義する。 EventVisitor は適用メンバ関数 (`operator()`) を持つ。これは、 EventVisitor 内の `event_filter` typedef で指定されるイベントが起きた時に、グラフアルゴリズム内で実行される。 EventVisitor を組み合わせて [EventVisitorList](EventVisitorList.md) を作成できる。
 
 以下に、 BGL アルゴリズムによって実行されるイベントのタグのリストを示す。各タグは、アルゴリズムのビジタのメンバ関数と対応している。例えば、[`breadth_first_search()`](breadth_first_search.md) の [BFSVisitor](BFSVisitor.md) には `cycle_edge()` というメンバ関数がある。これに対応するタグは `on_cycle_edge` だ。 `operator()` の第1引数は、イベントタグによって決まる、辺か頂点の記述子でなければならない。
 

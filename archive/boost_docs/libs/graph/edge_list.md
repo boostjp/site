@@ -66,7 +66,7 @@ boost/graph/edge_list.hpp
 
 
 ## モデル
-[EdgeListGraph](./EdgeListGraph)
+[EdgeListGraph](EdgeListGraph.md)
 
 
 ## 関連型
