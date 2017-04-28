@@ -9,35 +9,38 @@
 1. 汎整数定数、例えば `0u` や `3L`。
 2. 列挙の値。
 3. グローバルな汎整数定数、例えば:
-```cpp
-const int my_INTEGRAL_CONSTANT = 3;
-```
+
+    ```cpp
+    const int my_INTEGRAL_CONSTANT = 3;
+    ```
+
 4. 静的メンバの定数、例えば:
-```cpp
-struct myclass
-{ static const int value = 0; };
-```
+
+    ```cpp
+    struct myclass
+    { static const int value = 0; };
+    ```
+
 5. メンバの列挙の値、例えば:
-```cpp
-struct myclass
-{ enum{ value = 0 }; };
-```
+
+    ```cpp
+    struct myclass
+    { enum{ value = 0 }; };
+    ```
+
 6. 整数型や列挙型の型でないテンプレートパラメータ。
 7. `sizeof` 式の結果、例えば:
-```cpp
-sizeof(foo(a, b, c))
-```
+
+    ```cpp
+    sizeof(foo(a, b, c))
+    ```
+
 8. 対象の型が整数型か列挙型で、かつ引数がその他の汎整数定数式のいずれかであるか浮動小数定数である場合の `static_cast` の結果。
-9. 二つの汎整数定数式に二項演算子を適用した結果:
-
-    `INTEGRAL_CONSTANT1 op INTEGRAL_CONSTANT2`
-
+9. 二つの汎整数定数式に二項演算子を適用した結果:  
+    `INTEGRAL_CONSTANT1 op INTEGRAL_CONSTANT2`  
     演算子が除算演算子やコンマ演算子で無い場合に提供される。
-
-10. 汎整数定数式に単項演算子を適用した結果:
-
-    `op INTEGRAL_CONSTANT1`
-
+10. 汎整数定数式に単項演算子を適用した結果:  
+    `op INTEGRAL_CONSTANT1`  
     演算子がインクリメントやデクリメント演算子で無い場合に提供される。
 
 ## コーディングガイドライン
