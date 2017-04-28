@@ -44,7 +44,7 @@
 - ImplementationNotes
 - CaseStudies
 - [OtherClasses](boostserialization/other-classses.md)
-  	- [`extended_type_info`](/boostserialization/other-classses/extended_type_info.md)
+  	- [`extended_type_info`](boostserialization/other-classses/extended_type_info.md)
   	- [`void_cast`](boostserialization/other-classses/void_cast.md)
   	- `utf8_codecvt_facet`
   	- `BOOST_STRONG_TYPEDEF`
