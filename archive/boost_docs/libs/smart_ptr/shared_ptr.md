@@ -711,7 +711,7 @@ p3.reset(new int(1));
 p3.reset(new int(2)); // undefined, multiple writes
 ```
 
-`shared_ptr`は、実装がスレッドをサポートしているかどうかを検出するために[Boost.Config](../config/config.md)を使用している。
+`shared_ptr`は、実装がスレッドをサポートしているかどうかを検出するために[Boost.Config](/tips/config.md)を使用している。
 もしあなたのプログラムがシングルスレッドだとしても、マルチスレッドをサポートしているかどうかは*Boost.Config*が自動的に検出する。
 シングルスレッドのプロジェクトにおいて、スレッドセーフティの為のオーバーヘッドを取り除くためには、`#define BOOST_DISABLE_THREADS`を定義する。
 
