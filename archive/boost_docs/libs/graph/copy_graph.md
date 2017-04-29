@@ -4,8 +4,8 @@ template <class VertexListGraph, class MutableGraph>
 void copy_graph(const VertexListGraph& G, MutableGraph& G_copy,
     const bgl_named_params<P, T, R>& params = all defaults)
 ```
-* VertexListGraph[link ./VertexListGraph.md]
-* MutableGraph[link ./MutableGraph.md]
+* VertexListGraph[link VertexListGraph.md.nolink]
+* MutableGraph[link MutableGraph.md.nolink]
 
 この関数はグラフ `G` から `G_copy` へとすべての頂点と辺をコピーする。また、頂点と辺のプロパティも、 `vertex_all` と `edge_all` プロパティマップを用いるか、あるいはユーザが与えたコピー関数を用いてコピーする。
 
@@ -17,10 +17,10 @@ boost/graph/copy.hpp
 ## パラメータ
 
 - IN: `const VertexListGraph& G`
-	- 有向または無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) モデルでなければならない。
+	- 有向または無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md.nolink) モデルでなければならない。
 
 - OUT: `MutableGraph& G_copy`
-	- グラフのコピー結果。 グラフの型は [Mutable Graph](MutableGraph.md) モデルでなければならない。
+	- グラフのコピー結果。 グラフの型は [Mutable Graph](MutableGraph.md.nolink) モデルでなければならない。
 
 
 ## 名前付きパラメータ

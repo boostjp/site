@@ -20,7 +20,7 @@ void dijkstra_shortest_paths
    Compare compare, Combine combine, DistInf inf, DistZero zero,
    DijkstraVisitor vis)
 ```
-* VertexListGraph[link ./VertexListGraph.md]
+* VertexListGraph[link VertexListGraph.md.nolink]
 * DijkstraVisitor[link ./DijkstraVisitor.md]
 * Compare[link http://www.sgi.com/tech/stl/BinaryPredicate.html]
 * Combine[link http://www.sgi.com/tech/stl/BinaryFunction.html]
@@ -72,7 +72,7 @@ boost/graph/dijkstra_shortest_paths.hpp
 ## パラメータ
 
 - IN: `const VertexListGraph& g`
-	- アルゴリズムが適用されるグラフオブジェクト。`VertexListGraph` の型は [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
+	- アルゴリズムが適用されるグラフオブジェクト。`VertexListGraph` の型は [Vertex List Graph](VertexListGraph.md.nolink) のモデルでなければならない。
 
 - IN: `vertex_descriptor s`
 	- 始点。全ての距離はこの頂点から計算される。そして最短経路木はこの頂点を根とする。
@@ -93,7 +93,7 @@ boost/graph/dijkstra_shortest_paths.hpp
 	- デフォルト: `dummy_property_map`
 
 - UTIL/OUT: `distance_map(DistanceMap d_map)`
-	- グラフ `g` 中の始点 `s` から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。最短経路の重みは、最短経路に沿った辺の重みの和である。`DistanceMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならない。グラフの頂点記述子型は距離マップのキー型として使用できる必要がある。距離マップの値型は `combine` 関数オブジェクトと単位要素のための `zero` オブジェクトから作られた [Monoid](Monoid.md) の要素型である。さらに距離の値型は `compare` 関数オブジェクトによって提供される [StrictWeakOrdering](http://www.sgi.com/tech/stl/StrictWeakOrdering.html) の順序付けを持っていなければならない。 
+	- グラフ `g` 中の始点 `s` から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。最短経路の重みは、最短経路に沿った辺の重みの和である。`DistanceMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならない。グラフの頂点記述子型は距離マップのキー型として使用できる必要がある。距離マップの値型は `combine` 関数オブジェクトと単位要素のための `zero` オブジェクトから作られた [Monoid](Monoid.md.nolink) の要素型である。さらに距離の値型は `compare` 関数オブジェクトによって提供される [StrictWeakOrdering](http://www.sgi.com/tech/stl/StrictWeakOrdering.html) の順序付けを持っていなければならない。 
 	- デフォルト: サイズ `num_vertices(g)` の `WeightMap` の値型の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md.nolink) で、添え字マップには `i_map` を用いる。
 
 - IN: `distance_compare(CompareFunction cmp)`
@@ -109,7 +109,7 @@ boost/graph/dijkstra_shortest_paths.hpp
 	- デフォルト: `std::numeric_limits<D>::max()`
 
 - IN: `distance_zero(D zero)`
-	- `zero` の値は距離の値と `combine` 関数オブジェクトによって 作られた [Monoid](Monoid.md) のための単一要素でなければならない。`D` の型は `DistanceMap` の値型である。 
+	- `zero` の値は距離の値と `combine` 関数オブジェクトによって 作られた [Monoid](Monoid.md.nolink) のための単一要素でなければならない。`D` の型は `DistanceMap` の値型である。 
 	- デフォルト: `D()`
 
 - UTIL/OUT: `color_map(ColorMap c_map)`

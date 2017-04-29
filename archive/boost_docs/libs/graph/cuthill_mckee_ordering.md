@@ -53,7 +53,7 @@ for (size_type i = 0; i != inv_perm.size(); ++i)
 **バージョン (1) 用:**
 
 - `IncidenceGraph& g`  (IN) 
-	- 無向グラフ。グラフの型は [IncidenceGraph](IncidenceGraph.md) のモデルでなければならない。
+	- 無向グラフ。グラフの型は [IncidenceGraph](IncidenceGraph.md.nolink) のモデルでなければならない。
 
 - `vertex_descriptor s`  (IN) 
 	- 始点。
@@ -71,7 +71,7 @@ for (size_type i = 0; i != inv_perm.size(); ++i)
 **バージョン (2) 用**:
 
 - `VertexListGraph& g`  (IN) 
-	- 無向グラフ。グラフの型は [VertexListGraph](VertexListGraph.md) のモデルでなければならない。
+	- 無向グラフ。グラフの型は [VertexListGraph](VertexListGraph.md.nolink) のモデルでなければならない。
 
 - `OutputIterator inverse_permutation`  (OUT) 
 	- 新しい頂点の順序付け。頂点は新しい順序で出力イテレータに書かれる。

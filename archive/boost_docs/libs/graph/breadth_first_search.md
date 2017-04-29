@@ -14,7 +14,7 @@ void breadth_first_search(const VertexListGraph& g,
    typename graph_traits<VertexListGraph>::vertex_descriptor s, 
    Buffer& Q, BFSVisitor vis, ColorMap color);
 ```
-* VertexListGraph[link ./VertexListGraph.md]
+* VertexListGraph[link VertexListGraph.md.nolink]
 
 `breadth_first_search()` 関数は有向グラフまたは無向グラフの幅優先巡回(breadth-first traversal) [[49]](bibliography.md#moore59) を行う。幅優先巡回は、始点から遠方に離れた頂点を訪れる前に近い頂点を訪れる。 この文脈中で「距離」とは始点からの最短経路中の辺の数として定義される。 `breadth_first_search()` 関数は始点から全ての到達可能な頂点への最短経路を計算するのに使用でき、結果として最短経路の距離が得られる。 BFS に関連した更なる定義は章 [Breadth-First Search](graph_theory_review.md#bfs-algorithm) を見よ。
 
@@ -50,7 +50,7 @@ BFS(G, s)
   return (d, p)
 ```
 
-`breadth_first_search()` 関数は一定のイベント・ポイントと呼ばれる、 ユーザ定義のアクションで拡張することができる。アクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [BFS Visitor](BFSVisitor.md) の要求を満たしているオブジェクトである。上の擬似コード内で、イベント・ポイントは右側のラベルである。さらに各イベント・ポイントの記述を以下に示した。デフォルトでは `breadth_first_search()` 関数はどんなアクションも実行しない。距離や先行点の記録さえも。しかしながらこれらは [`distance_recorder`](distance_recorder.md) と [`predecessor_recorder`](predecessor_recorder.md) のイベント・ビジタを用いて容易に追加できる。
+`breadth_first_search()` 関数は一定のイベント・ポイントと呼ばれる、 ユーザ定義のアクションで拡張することができる。アクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [BFS Visitor](BFSVisitor.md) の要求を満たしているオブジェクトである。上の擬似コード内で、イベント・ポイントは右側のラベルである。さらに各イベント・ポイントの記述を以下に示した。デフォルトでは `breadth_first_search()` 関数はどんなアクションも実行しない。距離や先行点の記録さえも。しかしながらこれらは [`distance_recorder`](distance_recorder.md) と [`predecessor_recorder`](predecessor_recorder.md.nolink) のイベント・ビジタを用いて容易に追加できる。
 
 
 ## 定義場所
@@ -59,7 +59,7 @@ boost/graph/breadth_first_search.hpp
 
 ## パラメータ
 - IN: `VertexListGraph& g`
-	- 有向グラフまたは無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
+	- 有向グラフまたは無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md.nolink) のモデルでなければならない。
 
 - IN: `vertex_descriptor s`
 	- 探索が開始される始点。

@@ -9,7 +9,7 @@ connected_components(VertexListGraph& G, ComponentMap comp,
 // この関数の名前なしパラメータバージョンは存在しない
 ```
 
-`connected_components()` 関数は、無向グラフの連結成分を DFS に基づく方法を用いて計算する。無向グラフの連結成分はすべての互いに到達可能な頂点の集合である。もしグラフが増大する間、連結成分を保持する必要があるなら、 [`incremental_components()`](incremental_components.md) 関数の素集合に基づく方法の方が速い。「静的な」グラフには この DFS に基づく方法の方が速い [[8]](bibliography.md#clr90)。
+`connected_components()` 関数は、無向グラフの連結成分を DFS に基づく方法を用いて計算する。無向グラフの連結成分はすべての互いに到達可能な頂点の集合である。もしグラフが増大する間、連結成分を保持する必要があるなら、 [`incremental_components()`](incremental_components.md.nolink) 関数の素集合に基づく方法の方が速い。「静的な」グラフには この DFS に基づく方法の方が速い [[8]](bibliography.md#clr90)。
 
 このアルゴリズムの出力は成分プロパティ・マップ `comp` に記録され、そしてそれは各頂点に割り当てられた成分番号を与える数を含んでいる。 全成分数が関数の返却値である。
 
@@ -21,7 +21,7 @@ boost/graph/connected_components.hpp
 ## パラメータ
 
 - IN: `const Graph& g`
-	- 無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) かつ [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
+	- 無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md.nolink) かつ [Incidence Graph](IncidenceGraph.md.nolink) のモデルでなければならない。
 
 - OUT: `ComponentMap c`
 	- このアルゴリズムはグラフ中にある連結成分数を計算し、各成分に整数のラベルを割り当てる。このアルゴリズムはそれから成分プロパティ・マップ中の成分番号を記録することによってグラフ中の各頂点がどの成分に属しているかを登録する。`ComponentMap` 型は [Writable Property Map](../property_map/WritablePropertyMap.md.nolink) のモデルでなければならない。値型は汎整数型であるべきで、できればグラフの `vertices_size_type` に等しい方が望ましい。キー型はグラフの頂点記述子型でなければならない。
@@ -31,7 +31,7 @@ boost/graph/connected_components.hpp
 
 - UTIL: `color_map(ColorMap color)`
 	- これはグラフの進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` 型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](ColorValue.md) のモデルでなければならない。
-	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](iterator_property_map.md) で、添え字マップには `i_map` を用いる。
+	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](iterator_property_map.md.nolink) で、添え字マップには `i_map` を用いる。
 
 
 - IN: `vertex_index_map(VertexIndexMap i_map)`
@@ -44,7 +44,7 @@ boost/graph/connected_components.hpp
 
 
 ## 関連項目
-[`strong_components()`](strong_components.md) and [`incremental_components()`](incremental_components.md)
+[`strong_components()`](strong_components.md.nolink) and [`incremental_components()`](incremental_components.md.nolink)
 
 
 ## コード例

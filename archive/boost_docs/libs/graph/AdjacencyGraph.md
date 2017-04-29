@@ -1,9 +1,9 @@
 # AdjacencyGraph
-AdjacencyGraph コンセプトは、グラフ中の頂点への隣接頂点の効率的なアクセス のためのインターフェースを供給する。これは [IncidenceGraph](IncidenceGraph.md) コンセプト (出辺の終点が隣接頂点である) と非常に良く似ている。 いくつかの状況では頂点への関心のみがあり、しかし一方、他の状況では辺も同様に重要になるため、両者のコンセプトが供給された。
+AdjacencyGraph コンセプトは、グラフ中の頂点への隣接頂点の効率的なアクセス のためのインターフェースを供給する。これは [IncidenceGraph](IncidenceGraph.md.nolink) コンセプト (出辺の終点が隣接頂点である) と非常に良く似ている。 いくつかの状況では頂点への関心のみがあり、しかし一方、他の状況では辺も同様に重要になるため、両者のコンセプトが供給された。
 
 
 ## Refinement of
-[Graph](Graph.md)
+[Graph](Graph.md.nolink)
 
 
 ## 表記
@@ -39,7 +39,7 @@ AdjacencyGraph コンセプトは、グラフ中の頂点への隣接頂点の�
 
 
 ## 関連項目
-[Graphコンセプト](Graph.md), [`adjacency_iterator`](adjacency_iterator.md)
+[Graphコンセプト](Graph.md.nolink), [`adjacency_iterator`](adjacency_iterator.md)
 
 
 ## コンセプトチェックするクラス
@@ -69,7 +69,7 @@ struct AdjacencyGraphConcept
 
 
 ## 設計原理
-[IncidenceGraph](IncidenceGraph.md) が同じ (それ以上の) 機能を実際に含んでいるので、AdjacencyGraph コンセプトはいくぶん軽薄である。 `adjacent_vertices()` が `out_edges()` よりも使用すると便利な状況があるので AdjacencyGraph コンセプトは存在する。 グラフ・クラスを構築しており、隣接イテレータを作成する余分な仕事を行いたくない場合は、恐れを持たないでいただきたい。 出辺イテレータから隣接イテレータを作成するために使用できる[`adjacency_iterator`](adjacency_iterator.md)と名付けられたアダプタ・クラスがある。
+[IncidenceGraph](IncidenceGraph.md.nolink) が同じ (それ以上の) 機能を実際に含んでいるので、AdjacencyGraph コンセプトはいくぶん軽薄である。 `adjacent_vertices()` が `out_edges()` よりも使用すると便利な状況があるので AdjacencyGraph コンセプトは存在する。 グラフ・クラスを構築しており、隣接イテレータを作成する余分な仕事を行いたくない場合は、恐れを持たないでいただきたい。 出辺イテレータから隣接イテレータを作成するために使用できる[`adjacency_iterator`](adjacency_iterator.md)と名付けられたアダプタ・クラスがある。
 
 
 ## 注釈

@@ -3,7 +3,7 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 
 
 ## Refinement of
-[Graph](Graph.md)
+[Graph](Graph.md.nolink)
 
 
 ## 表記
@@ -44,7 +44,7 @@ EdgeListGraph コンセプトは Graph コンセプトを 精製し、グラフ�
 
 
 ## 関連項目
-[Graphコンセプト](graph_concepts.md)
+[Graphコンセプト](graph_concepts.md.nolink)
 
 
 ## コンセプトチェックするクラス

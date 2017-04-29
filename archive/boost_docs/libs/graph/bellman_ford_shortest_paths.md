@@ -69,15 +69,15 @@ BELLMAN-FORD(G)
 
 ## 名前付きパラメータ
 - IN: `weight_map(WeightMap w)`
-    - グラフ中の各辺の重み　(そして「長さ」もしくは「コスト」として知られる)。 `WeightMap` の型は [Readable Property Map](ReadablePropertyMap.md) のモデルでなければならない。このプロパティ・マップのキー型はグラフの辺記述子でなければならない。重みマップの値型は距離マップの値型を伴った Addable でなければならない。
+    - グラフ中の各辺の重み　(そして「長さ」もしくは「コスト」として知られる)。 `WeightMap` の型は [Readable Property Map](ReadablePropertyMap.md.nolink) のモデルでなければならない。このプロパティ・マップのキー型はグラフの辺記述子でなければならない。重みマップの値型は距離マップの値型を伴った Addable でなければならない。
     - デフォルト: `get(edge_weight, g)`
 
 - OUT: `predecessor_map(PredecessorMap p_map)`
-    - 先行点マップ (predecessor map) は最小全域木中に辺を記録する。 アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](ReadWritePropertyMap.md) でなければならない。
+    - 先行点マップ (predecessor map) は最小全域木中に辺を記録する。 アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](ReadWritePropertyMap.md.nolink) でなければならない。
     - デフォルト: `dummy_property_map`
 
 - IN/OUT: `distance_map(DistanceMap d)`
-    - グラフ `g` 中の始点から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。`DistanceMap` の型は [Read/Write Property Map](ReadWritePropertyMap.md) のモデルでなければならない。プロパティ・マップのキー型は グラフの頂点記述子型でなければならず、距離マップの値型は [Less Than Comparable](http://www.sgi.com/tech/stl/LessThanComparable.html) でなければならない。
+    - グラフ `g` 中の始点から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。`DistanceMap` の型は [Read/Write Property Map](ReadWritePropertyMap.md.nolink) のモデルでなければならない。プロパティ・マップのキー型は グラフの頂点記述子型でなければならず、距離マップの値型は [Less Than Comparable](http://www.sgi.com/tech/stl/LessThanComparable.html) でなければならない。
     - デフォルト: `get(vertex_distance, g)`
 
 - IN: `visitor(BellmanFordVisitor v)`

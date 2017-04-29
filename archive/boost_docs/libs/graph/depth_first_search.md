@@ -19,7 +19,7 @@ void depth_first_search(const Graph& g, DFSVisitor vis, ColorMap color,
 
 BFS に似て、頂点が発見された過程を保持するためにカラー・マーカーが使われる。白色はまだ発見されていない頂点を印づけ、灰色は発見されたけれどもまだ未発見の隣接している頂点を持つ頂点を印づける。黒い頂点はどの白い頂点にも隣接していない発見された頂点である。
 
-`depth_first_search()` 関数は、アルゴリズムの内部で一定のイベント・ポイントにおいて、ユーザ定義のアクションを呼び出す。これは一般的な DFS アルゴリズムが使用できる多くの状況に適用させるための機構を提供する。下の疑似コード中で、 DFS のためのイベント・ポイントは三角形と右側のラベルで示されている。ユーザ定義のアクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [DFS Visitor](DFSVisitor.md) の要求を満たしているオブジェクトである。擬似コード中では、先行点を計算するアルゴリズムを `p`、発見時間を `d`、そして終了時間を `t` と表す。デフォルトでは、`depth_first_search()` 関数はこれらのプロパティを計算しない。しかしながら、これを実行するのに使える [`predecessor_recorder`](predecessor_recorder.md) と [`time_stamper`](time_stamper.md) のような、あらかじめ定義されたビジタが存在する。
+`depth_first_search()` 関数は、アルゴリズムの内部で一定のイベント・ポイントにおいて、ユーザ定義のアクションを呼び出す。これは一般的な DFS アルゴリズムが使用できる多くの状況に適用させるための機構を提供する。下の疑似コード中で、 DFS のためのイベント・ポイントは三角形と右側のラベルで示されている。ユーザ定義のアクションはビジタ・オブジェクトの形で提供されなければならない。すなわち、型が [DFS Visitor](DFSVisitor.md) の要求を満たしているオブジェクトである。擬似コード中では、先行点を計算するアルゴリズムを `p`、発見時間を `d`、そして終了時間を `t` と表す。デフォルトでは、`depth_first_search()` 関数はこれらのプロパティを計算しない。しかしながら、これを実行するのに使える [`predecessor_recorder`](predecessor_recorder.md.nolink) と [`time_stamper`](time_stamper.md.nolink) のような、あらかじめ定義されたビジタが存在する。
 
 
 ```
@@ -61,7 +61,7 @@ boost/graph/depth_first_search.hpp
 ## パラメータ
 
 - IN: `Graph& g`
-	- 有向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) と [Vertex List Graph](VertexListGraph.md) のモデルでなければならない。
+	- 有向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md.nolink) と [Vertex List Graph](VertexListGraph.md.nolink) のモデルでなければならない。
 
 
 ## 名前付きパラメータ
@@ -104,7 +104,7 @@ boost/graph/depth_first_search.hpp
 
 
 ## 関連項目
-[`depth_first_visit`](depth_first_visit.md)、[`undirected_dfs`](undirected_dfs.md)
+[`depth_first_visit`](depth_first_visit.md)、[`undirected_dfs`](undirected_dfs.md.nolink)
 
 
 ## 注釈

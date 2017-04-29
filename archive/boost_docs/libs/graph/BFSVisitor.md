@@ -42,7 +42,7 @@
 
 
 ## 関連項目
-[Visitorコンセプト](visitor_concepts.md)
+[Visitorコンセプト](visitor_concepts.md.nolink)
 
 
 ***

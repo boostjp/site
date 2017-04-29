@@ -5,7 +5,7 @@ void depth_first_visit(IncidenceGraph& g,
   typename graph_traits<IncidenceGraph>::vertex_descriptor s, 
   DFSVisitor& vis, ColorMap color)
 ```
-* IncidenceGraph[link ./IncidenceGraph.md]
+* IncidenceGraph[link IncidenceGraph.md.nolink]
 * DFSVisitor[link ./DFSVisitor.md]
 
 この関数は [depth-firstパターン](graph_theory_review.md#dfs-algorithm) を使って、始点 `s` と同じ連結成分中にある全ての頂点を訪れる。時々単独で有用ではあるが、この関数の主な目的は `depth_first_search()` の実装のためにある。
@@ -22,7 +22,7 @@ boost/graph/depth_first_search.hpp
 ## パラメータ
 
 - IN `IncidenceGraph& g`
-	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
+	- 有向グラフまたは無向グラフ。グラフの型は [Incidence Graph](IncidenceGraph.md.nolink) のモデルでなければならない。
 
 - IN: `vertex_descriptor s`
 	- 探索が開始される始点。
