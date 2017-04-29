@@ -21,7 +21,7 @@ void dijkstra_shortest_paths
    DijkstraVisitor vis)
 ```
 * VertexListGraph[link VertexListGraph.md.nolink]
-* DijkstraVisitor[link ./DijkstraVisitor.md]
+* DijkstraVisitor[link DijkstraVisitor.md]
 * Compare[link http://www.sgi.com/tech/stl/BinaryPredicate.html]
 * Combine[link http://www.sgi.com/tech/stl/BinaryFunction.html]
 

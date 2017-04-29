@@ -14,10 +14,10 @@ bool bellman_ford_shortest_paths(EdgeListGraph& g, Size N,
   WeightMap weight, PredecessorMap pred, DistanceMap distance, 
   BinaryFunction combine, BinaryPredicate compare, BellmanFordVisitor v)
 ```
-* EdgeListGraph[link ./EdgeListGraph.md]
+* EdgeListGraph[link EdgeListGraph.md]
 * BinaryFunction[link http://www.sgi.com/tech/stl/BinaryFunction.html]
 * BinaryPredicate[link http://www.sgi.com/tech/stl/BinaryPredicate.html]
-* BellmanFordVisitor[link ./BellmanFordVisitor.md]
+* BellmanFordVisitor[link BellmanFordVisitor.md]
 
 Bellman-Ford アルゴリズム [[4](bibliography.md#bellman58),[11](bibliography.md#ford62:_flows),[20](bibliography.md#lawler76:_comb_opt),[8](bibliography.md#clr90)] は、正と負の両方の辺の重みを持つグラフの単一始点の最短経路問題を解く。最短経路問題の定義のために、 章 [Shortest-Paths Algorithms](graph_theory_review.md#shortest-paths-algorithms) を見なさい。 もし正の辺の重みを持つ最短経路問題を解く必要があるだけなら、Dijkstra の アルゴリズムがより効率的な代替手段を提供する。もし全ての辺の重みが 1 に等しいなら幅優先探索がより一層効率的な代替手段を提供する。
 

@@ -18,7 +18,7 @@ boost/graph/bellman_ford_shortest_paths.hpp
 
 
 ## メンバ関数
-このクラスは [BellmanFordVisitor](BellmanFordVisitor.md) に要求される全てのメンバ関数を実装している。それぞれの関数で、適切なイベントが EventVisitorList の中の [EventVisitor](./EventVisitor.md) にディスパッチされる。
+このクラスは [BellmanFordVisitor](BellmanFordVisitor.md) に要求される全てのメンバ関数を実装している。それぞれの関数で、適切なイベントが EventVisitorList の中の [EventVisitor](EventVisitor.md) にディスパッチされる。
 
 
 ## 非メンバ関数

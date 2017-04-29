@@ -6,7 +6,7 @@ void depth_first_visit(IncidenceGraph& g,
   DFSVisitor& vis, ColorMap color)
 ```
 * IncidenceGraph[link IncidenceGraph.md.nolink]
-* DFSVisitor[link ./DFSVisitor.md]
+* DFSVisitor[link DFSVisitor.md]
 
 この関数は [depth-firstパターン](graph_theory_review.md#dfs-algorithm) を使って、始点 `s` と同じ連結成分中にある全ての頂点を訪れる。時々単独で有用ではあるが、この関数の主な目的は `depth_first_search()` の実装のためにある。
 
