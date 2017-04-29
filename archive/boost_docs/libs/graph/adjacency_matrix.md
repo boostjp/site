@@ -126,7 +126,7 @@ boost/graph/adjacency_matrix.hpp
 
 
 ## Model Of
-[VertexAndEdgeListGraph](VertexAndEdgeListGraph.md), [AdjacencyMatrix](AdjacencyMatrix.md), [MutablePropertyGraph](MutablePropertyGraph.md), [CopyConstructible](../utility/CopyConstructible.md), and [Assignable](Assignable.md).
+[VertexAndEdgeListGraph](VertexAndEdgeListGraph.md), [AdjacencyMatrix](AdjacencyMatrix.md), [MutablePropertyGraph](MutablePropertyGraph.md), [CopyConstructible](../utility/CopyConstructible.md), and [Assignable](../utility/Assignable.md).
 
 
 ## Associates Types
