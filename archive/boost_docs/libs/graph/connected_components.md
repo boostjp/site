@@ -24,18 +24,18 @@ boost/graph/connected_components.hpp
 	- 無向グラフ。グラフの型は [Vertex List Graph](VertexListGraph.md) かつ [Incidence Graph](IncidenceGraph.md) のモデルでなければならない。
 
 - OUT: `ComponentMap c`
-	- このアルゴリズムはグラフ中にある連結成分数を計算し、各成分に整数のラベルを割り当てる。このアルゴリズムはそれから成分プロパティ・マップ中の成分番号を記録することによってグラフ中の各頂点がどの成分に属しているかを登録する。`ComponentMap` 型は [Writable Property Map](../property_map/WritablePropertyMap.md) のモデルでなければならない。値型は汎整数型であるべきで、できればグラフの `vertices_size_type` に等しい方が望ましい。キー型はグラフの頂点記述子型でなければならない。
+	- このアルゴリズムはグラフ中にある連結成分数を計算し、各成分に整数のラベルを割り当てる。このアルゴリズムはそれから成分プロパティ・マップ中の成分番号を記録することによってグラフ中の各頂点がどの成分に属しているかを登録する。`ComponentMap` 型は [Writable Property Map](../property_map/WritablePropertyMap.md.nolink) のモデルでなければならない。値型は汎整数型であるべきで、できればグラフの `vertices_size_type` に等しい方が望ましい。キー型はグラフの頂点記述子型でなければならない。
 
 
 ## 名前付き引数
 
 - UTIL: `color_map(ColorMap color)`
-	- これはグラフの進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` 型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](ColorValue.md) のモデルでなければならない。
+	- これはグラフの進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` 型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](ColorValue.md) のモデルでなければならない。
 	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](iterator_property_map.md) で、添え字マップには `i_map` を用いる。
 
 
 - IN: `vertex_index_map(VertexIndexMap i_map)`
-	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。 このパラメータはデフォルトのカラー・プロパティ・マップが使われた時にのみ必要である。 `VertexIndexMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルでなければならない。マップの値型は汎整数型でなければならない。 グラフの頂点記述子型はマップのキー型として使用できる必要がある。
+	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。 このパラメータはデフォルトのカラー・プロパティ・マップが使われた時にのみ必要である。 `VertexIndexMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。マップの値型は汎整数型でなければならない。 グラフの頂点記述子型はマップのキー型として使用できる必要がある。
 	- デフォルト: `get(vertex_index, g)`
 
 

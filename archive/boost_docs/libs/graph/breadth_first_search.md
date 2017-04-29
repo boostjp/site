@@ -72,11 +72,11 @@ boost/graph/breadth_first_search.hpp
 
 - UTIL/OUT: `color_map(ColorMap color)`
 	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 アルゴリズムは開始時に全ての頂点の色を白色に初期化するため、ユーザは `breadth_first_search()` を呼ぶ前にカラー・マップを初期化する必要はない。もし複合的な幅優先探索をグラフ上で行う必要があるなら (例えばいくつかの切断された成分があるなら) `breadth_first_visit()` 関数を使って独自の初期化を行うこと。
-		`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。
+		`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。
 	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた `iterator_property_map`で、添え字マップには `i_map` を用いる。
 
 - IN: `vertex_index_map(VertexIndexMap i_map)`
-	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。 このパラメータはデフォルトのカラー・プロパティ・マップが使われた時にのみ必要である。 `VertexIndexMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルでなければならない。マップの値型は汎整数型でなければならない。グラフの頂点記述子型はマップのキー型として使用できる必要がある。
+	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。 このパラメータはデフォルトのカラー・プロパティ・マップが使われた時にのみ必要である。 `VertexIndexMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。マップの値型は汎整数型でなければならない。グラフの頂点記述子型はマップのキー型として使用できる必要がある。
 	- デフォルト: `get(vertex_index, g)`
 
 - UTIL: `buffer(Buffer& Q)`

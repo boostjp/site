@@ -40,20 +40,20 @@ boost/graph/dag_shortest_paths.hpp
 ## 名前付きパラメータ
 
 - IN: `weight_map(WeightMap w_map)`
-	- グラフ中の各辺の重みまたは「長さ」。`WeightMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルでなければならない。グラフの辺記述子型は重みマップのキー型として使用できる必要がある。マップの値型は距離マップの値型を伴った Addable でなければならない。 
+	- グラフ中の各辺の重みまたは「長さ」。`WeightMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。グラフの辺記述子型は重みマップのキー型として使用できる必要がある。マップの値型は距離マップの値型を伴った Addable でなければならない。 
 	- デフォルト: `get(edge_weight, g)`
 
 - IN: `vertex_index_map(VertexIndexMap i_map)`
-	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。これは辺がリラックスされた (減らされた) 時、ヒープ・データ構造を効率よく更新するのに必要である。`VertexIndexMap` は [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルでなければならない。マップの値型は汎整数型でなければならない。グラフの頂点記述子型はマップのキー型として使用できる必要がある。
+	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。これは辺がリラックスされた (減らされた) 時、ヒープ・データ構造を効率よく更新するのに必要である。`VertexIndexMap` は [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。マップの値型は汎整数型でなければならない。グラフの頂点記述子型はマップのキー型として使用できる必要がある。
 	- デフォルト: `get(vertex_index, g)`
 
 - OUT: `predecessor_map(PredecessorMap p_map)`
-	- 先行点マップ (predecessor map) は最小全域木中に辺を記録する。アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) でなければならない。
+	- 先行点マップ (predecessor map) は最小全域木中に辺を記録する。アルゴリズムの完了時に、`V` 中の全ての `u` のための辺 `(p[u],u)` は最小全域木中にある。もし `p[u] = u` なら `u` は始点かまたは始点から到達不能な頂点である。 `PredecessorMap` の型はキーと頂点の型がグラフの頂点記述子型と同じ [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) でなければならない。
 	- デフォルト: `dummy_property_map`
 
 - UTIL/OUT: `distance_map(DistanceMap d_map)`
-	- グラフ `g` 中の始点 `s` から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。最短経路の重みは、最短経路に沿った辺の重みの和である。`DistanceMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならない。グラフの頂点記述子型は距離マップのキー型として使用できる必要がある。距離マップの値型は `combine` 関数 オブジェクトと単位要素のための `zero` オブジェクトから作られた [Monoid](Monoid.md) の要素型である。さらに距離の値型は `compare` 関数オブジェクトによって供給される [StrictWeakOrdering](http://www.sgi.com/tech/stl/StrictWeakOrdering.html) の順序付けを持っていなければならない。
-	- デフォルト: サイズ `num_vertices(g)` の `WeightMap` の値型の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md) で、添え字マップには `i_map` を用いる。
+	- グラフ `g` 中の始点 `s` から各頂点への最短経路の重みは、このプロパティ・マップ中に記録される。最短経路の重みは、最短経路に沿った辺の重みの和である。`DistanceMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならない。グラフの頂点記述子型は距離マップのキー型として使用できる必要がある。距離マップの値型は `combine` 関数 オブジェクトと単位要素のための `zero` オブジェクトから作られた [Monoid](Monoid.md) の要素型である。さらに距離の値型は `compare` 関数オブジェクトによって供給される [StrictWeakOrdering](http://www.sgi.com/tech/stl/StrictWeakOrdering.html) の順序付けを持っていなければならない。
+	- デフォルト: サイズ `num_vertices(g)` の `WeightMap` の値型の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md.nolink) で、添え字マップには `i_map` を用いる。
 
 - IN: `distance_compare(CompareFunction cmp)`
 	- この関数はどの頂点が始点により近いか決定するために距離を比較するのに使われる。 `CompareFunction` の型は [Binary Predicate](http://www.sgi.com/tech/stl/BinaryPredicate.html) のモデルでなければならず、`DistanceMap` プロパティ・マップの値型に一致する引数型を持たなければならない。
@@ -72,8 +72,8 @@ boost/graph/dag_shortest_paths.hpp
 	- デフォルト: `D()`
 
 - UTIL/OUT: `color_map(ColorMap c_map)`
-	- これは頂点に印をつけるためにアルゴリズムの実行の間使われる。頂点は白色から始めて、それがキュー中に挿入された時に灰色になる。それからそれがキューから取り除かれた時に黒色になる。アルゴリズムの終了時に、始点から到達可能な頂点は黒色に色づけされている。その他の全ての頂点は白色のままである。`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならない。頂点記述子はマップのキー型として使用できる必要があり、マップの値型は [Color Value](ColorValue.md) のモデルでなければならない。 
-	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md) で、添え字マップには `i_map` を用いる。
+	- これは頂点に印をつけるためにアルゴリズムの実行の間使われる。頂点は白色から始めて、それがキュー中に挿入された時に灰色になる。それからそれがキューから取り除かれた時に黒色になる。アルゴリズムの終了時に、始点から到達可能な頂点は黒色に色づけされている。その他の全ての頂点は白色のままである。`ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならない。頂点記述子はマップのキー型として使用できる必要があり、マップの値型は [Color Value](ColorValue.md) のモデルでなければならない。 
+	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md.nolink) で、添え字マップには `i_map` を用いる。
 
 - OUT: `visitor(DijkstraVisitor v)`
 	- アルゴリズム内の一定のイベント・ポイントの間に起こしたいアクションを指定するのに使いなさい。`DijkstraVisitor` は [Dijkstra Visitor](DijkstraVisitor.md) コンセプトのモデルでなければならない。ビジタ・オブジェクトは値渡しされる [[1]](#note_1)。

@@ -34,12 +34,12 @@ boost/graph/copy.hpp
 	- デフォルト: `edge_copier<VertexListGraph, MutableGraph>` これはグラフからプロパティマップにアクセスするためにプロパティタグ `edge_all` を用いる。
 
 - IN: `vertex_index_map(VertexIndexMap i_map)`
-	- 頂点添え字マップの型は [Readable Property Map](../property_map/ReadablePropertyMap.md) モデルでなければならず、また `G` の頂点デスクリプタを `0` から `num_vertices(G)` までの整数にマップしなければならない。
+	- 頂点添え字マップの型は [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) モデルでなければならず、また `G` の頂点デスクリプタを `0` から `num_vertices(G)` までの整数にマップしなければならない。
 	- デフォルト: `get(vertex_index, G)`
 
 - UTIL/OUT: `orig_to_copy(Orig2CopyMap c)`
 	- これはオリジナルのグラフの頂点をコピーの頂点にマップする。
-	- デフォルト: 出力グラフの頂点デスクリプタ型のサイズ `num_vertices(g)` の `std::vector` から 作られる [`iterator_property_map`](../property_map/iterator_property_map.md) で、 添え字マップのために `i_map` を用いる。
+	- デフォルト: 出力グラフの頂点デスクリプタ型のサイズ `num_vertices(g)` の `std::vector` から 作られる [`iterator_property_map`](../property_map/iterator_property_map.md.nolink) で、 添え字マップのために `i_map` を用いる。
 
 
 ## 計算量

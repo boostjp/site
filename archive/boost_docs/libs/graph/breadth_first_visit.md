@@ -37,7 +37,7 @@ boost/graph/breadth_first_search.hpp
 	- デフォルト: `bfs_visitor<null_visitor>`
 
 - UTIL/OUT: `color_map(ColorMap color)`
-	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。 
+	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならなく、そのキー型はグラフの頂点記述子型でなければならなく、カラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。 
 	- デフォルト: `get(vertex_color, g)`
 
 - UTIL: `buffer(Buffer& Q)`

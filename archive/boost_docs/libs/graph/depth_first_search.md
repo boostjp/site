@@ -71,15 +71,15 @@ boost/graph/depth_first_search.hpp
 	- デフォルト: `dfs_visitor<null_visitor>`
 
 - UTIL/OUT: `color_map(ColorMap color)`
-	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。
-	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md) で、添え字マップには `i_map` を用いる。
+	- これはグラフを通る進行過程を保持するためにアルゴリズムによって使われる。 `ColorMap` の型は [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルでなければならず、かつキー型はグラフの頂点記述子型でなければならず、またカラー・マップの値型は [ColorValue](ColorValue.md) をモデルとしなければならない。
+	- デフォルト: サイズ `num_vertices(g)` の `default_color_type` の `std::vector` から作られた [`iterator_property_map`](../property_map/iterator_property_map.md.nolink) で、添え字マップには `i_map` を用いる。
 
 - IN: `root_vertex(typename graph_traits<VertexListGraph>::vertex_descriptor start)`
 	- これは深さ優先探索が開始されるべき頂点を指定する。型は与えられたグラフの頂点記述子型である。
 	- デフォルト: `*vertices(g).first`
 
 - IN: `vertex_index_map(VertexIndexMap i_map)`
-	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。このパラメータはデフォルトのカラー・プロパティ・マップが使われた時にのみ必要である。`VertexIndexMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルでなければならない。マップの値型は汎整数型でなければならない。グラフの頂点記述子型はマップのキー型として使用できる必要がある。
+	- これは各頂点を `[0, num_vertices(g))` の範囲において整数にマップする。このパラメータはデフォルトのカラー・プロパティ・マップが使われた時にのみ必要である。`VertexIndexMap` の型は [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルでなければならない。マップの値型は汎整数型でなければならない。グラフの頂点記述子型はマップのキー型として使用できる必要がある。
 	- デフォルト: `get(vertex_index, g)`
 
 

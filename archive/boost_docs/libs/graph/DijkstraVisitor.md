@@ -16,9 +16,9 @@
 | `g`           | `G` 型のオブジェクト。 |
 | `e`           | `boost::graph_traits<G>::edge_descriptor` 型のオブジェクト。 |
 | `s`,`u`,`v`   | `boost::graph_traits<G>::vertex_descriptor` 型のオブジェクト。 |
-| `DistanceMap` | [Read/Write Property Map](../property_map/ReadWritePropertyMap.md) のモデルの型。 |
+| `DistanceMap` | [Read/Write Property Map](../property_map/ReadWritePropertyMap.md.nolink) のモデルの型。 |
 | `d`           | `DistanceMap` 型のオブジェクト。 |
-| `WeightMap`   | [Readable Property Map](../property_map/ReadablePropertyMap.md) のモデルの型。 |
+| `WeightMap`   | [Readable Property Map](../property_map/ReadablePropertyMap.md.nolink) のモデルの型。 |
 | `w`           | `DistanceMap` 型のオブジェクト。 |
 
 
