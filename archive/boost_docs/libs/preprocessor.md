@@ -394,14 +394,14 @@
 	- while.hpp\*
 	- wstringize.hpp
 - Examples
-	- [array_arithmetic.c](preprocessor/examples/array_arithmetic.c)
-	- [catch_builtin.cpp](preprocessor/examples/catch_builtin.cpp)
-	- [delay.c](preprocessor/examples/delay.c)
-	- [duffs_device.c](preprocessor/examples/duffs_device.c)
-	- [is_integral.cpp](preprocessor/examples/is_integral.cpp)
-	- [linear_fib.c](preprocessor/examples/linear_fib.c)
+	- array_arithmetic.c
+	- catch_builtin.cpp
+	- delay.c
+	- duffs_device.c
+	- is_integral.cpp
+	- linear_fib.c
 - Miscellanea
-	- [syntax highlighting](preprocessor/syntax.md.nolink)
-	- [acknowledgements](preprocessor/acknowledgements.md.nolink)
-	- [bibliography](preprocessor/bibliography.md.nolink)
+	- syntax highlighting
+	- acknowledgements
+	- bibliography
 
