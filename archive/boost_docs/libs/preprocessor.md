@@ -129,12 +129,12 @@
 	- [LIST_FOLD_LEFT_2ND\*](preprocessor/ref/list_fold_left_2nd.md)
 	- [LIST_FOLD_LEFT_2ND_D\*](preprocessor/ref/list_fold_left_2nd_d.md)
 	- [LIST_FOLD_LEFT_*d*](preprocessor/ref/list_fold_left_d.md)
-	- [LIST_FOLD_LEFT_D\*](preprocessor/ref/list_fold_left_d_old.md)
+	- LIST_FOLD_LEFT_D\*
 	- [LIST_FOLD_RIGHT](preprocessor/ref/list_fold_right.md)
 	- [LIST_FOLD_RIGHT_2ND\*](preprocessor/ref/list_fold_right_2nd.md)
 	- [LIST_FOLD_RIGHT_2ND_D\*](preprocessor/ref/list_fold_right_2nd_d.md)
 	- [LIST_FOLD_RIGHT_*d*](preprocessor/ref/list_fold_right_d.md)
-	- [LIST_FOLD_RIGHT_D\*](preprocessor/ref/list_fold_right_d_old.md)
+	- LIST_FOLD_RIGHT_D\*
 	- [LIST_FOR_EACH](preprocessor/ref/list_for_each.md)
 	- [LIST_FOR_EACH_I](preprocessor/ref/list_for_each_i.md)
 	- [LIST_FOR_EACH_I_R](preprocessor/ref/list_for_each_i_r.md)
