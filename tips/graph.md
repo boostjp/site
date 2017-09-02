@@ -1293,7 +1293,7 @@ dot -Tpng test.dot -o test.png
 
 Graphviz形式(.dot)のデータを読み込むには、`<boost/graph/graphviz.hpp>`で定義される[`boost::read_graphviz()`](http://www.boost.org/doc/libs/release/libs/graph/doc/read_graphviz.html)関数を使用する。この関数を使用するには、Boost Regex Libraryをリンクする必要がある。
 
-ここでは、「[グラフをGraphviz形式(.dot)で出力する](#write-graphviz」で出力したtest.dotファイルを読み込む。
+ここでは、「[グラフをGraphviz形式(.dot)で出力する](#write-graphviz)」で出力したtest.dotファイルを読み込む。
 
 `read_graphviz()`関数の引数：
 
