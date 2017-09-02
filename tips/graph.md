@@ -764,7 +764,7 @@ AからDに到達不可能
 
 辺に重みのないグラフから最短経路を求めると、「最短単純路」という通過する辺が最も少ない経路が得られる。これは、たとえばソーシャルグラフから「Twitterで何回のRTで特定の情報に辿りつけたか」というような情報を抽出する用途に使える。
 
-<strike>Boost.Graphの`boost::dijkstra_shortest_paths()`は重みのないグラフを与えるとコンパイルエラーになるので、辺の重みを全て1に設定することで代用できる。</strike>
+~~Boost.Graphの`boost::dijkstra_shortest_paths()`は重みのないグラフを与えるとコンパイルエラーになるので、辺の重みを全て1に設定することで代用できる。~~
 
 <span style="color:red;">※2014/02/16 修正：そのような場面では [Breadth-First Search](http://www.boost.org/doc/libs/1_55_0/libs/graph/doc/breadth_first_search.html) を使うべきである。</span>
 
@@ -1293,7 +1293,7 @@ dot -Tpng test.dot -o test.png
 
 Graphviz形式(.dot)のデータを読み込むには、`<boost/graph/graphviz.hpp>`で定義される[`boost::read_graphviz()`](http://www.boost.org/doc/libs/release/libs/graph/doc/read_graphviz.html)関数を使用する。この関数を使用するには、Boost Regex Libraryをリンクする必要がある。
 
-ここでは、「[グラフをGraphviz形式(.dot)で出力する](#write-graphviz」で出力したtest.dotファイルを読み込む。
+ここでは、「[グラフをGraphviz形式(.dot)で出力する](#write-graphviz)」で出力したtest.dotファイルを読み込む。
 
 `read_graphviz()`関数の引数：
 
