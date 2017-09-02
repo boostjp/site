@@ -404,7 +404,6 @@ int main()
 
 ```
 (1.55556, 1.66667)
-
 ```
 
 ## <a name="convex_hull" href="#convex_hull">図形の凸包を計算する</a>

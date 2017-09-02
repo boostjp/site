@@ -13,7 +13,7 @@
 ## <a name="connect" href="#connect">接続</a>
 **同期バージョン**
 
-同期バージョンの接続には、[`boost::asio::ip::tcp::socket`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/ip__tcp/socket.html)クラスの[`connect`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/basic_stream_socket/connect/overload2.html)()メンバ関数を使用する。
+同期バージョンの接続には、[`boost::asio::ip::tcp::socket`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/ip__tcp/socket.html)クラスの[`connect()`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/basic_stream_socket/connect/overload2.html)メンバ関数を使用する。
 
 接続先の情報は`tcp::endpoint`に、IPアドレス文字列と、ポート番号の2つを指定する。
 

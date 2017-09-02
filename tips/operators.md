@@ -504,7 +504,7 @@ int main()
 
 
 ### <a name="decrementable" href="#decrementable">デクリメント演算子を自動定義する</a>
-デクリメント演算子である前置`--()`、後置`--()`は、`boost::decrementable`を`private@継承することにより、前置`--()`を定義するだけで、後置`--()`が自動定義される。
+デクリメント演算子である前置`--()`、後置`--()`は、`boost::decrementable`を`private`継承することにより、前置`--()`を定義するだけで、後置`--()`が自動定義される。
 
 ```cpp
 #include <cassert>
