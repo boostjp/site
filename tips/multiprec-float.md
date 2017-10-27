@@ -336,10 +336,10 @@ int main()
 |----------------------------------------------------------|-------------------------|
 | `T abs(T x);`<br/> [`T fabs(T x);`][fabs] | 絶対値 |
 | [`T sqrt(T x);`][sqrt]        | 平方根 |
-| `T floor(T x);`               | 床関数（引数より大きくない最近傍の整数） |
-| `T ceil(T x);`                | 天井関数（引数より小さくない最近傍の整数） |
-| `T trunc(T x);`<br/> `T itrunc(T x);`<br/> `T ltrunc(T x);`<br/> `T lltrunc(T x);` | ゼロ方向への丸め |
-| `T round(T x);`<br/> `T lround(T x);`<br/> `T llround(T x);`                       | 四捨五入による丸め |
+| [`T floor(T x);`][floor]      | 床関数（引数より大きくない最近傍の整数） |
+| [`T ceil(T x);`][ceil]        | 天井関数（引数より小さくない最近傍の整数） |
+| [`T trunc(T x);`][trunc]<br/> `T itrunc(T x);`<br/> `T ltrunc(T x);`<br/> `T lltrunc(T x);` | ゼロ方向への丸め |
+| [`T round(T x);`][round]<br/> `T lround(T x);`<br/> `T llround(T x);`                       | 四捨五入による丸め |
 | [`T exp(T x);`][exp]          | e (ネイピア数) を底とする指数関数 |
 | [`T log(T x);`][log]          | e (ネイピア数) を底とする自然対数 |
 | [`T log10(T x);`][log10]      | 10 を底とする常用対数 |
@@ -352,13 +352,17 @@ int main()
 | [`T cosh(T x);`][cosh]        | 双曲線余弦関数（ハイパボリックコサイン） |
 | [`T sinh(T x);`][sinh]        | 双曲線正弦関数（ハイパボリックサイン） |
 | [`T tanh(T x);`][tanh]        | 双曲線正接関数（ハイパボリックタンジェント） |
-| `T ldexp(T x, int);`          | 2 の冪乗との乗算 |
-| `T frexp(T x, int*);`         | 仮数部と 2 の冪乗への分解 |
+| [`T ldexp(T x, int);`][ldexp]  | 2 の冪乗との乗算 |
+| [`T frexp(T x, int*);`][frexp] | 仮数部と 2 の冪乗への分解 |
 | [`T pow(T x, T y);`][pow]     | 冪乗 |
-| `T fmod(T x, T y);`           | 浮動小数点剰余 |
+| [`T fmod(T x, T y);`][fmod]   | 浮動小数点剰余 |
 | [`T atan2(T x, T y);`][atan2] | 対辺と隣辺からの逆正接関数（アークタンジェント） |
 
 [fabs]: https://cpprefjp.github.io/reference/cmath/fabs.html
+[floor]: https://cpprefjp.github.io/reference/cmath/floor.html
+[ceil]: https://cpprefjp.github.io/reference/cmath/ceil.html
+[trunc]: https://cpprefjp.github.io/reference/cmath/trunc.html
+[round]: https://cpprefjp.github.io/reference/cmath/round.html
 [sqrt]: https://cpprefjp.github.io/reference/cmath/sqrt.html
 [exp]: https://cpprefjp.github.io/reference/cmath/exp.html
 [log]: https://cpprefjp.github.io/reference/cmath/log.html
@@ -372,7 +376,10 @@ int main()
 [cosh]: https://cpprefjp.github.io/reference/cmath/cosh.html
 [sinh]: https://cpprefjp.github.io/reference/cmath/sinh.html
 [tanh]: https://cpprefjp.github.io/reference/cmath/tanh.html
+[ldexp]: https://cpprefjp.github.io/reference/cmath/ldexp.html
+[frexp]: https://cpprefjp.github.io/reference/cmath/frexp.html
 [pow]: https://cpprefjp.github.io/reference/cmath/pow.html
+[fmod]: https://cpprefjp.github.io/reference/cmath/fmod.html
 [atan2]: https://cpprefjp.github.io/reference/cmath/atan2.html
 
 documented boost version is 1.53.0
