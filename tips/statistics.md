@@ -25,7 +25,7 @@ Boost.Accumulatorsを使用した統計処理には、`boost::accumulators::accu
 
 以下は、最小値(min)、平均値(mean)、合計値(sum)を求める例である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -61,7 +61,7 @@ int main()
 
 そういったデータをBoost.Accumulatorsで統計をとるには、`for_each()`アルゴリズムを使用して`accumulator_set`にデータを入れる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/array.hpp>
 #include <boost/random.hpp>
@@ -111,7 +111,7 @@ int main()
 ## <a name="count" href="#count">要素数を求める - count</a>
 要素数を求めるには、`count`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -139,7 +139,7 @@ int main()
 ## <a name="covariance" href="#covariance">共分散を求める - covariance</a>
 共分散を求めるには、`covariance`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -170,7 +170,7 @@ int main()
 
 `density`は、サンプル分布のヒストグラムを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <utility>
@@ -232,7 +232,7 @@ First: 0.7   Second: 0.190476
 ## <a name="extended_q_square" href="#extended_q_square">拡張カイ二乗を求める - extended_q_square</a>
 拡張カイ二乗を求めるには、`extended_q_square`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/random.hpp>
@@ -287,7 +287,7 @@ int main()
 ## <a name="kurtosis" href="#kurtosis">尖度を求める - kurtosis</a>
 尖度を求めるには、`kurtosis`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -324,7 +324,7 @@ int main()
 ## <a name="min" href="#min">最小値を求める - min</a>
 最小値を求めるには、`min`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -351,7 +351,7 @@ int main()
 ## <a name="max" href="#max">最大値を求める - max</a>
 最大値を求めるには、`max`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -378,7 +378,7 @@ int main()
 ## <a name="mean" href="#mean">平均値を求める - mean</a>
 平均値を求めるには、`mean`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -406,7 +406,7 @@ int main()
 ## <a name="median" href="#median">中央値を求める - median</a>
 中央値を求めるには、`median`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -440,7 +440,7 @@ int main()
 ## <a name="pot_quantile" href="#pot_quantile">閾値法 POT:Peak Over Threshold</a>
 閾値法を使用するには、`pot_quantile`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/random.hpp>
 #include <boost/accumulators/accumulators.hpp>
@@ -520,7 +520,7 @@ int main()
 ## <a name="skewness" href="#skewness">歪度を求める - skewness</a>
 歪度を求めるには、`skewness`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -556,7 +556,7 @@ int main()
 ## <a name="sum" href="#sum">合計値を求める - sum</a>
 合計値を求めるには、`sum`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>
@@ -584,7 +584,7 @@ int main()
 ## <a name="weighted-stats" href="#weighted-stats">重み付きサンプルやヒストグラムの統計量を求める - `weighted_*`</a>
 重み付きサンプルやヒストグラムの統計量を求めるには、各種`weighted_*`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>

@@ -17,7 +17,7 @@ Boost.Formatの基本的な使い方は、`boost::format()`に書式文字列を
 
 以下は、フォーマット指定した文字列を標準出力に出力している。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/format.hpp>
 
@@ -46,7 +46,7 @@ Boost.Formatでは、型指定の代わりに、`"%1%"`のようにして引数�
 
 Boost.Formatでは、`printf()`風の書式設定もサポートしている。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/format.hpp>
 
@@ -74,7 +74,7 @@ int main()
 
 Boost.Formatで書式設定された`std::string`を作成するには、`boost::format`クラスの`str()`メンバ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/format.hpp>

@@ -21,7 +21,7 @@ for each文には、`BOOST_FOREACH`というマクロを使用する。
 このマクロを使用するには、`<boost/foreach.hpp>`をインクルードする。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/foreach.hpp>
 
@@ -48,7 +48,7 @@ int main()
 
 `BOOST_FOREACH`マクロは、シーケンスの各要素を参照し、書き換えることができる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/foreach.hpp>
 
@@ -78,7 +78,7 @@ int main()
 
 `BOOST_FOREACH`マクロは、組み込み配列だけではなく、`std::vector`や`std::list`、`std::map`といった標準ライブラリのコンテナを処理することができる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>
@@ -113,7 +113,7 @@ int main()
 
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <map>
 #include <string>
@@ -146,7 +146,7 @@ int main()
 その場合は、Boost Range Libraryの`boost::adaptors::map_keys`を使用してキーのみを抽出、`boost::adaptors::map_values`を使用して値のみを抽出できる。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <map>
 #include <string>
@@ -188,7 +188,7 @@ b a c
 
 `BOOST_REVERSE_FOREACH`マクロを使用する場合：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>
@@ -215,7 +215,7 @@ int main()
 `boost::adaptors::reversed`を使用する場合：
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>
@@ -247,7 +247,7 @@ int main()
 
 言語組込の配列を使用する場合：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/foreach.hpp>
 
@@ -282,7 +282,7 @@ int main()
 
 `std::vector`を使用する場合：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/foreach.hpp>
@@ -329,7 +329,7 @@ C++11から、`BOOST_FOREACH`マクロ相当の言語機能である「範囲`fo
 
 C++11 範囲`for`文は、ループ対象の型が`begin()`/`end()`メンバ関数、もしくは`begin()`/end()非メンバ関数を持っている必要がある。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <utility>

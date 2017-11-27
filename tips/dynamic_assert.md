@@ -17,7 +17,7 @@
 
 デフォルトでは、`NDEBUG`が`#define`されていない場合(デバッグモード)のみ検証が行われる。
 
-```cpp
+```cpp example
 #include <boost/assert.hpp>
 
 int main()
@@ -50,7 +50,7 @@ Expression: 1 != 1
 
 検証失敗時にコンパイルエラーにエラーメッセージを出力するには、`BOOST_ASSERT_MSG`マクロを使用する。基本的な使い方は`BOOST_ASSERT`と同様で、第2引数にメッセージの文字列を取る。
 
-```cpp
+```cpp example
 #include <boost/assert.hpp>
 
 int main(int argc, char* argv[])
@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 
 また、式を評価する必要が無く、該当箇所を通過した場合に単にデバッグ用途で無条件に落としたい場合、文字列を示すポインタの評価結果は常に真になることを利用して、イディオム的に以下のような書き方もできる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/assert.hpp>
 
@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
 - ファイル名(`__FILE__`)
 - 行番号(`__LINE__`)
 
-```cpp
+```cpp example
 # define BOOST_ENABLE_ASSERT_HANDLER
 #include <boost/assert.hpp>
 #include <fstream>
@@ -152,7 +152,7 @@ Line : 21
 - ファイル名(`__FILE__`)
 - 行番号(`__LINE__`)
 
-```cpp
+```cpp example
 # define BOOST_ENABLE_ASSERT_HANDLER
 #include <boost/assert.hpp>
 #include <fstream>

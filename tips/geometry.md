@@ -33,7 +33,7 @@
 
 **`box`同士が重なりあっていないかを判定：**
 
-```cpp
+```cpp example
 #include <boost/assert.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/box.hpp>
@@ -86,7 +86,7 @@ int main()
 
 **`box`と`point_xy`が重なりあっていないかを判定：**
 
-```cpp
+```cpp example
 #include <boost/assert.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/box.hpp>
@@ -136,7 +136,7 @@ int main()
 
 2つの線が交わっているかの判定：
 
-```cpp
+```cpp example
 #include <boost/assert.hpp>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/linestring.hpp>
@@ -183,7 +183,7 @@ int main()
 
 **点が四角形内にあるかを判定：**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry/geometry.hpp>
 
@@ -222,7 +222,7 @@ in
 
 以下は、三角形からなる四角形と、四角形が等しいか判定する処理：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/algorithms/equals.hpp>
@@ -281,7 +281,7 @@ equal
 
 以下は、四角形と三角形の面積を計算する例：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -334,7 +334,7 @@ int main()
 
 **三角形の中心座標を求める(`centroid`を使用)：**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -372,7 +372,7 @@ int main()
 
 **`return_centroid`を使った場合：**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -411,7 +411,7 @@ int main()
 
 第1引数で図形を渡すと、第2引数で参照として凸包の図形が返される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
@@ -469,7 +469,7 @@ hull: (((2, 1.3), (2.4, 1.7), (4.1, 3), (5.3, 2.8), (5.4, 1.2), (4.9, 0.8), (3.6
 
 **点と点の距離：**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -496,7 +496,7 @@ int main()
 
 **点と三角形の距離：**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -537,7 +537,7 @@ int main()
 
 第1引数と第2引数で渡した図形の差が、第3引数で返される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/geometry.hpp>
@@ -584,7 +584,7 @@ int main()
 
 第1引数と第2引数で渡した図形の和が、第3引数で返される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/geometry.hpp>
@@ -631,7 +631,7 @@ int main()
 
 第1引数と第2引数で渡した図形の共通部分が、第3引数で返される。
 
-```cpp
+```cpp example
 #include <vector>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -675,7 +675,7 @@ int main()
 
 第1引数として渡した図形の包絡線が、Box Conceptの型として第2引数で返される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -729,7 +729,7 @@ bx: ((2, 0.7), (5.4, 3))
 
 また、`boost::geometry::return_envelope<Box>()`を使用すれば、参照ではなく戻り値として包絡線が返される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -781,7 +781,7 @@ bx: ((2, 0.7), (5.4, 3))
 
 **線の長さを計算**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -814,7 +814,7 @@ int main()
 
 **三角形の長さを計算**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -851,7 +851,7 @@ int main()
 ## <a name="reverse" href="#reverse">図形を逆向きにする</a>
 図形を逆向きにするには、`boost::geometry::reverse()`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -896,7 +896,7 @@ int main()
 
 **線を単純化する例：**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -942,7 +942,7 @@ int main()
 ## <a name="unique" href="#unique">図形から重複した点を削除する</a>
 重複した点を削除するには、`boost::geometry::unique()`関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -981,7 +981,7 @@ int main()
 ## <a name="translate" href="#translate">図形を平行移動する</a>
 図形を平行移動するには、`boost::geometry::transform()`関数で、`translate_transformer`戦略ポリシーを使用して移動量を指定する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -1035,7 +1035,7 @@ int main()
 図形を拡大縮小するには、`boost::geometry::transform()`関数に、`scale_transformer`戦略ポリシーを使用して拡大率を指定する。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
@@ -1089,7 +1089,7 @@ int main()
 
 回転は、原点(0, 0)を中心に時計回りに行われる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>

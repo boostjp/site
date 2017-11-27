@@ -220,7 +220,7 @@ Boostにおける、ムーブ対応しているコンテナは以下：
 - Boost.Unordered (1.49.0から)
 
 
-```cpp
+```cpp example
 #include <boost/container/vector.hpp>
 #include <cassert>
 

@@ -1319,7 +1319,7 @@ remove_reference<int*&>::type      : int*
 - `boost/type_traits.hpp`
 
 例：
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/type_traits/alignment_of.hpp>
 #include <boost/type_traits/type_with_alignment.hpp>

@@ -27,7 +27,7 @@ C++は演算子のオーバーロードによって、ユーザー定義型に�
 
 Boost.Operatorsによって関連演算子を自動定義することによって、これだけで整数型を定義することができる。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -94,7 +94,7 @@ int main()
 
 **メンバ関数として定義する場合**
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -121,7 +121,7 @@ int main()
 
 **非メンバ関数として定義する場合**
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -154,7 +154,7 @@ int main()
 
 **メンバ関数として定義する場合**
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -181,7 +181,7 @@ int main()
 
 **非メンバ関数として定義する場合**
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -209,7 +209,7 @@ int main()
 ### <a name="addable" href="#addable">加算演算子を自動定義する</a>
 加算演算子である`operator+=()`、`operator+()`は、`boost::addable`を`private`継承することにより、`operator+=()`を定義するだけで`operator+()`が自動的に定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -242,7 +242,7 @@ int main()
 ### <a name="subtractable" href="#subtractable">減算演算子を自動定義する</a>
 減算演算子である`operator-=()`、`operator-()`は、`boost::subtractable`を`private`継承することにより、`operator-=()`を定義するだけで`operator-()`が自動的に定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -275,7 +275,7 @@ int main()
 ### <a name="multipliable" href="#multipliable">乗算演算子を自動定義する</a>
 乗算演算子である`operator*=()`, `operator*()`は、`boost::multipliable`を`private`継承することにより、`operator*=()`定義するだけで、自動的に`operator*()`が定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -308,7 +308,7 @@ int main()
 ### <a name="dividable" href="#dividable">除算演算子を自動定義する</a>
 除算演算子である`operator/=()`、`operator/()`は、`boost::dividable`を`private`継承することにより、`operator/=()`を定義するだけで、`operator/()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -341,7 +341,7 @@ int main()
 ### <a name="modable" href="#modable">剰余演算子を自動定義する</a>
 剰余演算子である`operator%=()`、`operator%()`は、`boost::modable`を`private`継承することにより、`operator%=()`を定義するだけで、`operator%()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -374,7 +374,7 @@ int main()
 ## <a name="orable" href="#orable">OR演算子の自動定義</a>
 OR演算子である`operator|=()`、`operator|()`は、`boost::orable`を`private`継承することにより、`operator|=()`を定義するだけで、`operator|()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -407,7 +407,7 @@ int main()
 ### <a name="andable" href="#andable">AND演算子を自動定義する</a>
 AND演算子、`operator&=()`、`operator&()`は、`boost::andable`を`private`継承することにより、`operator&=()`を定義するだけで、`operator&()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -440,7 +440,7 @@ int main()
 ### <a name="xorable" href="#xorable">XOR演算子の自動定義</a>
 XOR演算子である`operator^=()`、`operator^()`は、`boost::xorable`を`private`継承することにより、`operator^=()`を定義するだけで、`operator^()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -473,7 +473,7 @@ int main()
 ### <a name="incrementable" href="#incrementable">インクリメント演算子を自動定義する</a>
 インクリメント演算子である前置`++()`, 後置`++()`は、`boost::incrementable`を`private`継承することにより、前置`++()`を定義するだけで、後置`++()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -506,7 +506,7 @@ int main()
 ### <a name="decrementable" href="#decrementable">デクリメント演算子を自動定義する</a>
 デクリメント演算子である前置`--()`、後置`--()`は、`boost::decrementable`を`private`継承することにより、前置`--()`を定義するだけで、後置`--()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -539,7 +539,7 @@ int main()
 ### <a name="left_shiftable" href="#left_shiftable">左シフト演算子を自動定義する</a>
 左シフト演算子である`operator<<=()`、`operator<<()`は、`boost::left_shiftable`を`private`継承することにより、`operator<<=()`を定義するだけで、`operator<<()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -573,7 +573,7 @@ int main()
 ### <a name="right_shiftable" href="#right_shiftable">右シフト演算子を自動定義する</a>
 右シフト演算子である`operator>>=()`、`operator>>()`は、`boost::right_shiftable`を`private`継承することにより、`operator>>=()`を定義するだけで、`operator>>()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 
@@ -609,7 +609,7 @@ int main()
 
 `boost::equivalent`を`private`継承することにより、`operator<()`を定義するだけで、`operator==()`が自動定義される。
 
-```cpp
+```cpp example
 #include <cassert>
 #include <boost/operators.hpp>
 

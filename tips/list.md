@@ -18,7 +18,7 @@
 
 以下は、`{1, 2, 3, 4, 5}`というリストから、偶数値のみを抽出している。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>
@@ -51,7 +51,7 @@ int main()
 
 以下は、リストの全ての要素に`1`を加算する処理である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>
@@ -86,7 +86,7 @@ int main()
 
 以下は、リストの全ての要素を`int`から`std::string`に変換する処理である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>
@@ -120,7 +120,7 @@ int main()
 ## <a name="reverse" href="#reverse">逆順に走査する - reversed</a>
 リストを逆順に走査するには、`boost::adaptors::reversed`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>
@@ -151,7 +151,7 @@ int main()
 ## <a name="map-key" href="#map-key">mapのキーのみを抽出する - map_keys</a>
 `std::map`、`boost::unordered_map`、`std::vector<std::pair<Key, Value> >`のようなコンテナからキーのみを抽出するには、`boost::adaptors::map_keys`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <map>
 #include <boost/assign/list_of.hpp>
@@ -184,7 +184,7 @@ int main()
 ## <a name="map-value" href="#map-value">mapの値のみを抽出する - map_values</a>
 `std::map`、`boost::unordered_map`、`std::vector<std::pair<Key, Value> >`のようなコンテナから値のみを抽出するには、`boost::adaptors::map_values`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <map>
 #include <boost/assign/list_of.hpp>
@@ -219,7 +219,7 @@ Carol
 
 この関数は、2つのリストを連結した新たなリストを返すのではなく、1つのリストの走査が終わったら2つめのリストを走査するRangeを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <list>
@@ -252,7 +252,7 @@ int main()
 
 この関数に値の範囲を引数として渡すことで、その値の範囲を走査可能なRandom Access Rangeを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/range/irange.hpp>
 #include <boost/range/algorithm/for_each.hpp>
@@ -278,7 +278,7 @@ int main()
 
 これを指定することで、「値を2ずつ進める」といったことが可能になる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/range/irange.hpp>
 #include <boost/range/algorithm/for_each.hpp>
@@ -305,7 +305,7 @@ Boost Range LibraryのRangeアダプタは、個々の処理を遅延評価す�
 
 以下は、条件抽出(`filtered`)と関数適用(`transformed`)を合成する処理である。リストが実際に走査されそれらの処理が必要になるまで評価が遅延される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/assign/list_of.hpp>

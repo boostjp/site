@@ -1,6 +1,6 @@
 # libs/graph/example/dag_shortest_paths.cpp
 
-```cpp
+```cpp example
 //=======================================================================
 // Copyright 1997, 1998, 1999, 2000 University of Notre Dame.
 // Authors: Andrew Lumsdaine, Lie-Quan Lee, Jeremy G. Siek

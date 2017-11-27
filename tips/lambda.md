@@ -11,7 +11,7 @@
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 Boost.Lambdaによって無名関数を表現するには、`boost::lambda`名前空間の`_1`, `_2`というプレースホルダーと呼ばれる値を使用する。以下は、コンテナから特定の条件に一致した値を見つけ出す例である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/range/algorithm/find_if.hpp>
@@ -40,7 +40,7 @@ int main()
 
 これを、Boost.Lambdaを使用して書くと以下のようになる：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/lambda/lambda.hpp>
@@ -78,7 +78,7 @@ Boost.Lambdaでメンバ変数を扱うには、`operator->*()`を使用する�
 
 以下は、`Person`クラスを要素とするコンテナから、`name`メンバ変数をキーにして該当する要素を検索する処理である：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/lambda/lambda.hpp>
@@ -117,7 +117,7 @@ int main()
 ## <a name="multiple-expressions" href="#multiple-expressions">2つ以上の式を書く</a>
 Boost.Phoenix のカンマ演算子を使用して、複数の式を書くことができる。
 
-```cpp
+```cpp example
 #include <boost/phoenix.hpp>
 #include <boost/range/irange.hpp>
 #include <boost/range/algorithm/for_each.hpp>

@@ -1,5 +1,5 @@
 # array4.cpp
-```cpp
+```cpp example
 /* クラス array<> の使用例
  */
 #include <algorithm>

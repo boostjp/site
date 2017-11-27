@@ -63,7 +63,7 @@ if (error) {
 
 コピーに失敗した場合は例外が投げられる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -86,7 +86,7 @@ int main()
 
 上書きコピーをする場合は、`copy_file()`関数に、`boost::filesystem::copy_option::overwrite_if_exists`オプションを指定する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -112,7 +112,7 @@ int main()
 
 ファイルを削除するには、`boost::filesystem::remove()`を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -140,7 +140,7 @@ int main()
 - 第1引数は、元となるファイルのパス。
 - 第2引数は、移動先のファイルパス、もしくは新たなファイル名。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -170,7 +170,7 @@ int main()
 
 ファイルのステータス取得に失敗した場合はエラーを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -196,7 +196,7 @@ int main()
 
 ファイルサイズを取得するには、`boost::filesystem::file_size()`関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -231,7 +231,7 @@ int main()
 
 この関数は戻り値として、`std::time_t`型として日時を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
@@ -264,7 +264,7 @@ int main()
 
 パスのファイル名を取得するには、`boost::filesystem::path`クラスの`filename()`メンバ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -291,7 +291,7 @@ b.txt
 
 拡張子を持たないパスに対してこの関数を適用した場合は、空のパスが返る。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -317,7 +317,7 @@ int main()
 
 パスの拡張子を変更するには、`boost::filesystem::path`クラスの`replace_extension()`メンバ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -350,7 +350,7 @@ int main()
 
 ネストしたディレクトリを一度に作ろうとした場合はエラーとなる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -370,7 +370,7 @@ int main()
 
 ネストしたディレクトリを含めて一度に作成するには、`boost::filesystem::create_directories()`関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 
@@ -393,7 +393,7 @@ int main()
 
 ディレクトリ内のファイルを列挙するには、`boost::filesystem::directory_iterator`クラスを使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 #include <boost/foreach.hpp>
@@ -421,7 +421,7 @@ int main()
 
 あるいは、上記の実装例の `BOOST_FOREACH` 部分は C++11 以降で range-based-for を使いたい場合、次のようにも書ける。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 #include <boost/range/iterator_range.hpp>
@@ -445,7 +445,7 @@ int main()
 
 ディレクトリ内の全てのファイルを再帰的に列挙するには、`boost::filesystem::recursive_directory_iterator`クラスを使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/filesystem.hpp>
 #include <boost/foreach.hpp>

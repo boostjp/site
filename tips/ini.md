@@ -25,7 +25,7 @@ str = Hello
 ```
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/property_tree/ptree.hpp>
@@ -79,7 +79,7 @@ iniを書き込むには、要素を追加するために`boost::property_tree::
 保存には、`boost::property_tree::write_ini()`関数に、ファイル名と`ptree`オブジェクトを指定する。
 
 
-```cpp
+```cpp example
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/ini_parser.hpp>
 

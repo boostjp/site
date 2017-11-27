@@ -1,6 +1,6 @@
 # libs/functional/function_test.cpp
 
-```cpp
+```cpp example
 // ------------------------------------------------------------------------------
 // Tests for the Boost functional.hpp header file
 //

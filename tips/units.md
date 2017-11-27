@@ -28,7 +28,7 @@ Boost Units を使用する上で理解が必要な用語を以下に挙げる�
 
 テンプレートクラス `boost::units::quantity` に単位を表す型と値を表す型をテンプレート引数として渡すことで量を表す型が得られる。また、値と単位型のオブジェクトを掛けあわせることで、量のオブジェクトが得られる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/units/systems/si.hpp>
 #include <boost/units/io.hpp>	// std::ostream への出力に必要 

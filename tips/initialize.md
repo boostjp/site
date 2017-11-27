@@ -3,7 +3,7 @@
 
 このクラスを使用するには、[`<boost/utility/value_init.hpp>`](http://www.boost.org/doc/libs/release/libs/utility/value_init.htm)をインクルードする。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/utility/value_init.hpp>
 

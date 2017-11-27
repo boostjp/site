@@ -8,7 +8,7 @@
 
 ## `boost::enable_if`を使用する場合
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <list>
@@ -72,7 +72,7 @@ int main()
 
 ## `boost::mpl::bool_`によるタグディスパッチを使用する場合
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <list>

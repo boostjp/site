@@ -16,7 +16,7 @@
 
 Boost.Intervalに関連するクラス・関数は `boost::numeric` 名前空間内に定義されている。（さらにネストされた名前空間内に定義されたものもある。）
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/interval.hpp>
 #include <boost/numeric/interval/io.hpp>
@@ -39,7 +39,7 @@ int main()
 ## <a name="deduction-type" href="#deduction-type">数値型を指定せずに区間を得る</a>
 `boost::numeric::interval`型の変数を定義する際には、`interval<double>`のように数値型（この場合は`double`）を書かなければならない。関数に区間を渡すときなどに、テンプレート引数を自分で書かずに、自動的に推論されると便利である。`boost::numeric::hull()`を使うと、テンプレート引数が自動的に推論され、推論された数値型の`interval`オブジェクトが返される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/interval.hpp>
 #include <boost/numeric/interval/io.hpp>
@@ -61,7 +61,7 @@ int main()
 ## <a name="lower-upper" href="#lower-upper">区間の下限・上限を得る</a>
 `boost::numeric::interval`のメンバ関数`lower()`で下限、`upper()`で上限が得られる。非メンバ関数版もある。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/interval.hpp>
  
@@ -89,7 +89,7 @@ upper: 3.15
 ## <a name="singleton" href="#singleton">区間内の要素が1個かどうかを判定する</a>
 `boost::numeric::singleton()`関数で、区間の要素が1個かどうかを判定できる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/interval.hpp>
 
@@ -116,7 +116,7 @@ false
 ## <a name="arithmetic-operation" href="#arithmetic-operation">四則演算を行う</a>
 区間と区間、区間と数値の四則演算は通常の演算子`(+, -, *, /)`を用いて行う。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/interval.hpp>
 #include <boost/numeric/interval/io.hpp>
@@ -173,7 +173,7 @@ int main()
 
 複合代入の演算子`(+=, -=, *=, /=)`も使える。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/interval.hpp>
 #include <boost/numeric/interval/io.hpp>

@@ -58,7 +58,7 @@ Header: &lt;boost/preprocessor/debug/line.hpp&gt;
 
 ## Sample Code
 
-```cpp
+```cpp example
 // sample.cpp
 #if !defined(BOOST_PP_IS_ITERATING)
 

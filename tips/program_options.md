@@ -12,7 +12,7 @@
 ## <a name="define-option" href="#define-option">オプションを定義する</a>
 `<boost/program_options.hpp>`に定義される`boost::program_options`名前空間に含まれる`options_description`型により、プログラムオプションを定義する。
 
-```cpp
+```cpp example
 #include <boost/program_options.hpp>
 
 int main(const int ac, const char* const * const av)
@@ -40,7 +40,7 @@ int main(const int ac, const char* const * const av)
 ## <a name="get-option" href="#get-option">オプションを取得する</a>
 `parse_command_line()`関数を使用して、`options_description`の定義に基づいてコマンドライン引数を解析し、その結果を`variables_map`オブジェクトに対して格納する事を定義する。`notiry()`関数を使用することで、実際に`variables_map`オブジェクトに解析されたプログラムオプションの結果が格納される。
 
-```cpp
+```cpp example
 #include <boost/program_options.hpp>
 
 int main(const int ac, const char* const * const av)

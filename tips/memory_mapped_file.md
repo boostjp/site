@@ -47,7 +47,7 @@ BOOST_ASSERT( size == view.get_size() );
 
 `managed_mapped_file`クラスの`construct()`メンバを使用し、`find()`メンバで検索可能なnamed instanceを生成、unique instanceやanonymous instanceも生成できる。
 
-```cpp
+```cpp example
 #include <boost/interprocess/managed_mapped_file.hpp>
 #include <iostream>
 
@@ -78,7 +78,7 @@ Boost.Interprocessには標準ライブラリと同様の使い方が可能な�
 
 基本的にはManaged Memory Segmentsクラスから取得できる`segment_manager`を使ってアロケータを構築、そのアロケータを使ったコンテナを生成することでコンテナ並びにコンテナの要素をファイル上に構築できる。
 
-```cpp
+```cpp example
 #include <boost/interprocess/managed_mapped_file.hpp>
 #include <boost/interprocess/containers/vector.hpp>
 #include <boost/interprocess/allocators/allocator.hpp>

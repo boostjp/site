@@ -154,7 +154,7 @@ Boost.Graphのグラフ構造クラスは、コンストラクタで辺の範囲
 
 これを使用することで、シンプルにグラフを構築できる。
 
-```cpp
+```cpp example
 #include <utility>
 #include <string>
 #include <boost/graph/adjacency_list.hpp>
@@ -198,7 +198,7 @@ E -->
 
 辺を追加する`boost::add_edge()`関数は、追加する辺の2つの頂点を指定して使用する。順番は、`source`、`target`の順である。
 
-```cpp
+```cpp example
 #include <utility>
 #include <string>
 #include <boost/graph/adjacency_list.hpp>
@@ -264,7 +264,7 @@ Boost.Graphのグラフ構造には、Property Mapによって頂点・辺・グ
 
 そして、最短経路の計算の際に、`Highway`クラスの`distance`メンバ変数を辺の重みとして使用している。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/graph/adjacency_list.hpp>
@@ -348,7 +348,7 @@ Tokyo-Nagoya : 325.5km
 
 これらの機能を使用して、[バンドルプロパティ](#bundle-property)の例で作成したグラフの情報を列挙してみよう。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/graph/adjacency_list.hpp>
@@ -471,7 +471,7 @@ for (Map::vertex_descriptor v : boost::make_iterator_range(vertices(map))) {
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/dijkstra_shortest_paths.png)
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <deque>
@@ -580,7 +580,7 @@ Z
 
 ここでは、先行ノードも一緒に求めているが、経路長のみが必要であれば、`DistanceMap`のみを計算してもよい。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <deque>
@@ -704,7 +704,7 @@ namespace boost {
 }
 ```
 
-```cpp
+```cpp example
 #include <iostream>
 #include <cassert>
 
@@ -770,7 +770,7 @@ AからDに到達不可能
 
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/simple_shortest_path.png)
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <deque>
@@ -866,7 +866,7 @@ g2:
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/isomorphism_2.png)
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <utility>
@@ -949,7 +949,7 @@ Boost.Graphには、最小全域木を作るためのアルゴリズムとして
 
 クラスカル法によって最小全域木を求める`boost::kruskal_minimum_spanning_tree()`関数は、Output Iteratorで最小全域木の辺記述子(edge descriptor)を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/kruskal_min_spanning_tree.hpp>
@@ -1015,7 +1015,7 @@ int main()
 
 プリム法によって最小全域木を求める`boost::prim_minimum_spanning_tree()`関数は、先行ノードマップ(predecessor map)として最小全域木を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/prim_minimum_spanning_tree.hpp>
@@ -1091,7 +1091,7 @@ parent[E] = A
 
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/topological_sort.png)
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <iterator>
@@ -1153,7 +1153,7 @@ Boost.Graphにはオイラー閉路のためのアルゴリズムは用意され
 - [shand/graph/euler_path.hpp](https://github.com/faithandbrave/Shand/blob/master/shand/graph/euler_path.hpp)
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <deque>
 #include <string>
@@ -1226,7 +1226,7 @@ E, B, A, C, B, D, C, E, Dの順に頂点をたどれば一筆書きになるこ�
 | 第3引数 | 出力方法のカスタマイズ方法 (ここでは、頂点名を出力するために[`make_label_writer()`](http://www.boost.org/doc/libs/release/libs/graph/doc/write-graphviz.html#concept:PropertyWriter)を使用している) |
 
 
-```cpp
+```cpp example
 #include <fstream>
 #include <vector>
 #include <string>
@@ -1304,7 +1304,7 @@ Graphviz形式(.dot)のデータを読み込むには、`<boost/graph/graphviz.h
 | 第3引数 | DOT言語のプロパティを処理するための`boost::dynamic_properties`型変数への参照 |
 
 
-```cpp
+```cpp example
 #include <fstream>
 #include <string>
 #include <boost/graph/adjacency_list.hpp>

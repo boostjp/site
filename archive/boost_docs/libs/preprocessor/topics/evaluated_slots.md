@@ -89,7 +89,7 @@ This value *will not change* unless there is a subsequent call to `BOOST_PP_ASSI
 
 The slot mechanism can also be used to perform calculations:
 
-```cpp
+```cpp example
 #include <iostream>
 
 #include <boost/preprocessor/slot/slot.hpp>

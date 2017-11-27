@@ -14,7 +14,7 @@
 月末日を取得するには、`boost::gregorian::gregorian_calendar::end_of_month_day()`関数を使用する。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/date_time/gregorian/gregorian.hpp>
 
@@ -43,7 +43,7 @@ Boost.DateTimeの`boost::gregorian::date`型は、`operator+()`や`operator-()`�
 
 以下の例では、2011年4月1日に1ヶ月を加算し、その後1日を減算することで、2011年4月の末日を求めている。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/date_time/gregorian/gregorian.hpp>
 

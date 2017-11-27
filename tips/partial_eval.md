@@ -11,7 +11,7 @@
 ## <a name="partial-application" href="#partial-application">部分適用(partial application)</a>
 `boost::bind()`関数で、あとから指定したい引数に、プレースホルダーと呼ばれる値を指定することで、関数の一部の引数を先に渡しておき、残りをあとから指定して呼び出す、ということができる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/function.hpp>
 #include <boost/bind.hpp>
@@ -48,7 +48,7 @@ int main()
 
 カリー化のみを行う関数は用意されていないので、自分で作る必要がある(参考: <http://ideone.com/qtXeA> )。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/function.hpp>
 #include <boost/bind.hpp>
@@ -81,7 +81,7 @@ int main()
 
 レシーバを部分適用することで、その返される関数オブジェクトを保持するクラスに、レシーバーのクラスへの依存関係を持たせることのない設計が可能となる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/function.hpp>
 #include <boost/bind.hpp>

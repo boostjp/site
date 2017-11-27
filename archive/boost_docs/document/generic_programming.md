@@ -50,7 +50,7 @@ copy(InputIterator first, InputIterator last, OutputIterator result)
 
 汎用の `copy()` 関数を使うことで、どんな種類のシーケンスからでも要素をコピーできるようになるのである。 これには、`std::list` のような、イテレータを外部に置いているリンクリストも含まれる。
 
-```cpp
+```cpp example
 #include <list>
 #include <vector>
 #include <iostream>

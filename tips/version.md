@@ -6,7 +6,7 @@
 
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 
-```cpp
+```cpp example
 #include <boost/version.hpp>
 #include <iostream>
 

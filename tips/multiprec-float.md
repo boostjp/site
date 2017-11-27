@@ -16,7 +16,7 @@
 
 以下は、任意精度の符号あり多倍長整数である[`boost::multiprecision::cpp_dec_float_100`](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/floats/cpp_dec_float.html)クラス型を使用して、2の平方根を求めるプログラムである。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_dec_float.hpp>
 
@@ -182,7 +182,7 @@ MPFR多倍長浮動小数点数の特徴：
 
 **コンストラクタで文字列から変換**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/multiprecision/cpp_dec_float.hpp>
@@ -208,7 +208,7 @@ int main()
 
 **`assign()`メンバ関数で文字列から変換**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_dec_float.hpp>
 
@@ -239,7 +239,7 @@ int main()
 - 第1引数： 出力する精度。0を指定した場合、できるだけ多くの桁数を出力する。
 - 第2引数： 出力フラグ。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_dec_float.hpp>
 
@@ -285,7 +285,7 @@ Boost.Multiprecisionの多倍長浮動小数点数は、異なる精度間での
 
 また、`cpp_dec_float_50`から`cpp_dec_float_100`へ、といったより大きい精度への暗黙変換が可能である。
 
-```cpp
+```cpp example
 #include <boost/multiprecision/cpp_dec_float.hpp>
 
 using namespace boost::multiprecision;
@@ -308,7 +308,7 @@ int main()
 
 明示的な型変換を使用する場合のみ変換可能である。
 
-```cpp
+```cpp example
 #include <boost/multiprecision/cpp_dec_float.hpp>
 
 using namespace boost::multiprecision;

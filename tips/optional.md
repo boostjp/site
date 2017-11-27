@@ -13,7 +13,7 @@ Boost.Optionalの基本的な使い道は、関数の失敗値を表現するこ
 
 検索の関数を考えてみよう。よくあるのは、該当要素が見つかったときに要素を指すポインタを返し、見つからなかった場合は`NULL`ポインタを返すといったものだ。
 
-```cpp
+```cpp example
 #include <vector>
 #include <boost/assign/list_of.hpp>
 
@@ -47,7 +47,7 @@ int main()
 
 これは、Boost.Optionalを使用すると以下のように書くことができる。
 
-```cpp
+```cpp example
 #include <vector>
 #include <boost/assign/list_of.hpp>
 #include <boost/optional.hpp>

@@ -21,7 +21,7 @@ boost::function<double(int, char)> f;
 
 **関数ポインタを格納して呼び出す**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/function.hpp>
 
@@ -48,7 +48,7 @@ int main()
 
 ***関数オブジェクトを格納して呼び出す**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/function.hpp>
 

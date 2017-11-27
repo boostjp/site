@@ -29,7 +29,7 @@
 この関数に[`boost::xpressive::smatch`](http://www.boost.org/doc/libs/release/doc/html/xpressive/user_s_guide.html#boost_xpressive.user_s_guide.quick_start.know_your_iterator_type)オブジェクトへの参照を与えると、見つかったマーク済み部分式が書き込まれる。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -39,7 +39,7 @@ int main()
 {
     std::string hello = "Hello World!";
 
-    sregex rex = sregex::compile("(\\w+) (\\w+)!");
+    sregex rex = sregex::compile("(\w+) (\w+)!");
     smatch what;
     if (regex_match(hello, what, rex)) {
         std::cout << what[0] << std::endl; // マッチ全体
@@ -65,7 +65,7 @@ World
 
 この関数は、マッチする部分文字列が見つかったら`true`、そうでなければ`false`を返す。対象となる文字列の次の引数として[`boost::xpressive::smatch`](http://www.boost.org/doc/libs/release/doc/html/xpressive/user_s_guide.html#boost_xpressive.user_s_guide.quick_start.know_your_iterator_type)オブジェクトへの参照を与えると、見つかったマーク済み部分式が書き込まれる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -75,7 +75,7 @@ int main()
 {
     std::string str = "私は1973/5/30の午前7時に生まれた。";
 
-    sregex rex = sregex::compile("(\\d{4})/(\\d{1,2})/(\\d{1,2})");
+    sregex rex = sregex::compile("(\d{4})/(\d{1,2})/(\d{1,2})");
     smatch what;
     if (regex_search(str, what, rex)) {
         std::cout << what[0] << std::endl; // マッチ全体
@@ -111,7 +111,7 @@ int main()
 
 ここでは、日付にマッチする正規表現を書き、マッチした部分を`<date>`タグで囲む、ということをしている。`"$&"`はマッチした全体の部分文字列を表す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -121,7 +121,7 @@ int main()
 {
     std::string str = "私は1973/5/30の午前7時に生まれた。";
 
-    sregex date = sregex::compile("\\d{4}/\\d{1,2}/\\d{1,2}");
+    sregex date = sregex::compile("\d{4}/\d{1,2}/\d{1,2}");
     std::string format = "<date>$&</date>";
 
     str = regex_replace(str, date, format);
@@ -142,7 +142,7 @@ int main()
 
 生文字列リテラルは、`R`プレフィックスを付けた文字列リテラルで、丸カッコで囲まれた範囲のエスケープシーケンスを無視する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 

@@ -34,7 +34,7 @@ $ mpicxx -I/boost/include -L/boost/lib -o bmpi bmpi.cpp -lboost_mpi -lboost_seri
 ## <a name="initialize" href="#initialize">MPI の初期化を行う</a>
 Boost.MPI で `MPI_Init()`、 `MPI_Finalize()` 相当の処理を行う場合、 `boost::mpi::environment` クラスを使用する。
 
-```cpp
+```cpp example
 #include <boost/mpi/environment.hpp>
 
 namespace bmpi = boost::mpi;
@@ -53,7 +53,7 @@ int main(int argc, char** argv)
 
 その `rank()` メンバ関数で自身のランク数、 `size()` メンバ関数でノード数を取得できる。
 
-```cpp
+```cpp example
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/communicator.hpp>
 #include <iostream>
@@ -80,7 +80,7 @@ int main(int argc, char** argv)
 
 以下のプログラムは、 ベクトルをランク 0 で生成して全てのノードに均等に分散するものである。
 
-```cpp
+```cpp example
 #include <boost/mpi/communicator.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/collectives.hpp>
@@ -127,7 +127,7 @@ int main(int argc, char** argv)
 
 以下は、ランク 0 で計算したデータを他のランクへ共有するプログラムである。
 
-```cpp
+```cpp example
 #include <boost/mpi/communicator.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/collectives.hpp>
@@ -164,7 +164,7 @@ int main(int argc, char** argv)
 
 以下のプログラムはベクトルの加算演算を MPI で計算するものである。
 
-```cpp
+```cpp example
 #include <boost/mpi/communicator.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/collectives.hpp>
@@ -216,7 +216,7 @@ int main(int argc, char** argv)
 
 以下は、偶数ランクのノードが奇数ランクのノードに対し、適当にデータを生成して送信するプログラムである。
 
-```cpp
+```cpp example
 #include <boost/mpi/communicator.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/nonblocking.hpp>
@@ -257,7 +257,7 @@ int main(int argc, char** argv)
 
 以下のプログラムはランク 0 から適当なデータを生成して送信し、他のランクは受け取って表示するだけのプログラムである。ランク 0 は他のノード全てにデータを送信するため非同期で行い、全ての送信リクエストの完了を待つ。他のランクはデータを1つ受け取るだけなので同期受信の `recv()` メンバ関数を使用している。
 
-```cpp
+```cpp example
 #include <boost/mpi/communicator.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/nonblocking.hpp>
@@ -323,7 +323,7 @@ BOOST_CLASS_IMPLEMENTATION(gps_positions, boost::serialization::object_serializa
 
 以下のプログラムは、 `gps_positions` クラスをブロードキャストするプログラムである。
 
-```cpp
+```cpp example
 #include <boost/mpi/communicator.hpp>
 #include <boost/mpi/environment.hpp>
 #include <boost/mpi/collectives.hpp>

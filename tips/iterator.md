@@ -38,7 +38,7 @@ namespace boost {
 また、`iterator_facade`クラスを継承して定義するクラスには、`boost::iterator_core_access`を`friend`クラスにして、指定したイテレータの種類によって要求されている関数を定義する必要がある。
 
 例：
-```cpp
+```cpp example
 #include <iostream>
 #include <algorithm>
 #include <boost/iterator/iterator_facade.hpp>
@@ -174,7 +174,7 @@ Forward Traversal Iterators（`forward_traversal_tag`で表されるイテレー
 
 
 例：
-```cpp
+```cpp example
 #include <iostream>
 #include <algorithm>
 #include <boost/iterator_adaptors.hpp>

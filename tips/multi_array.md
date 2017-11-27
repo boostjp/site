@@ -14,7 +14,7 @@
 
 ただし、`boost::array`とは違いオーバーヘッドが存在するため注意が必要である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multi_array.hpp>
 
@@ -56,7 +56,7 @@ int main()
 
 `boost::multi_array`はCスタイルの配列では難しい部分配列への走査を提供している。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multi_array.hpp>
 

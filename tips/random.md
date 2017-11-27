@@ -18,7 +18,7 @@
 
 `uniform_int_distribution`はコンストラクタで値の範囲を受け取り、その関数呼び出し演算子の引数としてエンジンを受け取ることにより、そのエンジンで指定された値の範囲の擬似乱数を生成する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/random.hpp>
 #include <boost/random/random_device.hpp>
@@ -57,7 +57,7 @@ Boost.Randomのジェネレータでシードの再設定をするには、ジ�
 
 以下は、メルセンヌ・ツイスターの例：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/random.hpp>
 
@@ -95,7 +95,7 @@ int main()
 
 分布クラスを通しても同じ値が生成される：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/random.hpp>
 

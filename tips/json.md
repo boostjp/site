@@ -34,7 +34,7 @@ data.json
 ```
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/property_tree/ptree.hpp>
@@ -124,7 +124,7 @@ JSONを書き込むには、要素を設定するために`boost::property_tree:
 保存には、`boost::property_tree::write_json()`関数に、ファイル名と`ptree`オブジェクトを指定する。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/property_tree/ptree.hpp>

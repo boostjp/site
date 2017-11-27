@@ -1,5 +1,5 @@
 # bind_as_compose.cpp
-```cpp
+```cpp example
 #include <boost/config.hpp>
 
 # if defined(BOOST_MSVC)

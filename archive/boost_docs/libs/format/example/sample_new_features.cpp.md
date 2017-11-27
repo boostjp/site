@@ -1,6 +1,6 @@
 # libs/format/example/sample_new_features.cpp
 
-```cpp
+```cpp example
 // ----------------------------------------------------------------------------
 // sample_new_features.cpp : demonstrate features added to printf's syntax
 // ----------------------------------------------------------------------------

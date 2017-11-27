@@ -1,5 +1,5 @@
 # libs/conversion/cast_test.cpp
-```cpp
+```cpp example
 //  boost utility cast test program  -----------------------------------------//
 
 //  (C) Copyright boost.org 1999. Permission to copy, use, modify, sell

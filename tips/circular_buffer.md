@@ -48,7 +48,7 @@ push_front( 'd' )
 ```
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/circular_buffer.hpp>
 
@@ -117,7 +117,7 @@ push_back( '1' )
 ```
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/circular_buffer.hpp>
 
@@ -159,7 +159,7 @@ y z 1
 
 `std::vector`と同じく、popも利用可能
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/circular_buffer.hpp>
 
@@ -218,7 +218,7 @@ y
 | `rend()`    | `[0]`位置の前を指す逆イテレータが返る         |
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/circular_buffer.hpp>
     
@@ -280,7 +280,7 @@ ___ ___ ___ ___ ___
                          array_two().second:先頭位置からの個数取得
 ```
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/circular_buffer.hpp>
 #include <boost/lambda/lambda.hpp>
@@ -397,7 +397,7 @@ H G F E
 
 ## <a name="monitor" href="#monitor">バッファの使用状況を確認する</a>
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/circular_buffer.hpp>
 
@@ -473,7 +473,7 @@ e d c
 
 ## <a name="element-access" href="#element-access">バッファの先頭/末尾/任意の位置にアクセスする</a>
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/circular_buffer.hpp>
     

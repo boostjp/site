@@ -31,7 +31,7 @@ data.xml：
 </root>
 ```
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/property_tree/ptree.hpp>
@@ -99,7 +99,7 @@ data.xml：
 </root>
 ```
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/property_tree/ptree.hpp>
@@ -142,7 +142,7 @@ XMLを書き込むには、要素を追加するために`boost::property_tree::
 
 保存には、`boost::property_tree::write_xml()`関数に、ファイル名と`ptree`オブジェクトを指定する。
 
-```cpp
+```cpp example
 #include <vector>
 #include <string>
 #include <boost/property_tree/ptree.hpp>

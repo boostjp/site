@@ -16,7 +16,7 @@ Boost.Fusionにおけるタプル型には、`boost::fusion::vector<T...>`を使
 
 各要素を取り出すには、`boost::fusion::at_c<N>()`非メンバ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/fusion/include/vector.hpp>
@@ -47,7 +47,7 @@ Hello
 
 この関数を使用するには、`<boost/fusion/include/make_vector.hpp>`をインクルードする。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/fusion/include/vector.hpp>
@@ -77,7 +77,7 @@ Hello
 ## <a name="nth-element" href="#nth-element">N番目の要素を取得する</a>
 N番目の要素を取得するには、`boost::fusion::at_c<N>()`非メンバ関数を使用する。`N`はコンパイル時に決定する定数である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/fusion/include/vector.hpp>
@@ -112,7 +112,7 @@ Hello
 
 要素に適用する関数には、毎回異なる型が渡されるため、多相的である必要がある(テンプレート、もしくはタプルに含まれる全ての型に対するオーバーロード)。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/fusion/include/vector.hpp>
@@ -145,7 +145,7 @@ Hello
 
 `fusion::for_each()`には、Boost.Lambdaを使用することもできる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/fusion/include/vector.hpp>
@@ -173,7 +173,7 @@ Hello
 ## <a name="user-defined-type-as-tuple" href="#user-defined-type-as-tuple">ユーザー定義型をタプルとして扱う</a>
 ユーザー定義型は、`BOOST_FUSION_ADAPT_STRUCT`マクロを適用することで、Boost.Fusionのシーケンスとして登録することができ、その後、そのユーザー定義型はBoost.Fusionで扱えるタプルとして見なされるようになる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -230,7 +230,7 @@ Alice
 以下の例では、タプルvの第1要素と第3要素を取り出し、第2要素を無視している。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/fusion/include/vector.hpp>

@@ -12,7 +12,7 @@
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 `cpu_timer`クラスでは、コンストラクタで時間計測が開始され、`format()`メンバ関数で計測結果の`std::string`を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <cmath>
 #include <boost/timer/timer.hpp>
@@ -50,7 +50,7 @@ int main()
 ## <a name="start-stop-resume" href="#start-stop-resume">開始、停止、再開を制御する</a>
 `cpu_timer`の開始、停止、再開を制御するには、それぞれ`start()`、`stop()`、`resume()`メンバ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <cmath>
 #include <boost/timer/timer.hpp>
@@ -101,7 +101,7 @@ int main()
 ## <a name="elapsed-values" href="#elapsed-values">処理時間の値を個別に取得する</a>
 処理時間の値を個別に取得するには、`elapsed()`メンバ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <cmath>
 #include <boost/timer/timer.hpp>
@@ -152,7 +152,7 @@ system : 0
 
 `format()`メンバ関数に以下のように指定することでフォーマットをカスタマイズできる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <cmath>
 #include <boost/timer/timer.hpp>

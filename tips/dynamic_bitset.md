@@ -21,7 +21,7 @@
 
 コンストラクタ、もしくはメンバ関数`resize()`でビット集合のサイズを指定できる。
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <cassert>
 #include <iostream>
@@ -46,7 +46,7 @@ int main()
 
 メンバ関数`set`/`reset`、`[ ]`演算子でビットの値を設定できる。
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <iostream>
 using namespace std;
@@ -83,7 +83,7 @@ int main()
 
 メンバ関数`count()`を使う
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <cassert>
 
@@ -106,7 +106,7 @@ int main()
 すべてのビットが1かどうかを調べるにはメンバ関数`count()`と`size()`を組み合わせて使う。
 
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <cassert>
 #include <iostream>
@@ -149,7 +149,7 @@ int main()
 文字列は`'0'`か`'1'`のみから構成される必要があり、文字列の右端がインデックス`0`に対応することに注意。
 
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <boost/lexical_cast.hpp>
 
@@ -181,7 +181,7 @@ int main()
 
 メンバ関数`flip()`でビットの値を反転できる。
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <iostream>
 using namespace std;
@@ -205,7 +205,7 @@ int main()
 
 ただし、2項演算子の引数のサイズは等しくなければならない。
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 
 int main()
@@ -235,7 +235,7 @@ int main()
 同様に、AがBの真部分集合（A ⊂ B）かを調べるには、メンバ関数`is_proper_subset_of`を、AとBが交差する（すなわち、AとBの積集合が空集合でない）かを調べるには、メンバ関数`intersects()`をそれぞれ使う。
 
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <cassert>
 
@@ -265,7 +265,7 @@ int main()
 
 メンバ関数`find_first()`と`find_next()`を組み合わせて、`1`が立っているインデックスを走査できる。 
 
-```cpp
+```cpp example
 #include <boost/dynamic_bitset.hpp>
 #include <iostream>
 

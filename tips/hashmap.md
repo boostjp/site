@@ -17,7 +17,7 @@
 
 以下の場合、`std::string`型をキー、`int`型を値とするハッシュ表を作成している。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/unordered_map.hpp>
@@ -54,7 +54,7 @@ int main()
 
 以下がその簡単な例である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/unordered_map.hpp>
@@ -113,7 +113,7 @@ int main()
 
 そういった場合に、別名の等値比較関数、ハッシュ計算関数をテンプレートパラメータで指定することができる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/unordered_map.hpp>

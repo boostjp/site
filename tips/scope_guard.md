@@ -15,7 +15,7 @@ Boost.ScopeExitは、関数のスコープを抜ける際に実行されるブ�
 
 以下がその基本的な使い方である：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/scope_exit.hpp>
 

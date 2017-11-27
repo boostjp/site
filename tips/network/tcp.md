@@ -21,7 +21,7 @@
 
 `error_code`を渡さなかった場合には、接続失敗時に`boost::system::system_error`が例外として投げられる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 
@@ -55,7 +55,7 @@ int main()
 
 第2引数として、接続成功もしくは接続失敗時に呼ばれる関数を指定する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
@@ -116,7 +116,7 @@ int main()
 
 引数として、バインディングする`socket`クラスオブジェクトへの参照を渡す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 
@@ -151,7 +151,7 @@ int main()
 
 第1引数としてバインディングする`socket`オブジェクトへの参照をとり、第2引数として接続成功もしくは接続失敗時に呼ばれる関数を指定する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
@@ -218,7 +218,7 @@ int main()
 
 第3引数を省略し、エラーが発生した場合は`boost::system::system_error`例外が投げられる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 
@@ -259,7 +259,7 @@ int main()
 - 第2引数 ： 送信バッファ
 - 第3引数 ： 送信成功もしくは失敗時に呼ばれる関数
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
@@ -364,7 +364,7 @@ int main()
 
 第4引数を省略し、エラーが発生した場合は`boost::system::system_error`例外が投げられる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 
@@ -412,7 +412,7 @@ int main()
 - 第3引数 ： どれくらい受信するか。[`transfer_all()`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/transfer_all.html)はバッファがいっぱいになるまで読む。[`transfer_at_least(size_t minimum)`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/transfer_at_least.html)は最低でもNバイト読む。[`transfer_exactly(size_t size)`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/transfer_exactly.html)は指定したサイズ読む。
 - 第4引数 ： 受信成功もしくは失敗時に呼ばれる関数
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
@@ -515,7 +515,7 @@ int main()
 
 また、この関数は戻り値として、[`boost::asio::ip::tcp::resolver::iterator`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/ip__basic_resolver/iterator.html)オブジェクトを返す。このイテレータは、デフォルト構築されたイテレータを終端としてイテレートできる。このイテレータは間接参照によって[`endpoint`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/ip__tcp/endpoint.html)オブジェクトが取得できる。
 
-```cpp
+```cpp example
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <iostream>
@@ -580,7 +580,7 @@ int main()
 - 第1引数 ： `query`オブジェクト
 - 第2引数 ： 名前解決の成功もしくは失敗時に呼ばれる関数。iteratorプレースホルダを束縛することにより、完了時に呼ばれる関数に、`endpoint`のイテレータが渡される。
 
-```cpp
+```cpp example
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <iostream>
@@ -658,7 +658,7 @@ int main()
 
 同期通信でタイムアウトを指定する方法はないため、ここでは非同期バージョンのみ示す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/asio.hpp>
 #include <boost/asio/steady_timer.hpp>

@@ -14,7 +14,7 @@ Boost.Signals2のシグナルには、`connect()`関数によって、複数の�
 
 シグナルの関数呼び出し演算子によって、接続した関数全てを呼び出すことができる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/signals2/signal.hpp>
 #include <boost/bind.hpp>
@@ -76,7 +76,7 @@ SubView : clicked
 ## <a name="disconnect" href="#disconnect">スロットを切断する</a>
 スロットを切断するには、`connect()`関数の戻り値であるコネクションを保持しておき、コネクションの`disconnect()`メンバ関数を呼び出すことで、切断する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/signals2/signal.hpp>
 #include <boost/bind.hpp>
@@ -144,7 +144,7 @@ MainView : clicked
 
 [`optional_last_value()`](http://www.boost.org/doc/html/boost/signals2/optional_last_value.html)を参照。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/signals2/signal.hpp>
 
@@ -199,7 +199,7 @@ invalid value
 ## <a name="customize-return-value" href="#customize-return-value">シグナル呼び出しの戻り値をカスタマイズする</a>
 `boost::signals2::signal`クラスの2番目のテンプレート引数`Combiner`を変更することで、戻り値のカスタムが可能である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <numeric>
 #include <boost/signals2/signal.hpp>
@@ -265,7 +265,7 @@ int main()
 
 参照: [Automatic Connection Management (Intermediate) - Boost Signals 2 Library](http://www.boost.org/doc/libs/release/doc/html/signals2/tutorial.html#signals2.tutorial.connection-management)
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/signals2/signal.hpp>
 #include <boost/make_shared.hpp>

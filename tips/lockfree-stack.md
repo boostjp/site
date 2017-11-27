@@ -8,7 +8,7 @@
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 ここでは、ロックフリースタックの基本的な使い方を示す。以下は、Producer-Consumerパターンで、一方のスレッドがスタックに値を供給し、もう一方のスレッドがスタックの値を消費する処理を行っている。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <thread>
 #include <boost/lockfree/stack.hpp>

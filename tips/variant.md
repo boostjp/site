@@ -13,7 +13,7 @@
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 まず、Boost.Variantの基本的な使い方を以下に示す：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/variant.hpp>
@@ -60,7 +60,7 @@ hello
 
 `which()`メンバ関数は、格納されている型の、`0`から始まるインデックスを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/variant.hpp>
@@ -90,7 +90,7 @@ int main()
 
 `type()`メンバ関数は、格納されている型の[`std::type_info`](https://cpprefjp.github.io/reference/typeinfo/type_info.html)オブジェクトへの`const`左辺値参照を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/variant.hpp>
@@ -126,7 +126,7 @@ double
 - 参照版 ： [`boost::get()`](http://www.boost.org/doc/libs/1_52_0/doc/html/boost/get_id1950197.html)非メンバ関数に[`boost::variant`](http://www.boost.org/doc/libs/release/doc/html/boost/variant.html)オブジェクトへの参照を渡すと、格納されている値への参照を返す。指定された型が格納されている型と同じではない場合、[`boost::bad_get`](http://www.boost.org/doc/libs/release/doc/html/boost/bad_get.html)型の例外を送出する。
 - ポインタ版 ： [`boost::get()`](http://www.boost.org/doc/libs/1_52_0/doc/html/boost/get_id1950197.html)非メンバ関数に[`boost::variant`](http://www.boost.org/doc/libs/release/doc/html/boost/variant.html)オブジェクトへのポインタを渡すと、格納されている値へのポインタを返す。指定された型が格納されている型と同じではない場合、ヌルポインタを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/variant.hpp>
@@ -172,7 +172,7 @@ Boost.Variantには[決して空にはならない保証](http://www.boost.org/d
 
 [`boost::variant`](http://www.boost.org/doc/libs/release/doc/html/boost/variant.html)クラスは、そのデフォルトコンストラクタで第1テンプレートパラメータのオブジェクトを構築するので、`boost::blank`は第1テンプレートパラメータとして指定することを推奨する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/variant.hpp>

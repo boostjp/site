@@ -1,7 +1,7 @@
 # コピー不可なオブジェクトを持ちまわる
 ボタンやテクスチャ、コネクション、ファイルといったデータはコピー禁止に設定されていることが多い。そういったデータを、コピー可能であることを要求するコンテナに格納するには、[`boost::shared_ptr`](http://www.boost.org/doc/libs/release/libs/smart_ptr/shared_ptr.htm)に入れる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <string>

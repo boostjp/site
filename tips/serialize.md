@@ -36,7 +36,7 @@ Boost.Serializationでは、ユーザー定義型に、
 
 ここでは、`Data`型をテキスト形式でシリアライズ、デシリアライズしている。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <fstream>
 #include <string>

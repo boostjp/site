@@ -53,7 +53,7 @@ Boost.MultiArray は MultiArray コンセプト (N 次元コンテナのジェ�
 
 下は `multi_array` を使う簡潔なサンプルである:
 
-```cpp
+```cpp example
 #include "boost/multi_array.hpp"
 #include <assert>
 

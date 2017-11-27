@@ -16,7 +16,7 @@ Boostでは、標準コンテナのインタフェースで使用できる固定
 
 このクラスは、組み込み配列とは異なり、`std::vector`や`std::list`のような標準コンテナのインタフェースを持つ。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/array.hpp>
 #include <algorithm>
@@ -59,7 +59,7 @@ int main()
 
 配列の要素数を取得するには、`size()`メンバ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/array.hpp>
 
@@ -84,7 +84,7 @@ int main()
 
 `boost::array`は、組み込み配列や`std::vector`と同じように、`operator[]()`の添字演算子によって要素にランダムアクセスできる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/array.hpp>
 
@@ -111,7 +111,7 @@ int main()
 `boost::array`は、`begin()`、`end()`メンバ関数によって、最初の要素を指すイテレータ、最後尾要素の次を指すイテレータを取得できる。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/array.hpp>
 #include <algorithm>
@@ -143,7 +143,7 @@ int main()
 - `const_iterator` : 読み取り専用イテレータ
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/array.hpp>
 #include <algorithm>

@@ -1,5 +1,5 @@
 # array1.cpp
-```cpp
+```cpp example
 /*クラス array<> を使った簡単な例
  */
 #include <iostream>

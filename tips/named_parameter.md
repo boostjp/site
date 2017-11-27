@@ -10,7 +10,7 @@ C++において名前付き引数を表現するには、[Boost Parameter Librar
 ## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
 以下が、Boost.Parameterを使用した名前付き引数の例である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/parameter/name.hpp>
@@ -90,7 +90,7 @@ Boost.Parameterでは、ラベルをユーザーの名前空間に定義する�
 
 以下は、前項で定義したラベルを`ui`名前空間に移した例である：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/parameter/name.hpp>

@@ -7,7 +7,7 @@ by Nicolai M. Josuttis, Addison-Wesley, 1999
 
 [© Copyright](http://www.josuttis.com/libbook/copyright.html) Nicolai M. Josuttis 1999
 
-```cpp
+```cpp example
 #include <iostream>
 #include <algorithm>
 #include <functional>

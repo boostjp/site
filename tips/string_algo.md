@@ -17,7 +17,7 @@
 
 `trim()`関数は引数として渡された文字列自身を書き換え、`trim_copy()`関数は、前後のスペースを削除した文字列のコピーを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/algorithm/string/trim.hpp>
@@ -54,7 +54,7 @@ int main()
 
 `trim_left()`関数は、引数として渡された文字列自身を書き換え、`trim_left_copy()`関数は、左のスペースを削除した文字列のコピーを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/algorithm/string/trim.hpp>
@@ -91,7 +91,7 @@ int main()
 
 `trim_right()`関数は、引数として渡された文字列自身を書き換え、`trim_right_copy()`関数は、右のスペースを削除した文字列のコピーを返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/algorithm/string/trim.hpp>
@@ -128,7 +128,7 @@ int main()
 
 第1引数には、分割された文字列の結果を受け取るコンテナ、第2引数には対象となる文字列、第3引数には区切り文字かどうかを判定する述語を指定する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <vector>
@@ -165,7 +165,7 @@ xyz
 
 第1引数には文字列のコンテナ、第2引数には、区切り文字列を指定する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <string>
@@ -193,7 +193,7 @@ a,b,c
 
 この関数は、第1引数の対象文字列が、第2引数の文字列で終了するかどうかを判定する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/algorithm/string/predicate.hpp> // iends_with
@@ -222,7 +222,7 @@ true
 標準ライブラリの`replace()`関数は、最初に見つけた要素しか置き換えない。
 [`boost::algorithm::replace_all()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/replace_all.html)関数、もしくは[`boost::algorithm::replace_all_copy()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/replace_all_copy.html)関数を使用すれば、該当する要素全てを置き換えることができる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/algorithm/string/replace.hpp>

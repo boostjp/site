@@ -16,7 +16,7 @@
 
 格納されている値を元の型に変換するには、`boost::any_cast()`関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/any.hpp>
@@ -95,7 +95,7 @@ T* x = boost::any_cast<T>(&a);
 このようなコンテナは、ヘテロなコンテナ(heterogeneous containers)と呼ばれる。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <vector>

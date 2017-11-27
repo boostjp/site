@@ -19,7 +19,7 @@
 
 以下は、任意精度の符号あり多倍長整数である[`boost::multiprecision::cpp_int`](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/ints/cpp_int.html)クラスを使用して、100の階乗を求めるプログラムである。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_int.hpp>
 
@@ -177,7 +177,7 @@ Boost.Multiprecisionの多倍長整数は、組み込みの整数型と同じ演
 
 **コンストラクタで文字列から変換**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/multiprecision/cpp_int.hpp>
@@ -203,7 +203,7 @@ int main()
 
 **`assign()`メンバ関数で文字列から変換**
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_int.hpp>
 
@@ -234,7 +234,7 @@ int main()
 - 第1引数： 出力する精度。整数では単に無視されるので、0を指定すればよい。
 - 第2引数： 出力フラグ。基数の選択。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_int.hpp>
 
@@ -280,7 +280,7 @@ Boost.Multiprecisionの多倍長整数は、異なる精度間での変換をサ
 
 また、`int128_t`から`int256`へ、といったより大きい精度への暗黙変換が可能である。
 
-```cpp
+```cpp example
 #include <boost/multiprecision/cpp_int.hpp>
 
 using namespace boost::multiprecision;
@@ -303,7 +303,7 @@ int main()
 
 明示的な型変換を使用する場合のみ変換可能である。
 
-```cpp
+```cpp example
 #include <boost/multiprecision/cpp_int.hpp>
 
 using namespace boost::multiprecision;
@@ -323,7 +323,7 @@ int main()
 
 任意精度整数である`cpp_int`は無限の桁数を持つため、最小値は取得できなかったものとして、0を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_int.hpp>
 
@@ -352,7 +352,7 @@ int main()
 
 任意精度整数である`cpp_int`は無限の桁数を持つため、最大値は取得できなかったものとして、0を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_int.hpp>
 
@@ -385,7 +385,7 @@ int main()
 
 固定精度整数の`int128_t`、`int256_t`といった型の場合、[`is_bounded`](https://cpprefjp.github.io/reference/limits/numeric_limits/is_bounded.html)は`true`となる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multiprecision/cpp_int.hpp>
 

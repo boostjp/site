@@ -1,6 +1,6 @@
 # libs/format/example/sample_advanced.cpp
 
-```cpp
+```cpp example
 // -*- C++ -*-
 //  Boost general library 'format'  ---------------------------
 //  See http://www.boost.org for updates, documentation, and revision history.

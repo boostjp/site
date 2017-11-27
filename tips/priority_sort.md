@@ -10,7 +10,7 @@
 
 以下がその例である：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <vector>

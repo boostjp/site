@@ -31,7 +31,7 @@
 
 静的な正規表現の基本的な使い方を解説する。まず、`"Hello World!"`という文字列から`"Hello"`と`"World"`という単語を抽出するコードは以下のようになる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -150,7 +150,7 @@ World
 
 「[基本的な使い方](#basic-usage)」で示したコードと同じだが、再掲する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -184,7 +184,7 @@ World
 
 この関数は、マッチする部分文字列が見つかったら`true`、そうでなければ`false`を返す。対象となる文字列の次の引数として[`boost::xpressive::smatch`](http://www.boost.org/doc/libs/release/doc/html/xpressive/user_s_guide.html#boost_xpressive.user_s_guide.quick_start.know_your_iterator_type)オブジェクトへの参照を与えると、見つかったマーク済み部分式が書き込まれる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -243,7 +243,7 @@ int main()
 
 ここでは、日付にマッチする正規表現を書き、マッチした部分を`<date>`タグで囲む、ということをしている。`"$&"`はマッチした全体の部分文字列を表す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 
@@ -280,7 +280,7 @@ int main()
 
 以下は、日付が含まれる文章から、年、月、日を抽出し、各要素を変数に代入する処理である：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 #include <boost/xpressive/regex_actions.hpp>
@@ -334,7 +334,7 @@ int main()
 
 以下は、日付の値チェックをする例である：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/xpressive/xpressive.hpp>
 #include <boost/xpressive/regex_actions.hpp>

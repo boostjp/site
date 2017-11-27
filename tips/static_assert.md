@@ -12,7 +12,7 @@
 
 ## <a name="function" href="#function">関数にコンパイル時アサートを付ける</a>
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_integral.hpp>
@@ -37,7 +37,7 @@ int main()
 
 ## <a name="class" href="#class">クラスにコンパイル時アサートを付ける</a>
 
-```cpp
+```cpp example
 #include <boost/static_assert.hpp>
 #include <boost/type_traits/is_integral.hpp>
 

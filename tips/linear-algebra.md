@@ -13,7 +13,7 @@
 ## <a name="basic-vector-usage" href="#basic-vector-usage">ベクトルの基本操作</a>
 ベクトルには、`boost::numeric::ublas`名前空間の[`vector`](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/vector.htm#vector)クラステンプレートを使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/io.hpp>
@@ -71,7 +71,7 @@ int main()
 ## <a name="vector-length" href="#vector-length">ベクトルの長さを取得する</a>
 ベクトルの長さを取得するには、[`boost::numeric::ublas::norm_2()`](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/vector_expression.htm#vector_reductions)関数を使用する。この関数は、ユークリッドノルム(2-ノルム)を計算して返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/ublas/vector.hpp>
 
@@ -103,7 +103,7 @@ int main()
 
 正規化の計算は、以下の`normalize()`関数のように、ベクトルを長さで割ることでできる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/io.hpp>
@@ -144,7 +144,7 @@ length : 1
 ## <a name="inner-product" href="#inner-product">2つのベクトルの内積を求める</a>
 2つのベクトルの内積を求めるには、[`boost::ublas::inner_prod()`](http://www.boost.org/doc/libs/release/libs/numeric/ublas/doc/vector_expression.htm#vector_operations)関数を使用する。この関数は、2つのベクトルを引数にとり、ベクトルの要素型で内積値を返す。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/numeric/ublas/vector.hpp>
 
@@ -179,7 +179,7 @@ int main()
 ## <a name="angle" href="#angle">2つのベクトルが成す角度を求める</a>
 2つのベクトルが成す角度の計算を、以下の`angle()`関数の実装で示す。この関数は、2つのベクトルを与えると、ラジアンで角度が返される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <cmath>
 #include <boost/numeric/ublas/vector.hpp>

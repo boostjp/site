@@ -19,7 +19,7 @@
 状態遷移は有限状態マシンの中にテーブル状にして記述する。
 
 
-```cpp
+```cpp example
 #include <boost/msm/front/state_machine_def.hpp>
 #include <boost/msm/back/state_machine.hpp>
 
@@ -72,7 +72,7 @@ int main()
 
 状態クラスに `on_entry()`, `on_exit()` メンバ関数を定義すると、それぞれ状態の開始と終了時に、自動的に呼ばれる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/msm/front/state_machine_def.hpp>
 #include <boost/msm/back/state_machine.hpp>
@@ -137,7 +137,7 @@ entry: my_state2
 
 状態遷移テーブルには `_row` のかわりに `a_row` を使う。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/msm/front/state_machine_def.hpp>
 #include <boost/msm/back/state_machine.hpp>
@@ -202,7 +202,7 @@ on_event2
 
 `g_row` に指定したメンバ関数が `false` を返すとき、状態遷移は拒否される。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/msm/front/state_machine_def.hpp>
 #include <boost/msm/back/state_machine.hpp>

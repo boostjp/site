@@ -44,7 +44,7 @@ int main ()
 
 `gcd`は、「the greatest common divisor(最大公約数)」の略称である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/math/common_factor_rt.hpp>
 
@@ -70,7 +70,7 @@ int main()
 
 `lcm`は、「least common multiple(最小公倍数)」の略称である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/math/common_factor_rt.hpp>
 

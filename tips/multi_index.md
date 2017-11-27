@@ -42,7 +42,7 @@ using multi_index::multi_index_container;
 
 `boost::multi_index_container`型を使用して、挿入順を知っている`std::set`を表現するには、以下のようにする：
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/sequenced_index.hpp>
@@ -122,7 +122,7 @@ boost::for_each(c.get<1>(), disp);
 ## <a name="store-index" href="#store-index">インデックスの表現を変数に持つ</a>
 インデックスの表現を変数に保持したい場合は、`boost::multi_index_container::nth_index<N>`メタ関数でインデックスの型を取得できるので、その型に`get<N>()`メンバ関数テンプレートで取得したコンテナを参照で格納する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/sequenced_index.hpp>
@@ -179,7 +179,7 @@ int main()
 
 これまでインデックス番号を指定していた`get<N>()`にはタグ名を指定し、インデックスの型を取得する`nth_index`メタ関数の代わりに`boost::multi_index_container::index<Tag>`メタ関数を使用する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/sequenced_index.hpp>
@@ -271,7 +271,7 @@ struct member;
 
 `member`を使用すると、IDをキーにして要素を検索する`map`、名前をキーにして要素を検索する`map`を同時に存在させることができる。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/multi_index_container.hpp>
@@ -362,7 +362,7 @@ int main()
 「[複数のキーをもつ`map`を定義する](#multiple-key-map)」と同じ方法で、IDから名前を調べる、名前からIDを調べる、というような双方向`map`を、Boost.Multi-Indexで定義できる。
 
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <boost/multi_index_container.hpp>
@@ -439,7 +439,7 @@ coffee
 
 指定したイテレータの位置の要素を第2引数の値で置き換え、その変更が全てのインデックスに適用される。
 
-```cpp
+```cpp example
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/ordered_index.hpp>
 
@@ -488,7 +488,7 @@ int main()
 
 `replace()`は、書き換える要素へのイテレータと、要素書き換えのための関数オブジェクトをとる。
 
-```cpp
+```cpp example
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/ordered_index.hpp>
 
@@ -535,7 +535,7 @@ int main()
 
 さらに、一貫性のために`modify()`は、衝突により書き換え失敗が起こった場合にロールバックするための関数オブジェクトを任意に指定するバージョンも提供している。
 
-```cpp
+```cpp example
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/ordered_index.hpp>
 
@@ -614,7 +614,7 @@ boost::random_shuffle(c); // エラー！書き換えできない
 
 以下がその使用例である。2つめのrandom access indicesを、動的な並び順として扱えるようにしている。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/range/algorithm.hpp>

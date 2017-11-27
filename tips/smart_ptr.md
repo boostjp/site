@@ -23,7 +23,7 @@
 - 解放の方法を自分で決めることはできない共有する必要がない`new []`で確保したオブジェクトを保持する場合は`scoped_array`を使う。デリーターがどうしても必要な場合はBoost.Interprocessの`scoped_ptr`/`scoeped_array`を使用すると良い。
 
 `scoped_ptr`のサンプル：
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/scoped_ptr.hpp>
 
@@ -60,7 +60,7 @@ destroy
 ```
 
 `scoped_array`サンプル：
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/scoped_array.hpp>
 
@@ -98,7 +98,7 @@ int main()
 - `shared_ptr<T>`から`shared_ptr<void>`の暗黙の変換
 - `shared_ptr<T>`から`shared_ptr<T const>`の暗黙の変換`new []`によって確保されたオブジェクトは`shared_array`を使う。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/shared_ptr.hpp>
@@ -173,7 +173,7 @@ void bad()
 ### <a name="customize-release-behavior-shared-ptr" href="#customize-release-behavior-shared-ptr">解放の方法を自分で決める</a>
 `shared_ptr`、`shared_array`は解放の方法を指定することが出来る。これによって`delete`以外の解放するための関数の使用やそもそも解放しないことも可能である。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <cstdlib>
 #include <boost/shared_ptr.hpp>
@@ -208,7 +208,7 @@ call deleter
 ### <a name="weak-reference" href="#weak-reference">弱い参照</a>
 `weak_ptr`は`shared_ptr`に対する弱い参照で、`shared_ptr`の参照カウントを上げ下げせずにオブジェクトを指すものである。`weak_ptr`単独で用いられることはない。オブジェクトへのアクセスは`weak_ptr`の`lock()`メンバ関数、`shared_ptr`のコンストラクタによって対応する`shared_ptr`を得ることで可能である。`shared_ptr`が破棄されていた場合における動作は、`lock()`メンバ関数の場合は空の`shared_ptr`を返し、`shared_ptr`のコンストラクタの場合は`bad_weak_ptr`例外を送出する。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
@@ -251,7 +251,7 @@ deleted
 ### <a name="intrusive-smart-pointer" href="#intrusive-smart-pointer">侵入型参照カウント方式のスマートポインタ</a>
 `intrusive_ptr`はユーザがオブジェクトの参照カウンタを上げ下げしなければならないようなときに適用できる。オブジェクトに対応する`intrusive_ptr_add_ref()`関数、`intrusive_ptr_release()`関数を定義することによって、`intrusive_ptr`が自動的に参照カウンタの上げ下げを行う。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <vector>
 #include <boost/intrusive_ptr.hpp>

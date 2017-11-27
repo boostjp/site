@@ -14,7 +14,7 @@ std::sort(v.begin(), v.end());
 
 さて、「なんで`.begin()`とか`.end()`とか付けないといけないの？」と思ったことありませんか？ないですか。ありますよね。Boost 1.43より搭載されているBoost.Range 2.0なら、`boost::sort(v);`と書けます。書けるようになりました。
 
-```cpp
+```cpp example
 #include <vector>
 #include <iostream>
 #include <boost/range/algorithm.hpp>
@@ -36,7 +36,7 @@ int main()
 
 `<algorithm>`の代わりに`<boost/range/algorithm.hpp>`をインクルードします。もちろん、`<numeric>`に対する`<boost/range/numeric.hpp>`もあります。
 
-```cpp
+```cpp example
 #include <vector>
 #include <iostream>
 #include <string>
@@ -58,7 +58,7 @@ int main()
 
 なお、出力イテレータの部分に関してはそのままです。入力イテレータ～ランダムアクセスイテレータが対象というわけですね。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <string>
 #include <iterator>
@@ -82,7 +82,7 @@ int main()
 
 `find`など、イテレータを戻り値とする関数は、このRangeアルゴリズム関数でも同様にイテレータを戻り値とします。実際には、それに加えて、さらに種類をあるのですが、本稿では取り上げません。
 
-```cpp
+```cpp example
 #include <vector>
 #include <string>
 #include <boost/range/algorithm.hpp>
@@ -101,7 +101,7 @@ int main()
 
 STLコンテナだけでなく、`boost::array`や`std::array`などももちろん対応しています。ほか、組込の配列にも使用可能です。
 
-```cpp
+```cpp example
 #include <iostream>
 #include <iterator>
 #include <boost/range/algorithm.hpp>
@@ -117,7 +117,7 @@ int main()
 
 さらに、`first`, `last`のイテレータを`std::pair`の形をしたものも同様に扱えます。最初の例で言うと、`std::pair<iterator>(v.begin(), v.end())`と`boost::sort(v)`と`boost::sort(std::make_pair(v.begin(), v.end()))`が同じということです。これは、ちょうどイテレータのペアを返す関数にぴったりはまります。
 
-```cpp
+```cpp example
 #include <map>
 #include <iostream>
 #include <string>
@@ -143,7 +143,7 @@ int main()
 
 最後に、もう1つ。`<boost/range/algorithm_ext.hpp>`には、STLアルゴリズム関数の単純なラッパではない独自の関数がいくつかあります。その中の`remove_erase`と`remove_erase_if`は、コンテナのメンバ関数`erase`とSTLアルゴリズム関数`remove`または`remove_if`を組み合わせて、コンテナから特定の要素を削除するパターンをラップしたものです。Effective STLにも紹介されているこの組み合わせ、もう引数の順番に悩むことなくなり便利です。
 
-```cpp
+```cpp example
 #include <vector>
 #include <iostream>
 #include <boost/range/algorithm.hpp>
