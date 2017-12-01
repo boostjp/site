@@ -233,7 +233,7 @@
 
 ---
 
-[shammah@voyager.net](mailto:shammah@voyager.net))
+Copyright (c) 2000, 2001 Stephen Cleary ([shammah@voyager.net](mailto:shammah@voyager.net))
 
 This file can be redistributed and/or modified under the terms found in [copyright](../copyright.md)
 
