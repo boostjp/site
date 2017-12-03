@@ -55,7 +55,7 @@ struct default_user_allocator_malloc_free
 	typedef std::ptrdiff_t difference_type;
 
 	static char * malloc(const size_type bytes)
-	{ return reinterpret_cast&lt;char *&gt;(std::malloc(bytes)); }
+	{ return reinterpret_cast<char *>(std::malloc(bytes)); }
 	static void free(char * const block)
 	{ std::free(block); }
 };
