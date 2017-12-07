@@ -310,7 +310,7 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
 
 ```cpp
     typedef boost::multi_array<double,3> array_type;
-    array_type A(boost::extents[3][4][2],boost::fortran_storage_order); 
+    array_type A(boost::extents[3][4][2],boost::fortran_storage_order()); 
     call_fortran_function(A.data());
 ```
 
