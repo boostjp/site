@@ -61,6 +61,7 @@
 ## <a name="accessors" href="#accessors">Accessors</a>
 
 | Syntax | Description | Example |
+|--------|-------------|---------|
 | `greg_year year() const`   | 年の部分を取得 | `date d(2002,Jan,10); d.year() --> 2002;` |
 | `greg_month month() const` | 月の部分を取得 | `date d(2002,Jan,10); d.month() --> 1;` |
 | `greg_day day() const`     | 日の部分を取得 | `date d(2002,Jan,10); d.day() --> 10;` |
