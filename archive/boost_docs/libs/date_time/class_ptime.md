@@ -70,6 +70,7 @@
 ## <a name="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
 
 | Syntax | Description | Example |
+|--------|-------------|---------|
 | `std::string to_simple_string(ptime)` | YYYY-mmm-DD HH:MM:SS.fffffffff 形式の文字列(mmm は月名の3文字短縮名)に変換。 秒の小数部(.fffffffff)は0でないとき含まれる。 | 2002-Jan-01 10:00:01.123456789 |
 | `std::string to_iso_string(ptime)` | YYYYMMDDTHHMMSS,fffffffff 形式(T は日付と時間の区切り) に変換 | 20020131T100001,123456789 |
 | `std::string to_iso_extended_string(ptime)` | YYYY-MM-DDTHH:MM:SS,fffffffff 形式(T は日付と時間の区切り) に変換 | 2002-01-31T10:00:01,123456789 |
