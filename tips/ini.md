@@ -9,7 +9,7 @@ iniの読み込み、書き込みには、[Boost Property Tree Library](http://w
 - [iniの書き込み](#write)
 
 
-## <a name="read" href="#read">iniの読み込み</a>
+## <a id="read" href="#read">iniの読み込み</a>
 iniの読み込みには、`boost::property_tree::read_ini()`関数を使用する。
 
 この関数を使用するには、`<boost/property_tree/ini_parser.hpp>`をインクルードする。
@@ -73,7 +73,7 @@ boost::optional<int> value = pt.get_optional<int>("Data.value");
 **「セクション名 . キー」**のようにしてパスを指定する。
 
 
-## <a name="write" href="#write">iniの書き込み</a>
+## <a id="write" href="#write">iniの書き込み</a>
 iniを書き込むには、要素を追加するために`boost::property_tree::ptree`の`put()`メンバ関数で値を設定する。
 
 保存には、`boost::property_tree::write_ini()`関数に、ファイル名と`ptree`オブジェクトを指定する。

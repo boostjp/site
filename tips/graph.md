@@ -19,7 +19,7 @@
 - [Graphviz形式(.dot)のデータを読み込む](#read-graphviz)
 
 
-## <a name="define-graph" href="#define-graph">グラフ型を定義する</a>
+## <a id="define-graph" href="#define-graph">グラフ型を定義する</a>
 Boost.Graphで標準的に使用する、グラフ構造のためのクラス[`boost::adjacency_list`](http://www.boost.org/doc/libs/release/libs/graph/doc/using_adjacency_list.html)は、様々な目的に利用できるようカスタマイズが可能になっている。
 
 
@@ -143,7 +143,7 @@ Graph;
 
 
 
-## <a name="add-vertex-edge" href="#add-vertex-edge">頂点と辺を追加する</a>
+## <a id="add-vertex-edge" href="#add-vertex-edge">頂点と辺を追加する</a>
 
 頂点と辺を追加する方法としては、コンストラクタを使用するものと、[`boost::add_vertex()`関数と`boost::add_edge()`関数](http://www.boost.org/doc/libs/release/libs/graph/doc/MutableGraph.html)を使用して動的に追加するものの2つがある。
 
@@ -251,7 +251,7 @@ E -->
 - [Boost.Graphで動的な頂点の追加削除 - ばるの日記](http://d.hatena.ne.jp/eagle_raptor/20111221/1324478088)
 
 
-## <a name="bundle-property" href="#bundle-property">任意のクラスをプロパティにする</a>
+## <a id="bundle-property" href="#bundle-property">任意のクラスをプロパティにする</a>
 Boost.Graphのグラフ構造には、Property Mapによって頂点・辺・グラフに任意のプロパティを持たせられる。しかしながらこの方法は、プロパティが増えてくると管理しきれなくなってくるので、ひとまとめにしたくなるだろう。
 
 そこで、Boost.Graphには[Bundleプロパティ](http://www.boost.org/doc/libs/release/libs/graph/doc/bundles.html)という機能が用意されている。これは、グラフ構造のプロパティ指定の場所にユーザー定義クラスを指定するという機能である。
@@ -341,7 +341,7 @@ Tokyo-Nagoya : 325.5km
 ```
 
 
-## <a name="listing-vertices-edges" href="#listing-vertices-edges">頂点と辺のリストを取得する</a>
+## <a id="listing-vertices-edges" href="#listing-vertices-edges">頂点と辺のリストを取得する</a>
 グラフオブジェクトから頂点と辺のリストを取得するには、それぞれ`vertices()`非メンバ関数と`edges()`非メンバ関数を使用する。
 
 これらの関数は、頂点記述子もしくは辺記述子を要素とするリストの、イテレータの組を返す。
@@ -460,7 +460,7 @@ for (Map::vertex_descriptor v : boost::make_iterator_range(vertices(map))) {
 ほかにも、`std`名前空間に、`std::pair<Iterator, Iterator>`に対する`std::begin()`/`std::end()`非メンバ関数のオーバーロードを追加する方法もあるが、`std`名前空間に機能を追加することは規約違反であるため、説明やかんたんなお試しコード以外の用途では推奨しない。
 
 
-## <a name="dijkstra-shortest-paths" href="#dijkstra-shortest-paths">ダイクストラ法で最短経路を求める</a>
+## <a id="dijkstra-shortest-paths" href="#dijkstra-shortest-paths">ダイクストラ法で最短経路を求める</a>
 
 ダイクストラ法で最短経路を求めるには、[`boost::dijkstra_shortest_paths()`](http://www.boost.org/doc/libs/release/libs/graph/doc/dijkstra_shortest_paths.html)関数を使用する。
 
@@ -572,7 +572,7 @@ Z
 目的地から開始地点まで先行ノードを辿っていくことにより、最短経路を求めることができる。
 
 
-## <a name="distance-map" href="#distance-map">最短経路の長さ(重みの合計)を求める</a>
+## <a id="distance-map" href="#distance-map">最短経路の長さ(重みの合計)を求める</a>
 
 最短経路の長さを求めるには`DistanceMap`を使用する。`DistanceMap`は、最短経路探索の結果として取得できる、開始地点から最短経路のある頂点までの距離を保存したものである。
 
@@ -683,7 +683,7 @@ Z
 ```
 
 
-## <a name="is-reachable" href="#is-reachable">ある頂点に到達可能かどうかを調べる</a>
+## <a id="is-reachable" href="#is-reachable">ある頂点に到達可能かどうかを調べる</a>
 
 ある頂点に到達可能かどうかを調べるには、`<boost/graph/graph_utility.hpp>`で定義される`boost::is_reachable()`関数を使用する。この関数は、グラフ構造`g`において、頂点`x`が頂点`y`に到達可能かどうかを調べ、到達可能であれば`true`、そうでなければ`false`を返す。
 
@@ -760,7 +760,7 @@ AからDに到達不可能
 ```
 
 
-## <a name="simple-shortest-path" href="#simple-shortest-path">通過する辺が最も少ない経路を求める</a>
+## <a id="simple-shortest-path" href="#simple-shortest-path">通過する辺が最も少ない経路を求める</a>
 
 辺に重みのないグラフから最短経路を求めると、「最短単純路」という通過する辺が最も少ない経路が得られる。これは、たとえばソーシャルグラフから「Twitterで何回のRTで特定の情報に辿りつけたか」というような情報を抽出する用途に使える。
 
@@ -852,7 +852,7 @@ G
 Z
 ```
 
-## <a name="isomorphism" href="#isomorphism">2つのグラフが同型か判定する</a>
+## <a id="isomorphism" href="#isomorphism">2つのグラフが同型か判定する</a>
 
 2つのグラフが同型かを判定するには、`<boost/graph/isomorphism.hpp>`で定義される[`boost::isomorphism()`](http://www.boost.org/doc/libs/release/libs/graph/doc/isomorphism.html)関数を使用する。この関数は、引数として2つのグラフをとり、それらが同型であれば`true`、そうでなければ`false`を返す。
 ここでは、以下の2つのグラフを比較する。
@@ -922,7 +922,7 @@ isomorphic? true
 ```
 
 
-## <a name="minimum-spanning-tree" href="#minimum-spanning-tree">最小全域木を作る</a>
+## <a id="minimum-spanning-tree" href="#minimum-spanning-tree">最小全域木を作る</a>
 グラフに含まれるすべての頂点を含む最小の部分グラフを、最小全域木(minimum spanning tree)と言う。
 
 Boost.Graphには、最小全域木を作るためのアルゴリズムとして、以下の2つの関数が用意されている。
@@ -1081,7 +1081,7 @@ parent[E] = A
 ```
 
 
-## <a name="topological-sort" href="#topological-sort">トポロジカルソート</a>
+## <a id="topological-sort" href="#topological-sort">トポロジカルソート</a>
 
 無閉路有向グラフ(DAG : Directed Acyclic Graph)に順序を付けるトポロジカルソートは、`<boost/graph/topological_sort.hpp>`で定義される[`boost::topological_sort()`](http://www.boost.org/doc/libs/release/libs/graph/doc/topological_sort.html)関数を使用する。
 
@@ -1145,7 +1145,7 @@ int main()
 なお、`boost::topological_sort()`関数に、閉路のある有向グラフを指定した場合、[`boost::not_a_dag`](http://www.boost.org/doc/libs/release/libs/graph/doc/exception.html#not_a_dag)例外が投げられる。
 
 
-## <a name="euler-path" href="#euler-path">一筆書きの経路を求める</a>
+## <a id="euler-path" href="#euler-path">一筆書きの経路を求める</a>
 オイラー閉路というのを求めると、グラフの一筆書きの経路を得ることができる。ここでは、「サンタクロースの家」と呼ばれる無向グラフの一筆書きを求める。
 
 Boost.Graphにはオイラー閉路のためのアルゴリズムは用意されていないが、以下のGitHubにある`shand::graph::euler_path()`関数を利用することで、一筆書きを容易に求められる。
@@ -1213,7 +1213,7 @@ E, B, A, C, B, D, C, E, Dの順に頂点をたどれば一筆書きになるこ�
 ![](https://raw.githubusercontent.com/boostjp/image/master/tips/graph/euler_path.png)
 
 
-## <a name="write-graphviz" href="#write-graphviz">グラフをGraphviz形式(.dot)で出力する</a>
+## <a id="write-graphviz" href="#write-graphviz">グラフをGraphviz形式(.dot)で出力する</a>
 
 グラフをGraphviz形式(.dot)で出力するには、`<boost/graph/graphviz.hpp>`をインクルードし、[`boost::write_graphviz()`](http://www.boost.org/doc/libs/release/libs/graph/doc/write-graphviz.html)関数を使用する。この機能のために、別途ライブラリは必要としない。
 
@@ -1289,7 +1289,7 @@ dot -Tpng test.dot -o test.png
 - [Boost.Graph Graphviz形式で重みを出力](http://d.hatena.ne.jp/faith_and_brave/20100416/1271388752)
 
 
-## <a name="read-graphviz" href="#read-graphviz">Graphviz形式(.dot)のデータを読み込む</a>
+## <a id="read-graphviz" href="#read-graphviz">Graphviz形式(.dot)のデータを読み込む</a>
 
 Graphviz形式(.dot)のデータを読み込むには、`<boost/graph/graphviz.hpp>`で定義される[`boost::read_graphviz()`](http://www.boost.org/doc/libs/release/libs/graph/doc/read_graphviz.html)関数を使用する。この関数を使用するには、Boost Regex Libraryをリンクする必要がある。
 

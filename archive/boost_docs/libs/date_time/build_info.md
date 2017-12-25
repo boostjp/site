@@ -13,19 +13,19 @@
 - [Required Boost Libraries](#required-boost-libraries)
 
 
-## <a name="overview" href="#overview">Overview</a>
+## <a id="overview" href="#overview">Overview</a>
 ライブラリ関数のいくつかはライブラリファイルを作成する必要がある。 これらの関数を含むライブラリ( **libboost_date_time** )を作成するには、buildディレクトリにあるJamfileを使う。
 
 変数`DATE_TIME_INLINE`は、ある特定のコア関数のインライン化を制御する。 デフォルトでこの変数はライブラリのコンパイル時に定義されている。 ライブラリを使っている全てのコンパイル単位でこの定義を含んでいなければ、リンクエラーになるだろう。
 
 
-## <a name="compilation-options" href="#compilation-options">Compilation Options</a>
+## <a id="compilation-options" href="#compilation-options">Compilation Options</a>
 デフォルトでは `posix_time` はナノ秒レベルの精度を提供するために内部で 64bit整数と32bit整数を使う。 選択肢として、一つの 64bit整数でマイクロ秒レベルの精度を提供することもできる。 この代替実装は、ナノ秒精度を必要としない多くのアプリケーションでパフォーマンスの向上と省メモリが期待できる。
 
 変数`BOOST_DATE_TIME_POSIX_TIME_STD_CONFIG`はbuild/Jamfileで定義されており、これらのオプションを選択する。 64bit整数版を使う場合、単にJamfileからこの定義を削除する。
 
 
-## <a name="compiler-portability-notes" href="#compiler-portability-notes">Compiler/Portability Notes</a>
+## <a id="compiler-portability-notes" href="#compiler-portability-notes">Compiler/Portability Notes</a>
 Boost Date-Time libraryは、多くのコンパイラでビルドされテストされた。 しかしながら、いくつかのコンパイラと標準ライブラリで問題がある。 これらの問題のいくつかは回避可能であるが、回避できない問題も残っている。 以下のコンパイラはライブラリの機能を完全にサポートしている。
 
 - GCC 3.0.3 on Linux
@@ -43,7 +43,7 @@ Boost Date-Time libraryは、多くのコンパイラでビルドされテスト
 ComeauやMetroworksといった他のコンパイラでは、ライブラリの初期バージョンでテストに成功している。
 
 
-## <a name="directory-structure" href="#directory-structure">Directory Structure</a>
+## <a id="directory-structure" href="#directory-structure">Directory Structure</a>
 `date_time`のディレクトリ構成はBoostに合わせて変更された。
 
 ディレクトリ構成は次のようになっている
@@ -63,7 +63,7 @@ ComeauやMetroworksといった他のコンパイラでは、ライブラリの�
 | /libs/date_time/src/posix_time      | 空 (ファイルが一つあるが、ソースコードではない) |
 
 
-## <a name="required-boost-libraries" href="#required-boost-libraries">Required Boost Libraries</a>
+## <a id="required-boost-libraries" href="#required-boost-libraries">Required Boost Libraries</a>
 このライブラリは以下のライブラリに依存している。
 
 - boost.tokenizer

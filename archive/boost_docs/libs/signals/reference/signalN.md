@@ -92,22 +92,22 @@ namespace boost {
 
 ## 関連型
 
-### <a name="combiner">Combiner</a>
+### <a id="combiner">Combiner</a>
 
 `Combiner` はイテレータのシーケンス `[first, last)` を受け取り、シーケンス中のいくつかのイテレータを参照外しして値を戻す関数オブジェクトである。
 `Combiner` に渡されるイテレータの型は [slot call iterator](#slot_call_iterator) である。
 
-### <a name="slot_group">Group</a>
+### <a id="slot_group">Group</a>
 
 `Group` は、接続をグループ化するために用いる型を定義する。
 これは [`DefaultConstructible`](http://www.sgi.com/tech/stl/DefaultConstructible.html) かつ [`CopyConstructible`](http://www.sgi.com/tech/stl/CopyConstructible.html) でなければならない。
 
-### <a name="group_compare">GroupCompare</a>
+### <a id="group_compare">GroupCompare</a>
 
 `GroupCompare` は、実引数型が [group type](#slot_group) と一致する [`BinaryPredicate`](http://www.sgi.com/tech/stl/BinaryPredicate.html) である。
 これは接続グループの順序関係を定める。
 
-### <a name="slot_function_type">SlotFunction</a>
+### <a id="slot_function_type">SlotFunction</a>
 
 `SlotFunction` は、他の互換性がある関数オブジェクトからコンストラクト可能な関数オブジェクトアダプタであることが要求される(互換性は `SlotFunction` それ自身によって定義される)。
 `SlotFunction` は `T1, T2, .. TN` 型のパラメタを受け取り、シグナルのテンプレートパラメタ型 `R` に変換可能な結果を返す必要がある;
@@ -117,24 +117,24 @@ namespace boost {
 
 ## メンバ
 
-### <a name="slot_result_type">`slot_result_type` 型</a>
+### <a id="slot_result_type">`slot_result_type` 型</a>
 
 `SlotFunction` が `void` を戻す場合、スロットの戻り値型は実装定義である; そうでないばあいにはスロットの戻り値型は `SlotFunction` 関数オブジェクトによって戻される型であることが要求される。
 
-### <a name="slot_call_iterator">`slot_call_iterator` 型</a>
+### <a id="slot_call_iterator">`slot_call_iterator` 型</a>
 
 `value_type` が `R` であるような [`InputIterator`](http://www.sgi.com/tech/stl/InputIterator.html)。
 `slot_call_iterator` の参照外し演算子は、指定された実引数を与えてスロットを呼び出し、その結果を戻す責任を負う。
 イテレータを複数回参照外ししたときでもスロットが一度だけ呼び出されることを保証するため、結果はキャッシュされなければならない。
 
-### <a name="constructor">コンストラクタ</a>
+### <a id="constructor">コンストラクタ</a>
 
 `explicit signalN(const combiner_type& = combiner_type(), const group_compare_type& = group_compare_type());`
 
 - **作用**: シグナルをスロットを含まない状態に初期化し、与えられた統合子を内部記憶域にコピーし、与えられたグループ比較関数オブジェクトを格納する。
 - **事後条件**: `this->empty();`
 
-### <a name="destructor">デストラクタ</a>
+### <a id="destructor">デストラクタ</a>
 
 `~signal();`
 
@@ -142,7 +142,7 @@ namespace boost {
 
 ### 接続管理
 
-<a name="connect">`signals::connection connect(const slot_type& slot);`</a>
+<a id="connect">`signals::connection connect(const slot_type& slot);`</a>
 
 - **作用**: シグナル `this` を `slot` に接続する。
 	スロットが *非アクティブ* である場合、たとえばスロット呼び出しに結合された [`trackable`](trackable.md) オブジェクトが破棄されている場合、`connect` 呼び出しは無視される。
@@ -154,7 +154,7 @@ namespace boost {
 	ここで `n` はシグナルが認識しているスロット数。
 - **注記**: シグナル呼び出し中に接続されたスロットが直ちに呼び出されるか否かは、不定である。
 
-<a name="group_connect">`signals::connection connect(const group_type& group, const slot_type& slot);`</a>
+<a id="group_connect">`signals::connection connect(const group_type& group, const slot_type& slot);`</a>
 
 - **作用**: 与えられたスロットを (`connect(slot)` と同様に) シグナルに接続し、このスロット接続を与えられたグループ `group` に関連づける。
 - **戻り値**: 新規に作成されたシグナル・スロット間の接続を参照する [`signals::connection`](connection.md) オブジェクト。
@@ -163,7 +163,7 @@ namespace boost {
 	ここで `n` はシグナルが認識しているスロット数。
 - **注記**: シグナル呼び出し中に接続されたスロットが直ちに呼び出されるか否かは、不定である。
 
-<a name="group_disconnect">`void disconnect(const group_type& group);`</a>
+<a id="group_disconnect">`void disconnect(const group_type& group);`</a>
 
 - **作用**: 与えられたグループ中の全スロットが切断される。
 - **例外**: ユーザのデストラクタが投げない限りは、例外を投げない。
@@ -171,7 +171,7 @@ namespace boost {
 - **計算量**: `O(lg n) + k`。
 	ここで `n` はシグナルが認識しているスロット数であり、`k` は `group` に含まれるスロット数である。
 
-<a name="disconnect_all">`void disconnect_all_slots();`</a>
+<a id="disconnect_all">`void disconnect_all_slots();`</a>
 
 - **作用**: シグナルに接続された全スロットを切断する。
 - **事後条件**: `this->empty()`.
@@ -179,7 +179,7 @@ namespace boost {
 - **計算量**: シグナルが認識しているスロット数に比例。
 - **注記**: シグナルがスロットを呼び出している最中を含めて、シグナルの生存期間中、いつでも呼び出してよい。
 
-<a name="empty">`bool empty() const;`</a>
+<a id="empty">`bool empty() const;`</a>
 
 - **戻り値**: そのシグナルに接続されたスロットがない場合 `true`、そうでなければ `false`。
 - **例外**: なし。
@@ -189,7 +189,7 @@ namespace boost {
 
 ### シグナル呼び出し
 
-<a name="function_call_operator">`result_type operator()(T1 a1, T2 a2, ..., TN aN); result_type operator()(T1 a1, T2 a2, ..., TN aN) const;`</a>
+<a id="function_call_operator">`result_type operator()(T1 a1, T2 a2, ..., TN aN); result_type operator()(T1 a1, T2 a2, ..., TN aN) const;`</a>
 
 - **作用**: `slot_call_iterator` の範囲 `[first, last)` を与えて統合子を呼び出す (言い換えると `combiner(first, last)`)。
 	この範囲は、各スロットに与えられたパラメタの集合 `a1, a2, ..., aN` を渡して呼び出した結果をイテレートする。

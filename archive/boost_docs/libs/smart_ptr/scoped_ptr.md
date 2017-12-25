@@ -60,13 +60,13 @@ void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws
 
 ## Members
 
-### <a name="element_type">element_type</a>
+### <a id="element_type">element_type</a>
 
 `typedef T element_type;`
 
 保持するポインタの型を規定する
 
-### <a name="constructors">constructors</a>
+### <a id="constructors">constructors</a>
 
 `explicit scoped_ptr(T * p = 0); // never throws`
 
@@ -75,7 +75,7 @@ void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="destructor">destructor</a>
+### <a id="destructor">destructor</a>
 
 `~scoped_ptr(); // never throws`
 
@@ -84,7 +84,7 @@ void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws
 例外を送出しないという保証は、削除されるオブジェクトのデストラクタが例外を送出しないという要求に依存する。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="reset">reset</a>
+### <a id="reset">reset</a>
 
 `void reset(T * p = 0); // never throws`
 
@@ -93,7 +93,7 @@ void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws
 例外を送出しないという保証は、削除されるオブジェクトのデストラクタが例外を送出しないという要求に依存する。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="indirection">indirection</a>
+### <a id="indirection">indirection</a>
 
 `T & operator*() const; // never throws`
 
@@ -105,7 +105,7 @@ void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws
 保持するポインタを返す。
 保持するポインタが0なら動作は未定義である。
 
-### <a name="get">get</a>
+### <a id="get">get</a>
 
 `T * get() const; // never throws`
 
@@ -113,7 +113,7 @@ void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="swap">swap</a>
+### <a id="swap">swap</a>
 
 `void swap(scoped_ptr & b); // never throws`
 
@@ -122,16 +122,16 @@ void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)
 を参考にせよ。
 
-## <a name="functions">Free Functions</a>
+## <a id="functions">Free Functions</a>
 
-### <a name="free-swap">swap</a>
+### <a id="free-swap">swap</a>
 
 `template<typename T> void swap(scoped_ptr<T> & a, scoped_ptr<T> & b); // never throws`
 
 `a.swap(b)`と等価である。
 `std::swap`のインターフェースとの一貫性を図り、ジェネリックプログラミングを支援する。
 
-## <a name="example">Example</a>
+## <a id="example">Example</a>
 
 `scoped_ptr`の使い方の例を示す。
 
@@ -182,7 +182,7 @@ Buckle my shoe
 `scoped_ptr<T>`は`std::auto_ptr<T> const`と等価であると考えられるかもしれない。
 しかしEd Breyは`reset`が`std::auto_ptr<T> const`ではうまく働かないことを指摘した。
 
-## <a name="Handle/Body">Handle/Body</a> Idiom
+## <a id="Handle/Body">Handle/Body</a> Idiom
 
 `scoped_ptr`の一般的な用法の一つに、handle/body表現 (pimplとも呼ばれる) の実装がある。
 handle/body表現とは、オブジェクト本体の実装を隠蔽する(ヘッダファイル中にさらけ出すことを回避する)ためのものである。

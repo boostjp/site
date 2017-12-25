@@ -51,7 +51,7 @@ if(shared_ptr<int> r = make_shared(q))
 ここでは`r`は`q`が指すポインタへの参照を持っている。
 もし`p.reset()`が別のスレッドで実行されても、オブジェクトは`r`がスコープの外に出てしまう(或いはresetされてしまう)まで生きたままである。
 
-## <a name="Synopsis">Synopsis</a>
+## <a id="Synopsis">Synopsis</a>
 
 ```cpp
 namespace boost {
@@ -115,15 +115,15 @@ shared_ptr<T> make_shared(weak_ptr<T> const & r); // never throws
 * swap[link #free-swap]
 * make_shared[link #make_shared]
 
-## <a name="Members">Members</a>
+## <a id="Members">Members</a>
 
-### <a name="element_type">element_type</a>
+### <a id="element_type">element_type</a>
 
 `typedef T element_type;`
 
 テンプレートパラメータの型Tを与える
 
-### <a name="constructors">constructors</a>
+### <a id="constructors">constructors</a>
 
 `weak_ptr();`
 
@@ -166,7 +166,7 @@ weak_ptr(weak_ptr<Y> const & r); // never throws
 - **Notes:**
     - 全てのコピーに対して[use count](#use_count)は変更されない。
 
-### <a name="destructor">destructor</a>
+### <a id="destructor">destructor</a>
 
 `~weak_ptr(); // never throws`
 
@@ -178,7 +178,7 @@ weak_ptr(weak_ptr<Y> const & r); // never throws
     - `T`は完全な型である必要はない。
 	  スマートポインタの[common requirements](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="assignment">assignment</a>
+### <a id="assignment">assignment</a>
 
 ```cpp
 weak_ptr & operator=(weak_ptr const & r); // never throws
@@ -196,14 +196,14 @@ weak_ptr & operator=(shared_ptr<Y> const & r); // never throws
     - 効果(と保証)を満たす限り実装は自由である。
 	  一時的オブジェクトが作られることはない。
 
-### <a name="reset">reset</a>
+### <a id="reset">reset</a>
 
 `void reset();`
 
 - **Effects:**
     - `weak_ptr().swap(*this)`と等価.
 
-### <a name="get">get</a>
+### <a id="get">get</a>
 
 `T * get() const; // never throws`
 
@@ -222,7 +222,7 @@ weak_ptr & operator=(shared_ptr<Y> const & r); // never throws
 *`get`は非難されているし、将来のリリースでは無くなるだろう。*
 *決してこれを使わないこと。]*
 
-### <a name="use_count">use_count</a>
+### <a id="use_count">use_count</a>
 
 `long use_count() const; // never throws`
 
@@ -236,7 +236,7 @@ weak_ptr & operator=(shared_ptr<Y> const & r); // never throws
       `T`は完全な型である必要はない。
 	  スマートポインタの[common requirements](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="expired">expired</a>
+### <a id="expired">expired</a>
 
 `bool expired() const; // never throws`
 
@@ -249,7 +249,7 @@ weak_ptr & operator=(shared_ptr<Y> const & r); // never throws
       `T`は完全な型である必要はない。
 	  スマートポインタの[common requirements](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="swap">swap</a>
+### <a id="swap">swap</a>
 
 `void swap(weak_ptr & b); // never throws`
 
@@ -261,9 +261,9 @@ weak_ptr & operator=(shared_ptr<Y> const & r); // never throws
     - `T`は完全な型である必要はない。
 	  スマートポインタの[common requirements](smart_ptr.md#Common requirements)を参考にせよ。
 
-## <a name="functions">Free Functions</a>
+## <a id="functions">Free Functions</a>
 
-### <a name="comparison">comparison</a>
+### <a id="comparison">comparison</a>
 
 ```cpp
 template<typename T, typename U>
@@ -294,7 +294,7 @@ bool operator<(weak_ptr<T> const & a, weak_ptr<T> const & b); // never throws
 	  `T`は完全な型である必要はない。
 	  スマートポインタの[common requirements](smart_ptr.md#Common requirements)を参考にせよ。
 
-### <a name="free-swap">swap</a>
+### <a id="free-swap">swap</a>
 
 ```cpp
 template<typename T>
@@ -309,7 +309,7 @@ void swap(weak_ptr<T> & a, weak_ptr<T> & b) // never throws
     - `std::swap`インタフェースと同じ。
       ジェネリックプログラミングを助けるだろう。
 
-### <a name="make_shared">make_shared</a>
+### <a id="make_shared">make_shared</a>
 
 ```cpp
 template<typename T>

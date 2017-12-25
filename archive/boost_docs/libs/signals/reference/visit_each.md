@@ -23,7 +23,7 @@ namespace boost {
 
 ## 関数
 
-<a name="visit_each">`template<typename Visitor, typename T> void visit_each(Visitor& v, const T& t, int);`</a>
+<a id="visit_each">`template<typename Visitor, typename T> void visit_each(Visitor& v, const T& t, int);`</a>
 
 - **作用**: `v(t)`。
 	また `t` のすべての部分オブジェクト `x` に対して

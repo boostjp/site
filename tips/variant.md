@@ -10,7 +10,7 @@
 - [variantを再帰的にする](#recursive-variant)
 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 まず、Boost.Variantの基本的な使い方を以下に示す：
 
 ```cpp example
@@ -55,7 +55,7 @@ hello
 [`boost::apply_visitor()`](http://www.boost.org/doc/libs/release/doc/html/boost/apply_visitor.html)関数に指定する関数オブジェクトは、[`boost::static_visitor`](http://www.boost.org/doc/libs/release/doc/html/boost/static_visitor.html)クラスから派生したクラスであり、[`boost::variant`](http://www.boost.org/doc/libs/release/doc/html/boost/variant.html)オブジェクトにどの型のオブジェクトが格納されているのかによって、関数呼び出し演算子を適切にオーバーロードしてくれる。
 
 
-## <a name="which-type" href="#which-type">どの型が格納されているかを判定する</a>
+## <a id="which-type" href="#which-type">どの型が格納されているかを判定する</a>
 [`boost::variant`](http://www.boost.org/doc/libs/release/doc/html/boost/variant.html)オブジェクトにどの型が格納されているか判定するには`which()`メンバ関数、もしくは`type()`メンバ関数を使用する。
 
 `which()`メンバ関数は、格納されている型の、`0`から始まるインデックスを返す。
@@ -119,7 +119,7 @@ double
 ```
 
 
-## <a name="get-value" href="#get-value">格納されている値を取り出す</a>
+## <a id="get-value" href="#get-value">格納されている値を取り出す</a>
 [`boost::variant`](http://www.boost.org/doc/libs/release/doc/html/boost/variant.html)オブジェクトに格納されている値を取り出すには、[`boost::get()`](http://www.boost.org/doc/libs/1_52_0/doc/html/boost/get_id1950197.html)非メンバ関数を使用する。
 この関数には参照版とポインタ版の2種類が用意されている。それぞれの特徴は以下の通り：
 
@@ -163,7 +163,7 @@ int main()
 ```
 
 
-## <a name="clear" href="#clear">値をクリアする</a>
+## <a id="clear" href="#clear">値をクリアする</a>
 Boost.Variantには[決して空にはならない保証](http://www.boost.org/doc/libs/release/doc/html/variant/design.html#variant.design.never-empty)という考え方があるため、他の値を入れることはできてもクリアはできない。`clear()`関数は用意されておらず、`empty()`メンバ関数は常に`false`を返す。
 
 どうしてもクリアしたい場合は、`boost::blank`という型を`variant`に格納できるように指定する。これは単なる中身が空のクラスである。
@@ -199,7 +199,7 @@ int main()
 blank
 ```
 
-## <a name="recursive-variant" href="#recursive-variant">variantを再帰的にする</a>
+## <a id="recursive-variant" href="#recursive-variant">variantを再帰的にする</a>
 boost::variant に含める型リストに boost::variant で定義したい型それ自身も含めたい場合には `boost::variant<...>` を `boost::make_recursive_variant<...>::type` に替えて、自身の型に相当する型引数には `boost::recursive_variant_` を渡す事で、`boost::variant` によって定義される型にそれ自身の型を再帰的に含む型を生成できる。
 
 `boost::make_recursive` を用いた再帰的な `boost::variant` 型の定義による `float` `double` `long double` `bool` を末端の値とし、 それらの `std::vector` と `std::unordered_map` によるコンテナーも再帰的に定義した型と、 `boost::apply_visitor` による JSON 風の出力を行う例を示す。

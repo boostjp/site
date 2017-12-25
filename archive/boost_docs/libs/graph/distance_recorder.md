@@ -53,7 +53,7 @@ boost/graph/visitors.hpp
 
 
 ## 訳注
-<a name="translate_note_1" href="#translate_note_1">[訳注1]</a> 値の型は整数である。
+<a id="translate_note_1" href="#translate_note_1">[訳注1]</a> 値の型は整数である。
 
 
 ***

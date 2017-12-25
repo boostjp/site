@@ -11,7 +11,7 @@
 - [Interval](#interval)
 - [Special Cases](#special-cases)
 
-## <a name="timepoints" href="#timepoints">Timepoints</a>
+## <a id="timepoints" href="#timepoints">Timepoints</a>
 
 このセクションでは，GDTL timepoints で行える基本的な算術規則をいくつか示す。
 
@@ -26,7 +26,7 @@ Timepoint + Timepoint --> Undefined
 Timepoint - Timepoint --> Duration
 ```
 
-## <a name="durations" href="#durations">Durations</a>
+## <a id="durations" href="#durations">Durations</a>
 このセクションでは時間長(time duration)に関する標準的な演算を示す。
 
 ```cpp
@@ -40,7 +40,7 @@ Duration(∞) * Integer --> Duration(∞)
 Duration(∞)/Integer   --> Duration(∞) 
 ```
 
-## <a name="interval" href="#interval">Intervals</a>
+## <a id="interval" href="#interval">Intervals</a>
 ここに時間間隔(intervals)によって支援された"演算"がある。 それらは半開区間に基づいている。
 
 ```cpp
@@ -53,7 +53,7 @@ Timeinterval shift Duration         --> shift start and end by duration amount
 ```
 
 
-## <a name="special-cases" href="#special-cases">Special Cases</a>
+## <a id="special-cases" href="#special-cases">Special Cases</a>
 一般に，非日時値(NADT;Not A Date Time)や無限大といった特別な値は，浮動小数点値のような規則に従うべきである。 戻り値として NADT を返す代わりに，例外を投げるNADTに基づいたシステムを形成することが可能であるべきであることに注意する必要がある。
 
 ```cpp

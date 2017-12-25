@@ -38,7 +38,7 @@ Boost Random Number Generator Library は、計算やセキュリティの領域
 - 最大効率の提供。
 - フロントエンド処理における量子化効果を操作可能にする。(まだできていない)
 
-## <a name="number_generator">Number Generator</a>
+## <a id="number_generator">Number Generator</a>
 
 数生成子は、引数を取らない *関数オブジェクト* (std:20.3 [lib.function.object]) であり、全て `operator()` の呼出し毎に数値を返す。
 
@@ -54,7 +54,7 @@ Boost Random Number Generator Library は、計算やセキュリティの領域
 
 *注意:* NumberGenerator の必須条件は、返される数値の特性にいかなる制約を課すのもではない。
 
-## <a name="uniform-rng">Uniform Random Number Generator</a>
+## <a id="uniform-rng">Uniform Random Number Generator</a>
 
 一定乱数生成子は、与えられた範囲で一様に生成される乱数列を提供する NumberGenerator である。
 この範囲は、コンパイル時に固定されているか、もしくはオブジェクトの実行時構築の後(のみ)でも与えることができる。
@@ -91,7 +91,7 @@ Boost Random Number Generator Library は、計算やセキュリティの領域
 
 *論拠:* 整数範囲を持つ生成子による出力の異なる整数範囲へのマッピングは些細なことではないので、 `operator()(long)` は供給されていない。
 
-## <a name="nondet-rng">Non-deterministic Uniform Random Number Generator</a>
+## <a id="nondet-rng">Non-deterministic Uniform Random Number Generator</a>
 
 非決定論的一様乱数生成子は、確率過程に基づく UniformRandomGenerator である。
 それゆえ、この生成子は一連の真に無作為な数を提供する。
@@ -105,7 +105,7 @@ Boost Random Number Generator Library は、計算やセキュリティの領域
 そこで、このコンセプトのモデルは、環境によって可能な範囲にかけて、いかなる情報も漏れないよう注意深くなければならない。
 例えば、一時的な記憶域が必要でなくなったときにすぐに明示的に消去することは賢明である。
 
-## <a name="pseudo-rng">Pseudo-Random Number Generator</a>
+## <a id="pseudo-rng">Pseudo-Random Number Generator</a>
 
 擬似乱数生成子は、決定論的擬似乱数列を提供する UniformRandomNumberGenerator である。
 この擬似乱数は、いくつかのアルゴリズムと内部状態に基づいている。
@@ -153,7 +153,7 @@ The non-zero arguments constructor(s) and the `seed()` member function(s) allow 
 This is useful for debugging Monte-Carlo algorithms and analyzing particular test scenarios.
 The Streamable concept allows to save/restore the state of the generator, for example to re-run a test suite at a later time.
 
-## <a name="quasi-rng">Quasi-Random Number Generators</a>
+## <a id="quasi-rng">Quasi-Random Number Generators</a>
 
 A quasi-random number generator is a Number Generator which provides a deterministic sequence of numbers, based on some algorithm and internal state.
 The numbers do not have any statistical properties (such as uniform distribution or independence of successive values).

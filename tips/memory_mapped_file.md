@@ -12,7 +12,7 @@ Boost.Interprocessは、プロセス間通信をサポートするための各�
 - [ファイルをコンテナにマッピングする](#container-file-mapping)
 
 
-## <a name="file-mapping" href="#file-mapping">存在しているファイルからマッピングする</a>
+## <a id="file-mapping" href="#file-mapping">存在しているファイルからマッピングする</a>
 
 既に存在しているファイルをマッピングするには、`boost::interprocess::file_mapping`クラスを用いることで単純にマッピングすることができる。しかしこれだけではファイルにアクセスできないため、`boost::interprocess::mapped_region`クラスでビューを作成してアクセスする。
 
@@ -42,7 +42,7 @@ BOOST_ASSERT( size == view.get_size() );
 ```
 
 
-## <a name="file-as-temporary-buffer" href="#file-as-temporary-buffer">ファイルをテンポラリバッファとして利用する</a>
+## <a id="file-as-temporary-buffer" href="#file-as-temporary-buffer">ファイルをテンポラリバッファとして利用する</a>
 メモリマップドファイルの機能をテンポラリデータ保存のために利用することもできる。Boost.InterprocessにはManaged Memory Segmentsというオブジェクト生成支援関数群が用意されており、ファイルをテンポラリバッファとして利用するのが簡単になる。
 
 `managed_mapped_file`クラスの`construct()`メンバを使用し、`find()`メンバで検索可能なnamed instanceを生成、unique instanceやanonymous instanceも生成できる。
@@ -73,7 +73,7 @@ int main()
 ```
 
 
-## <a name="container-file-mapping" href="#container-file-mapping">ファイルをコンテナにマッピングする</a>
+## <a id="container-file-mapping" href="#container-file-mapping">ファイルをコンテナにマッピングする</a>
 Boost.Interprocessには標準ライブラリと同様の使い方が可能なコンテナが用意されており、コンテナをManaged Memory Segmentsを使ってファイル上に直接構築することができる。また、[Boost Multi-Index Containers Library](http://www.boost.org/doc/libs/release/libs/multi_index/doc/index.html)も利用可能である。
 
 基本的にはManaged Memory Segmentsクラスから取得できる`segment_manager`を使ってアロケータを構築、そのアロケータを使ったコンテナを生成することでコンテナ並びにコンテナの要素をファイル上に構築できる。

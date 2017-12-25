@@ -22,7 +22,7 @@ Note that for compilers that don't support member templates well enough, a separ
 
 ## Features That Improve Robustness
 
-- The manipulation of use counts is now <a name="threadsafe">thread safe</a> on Windows, Linux, and platforms that support pthreads.
+- The manipulation of use counts is now <a id="threadsafe">thread safe</a> on Windows, Linux, and platforms that support pthreads.
   See the [&lt;boost/detail/atomic_count.hpp&gt;](http://www.boost.org/doc/libs/1_31_0/boost/detail/atomic_count.hpp) file for details
 - The new `shared_ptr` will always delete the object using the pointer it was originally constructed with.
   This prevents subtle problems that could happen if the last `shared_ptr` was a pointer to a sub-object of a class that did not have a virtual destructor.

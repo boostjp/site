@@ -10,7 +10,7 @@
 - [タイムアウトを設定する](#timeout)
 
 
-## <a name="connect" href="#connect">接続</a>
+## <a id="connect" href="#connect">接続</a>
 **同期バージョン**
 
 同期バージョンの接続には、[`boost::asio::ip::tcp::socket`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/ip__tcp/socket.html)クラスの[`connect()`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/basic_stream_socket/connect/overload2.html)メンバ関数を使用する。
@@ -104,7 +104,7 @@ int main()
 * async_connect[color ff0000]
 
 
-## <a name="accept" href="#accept">接続待機</a>
+## <a id="accept" href="#accept">接続待機</a>
 接続待機には、[`boost::asio::ip::tcp::acceptor`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/ip__tcp/acceptor.html)クラスを使用する。
 
 `acceptor`クラスのコンストラクタには、IPのバージョン(`tcp::v4()` or `tcp::v6()`)とポート番号を設定する。
@@ -202,7 +202,7 @@ int main()
 * async_accept[color ff0000]
 
 
-## <a name="send" href="#send">メッセージ送信</a>
+## <a id="send" href="#send">メッセージ送信</a>
 ここでは、TCPソケットでのメッセージ送信方法を解説する。
 
 
@@ -342,7 +342,7 @@ int main()
 * async_write[color ff0000]
 
 
-## <a name="receive" href="#receive">メッセージ受信</a>
+## <a id="receive" href="#receive">メッセージ受信</a>
 
 ここでは、TCPソケットでのメッセージ受信の方法を解説する。
 
@@ -498,7 +498,7 @@ int main()
 * async_read[color ff0000]
 
 
-## <a name="resolve" href="#resolve">名前解決して接続</a>
+## <a id="resolve" href="#resolve">名前解決して接続</a>
 名前解決には、[`boost::asio::ip::tcp::resolver`](http://www.boost.org/doc/libs/rerlease/doc/html/boost_asio/reference/ip__tcp/resolver.html)クラスと[`boost::asio::ip::tcp::resolver::query`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/ip__basic_resolver/query.html)クラスを組み合わせて使用する。
 
 `query`クラスのコンストラクタには、以下を指定する：
@@ -653,7 +653,7 @@ int main()
 * async_resolve[color ff0000]
 
 
-## <a name="timeout" href="#timeout">タイムアウトを設定する</a>
+## <a id="timeout" href="#timeout">タイムアウトを設定する</a>
 通信処理のタイムアウトには、ソケットに対してタイムアウトを指定するのではなく、タイマークラスの非同期イベントと組み合わせて行う。
 
 同期通信でタイムアウトを指定する方法はないため、ここでは非同期バージョンのみ示す。

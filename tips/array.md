@@ -11,7 +11,7 @@ Boostでは、標準コンテナのインタフェースで使用できる固定
 - [イテレータを取得する](#iterator)
 
 
-## <a name="overview" href="#overview">概要</a>
+## <a id="overview" href="#overview">概要</a>
 `boost::array`クラスは、組み込み配列にゼロオーバーヘッドな固定長配列クラスである。
 
 このクラスは、組み込み配列とは異なり、`std::vector`や`std::list`のような標準コンテナのインタフェースを持つ。
@@ -55,7 +55,7 @@ int main()
 `boost::array`は、`std::vector`や`std::list`と同じように、イテレータを返す`begin()`/`end()`のインタフェースを持つ。
 
 
-## <a name="size" href="#size">配列の要素数を取得する</a>
+## <a id="size" href="#size">配列の要素数を取得する</a>
 
 配列の要素数を取得するには、`size()`メンバ関数を使用する。
 
@@ -80,7 +80,7 @@ int main()
 ```
 
 
-## <a name="at" href="#at">添字による要素アクセス</a>
+## <a id="at" href="#at">添字による要素アクセス</a>
 
 `boost::array`は、組み込み配列や`std::vector`と同じように、`operator[]()`の添字演算子によって要素にランダムアクセスできる。
 
@@ -106,7 +106,7 @@ int main()
 4
 ```
 
-## <a name="iterator" href="#iterator">イテレータ</a>
+## <a id="iterator" href="#iterator">イテレータ</a>
 
 `boost::array`は、`begin()`、`end()`メンバ関数によって、最初の要素を指すイテレータ、最後尾要素の次を指すイテレータを取得できる。
 
@@ -135,7 +135,7 @@ int main()
 ```
 
 
-## <a name="iterator-type" href="#iterator-type">イテレータの型を取得する</a>
+## <a id="iterator-type" href="#iterator-type">イテレータの型を取得する</a>
 
 イテレータの型は、`boost::array<T, N>`クラスが持つ、以下のメンバ型で取得できる：
 

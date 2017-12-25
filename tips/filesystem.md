@@ -19,7 +19,7 @@
 
 
 
-## <a name="error-handling" href="#error-handling">エラーハンドリング</a>
+## <a id="error-handling" href="#error-handling">エラーハンドリング</a>
 
 Boost Filesystem Libraryのエラーハンドリングは、例外を投げるバージョン、エラーを参照で返すバージョンの2種類が存在する。
 
@@ -54,7 +54,7 @@ if (error) {
 ```
 
 
-## <a name="copy-file" href="#copy-file">ファイルをコピーする</a>
+## <a id="copy-file" href="#copy-file">ファイルをコピーする</a>
 
 ファイルをコピーするには、`boost::filesystem::copy_file()`関数を使用する。
 
@@ -108,7 +108,7 @@ int main()
 ```
 
 
-## <a name="remove-file" href="#remove-file">ファイルを削除する</a>
+## <a id="remove-file" href="#remove-file">ファイルを削除する</a>
 
 ファイルを削除するには、`boost::filesystem::remove()`を使用する。
 
@@ -133,7 +133,7 @@ int main()
 ```
 
 
-## <a name="rename" href="#rename">ファイルを移動する／ファイル名を変更する</a>
+## <a id="rename" href="#rename">ファイルを移動する／ファイル名を変更する</a>
 
 ファイルの移動、ファイル名の変更には、`boost::filesystem::rename()`を使用する。
 
@@ -162,7 +162,7 @@ int main()
 ```
 
 
-## <a name="exists" href="#exists">ファイルが存在するかを調べる</a>
+## <a id="exists" href="#exists">ファイルが存在するかを調べる</a>
 
 ファイルが存在するか調べるには、`boost::filesystem::exists()`関数を使用する。
 
@@ -192,7 +192,7 @@ int main()
 ```
 
 
-## <a name="file-size" href="#file-size">ファイルサイズを取得する</a>
+## <a id="file-size" href="#file-size">ファイルサイズを取得する</a>
 
 ファイルサイズを取得するには、`boost::filesystem::file_size()`関数を使用する。
 
@@ -225,7 +225,7 @@ int main()
 ```
 
 
-## <a name="last-write-time" href="#last-write-time">ファイルの最終更新日時を取得する</a>
+## <a id="last-write-time" href="#last-write-time">ファイルの最終更新日時を取得する</a>
 
 ファイルの最終更新日時を取得するには、`boost::filesystem::last_write_time()`関数を使用する。
 
@@ -260,7 +260,7 @@ int main()
 ```
 
 
-## <a name="get-filename" href="#get-filename">パスのファイル名を取得する</a>
+## <a id="get-filename" href="#get-filename">パスのファイル名を取得する</a>
 
 パスのファイル名を取得するには、`boost::filesystem::path`クラスの`filename()`メンバ関数を使用する。
 
@@ -285,7 +285,7 @@ int main()
 b.txt
 ```
 
-## <a name="get-extension" href="#get-extension">パスの拡張子を取得する</a>
+## <a id="get-extension" href="#get-extension">パスの拡張子を取得する</a>
 
 パスの拡張子を取得するには、`boost::filesystem::path`クラスの`extension()`メンバ関数を使用する。この関数が返すパスは、ドット(.)を含む。
 
@@ -313,7 +313,7 @@ int main()
 ```
 
 
-## <a name="change-extension" href="#change-extension">パスの拡張子を変更する</a>
+## <a id="change-extension" href="#change-extension">パスの拡張子を変更する</a>
 
 パスの拡張子を変更するには、`boost::filesystem::path`クラスの`replace_extension()`メンバ関数を使用する。
 
@@ -342,7 +342,7 @@ int main()
 ```
 
 
-## <a name="create-directory" href="#create-directory">ディレクトリを作成する</a>
+## <a id="create-directory" href="#create-directory">ディレクトリを作成する</a>
 
 ディレクトリを作成するには、`boost::filesystem::create_directory()`関数を使用する。
 
@@ -389,7 +389,7 @@ int main()
 ```
 
 
-## <a name="enumerate-file" href="#enumerate-file">ディレクトリ内のファイルを列挙する</a>
+## <a id="enumerate-file" href="#enumerate-file">ディレクトリ内のファイルを列挙する</a>
 
 ディレクトリ内のファイルを列挙するには、`boost::filesystem::directory_iterator`クラスを使用する。
 
@@ -441,7 +441,7 @@ int main()
 
 実行結果の例は先の `BOOST_FOREACH` バージョンと同様となるので省略する。
 
-## <a name="recursive-enumerate-file" href="#recursive-enumerate-file">ディレクトリ内の全てのファイルを再帰的に列挙する</a>
+## <a id="recursive-enumerate-file" href="#recursive-enumerate-file">ディレクトリ内の全てのファイルを再帰的に列挙する</a>
 
 ディレクトリ内の全てのファイルを再帰的に列挙するには、`boost::filesystem::recursive_directory_iterator`クラスを使用する。
 

@@ -11,39 +11,39 @@
 - [ログファイルをローテーションさせる](#rotation)
 
 
-## <a name="basic-usage" href="#basic-usage">基本的なログ出力</a>
+## <a id="basic-usage" href="#basic-usage">基本的なログ出力</a>
 todo : 以下のエントリから転載
 
 - [http://d.hatena.ne.jp/faith_and_brave/20130725/1374736211](http://d.hatena.ne.jp/faith_and_brave/20130725/1374736211)
 
 
-## <a name="file-log" href="#file-log">ファイルにログを出力する</a>
+## <a id="file-log" href="#file-log">ファイルにログを出力する</a>
 todo : 以下のエントリから転載
 
 - [http://d.hatena.ne.jp/faith_and_brave/20130726/1374820081](http://d.hatena.ne.jp/faith_and_brave/20130726/1374820081)
 
 
-## <a name="filter-loglevel" href="#filter-loglevel">ログレベルでフィルタを掛ける</a>
+## <a id="filter-loglevel" href="#filter-loglevel">ログレベルでフィルタを掛ける</a>
 todo : 以下のエントリから転載
 [http://d.hatena.ne.jp/faith_and_brave/20130725/1374736211](http://d.hatena.ne.jp/faith_and_brave/20130725/1374736211)
 
 
-## <a name="format" href="#format">フォーマットを設定する</a>
+## <a id="format" href="#format">フォーマットを設定する</a>
 
 
-## <a name="auto-flush" href="#auto-flush">自動的にフラッシュさせる</a>
+## <a id="auto-flush" href="#auto-flush">自動的にフラッシュさせる</a>
 todo : 以下のエントリから転載
 
 - [http://d.hatena.ne.jp/faith_and_brave/20130806/1375772761](http://d.hatena.ne.jp/faith_and_brave/20130806/1375772761)
 
 
-## <a name="append" href="#append">追記モードで書き込む</a>
+## <a id="append" href="#append">追記モードで書き込む</a>
 todo : 以下のエントリから転載
 
 - [http://suikaba.hatenablog.com/entry/2013/08/02/191734](http://suikaba.hatenablog.com/entry/2013/08/02/191734)
 
 
-## <a name="rotation" href="#rotation">ログファイルをローテーションさせる</a>
+## <a id="rotation" href="#rotation">ログファイルをローテーションさせる</a>
 todo : 以下のエントリから転載
 
 - [http://d.hatena.ne.jp/faith_and_brave/20130801/1375340888](http://d.hatena.ne.jp/faith_and_brave/20130801/1375340888)

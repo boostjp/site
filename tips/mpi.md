@@ -21,7 +21,7 @@
 - [全てのランクが同じ環境であった場合の高速化](#speed-up-all-same-rank)
 
 
-## <a name="build" href="#build">Boost.MPI を使ったプログラムをビルドする</a>
+## <a id="build" href="#build">Boost.MPI を使ったプログラムをビルドする</a>
 ビルド自体は mpic++、 mpicxx などのインストールした MPI 実装で用意されている C++ 用コンパイラを用いればよいが、Boost.MPI および Boost.Serialization ライブラリをリンクする必要がある。
 
 以下は Boost.MPI を用いたコード bmpi.cpp をビルドするコマンドである。
@@ -31,7 +31,7 @@ $ mpicxx -I/boost/include -L/boost/lib -o bmpi bmpi.cpp -lboost_mpi -lboost_seri
 ```
 
 
-## <a name="initialize" href="#initialize">MPI の初期化を行う</a>
+## <a id="initialize" href="#initialize">MPI の初期化を行う</a>
 Boost.MPI で `MPI_Init()`、 `MPI_Finalize()` 相当の処理を行う場合、 `boost::mpi::environment` クラスを使用する。
 
 ```cpp example
@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 `environment` クラスは、 コンストラクタで `MPI_Init()` を呼び出し、 デストラクタで `MPI_Finalize()` を呼び出す。
 
 
-## <a name="rank-and-size" href="#rank-and-size">自身のランクやノード数を調べる</a>
+## <a id="rank-and-size" href="#rank-and-size">自身のランクやノード数を調べる</a>
 自身のランクや、 全体のノード数を調べるときは `boost::mpi::communicator` クラスを使用する。
 
 その `rank()` メンバ関数で自身のランク数、 `size()` メンバ関数でノード数を取得できる。
@@ -71,7 +71,7 @@ int main(int argc, char** argv)
 ```
 
 
-## <a name="scatter" href="#scatter">計算するデータを均等に分散させる</a>
+## <a id="scatter" href="#scatter">計算するデータを均等に分散させる</a>
 計算したいデータはおそらく大抵の場合ファイルなど外部から入力されるデータである。
 
 そのため、データはあるランクで生成し、その後全てのランクにデータを分散させた方が効率が良いと考えられる。
@@ -122,7 +122,7 @@ int main(int argc, char** argv)
 }
 ```
 
-## <a name="broadcast" href="#broadcast">あるデータを全てのランクで共有する</a>
+## <a id="broadcast" href="#broadcast">あるデータを全てのランクで共有する</a>
 あるデータを全ノードで共有したい場合、 `broadcast()` を用いる。
 
 以下は、ランク 0 で計算したデータを他のランクへ共有するプログラムである。
@@ -155,7 +155,7 @@ int main(int argc, char** argv)
 }
 ```
 
-## <a name="gather" href="#gather">計算したデータをあるランクに集める</a>
+## <a id="gather" href="#gather">計算したデータをあるランクに集める</a>
 ある計算を MPI で分散させたいとする。その際、分散したデータをどこかに集計しておく必要がある。
 
 その場合は `gather()` 関数を用いることで、あるランクに計算結果を集めることができる。
@@ -209,7 +209,7 @@ int main(int argc, char** argv)
 ```
 
 
-## <a name="peer-to-peer" href="#peer-to-peer">1対1の通信を行う</a>
+## <a id="peer-to-peer" href="#peer-to-peer">1対1の通信を行う</a>
 1対1通信には `boost::mpi::communicator` クラスの `send()` メンバ関数、および `recv()` 関数を用いる。 `send()`、 `recv()` は同期通信であり、非同期で通信する場合は次で紹介する `isend()`、`irecv()` を用いる。
 
 `send()`、 `recv()` では「タグ」という数値を設定して、型や転送するデータの区別ができる。 `isend()`、`irecv()` も同様。
@@ -250,7 +250,7 @@ int main(int argc, char** argv)
 }
 ```
 
-## <a name="async-peer-to-peer" href="#async-peer-to-peer">1対1の通信を非同期で行う</a>
+## <a id="async-peer-to-peer" href="#async-peer-to-peer">1対1の通信を非同期で行う</a>
 非同期で1対1通信を行う際には、`boost::mpi::communicator` クラスの `isend()` メンバ関数、および `irecv()` メンバ関数を用いる。
 
 `isend()`、 `irecv()` は戻り値として `boost::mpi::request` クラスのオブジェクトを返し、非同期通信が終わったかどうか、非同期通信の完了まで待つといった操作ができる。複数のリクエストを同時に操作する為にイテレータを使用する `wait_all()`、`wait_any()` などの関数が用意されている。
@@ -292,7 +292,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-## <a name="serialize" href="#serialize">非プリミティブ型を他のノードへ送信する</a>
+## <a id="serialize" href="#serialize">非プリミティブ型を他のノードへ送信する</a>
 Boost.MPI では非プリミティブな型、自作のクラスなどを [Boost.Serialization](serialize.md) を用いてシリアライズして他のランクへ送信することができる。
 
 Boost.Serialization の使用方法自体は他に譲るとして、Boost.MPI では固定サイズであるか、またはメンバにポインタを持たないユーザ定義型を MPI DataType としてマークできる。例えば `gps_positions` クラスがあるとして、
@@ -373,7 +373,7 @@ int main(int argc, char** argv)
 }
 ```
 
-## <a name="speed-up-all-same-rank" href="#speed-up-all-same-rank">全てのランクが同じ環境であった場合の高速化</a>
+## <a id="speed-up-all-same-rank" href="#speed-up-all-same-rank">全てのランクが同じ環境であった場合の高速化</a>
 MPI は複数のコンピュータで実行することができる、あるいは実行することが目的だが、このコンピュータ全てが同じアーキテクチャであった (Homogeneous Machines) 場合、`MPI_PACK`/`UNPACK` を避けてデータを直接転送するような方法に切り替えることで、通信の高速化が行えるようになっている。
 
 その場合は、`BOOST_MPI_HOMOGENEOUS` マクロを Boost.MPI のライブラリ自身と Boost.MPI を使用したアプリをビルドする際に定義すればいい。

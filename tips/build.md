@@ -6,7 +6,7 @@
 - [ディレクトリ構造を保存した状態でインストールを行う](#install-with-saved-directory)
 
 
-## <a name="execute" href="#execute">ビルドしたバイナリを実行する</a>
+## <a id="execute" href="#execute">ビルドしたバイナリを実行する</a>
 
 bjamでバイナリをビルドした場合、toolsetやvariantによって最終生成物が非常に深い位置に生成される。
 
@@ -75,7 +75,7 @@ Jamfile</home/boosters>.exec_executable <l./gcc-4.6/debug>exec
 実行時はビルド時と同じtoolset,variantを指定する必要がある。ビルドされていない場合、ビルドを行ってから実行する。
 
 
-## <a name="install-with-saved-directory" href="#install-with-saved-directory">ディレクトリ構造を保存した状態でインストールを行う</a>
+## <a id="install-with-saved-directory" href="#install-with-saved-directory">ディレクトリ構造を保存した状態でインストールを行う</a>
 
 通常インストールターゲットを定義する際、packageモジュールのinstallルールを用いることが多い。しかし、これはヘッダファイルのディレクトリ構造をデフォルトで保存しない。ヘッダファイルを細かく分けることの多いC++などではこの動作は使いにくい。以下にデフォルトの動作を例示する。
 

@@ -20,7 +20,7 @@
 - [正規表現の記述時に、エスケープシーケンスを無視する](#ignore-escape-sequence)
 
 
-## <a name="regex-match" href="#regex-match">文字列全体が正規表現にマッチするか調べる</a>
+## <a id="regex-match" href="#regex-match">文字列全体が正規表現にマッチするか調べる</a>
 
 文字列全体が正規表現にマッチするか調べるには、[`boost::xpressive::regex_match()`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/regex_match.html)関数を使用する。
 
@@ -59,7 +59,7 @@ World
 ```
 
 
-## <a name="regex-search" href="#regex-search">文字列が正規表現にマッチする部分文字列を含むか調べる</a>
+## <a id="regex-search" href="#regex-search">文字列が正規表現にマッチする部分文字列を含むか調べる</a>
 
 文字列が正規表現にマッチする部分文字列を含むか調べるには、[`boost::xpressive::regex_search()`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/regex_search.html)関数を使用する。
 
@@ -96,7 +96,7 @@ int main()
 ```
 
 
-## <a name="regex-replace" href="#regex-replace">正規表現にマッチした部分文字列をすべて置換する</a>
+## <a id="regex-replace" href="#regex-replace">正規表現にマッチした部分文字列をすべて置換する</a>
 
 正規表現にマッチした部分文字列をすべて置換するには、[`boost::xpressive::regex_replace()`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/regex_replace.html)関数を使用する。
 
@@ -136,7 +136,7 @@ int main()
 ```
 
 
-## <a name="ignore-escape-sequence" href="#ignore-escape-sequence">正規表現の記述時に、エスケープシーケンスを無視する</a>
+## <a id="ignore-escape-sequence" href="#ignore-escape-sequence">正規表現の記述時に、エスケープシーケンスを無視する</a>
 
 通常の文字列リテラルで正規表現を記述する場合、`\`がエスケープシーケンスであることを示すため、`\d`を`"\\d"`と書かなければならない。この問題を回避するためには、生文字列リテラル(Raw String Literals)を使用する。この機能は、C++11以降で使用できる。
 

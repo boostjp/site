@@ -11,7 +11,7 @@
 - [要素をまとめて取り出す](#tie)
 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 Boost.Fusionにおけるタプル型には、`boost::fusion::vector<T...>`を使用する。
 
 各要素を取り出すには、`boost::fusion::at_c<N>()`非メンバ関数を使用する。
@@ -42,7 +42,7 @@ Hello
 ```
 
 
-## <a name="helper-function" href="#helper-function">タプルを作成するヘルパ関数</a>
+## <a id="helper-function" href="#helper-function">タプルを作成するヘルパ関数</a>
 `boost::fusion::vector`型を作成するヘルパ関数として、`boost::fusion::make_vector()`関数が定義されている。
 
 この関数を使用するには、`<boost/fusion/include/make_vector.hpp>`をインクルードする。
@@ -74,7 +74,7 @@ Hello
 ```
 
 
-## <a name="nth-element" href="#nth-element">N番目の要素を取得する</a>
+## <a id="nth-element" href="#nth-element">N番目の要素を取得する</a>
 N番目の要素を取得するには、`boost::fusion::at_c<N>()`非メンバ関数を使用する。`N`はコンパイル時に決定する定数である。
 
 ```cpp example
@@ -107,7 +107,7 @@ Hello
 ```
 
 
-<a name="for-each" href="#for-each">全ての要素に関数を適用する</a>
+<a id="for-each" href="#for-each">全ての要素に関数を適用する</a>
 タプルの要素全てに関数を適用するには、`boost::fusion::for_each()`アルゴリズムを使用する。
 
 要素に適用する関数には、毎回異なる型が渡されるため、多相的である必要がある(テンプレート、もしくはタプルに含まれる全ての型に対するオーバーロード)。
@@ -170,7 +170,7 @@ a
 Hello
 ```
 
-## <a name="user-defined-type-as-tuple" href="#user-defined-type-as-tuple">ユーザー定義型をタプルとして扱う</a>
+## <a id="user-defined-type-as-tuple" href="#user-defined-type-as-tuple">ユーザー定義型をタプルとして扱う</a>
 ユーザー定義型は、`BOOST_FUSION_ADAPT_STRUCT`マクロを適用することで、Boost.Fusionのシーケンスとして登録することができ、その後、そのユーザー定義型はBoost.Fusionで扱えるタプルとして見なされるようになる。
 
 ```cpp example
@@ -222,7 +222,7 @@ Alice
 ```
 
 
-## <a name="tie" href="#tie">要素をまとめて取り出す</a>
+## <a id="tie" href="#tie">要素をまとめて取り出す</a>
 タプルの要素をまとめて取り出すには、`boost::fusion::vector_tie()`関数を使用する。
 
 不要な要素には、`boost::fusion::ignore`変数を指定する。

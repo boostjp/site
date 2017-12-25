@@ -13,7 +13,7 @@
 - [並び順を動的に変更する](#rearrange)
 
 
-## <a name="basic-usage" href="#basic-usage">boost::multi_index_containerの基本的な使い方 - 挿入順を知っているstd::set</a>
+## <a id="basic-usage" href="#basic-usage">boost::multi_index_containerの基本的な使い方 - 挿入順を知っているstd::set</a>
 Boost.Multi-Indexでは、`boost::multi_index_container`というコンテナ型を使用する。
 
 ```cpp
@@ -119,7 +119,7 @@ boost::for_each(c.get<1>(), disp);
 1 3 2 5 4 
 ```
 
-## <a name="store-index" href="#store-index">インデックスの表現を変数に持つ</a>
+## <a id="store-index" href="#store-index">インデックスの表現を変数に持つ</a>
 インデックスの表現を変数に保持したい場合は、`boost::multi_index_container::nth_index<N>`メタ関数でインデックスの型を取得できるので、その型に`get<N>()`メンバ関数テンプレートで取得したコンテナを参照で格納する。
 
 ```cpp example
@@ -174,7 +174,7 @@ int main()
 ```
 
 
-## <a name="give-a-name-to-index" href="#give-a-name-to-index">インデックスに名前を付ける</a>
+## <a id="give-a-name-to-index" href="#give-a-name-to-index">インデックスに名前を付ける</a>
 0番目のインデックス、1番目のインデックス、といった指定は、プログラムが小さいうちはいいかもしれないが、直値の指定は一般に管理しにくい。そこで、「タグ」と呼ばれる空の型を作り、それをインデックスを示す名前として使用することができる。
 
 これまでインデックス番号を指定していた`get<N>()`にはタグ名を指定し、インデックスの型を取得する`nth_index`メタ関数の代わりに`boost::multi_index_container::index<Tag>`メタ関数を使用する。
@@ -234,7 +234,7 @@ int main()
 ```
 
 
-## <a name="index-container-table" href="#index-container-table">インデックスと標準コンテナの対応表</a>
+## <a id="index-container-table" href="#index-container-table">インデックスと標準コンテナの対応表</a>
 Boost.Multi-Indexのインデックスは、以下のテーブルのように標準コンテナに対応している。
 
 | インデックス         | 対応する標準コンテナ     | 説明 |
@@ -249,7 +249,7 @@ Boost.Multi-Indexのインデックスは、以下のテーブルのように標
 なお、`std::map`は`ordered_(non_)unique`で表現でき、`std::unordered_map`は`hashed_(non_)unique`で表現できる。`map`を表現するには`boost::multi_index::member`を使用する。`map`の例は、「[複数のキーを持つ`map`](#multiple-key-map)」を参照。
 
 
-## <a name="multiple-key-map" href="#multiple-key-map">複数のキーを持つmapを定義する</a>
+## <a id="multiple-key-map" href="#multiple-key-map">複数のキーを持つmapを定義する</a>
 `boost::multi_index::member`を使用すると、`ordered_(non_)unique`を`std::map`、`hashed_(non_)unique`を`std::unordered_map`のように扱うことができる。
 
 `member`のテンプレートパラメータは、以下のようになっている：
@@ -358,7 +358,7 @@ int main()
 ```
 
 
-## <a name="bidirectional-map" href="#bidirectional-map">双方向mapを定義する</a>
+## <a id="bidirectional-map" href="#bidirectional-map">双方向mapを定義する</a>
 「[複数のキーをもつ`map`を定義する](#multiple-key-map)」と同じ方法で、IDから名前を調べる、名前からIDを調べる、というような双方向`map`を、Boost.Multi-Indexで定義できる。
 
 
@@ -429,7 +429,7 @@ coffee
 ```
 
 
-## <a name="modify-element" href="#modify-element">要素を書き換える</a>
+## <a id="modify-element" href="#modify-element">要素を書き換える</a>
 `boost::multi_index_container`の要素書き換えには、`replace()`メンバ関数を使用する方法と、`modify()`メンバ関数を使用する方法の2種類がある。これは、前者が安全優先の関数であり、後者が速度優先の関数である。
 
 
@@ -597,7 +597,7 @@ int main()
 | `modify(it, mod, back)` | `back`は復旧するのに使用される(`back`が例外を投げた場合、要素は消去される) |
 
 
-## <a name="rearrange" href="#rearrange">並び順を動的に変更する</a>
+## <a id="rearrange" href="#rearrange">並び順を動的に変更する</a>
 Boost.Multi-Indexのordered indices, random access indices, sequenced indicesなどのインデックスは不変であるため、通常の手段では並び順をあとから変えることはできない。
 
 ```cpp

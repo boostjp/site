@@ -12,7 +12,7 @@ functional.hpp ヘッダは C++ 標準 (§20.3.6): 由来のバインダ関数�
 標準ライブラリにあるそれらの代わりに、これらのアダプタを使う主な便益は、それらが [参照の参照](#refref) 問題を回避することにある。
 
 
-## <a name="usage" href="#usage">Usage</a>
+## <a id="usage" href="#usage">Usage</a>
 使い方は標準バインダと同様である。例えば、
 
 ```cpp
@@ -29,7 +29,7 @@ std::for_each(c.begin(), c.end(),
 ```
 
 
-## <a name="refref" href="#refref">References to References</a>
+## <a id="refref" href="#refref">References to References</a>
 以下の使用例を考えなさい。
 
 ```cpp

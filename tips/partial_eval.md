@@ -8,7 +8,7 @@
 - [メンバ関数のレシーバを部分適用する](#receiver-partial-application)
 
 
-## <a name="partial-application" href="#partial-application">部分適用(partial application)</a>
+## <a id="partial-application" href="#partial-application">部分適用(partial application)</a>
 `boost::bind()`関数で、あとから指定したい引数に、プレースホルダーと呼ばれる値を指定することで、関数の一部の引数を先に渡しておき、残りをあとから指定して呼び出す、ということができる。
 
 ```cpp example
@@ -43,7 +43,7 @@ int main()
 この場合、`boost::bind()`によって返された関数オブジェクトの第1引数`3`を、`add()`関数の`_1`を指定した位置である第2引数として使用している。
 
 
-## <a name="currying" href="#currying">カリー化(currying)+適用(applying)</a>
+## <a id="currying" href="#currying">カリー化(currying)+適用(applying)</a>
 カリー化は、`boost::bind()`を使用して、第1引数のみを部分適用し、第2引数をプレースホルダーにすることで疑似的に表現できる。
 
 カリー化のみを行う関数は用意されていないので、自分で作る必要がある(参考: <http://ideone.com/qtXeA> )。
@@ -74,7 +74,7 @@ int main()
 ```
 
 
-## <a name="receiver-partial-application" href="#receiver-partial-application">メンバ関数のレシーバを部分適用する</a>
+## <a id="receiver-partial-application" href="#receiver-partial-application">メンバ関数のレシーバを部分適用する</a>
 `boost::bind()`は、メンバ関数ポインタも扱うことができる。
 
 その場合、第1引数にメンバ関数ポインタ、第2引数にメンバ関数のレシーバ(そのメンバ関数を持つオブジェクト)、残りの引数としてメンバ関数の引数を指定する。

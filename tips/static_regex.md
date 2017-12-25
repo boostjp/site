@@ -20,14 +20,14 @@
 - [マッチ条件を指定する](#conditional-match)
 
 
-## <a name="static-regex" href="#static-regex">静的な正規表現とは</a>
+## <a id="static-regex" href="#static-regex">静的な正規表現とは</a>
 
 ここで言う「静的な正規表現」とは、コンパイル時に正規表現を組み上げるということである。
 
 式テンプレートを活用し、正規表現の正当性チェックがコンパイル時に行われる。
 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 
 静的な正規表現の基本的な使い方を解説する。まず、`"Hello World!"`という文字列から`"Hello"`と`"World"`という単語を抽出するコードは以下のようになる。
 
@@ -78,7 +78,7 @@ World
 - 「1回以上の繰り返し」を意味する`+`が前置である必要がある
 
 
-## <a name="dynamic-static-table" href="#dynamic-static-table">動的と静的の正規表現対応表</a>
+## <a id="dynamic-static-table" href="#dynamic-static-table">動的と静的の正規表現対応表</a>
 
 ここでは、Boost.Xpressiveが提供する静的な正規表現と、通常の動的正規表現との対応表を紹介する。ここでは、動的正規表現としてPerl構文を例とする。
 
@@ -140,7 +140,7 @@ World
 | `(?P=name)`  | `mark_tag name(n);`<br/> `...`<br/> `name` | 作成した名前付き捕捉への後方参照 |
 
 
-## <a name="regex-match" href="#regex-match">文字列全体が正規表現にマッチするか調べる</a>
+## <a id="regex-match" href="#regex-match">文字列全体が正規表現にマッチするか調べる</a>
 
 文字列全体が正規表現にマッチするか調べるには、[`boost::xpressive::regex_match()`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/regex_match.html)関数を使用する。
 
@@ -179,7 +179,7 @@ World
 ```
 
 
-## <a name="regex-search" href="#regex-search">文字列が正規表現にマッチする部分文字列を含むか調べる</a>
+## <a id="regex-search" href="#regex-search">文字列が正規表現にマッチする部分文字列を含むか調べる</a>
 文字列が正規表現にマッチする部分文字列を含むか調べるには、[`boost::xpressive::regex_search()`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/regex_search.html)関数を使用する。
 
 この関数は、マッチする部分文字列が見つかったら`true`、そうでなければ`false`を返す。対象となる文字列の次の引数として[`boost::xpressive::smatch`](http://www.boost.org/doc/libs/release/doc/html/xpressive/user_s_guide.html#boost_xpressive.user_s_guide.quick_start.know_your_iterator_type)オブジェクトへの参照を与えると、見つかったマーク済み部分式が書き込まれる。
@@ -227,7 +227,7 @@ int main()
 この例では、カスタムの[`mark_tag`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/mark_tag.html)を使ってパターンを読みやすくしている。後で[`mark_tag`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/mark_tag.html)を[boost::xpressive::smatch](http://www.boost.org/doc/libs/release/doc/html/xpressive/user_s_guide.html#boost_xpressive.user_s_guide.quick_start.know_your_iterator_type)の添字に使っている。
 
 
-## <a name="regex-replace" href="#regex-replace">正規表現にマッチした部分文字列をすべて置換する</a>
+## <a id="regex-replace" href="#regex-replace">正規表現にマッチした部分文字列をすべて置換する</a>
 
 正規表現にマッチした部分文字列をすべて置換するには、[`boost::xpressive::regex_replace()`](http://www.boost.org/doc/libs/release/doc/html/boost/xpressive/regex_replace.html)関数を使用する。
 
@@ -272,7 +272,7 @@ int main()
 ```
 
 
-## <a name="match-action" href="#match-action">マッチ時に任意のアクションを行う</a>
+## <a id="match-action" href="#match-action">マッチ時に任意のアクションを行う</a>
 
 マッチ時に任意のアクションを行うには、「[セマンティックアクション](http://www.boost.org/doc/libs/release/doc/html/xpressive/user_s_guide.html#boost_xpressive.user_s_guide.semantic_actions_and_user_defined_assertions)」という機能を使用する。
 
@@ -328,7 +328,7 @@ int main()
 その引数として渡している `_` は「プレースホルダー」と呼ばれる特殊な値で、マッチした値で置き換えられる。
 
 
-## <a name="conditional-match" href="#conditional-match">マッチ条件を指定する</a>
+## <a id="conditional-match" href="#conditional-match">マッチ条件を指定する</a>
 
 整数や文字といったパターンにマッチした後、より詳細な値チェックが通ったらマッチ成功と見なす方法として、セマンティックアクションでの`check()`関数が提供されている。
 

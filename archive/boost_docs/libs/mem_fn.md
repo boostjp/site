@@ -22,7 +22,7 @@
 - [謝辞](#acknowledgements)
 
 
-## <a name="purpose" href="#purpose">目的</a>
+## <a id="purpose" href="#purpose">目的</a>
 `boost::mem_fn` は、標準関数である`std::mem_fun` と `std::mem_fun_ref`の一般化である。`mem_fn`は、2つ以上の引数をとる メンバ関数へのポインタをサポートし、また`mem_fn`の戻す関数オブジェクトは第一引数に、 (訳注: そのメンバ関数の属するクラスのインスタンスを指すような) ポインタ、参照、スマートポインタをとることができる。 `mem_fn`は、メンバ変数へのポインタも、引数をとらず自身への定数参照を 戻す関数とみなすことによってサポートする。
 
 `mem_fn`の目的は2つある。一つ目は、コンテナにスマートポインタが格納されている場合であっても、 次のような
@@ -93,25 +93,25 @@ void k(std::vector<boost::shared_ptr<X> > const & v)
 
 `mem_fn`が戻す全ての関数オブジェクトは、`result_type`なる`typedef`を開示する。 この`typedef`は、メンバ関数の戻り型を表す。メンバ変数を渡した場合には、`result_type` はそのメンバ変数の型の定数参照として定義される。
 
-## <a name="faq" href="#faq">FAQ</a>
-### <a name="Q1" href="#Q1">mem_fnを、標準の std::mem_fun[_ref]アダプタのかわりに使用できるか?</a>
+## <a id="faq" href="#faq">FAQ</a>
+### <a id="Q1" href="#Q1">mem_fnを、標準の std::mem_fun[_ref]アダプタのかわりに使用できるか?</a>
 はい。単純な使い方では、`mem_fn` は標準のアダプタが提供しないいくつかの機能を提供する。 `std::bind1st`、`std::bind2nd`、[Boost.Compose](compose.md) と標準のアダプタを組み合わせるような複雑な使い方をしている場合は、 [`boost::bind`](bind.md) を使用するように書き換えることで、`mem_fn`の恩恵を自動的に受けることができる。
 
 
-### <a name="Q2" href="#Q2">既に書いてしまったコード中のstd::mem_fun[_ref]を、 全てmem_fnで置き換えるべきか?</a>
+### <a id="Q2" href="#Q2">既に書いてしまったコード中のstd::mem_fun[_ref]を、 全てmem_fnで置き換えるべきか?</a>
 いいえ。そうする強い理由がないならすべきではない。`mem_fn` は、標準のアダプタに 非常に良く似ているが、100%の互換性があるわけではない。特に、`mem_fn`は、標準の アダプタとは違って `std::[const_]mem_fun[1][_ref]_t` 型のオブジェクトを戻さないので、 標準の `argument_type` 及び `first_argument_type` という (nested) `typedef` を 用いて第一引数の型を記述することが (完全には) できない。
 
 
-### <a name="Q3" href="#Q4">mem_fnは COM のメソッドに使えるか?</a>
+### <a id="Q3" href="#Q4">mem_fnは COM のメソッドに使えるか?</a>
 はい。`#define BOOST_MEM_FN_ENABLE_STDCALL` とすれば可能である。
 
 
-### <a name="Q4" href="#Q4">何故 BOOST_MEM_FN_ENABLE_STDCALL は最初から有効になっていないのか?</a>
+### <a id="Q4" href="#Q4">何故 BOOST_MEM_FN_ENABLE_STDCALL は最初から有効になっていないのか?</a>
 特定のベンダへの依存を避けるため、可搬性のない拡張は、一般にデフォルトでオフにされるべきである。 もし `BOOST_MEM_FN_ENABLE_STDCALL` がデフォルトで有効であったなら、あなたはそうとは気づかずに その拡張を使ってしまい、結果としてあなたのコードの可搬性が損なわれるかもしれない。
 
 
-## <a name="interface" href="#interface">インタフェース</a>
-### <a name="synopsis" href="#synopsis">Synopsis</a>
+## <a id="interface" href="#interface">インタフェース</a>
+### <a id="synopsis" href="#synopsis">Synopsis</a>
 
 ```cpp
 namespace boost
@@ -146,11 +146,11 @@ template<class R, class T, class A1, class A2> unspecified_6 mem_fn(R (T::*pmf) 
 * unspecified_6[italic]
 
 
-### <a name="requirements" href="#requirements">必須事項</a>
+### <a id="requirements" href="#requirements">必須事項</a>
 Synopsis で述べられた全ての *unspecified-N* 型は `CopyConstructible` (コピーコンストラクト可能) かつ `Assignable` (代入可能) であること。そのためのコピーコンストラクタ及び代入演算子 は例外を送出しないこと。 *unspecified-N* `::result_type` は `mem_fn` に渡されたメンバ関数ポインタの戻り型、と定義されること (Synopsis での `R`)。 *unspecified-2-1* `::result_type` は `R const &` 、と定義されること。
 
 
-### <a name="get_pointer" href="#get_pointer">get_pointer</a>
+### <a id="get_pointer" href="#get_pointer">get_pointer</a>
 ```cpp
 template<class T> T * get_pointer(T * p)
 ```
@@ -159,7 +159,7 @@ template<class T> T * get_pointer(T * p)
 - 例外： 送出しない。
 
 
-### <a name="mem_fn" href="#mem_fn">mem_fn</a>
+### <a id="mem_fn" href="#mem_fn">mem_fn</a>
 ```cpp
 template<class R, class T> unspecified_1 mem_fn(R (T::*pmf) ())
 ```
@@ -223,8 +223,8 @@ template<class R, class T, class A1, class A2> unspecified_6 mem_fn(R (T::*pmf) 
 - 例外： 送出しない。
 
 
-## <a name="implementation" href="#implementation">実装</a>
-### <a name="files" href="#files">ファイル</a>
+## <a id="implementation" href="#implementation">実装</a>
+### <a id="files" href="#files">ファイル</a>
 - boost/mem_fn.hpp (メインヘッダ)
 - boost/bind/mem_fn_cc.hpp (mem_fn.hpp より使用される。直接インクルードしないこと。)
 - boost/bind/mem_fn_vw.hpp (mem_fn.hpp より使用される。直接インクルードしないこと。)
@@ -236,15 +236,15 @@ template<class R, class T, class A1, class A2> unspecified_6 mem_fn(R (T::*pmf) 
 - libs/bind/test/mem_fn_void_test.cpp (戻りが`void`であるケースのテスト)
 
 
-### <a name="dependency" href="#dependency">依存関係</a>
+### <a id="dependency" href="#dependency">依存関係</a>
 - Boost.Config
 
 
-### <a name="number-of-arguments" href="#number-of-arguments">引数の上限個数</a>
+### <a id="number-of-arguments" href="#number-of-arguments">引数の上限個数</a>
 この実装では、8つまでの引数をとるメンバ関数がサポートされている。これは、設計に固有の 制限という訳ではなく、実装の詳細である。
 
 
-### <a name="stdcall" href="#stdcall">"__stdcall" と "__fastcall" のサポート</a>
+### <a id="stdcall" href="#stdcall">"__stdcall" と "__fastcall" のサポート</a>
 いくつかのプラットフォームでは、 **呼び出し規則** (どのように関数が起動されるかの規則: 引数はどのように渡されるのか、戻り値はどのように扱われるのか、もしスタックを使用したなら、 誰がそれを奇麗にするのか) の異なるような何種類かのメンバ関数を作成できる。
 
 例えば、Windows API の関数と、COMインタフェースのメンバ関数は、 `__stdcall` という呼び出し規則を用いるし、 Borland の VCL コンポーネントは `__fastcall` を用いる。
@@ -258,7 +258,7 @@ template<class R, class T, class A1, class A2> unspecified_6 mem_fn(R (T::*pmf) 
 [注意: いくつかのコンパイラは、 `__stdcall` キーワードに対して最小限のサポートしか提供していない。]
 
 
-### <a name="acknowledgements" href="#acknowledgements">謝辞</a>
+### <a id="acknowledgements" href="#acknowledgements">謝辞</a>
 `get_pointer`ベースの設計は、Rene Jageによる、特性クラスを用いて `mem_fn`を ユーザ定義のスマートポインタに適合させるという提案に影響されたものである。
 
 フォーマルレビューの期間に、Richard Crossley、 Jens Maurer、 Ed Brey、その他の方々の示唆によって、たくさんの 改良があった。レビューマネージャは Darin Adler であった。

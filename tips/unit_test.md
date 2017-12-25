@@ -8,7 +8,7 @@
 - [例外が投げられるかどうかのテスト](#throw-test)
 
 
-## <a name="equality-test" href="#equality-test">等値テスト</a>
+## <a id="equality-test" href="#equality-test">等値テスト</a>
 等値テストには、`BOOST_CHECK`マクロに条件式を指定する。
 
 ```cpp
@@ -30,7 +30,7 @@ Running 1 test case...
 ```
 
 
-## <a name="floating-point-equality-test" href="#floating-point-equality-test">浮動小数点数の等値テスト</a>
+## <a id="floating-point-equality-test" href="#floating-point-equality-test">浮動小数点数の等値テスト</a>
 浮動小数点数の等値テストには、`BOOST_CHECK_CLOSE`マクロに、比較対象の2つの変数と、許容する誤差（%）を指定する。
 
 ```cpp
@@ -77,7 +77,7 @@ test.cpp(8): error in "test1": absolute value of v{-0.00123456} exceeds 0.0001
 ```
 
 
-## <a name="throw-test" href="#throw-test">例外が投げられるかどうかのテスト</a>
+## <a id="throw-test" href="#throw-test">例外が投げられるかどうかのテスト</a>
 `BOOST_CHECK_THROW`マクロは、ある式が指定した例外を投げるかどうかをテストする。
 
 ```cpp

@@ -11,7 +11,7 @@
 - [バッファの先頭/末尾/ランダムアクセスの確認する](#element-access)
 
 
-## <a name="overview" href="#overview">概要</a>
+## <a id="overview" href="#overview">概要</a>
 
 `boost::circular_buffer`は循環バッファのライブラリである。
 
@@ -20,7 +20,7 @@
 実際にメモリ空間のコピーが発生しているのではなく、`boost::circular_buffer` が開始ポインタの位置を循環させている。
 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 ### バッファの先頭に追加していく場合
 
 **メモリアドレスイメージ**
@@ -199,7 +199,7 @@ y
 ```
 
 
-## <a name="iterator" href="#iterator">イテレータ/逆イテレータ</a>
+## <a id="iterator" href="#iterator">イテレータ/逆イテレータ</a>
 
 標準コンテナと同様に、イテレータと逆イテレータも利用可能
 
@@ -254,7 +254,7 @@ a b c
 ```
 
 
-## <a name="law-layer-api" href="#law-layer-api">実メモリアドレスとC API対応</a>
+## <a id="law-layer-api" href="#law-layer-api">実メモリアドレスとC API対応</a>
 
 `boost::circular_buffer`クラスには、循環バッファの中身をサイズ指定で一括出力させたいときなどに利用するメンバ関数として、`array_one()`と`array_two()`が用意されている。
 
@@ -395,7 +395,7 @@ E
 H G F E
 ```
 
-## <a name="monitor" href="#monitor">バッファの使用状況を確認する</a>
+## <a id="monitor" href="#monitor">バッファの使用状況を確認する</a>
 
 ```cpp example
 #include <iostream>
@@ -471,7 +471,7 @@ e d c
 ```
 
 
-## <a name="element-access" href="#element-access">バッファの先頭/末尾/任意の位置にアクセスする</a>
+## <a id="element-access" href="#element-access">バッファの先頭/末尾/任意の位置にアクセスする</a>
 
 ```cpp example
 #include <iostream>

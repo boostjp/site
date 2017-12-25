@@ -10,7 +10,7 @@
 - [クラスにコンパイル時アサートを付ける](#class)
 
 
-## <a name="function" href="#function">関数にコンパイル時アサートを付ける</a>
+## <a id="function" href="#function">関数にコンパイル時アサートを付ける</a>
 
 ```cpp example
 #include <iostream>
@@ -35,7 +35,7 @@ int main()
 ```
 
 
-## <a name="class" href="#class">クラスにコンパイル時アサートを付ける</a>
+## <a id="class" href="#class">クラスにコンパイル時アサートを付ける</a>
 
 ```cpp example
 #include <boost/static_assert.hpp>

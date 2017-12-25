@@ -10,7 +10,7 @@ JSONの読み込み、書き込みには、[Boost Property Tree Library](http://
 - [応用編：キーにドット（.）が含まれる場合の子ノードの挿入](#key-includes-dot)
 
 
-## <a name="read" href="#read">JSONの読み込み</a>
+## <a id="read" href="#read">JSONの読み込み</a>
 JSONの読み込みには、`Pboost::property_tree::read_json()`関数を使用する。
 
 この関数を使用するには、`<boost/property_tree/json_parser.hpp>`をインクルードする。
@@ -118,7 +118,7 @@ BOOST_FOREACH (const ptree::value_type& child, pt.get_child("Data.info")) {
 ```
 
 
-## <a name="write" href="#write">JSONの書き込み</a>
+## <a id="write" href="#write">JSONの書き込み</a>
 JSONを書き込むには、要素を設定するために`boost::property_tree::ptree`クラスの`put()`メンバ関数を使用し、`add_child()`メンバで子ツリーに登録する。
 
 保存には、`boost::property_tree::write_json()`関数に、ファイル名と`ptree`オブジェクトを指定する。
@@ -183,7 +183,7 @@ int main()
 ```
 
 
-## <a name="key-includes-dot" href="#key-includes-dot">応用編：キーにドット（.）が含まれる場合の子ノードの挿入</a>
+## <a id="key-includes-dot" href="#key-includes-dot">応用編：キーにドット（.）が含まれる場合の子ノードの挿入</a>
 通常、`ptree`オブジェクト に子要素を追加する場合は `put_child()`メンバ関数 または `add_child()` メンバ関数を利用するが、これら高レベル関数ではドットが区切り文字として扱われるので、キーにドットが含まれる場合は挿入がうまく行かない。
 
 ```cpp
