@@ -9,7 +9,7 @@
 - [四則演算を行う](#arithmetic-operation)
 
 
-## <a name="interval-type" href="#interval-type">区間を表す型</a>
+## <a id="interval-type" href="#interval-type">区間を表す型</a>
 `boost::numeric::interval`は数値の区間を表すクラステンプレートである。区間は両端を含む。以下のコードのように数値型を指定して用いる。（必要に応じてポリシークラスも指定する。）
 
 `boost::numeric::interval`を使うには、`<boost/numeric/interval.hpp>`をインクルードする。ストリームを用いて区間を出力したい場合は、`<boost/numeric/interval/io.hpp>`をインクルードする。
@@ -36,7 +36,7 @@ int main()
 ```
 
 
-## <a name="deduction-type" href="#deduction-type">数値型を指定せずに区間を得る</a>
+## <a id="deduction-type" href="#deduction-type">数値型を指定せずに区間を得る</a>
 `boost::numeric::interval`型の変数を定義する際には、`interval<double>`のように数値型（この場合は`double`）を書かなければならない。関数に区間を渡すときなどに、テンプレート引数を自分で書かずに、自動的に推論されると便利である。`boost::numeric::hull()`を使うと、テンプレート引数が自動的に推論され、推論された数値型の`interval`オブジェクトが返される。
 
 ```cpp example
@@ -58,7 +58,7 @@ int main()
 [3.14,3.15]
 ```
 
-## <a name="lower-upper" href="#lower-upper">区間の下限・上限を得る</a>
+## <a id="lower-upper" href="#lower-upper">区間の下限・上限を得る</a>
 `boost::numeric::interval`のメンバ関数`lower()`で下限、`upper()`で上限が得られる。非メンバ関数版もある。
 
 ```cpp example
@@ -86,7 +86,7 @@ lower: 3.14
 upper: 3.15
 ```
 
-## <a name="singleton" href="#singleton">区間内の要素が1個かどうかを判定する</a>
+## <a id="singleton" href="#singleton">区間内の要素が1個かどうかを判定する</a>
 `boost::numeric::singleton()`関数で、区間の要素が1個かどうかを判定できる。
 
 ```cpp example
@@ -113,7 +113,7 @@ true
 false
 ```
 
-## <a name="arithmetic-operation" href="#arithmetic-operation">四則演算を行う</a>
+## <a id="arithmetic-operation" href="#arithmetic-operation">四則演算を行う</a>
 区間と区間、区間と数値の四則演算は通常の演算子`(+, -, *, /)`を用いて行う。
 
 ```cpp example

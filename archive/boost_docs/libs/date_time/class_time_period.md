@@ -14,13 +14,13 @@
 - [Operators](#operators)
 
 
-## <a name="introduction" href="#introduction">Introduction</a>
+## <a id="introduction" href="#introduction">Introduction</a>
 クラス `boost::posix_time::time_period` は2つの時刻の範囲を直接表現する。 期間(period)は、プログラムの条件付きの論理を単純化することによって、ある種の計算を単純化する能力を提供する。
 
 [time periods example](time_periods.cpp.md) は `time_period` の使用例を提供する。
 
 
-## <a name="header" href="#header">Header</a>
+## <a id="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/posix_time/posix_time.hpp" //全ての型とI/Oを含む
 ```
@@ -32,7 +32,7 @@
 ```
 
 
-## <a name="construction" href="#construction">Construction</a>
+## <a id="construction" href="#construction">Construction</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -41,7 +41,7 @@
 | `time_period(time_period rhs)` | コピーコンストラクタ | `time_period tp1(tp);` |
 
 
-## <a name="accessors" href="#accessors">Accessors</a>
+## <a id="accessors" href="#accessors">Accessors</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -57,14 +57,14 @@
 | `time_period shift(time_duration)` | 時間長(time_duration)を `start` と `end` に加算する | |
 
 
-## <a name="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
+## <a id="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
 | `std::string to_simple_string(time_period dp)` | [YYYY-mmm-DD hh:mm:ss.fffffffff/YYYY-mmm-DD hh:mm:ss.fffffffff] 形式の文字列に変換する(mmm は月名の3文字短縮形) | [2002-Jan-01 01:25:10.000000001/2002-Jan-31 01:25:10.123456789] |
 
 
-## <a name="operators" href="#operators">Operators</a>
+## <a id="operators" href="#operators">Operators</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|

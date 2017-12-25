@@ -7,7 +7,7 @@
 - [用語](#term)
 - [基本的な使い方](#basic-usage)
 
-## <a name="term" href="#term">用語</a>
+## <a id="term" href="#term">用語</a>
 
 Boost Units を使用する上で理解が必要な用語を以下に挙げる。
 
@@ -24,7 +24,7 @@ Boost Units を使用する上で理解が必要な用語を以下に挙げる�
 * 量(Quantity) : 単位付きの値。
 	* 例 : 長さ 5.5 m、面積 10.8 m^2 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 
 テンプレートクラス `boost::units::quantity` に単位を表す型と値を表す型をテンプレート引数として渡すことで量を表す型が得られる。また、値と単位型のオブジェクトを掛けあわせることで、量のオブジェクトが得られる。
 

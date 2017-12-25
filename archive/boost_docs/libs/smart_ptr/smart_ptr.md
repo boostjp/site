@@ -29,7 +29,7 @@ Boost Smart Pointerライブラリの古いバージョンについてのペー�
 
 [smart pointer timings](http://www.boost.org/doc/libs/1_31_0/libs/smart_ptr/smarttests.htm)はパフォーマンスの問題についての興味である。
 
-## <a name="Common requirements">Common Requirements</a>
+## <a id="Common requirements">Common Requirements</a>
 
 これらのスマートポインタクラステンプレートはテンプレートパラメータ`T`をもつ。
 これはスマートポインタが指すオブジェクトの方を特定する。

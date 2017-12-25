@@ -11,7 +11,7 @@
 - [Functions](#functions)
 
 
-## <a name="introduction" href="#introduction">Introduction</a>
+## <a id="introduction" href="#introduction">Introduction</a>
 `boost::gregorian::gregorian_calendar` クラスは、グレゴリオ暦の日付システムを生成するのに必要な機能を実装する。 これは、年-月-日 形式の日付と日付番号表現との相互変換を行う。
 
 このクラスは、主に [`gregorian::date`](class_date.md) によってアクセスされることを意図しており、ユーザによって直接使用される事はない。 しかしながら、`end_of_month_day`機能に役に立つ、有用な機能がある。
@@ -19,7 +19,7 @@
 サンプル [print month](print_month.cpp.md) で、この例を説明している。
 
 
-## <a name="header" href="#header">Header</a>
+## <a id="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/gregorian/gregorian.hpp" //全ての型とI/Oを含む
 ```
@@ -31,7 +31,7 @@
 ```
 
 
-## <a name="functions" href="#functions">Functions</a>
+## <a id="functions" href="#functions">Functions</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|

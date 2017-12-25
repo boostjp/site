@@ -15,7 +15,7 @@
 - [分解能, 精度, 正確度](#resolution-precision-accuracy)
 
 
-## <a name="date-references" href="#date-references">Date Calendar References</a>
+## <a id="date-references" href="#date-references">Date Calendar References</a>
 
 - ISO 8601 日付・時間の標準 -- [Markus Kuhnによるまとめ](http://www.cl.cam.ac.uk/~mgk25/iso-time.html)
 - 書籍『[Calendrical Calculations](http://emr.cs.iit.edu/home/reingold/calendar-book/second-edition/)』 著者 Reingold & Dershowitz
@@ -26,7 +26,7 @@
 - [XMAS calendar melt](http://www21.brinkster.com/lonwolve/melt/index.htm)
 
 
-## <a name="time-reference" href="#time-reference">Time References</a>
+## <a id="time-reference" href="#time-reference">Time References</a>
 - Martin Folwerの時間パターン
 	- [Recurring Events for Calendars](http://www.aw.com/cseng/titles/0-201-89542-0/apsupp/events2-1.html)
 	- Patterns for things that [Change with time](http://martinfowler.com/ap2/timeNarrative.html)
@@ -37,7 +37,7 @@
 - [8.5. 日付/時刻データ型](https://www.postgresql.jp/document/9.6/html/datatype-datetime.html) PostgreSQLユーザーガイド
 
 
-## <a name="other-cpp-libs" href="#other-cpp-libs">Other C/C++ Libraries</a>
+## <a id="other-cpp-libs" href="#other-cpp-libs">Other C/C++ Libraries</a>
 - [ctime C](http://www.cplusplus.com/ref/ctime/index.html) Standard library reference at cplusplus.com
 - [XTime C extension](http://www.cl.cam.ac.uk/~mgk25/c-time/) proposal
 - [Another C library extension](http://david.tribble.com/text/c0xcalendar.html#author-info) proposal by David Tribble
@@ -51,7 +51,7 @@
 - [Julian Library in C by Mark Showalter -- NASA](http://ringside.arc.nasa.gov/www/toolkits/julian_13/aareadme.html)
 
 
-## <a name="java-libs" href="#java-libs">JAVA Date & Time Library Quick Reference</a>
+## <a id="java-libs" href="#java-libs">JAVA Date & Time Library Quick Reference</a>
 - [クラスCalendar](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Calendar.html)
 - [クラスGregorianCalendar](https://docs.oracle.com/javase/jp/8/docs/api/java/util/GregorianCalendar.html)
 - [クラスDate](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Date.html)
@@ -62,7 +62,7 @@
 - [クラスSimpleTimeZone](https://docs.oracle.com/javase/jp/8/docs/api/java/util/SimpleTimeZone.html)
 
 
-## <a name="script-lang-libs" href="#script-lang-libs">Scripting Language Libraries</a>
+## <a id="script-lang-libs" href="#script-lang-libs">Scripting Language Libraries</a>
 - A python date library [MX Date Time](http://www.lemburg.com/files/python/mxDateTime.html)
 - Perl date-time
 	- [Date-Time packages at CPAN](http://search.cpan.org/Catalog/Data_and_Data_Type/Date/)
@@ -71,14 +71,14 @@
 - A PHP library [Vlib Date Library](http://vlib.activefish.com/docs/vlibDate.html)
 
 
-## <a name="related-commerical-fanciful-pages" href="#related-commerical-fanciful-pages">関連する商業的かつ想像力に富んだページ</a>
+## <a id="related-commerical-fanciful-pages" href="#related-commerical-fanciful-pages">関連する商業的かつ想像力に富んだページ</a>
 - [Leapsecond.com time](http://www.leapsecond.com/java/gpsclock.htm) page
 - [World Time Server / TZ database](http://www.worldtimeserver.com/)
 - [10000 year clock](http://www.longnow.org/10kclock/clock.htm) at Long Now Foundation
 - [Timezones for PCs](http://www.timezonesforpcs.com/)
 
 
-## <a name="resolution-precision-accuracy" href="#resolution-precision-accuracy">Resolution, Precision, and Accuracy</a>
+## <a id="resolution-precision-accuracy" href="#resolution-precision-accuracy">Resolution, Precision, and Accuracy</a>
 - Definitions with pictures from [Agilent Technologies](http://metrologyforum.tm.agilent.com/specs.shtml)
 - Another set of pictures from [Team Labs](http://www.teamlabs.com/catalog/performance.asp)
 - Definitions from [Southampton Institute](http://www.solent.ac.uk/hydrography/notes/errorthe/accuracy.htm)

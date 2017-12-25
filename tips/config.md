@@ -8,7 +8,7 @@
 - [メンバ関数テンプレートの呼び出しでコンパイルエラーになる問題を回避する](#nested-template)
 
 
-## <a name="support-cpp11" href="#support-cpp11">コンパイラが、あるC++11の機能をサポートしているかどうかでコードを変更する</a>
+## <a id="support-cpp11" href="#support-cpp11">コンパイラが、あるC++11の機能をサポートしているかどうかでコードを変更する</a>
 
 以下は可変長テンプレート引数をサポートしているコンパイラならそれを使い、そうでなければ Boost.Preprocessor などでエミュレートする例
 
@@ -102,7 +102,7 @@ void f(T ...x) {
 | `BOOST_NO_CXX11_VARIADIC_MACROS`    | 可変引数マクロ |
 
 
-## <a name="deduced-typename" href="#deduced-typename">コンパイラによって、テンプレート中の `hoge<T>::type x;` や `fuga.f();` がコンパイルエラーになったりならなかったりする問題を回避する</a>
+## <a id="deduced-typename" href="#deduced-typename">コンパイラによって、テンプレート中の `hoge<T>::type x;` や `fuga.f();` がコンパイルエラーになったりならなかったりする問題を回避する</a>
 
 ```cpp
 struct hoge {
@@ -135,7 +135,7 @@ void f() {
 `BOOST_DEDUCED_TYPENAME` マクロは、普通 `typename` になるが、かかる位置での `typename` をサポートしていないコンパイラでは空に展開される。
 
 
-## <a name="nested-template" href="#nested-template">メンバ関数テンプレートの呼び出しでコンパイルエラーになる問題を回避する</a>
+## <a id="nested-template" href="#nested-template">メンバ関数テンプレートの呼び出しでコンパイルエラーになる問題を回避する</a>
 
 
 上記の `typename` と似たような問題で、次のようなコードがコンパイラによって通ったり通らなかったりする：

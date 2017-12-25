@@ -6,7 +6,7 @@
 - [キューに格納可能な型](#constraint-element-type)
 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 ここでは、ロックフリーキューの基本的な使い方を示す。以下は、Producer-Consumerパターンで、一方のスレッドがキューに値を供給し、もう一方のスレッドがキューの値を消費する処理を行っている。
 
 ```cpp example
@@ -82,7 +82,7 @@ int main()
 この関数は、取り出した値をパラメータの参照で返し、取り出しに成功したら`true`、失敗したら`false`を返す。
 
 
-## <a name="constraint-element-type" href="#constraint-element-type">キューに格納可能な型</a>
+## <a id="constraint-element-type" href="#constraint-element-type">キューに格納可能な型</a>
 [boost::lockfree::queue](http://www.boost.org/doc/libs/release/doc/html/boost/lockfree/queue.html)クラスには、要素型としてtrivially copyable(`memcpy`可能)な型のみを格納できる。
 
 参照： [Boost.Lockfree ロックフリーキューの制限](http://d.hatena.ne.jp/faith_and_brave/20130213/1360737911)

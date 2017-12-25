@@ -5,7 +5,7 @@
 - Data Structures and Network Algorithms. 
 - Society for Industrial and Applied Mathematics, 1983.
 
-## <a name="clr90" href="#clr90">2</a>
+## <a id="clr90" href="#clr90">2</a>
 - T. Cormen, C. Leiserson, and R. Rivest. 
 - Introduction to Algorithms. 
 - McGraw-Hill, 1990.

@@ -11,7 +11,7 @@ functional.hpp ヘッダは C++ 標準 (§ 20.3.7): 由来の関数ポインタ�
 しかし、[function object traits](function_traits.md) を使用しているおかげで、このライブラリのアダプタと接続する場合、このアダプタを使う必要はない。しかしながら、あなたの実装が我々の特性クラスとともにきちんと働かない場合 (部分特殊化版が欠けていることによる) や、サードパーティの関数オブジェクトアダプタとともに使いたい場合に、使う必要があるかもしれない。
 
 
-## <a name="usage" href="#usage">Usage</a>
+## <a id="usage" href="#usage">Usage</a>
 これらのアダプタを使う必要がある場合、使い方は標準関数ポインタアダプタと同様である。例えば、
 
 ```cpp
@@ -31,7 +31,7 @@ std::vector<std::string>::iterator it
 ```
 
 
-## <a name="arguments" href="#arguments">Argument Types</a>
+## <a id="arguments" href="#arguments">Argument Types</a>
 標準は `pointer_to_unary_function` をこのように定 義する(§20.3.8 ¶2):
 
 ```cpp
@@ -58,7 +58,7 @@ Result operator()(typename call_traits<Arg>::param_type x) const
 我々は望ましい結果を引き出した - 参照の参照を生み出すことなく、効率性を得たのだ。
 
 
-## <a name="limitations" href="#limitations">Limitations</a>
+## <a id="limitations" href="#limitations">Limitations</a>
 call traits テンプレートはこの改良を実現するために使われる関数オブジェクト特性と `call_traits` の両方が部分特殊化版に頼っているので、この改良は部分特殊化の機能を持つコンパイラでのみ有効である。そうでないコンパイラでは、関数に渡される引数は常に参照渡しとなるので、参照の参照の可能性を生みだすことになる。
 
 

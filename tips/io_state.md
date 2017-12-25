@@ -5,7 +5,7 @@
 - [フォーマットフラグを戻す](#format-flags)
 
 
-## <a name="format-flags" href="#format-flags">フォーマットフラグを戻す</a>
+## <a id="format-flags" href="#format-flags">フォーマットフラグを戻す</a>
 `boost::ios_flags_saver`に`istream`もしくは`ostream`オブジェクトへの参照を渡すことで、そのスコープを抜ける際にフォーマットフラグを以前の状態に戻してくれる。
 
 ```cpp example

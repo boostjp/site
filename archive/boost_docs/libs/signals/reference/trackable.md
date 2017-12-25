@@ -36,12 +36,12 @@ namespace boost {
 
 ### コンストラクタ
 
-<a name="default_constructor">`trackable();`</a>
+<a id="default_constructor">`trackable();`</a>
 
 - **作用**: 接続済みスロットのリストを空にする。
 - **例外**: なし。
 
-<a name="copy_constructor">`trackable(const trackable&);`</a>
+<a id="copy_constructor">`trackable(const trackable&);`</a>
 
 - **作用**: 接続済みスロットのリストを空にする。
 - **例外**: なし。
@@ -50,13 +50,13 @@ namespace boost {
 
 ### デストラクタ
 
-<a name="destructor">`~trackable();`</a>
+<a id="destructor">`~trackable();`</a>
 
 - **作用**: すべての接続済みスロットを切断する。
 
 ### 代入
 
-<a name="copy_assignment">`trackable& operator=(const trackable& other);`</a>
+<a id="copy_assignment">`trackable& operator=(const trackable& other);`</a>
 
 - **作用**: すべての接続済みスロットを切断する。
 - **戻り値**: `*this`

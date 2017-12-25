@@ -22,7 +22,7 @@
 - [Class day_clock](class_date.md#construct-from-clock)
 
 
-## <a name="introduction" href="#introduction">Introduction</a>
+## <a id="introduction" href="#introduction">Introduction</a>
 gregorian date system はグレゴリオ暦に基づいた日付プログラミングシステムを提供する。 現在の実装は，1400-Jan-01から10000-Jan-01の範囲の日付をサポートする。 実装された暦は、"予想グレゴリオ暦？(proleptic Gregorian calendar)" で、(グレゴリオ暦が)最初に採用された 1582 年以前に遡る拡張がなされている。
 
 (訳注: [proleptic Gregorian calendar](http://www.wikipedia.org/wiki/Proleptic_Gregorian_Calendar))
@@ -38,7 +38,7 @@ gregorian system の全ての型は `boost::gregorian` 名前空間で見つか�
 [`boost::gregorian::date`](class_date.md) クラスはユーザーにとって主要な時間型である。 もし，"4月の第1日曜日"を見つけるといった特別な日付計算プログラムの書き方に興味があるなら、[date generators and algorithms](date_algorithms.md)ページを見ると良い。
 
 
-## <a name="usage-examples" href="#usage-examples">Usage Examples</a>
+## <a id="usage-examples" href="#usage-examples">Usage Examples</a>
 
 | コード例 | 説明 |
 |----------|------|

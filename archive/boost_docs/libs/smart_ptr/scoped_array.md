@@ -62,13 +62,13 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 
 ## Members
 
-### <a name="element_type">element_type</a>
+### <a id="element_type">element_type</a>
 
 `typedef T element_type;`
 
 保持されるポインタの型を規定する。
 
-### <a name="ctor">constructors</a>
+### <a id="ctor">constructors</a>
 
 `explicit scoped_array(T * p = 0); // never throws`
 
@@ -77,7 +77,7 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-### <a name="~scoped_array">destructor</a>
+### <a id="~scoped_array">destructor</a>
 
 `~scoped_array(); // never throws`
 
@@ -87,7 +87,7 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 削除される配列の要素のデストラクタが例外を送出しないという条件が満たされている場合、このデストラクタが例外を送出しないことが保証される。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-### <a name="reset">reset</a>
+### <a id="reset">reset</a>
 
 `void reset(T * p = 0); // never throws`
 
@@ -96,14 +96,14 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 削除される配列の要素のデストラクタが例外を送出しないという条件が満たされている場合、このデストラクタが例外を送出しないことが保証される。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-### <a name="operator[]">subscripting</a>
+### <a id="operator[]">subscripting</a>
 
 `T & operator[](std::ptrdiff_t i) const; // never throws`
 
 保持しているポインタが指す配列の`i`番目の要素への参照を返す。
 保持しているポインタが0のとき、及び`i`が0未満または配列の要素数以上の数であるとき、この演算子のふるまいは未定であり、ほぼ確実に有害である。
 
-### <a name="get">get</a>
+### <a id="get">get</a>
 
 `T * get() const; // never throws`
 
@@ -111,7 +111,7 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-### <a name="swap">swap</a>
+### <a id="swap">swap</a>
 
 `void swap(scoped_array & b); // never throws`
 
@@ -119,9 +119,9 @@ void swap(scoped_array<T> & a, scoped_array<T> & b); // never throws
 `T`は完全型である必要はない。
 スマートポインタの[共通の要求事項](smart_ptr.md#Common requirements)を参照のこと。
 
-## <a name="functions">Free Functions</a>
+## <a id="functions">Free Functions</a>
 
-### <a name="free-swap">swap</a>
+### <a id="free-swap">swap</a>
 
 ```cpp
 template<typename T>

@@ -9,7 +9,7 @@
 
 ***
 
-## <a name="motivation" href="#motivation">動機</a>
+## <a id="motivation" href="#motivation">動機</a>
 例えば、`int`型のデータを`string`型で表現させるときや、逆に`string`型のインスタンスに格納された数値表現を`int`型に変換するなど、値を文字列の表現に変換しなければならないことがしばしばある。これらは、画面上の表示と設定ファイルの関係のように、プログラムの内部構造を外部に出力する際に良く用いられる手法である。
 
 C/C++標準ライブラリは、先に述べた変換機能の数々を提供するが、それらは使いやすさや拡張性、安全性の面においてまちまちである。
@@ -32,7 +32,7 @@ C++標準ライブラリは、ここで問題になっている種類のin-core 
 文字列ベースの表現に関する問題点等に関する議論を扱ったものとして、Herb Sutterの記事 [The String Formatters of Manor Farm](http://www.gotw.ca/publications/mill19.htm)を紹介しておこう。これには、`stringstream`や`lexical_cast`等の比較も含まれている。
 
 
-## <a name="examples" href="#examples">例</a>
+## <a id="examples" href="#examples">例</a>
 以下のサンプルではコマンドラインから与えられた複数の引数を数値の列に変換している。
 
 ```cpp
@@ -71,7 +71,7 @@ void log_errno(int yoko)
 
 ***
 
-## <a name="synopsis" href="#synopsis">ヘッダ概要</a>
+## <a id="synopsis" href="#synopsis">ヘッダ概要</a>
 ライブラリの詳細："boost/lexical_cast.hpp"
 
 ```cpp
@@ -90,7 +90,7 @@ namespace boost
 
 ***
 
-## <a name="lexical_cast" href="#lexical_cast">`lexical_cast`</a>
+## <a id="lexical_cast" href="#lexical_cast">`lexical_cast`</a>
 ```cpp
 template<typename Target, typename Source>
   Target lexical_cast(Source arg);
@@ -115,7 +115,7 @@ template<typename Target, typename Source>
 
 ***
 
-## <a name="bad_lexical_cast" href="#bad_lexical_cast">`bad_lexical_cast`</a>
+## <a id="bad_lexical_cast" href="#bad_lexical_cast">`bad_lexical_cast`</a>
 ```cpp
 class bad_lexical_cast : public std::bad_cast
 {
@@ -127,7 +127,7 @@ public:
 この例外は[`lexical_cast`](#lexical_cast)が失敗したことを示すために使用される。
 
 
-## <a name="changes" href="#changes">更新履歴</a>
+## <a id="changes" href="#changes">更新履歴</a>
 - 前バージョンの`lexical_cast`は、浮動小数型の変換のために`stream`のデフォルトの精度を利用していたが、現行版においては、`std::numeric_limits`を特殊化している型に関しては、それを元に変換を行うようになった。
 - 前バージョンの`lexical_cast`は、任意のワイド文字型の変換をサポートしていなかった。ワイド文字型の完全な言語、ライブラリのサポートがなされているコンパイラにおいては、`lexical_cast`は`wchar_t`、`wchar_t *`、および`std::wstring`の変換をサポートする。
 - 前バージョンの`lexical_cast`は、従来型のストリーム抽出演算子が値を読むために充分であると仮定していた。しかしながら、文字列入出力は、その空白文字が、文字列の内容ではなく、入出力セパレータの役目を演じてしまうという結果、非対称なのである。現在のバージョンでは`std::string`と`std::wstring`(サポートされているところでは) のでこの誤りが修正されている。例えば、`lexical_cast<std::string>("Hello, World")` は、`bad_lexical_cast`例外で失敗することなく、成功する。

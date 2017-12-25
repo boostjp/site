@@ -14,7 +14,7 @@
 - [サポートされている数学関数一覧](#math-functions)
 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 ここでは、Boost.Multiprecisionから提供される多倍長整数の、基本的な使い方を示す。
 
 以下は、任意精度の符号あり多倍長整数である[`boost::multiprecision::cpp_int`](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/ints/cpp_int.html)クラスを使用して、100の階乗を求めるプログラムである。
@@ -72,7 +72,7 @@ Boost.Multiprecisionの多倍長整数は、組み込みの整数型と同じ演
 | `is >> a;`                | ストリームからの入力 |
 
 
-## <a name="variation" href="#variation">多倍長整数の種類</a>
+## <a id="variation" href="#variation">多倍長整数の種類</a>
 以下に、Boost.Multiprecisionから提供される多倍長整数の種類を示す。
 
 **[Boost Multiprecision独自実装の多倍長整数](http://www.boost.org/doc/libs/release/libs/multiprecision/doc/html/boost_multiprecision/tut/ints/cpp_int.html)**
@@ -169,7 +169,7 @@ Boost.Multiprecisionの多倍長整数は、組み込みの整数型と同じ演
 | `tom_int` | 任意精度の符号付き多倍長整数 |
 
 
-## <a name="from-string" href="#from-string">文字列からの変換</a>
+## <a id="from-string" href="#from-string">文字列からの変換</a>
 文字列から多倍長整数に変換するには、`explicit`な変換コンストラクタ、もしくは`assign()`メンバ関数を使用する。
 
 文字列は、`char`配列および[`std::string`](https://cpprefjp.github.io/reference/string/basic_string.html)を受け取ることができる。
@@ -226,7 +226,7 @@ int main()
 変換できない文字列が渡された場合は、[`std::runtime_error`](https://cpprefjp.github.io/reference/stdexcept.html)例外が送出される。
 
 
-## <a name="to-string" href="#to-string">文字列への変換</a>
+## <a id="to-string" href="#to-string">文字列への変換</a>
 文字列への変換には、`str()`メンバ関数を使用する。この関数は、`std::string`型で多倍長整数の文字列表現を返す。
 
 デフォルトでは10進数表現の文字列が返されるが、以下の引数を設定することで、精度と基数、その他出力方法を選択できる。
@@ -270,7 +270,7 @@ int main()
 7B
 ```
 
-## <a name="convert-integer" href="#convert-integer">異なる大きさの整数間で型変換する</a>
+## <a id="convert-integer" href="#convert-integer">異なる大きさの整数間で型変換する</a>
 Boost.Multiprecisionの多倍長整数は、異なる精度間での変換をサポートしている。
 
 
@@ -318,7 +318,7 @@ int main()
 ```
 
 
-## <a name="min" href="#min">最小値を取得する</a>
+## <a id="min" href="#min">最小値を取得する</a>
 多倍長整数の最小値を取得するには、[`std::numeric_limits`](https://cpprefjp.github.io/reference/limits/numeric_limits.html)クラスの[`min()`](http://cpprefjp.github.io/reference/limits/numeric_limits/min.html)静的メンバ関数を使用する。
 
 任意精度整数である`cpp_int`は無限の桁数を持つため、最小値は取得できなかったものとして、0を返す。
@@ -347,7 +347,7 @@ int main()
 ```
 
 
-## <a name="max" href="#max">最大値を取得する</a>
+## <a id="max" href="#max">最大値を取得する</a>
 多倍長整数の最大値を取得するには、[`std::numeric_limits`](https://cpprefjp.github.io/reference/limits/numeric_limits.html)クラスの[`max()`](http://cpprefjp.github.io/reference/limits/numeric_limits/max.html)静的メンバ関数を使用する。
 
 任意精度整数である`cpp_int`は無限の桁数を持つため、最大値は取得できなかったものとして、0を返す。
@@ -376,7 +376,7 @@ int main()
 ```
 
 
-## <a name="is-bounded" href="#is-bounded">有限かどうかを判定する</a>
+## <a id="is-bounded" href="#is-bounded">有限かどうかを判定する</a>
 多倍長整数型の表す値が有限かどうかを判定するには、[`std::numeric_limits`](https://cpprefjp.github.io/reference/limits/numeric_limits.html)クラスの[`is_bounded`](http://cpprefjp.github.io/reference/limits/numeric_limits/is_bounded.html)定数を取得する。
 
 [`is_bounded`](https://cpprefjp.github.io/reference/limits/numeric_limits/is_bounded.html)は`bool`型で定義され、有限であれば`true`、無限であれば`false`が設定される。
@@ -410,7 +410,7 @@ true
 ```
 
 
-## <a name="math-functions" href="#math-functions">サポートされている数学関数一覧</a>
+## <a id="math-functions" href="#math-functions">サポートされている数学関数一覧</a>
 
 **標準関数サポート**
 

@@ -14,7 +14,7 @@ Illegal use of COMPILE_TIME_ASSERTION_FAILURE<false>
 
 あなたは、[クラス](#class)、[関数](#function)、[namespace](#namespace) のスコープにおいて、宣言を置くことができる箇所の全てで、BOOST_STATIC_ASSERT を利用できる。次に例を示す。
 
-## <a name="namespace"></a>§namespaceスコープでの使用。(Use at namespace scope)
+## <a id="namespace"></a>§namespaceスコープでの使用。(Use at namespace scope)
 
 マクロは、常に真でなければならない前提条件がある場合に、namespace スコープで使うことが出来る。 通常、これはいくつかのプラットホーム依存の条件を意味する。 例えば、我々が **`int`** が少なくとも32ビット以上あり、**`wchar_t`** が符号無しであることを必要としていると想定する。 我々は次のようにして、コンパイル時にこれを検査することができる。
 
@@ -33,7 +33,7 @@ BOOST_STATIC_ASSERT(WCHAR_MIN >= 0);
 
 この例での、*my_conditions* namespace の使用に関して、若干の説明が必要だろう。 マクロBOOST_STATIC_ASSERT は目的実現の為に **typedef** 宣言を生成する。ここで、typedef は名前を持たなければならないので、マクロは仮の名に `__LINE__` の値(現在の行番号)を連結して一意の名前を自動的に生成する。 BOOST_STATIC_ASSERTがクラスまたは関数のスコープで使われる場合は、１行にマクロを複数記述しない限りにおいて、BOOST_STATIC_ASSERTの使用によって各々のスコープにおいて一意の名前が生成されることが保証される。 しかしながら、マクロがヘッダにおいて利用されるとき、namespace は複数のヘッダ間に渡ることがありうる。そして、同一の namespace を持つ複数のヘッダの、同じ行においてマクロが使用されたときに、同じ名前をもつ宣言を複数箇所で行うことになるかもしれない。 コンパイラは二重のtypedef宣言を暗黙のうちに無視しなければならないが、しかしながら、多くはそうしないが為に、意図しないエラーを引き起こしてしまう（また、仮に二重宣言を無視するにしても、そのような場合には警告を生成しても良いとなっている）。 よって、あなたがヘッダファイルにおいて、namespace スコープでBOOST_STATIC_ASSERTを使うならば、そのような潜在的な問題を避けるために、そのヘッダに特有の namespace で、BOOST_STATIC_ASSERT を囲まねばならない。
 
-## <a name="function"></a>§関数スコープでの使用（Use at function scope）
+## <a id="function"></a>§関数スコープでの使用（Use at function scope）
 
 マクロは典型的にテンプレート関数内において、テンプレート引数の検査が必要な時に利用される。 我々がiteratorによって捜査対象を指示される algorithm（iterator を受け取るテンプレート関数）を所持しており、それがランダムアクセスiterator を必要とすると想定する。 想定条件に合わない iterator を用いて algorithm が実体化された場合は、最終的にエラーが生成されることになるが、しかし、これは深く入れ子になった先のテンプレートの実体化によって引き起こされたエラーかもしれず、このことにが、ユーザーにとって何がエラーの原因かを特定することが難しくしている。 1つの選択としてはテンプレートのトップのレベルで、iterator の種別のコンパイル時判定を追加することである。もし、条件が合わない場合には、ユーザーにテンプレートが誤用されていることを明らかにするような形でエラーを生成できる。
 
@@ -59,7 +59,7 @@ RandomAccessIterator foo(RandomAccessIterator from, RandomAccessIterator to)
 
 注: assertマクロのまわりの特別な括弧の組は、boost::is_convertible テンプレート中の「,」をプリプロセッサによってマクロ引数分離子として解釈されることを防いでいる。 boost::is_convertible の変換先の型が参照型であるため、若干のコンパイラにおいて型変換がユーザー定義コンストラクタを使用する時に boost::is_convvertible の使用に問題が生じる（いずれにしても、itarator tag クラスが、コピーコンストラクト可能であるという保証がない）
 
-## <a name="class"></a>§クラス・スコープでの使用（Use at class scope）
+## <a id="class"></a>§クラス・スコープでの使用（Use at class scope）
 
 マクロは典型的にテンプレートクラス内で使用される。 例えば、我々がテンプレート引数に最低でも16bit精度以上で符号無しの整数型を必要とするテンプレートクラスを利用する場合、我々はこの要請次のようにすることで満たすことが出来る：
 

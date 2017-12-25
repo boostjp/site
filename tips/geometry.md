@@ -25,7 +25,7 @@
 
 
 
-## <a name="disjoint" href="#disjoint">2つの図形が互いに素かを判定</a>
+## <a id="disjoint" href="#disjoint">2つの図形が互いに素かを判定</a>
 2つの図形が互いに素かを判定するには、`boost::geometry::disjoint()`アルゴリズムを使用する。
 
 `disjoint()`関数は、2つの図形が重なりあっていなければ`true`、重なり合っていたら`false`を返す。
@@ -131,7 +131,7 @@ int main()
 * disjoint[color ff0000]
 
 
-## <a name="intersects" href="#intersects">2つの図形が交点を持っているかを判定</a>
+## <a id="intersects" href="#intersects">2つの図形が交点を持っているかを判定</a>
 2つの図形が交点を持っているかを判定するには、`boost::geometry::intersects()`アルゴリズムを使用する。
 
 2つの線が交わっているかの判定：
@@ -174,7 +174,7 @@ int main()
 * intersects[color ff0000]
 
 
-## <a name="within" href="#within">図形がもう一方の図形の完全な内側にあるかを判定</a>
+## <a id="within" href="#within">図形がもう一方の図形の完全な内側にあるかを判定</a>
 
 図形がもう一方の図形の内側にあるかを判定するには、`boost::geometry::within()`アルゴリズムを使用する。
 
@@ -215,7 +215,7 @@ int main()
 in
 ```
 
-## <a name="equals" href="#equals">2つの図形が空間的に等しいかを判定</a>
+## <a id="equals" href="#equals">2つの図形が空間的に等しいかを判定</a>
 2つの図形が空間的に等しいかを判定するには、`boost::geometry::equals()`アルゴリズムを使用する。
 
 図形の形が同じでも位置が異なれば`false`を返す。
@@ -276,7 +276,7 @@ equal
 ```
 
 
-## <a name="area" href="#area">面積を計算する</a>
+## <a id="area" href="#area">面積を計算する</a>
 図形の面積を計算するには、`boost::geometry::area()`関数を使用する。
 
 以下は、四角形と三角形の面積を計算する例：
@@ -324,7 +324,7 @@ int main()
 ```
 
 
-## <a name="centroid" href="#centroid">図形の中心座標を計算する</a>
+## <a id="centroid" href="#centroid">図形の中心座標を計算する</a>
 図形の中心座標を計算するには、`boost::geometry::centroid()`か、`boost::geometry::return_centroid<Point>()`を使用する。
 
 `boost::geometry::centroid()`関数は、中心座標の点を第2引数で参照として返し、`boost::geometry::return_centroid()`関数は、中心座標の点を戻り値で返す。
@@ -406,7 +406,7 @@ int main()
 (1.55556, 1.66667)
 ```
 
-## <a name="convex_hull" href="#convex_hull">図形の凸包を計算する</a>
+## <a id="convex_hull" href="#convex_hull">図形の凸包を計算する</a>
 図形の凸包を計算するには、`boost::geometry::convex_hull()`を使用する。
 
 第1引数で図形を渡すと、第2引数で参照として凸包の図形が返される。
@@ -461,7 +461,7 @@ hull: (((2, 1.3), (2.4, 1.7), (4.1, 3), (5.3, 2.8), (5.4, 1.2), (4.9, 0.8), (3.6
 緑色部分が入力した図形。点線部分が計算された凸包図形。
 
 
-## <a name="distance" href="#distance">2つの図形の距離を計算する</a>
+## <a id="distance" href="#distance">2つの図形の距離を計算する</a>
 2つの図形の距離を計算するには、`boost::geometry::distance()`関数を使用する。
 
 `distance()`関数は、図形間の最短距離を返す。
@@ -532,7 +532,7 @@ int main()
 4.24264
 ```
 
-## <a name="difference" href="#difference">2つの図形の差を計算する</a>
+## <a id="difference" href="#difference">2つの図形の差を計算する</a>
 2つの図形の差を計算するには、`boost::geometry::difference()`関数を使用する。
 
 第1引数と第2引数で渡した図形の差が、第3引数で返される。
@@ -579,7 +579,7 @@ int main()
 点線部分が、`difference()`関数で計算された図形。
 
 
-## <a name="union_" href="#union_">2つの図形の和を計算する</a>
+## <a id="union_" href="#union_">2つの図形の和を計算する</a>
 2つの図形の和を計算するには、`boost::geometry::union_()`を使用する。
 
 第1引数と第2引数で渡した図形の和が、第3引数で返される。
@@ -626,7 +626,7 @@ int main()
 注：`union_()`関数の名前がアンダーバーで終わっているのは、`union`がC++言語仕様において予約語と定められているためである。
 
 
-## <a name="intersection" href="#intersection">2つの図形の共通部分を計算する</a>
+## <a id="intersection" href="#intersection">2つの図形の共通部分を計算する</a>
 2つの図形の共通部分を計算するには、`boost::geometry::intersection()`関数を使用する。
 
 第1引数と第2引数で渡した図形の共通部分が、第3引数で返される。
@@ -670,7 +670,7 @@ int main()
 点線部分が、`intersection()`で計算された図形。
 
 
-## <a name="envelope" href="#envelope">図形の包絡線を計算する</a>
+## <a id="envelope" href="#envelope">図形の包絡線を計算する</a>
 図形の包絡線を計算するには、`boost::geometry::envelope()`を計算する。
 
 第1引数として渡した図形の包絡線が、Box Conceptの型として第2引数で返される。
@@ -776,7 +776,7 @@ bx: ((2, 0.7), (5.4, 3))
 ```
 
 
-## <a name="length" href="#length">図形の長さを計算する</a>
+## <a id="length" href="#length">図形の長さを計算する</a>
 図形の長さを計算するには、線の場合には`boost::geometry::length()`関数を使用し、三角形の場合には`boost::geometry::perimeter()`関数を使用する。
 
 **線の長さを計算**
@@ -848,7 +848,7 @@ int main()
 ```
 
 
-## <a name="reverse" href="#reverse">図形を逆向きにする</a>
+## <a id="reverse" href="#reverse">図形を逆向きにする</a>
 図形を逆向きにするには、`boost::geometry::reverse()`を使用する。
 
 ```cpp example
@@ -886,7 +886,7 @@ int main()
 (((0, 0), (3, 1), (3, 3), (0, 0)))
 ```
 
-## <a name="simplify" href="#simplify">図形を単純化する</a>
+## <a id="simplify" href="#simplify">図形を単純化する</a>
 図形を単純化するには、`boost::geometry::simplify()`を使用する。
 
 - 第1引数 : 単純化する元となる図形
@@ -939,7 +939,7 @@ int main()
 緑の実線が元となった図形。オレンジの点線が`simplify()`によって単純化された図形。
 
 
-## <a name="unique" href="#unique">図形から重複した点を削除する</a>
+## <a id="unique" href="#unique">図形から重複した点を削除する</a>
 重複した点を削除するには、`boost::geometry::unique()`関数を使用する。
 
 ```cpp example
@@ -978,7 +978,7 @@ int main()
 ```
 
 
-## <a name="translate" href="#translate">図形を平行移動する</a>
+## <a id="translate" href="#translate">図形を平行移動する</a>
 図形を平行移動するには、`boost::geometry::transform()`関数で、`translate_transformer`戦略ポリシーを使用して移動量を指定する。
 
 ```cpp example
@@ -1031,7 +1031,7 @@ int main()
 ```
 
 
-## <a name="scale" href="#scale">図形を拡大縮小する</a>
+## <a id="scale" href="#scale">図形を拡大縮小する</a>
 図形を拡大縮小するには、`boost::geometry::transform()`関数に、`scale_transformer`戦略ポリシーを使用して拡大率を指定する。
 
 
@@ -1082,7 +1082,7 @@ int main()
 ```
 
 
-## <a name="rotate" href="#rotate">図形を回転する</a>
+## <a id="rotate" href="#rotate">図形を回転する</a>
 図形を回転するには、`boost::geometry::transform()`関数に、`rotate_transformer`戦略ポリシーを使用して回転する角度を指定する。
 
 `rotate_transformer`のテンプレート引数で、角度の単位を選択できる。デグリ：`boost::geometry::degree`、ラジアン：`boost::geometry::radian`。

@@ -12,7 +12,7 @@
 - [状態遷移を拒否する](#guard)
 
 
-## <a name="define-state-machine">有限状態マシンの定義と利用</a>
+## <a id="define-state-machine">有限状態マシンの定義と利用</a>
 
 有限状態マシンを利用するために、状態・イベント・有限状態マシンをそれぞれ定義する必要がある。
 
@@ -68,7 +68,7 @@ int main()
 * process_event[color ff0000]
 
 
-## <a name="state-event" href="#state-event">状態の開始と終了のタイミングで任意の処理を行う</a>
+## <a id="state-event" href="#state-event">状態の開始と終了のタイミングで任意の処理を行う</a>
 
 状態クラスに `on_entry()`, `on_exit()` メンバ関数を定義すると、それぞれ状態の開始と終了時に、自動的に呼ばれる。
 
@@ -131,7 +131,7 @@ entry: my_state2
 ```
 
 
-## <a name="change-state-event" href="#change-state-event">状態遷移イベントを受け取ったタイミングで任意の処理を行う</a>
+## <a id="change-state-event" href="#change-state-event">状態遷移イベントを受け取ったタイミングで任意の処理を行う</a>
 
 有限状態マシンがイベントを受け取ったとき、任意の処理を実行できる。
 
@@ -194,7 +194,7 @@ on_event1
 on_event2
 ```
 
-## <a name="guard" href="#guard">状態遷移を拒否する</a>
+## <a id="guard" href="#guard">状態遷移を拒否する</a>
 
 有限状態マシンがイベントを受け取ったとき、実行時に状態遷移を拒否することができる。
 

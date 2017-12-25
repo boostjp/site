@@ -48,14 +48,14 @@
 - Acknowledgements
 
 
-## <a name="purpose" href="#purpose">目的</a>
+## <a id="purpose" href="#purpose">目的</a>
 `boost::bind` は標準ライブラリの関数 `std::bind1st` および `std::bind2nd` を汎用化したものである。 関数オブジェクトだけでなく、関数や関数へのポインタ、メンバ関数へのポインタをサポートし、任意の引数を特定の値に束縛したり、入力引数を、もとの順番に関係なく自由な位置に移し替えることができる。 `bind` が扱うことのできる関数オブジェクトには、特別な条件はない。 特に、標準関数が要求する `typedef result_type` や `first_argument_type` および `second_argument_type` は必須ではない。
 
 - 【訳注：このような関数を一般に「バインダ」または「束縛子」と呼ぶ。】
 - 【訳注：「入力引数」とは、`bind` によって生成された関数オブジェクトを呼び出す時に渡される引数。例えば、`bind(f, _1, 5)(x)` における `x` のこと。】
 
 
-### <a name="using-bind-with-function-and-function-pointer" href="#using-bind-with-function-and-function-pointer">関数と関数ポインタに対して`bind`を使用する</a>
+### <a id="using-bind-with-function-and-function-pointer" href="#using-bind-with-function-and-function-pointer">関数と関数ポインタに対して`bind`を使用する</a>
 以下の関数が定義されているとき、
 
 ```cpp
@@ -119,7 +119,7 @@ bind(f, ref(i), _1);
 【訳注：詳しくは、[`ref` のドキュメント](bind/ref.md)を参照。】
 
 
-### <a name="using-bind-with-function-object" href="#using-bind-with-function-object">関数オブジェクトに対して`bind`を使用する</a>
+### <a id="using-bind-with-function-object" href="#using-bind-with-function-object">関数オブジェクトに対して`bind`を使用する</a>
 `bind` は通常の関数だけでなく、任意の関数オブジェクトを受け付ける。 一般的には（標準 C++ には `typeof` 演算子がなく、戻り型を推論できないため）、生成される関数オブジェクトの `operator()` の戻り型を以下のように明示的に指定する必要がある。
 
 ```cpp
@@ -147,7 +147,7 @@ bind(std::less<int>(), _1, 9)(x);	// x < 9
 【注意：戻り型を省略する機能は、コンパイラによっては利用できない場合がある。】
 
 
-### <a name="using-bind-with-pointer-to-member" href="#using-bind-with-pointer-to-member">メンバへのポインタに対して`bind`を使用する</a>
+### <a id="using-bind-with-pointer-to-member" href="#using-bind-with-pointer-to-member">メンバへのポインタに対して`bind`を使用する</a>
 メンバ関数へのポインタやデータメンバへのポインタは `operator()` を持たないので、関数オブジェクトではない。 しかし、それでは不便なので、`bind` は最初の引数としてメンバへのポインタも受け付ける。 この場合、[`boost::mem_fn`](mem_fn.md) によってメンバへのポインタが関数オブジェクトに変換されて渡されたかのように振る舞う。 すなわち、式
 
 ```cpp
@@ -190,7 +190,7 @@ bind(&X::f, p, _1)(i);			// (p の内部的なコピー)->f(i)
 【訳注：つまり、`bind` の最初の引数がメンバ関数へのポインタである場合、次の引数はそのメンバ関数を持つクラスまたは派生クラスのオブジェクトまたはポインタ、`ref()`、スマートポインタでなければならない。】
 
 
-### <a name="using-nested-binds-for-function-composition" href="#using-nested-binds-for-function-composition">関数合成のために入れ子の`bind`を使用する</a>
+### <a id="using-nested-binds-for-function-composition" href="#using-nested-binds-for-function-composition">関数合成のために入れ子の`bind`を使用する</a>
 `bind` に渡される引数のうちいくつかは、それ自体が `bind` の入れ子になった式でもよい。
 
 ```cpp
@@ -228,8 +228,8 @@ std::for_each(v.begin(), v.end(), bind(apply<void>(), _1, 5));
 `protect` 関数は `boost/bind/protect.hpp` ヘッダに含まれている。 `bind` 関数オブジェクトを評価されないように保護するには、`protect(bind(f, ...))` と書けばよい。
 
 
-## <a name="examples" href="#examples">コード例</a>
-### <a name="using-bind-with-standard-algorithms" href="#using-bind-with-standard-algorithms">標準アルゴリズムと`bind`を組み合わせて使用する</a>
+## <a id="examples" href="#examples">コード例</a>
+### <a id="using-bind-with-standard-algorithms" href="#using-bind-with-standard-algorithms">標準アルゴリズムと`bind`を組み合わせて使用する</a>
 ```cpp
 class image;
 
@@ -261,7 +261,7 @@ void render(image & target)
 }
 ```
 
-### <a name="using-bind-with-boost-function" href="#using-bind-with-boost-function">Boost.Functionと`bind`を組み合わせて使用する</a>
+### <a id="using-bind-with-boost-function" href="#using-bind-with-boost-function">Boost.Functionと`bind`を組み合わせて使用する</a>
 ```cpp
 class button
 {
@@ -288,7 +288,7 @@ void connect()
 }
 ```
 
-## <a name="limitation" href="#limitation">制限</a>
+## <a id="limitation" href="#limitation">制限</a>
 `bind` が生成する関数オブジェクトは、引数を参照渡しで受け取る。このため、`const` でない一時オブジェクトやリテラル定数を受け取ることはできない。 これは、C++ 言語自体の制約であり、「転送する関数の問題（？）」として知られている。
 
 任意の型の引数を受け取り、それらをそのまま渡すために、`bind` ライブラリでは、
@@ -311,16 +311,16 @@ template<class T> void f(T const & t);
 【注意：これは C++ 言語の暗い隅（？）であり、該当する問題はまだ解決されていない。】
 
 
-## <a name="frequently-asked-questions" href="#frequently-asked-questions">よくある質問と回答</a>
-### <a name="why-doesnt-this-compile" href="#why-doesnt-this-compile">どうしてコンパイルできない？</a>
+## <a id="frequently-asked-questions" href="#frequently-asked-questions">よくある質問と回答</a>
+### <a id="why-doesnt-this-compile" href="#why-doesnt-this-compile">どうしてコンパイルできない？</a>
 [トラブルシューティング](#troubleshooting) の項を参照。
 
 
-### <a name="why-does-this-compile" href="#why-does-this-compile">どうしてコンパイルできちゃう？ エラーになる筈なのに。</a>
+### <a id="why-does-this-compile" href="#why-does-this-compile">どうしてコンパイルできちゃう？ エラーになる筈なのに。</a>
 おそらく、`bind<R>(f, ...)` という汎用の構文を使っているためであろう。この書き方は、`bind` に対して `f` の引数の数や戻り型に関するエラーチェックをしないように指示するものである。
 
 
-### <a name="what-is-the-difference-between-bind-and-bind-r" href="#what-is-the-difference-between-bind-and-bind-r">`bind(f, ...)` と `bind<R>(f, ...)` はどう違う？</a>
+### <a id="what-is-the-difference-between-bind-and-bind-r" href="#what-is-the-difference-between-bind-and-bind-r">`bind(f, ...)` と `bind<R>(f, ...)` はどう違う？</a>
 最初の形式は `bind` に `f` の型を調べて、引数の数や戻り型を解決するように指示する。 引数の数の間違いは「バインド時」に検出される。 この構文はもちろん、`f` に対していくつかのことを要求する。 つまり、`f` は関数、関数ポインタ、メンバ関数へのポインタのいずれかであるか、関数オブジェクトの場合には `result_type` という入れ子の型を定義する必要がある。簡単に言えば、`bind` が認識できるものでなければならない。
 
 二番目の形式は `bind` に `f` の型を識別しないように指示する。 これは一般的には、`result_type` を開示しない、あるいはできない関数オブジェクトとともに用いられるが、その他に非標準の関数に対しても用いることができる。 たとえば、現在の実装は `printf` のような可変引数の関数を自動的に認識しないため、`bind<int>(printf, ...)` と書く必要がある。
@@ -330,30 +330,30 @@ template<class T> void f(T const & t);
 他に考慮すべき重要な点として、コンパイラがテンプレートの部分特殊化版や関数テンプレートの半順序（？）に対応していない場合、`f` が関数オブジェクトであれば最初の形式は扱えず、また、`f` が関数（ポインタ）やメンバ関数へのポインタであれば二番目の形式は扱えないことが多い。
 
 
-### <a name="does-bind-work-with-win-api" href="#does-bind-work-with-win-api">bind は Windows の API 関数に対して使える？</a>
+### <a id="does-bind-work-with-win-api" href="#does-bind-work-with-win-api">bind は Windows の API 関数に対して使える？</a>
 はい、`#define BOOST_BIND_ENABLE_STDCALL` すれば。 または、目的の関数を [generic function object](#using-bind-with-function-object) として扱って、`bind<R>(f, ...)` の構文を使っても良い。
 
 
-### <a name="does-bind-work-with-com-methods" href="#does-bind-work-with-com-methods">bind は COM のメソッドに使える？</a>
+### <a id="does-bind-work-with-com-methods" href="#does-bind-work-with-com-methods">bind は COM のメソッドに使える？</a>
 はい、`#define BOOST_MEM_FN_ENABLE_STDCALL` すれば。
 
 
-### <a name="does-bind-work-with-mac-toolbox" href="#does-bind-work-with-mac-toolbox">bind は Mac の Toolbox 関数に使える？</a>
+### <a id="does-bind-work-with-mac-toolbox" href="#does-bind-work-with-mac-toolbox">bind は Mac の Toolbox 関数に使える？</a>
 はい、`#define BOOST_BIND_ENABLE_PASCAL` すれば。 または、目的の関数を [generic function object](#using-bind-with-function-object) として扱って、`bind<R>(f, ...)` の構文を使っても良い。
 
 
-### <a name="does-bind-work-with-extern-c-functions" href="#does-bind-work-with-extern-c-functions">bind は extern "C" な関数に使える？</a>
+### <a id="does-bind-work-with-extern-c-functions" href="#does-bind-work-with-extern-c-functions">bind は extern "C" な関数に使える？</a>
 場合による。 いくつかのプラットフォームでは、`extern "C"` な関数へのポインタは「通常の」関数ポインタと等価であり、問題なく動く。 他のプラットフォームでは、それらは別物として扱われる。 プラットフォーム固有の `bind` の実装があれば、問題を透過的に解決できることが期待されるが、この実装はそうなっていない。 いつものように、回避策は目的の関数を [generic function object](#using-bind-with-function-object) として扱って、`bind<R>(f, ...)` の構文を使うことである。
 
 【訳注：「この実装」とあるが、このドキュメントは `bind` の仕様を定義するもので、附属の実装は「サンプル実装」という位置付けで書かれているものと思われる。（？）】
 
 
-### <a name="why-doesnt-bind-automatically-recognize-nonstd-functions" href="#why-doesnt-bind-automatically-recognize-nonstd-functions">どうして bind は非標準の関数を自動的に認識しない？</a>
+### <a id="why-doesnt-bind-automatically-recognize-nonstd-functions" href="#why-doesnt-bind-automatically-recognize-nonstd-functions">どうして bind は非標準の関数を自動的に認識しない？</a>
 特定のベンダに縛られることを防ぐために、非標準の拡張は一般的にデフォルトでオフにすべきである。 もしも[固有のマクロ](##does-bind-work-with-win-api)が自動的に定義されたら、そのつもりがないのにそれらの機能を使ってしまい、知らない間に互換性を損なってしまう危険性がある。 また、いくつかのコンパイラは `__stdcall (__fastcall)` をデフォルトの呼び出し規約とするオプションを用意しており、特別なサポートは必要ない。
 
 
-## <a name="troubleshooting" href="#troubleshooting">トラブルシューティング</a>
-### <a name="incorrect-number-of-arguments" href="#incorrect-number-of-arguments">引数の数が不正(Incorrect number of arguments)</a>
+## <a id="troubleshooting" href="#troubleshooting">トラブルシューティング</a>
+### <a id="incorrect-number-of-arguments" href="#incorrect-number-of-arguments">引数の数が不正(Incorrect number of arguments)</a>
 式 `bind(f, a1, a2, ..., aN)` において、関数オブジェクト `f` はちょうど `N` 個の引数を取らなければならない。 このエラーは、通常「バインド時」に検出される。すなわち、`bind()` を呼び出している行に対してコンパイルエラーが報告される。
 
 ```cpp
@@ -384,7 +384,7 @@ int main()
 【訳注：`bind` では、メンバ関数へのポインタは、通常の引数の前に暗黙の「`this`」引数をとるものとみなす。】
 
 
-### <a name="function-object-cannot-be-called-with-the-specified-arguments" href="#function-object-cannot-be-called-with-the-specified-arguments">関数オブジェクトは指定された引数とともに呼び出すことはできない(The function object cannot be called with the specified arguments)</a>
+### <a id="function-object-cannot-be-called-with-the-specified-arguments" href="#function-object-cannot-be-called-with-the-specified-arguments">関数オブジェクトは指定された引数とともに呼び出すことはできない(The function object cannot be called with the specified arguments)</a>
 通常の関数呼び出しと同様、束縛される関数オブジェクトは引数リストと互換性を持つ必要がある。 非互換性は、通常コンパイラによって「呼び出し時」に検出され、`bind.hpp` の次のような行に対するエラーとなる。
 
 ```
@@ -405,7 +405,7 @@ int main()
 }
 ```
 
-### <a name="access-arg-does-not-exist" href="#access-arg-does-not-exist">存在しない引数へのアクセス(Accessing an argument that does not exist)</a>
+### <a id="access-arg-does-not-exist" href="#access-arg-does-not-exist">存在しない引数へのアクセス(Accessing an argument that does not exist)</a>
 プレースホルダ `_N` は引数リストの `N` 番目の引数を、「呼び出し時」に選択する。 当然、引数リストの範囲外のものにアクセスしようとすればエラーになる。
 
 ```cpp
@@ -427,7 +427,7 @@ int main()
 `std::bind1st(f, a)` の代わりに使う場合、`bind(f, a, _1)` ではなく間違って `bind(f, a, _2)` としてしまうことも多い。
 
 
-### <a name="inappropriate-use-of-bind" href="#inappropriate-use-of-bind">`bind(f, ...)` の不適切な使用(Inappropriate use of `bind(f, ...)`)</a>
+### <a id="inappropriate-use-of-bind" href="#inappropriate-use-of-bind">`bind(f, ...)` の不適切な使用(Inappropriate use of `bind(f, ...)`)</a>
 `bind(f, a1, a2, ..., aN)` の[形式](#what-is-the-difference-between-bind-and-bind-r)は `f` を自動的に認識させる。 これは、任意の関数オブジェクトに対して働くわけではない。`f` は関数またはメンバ関数へのポインタでなければならない。
 
 この形式を `result_type` を定義する関数オブジェクトに使えるのは、部分特殊化版や半順序（？）をサポートしているコンパイラに限られる。 特に、MSVC のバージョン 7.0 までは、関数オブジェクトに対するこの構文はサポートしない。
@@ -435,13 +435,13 @@ int main()
 【訳注：原文では MSVC up to version 7.0 となっているが、これは 7.0 を含むのだろうか？】
 
 
-### <a name="inappropriate-use-of-bind-r" href="#inappropriate-use-of-bind-r">`bind<R>(f, ...)` の不適切な使用(Inappropriate use of `bind<R>(f, ...)`)</a>
+### <a id="inappropriate-use-of-bind-r" href="#inappropriate-use-of-bind-r">`bind<R>(f, ...)` の不適切な使用(Inappropriate use of `bind<R>(f, ...)`)</a>
 `bind<R>(f, a1, a2, ..., aN)`の[形式](#what-is-the-difference-between-bind-and-bind-r)は、任意の関数オブジェクトをサポートする。
 
 この形式を、(推奨はしないが)関数もしくメンバ関数ポインタに使えるのは、半順序をサポートしているコンパイラに限られる。特に、MSVC のバージョン 7.0 までは、関数とメンバ関数ポインタに対するこの構文はサポートしない。
 
 
-### <a name="binding-a-nonstd-function" href="#binding-a-nonstd-function">非標準の関数を束縛(Binding a nonstandard function)</a>
+### <a id="binding-a-nonstd-function" href="#binding-a-nonstd-function">非標準の関数を束縛(Binding a nonstandard function)</a>
 デフォルトでは、`bind(f, a1, a2, ..., aN)` の[形式](#what-is-the-difference-between-bind-and-bind)は、「通常」のC++関数と関数ポインタのみを受け入れる。[関数が異なる呼び出し規約を使っていたり](#does-bind-work-with-win-api)、`std::printf`のような可変引数の関数では、動作しない。汎用的な`bind<R>(f, a1, a2, ..., aN)`[形式](#what-is-the-difference-between-bind-and-bind-r)なら、そのような非標準関数に対しても動作する。
 
 いくつかのプラットフォームでは、`extern "C"`の付いた`stdcmp`のような関数は、短い形式の`bind`では動作しない。
@@ -449,7 +449,7 @@ int main()
 ["`__stdcall`"](#does-bind-work-with-win-api)や["`pascal`"](#does-bind-work-with-mac-toolbox)のサポートを参照。
 
 
-### <a name="const-in-signatures" href="#const-in-signatures">シグネチャが const を含む(const in signatures)</a>
+### <a id="const-in-signatures" href="#const-in-signatures">シグネチャが const を含む(const in signatures)</a>
 MSVC 6.0やBorland C++ 5.5.1を含むいくつかのプラットフォームでは、関数のシグニチャがトップレベルの`const`を持っていることが問題になる：
 
 ```cpp

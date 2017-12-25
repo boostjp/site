@@ -14,13 +14,13 @@
 - [Operators](#operators)
 
 
-## <a name="introduction" href="#introduction">Introduction</a>
+## <a id="introduction" href="#introduction">Introduction</a>
 `boost::gregorian::date_period` クラスは、二つの日付の範囲(期間)を直接表現する。 プログラムの条件付きの論理を単純化することによって、ある種の計算を単純化する能力を提供する。 例えば、日付が週末あるいは休日のような不規則なスケジュールの中であるかどうか試すのは `date_period` のコレクションを使って達成され得る。 これは、`date_period` が別の期間(date period)と重複する場合に評価を許可する、あるいは重複している期間を生成する、といったいくつかの方法によって容易になる。 [period calculation example(期間計算の例)](period_calc.cpp.md) はこの例を提供する。
 
 無限値と組み合わせて使用される期間(date periods)は、「追って通知があるまで」といった複雑な概念を表現する能力を持っている。
 
 
-## <a name="header" href="#header">Header</a>
+## <a id="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/gregorian/gregorian.hpp" //全ての型とI/Oを含む
 ```
@@ -31,7 +31,7 @@
 #include "boost/date_time/gregorian/gregorian_types.hpp" //型のみでI/Oは含まない
 ```
 
-## <a name="construction" href="#construction">Construction</a>
+## <a id="construction" href="#construction">Construction</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -40,7 +40,7 @@
 | `date_period(date_period rhs)` | コピーコンストラクタ | `date_period dp1(dp)` |
 
 
-## <a name="accessors" href="#accessors">Accessors</a>
+## <a id="accessors" href="#accessors">Accessors</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -56,14 +56,14 @@
 | `date_period shift(date_duration)` | 初日と最終日に日数(date_duration)を加算する。 | `date_period dp1(date(2002,Jan,1), date(2002,Jan,10));`<br/> `dp1.shift(date_duration(1)); --> 2002-Jan-02/2002-Jan-11` |
 
 
-## <a name="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
+## <a id="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
 | `std::string to_simple_string(date_period dp)` | [YYYY-mmm-DD/YYYY-mmm-DD] (mmm は月名の3文字短縮形)形式の文字列に変換 | [2002-Jan-01/2002-Jan-31] |
 
 
-## <a name="operators" href="#operators">Operators</a>
+## <a id="operators" href="#operators">Operators</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|

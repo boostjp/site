@@ -19,7 +19,7 @@
 - [FAQ](function/faq.md)
 
 
-## <a name="compatibility-note" href="#compatibility-note">Compatibility Note</a>
+## <a id="compatibility-note" href="#compatibility-note">Compatibility Note</a>
 Boost.Function は、インタフェースを小さく、分かりやすくするために、一部が再設計された。昔の Boost.Function にあった、いくつかのめったに (または決して) 使われない機能は推奨されなくなり、近々削除される。以下に推奨されなくなった機能とその理由、それに伴うコードの修正法をリストアップする。
 
 - `boost::function` クラステンプレートの文法が変更された。以前は`boost::function<int, float, double, std::string>`のように書いたが、 `boost::function<int (float, double, std::string)>`のような、より自然な書き方になった。戻り値と全ての引数の型が、 1 つの関数型のパラメータに収まる事になったのだ。残りのテンプレートパラメータ (`Allocator`など) が、この関数型パラメータの後に続く。
@@ -32,7 +32,7 @@ Boost.Function は、インタフェースを小さく、分かりやすくす�
 新しい文法に移行し、推奨されない機能を削除するためには、 `BOOST_FUNCTION_NO_DEPRECATED` プリプロセサマクロを定義する。このマクロを定義すると、推奨されない全ての機能が使えなくなる。 `BOOST_FUNCTION_NO_DEPRECATED` を使ってコンパイルされたプログラムなら、推奨されない機能が削除されても大丈夫だ。
 
 
-## <a name="function-vs-function-pointers" href="#function-vs-function-pointers">Boost.Function vs. Function Pointers</a>
+## <a id="function-vs-function-pointers" href="#function-vs-function-pointers">Boost.Function vs. Function Pointers</a>
 Boost.Function には関数ポインタに比べていくつかの利点がある。
 
 - Boost.Function は、任意の互換性がある関数オブジェクトを格納できる (関数ポインタは全く同じシグネチャを持つ関数しか受け付けない) 。
@@ -50,7 +50,7 @@ Boost.Function には関数ポインタに比べていくつかの利点があ�
 以上 2 つのリストは Darin Adler のコメントを編集したものである。
 
 
-## <a name="performance" href="#performance">Performance</a>
+## <a id="performance" href="#performance">Performance</a>
 
 ### Function object wrapper size
 
@@ -67,7 +67,7 @@ Boost.Function には関数ポインタに比べていくつかの利点があ�
 適切なインライン化を行うコンパイラならば、関数オブジェクトの呼び出しによって、関数ポインタを通した呼び出しが 1 回行われる。非メンバ関数ポインタの呼び出しならば、その関数ポインタの呼び出しに加えて、もう 1 回の呼び出しが行われる (コンパイラがとても強力な関数をまたいだ分析を行うならば別だが) 。
 
 
-## <a name="portability" href="#portability">Portability</a>
+## <a id="portability" href="#portability">Portability</a>
 Boost.Function は、できるだけ移植性を高めるように、できるだけ多くのコンパイラ (C++ 標準準拠度が低いものも含む) をサポートするように設計されている。以下のコンパイラは `boost::function`に含まれる全てのテストケースに合格した。
 
 - GCC 2.95.3
@@ -85,7 +85,7 @@ Boost.Function は、できるだけ移植性を高めるように、できる�
 あなたのコンパイラが上のリストになければ、 `boost::function` ライブラリを使えるかチェックするための小さなテスト群があるので、これを使える。標準に準拠したコンパイラなら、修正無しでコードをコンパイルできるはずだが、問題が起きたらバグレポートを送ってほしい。
 
 
-## <a name="design-rationale" href="#design-rationale">Design rationale</a>
+## <a id="design-rationale" href="#design-rationale">Design rationale</a>
 
 ### Combatting virtual function bloat
 
@@ -94,7 +94,7 @@ Boost.Function は、できるだけ移植性を高めるように、できる�
 Boost.Function では、仮想関数の代わりに非メンバ関数を使った、代わりの等価なアプローチをとっている。 Boost.Function オブジェクトが関数オブジェクトを呼び出すためには、本質的に 2 つのポインタを持つ必要がある。所有する関数オブジェクトへの `void` ポインタと、関数オブジェクトの「呼び出し役」への `void` ポインタ (関数ポインタが代入される) だ。 Boost.Function が提供する、引数と戻り値の変換は、この呼び出し役が実行する。第 3 のポインタは「管理者」と呼ばれる非メンバ関数を指す。これは関数オブジェクトのコピーと破棄を扱う。この方法はタイプセーフだ。なぜなら、関数オブジェクトを実際に扱う関数である呼び出し役と管理者は、関数オブジェクトの型を知らされてインスタンス化されるので、入ってくる `void` ポインタ (関数オブジェクトへのポインタ) を、正しい型に安全にキャストできるからだ。
 
 
-## <a name="acknowledgements" href="#acknowledgements">Acknowledgements</a>
+## <a id="acknowledgements" href="#acknowledgements">Acknowledgements</a>
 たくさんの人がこのライブラリの作成に参加した。 William Kempf 、 Jesse Jones 、 Karl Nelson は、ライブラリのインタフェースと守備範囲を、他のライブラリとは独立したものにする上で大きな助けになってくれた。 John Maddock は公式なレビューをやってくれた。他にもたくさんの人がレビューをして、インタフェース、実装、ドキュメントについて優れたコメントを寄せてくれた。
 
 

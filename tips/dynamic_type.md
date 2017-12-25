@@ -8,7 +8,7 @@
 - [あらゆる型の値をコンテナに入れる](#store-to-container)
 
 
-## <a name="assign" href="#assign">あらゆる型の値を代入する</a>
+## <a id="assign" href="#assign">あらゆる型の値を代入する</a>
 
 `boost::any`型には、あらゆる型の値を格納することができる。
 
@@ -43,7 +43,7 @@ int main()
 Hello
 ```
 
-## <a name="extract-value" href="#extract-value">値を取り出す</a>
+## <a id="extract-value" href="#extract-value">値を取り出す</a>
 
 `boost::any`に代入した値を取り出すには、`boost::any_cast()`関数を使用する。
 
@@ -88,7 +88,7 @@ T* x = boost::any_cast<T>(&a);
 型`T`のオブジェクトが格納されていない場合には、ヌルポインタが返される。
 
 
-## <a name="store-to-container" href="#store-to-container">あらゆる型の値をコンテナに入れる</a>
+## <a id="store-to-container" href="#store-to-container">あらゆる型の値をコンテナに入れる</a>
 
 `std::vector<boost::any>`のようにすれば、あらゆる型の値をコンテナに入れることができる。
 

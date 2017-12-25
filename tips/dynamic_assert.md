@@ -9,7 +9,7 @@
 - [検証失敗時の動作をカスタマイズする](#customize-fail-behavior)
 
 
-## <a name="assertion-expression" href="#assertion-expression">式を検証する</a>
+## <a id="assertion-expression" href="#assertion-expression">式を検証する</a>
 
 式を検証するには、`BOOST_ASSERT`マクロを使用する。このマクロは引数として条件式をとる。条件式が`true`に評価される場合は検証成功となり、`false`の場合は検証失敗と見なされる。
 
@@ -46,7 +46,7 @@ Expression: 1 != 1
 
 ```
 
-## <a name="assertion-with-message" href="#assertion-with-message">メッセージ付きで式を検証する</a>
+## <a id="assertion-with-message" href="#assertion-with-message">メッセージ付きで式を検証する</a>
 
 検証失敗時にコンパイルエラーにエラーメッセージを出力するには、`BOOST_ASSERT_MSG`マクロを使用する。基本的な使い方は`BOOST_ASSERT`と同様で、第2引数にメッセージの文字列を取る。
 
@@ -80,7 +80,7 @@ int main(int argc, char* argv[])
 これは`NDEBUG`が`#define`されているビルド（リリースビルド）では暗黙のうちに通過してしまいバグの原因となるので、あくまで簡易的なデバッグ用途に留めるべきである。
 
 
-## <a name="customize-fail-behavior" href="#customize-fail-behavior">検証失敗時の動作をカスタマイズする</a>
+## <a id="customize-fail-behavior" href="#customize-fail-behavior">検証失敗時の動作をカスタマイズする</a>
 
 `BOOST_ASSERT`での検証失敗時の動作をカスタマイズしたい場合は、以下の方法をとる：
 

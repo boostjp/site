@@ -16,13 +16,13 @@
 - [Operators](#operators)
 
 
-## <a name="introduction" href="#introduction">Introduction</a>
+## <a id="introduction" href="#introduction">Introduction</a>
 `boost::gregorian::date` クラスはライブラリユーザーにとって主要なインタフェースである。 一般に、日付クラスは代入可能ではあるが、一度構築されると不変である事が多い。
 
 日付の生成について別の方法が[date iterators](date_iterators.md)と[date algorithms or generators](date_algorithms.md)に含まれている。
 
 
-## <a name="header" href="#header">Header</a>
+## <a id="header" href="#header">Header</a>
 ```cpp
 #include "boost/date_time/gregorian/gregorian.hpp" //全ての型とI/Oを含む
 ```
@@ -33,7 +33,7 @@
 #include "boost/date_time/gregorian/gregorian_types.hpp" //型のみでI/Oは含まない
 ```
 
-## <a name="construction" href="#construction">Construction</a>
+## <a id="construction" href="#construction">Construction</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -42,7 +42,7 @@
 | `date(special_values sv)` | 無限大、無効値(not-a-date-time)、最大値、最小値を構築するコンストラクタ | `date d1(neg_infin);`<br/> `date d2(pos_infin);`<br/> `date d3(not_a_date_time);`<br/> `date d4(max_date);`<br/> `date d5(min_date);` |
 
 
-## <a name="construct-from-string" href="#construct-from-string">Construction From String</a>
+## <a id="construct-from-string" href="#construct-from-string">Construction From String</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -50,7 +50,7 @@
 | `date from_undelimited_string(const std::string&)` | 年-月-日の順のISO形式から　例:20020125 | `std::string ds("20020125");`<br/> `date d(from_string(ds))` |
 
 
-## <a name="construct-from-clock" href="#construct-from-clock">Construction From Clock</a>
+## <a id="construct-from-clock" href="#construct-from-clock">Construction From Clock</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -58,7 +58,7 @@
 | `day_clock::universal_day()` | UTC 標準時を取得する | `date d(day_clock::universal_day())` |
 
 
-## <a name="accessors" href="#accessors">Accessors</a>
+## <a id="accessors" href="#accessors">Accessors</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -73,7 +73,7 @@
 | `bool is_not_a_date() const`   | 日付が無効値(not a date)の時 `true` を返す | `date d(not_a_date_time); d.is_not_a_date() --> true;` |
 
 
-## <a name="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
+## <a id="conversion-to-string" href="#conversion-to-string">Conversion To String</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|
@@ -82,7 +82,7 @@
 | `std::string to_iso_extended_string(date d)` | YYYY-MM-DD 形式に変換                           | 2002-01-31 |
 
 
-## <a name="operators" href="#operators">Operators</a>
+## <a id="operators" href="#operators">Operators</a>
 
 | Syntax | Description | Example |
 |--------|-------------|---------|

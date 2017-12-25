@@ -25,7 +25,7 @@ Boost 多次元配列ライブラリは，多次元コンテナと，意味的�
 14. [Test Cases](#sec_testcases)
 
 
-## <a name="sec_rationale">Rationale - 原論</a>
+## <a id="sec_rationale">Rationale - 原論</a>
 
 C++ 標準ライブラリはいくつかのジェネリックなコンテナを提供するが，多次元配列型はない。
 `std::vector` を使うと "ネストしたベクタ" として N 次元配列をシミュレートできるが，巧みではなく (unwieldy) またメモリのオーバヘッドがかなりのものになり得る。
@@ -37,7 +37,7 @@ C++ 標準ライブラリはいくつかのジェネリックなコンテナを�
 Boost.MultiArray は MultiArray コンセプト (N 次元コンテナのジェネリックなインタフェース) を定義する。
 このライブラリの主なコンポーネントは MultiArray をモデル化 (model) し，同様にユーザデータを MultiArray にモデル化できるよう適合することをサポートする。
 
-## <a name="sec_related">Related Work - 関連するモノ</a>
+## <a id="sec_related">Related Work - 関連するモノ</a>
 
 [boost::array](../array.md) と [std::vector](http://www.sgi.com/tech/stl/Vector.html) はユーザデータの 1 次元コンテナである。
 両者は自分自身のメモリを管理する。
@@ -49,7 +49,7 @@ Boost.MultiArray は MultiArray コンセプト (N 次元コンテナのジェ�
 このライブラリは [boost::array](../array.md) が C の 1 次元配列に対してするように C スタイルの N 次元配列を増加する。
 (;´Д｀)? .oＯ(This library is analogous to [boost::array](../array.md) in that it augments C style N-dimensional arrays, as `boost::array` does for C one-dimensional arrays.)
 
-## <a name="sec_example">Short Example - 短いサンプル</a>
+## <a id="sec_example">Short Example - 短いサンプル</a>
 
 下は `multi_array` を使う簡潔なサンプルである:
 
@@ -81,7 +81,7 @@ int main(){
 }
 ```
 
-## <a name="sec_components">MultiArray Components</a>
+## <a id="sec_components">MultiArray Components</a>
 
 Boost.MultiArray は 3 つのユーザレベルクラステンプレートを提供する:
 
@@ -102,7 +102,7 @@ Boost.MultiArray は 3 つのユーザレベルクラステンプレートを提
 コンストラクタの引数を別にすると，`multi_array` と `multi_array_ref` は同じインタフェースをエクスポートする。
 `const_multi_array_ref` は `multi_array_ref` インタフェースの const 部分だけを提供する。
 
-## <a name="sec_assignment">Construction and Assignment - 構築と代入</a>
+## <a id="sec_assignment">Construction and Assignment - 構築と代入</a>
 
 それぞれの配列型 - [`multi_array`](http://www.boost.org/doc/libs/1_31_0/libs/multi_array/doc/reference.html#multi_array)， [`multi_array_ref`](http://www.boost.org/doc/libs/1_31_0/libs/multi_array/doc/reference.html#multi_array_ref)，そして [`const_multi_array_ref`](http://www.boost.org/doc/libs/1_31_0/libs/multi_array/doc/reference.html#const_multi_array_ref) - はコンストラクタの特殊化された集合を提供する。
 さらなる情報はリファレンスページを参照して欲しい。
@@ -112,7 +112,7 @@ Boost.MultiArray は 3 つのユーザレベルクラステンプレートを提
 const バリエーションである `const_multi_array_ref`，`const_subarray`，そして `const_array_view` は形が合致する配列にコピーする元となれる。
 代入の結果は配列中に格納されたデータの深い (要素から要素へ) コピーを成す。
 
-## <a name="sec_generators">Array View and Subarray Type Generators - 配列ビューとサブ配列生成子</a>
+## <a id="sec_generators">Array View and Subarray Type Generators - 配列ビューとサブ配列生成子</a>
 
 いくつかの場面で，`array_view` やサブ配列型へのネストした生成子を使うことは都合が悪い。
 例えば，配列型でテンプレートパラメータ化した関数の中で余計な "template" キーワードが混乱を引き起こす。
@@ -129,7 +129,7 @@ void my_function() {
 }
 ```
 
-## <a name="sec_dimensions">Specifying Array Dimensions - 配列次元の指定</a>
+## <a id="sec_dimensions">Specifying Array Dimensions - 配列次元の指定</a>
 
 Boost.MultiArray コンポーネントを作成するとき，次元の数とそれぞれの大きさを指定する必要がある。
 次元の数はいつもテンプレート引数として指定されるとしても，それぞれの大きさを指定するのにふたつの独立したメカニズムが提供される。
@@ -157,7 +157,7 @@ Boost.MultiArray コンポーネントを作成するとき，次元の数とそ
     array_type A(boost::extents[3][4][2]);
 ```
 
-## <a name="sec_access">Accessing Elements - 要素のアクセス</a>
+## <a id="sec_access">Accessing Elements - 要素のアクセス</a>
 
 Boost.MultiArray コンポーネントは，コンテナ中の指定した要素をアクセスするのに 2 通りの方法を提供する。
 最初は `operator[]` によって提供される伝統的な C 配列の記法を使うことである。
@@ -186,7 +186,7 @@ N 個のインデクスはコンテナの N 次元ぶん Collection から取得
 
 この方法は次元非依存のコードを書くのに役立ち，いくつかのコンパイラの下では `operator[]` よりも高いパフォーマンスをもたらす。
 
-## <a name="sec_views">Creating Views - ビューの作成</a>
+## <a id="sec_views">Creating Views - ビューの作成</a>
 
 Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-view) を作成する方法 (facilities) を提供する。
 オリジナル配列と同じまたはより少ない次元を保持するサブビューを作成することができる。
@@ -295,7 +295,7 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
     myarray[ boost::indices[range()][range() < 5 ][4 <= range().stride(2) <= 7] ];
 ```
 
-## <a name="sec_storage">Storage Ordering - 記憶域の順序</a>
+## <a id="sec_storage">Storage Ordering - 記憶域の順序</a>
 
 それぞれの配列クラスは，記憶域の順序を示すパラメータを受け付ける。
 これは，FORTRAN のような，標準 C と違う順序を要求するレガシーコードとの橋渡しをする際に役立つ。
@@ -331,7 +331,7 @@ Boost.MultiArray は既存の配列コンポーネントのサブビュー (sub-
   array_type A(extents[3][4][2],storage(ordering,ascending));
 ```
 
-## <a name="sec_base">Setting The Array Base - 配列起点の設定</a>
+## <a id="sec_base">Setting The Array Base - 配列起点の設定</a>
 
 いくつかの状況で，0 ベースの配列は不都合で扱いにくい。
 Boost.MultiArray コンポーネントは，配列の起点を変更するふたつの方法を提供する。
@@ -385,7 +385,7 @@ Boost.MultiArray コンポーネントは，配列の起点を変更するふた
     A.reindex(bases);
 ```
 
-## <a name="sec_reshape">Changing an Array's Shape - 配列形の変更</a>
+## <a id="sec_reshape">Changing an Array's Shape - 配列形の変更</a>
 
 Boost.MultiArray は配列形を変更する操作を提供する。
 次元の数が同じでなければならない，要素の総数を保持する限り，配列形は変更され得る。
@@ -404,12 +404,12 @@ Boost.MultiArray は配列形を変更する操作を提供する。
 
 配列の再成形はインデクス付けに影響を与えないことに注意すること。
 
-## <a name="sec_concepts">MultiArray Concept - MultiArray コンセプト</a>
+## <a id="sec_concepts">MultiArray Concept - MultiArray コンセプト</a>
 
 Boost.MultiArray は [MultiArray](http://www.boost.org/doc/libs/1_31_0/libs/multi_array/doc/reference.html#MultiArray) コンセプトを定義し，使用する。
 これは N 次元コンテナのインタフェースを指定する。
 
-## <a name="sec_testcases">Test Cases - テストケース</a>
+## <a id="sec_testcases">Test Cases - テストケース</a>
 
 Boost.MultiArray には，同ライブラリの機能とセマンティクスを学習できるテストケースが一揃い付属する。
 このテストケースの記述は[ここ](http://www.boost.org/doc/libs/1_31_0/libs/multi_array/doc/test_cases.html)ある。

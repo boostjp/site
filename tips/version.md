@@ -4,7 +4,7 @@
 - [基本的な使い方](#basic-usage)
 
 
-## <a name="basic-usage" href="#basic-usage">基本的な使い方</a>
+## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
 
 ```cpp example
 #include <boost/version.hpp>

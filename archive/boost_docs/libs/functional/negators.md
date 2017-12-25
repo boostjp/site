@@ -16,7 +16,7 @@ functional.hpp ヘッダは C++ 標準 (§20.3.5) 由来のネゲータアダプ
 それらは引数や適合された関数に渡す引数を宣言する最上の方法を決するため、Boost の [call traits](../utility/call_traits.md.nolink) を用いる。([下記](#arguments)参照)
 
 
-## <a name="usage" href="#usage">Usage</a>
+## <a id="usage" href="#usage">Usage</a>
 使い型は標準ネゲータと同様である。例えば、
 
 ```cpp
@@ -28,7 +28,7 @@ std::find_if(c.begin(), c.end(), boost::not1(bad));
 ```
 
 
-## <a name="arguments" href="#arguments">Argument Types</a>
+## <a id="arguments" href="#arguments">Argument Types</a>
 C++ 標準 (§20.3.5) は unary negate をこのように定義 している。(binary negate も似ている):
 
 ```cpp
@@ -56,7 +56,7 @@ bool operator()(typename call_traits<typename Predicate::argument_type>::param_t
 我々は望ましい結果を引き出した - 参照の参照を生み出すことなく、効率性を得たのだ。実のところ、実際の宣言は関数オブジェクト特性を使うためもう少し複雑である。しかし効果は同様である。
 
 
-## <a name="limitations" href="#limitations">Limitations</a>
+## <a id="limitations" href="#limitations">Limitations</a>
 この関数オブジェクト特性の両方と call traits はこの改良を実現するために使われる関数オブジェクト特性と `call_traits` の両方が部分特殊化版に頼っているので、この改良は部分特殊化版の機能を持つコンパイラでのみ有効である。 そうでないコンパイラでは、このライブラリのネゲータは標準内のそれらと非常に似た振る舞いをする - 関数に適合するために `ptr_fun` が必要であるし、参照の参照は避けられないだろう。
 
 

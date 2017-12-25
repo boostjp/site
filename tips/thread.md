@@ -17,7 +17,7 @@
 - [ハードウェアの並列度を取得する](#hardware-concurrency)
 
 
-## <a name="create-thread" href="#create-thread">スレッドを生成(開始)する</a>
+## <a id="create-thread" href="#create-thread">スレッドを生成(開始)する</a>
 Boost.Threadを用いて新しいスレッドを作成するには、`thread`クラスに関数や関数オブジェクトを渡して`thread`オブジェクトを構築する。新しいスレッド上では、コンストラクタに指定した関数(または関数オブジェクト)が呼び出される。
 
 (何も渡さずに構築すると、どのスレッドでもない状態(Not-A-Thread)を表す`thread`オブジェクトになる。)
@@ -37,7 +37,7 @@ void f1() {
 ```
 
 
-<a name="create-thread-with-argument" href="#create-thread-with-argument">引数付きでスレッドを生成(開始)する</a>
+<a id="create-thread-with-argument" href="#create-thread-with-argument">引数付きでスレッドを生成(開始)する</a>
 新しいスレッド上で引数をとる関数や関数オブジェクトを呼び出す場合は、コンストラクタにスレッドで呼び出す関数に続いて実引数を渡すことで、引数付きの新しいスレッドを作成することが出来る。
 
 ```cpp
@@ -48,7 +48,7 @@ thread(F f, A1 a1, A2 a2,...);
 (これは`thread(boost::bind(f, a1, s2...))`のように動作する。引数無しスレッド作成の時と同じように、実引数のコピーを避けたい場合は`boost::ref()`関数を利用する。)
 
 
-## <a name="create-thread-member-function" href="#create-thread-member-function">[応用]オブジェクトのメンバ関数でスレッドを生成(開始)する</a>
+## <a id="create-thread-member-function" href="#create-thread-member-function">[応用]オブジェクトのメンバ関数でスレッドを生成(開始)する</a>
 新しいスレッド上でクラスオブジェクトのメンバ関数を呼び出す場合、コンストラクタの第1引数にメンバ関数ポインタを、第2引数にクラスオブジェクトのポインタを指定する。(引数付きスレッドの応用例となっている。)
 
 ```cpp
@@ -67,7 +67,7 @@ void f()
 作成されたスレッドでの処理期間と、スレッドに渡したオブジェクトの生存期間に注意すること。別スレッド処理中にオブジェクト生存期間が終了してデストラクトされた場合、未定義の動作を引き起こしてしまう。
 
 
-## <a name="move-ownership" href="#move-ownership">スレッドの所有権を移動する</a>
+## <a id="move-ownership" href="#move-ownership">スレッドの所有権を移動する</a>
 Boost.Thradでは、1つの`thread`オブジェクトが1つのスレッドあるいはNot-A-Threadを表しているので`thread`オブジェクトのコピーはできないが、ムーブは可能である。
 
 (コンパイラが右辺値参照をサポートしていればC++11のムーブを、そうでなければエミュレーションによってムーブの機能を提供する。)
@@ -87,7 +87,7 @@ void f2() {
 あるいは`boost::thread::swap()`関数によって2つの`thread`オブジェクトを交換することも出来る。
 
 
-## <a name="terminate" href="#terminate">スレッドを破棄(終了)する</a>
+## <a id="terminate" href="#terminate">スレッドを破棄(終了)する</a>
 作成されたスレッドは、通常その関数や関数オブジェクトの呼び出しが完了するか、プログラムが終了するまで実行を継続する。
 
 `thread`オブジェクトが破棄(デストラクト)されるときには、単にそれが表すスレッドを`detach()`するだけであり、`detach()`されたスレッドが、`thread`オブジェクトの破棄に伴って即座に破棄されるわけではない。
@@ -96,11 +96,11 @@ void f2() {
 (`boost::thread::interrupt()`メンバ関数を使用することで、スレッドを中断することが出来る。)
 
 
-## <a name="detach" href="#detach">スレッドを手放す</a>
+## <a id="detach" href="#detach">スレッドを手放す</a>
 `boost::thread::detach()`メンバ関数を使用することで、`thread`オブジェクトが表しているスレッドを`thread`オブジェクトから手放すことが出来る。(`boost::thread::detach`メンバ関数呼び出しは`thread`オブジェクトとスレッドの対応付けを解除するだけであり、この操作によって実行中のスレッド処理が中断することはない。)
 
 
-## <a name="join" href="#join">他スレッドの終了を待機する</a>
+## <a id="join" href="#join">他スレッドの終了を待機する</a>
 `boost::thread::join()`メンバ関数を使用することで、その`thread`オブジェクトが表しているスレッドの終了を待機することが出来る。
 
 `boost::thread::timed_join()`メンバ関数を使用することで、指定した時間(あるいは時刻まで)スレッドの終了を待機することが出来る。
@@ -117,7 +117,7 @@ void f3() {
 ```
 
 
-## <a name="interrupt" href="#interrupt">スレッドを中断する</a>
+## <a id="interrupt" href="#interrupt">スレッドを中断する</a>
 実行中のスレッドに対して他スレッドから処理中断させる場合、下記2通りの実装方法が考えられる。
 
 1. Boost.Threadが提供している中断機構を利用する。
@@ -142,19 +142,19 @@ void f3() {
 なお`boost::thread::disable_interruption`クラスによって、上記操作での`interruption`を一時的に無効化することが出来る。
 
 
-## <a name="sleep" href="#sleep">自スレッドを一時停止(休眠)する</a>
+## <a id="sleep" href="#sleep">自スレッドを一時停止(休眠)する</a>
 `boost::thread::sleep()`静的メンバ関数を使用することで、この関数を呼び出した現在のスレッドを指定時刻まで、あるいは指定時間だけ一時停止(休眠)することが出来る。
 
 `boost::this_thread`名前空間にある同名の非メンバ関数を使用して、同様に指定時刻まで、あるいは指定時間だけスレッドを一時停止(休眠)することも出来る。
 
 
-## <a name="yield" href="#yield">自スレッドの実行を他スレッドに譲る</a>
+## <a id="yield" href="#yield">自スレッドの実行を他スレッドに譲る</a>
 `boost::thread::yield()`静的メンバ関数を使用することで、OSスケジューラから自スレッドに割り当てられたタイムスライスの残りを手放して、他の実行スレッドに処理を譲ることができる。
 
 `boost::this_thread`名前空間にある同名の非メンバ関数も同様である。
 
 
-## <a name="thread-handle" href="#thread-handle">スレッドのハンドルを取得する</a>
+## <a id="thread-handle" href="#thread-handle">スレッドのハンドルを取得する</a>
 `boost::thread::native_handle`メンバ関数を使用することで、スレッドからそのプラットフォーム固有のhandleを取得することが出来る。
 
 ```cpp
@@ -166,7 +166,7 @@ void f4() {
 ```
 
 
-## <a name="hardware-concurrency" href="#hardware-concurrency">ハードウェアの並列度を取得する</a>
+## <a id="hardware-concurrency" href="#hardware-concurrency">ハードウェアの並列度を取得する</a>
 `boost::thread::hardware_concurrency()`静的メンバ関数を使用することで、(たとえばCPUの数やコアの数やhyperthreading unitの数などから)現在のシステムで利用可能なhardware threadの数を取得することが出来る。
 
 

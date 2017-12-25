@@ -25,7 +25,7 @@
 	- [3.5 ある範囲全体の結果を文字列として得たい](#reverse-as-string)
 
 
-## <a name="api" href="#api">API</a>
+## <a id="api" href="#api">API</a>
 
 構文解析の実施は `parse()` 関数、あるいは `phrase_parse()` 関数を呼び出すことによって行う。`parse()` 関数と `phrase_parse()` 関数の違いは、`phrase_parse()` が空白等の読み飛ばし(後述する`Skipper`)を行う一方、`parse()` 関数は読み飛ばしを行わない点である。`phrase_parse()` については[空白等を読み飛ばす](#skip)を参照。
 
@@ -74,7 +74,7 @@ bool success = qi::parse(
 if (success) { std::cout << "OK" << std::endl; } // OK が出力される
 ```
 
-### <a name="check-all-consume" href="#check-all-consume">1.1 入力を全て消費したかを確認する</a>
+### <a id="check-all-consume" href="#check-all-consume">1.1 入力を全て消費したかを確認する</a>
 `parse()` 関数、`phrase_parse()` 関数の第1引数であるイテレータへの参照は、解析中に更新されていく。そのため構文解析中に入力が全て消費されたか確認したい場合は、第2引数に渡した値と比較すれば良い。
 
 ```cpp
@@ -99,7 +99,7 @@ if (success && first == last) { std::cout << "OK" << std::endl; } // OK が出�
 ```
 
 
-### <a name="skip" href="#skip">1.2 空白等を読み飛ばす</a>
+### <a id="skip" href="#skip">1.2 空白等を読み飛ばす</a>
 前述の通り `phrase_parse()` 関数を用いる。関数呼び出しの際にどのような内容を読み飛ばすかを第4引数にルールの形で指定する(`Skipper` と呼ばれる)。非終端記号（後述）を使用している場合は、その非終端記号の型に `Skipper` の型を指定してやる必要があることに注意（FAQ）。
 
 ```cpp
@@ -158,7 +158,7 @@ if (success) { std::cout << "OK" << std::endl; } // 最初の空白で失敗す�
 ```
 
 
-### <a name="get-parsed-result" href="#get-parsed-result">1.3 解析された値を受け取る</a>
+### <a id="get-parsed-result" href="#get-parsed-result">1.3 解析された値を受け取る</a>
 `parse()` 関数、`phrase_parse()` 関数のいずれも追加で読み取った値を受け取る変数を渡すことができる。複数の値を読み取る場合は複数の変数を渡すことができる。
 
 ```cpp
@@ -184,11 +184,11 @@ if (success) { // OK: 123, 456 が出力される
 ```
 
 
-## <a name="rule" href="#rule">2 ルール</a>
+## <a id="rule" href="#rule">2 ルール</a>
 ルールはプリミティブ、ディレクティブ、演算子を組み合わせることによって表現される。
 
 
-### <a name="primitive" href="#primitive">2.1 プリミティブ</a>
+### <a id="primitive" href="#primitive">2.1 プリミティブ</a>
 - 文字を読むプリミティブのリストについては [Character Parsers](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/spirit/qi/quick_reference/qi_parsers/char.html) を参照。
 - 数値を読むプリミティブのリストについては [Numeric Parsers](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/spirit/qi/quick_reference/qi_parsers/numeric.html) を参照。
 - 文字列を読むプリミティブのリストについては [String Parsers](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/spirit/qi/quick_reference/qi_parsers/string.html) を参照。
@@ -198,23 +198,23 @@ if (success) { // OK: 123, 456 が出力される
 **※後で適当に丸めて翻訳して入れる**
 
 
-### <a name="directive" href="#directive">2.2 ディレクティブ</a>
+### <a id="directive" href="#directive">2.2 ディレクティブ</a>
 - ディレクティブのリストは [Parser Directives](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/spirit/qi/quick_reference/qi_parsers/directive.html) を参照。
 
 **※後で翻訳して入れる**
 
 
-### <a name="operator" href="#operator">2.3 演算子</a>
+### <a id="operator" href="#operator">2.3 演算子</a>
 - 演算子のリストは [Parser Operators](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/spirit/qi/quick_reference/qi_parsers/operator.html) を参照。
 - 属性（読み取る値）の型については [Compound Attribute Rules](http://www.boost.org/doc/libs/release/libs/spirit/doc/html/spirit/qi/quick_reference/compound_attribute_rules.html) を参照。 
 
 **※後で翻訳して入れる**
 
 
-### <a name="semantic-action" href="#semantic-action">セマンティックアクション</a>
+### <a id="semantic-action" href="#semantic-action">セマンティックアクション</a>
 
 
-### <a name="nonterminal" href="#nonterminal">非終端記号</a>
+### <a id="nonterminal" href="#nonterminal">非終端記号</a>
 `rule`型を用いることで、ルールに名前をつけることができる。
 
 ```cpp
@@ -250,9 +250,9 @@ struct mygrammar : qi::grammar<Iterator, A1, A2, A3> // start_rule の template 
 ```
 
 
-## <a name="reverse-reference" href="#reverse-reference">3 逆引き</a>
+## <a id="reverse-reference" href="#reverse-reference">3 逆引き</a>
 
-### <a name="reverse-skip" href="#reverse-skip">3.1 空白等を読み飛ばしたい</a>
+### <a id="reverse-skip" href="#reverse-skip">3.1 空白等を読み飛ばしたい</a>
 `phrase_parse()` と `Skipper` を使う。`rule`型 や `grammar`型 を使う場合は `Skipper` の型を指定する必要があることに注意すること。
 
 ```cpp
@@ -281,7 +281,7 @@ if (success) { std::cout << "OK" << std::endl; } // OK が出力される
 * qi::space[color ff0000]
 
 
-### <a name="reverse-find" href="#reverse-find">3.2 特定の文字列で終了する部分まで読み出したい</a>
+### <a id="reverse-find" href="#reverse-find">3.2 特定の文字列で終了する部分まで読み出したい</a>
 文字列 `"end"` までの任意の文字列(`"end"` を含まない)を読み出したい場合は以下のようなルールを用いれば良い。読み飛ばしたい場合は `qi::omit` ディレクティブを使えばよい。
 
 ```cpp
@@ -289,7 +289,7 @@ if (success) { std::cout << "OK" << std::endl; } // OK が出力される
 ```
 
 
-### <a name="reverse-default-value" href="#reverse-default-value">3.3 デフォルト値を与えたい</a>
+### <a id="reverse-default-value" href="#reverse-default-value">3.3 デフォルト値を与えたい</a>
 例えば文字列 `"value:"` に続いて数値がある場合はその数値を、ない場合はデフォルト値 `42` を返したい場合は以下のように `qi::attr` を使用すればよい。省略された場合にさらに数値が続く場合は省略されているか否かが判別できずにうまくいかない（場合が多い）ので注意。
 
 ```cpp
@@ -298,7 +298,7 @@ qi::lit("value:") >> (qi::int_ | qi::attr(42) )
 * attr[color ff0000]
 
 
-### <a name="reverse-check-condition" href="#reverse-check-condition">3.4 条件によって構文解析を途中で失敗させたい</a>
+### <a id="reverse-check-condition" href="#reverse-check-condition">3.4 条件によって構文解析を途中で失敗させたい</a>
 通常は何もせず常に成功するプリミティブ `qi::eps` （※特定のタイミングでセマンティックアクションを実行させたい場合等に使う）に遅延評価される引数を与えることで実現できる。
 
 ```cpp
@@ -310,7 +310,7 @@ qi::rule<> rule = qi::int_[phx::ref(n) = qi::_1] >> qi::eps(phx::ref(n) != 42);
 * eps[color ff0000]
 
 
-### <a name="reverse-as-string" href="#reverse-as-string">3.5 ある範囲全体の結果を文字列として得たい</a>
+### <a id="reverse-as-string" href="#reverse-as-string">3.5 ある範囲全体の結果を文字列として得たい</a>
 例えば改行で終端される空白区切りの文字列を得たい場合、
 
 ```cpp
