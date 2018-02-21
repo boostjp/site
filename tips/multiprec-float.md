@@ -84,11 +84,11 @@ Boost.Multiprecisionの多倍長浮動小数点数は、以下の演算をサポ
 ```cpp
 // 仮数部1,000ビットを持つ浮動小数点数の定義
 namespace mp = boost::multiprecision;
-typedef mp::number<mp:cpp_dec_float<1000> > cpp_dec_float_1000;
+typedef mp::number<mp::cpp_dec_float<1000> > cpp_dec_float_1000;
 
 // 仮数部1,000ビット、指数部64ビットを持つ浮動小数点数の定義
 namespace mp = boost::multiprecision;
-typedef mp::number<mp:cpp_dec_float<1000, std::uint64_t> > cpp_dec_float_1000_64exp;
+typedef mp::number<mp::cpp_dec_float<1000, std::uint64_t> > cpp_dec_float_1000_64exp;
 ```
 
 独自実装の多倍長浮動小数点数の特徴：
@@ -118,7 +118,7 @@ typedef mp::number<mp:cpp_dec_float<1000, std::uint64_t> > cpp_dec_float_1000_64
 ```cpp
 // 仮数部が10,000ビットの浮動小数点数型の定義
 namespace mp = boost::multiprecision;
-typedef mp::number<mp:gmp_float<10000> > mpf_dec_float_10000;
+typedef mp::number<mp::gmp_float<10000> > mpf_dec_float_10000;
 ```
 
 `gmp_float`のテンプレート引数として0を指定すると、任意長の仮数部が表現可能になる。
@@ -162,7 +162,7 @@ GMP多倍長浮動小数点数の特徴：
 ```cpp
 // 仮数部を10,000ビットの浮動小数点数型の定義
 namespace mp = boost::multiprecision;
-typedef mp::number<mp:mpfr_float_backend<10000> > mpf_dec_float_10000;
+typedef mp::number<mp::mpfr_float_backend<10000> > mpf_dec_float_10000;
 ```
 
 `mpfr_float_backend`の第2テンプレート引数として`boost::multiprecision::allocate_stack`列挙値を指定することで、動的メモリ確保を行わない多倍長浮動小数点数型の定義ができる。
