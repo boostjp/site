@@ -403,5 +403,5 @@
 - Miscellanea
 	- syntax highlighting
 	- acknowledgements
-	- bibliography
+	- [参考文献](preprocessor/bibliography.md)
 
