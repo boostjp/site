@@ -34,7 +34,7 @@ BOOST_PP_DEF(/)
 ### 注意:
 
 別の演算子を定義することによってこの例を拡張することができる。
-それをする前に、*algebraic categories* (文献 [[Barton]](bibliography.md#barton) で紹介されている)や *layered architecture* (例えば文献 [[Czarnecki]](bibliography.html#czarnecki)) を使うことを考慮せよ。
+それをする前に、*algebraic categories* (文献 [[Barton]](../bibliography.md#barton) で紹介されている)や *layered architecture* (例えば文献 [[Czarnecki]](../bibliography.md#czarnecki)) を使うことを考慮せよ。
 しかしながら、演算子トークン `*`, `/`, `+`, `-`, 等はテンプレートによっては生成できないから、これらのトークンをどこかに書く必要が出て来るだろう。
 そのトークンの反復(*categorical repetition*)はテンプレートメタプログラミングによって除去できる。
 
@@ -222,7 +222,7 @@ BOOST_PP_REPEAT(ARITHMETIC_TYPE_CNT, BOOST_PP_DEF, _)
 
 ### 注意:
 
-上の例の繰り返しはテンプレートメタプログラミング [[Czarnecki]](bibliography.html#czarnecki) によっても除去できる。
+上の例の繰り返しはテンプレートメタプログラミング [[Czarnecki]](../bibliography.md#czarnecki) によっても除去できる。
 しかしながら演算子トークンの categorical repetition はテンプレートメタプログラミングによっては完全に除去できない。
 
 ## 例 - BOOST_PP_REPEAT を使って*O*(*n* * *n*)の繰り返しを除去する。
