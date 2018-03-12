@@ -41,5 +41,5 @@ Elements of a *seq* can be extracted with `BOOST_PP_SEQ_ELEM`.
 
 ## Primitives
 
-- [`BOOST_PP_SEQ_ELEM`](../ref/seq_elem.md)
+- `BOOST_PP_SEQ_ELEM`
 

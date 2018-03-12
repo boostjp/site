@@ -39,7 +39,7 @@ Header: &lt;boost/preprocessor/iteration/iterate.hpp&gt;
 #endif
 ```
 * BOOST_PP_IS_ITERATING[link is_iterating.md]
-* BOOST_PP_ITERATION_PARAMS_1[link iterations_params_x.md]
+* BOOST_PP_ITERATION_PARAMS_1[link iteration_params_x.md]
 * BOOST_PP_ITERATE[link iterate.md]
 * BOOST_PP_ITERATION_DEPTH[link iteration_depth.md]
 * BOOST_PP_ITERATION[link iteration.md]
