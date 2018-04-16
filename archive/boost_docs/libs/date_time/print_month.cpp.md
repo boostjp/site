@@ -28,7 +28,7 @@ int
 main()
 {
   std::cout << "Enter Year: ";
-  int 
+  int year, month;
   std::cin >> year;
   std::cout << "Enter Month(1..12): ";
   std::cin >> month;
@@ -36,7 +36,7 @@ main()
   using namespace boost::gregorian;
   try {
     //Use the calendar to get the last day of the month
-    int eom_day = gregorian_calendar::end_of_month_day(
+    int eom_day = gregorian_calendar::end_of_month_day(year,month);
     date endOfMonth(year,month,eom_day);
 
     //construct an iterator starting with firt day of the month
