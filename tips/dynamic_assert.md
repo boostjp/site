@@ -48,7 +48,7 @@ Expression: 1 != 1
 
 ## <a id="assertion-with-message" href="#assertion-with-message">メッセージ付きで式を検証する</a>
 
-検証失敗時にコンパイルエラーにエラーメッセージを出力するには、`BOOST_ASSERT_MSG`マクロを使用する。基本的な使い方は`BOOST_ASSERT`と同様で、第2引数にメッセージの文字列を取る。
+検証失敗時にエラーメッセージを出力するには、`BOOST_ASSERT_MSG`マクロを使用する。基本的な使い方は`BOOST_ASSERT`と同様で、第2引数にメッセージの文字列を取る。
 
 ```cpp example
 #include <boost/assert.hpp>
