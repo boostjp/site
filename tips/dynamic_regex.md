@@ -39,7 +39,7 @@ int main()
 {
     std::string hello = "Hello World!";
 
-    sregex rex = sregex::compile("(\w+) (\w+)!");
+    sregex rex = sregex::compile("(\\w+) (\\w+)!");
     smatch what;
     if (regex_match(hello, what, rex)) {
         std::cout << what[0] << std::endl; // マッチ全体
