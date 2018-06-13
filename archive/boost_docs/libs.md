@@ -19,6 +19,7 @@
 | [functional](libs/functional.md) | 機能強化された関数オブジェクトアダプタ。 Mark Rodgers 作 |
 | [graph](libs/graph.md) | 汎用グラフコンポーネント及びアルゴリズム。 Jeremy Siek and a University of Notre Dame team 作 |
 | [io state savers](libs/io/ios_state.md) | 入出力の状態を保存して、データが化けるのを防ぐ。 Daryle Walker 作 |
+| [lambda](libs/lambda.md) | 実際の呼び出し時の、小さな無名関数オブジェクトの定義。, from Jaakko Jävi and Gary Powell. |
 | [math](libs/math.md) | 数学の領域での多くの貢献。様々な作者による。 |
 | [muti_array](libs/multi_array.md) | メモリ上で連続したデータの配列のための多次元コンテナとアダプタ。 Ron Garcia 作 |
 | [preprocessor](libs/preprocessor.md) | 繰り返しと再帰を含むプリプロセッサメタプログラミングツール群。 Vesa Karvonen 作 |
