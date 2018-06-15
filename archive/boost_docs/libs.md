@@ -28,5 +28,6 @@
 | [signals](libs/signals.md) | 管理されたシグナルとスロットのコールバックでの実装。 Doug Gregor 作 |
 | [static_assert](libs/static_assert.md) | 静的アサート(コンパイル時アサート)。 John Maddock 作 |
 | [smart_ptr](libs/smart_ptr.md) | 5つのスマートポインタクラステンプレート Greg Colvin, Beman Dawes, Peter Dimov, and Darin Adler 作 |
+| [tuple](libs/tuple.md) | 数の値を返す関数の簡単な定義など。 Jaakko Javi 作 |
 | [type_traits](libs/type_traits.md) | 型の基本的な特徴のためのテンプレート。 John Maddock, Steve Cleary, et al 作 |
 
