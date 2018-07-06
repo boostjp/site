@@ -20,7 +20,9 @@
 - 標準コンテナで保持できない
 - `new []`で確保した配列を保持することはできない
 - 不完全型や`void`をテンプレート引数に与えることはできない
-- 解放の方法を自分で決めることはできない共有する必要がない`new []`で確保したオブジェクトを保持する場合は`scoped_array`を使う。デリーターがどうしても必要な場合はBoost.Interprocessの`scoped_ptr`/`scoeped_array`を使用すると良い。
+- 解放の方法を自分で決めることはできない共有する必要がない
+- `new []`で確保したオブジェクトを保持する場合は`scoped_array`を使う
+- デリーターがどうしても必要な場合はBoost.Interprocessの`scoped_ptr`/`scoeped_array`を使用すると良い
 
 `scoped_ptr`のサンプル：
 ```cpp example
