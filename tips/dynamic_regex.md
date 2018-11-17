@@ -75,7 +75,7 @@ int main()
 {
     std::string str = "私は1973/5/30の午前7時に生まれた。";
 
-    sregex rex = sregex::compile("(\d{4})/(\d{1,2})/(\d{1,2})");
+    sregex rex = sregex::compile("(\\d{4})/(\\d{1,2})/(\\d{1,2})");
     smatch what;
     if (regex_search(str, what, rex)) {
         std::cout << what[0] << std::endl; // マッチ全体
@@ -121,7 +121,7 @@ int main()
 {
     std::string str = "私は1973/5/30の午前7時に生まれた。";
 
-    sregex date = sregex::compile("\d{4}/\d{1,2}/\d{1,2}");
+    sregex date = sregex::compile("\\d{4}/\\d{1,2}/\\d{1,2}");
     std::string format = "<date>$&</date>";
 
     str = regex_replace(str, date, format);
