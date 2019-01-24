@@ -149,7 +149,7 @@ int main()
 
 
 ### <a id="equality-comparable" href="#equality-comparable">等値比較の演算子を自動定義する</a>
-等値比較の演算子、すなわち、`operator==()`、`operator!=()`は、`boost::equality_comprable`を`private`継承することにより、`operator==()`だけを定義すれば、関連する`operator!=()`が自動的に定義される。
+等値比較の演算子、すなわち、`operator==()`、`operator!=()`は、`boost::equality_comparable`を`private`継承することにより、`operator==()`だけを定義すれば、関連する`operator!=()`が自動的に定義される。
 
 
 **メンバ関数として定義する場合**
