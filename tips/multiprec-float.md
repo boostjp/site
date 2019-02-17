@@ -87,7 +87,7 @@ namespace mp = boost::multiprecision;
 typedef mp::number<mp::cpp_dec_float<1000> > cpp_dec_float_1000;
 
 // 10進数の桁数が1,000、数の指数を表す符号付き整数型がstd::int64_t(64bit)の浮動小数点数の定義
-// テンプレートの第二引数は、少なくとも2バイトで16ビット幅の組み込みの符号付き整数型でなければなりません
+// テンプレートの第二引数は、少なくとも2バイトで16ビット幅の組み込みの符号付き整数型を指定する
 namespace mp = boost::multiprecision;
 typedef mp::number<mp::cpp_dec_float<1000, std::int64_t> > cpp_dec_float_1000_64exp;
 ```
@@ -147,7 +147,7 @@ GMP多倍長浮動小数点数の特徴：
 | `mpfr_float_100`  | 10進数の桁数が100の浮動小数点数型   |
 | `mpfr_float_500`  | 10進数の桁数が500の浮動小数点数型   |
 | `mpfr_float_1000` | 10進数の桁数が1,000の浮動小数点数型 |
-| `mpfr_float`      | 10進数の桁数が使用可能な浮動小数点数型  |
+| `mpfr_float`      | 可変制度で使用可能な浮動小数点数型  |
 
 
 動的メモリ確保を行わない多倍長浮動小数点数
