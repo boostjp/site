@@ -81,15 +81,15 @@ int main()
   std::cout << 1 << " ";
   coro_t::push_type sink(func); // コンストラクタはコルーチン関数に入らない
   sink(2); // {2}をコルーチン関数に push する
-  std::cout << 3 << " ";
-  sink(4); // {4}をコルーチン関数に push する
-  std::cout << 5 << " ";
+  std::cout << 4 << " ";
+  sink(5); // {5}をコルーチン関数に push する
+  std::cout << 6 << " ";
 }
 ```
 
 実行結果：
 ```
-1 2 3 4 5
+1 2 3 4 5 6
 ```
 
 ## <a id="range_iterator" href="#range_iterator">範囲イテレータを使う</a>
@@ -97,7 +97,7 @@ int main()
 Boost.Coroutine2 は出力反復子と入力反復子を提供している。
 
 ### <a id="input_iterator" href="#input_iterator">入力反復子</a>
-`coroutine<>::pull_type`は、`std::begin()`および`std::end()`を使用して、入力反復子を介して使用できる。
+入力反復子は、`coroutine<>::pull_type`から作成できる。
 
 ```cpp example
 #include <boost/coroutine2/coroutine.hpp>
