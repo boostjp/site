@@ -98,7 +98,7 @@
 - [有限状態マシン](/tips/finite_state_machine.md)
 - [スコープを抜ける際に実行されるブロック](/tips/scope_guard.md)
 - [シグナル／スロット](/tips/signals.md)
-- コルーチン
+- [コルーチン](/tips/coroutine.md)
 
 
 ## <a id="memory" href="#memory">メモリ</a>
