@@ -110,7 +110,7 @@
 | Static Assert      | ヘッダオンリー |  |  |
 | String Algo        | ヘッダオンリー |  |  |
 | Swap               | ヘッダオンリー |  |  |
-| System             | ビルドが必要 |  | 以下のマクロをdefineすることでヘッダオンリーとして使用可能。 `BOOST_ERROR_CODE_HEADER_ONLY`、`BOOST_SYSTEM_NO_LIB` |
+| System             | ヘッダオンリー |  | ただし Boost 1.69.0 以降のみ。Boost 1.68.0 以前の場合はビルドが必要。Boost 1.68.0 以前の場合、以下のマクロをdefineすることでヘッダオンリーとして使用可能。 `BOOST_ERROR_CODE_HEADER_ONLY`、`BOOST_SYSTEM_NO_LIB` |
 | Test | ビルドが必要 |  | minimal test、もしくは`boost/test/included`以下のヘッダをインクルードすることで、ヘッダオンリーとして使用可能。 |
 | Thread             | ビルドが必要   | System, Chrono |  |
 | Timer              | ヘッダオンリー |  |  |
