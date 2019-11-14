@@ -64,14 +64,17 @@ bool parse(
 
 namespace qi = boost::spirit::qi;
 
-std::string s("123 456");
-std::string::iterator first = s.begin(), last = s.end();
-bool success = qi::parse(
-    first,
-    last,
-    qi::int_
-);
-if (success) { std::cout << "OK" << std::endl; } // OK が出力される
+int main() {
+
+    std::string s("123 456");
+    std::string::iterator first = s.begin(), last = s.end();
+    bool success = qi::parse(
+        first,
+        last,
+        qi::int_
+    );
+    if (success) { std::cout << "OK" << std::endl; } // OK が出力される
+}
 ```
 
 ### <a id="check-all-consume" href="#check-all-consume">1.1 入力を全て消費したかを確認する</a>
@@ -84,18 +87,20 @@ if (success) { std::cout << "OK" << std::endl; } // OK が出力される
 
 namespace qi = boost::spirit::qi;
 
-std::string s("123 456");
-std::string::iterator first = s.begin(), last = s.end();
-bool success = qi::parse(
-    first,
-    last,
-    qi::int_
-);
-if (success && first == last) { std::cout << "OK" << std::endl; } // OK は出力されない
+int main() {
+    std::string s("123 456");
+    std::string::iterator first = s.begin(), last = s.end();
+    bool success = qi::parse(
+        first,
+        last,
+        qi::int_
+    );
+    if (success && first == last) { std::cout << "OK" << std::endl; } // OK は出力されない
 
-s = "123"; first = s.begin(); last = s.end();
-success = qi::parse(first, last, qi::int_);
-if (success && first == last) { std::cout << "OK" << std::endl; } // OK が出力される
+    s = "123"; first = s.begin(); last = s.end();
+    success = qi::parse(first, last, qi::int_);
+    if (success && first == last) { std::cout << "OK" << std::endl; } // OK が出力される
+}
 ```
 
 
@@ -141,20 +146,22 @@ bool phrase_parse(
 
 namespace qi = boost::spirit::qi;
 
-std::string s("   123");
-std::string::iterator first = s.begin(), last = s.end();
-bool success = qi::phrase_parse(
-    first,
-    last,
-    qi::int_,
-    qi::space // Skipper この場合は任意の空白
-              // 勝手に繰り返し呼び出されるので繰り返し分を明示的に指定する必要はない
-);
-if (success) { std::cout << "OK" << std::endl; } // OK が出力される
+int main() {
+    std::string s("   123");
+    std::string::iterator first = s.begin(), last = s.end();
+    bool success = qi::phrase_parse(
+        first,
+        last,
+        qi::int_,
+        qi::space // Skipper この場合は任意の空白
+                // 勝手に繰り返し呼び出されるので繰り返し分を明示的に指定する必要はない
+    );
+    if (success) { std::cout << "OK" << std::endl; } // OK が出力される
 
-first = s.begin();
-success = qi::parse(first, last, qi::int_);
-if (success) { std::cout << "OK" << std::endl; } // 最初の空白で失敗するため OK は出力されない
+    first = s.begin();
+    success = qi::parse(first, last, qi::int_);
+    if (success) { std::cout << "OK" << std::endl; } // 最初の空白で失敗するため OK は出力されない
+}
 ```
 
 
@@ -168,18 +175,20 @@ if (success) { std::cout << "OK" << std::endl; } // 最初の空白で失敗す�
 
 namespace qi = boost::spirit::qi;
 
-std::string s("123 456");
-std::string::iterator first = s.begin(), last = s.end();
-int n1, n2;
-bool success = qi::phrase_parse(
-    first,
-    last,
-    qi::int_ >> qi::int_, // 2つの整数
-    qi::space,
-	n1, n2                // 読み取った値の格納先
-);
-if (success) { // OK: 123, 456 が出力される
-    std::cout << "OK: " << n1 << ", " << n2 << std::endl;
+int main() {
+    std::string s("123 456");
+    std::string::iterator first = s.begin(), last = s.end();
+    int n1, n2;
+    bool success = qi::phrase_parse(
+        first,
+        last,
+        qi::int_ >> qi::int_, // 2つの整数
+        qi::space,
+        n1, n2                // 読み取った値の格納先
+    );
+    if (success) { // OK: 123, 456 が出力される
+        std::cout << "OK: " << n1 << ", " << n2 << std::endl;
+    }
 }
 ```
 
@@ -262,19 +271,22 @@ struct mygrammar : qi::grammar<Iterator, A1, A2, A3> // start_rule の template 
 
 namespace qi = boost::spirit::qi;
 
-std::string s("   123");
-std::string::iterator first = s.begin(), last = s.end();
+int main() {
 
-qi::rule<std::string::iterator, int(), qi::space_type> rule = qi::int_; // Skipper の型指定
+    std::string s("   123");
+    std::string::iterator first = s.begin(), last = s.end();
 
-bool success = qi::phrase_parse( // phrase_parse() を使用
-    first,
-    last,
-    rule,
-    qi::space // Skipper この場合は任意の空白
-              // 勝手に繰り返し呼び出されるので繰り返し分を明示的に指定する必要はない
-);
-if (success) { std::cout << "OK" << std::endl; } // OK が出力される
+    qi::rule<std::string::iterator, int(), qi::space_type> rule = qi::int_; // Skipper の型指定
+
+    bool success = qi::phrase_parse( // phrase_parse() を使用
+        first,
+        last,
+        rule,
+        qi::space // Skipper この場合は任意の空白
+                // 勝手に繰り返し呼び出されるので繰り返し分を明示的に指定する必要はない
+    );
+    if (success) { std::cout << "OK" << std::endl; } // OK が出力される
+}
 ```
 * qi::space_type[color ff0000]
 * qi::phrase_parse[color ff0000]
@@ -326,17 +338,20 @@ qi::rule<> rule = qi::int_[phx::ref(n) = qi::_1] >> qi::eps(phx::ref(n) != 42);
 
 namespace qi = boost::spirit::qi;
 
-std::string s("a b c\n");
-std::string::iterator first = s.begin(), last = s.end();
-std::string value;
+int main() {
 
-bool success = qi::parse(
-    first,
-    last,
-    qi::raw[(*qi::graph % qi::lit(' '))] >> qi::lit('\n'),
-    value
-);
-if (success) { std::cout << value << std::endl; } // a b c が出力される
+    std::string s("a b c\n");
+    std::string::iterator first = s.begin(), last = s.end();
+    std::string value;
+
+    bool success = qi::parse(
+        first,
+        last,
+        qi::raw[(*qi::graph % qi::lit(' '))] >> qi::lit('\n'),
+        value
+    );
+    if (success) { std::cout << value << std::endl; } // a b c が出力される
+}
 ```
 * qi::raw[color ff0000]
 
