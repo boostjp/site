@@ -64,46 +64,46 @@
 主要なテストコンパイラ:
 
 - Linux:
-	- Clang:
-	- GCC:
-	- Intel:
-	- QCC:
+    - Clang:
+    - GCC:
+    - Intel:
+    - QCC:
 - OS X:
-	- Apple Clang:
-	- GCC:
-	- Intel:
+    - Apple Clang:
+    - GCC:
+    - Intel:
 - Windows:
-	- GCC, mingw:
-	- Visual C++:
+    - GCC, mingw:
+    - Visual C++:
 - FreeBSD:
-	- GCC:
+    - GCC:
 - QNX:
-	- QCC:
+    - QCC:
 
-追加して含まれるテストコンパイラ:
+追加で含まれるテストコンパイラ:
 
 - Linux:
-	- Clang:
-	- GCC:
-	- GCC, C++11:
-	- GCC, C++14:
-	- Intel:
-	- Intel, C++11:
+    - Clang:
+    - GCC:
+    - GCC, C++11:
+    - GCC, C++14:
+    - Intel:
+    - Intel, C++11:
 - OS X:
-	- Apple Clang:
-	- Apple Clang, C++11:
-	- Apple Clang, C++14:
-	- Clang:
-	- Clang, C++11:
-	- GCC:
-	- Intel:
+    - Apple Clang:
+    - Apple Clang, C++11:
+    - Apple Clang, C++14:
+    - Clang:
+    - Clang, C++11:
+    - GCC:
+    - Intel:
 - Windows:
-	- GCC, mingw:
-	- Visual C++:
+    - GCC, mingw:
+    - Visual C++:
 - FreeBSD:
-	- GCC:
+    - GCC:
 - QNX:
-	- QCC:
+    - QCC:
 
 ## 翻訳
 [Someone](https://github.com/)
