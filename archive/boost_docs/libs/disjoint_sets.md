@@ -1,4 +1,4 @@
-# Distjoint Sets（互いに素な集合）
+# Disjoint Sets（互いに素な集合）
 
 - 翻訳元ドキュメント： <http://www.boost.org/doc/libs/1_31_0/libs/disjoint_sets/disjoint_sets.html>
 
