@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - github-actions
+      - master
   schedule:
     # UTC 表記
     # 日本時間 23:30
