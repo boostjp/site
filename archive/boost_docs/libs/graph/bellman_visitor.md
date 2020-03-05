@@ -1,4 +1,4 @@
-# bellman_visitor<EventVisitorList>
+# bellman_visitor&lt;EventVisitorList&gt;
 このクラスは、(`std::pair` を使って作られる) [EventVisitor](EventVisitor.md) のリストを [BellmanFordVisitor](BellmanFordVisitor.md) に変換するアダプタである。
 
 

@@ -1,4 +1,4 @@
-# dijkstra_visitor<EventVisitorList>
+# dijkstra_visitor&lt;EventVisitorList&gt;
 このクラスは、(`std::pair` を使って作られる) [EventVisitor](EventVisitor.md) のリストを [DijkstraVisitor](DijkstraVisitor.md) に変換するアダプタである。
 
 

@@ -1,4 +1,4 @@
-# bfs_visitor<EventVisitorList>
+# bfs_visitor&lt;EventVisitorList&gt;
 このクラスは、(`std::pair` を使って作られる) [EventVisitor](EventVisitor.md) のリストを [BFSVisitor](BFSVisitor.md) に変換するアダプタである。
 
 

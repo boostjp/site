@@ -1,4 +1,4 @@
-# distance_recorder<DistanceMap, EventTag>
+# distance_recorder&lt;DistanceMap, EventTag&gt;
 これは、グラフ探索中に、ある始点から各頂点までの距離を ([property map](../property_map.md.nolink) を使って) 記録する [EventVisitor](EventVisitor.md) である。辺 `e = (u,v)` に対して実行されると、 `v` への距離は `u` への距離より大きくなる。 `distance_recorder` は `on_tree_edge` や `on_relax_edge` イベントでよく使われる。頂点イベントには使用できない。
 
 [`bfs_visitor`](bfs_visitor.md) や [`dfs_visitor`](dfs_visitor.md) などのアルゴリズム別のアダプタでラップすることで、 `distance_recorder` を グラフアルゴリズムで使えるようになる。また、`std::pair` を使って他のイベントビジタと結合して、 EventVisitorList を作れる。

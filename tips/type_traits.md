@@ -650,7 +650,7 @@ is_abstract<abc const>::value == true
 インクルード：
 
 - `<boost/type_traits/is_const.hpp>`
-- `<boost/type_traits.hpp>@
+- `<boost/type_traits.hpp>`
 
 例：
 ```cpp
@@ -982,7 +982,9 @@ add_lvalue_reference<void>::type       : void
 インクルード：
 
 - `boost/type_traits/add_rvalue_reference.hpp`
-- `boost/type_traits.hpp`例：
+- `boost/type_traits.hpp`
+
+例：
 
 ```cpp
 add_rvalue_reference<int>::type        : int&&

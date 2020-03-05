@@ -1,4 +1,4 @@
-# Header <boost/io/ios_state.hpp>
+# Header &lt;boost/io/ios_state.hpp&gt;
 
 boost/io/ios_state.hppは、C++の入出力ストリームシステムにおけるオブジェクトのストリーム状態を保持することを保証する。
 
