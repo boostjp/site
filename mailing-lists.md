@@ -13,7 +13,7 @@ Boostの全般的な話題。ユーザー寄りだが開発者寄りの話題も
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.user](https://www.boost.org/community/groups.html#users)
+- [Boost-users Archives](https://lists.boost.org/boost-users/)
 - [Google Group](http://groups.google.com/group/boost-list/topics)
 
 ## Boost開発者ML
@@ -103,7 +103,7 @@ Boost.Pythonやluabindなどの、言語バインディング関係のML。
 
 アーカイブ：
 
-- [spirit-devel](https://sourceforge.net/p/spirit/mailman/spirit-devel/)
+- [spirit-general](https://sourceforge.net/p/spirit/mailman/spirit-general/)
 
 
 **開発者ML**
@@ -114,7 +114,7 @@ Boost.Pythonやluabindなどの、言語バインディング関係のML。
 
 アーカイブ：
 
-- [Boost Mailing Lists - parsers.spirit.devel](https://www.boost.org/community/groups.html#spirit)
+- [spirit-devel](https://sourceforge.net/p/spirit/mailman/spirit-devel/)
 
 
 ## BoostドキュメンテーションシステムML
