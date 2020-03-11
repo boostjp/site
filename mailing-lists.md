@@ -25,7 +25,7 @@ Boostの開発者ML。新たなライブラリの提案、レビュー、運用�
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.devel](https://www.boost.org/community/groups.html#main)
+- [Boost Archives](https://lists.boost.org/Archives/boost/)
 
 
 ## アナウンス
@@ -45,7 +45,7 @@ Boost.Build, bjamなどのML。
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.build](https://www.boost.org/community/groups.html#jamboost)
+- [Boost-Build Archives](https://lists.boost.org/boost-build/)
 
 ## Boost CMake ML
 CMakeのML。
@@ -56,7 +56,7 @@ CMakeのML。
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.cmake](https://www.boost.org/community/groups.html#cmake)
+- [Boost-cmake](https://lists.boost.org/boost-cmake/)
 
 
 ## Boost Community Maintenance ML
@@ -76,7 +76,7 @@ Boost.Python関係のML。
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.python](https://www.boost.org/community/groups.html#cplussig)
+- [Cplusplus-sig](https://mail.python.org/pipermail/cplusplus-sig/)
 
 
 ## 言語バインディングML
@@ -103,7 +103,7 @@ Boost.Pythonやluabindなどの、言語バインディング関係のML。
 
 アーカイブ：
 
-- [Boost Mailing Lists - parsers.spirit.general](https://www.boost.org/community/groups.html#spirit)
+- [spirit-devel](https://sourceforge.net/p/spirit/mailman/spirit-devel/)
 
 
 **開発者ML**
@@ -113,6 +113,7 @@ Boost.Pythonやluabindなどの、言語バインディング関係のML。
 - [https://lists.sourceforge.net/lists/listinfo/spirit-devel](https://lists.sourceforge.net/lists/listinfo/spirit-devel)
 
 アーカイブ：
+
 - [Boost Mailing Lists - parsers.spirit.devel](https://www.boost.org/community/groups.html#spirit)
 
 
@@ -126,7 +127,7 @@ BoostBookやQuickBookのML。
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.documentation](https://www.boost.org/community/groups.html#boostdocs)
+- [Boost-docs Archives](https://lists.boost.org/boost-docs/)
 
 ## Boost Thread ML
 Boost.Threadの開発者ML。
@@ -137,7 +138,7 @@ Boost.Threadの開発者ML。
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.threads.devel](https://www.boost.org/community/groups.html#thread)
+- [Threads-Devel Archives](https://lists.boost.org/threads-devel/)
 
 
 ## Boost Test ML
@@ -158,7 +159,7 @@ Boostのレギュレッションテストを走らせたり、Boost.Testをい�
 
 アーカイブ：
 
-- [Boost Mailing Lists - boost.ublas](https://www.boost.org/community/groups.html#ublas)
+- [ublas Archives](https://lists.boost.org/ublas/)
 
 
 ## Boost Proto ML
