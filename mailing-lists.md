@@ -13,7 +13,7 @@ Boostの全般的な話題。ユーザー寄りだが開発者寄りの話題も
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.user)
+- [Boost Mailing Lists - boost.user](https://www.boost.org/community/groups.html#users)
 - [Google Group](http://groups.google.com/group/boost-list/topics)
 
 ## Boost開発者ML
@@ -25,7 +25,7 @@ Boostの開発者ML。新たなライブラリの提案、レビュー、運用�
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.devel/)
+- [Boost Mailing Lists - boost.devel](https://www.boost.org/community/groups.html#main)
 
 
 ## アナウンス
@@ -45,7 +45,7 @@ Boost.Build, bjamなどのML。
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.build)
+- [Boost Mailing Lists - boost.build](https://www.boost.org/community/groups.html#jamboost)
 
 ## Boost CMake ML
 CMakeのML。
@@ -56,7 +56,8 @@ CMakeのML。
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.cmake)
+- [Boost Mailing Lists - boost.cmake](https://www.boost.org/community/groups.html#cmake)
+
 
 ## Boost Community Maintenance ML
 個人のメンテナではなく、コミュニティによってメンテナンスしていくライブラリのML。
@@ -75,7 +76,7 @@ Boost.Python関係のML。
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.python.c%2b%2b)
+- [Boost Mailing Lists - boost.python](https://www.boost.org/community/groups.html#cplussig)
 
 
 ## 言語バインディングML
@@ -87,7 +88,7 @@ Boost.Pythonやluabindなどの、言語バインディング関係のML。
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.langbinding)
+- [Boost Mailing Lists - boost.langbinding](https://www.boost.org/community/groups.html#langbinding)
 
 
 ## Boost Spirit ML
@@ -102,7 +103,8 @@ Boost.Pythonやluabindなどの、言語バインディング関係のML。
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.parsers.spirit.general)
+- [Boost Mailing Lists - parsers.spirit.general](https://www.boost.org/community/groups.html#spirit)
+
 
 **開発者ML**
 
@@ -111,7 +113,7 @@ Boost.Pythonやluabindなどの、言語バインディング関係のML。
 - [https://lists.sourceforge.net/lists/listinfo/spirit-devel](https://lists.sourceforge.net/lists/listinfo/spirit-devel)
 
 アーカイブ：
-- [Gmane](http://thread.gmane.org/gmane.comp.parsers.spirit.devel)
+- [Boost Mailing Lists - parsers.spirit.devel](https://www.boost.org/community/groups.html#spirit)
 
 
 ## BoostドキュメンテーションシステムML
@@ -124,7 +126,7 @@ BoostBookやQuickBookのML。
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.documentation)
+- [Boost Mailing Lists - boost.documentation](https://www.boost.org/community/groups.html#boostdocs)
 
 ## Boost Thread ML
 Boost.Threadの開発者ML。
@@ -135,7 +137,7 @@ Boost.Threadの開発者ML。
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.threads.devel)
+- [Boost Mailing Lists - boost.threads.devel](https://www.boost.org/community/groups.html#thread)
 
 
 ## Boost Test ML
@@ -156,7 +158,7 @@ Boostのレギュレッションテストを走らせたり、Boost.Testをい�
 
 アーカイブ：
 
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.ublas)
+- [Boost Mailing Lists - boost.ublas](https://www.boost.org/community/groups.html#ublas)
 
 
 ## Boost Proto ML
@@ -177,7 +179,6 @@ EDSL(Embedded Domain Specific Language)を定義するためのライブラリ�
 アーカイブ：
 
 - [SourceForge](http://sourceforge.net/mail/?group_id=122478)
-- [Gmane](http://thread.gmane.org/gmane.comp.lib.boost.asio.user)
 
 
 ## Boost Geometry ML
