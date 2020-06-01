@@ -434,13 +434,13 @@ Files: [`regex_timer.cpp`](https://www.boost.org/doc/libs/1_31_0/libs/regex/exam
 また boost の人々は私に *考え*させてくれた、以上。
 以下の人々は皆、有益なコメントや修正をしてくれた:
 Dave Abrahams, Mike Allison, Edan Ayal, Jayashree
-Balasubramanian, Jan BNBvlsche, Beman Dawes, Paul Baxter, David
+Balasubramanian, Jan BNBvlsche, Beman Dawes, Paul Baxter, David
 Bergman, David Dennerline, Edward Diener, Peter Dimov, Robert
 Dunn, Fabio Forno, Tobias Gabrielsson, Rob Gillen, Marc Gregoire,
 Chris Hecker, Nick Hodapp, Jesse Jones, Martin Jost, Boris
 Krasnovskiy, Jan Hermelink, Max Leung, Wei-hao Lin, Jens Maurer,
 Richard Peters, Heiko Schmidt, Jason Shirk, Gerald Slacik, Scobie
-Smith, Mike Smyth, Alexander Sokolovsky, HervNBi Poirier, Michael
+Smith, Mike Smyth, Alexander Sokolovsky, HervNBi Poirier, Michael
 Raykh, Marc Recht, Scott VanCamp, Bruno Voigt, Alexey Voinov,
 Jerry Waldorf, Rob Ward, Lealon Watts, Thomas Witt and Yuval
 Yosef. 
