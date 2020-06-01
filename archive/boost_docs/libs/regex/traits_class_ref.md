@@ -57,7 +57,7 @@ class mytraits
       syntax_digit = 17,                        // 0-9
       syntax_b = 18,                            // for \b
       syntax_B = 19,                            // for \B
-      syntax_left_word = 20,                    // for \&lt;
+      syntax_left_word = 20,                    // for \<
       syntax_right_word = 21,                   // for \
       syntax_w = 22,                            // for \w
       syntax_W = 23,                            // for \W

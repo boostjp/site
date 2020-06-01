@@ -79,7 +79,7 @@ A. 静的なデータを含むテンプレートを結合できないコンパ�
 regex++ のデフォルトの振る舞いは、 無名名前空間の中で "problem" テンプレートを宣言することにより、この問題を修復しようとするので、テンプレートは内部リンケージをもつ。
 これが、大量のコード膨張を引き起こすことに注意せよ。
 もしコンパイラが名前空間をサポートしていないか、コード膨張が問題になったら、単一翻訳単位の中に全てのテンプレートを置くための上のガイドラインに従うこと。
-そして、 boost/regex/config.hpp を編集し、 `BOOST_REGEX_NO_TEMPLATE_SWITCH_MERGE` を定義しないようにすること。
+そして、 `boost/regex/config.hpp` を編集し、 `BOOST_REGEX_NO_TEMPLATE_SWITCH_MERGE` を定義しないようにすること。
 
 ### <font color="#FF0000">Q. 私は regex++ でエスケープ文字を使うことが出来ません。何が起こっているのですか？</font>
 
@@ -100,7 +100,7 @@ A. POSIX 標準は、文字範囲表現がロケールに敏感であること�
 後者の場合、もしロケールに敏感な照合を行いたくなければ、 `REG_NOCOLLATE` を `REG_BASIC` か `REG_EXTENDED` を組み合わせて使えばよい。
 *[注意: `regbase::nocollate` が作用しているとき、ライブラリは、実際にの設定値に関わらず、`_COLLATE` ロケートカテゴリーが常に "C" である "かのように" 振る舞う。]*
 
-### <font color="#FF0000">&nbsp;Q. なぜ私は、「簡易版の」 `query_match/reg_search/reg_grep/reg_format/reg_merge` を使うことが出来ないのですか?</font>
+### <font color="#FF0000">Q. なぜ私は、「簡易版の」 `query_match/reg_search/reg_grep/reg_format/reg_merge` を使うことが出来ないのですか?</font>
 
 A. これらの簡易版はあなたのコンパイラの能力によって使えたり使えなかったりする。
 これらの関数の形式を決定する規則は極めて複雑である。
