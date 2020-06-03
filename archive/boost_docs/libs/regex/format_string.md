@@ -10,7 +10,7 @@ It is provided "as is" without express or implied warranty.*
 
 ---
 
-### <a name="format_string">Format String Syntax</a>
+### <a id="format_string">Format String Syntax</a>
 
 書式文字列は、アルゴリズム [`regex_format`](template_class_ref.md#reg_format) と [`regex_merge`](template_class_ref.md#reg_merge) で使われている。
 これは、一つの文字列を別の文字列に変形するために使われる。

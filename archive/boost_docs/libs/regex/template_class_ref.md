@@ -10,7 +10,7 @@ It is provided "as is" without express or implied warranty.*
 
 ---
 
-## <a name="regbase">class regbase</a>
+## <a id="regbase">class regbase</a>
 
 ```cpp
 #include boost/regex.hpp>
@@ -140,7 +140,7 @@ public:
 
 ---
 
-## <a name="bad_expression">Exception classes.</a>
+## <a id="bad_expression">Exception classes.</a>
 
 ```cpp
 #include <boost/pat_except.hpp>
@@ -173,7 +173,7 @@ public:
 
 ---
 
-## <a name="reg_expression">Class `reg_expression`</a>
+## <a id="reg_expression">Class `reg_expression`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -383,7 +383,7 @@ public:
 
 ---
 
-## <a name="regex_char_traits">Class `regex_traits`</a>
+## <a id="regex_char_traits">Class `regex_traits`</a>
 
 ```cpp
 #include <boost/regex/regex_traits.hpp>
@@ -428,7 +428,7 @@ template <class charT> class regex_traits : public base_type { /*detailts*/ };
 
 ---
 
-## <a name="reg_match">Class `match_results`</a>
+## <a id="reg_match">Class `match_results`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -585,7 +585,7 @@ typedef match_results<std::wstring::const_iterator> wsmatch;
 
 ---
 
-## <a name="query_match">Algorithm `regex_match`</a>
+## <a id="query_match">Algorithm `regex_match`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -700,7 +700,7 @@ int process_ftp(const char* response, std::string* msg)
 }
 ```
 
-<a name="match_type">アルゴリズムに渡されるフラグパラメータの値は次の値のひとつ以上の組み合わせでなければならない。</a>
+<a id="match_type">アルゴリズムに渡されるフラグパラメータの値は次の値のひとつ以上の組み合わせでなければならない。</a>
 
 - `match_default`
 	- デフォルトの値である。
@@ -738,7 +738,7 @@ int process_ftp(const char* response, std::string* msg)
 
 ---
 
-## <a name="reg_search">Algorithm `regex_search`</a>
+## <a id="reg_search">Algorithm `regex_search`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -838,7 +838,7 @@ void IndexClasses(map_type& m, const std::string& file)
 
 ---
 
-## <a name="reg_grep">Algorithm `regex_grep`</a>
+## <a id="reg_grep">Algorithm `regex_grep`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -1118,7 +1118,7 @@ void class_index::IndexClasses(const std::string& file)
 
 ---
 
-## <a name="reg_format">Algorithm `regex_format`</a>
+## <a id="reg_format">Algorithm `regex_format`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -1173,7 +1173,7 @@ std::basic_string<charT> regex_format
 - `unsigned flags`
 	- 書式指定子がどのように解釈されるかを示す、オプションのフラグ。
 
-<a name="format_flags">書式のフラグは以下のように定義されている。</a>
+<a id="format_flags">書式のフラグは以下のように定義されている。</a>
 
 - `format_all`
 	- すべての構文のオプションを可能にする。
@@ -1192,7 +1192,7 @@ std::basic_string<charT> regex_format
 
 ---
 
-## <a name="reg_merge">Algorithm `regex_merge`</a>
+## <a id="reg_merge">Algorithm `regex_merge`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -1370,7 +1370,7 @@ const char* footer_text = "</PRE>\n</BODY>\n\n";
 
 ---
 
-## <a name="regex_split">Algorithm `regex_split`</a>
+## <a id="regex_split">Algorithm `regex_split`</a>
 
 ```cpp
 #include <boost/regex.hpp>
@@ -1474,7 +1474,7 @@ int main(int argc, char** argv)
 
 ---
 
-## <a name="partial_matches">Partial Matches</a>
+## <a id="partial_matches">Partial Matches</a>
 
 一致フラグ `match_partial` は次のアルゴリズムに渡すことが出来る:
 [`regex_match`](#reg_match), [`regex_search`](#reg_search), そして [`regex_grep`](#reg_grep) 。

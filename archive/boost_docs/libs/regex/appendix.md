@@ -10,7 +10,7 @@ It is provided "as is" without express or implied warranty.*
 
 ---
 
-### <a name="implementation">Appendix 1: Implementation notes</a>
+### <a id="implementation">Appendix 1: Implementation notes</a>
 
 これは boost ライブラリへ regex++ を導入した最初のものであり、 regex++ 2.x に基づいている。
 以前のバージョンからの変更の完全なリストについては changes.txt を見よ。
@@ -60,7 +60,7 @@ C++ 信者はこのコードをいくつかの点で馬鹿げていると考え�
 
 ---
 
-### <a name="threads">Appendix 2: スレッド安全性</a>
+### <a id="threads">Appendix 2: スレッド安全性</a>
 
 クラス `reg_expression<>` とその `typedef` である `regex` と `wregex` はスレッド安全性を実現している。
 コンパイルされた正規表現はスレッド間で安全に共有できる。
@@ -82,7 +82,7 @@ POSIX API 関数は全て再入可能でスレッドセーフである。
 
 ---
 
-### <a name="localisation">Appendix 3: Localization</a>
+### <a id="localisation">Appendix 3: Localization</a>
 
 Regex++ は実行時地域化に対して拡張されたサポートを提供している。
 地域化モデルは2つの部分に分かれる: フロントエンドとバックエンドだ。
@@ -303,7 +303,7 @@ POSIX が定義した文字クラス名と照合要素は常に利用可能で�
 
 ---
 
-### <a name="demos">Appendix 4: 応用例 </a>
+### <a id="demos">Appendix 4: 応用例 </a>
 
 このライブラリに関する3つのデモアプリケーションがある。
 Borland, Microsoft, gcc コンパイラのメイクファイルは付属しているが、それ以外は自分でメイクファイルを作成しなければならない
@@ -353,7 +353,7 @@ Files: [`regex_timer.cpp`](https://www.boost.org/doc/libs/1_31_0/libs/regex/exam
 
 ---
 
-### <a name="headers">Appendix 5: ヘッダファイル</a>
+### <a id="headers">Appendix 5: ヘッダファイル</a>
 
 このライブラリが使う2つの主要なヘッダファイルがある:
 `<boost/regex.hpp>` は完全なライブラリへの完全なアクセスを提供する。
@@ -361,7 +361,7 @@ Files: [`regex_timer.cpp`](https://www.boost.org/doc/libs/1_31_0/libs/regex/exam
 
 ---
 
-### <a name="redist">Appendix 6: 再配布</a>
+### <a id="redist">Appendix 6: 再配布</a>
 
 もし Microsoft か Borland C++ を使っていて、 dll 版のランタイムライブラリにリンクしているなら、 regex++ の dll のひとつのバージョンにもリンクしているだろう。
 これらの dll は再配布可能だが、 "標準の" バージョンというものが存在しないので、ユーザの PC にインストールするとき、これらを、PC のディレクトリパスにではなく、アプリケーションのプライベートディレクトリに置くべきである。
@@ -399,7 +399,7 @@ Files: [`regex_timer.cpp`](https://www.boost.org/doc/libs/1_31_0/libs/regex/exam
 
 ---
 
-### <a name="upgrade">アップグレードに関する注記</a>
+### <a id="upgrade">アップグレードに関する注記</a>
 
 このバージョンの regex++ は [boost](http://www.boost.org/) プロジェクトに移植された最初のものであり、結果的に、boost コーディングガイドラインに従うために、多くの変更が為された。
 
@@ -423,7 +423,7 @@ Files: [`regex_timer.cpp`](https://www.boost.org/doc/libs/1_31_0/libs/regex/exam
 
 ---
 
-### <a name="furtherInfo">より多くの情報 (連絡と謝辞)</a>
+### <a id="furtherInfo">より多くの情報 (連絡と謝辞)</a>
 
 作者への連絡は [John_Maddock@compuserve.com](mailto:John_Maddock@compuserve.com) で可能である。
 このライブラリのためのホームページは [http://ourworld.compuserve.com/homepages/John_Maddock/regexpp.htm](http://ourworld.compuserve.com/homepages/John_Maddock/regexpp.htm) にある。

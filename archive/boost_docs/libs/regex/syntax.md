@@ -10,7 +10,7 @@ It is provided "as is" without express or implied warranty.*
 
 ---
 
-### <a name="syntax">Regular expression syntax</a>
+### <a id="syntax">Regular expression syntax</a>
 
 この章では、このライブラリで使われる正規表現文法について述べる。
 これは、プログラマーズガイドであって、プログラムの中でユーザに与えられる実際の文法は正規表現の翻訳の間に使われるフラグに依存する。

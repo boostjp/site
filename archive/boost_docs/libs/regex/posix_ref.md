@@ -10,7 +10,7 @@ It is provided "as is" without express or implied warranty.*
 
 ---
 
-### <a name="posix">POSIX compatibility library</a>
+### <a id="posix">POSIX compatibility library</a>
 
 ```cpp
 #include <boost/cregex.hpp>
