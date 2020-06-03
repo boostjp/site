@@ -25,6 +25,7 @@
 | [preprocessor](libs/preprocessor.md) | 繰り返しと再帰を含むプリプロセッサメタプログラミングツール群。 Vesa Karvonen 作 |
 | [pool](libs/pool.md) | メモリプールの管理。Steve Cleary 作 |
 | [random](libs/random.md) | 乱数生成のためのシステム一式。 Jens Maurer 作 |
+| [rational](libs/rational.md) | 有理数クラス。 Paul Moore 作 |
 | [regex](libs/regex.md) | 正規表現ライブラリ。 John Maddock 作 |
 | [signals](libs/signals.md) | 管理されたシグナルとスロットのコールバックでの実装。 Doug Gregor 作 |
 | [static_assert](libs/static_assert.md) | 静的アサート(コンパイル時アサート)。 John Maddock 作 |
