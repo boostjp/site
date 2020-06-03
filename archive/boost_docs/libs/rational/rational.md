@@ -1,6 +1,6 @@
 # Rational Numbers
 
-## <a name="Contents">コンテンツ</a>
+## <a id="Contents">コンテンツ</a>
 
 1. [Class rational synopsis](#Class rational synopsis)
 2. [理論的根拠](#Rationale)
@@ -25,7 +25,7 @@
 10. [リファレンス](#References)
 11. [History and Acknowledgements](#History and Acknowledgements)
 
-## <a name="Class rational synopsis">Class rational synopsis</a>
+## <a id="Class rational synopsis">Class rational synopsis</a>
 
 ```cpp
 #include <boost/rational.hpp>
@@ -109,7 +109,7 @@ template <typename I> std::ostream& operator<< (std::ostream& os, const rational
 template <typename T, typename I> T rational_cast (const rational<I>& r);
 ```
 
-## <a name="Rationale">理論的根拠</a>
+## <a id="Rationale">理論的根拠</a>
 
 「数」の分類には種々のものがある。
 最も基本的なものとしては、自然数（非負の整数）、そして、整数と実数がある。
@@ -121,7 +121,7 @@ template <typename T, typename I> T rational_cast (const rational<I>& r);
 
 実際には、本ライブラリにおける **有理数クラス** は、標準ライブラリにおける **複素数** 型と同じくテンプレートベースで提供される。
 
-## <a name="Background">背景</a>
+## <a id="Background">背景</a>
 
 数学的に言えば、有理数とは分数――２つの整数の比で表される数のことである。
 このため、有理数の範囲では表現できない実数値（実数は、２の平方根など分数で表現できない数も表すことができる）も存在する。
@@ -139,7 +139,7 @@ template <typename T, typename I> T rational_cast (const rational<I>& r);
 有理数クラスは、プログラマが、基本要素となる整数型を適切に選択することによって、オーバーフローの発生を制御できるようにテンプレートクラスとして実装されている。
 たとえば、テンプレートで無限精度の整数型（に類する）クラスが与えられれば、有理数クラスの中でオーバーフローは発生することがなく、あらゆる環境に於いて正確な演算結果が得られる。
 
-## <a name="Integer Type Requirements">基本要素となる整数型の要件</a>
+## <a id="Integer Type Requirements">基本要素となる整数型の要件</a>
 
 有理数クラスは、単一の型パラメータ `I` をとるテンプレートクラスである。
 この単一の整数型パラメータは、有理数クラスを構成する *基本要素* となる。
@@ -181,9 +181,9 @@ Fさらに、基本要素として利用できる型は、整数型に類似し�
 	また、`x`, `y` がいずれも `T` 型であるときに、`x/y` は有効である。
 - 入出力のための演算子は、型パラメータ `I` における入出力演算子の動作と同様に動作する。
 
-## <a name="Interface">インターフェイス</a>
+## <a id="Interface">インターフェイス</a>
 
-### <a name="Utility functions">ユーティリティ関数</a>
+### <a id="Utility functions">ユーティリティ関数</a>
 
 ユーティリティ関数として、以下の２個が提供される。
 
@@ -199,7 +199,7 @@ Fさらに、基本要素として利用できる型は、整数型に類似し�
 
 補足：将来的にこの２つの関数は、別途「ユーティリティライブラリ」のなかで定義される可能性がある
 
-### <a name="Constructors">コンストラクタ</a>
+### <a id="Constructors">コンストラクタ</a>
 
 有理数クラスは、２つの整数値（分子、分母）の組み合わせ、あるいは、単一の整数値から生成される。
 また、デフォルトコンストラクタは、値がゼロであるような有理数を生成する。
@@ -215,7 +215,7 @@ rational<I> r2(n, d);
 単一の整数値を取るコンストラクタは、`explicit` 修飾されて *いない* 。
 このため、基本要素となる整数型から有理数クラスへの暗黙の型変換が発生しうる。
 
-### <a name="Arithmetic operations">算術演算子</a>
+### <a id="Arithmetic operations">算術演算子</a>
 
 有理数クラスにおいては、以下に示す標準的な算術演算子が定義される。
 
@@ -230,7 +230,7 @@ rational<I> r2(n, d);
 <=   >=
 ```
 
-### <a name="Input and Output">入出力</a>
+### <a id="Input and Output">入出力</a>
 
 入出力のために、`<<`  および、`>>` のそれぞれの演算子が定義される。
 有理数クラスの外部での表現形（The external representation）は、`/` で区切られた２つの整数値である。
@@ -238,12 +238,12 @@ rational<I> r2(n, d);
 （入力においては、整数値の後間にホワイトスペースが存在せずに、`/` が続き、さらにその後にもホワイトスペースが存在せず）２番目の整数値が現れなければならない）整数値の表現形は基本要素となる整数型によって定義される形である。
 
 
-### <a name="In-place assignment">In-place assignment</a>
+### <a id="In-place assignment">In-place assignment</a>
 
 有理数クラスの任意のインスタンス `rational<I> r` に対して、`r.assign(n, m)`は、一時インスタンスを生成しないため、`r = rational<I&>(n, m);` より高速に処理を行うことができる。
 この機能は、基本要素となる整数型がＣ＋＋組み込みの場合であればそれほど有効ではないかもしれないが、たとえば、無限精度整数型の上に構成された有理数クラスの場合には有効である。
 
-### <a name="Conversions">型変換</a>
+### <a id="Conversions">型変換</a>
 
 有理数クラスは暗黙には他の *いかなる型にも変換されない* 。
 しかしながら、明示的な型変換のためには、関数、 `rational_cast<T>(r)` を提供する。
@@ -276,14 +276,14 @@ Float rational_cast(const rational<Int>& src)
 である。
 しかしながら、この実装に依存するようなプログラムを書いてはならない。
 
-### <a name="Numerator and Denominator">分数表現（Numerator and Denominator）</a>
+### <a id="Numerator and Denominator">分数表現（Numerator and Denominator）</a>
 
 直接的に有理数クラスの内部表現にアクセスするためには２つの関数、 `numerator()` と、 `denominator()` を使用する。
 
 この２つの関数を使用することで、ユーザーは有理数を取り扱う上の任意の機能を追加することができる。
 とりわけ、上で示した `rational_cast` の実装がうまく動かない場合――基本要素として、無限精度の整数型を使用している場合にはありそうだが――に、ユーザーがもっと適切な浮動小数点型への型変換関数を、別途準備できることに注意したい。
 
-## <a name="Performance">パフォーマンス</a>
+## <a id="Performance">パフォーマンス</a>
 
 有理数クラスは、基本要素となる整数型が、組み込みの整数型と“類似の”振る舞いをすることを暗黙のうちに想定している。
 この基本要素となる整数型の振る舞いを明文化したものが、前述した [基本要素となる整数型の要件](#Integer Type Requirements) である。
@@ -322,7 +322,7 @@ Float rational_cast(const rational<Int>& src)
 以上のような仮定に合致しない整数型は、有理数クラスの基本要素としては有用ではない。
 殊にパフォーマンスの点では、ひどく重く、最適化できない。
 
-## <a name="Exceptions">例外</a>
+## <a id="Exceptions">例外</a>
 
 有理数クラスでは、分母がゼロとなることは決してない。
 （本ライブラリでは、NaN や無限大の表現形式としても、分母がゼロになることはない）
@@ -334,7 +334,7 @@ Float rational_cast(const rational<Int>& src)
 加えて、有理数クラスのコンストラクタは、正規化の段階に於いて基本要素クラスで発生した例外をスルーする。
 この事項に対する唯一の例外事項は、有理数クラスのデストラクタは、基本要素クラスのデストラクタがスルーした例外しかスルーしないということである（ただし、通常デストラクタの実行中に基本要素クラスで例外が発生することはない）
 
-## <a name="Internal representation">内部表現</a>
+## <a id="Internal representation">内部表現</a>
 
 *補足：* ここで記述する内容は単純に情報を提供するためにのものにすぎない。
 プログラミングの際に、ここで述べるような実装の詳細に依存するようなプログラムを書くべきではない。
@@ -342,9 +342,9 @@ Float rational_cast(const rational<Int>& src)
 内部的には有理数クラスは、分子・分母の２つの整数型（テンプレートで与えられる型パラメータである）の値として保持される。
 有理数クラスの内部表現に置いては、常に約分（すなわち、分子と分母の最大公約数が１となる状態）され、分母が正であるように正規化されている。
 
-## <a name="Design notes">デザインノート</a>
+## <a id="Design notes">デザインノート</a>
 
-### <a name="Minimal Implementation">最小の構成となるような設計</a>
+### <a id="Minimal Implementation">最小の構成となるような設計</a>
 
 有理数クラスは数としての基本原則を崩さないように実装されている。
 有理数として持つべき最小限の機能しか持たないが、基本要素となる整数型にアクセスするための、 `numerator()` と `denominator()` の関数を持つことで、必要に応じて、どのような機能拡張も行うことができる。
@@ -357,7 +357,7 @@ Float rational_cast(const rational<Int>& src)
 このユーザー定義による型変換関数が、 `rational_cast()` という名前である必要はない。
 そのため、 `rational_cast()` が、特殊化／オーバーロード可能な形で定義される *必要はない* 。
 
-### <a name="Limited-range integer types">基本要素の数値表現範囲（Limited-range integer types）</a>
+### <a id="Limited-range integer types">基本要素の数値表現範囲（Limited-range integer types）</a>
 
 有理数クラスは、表現範囲に制限のないような整数型を使用するように設計されている。
 このような整数型を要素として利用する場合には、演算結果は常に正確に表現され、桁落ちやオーバーフロー／アンダーフローの問題も発生することはない。
@@ -379,7 +379,7 @@ Float rational_cast(const rational<Int>& src)
 
 有理数クラスの基本要素として、表現範囲が制限された整数型を使用することの得失に注意し、前もって意識するのはユーザー次第だということである。
 
-### <a name="Conversion from floating point">浮動小数点型からの型変換</a>
+### <a id="Conversion from floating point">浮動小数点型からの型変換</a>
 
 有理数クラスライブラリでは、浮動小数点型から有理数クラスへの型変換関数を提供していない。
 浮動小数点型から有理数クラスへの型変換関数を希望する意見をいくつか受け取ってはいる。
@@ -421,7 +421,7 @@ rational<I> r = rational_from_double(z);
 このような相容れない要求に対して、万人を満足させる単一の解決方法を見いだすことはできなかった。
 その上に、有理数クラスの演算に対するアルゴリズムは複雑であり、また専門化されているため、アプリケーションに要求される事項を理解した上で、最適な実装を行うことが良いと考える。
 
-### <a name="Absolute Value">絶対値</a>
+### <a id="Absolute Value">絶対値</a>
 
 普通に考えれば、基本要素となる整数型の絶対値 `abs(IntType)` が定義されていれば、これを用いて、有理数クラスにおける絶対値（ `rational<IntType>` ）が定義されているべきであると考えられるだろう。
 しかしながら、絶対値を定義するにはいくつもの問題が存在する。
@@ -452,13 +452,13 @@ inline rational<IntType> abs(const rational<IntType>& r)
 このことから、基本要素となる整数型の絶対値が他の場所で定義されたとしても、有理数クラスの絶対値はインライン関数で計算できるということがわかる。
 
 
-## <a name="References">リファレンス</a>
+## <a id="References">リファレンス</a>
 
 - 有理数クラスのヘッダファイル： [rational.hpp](https://www.boost.org/doc/libs/1_31_0/boost/rational.hpp)
 - サンプルコード： [rational_example.cpp](https://www.boost.org/doc/libs/1_31_0/libs/rational/rational_example.cpp)
 - 回帰テスト： [rational_test.cpp](https://www.boost.org/doc/libs/1_31_0/libs/rational/rational_test.cpp)
 
-## <a name="History and Acknowledgements">History and Acknowledgements</a>
+## <a id="History and Acknowledgements">History and Acknowledgements</a>
 
 1999年12月著者（原著者 Paul Moore）は、有理数クラスの最初の実装を行い、 [boost.org](http://www.boost.org/) メーリングリストに投稿した。
 メーリングリストにおいて、いくつかの議論が交わされた。
