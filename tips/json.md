@@ -11,7 +11,7 @@ JSONの読み込み、書き込みには、[Boost Property Tree Library](http://
 
 
 ## <a id="read" href="#read">JSONの読み込み</a>
-JSONの読み込みには、`Pboost::property_tree::read_json()`関数を使用する。
+JSONの読み込みには、`boost::property_tree::read_json()`関数を使用する。
 
 この関数を使用するには、`<boost/property_tree/json_parser.hpp>`をインクルードする。
 
