@@ -106,7 +106,7 @@ class Viewer {
         else
             left_page_ = boost::none;
 
-        if (right_page_ && rigth_page_.get() + 1 < pages.size())
+        if (right_page_ && right_page_.get() + 1 < pages.size())
             right_page_ = right_page_.get() + 1;
         else
             right_page_ = boost::none;
