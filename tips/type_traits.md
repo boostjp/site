@@ -436,7 +436,7 @@ is_object<const void>::value == false // void型はオブジェクトではな�
 
 
 ### <a id="is-reference" href="#is-reference">参照型かどうかを判定する</a>
-`boost::is_referece<T>`メタ関数を使用する。
+`boost::is_reference<T>`メタ関数を使用する。
 
 インクルード：
 
