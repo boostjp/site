@@ -10,7 +10,7 @@
 	- （非アクティブな会合の無闇な追加を防ぐためですのでご理解ください。）
 
 ## オンライン
-- [cppjp - Lingr](http://lingr.com/room/cppjp)
+
 - [C++JP - Facebook](https://www.facebook.com/groups/cppjp/)
 
 
