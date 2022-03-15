@@ -7,6 +7,7 @@
 - [左のスペースを削除する](#trim-left)
 - [右のスペースを削除する](#trim-right)
 - [区切り文字で文字列を分割する](#split)
+- [区切り文字列で文字列を分割する](#iter_split)
 - [区切り文字を指定して、コンテナを文字列化する](#join)
 - [拡張子を判定する](#iends-with)
 - [全て置き換える](#replace-all)
@@ -159,6 +160,44 @@ abc
 xyz
 ```
 
+## <a id="iter_split" href="#iter_split">区切り文字列で文字列を分割する</a>
+
+`boost::algorithm::split()` は単体の文字でしか分割できない。
+文字列で分割するには [`boost::algorithms::iter_split()`](https://www.boost.org/doc/libs/1_78_0/doc/html/boost/algorithm/iter_split.html) 関数を使用する。
+
+第1引数には、分割された文字列の結果を受け取るコンテナ、第2引数には対象となる文字列、第3引数には `find_iterator` と呼ばれる検索用のイテレータを指定する。
+このイテレータを作成するための関数はいくつかあるが、ここでは [`boost::algorithm::first_finder()`](https://www.boost.org/doc/libs/1_78_0/doc/html/boost/algorithm/first_finder.html) を利用する。
+
+```cpp example
+#include <iostream>
+#include <string>
+#include <vector>
+#include <boost/algorithm/string/iter_find.hpp>
+#include <boost/algorithm/string/finder.hpp>
+#include <boost/range/algorithm/for_each.hpp>
+
+void disp(const std::string& s)
+{
+    std::cout << s << std::endl;
+}
+
+int main()
+{
+    const std::string s = "abc\r\n123\r\nxyz";
+
+    std::vector<std::string> result;
+    boost::algorithm::iter_split(result, s, boost::algorithm::first_finder("\r\n")); // \r\nで分割
+
+    boost::for_each(result, disp);
+}
+```
+
+実行結果：
+```
+abc
+123
+xyz
+```
 
 ## <a id="join" href="#join">区切り文字を指定して、コンテナを文字列化する</a>
 区切り文字を指定してコンテナを文字列化するには、[`boost::algorithm::join()`](http://www.boost.org/doc/libs/release/doc/html/boost/algorithm/join.html)関数を使用する。
