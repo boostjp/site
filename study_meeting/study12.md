@@ -144,8 +144,8 @@ C++11のconstexprでコンパイル時アルゴリズムを実装する上での
 ### 写真
 ※写真に写って困る方がいらっしゃいましたら、主催者かスタッフまでご連絡ください。削除対応いたします。
 
-<img width='400' src='https://raw.github.com/boostjp/study12/master/image/DSC00123.JPG' height='300' border='0'/>
-<img width='400' src='https://raw.github.com/boostjp/study12/master/image/DSC00124.JPG' height='300' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/study12/master/image/DSC00123.JPG' height='300' border='0'/>
+<img width='400' src='https://raw.githubusercontent.com/boostjp/study12/master/image/DSC00124.JPG' height='300' border='0'/>
 <img width='400' src='https://github.com/boostjp/study12/raw/master/image/DSC00125.JPG' height='300' border='0'/>
 <img width='400' src='https://github.com/boostjp/study12/raw/master/image/DSC00126.JPG' height='300' border='0'/>
 <img width='400' src='https://github.com/boostjp/study12/raw/master/image/DSC00127.JPG' height='300' border='0'/>

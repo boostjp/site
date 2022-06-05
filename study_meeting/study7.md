@@ -64,7 +64,7 @@
 - ブログ ： [http://d.hatena.ne.jp/fjnl/](http://d.hatena.ne.jp/fjnl/)
 - Twitter ： [http://twitter.com/#!/fjnli](http://twitter.com/#%21/fjnli)
 
-- 発表資料 ： [https://raw.github.com/fjnl/boost-study-7-Tokyo/master/sheet.pdf](https://raw.github.com/fjnl/boost-study-7-Tokyo/master/sheet.pdf)
+- 発表資料 ： [https://raw.githubusercontent.com/fjnl/boost-study-7-Tokyo/master/sheet.pdf](https://raw.githubusercontent.com/fjnl/boost-study-7-Tokyo/master/sheet.pdf)
 
 
 ### C++ Tips 2 インクリメント
