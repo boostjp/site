@@ -23,9 +23,9 @@
 
 ## 更新ライブラリ
 
-- [One](#one) # example
-- [Two](#two) # example
-- [Three](#three) # example
+- [One](#one)
+- [Two](#two)
+- [Three](#three)
 
 
 ## <a id="One" href="#one">One</a>
