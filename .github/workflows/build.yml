@@ -49,8 +49,13 @@ jobs:
     - name: Set up Python 3.x
       uses: actions/setup-python@v1
       with:
-        python-version: 3.x
+        python-version: 3.11
+        # 3.12でUndefined symbolエラーがでた
 
     # あとはスクリプトで頑張る
     - run: ./boostjp/site/.github/workflows/script/build.sh
       working-directory: site_generator
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
