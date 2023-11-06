@@ -19,7 +19,7 @@ boostjpサイトのGitHubリポジトリは、以下になります：
 
 以下のページに載っているコミッタの人たちの誰かにコンタクトをとってもらうか、boostjp/siteリポジトリのIssue報告として、編集権限の申請を行ってください。
 
-* [boostjp members](https://github.com/boostjp?tab=members)
+* [boostjp members](https://github.com/orgs/boostjp/people)
 
 コミッタから直接お誘いに行く場合もありますので、快く引き受けていただければ幸いです。
 
