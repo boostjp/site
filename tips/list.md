@@ -14,7 +14,7 @@
 
 
 ## <a id="filter" href="#filter">条件抽出 - filtered</a>
-リストから値の条件抽出をするには、`boost::adapotrs::filtered`を使用する。
+リストから値の条件抽出をするには、`boost::adaptors::filtered`を使用する。
 
 以下は、`{1, 2, 3, 4, 5}`というリストから、偶数値のみを抽出している。
 
