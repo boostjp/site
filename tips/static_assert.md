@@ -8,6 +8,7 @@
 ## インデックス
 - [関数にコンパイル時アサートを付ける](#function)
 - [クラスにコンパイル時アサートを付ける](#class)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="function" href="#function">関数にコンパイル時アサートを付ける</a>
@@ -55,3 +56,5 @@ int main()
 }
 ```
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [コンパイル時アサート](https://cpprefjp.github.io/lang/cpp11/static_assert.html)
