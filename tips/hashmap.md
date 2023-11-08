@@ -8,6 +8,7 @@
 - [基本的な使い方](#basic-usage)
 - [ユーザー定義型をキーにする(オーバーロード)](#user-defined-type-as-key-using-overload)
 - [ユーザー定義型をキーにする(ポリシー)](#user-defined-type-as-key-using-policy)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
@@ -172,3 +173,6 @@ int main()
 ```
 
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::unordered_map`](https://cpprefjp.github.io/reference/unordered_map/unordered_map.html)
+- [`std::unordered_set`](https://cpprefjp.github.io/reference/unordered_set/unordered_set.html)
