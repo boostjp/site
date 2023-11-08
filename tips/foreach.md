@@ -10,6 +10,7 @@
 - [逆順にループする](#reverse-iteration)
 - [配列に対して使用する](#apply-multi-array)
 - [C++11 範囲`for`文との違い](#difference-cpp11-range-for)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="boost-foreach-macro" href="#boost-foreach-macro">BOOST_FOREACHマクロ</a>
@@ -379,3 +380,10 @@ for (int x : v) {}
 
 `BOOST_FOREACH`マクロには、このような制限はないため、定義済みの変数を要素として使用できる。
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`BOOST_FOREACH`マクロ](#boost-foreach-macro)
+  - [`std::for_each`](https://cpprefjp.github.io/reference/algorithm/for_each.html)
+- [逆順にループする](#reverse-iteration)
+  - [`std::ranges::reverse_view`、`std::ranges::views::reverse`](https://cpprefjp.github.io/reference/ranges/reverse_view.html)
+- [C++11 範囲`for`文との違い](#difference-cpp11-range-for)
+  - [範囲for文](https://cpprefjp.github.io/lang/cpp11/range_based_for.html)
