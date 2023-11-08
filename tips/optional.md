@@ -6,6 +6,7 @@
 - [関数の失敗値と成功値](#fail-value)
 - [無効値がありえることを仕様ではなく型で示す](#type-as-nullary-value)
 - [`if`文の条件式で定義した変数に格納する](#store-value-in-if-expr)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="fail-value" href="#fail-value">関数の失敗値と成功値</a>
@@ -138,3 +139,6 @@ if (boost::optional<int> p = get_vector()) {
 }
 ```
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::optional`](https://cpprefjp.github.io/reference/optional/optional.html)
+- [`std::expected`](https://cpprefjp.github.io/reference/expected/expected.html)
