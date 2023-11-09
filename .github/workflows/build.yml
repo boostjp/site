@@ -46,6 +46,12 @@ jobs:
     - run: git submodule update -i
       working-directory: site_generator/boostjp/site
 
+    # image
+    - uses: actions/checkout@v2
+      with:
+        repository: boostjp/image
+        path: site_generator/boostjp/image
+
     - name: Set up Python 3.x
       uses: actions/setup-python@v1
       with:
