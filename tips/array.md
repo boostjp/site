@@ -9,6 +9,7 @@ Boostでは、標準コンテナのインタフェースで使用できる固定
 - [配列の要素数を取得する](#size)
 - [添字による要素アクセス](#at)
 - [イテレータを取得する](#iterator)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="overview" href="#overview">概要</a>
@@ -175,3 +176,5 @@ int main()
 ```
 
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::array`](https://cpprefjp.github.io/reference/array/array.html)
