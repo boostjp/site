@@ -42,3 +42,5 @@ Markdownの記述方法をわかりやすく解説してくれているWebサイ
 Markdown形式では、htmlのタグも併用できますが、boostjpサイトでは積極的にはhtmlタグを使用しない方針です。できるだけ、Markdown形式でできる範囲内で解決するようにしてください。
 
 
+## 編集に際してのその他の方針、ガイドライン
+編集に際してのその他の方針については、cpprefjpの[編集方針](https://cpprefjp.github.io/edit_policy.html)及び[はじめてのコントリビュート](https://cpprefjp.github.io/start_editing.html)をご覧ください。
