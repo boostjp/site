@@ -16,6 +16,7 @@
 - [ディレクトリを作成する](#create-directory)
 - [ディレクトリ内のファイルを列挙する](#enumerate-file)
 - [ディレクトリ内の全てのファイルを再帰的に列挙](#recursive-enumerate-file)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 
@@ -491,3 +492,5 @@ int main()
 
 
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`<filesystem>`](https://cpprefjp.github.io/reference/filesystem.html)
