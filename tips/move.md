@@ -13,6 +13,7 @@ Boost1.49から導入された[Boost Move Library](http://www.boost.org/doc/libs
 - [コピー不可／ムーブ可能なクラスを定義する](#define-non-copyable-but-movable-class)
 - [ムーブセマンティクスに対応したコンテナを使用する](#movable-container)
 - [エミュレーションの制限](#limit-emulation)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="define-copyable-and-movable-class" href="#define-copyable-and-movable-class">コピー可能／ムーブ可能なクラスを定義する</a>
@@ -117,7 +118,7 @@ class Member
     // コンパイラが生成したコピーコンストラクタ...
 
     Member(BOOST_RV_REF(Member))  {/**/}      // ムーブコンストラクタ
-   
+
     Member &operator=(BOOST_RV_REF(Member))   // ムーブ代入演算子
     {/**/ return *this;  }
 
@@ -257,3 +258,5 @@ int main()
 
 To be written...
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::move`](https://cpprefjp.github.io/reference/algorithm/move.html)
