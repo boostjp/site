@@ -5,6 +5,7 @@
 ## インデックス
 - [基本的な使い方](#basic-usage)
 - [シードを再設定する](#set-seed)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
@@ -132,3 +133,7 @@ int main()
 
 なお、シードを取得する機能はないので、シードの管理自体はユーザーが行う必要がある。
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`<random>`](https://cpprefjp.github.io/reference/random.html)
+- [`std::mt19937`](https://cpprefjp.github.io/reference/random/mt19937.html)
+- [`std::uniform_int_distribution`](https://cpprefjp.github.io/reference/random/uniform_int_distribution.html)
