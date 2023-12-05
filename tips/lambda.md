@@ -6,6 +6,7 @@
 - [基本的な使い方](#basic-usage)
 - [メンバ変数を扱う](#member-variable)
 - [2つ以上の式を書く](#multiple-expressions)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
@@ -158,3 +159,5 @@ int main(){
 ```
 
  
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [ラムダ式](https://cpprefjp.github.io/lang/cpp11/lambda_expressions.html)
