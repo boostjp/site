@@ -78,6 +78,7 @@
 - [特定アライメントを持った型の合成](#synthesizing-types-with-specific-alignments)
     - [特定のアライメントを持つ型の取得する](#type-with-alignment)
     - [適切にアライメントされた型を作成する](#aligned-storage)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ### <a id="type-category" href="#type-category">型の分類を判定する</a>
@@ -1383,3 +1384,5 @@ int main()
 }
 ```
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`<type_traits>`](https://cpprefjp.github.io/reference/type_traits.html)
