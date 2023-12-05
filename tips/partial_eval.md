@@ -6,6 +6,7 @@
 - [部分適用(partial application)](#partial-application)
 - [カリー化(currying)+適用(applying)](#currying)
 - [メンバ関数のレシーバを部分適用する](#receiver-partial-application)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="partial-application" href="#partial-application">部分適用(partial application)</a>
@@ -126,3 +127,5 @@ int main()
 B::print()
 ```
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::bind`](https://cpprefjp.github.io/reference/functional/bind.html)
