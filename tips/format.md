@@ -9,6 +9,7 @@ C言語では、`sprintf`を使用して`char`配列としての文字列をフ�
 - [基本的な使い方](#basic-usage)
 - [`printf`風に書式を設定する](#printf-like-format)
 - [フォーマット設定された`std::string`を作成する](#make-formatted-string)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="basic-usage" href="#basic-usage">基本的な使い方</a>
@@ -93,3 +94,5 @@ int main()
 Hello 3
 ```
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::format`](https://cpprefjp.github.io/reference/format/format.html)
