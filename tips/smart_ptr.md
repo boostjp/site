@@ -11,6 +11,7 @@
     - [解放の方法を自分で決める](#customize-release-behavior-shared-ptr)
     - [弱い参照](#weak-reference)
 - [侵入型参照カウント方式のスマートポインタ](#intrusive-pointer)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="no-share-smart-pointer" href="#no-share-smart-pointer">共有しないオブジェクトのスマートポインタ</a>
@@ -334,3 +335,10 @@ exist
 destroy
 ```
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::unique_ptr`](https://cpprefjp.github.io/reference/memory/unique_ptr.html)
+  - `boost::scoped_ptr`相当
+- [`std::shared_ptr`](https://cpprefjp.github.io/reference/memory/shared_ptr.html)
+  - `boost::shared_ptr`相当
+- [`std::weak_ptr`](https://cpprefjp.github.io/reference/memory/weak_ptr.html)
+  - `boost::weak_ptr`相当
