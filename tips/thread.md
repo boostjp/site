@@ -15,6 +15,7 @@
 - [自スレッドの実行を他スレッドに譲る](#yield)
 - [スレッドのハンドルを取得する](#thread-handle)
 - [ハードウェアの並列度を取得する](#hardware-concurrency)
+- [C++の国際標準規格上の類似する機能](#cpp-standard)
 
 
 ## <a id="create-thread" href="#create-thread">スレッドを生成(開始)する</a>
@@ -170,3 +171,5 @@ void f4() {
 `boost::thread::hardware_concurrency()`静的メンバ関数を使用することで、(たとえばCPUの数やコアの数やhyperthreading unitの数などから)現在のシステムで利用可能なhardware threadの数を取得することが出来る。
 
 
+## <a id="cpp-standard" href="#cpp-standard">C++の国際標準規格上の類似する機能</a>
+- [`std::thread`](https://cpprefjp.github.io/reference/thread/thread.html)
