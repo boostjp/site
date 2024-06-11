@@ -88,7 +88,7 @@
 - ブログ： [http://d.hatena.ne.jp/yohhoy/](http://d.hatena.ne.jp/yohhoy/)
 - Twitter： [http://twitter.com/yohhoy](http://twitter.com/yohhoy)
 
-- 発表資料： [[pdf](https://github.com/yohhoy/docs/raw/master/boostjp10_tm_20120728.pdf)][[scribd](http://www.scribd.com/doc/101230860/boostjp10-tm-20120728)]
+- 発表資料： [[pdf](https://raw.githubusercontent.com/yohhoy/docs/master/boostjp10_tm_20120728.pdf)][[scribd](http://www.scribd.com/doc/101230860/boostjp10-tm-20120728)]
 - アフターケア： [Boost.勉強会 #10 に参加しました - yohhoyの日記（別館）](http://yohhoy.hatenablog.jp/entries/2012/07/29)
 
 

@@ -88,7 +88,7 @@
 ### 新しい並列for構文のご提案
 - 発表者: [@yohhoy](https://twitter.com/yohhoy)
 
-- 資料: [[PDF](https://github.com/yohhoy/docs/raw/master/boostjp14_parfor_20140301.pdf)] [[slideshare](http://www.slideshare.net/yohhoy/boostjp14-parfor-20140301-31781446)] [[video](http://www.ustream.tv/recorded/44351995)]
+- 資料: [[PDF](https://raw.githubusercontent.com/yohhoy/docs/master/boostjp14_parfor_20140301.pdf)] [[slideshare](http://www.slideshare.net/yohhoy/boostjp14-parfor-20140301-31781446)] [[video](http://www.ustream.tv/recorded/44351995)]
 - アフターケア：
 	- [Boost.勉強会 #14に参加しました - yohhoyの日記（別館）](http://yohhoy.hatenablog.jp/entry/2014/03/02/143031)
 
