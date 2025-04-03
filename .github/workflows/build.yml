@@ -27,7 +27,7 @@ jobs:
       with:
         repository: cpprefjp/site_generator
         path: site_generator
-    - run: git submodule update -i
+    - run: git submodule update --init
       working-directory: site_generator
 
     # boostjp.github.io
@@ -43,7 +43,7 @@ jobs:
         path: site_generator/boostjp/site
         # atom 生成のために全履歴が必要
         fetch-depth: 0
-    - run: git submodule update -i
+    - run: git submodule update --init
       working-directory: site_generator/boostjp/site
 
     # image
