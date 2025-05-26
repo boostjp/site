@@ -69,7 +69,7 @@ void f()
 
 
 ## <a id="move-ownership" href="#move-ownership">スレッドの所有権を移動する</a>
-Boost.Thradでは、1つの`thread`オブジェクトが1つのスレッドあるいはNot-A-Threadを表しているので`thread`オブジェクトのコピーはできないが、ムーブは可能である。
+Boost.Threadでは、1つの`thread`オブジェクトが1つのスレッドあるいはNot-A-Threadを表しているので`thread`オブジェクトのコピーはできないが、ムーブは可能である。
 
 (コンパイラが右辺値参照をサポートしていればC++11のムーブを、そうでなければエミュレーションによってムーブの機能を提供する。)
 

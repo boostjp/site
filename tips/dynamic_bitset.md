@@ -162,7 +162,7 @@ int main()
     dynamic_bitset<> bs(std::string("01"));  // コンストラクタに文字列を渡す
     assert(bs[0]);
     assert(!bs[1]);
-    // dynamic_bitset → std::stirng
+    // dynamic_bitset → std::string
     std::string str;
     boost::to_string(bs, str);  // to_string 関数による変換
 

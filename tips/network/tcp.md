@@ -852,7 +852,7 @@ else {
 }
 ```
 
-タイマークラスの`calcel()`メンバ関数を呼ぶと、`socket`の場合と逆に、タイマーのハンドラに[`boost::asio::error::operation_aborted`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/error__basic_errors.html)エラーが渡されることになる。
+タイマークラスの`cancel()`メンバ関数を呼ぶと、`socket`の場合と逆に、タイマーのハンドラに[`boost::asio::error::operation_aborted`](http://www.boost.org/doc/libs/release/doc/html/boost_asio/reference/error__basic_errors.html)エラーが渡されることになる。
 
 ただし、`cancel()`メンバ関数を呼ぶ直前ですでにタイムアウトになっている場合、`boost::asio::error::operation_aborted`エラーがハンドラに渡されない可能性がある。
 この場合に備えてフラグ変数等でタイマーを止めたことを知らせる必要がある。

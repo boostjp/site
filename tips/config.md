@@ -93,7 +93,7 @@ void f(T ...x) {
 | `BOOST_NO_CXX11_RVALUE_REFERENCES` | 右辺値参照型 |
 | `BOOST_NO_CXX11_SCOPED_ENUMS`      | スコープ付きの列挙型 |
 | `BOOST_NO_CXX11_STATIC_ASSERT`     | 条件式によってコンパイルエラーにするための `static_assert` 文 |
-| `BOOST_NO_CXX11_STD_UNORDERD`      | `unordered_set`, `unordered_multiset`, `unordered_map`, `unordered_multimap` の4つのコンテナクラステンプレート |
+| `BOOST_NO_CXX11_STD_UNORDERED`     | `unordered_set`, `unordered_multiset`, `unordered_map`, `unordered_multimap` の4つのコンテナクラステンプレート |
 | `BOOST_NO_CXX11_TRAILING_RESULT_TYPES` | 関数の戻り値型を後置 |
 | `BOOST_NO_CXX11_UNICODE_LITERALS` | Unicode 文字・文字列リテラル(`u8`, `u`, `U`) |
 | `BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX` | コンストラクタの呼び出しを初期化子リストと同じ構文で記述する |
